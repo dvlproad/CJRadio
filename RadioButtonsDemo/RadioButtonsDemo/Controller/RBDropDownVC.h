@@ -1,0 +1,17 @@
+//
+//  RBDropDownVC.h
+//  RadioButtonsDemo
+//
+//  Created by lichq on 15/11/11.
+//  Copyright (c) 2015年 dvlproad. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "RadioButtons_DropDown.h"
+
+@interface RBDropDownVC : UIViewController<RadioButtonsDelegate>{
+    RadioButtons_DropDown *commonRadioButtons111;
+    RadioButtons_DropDown *commonRadioButtons222;
+}
+
+@end

@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		805A17561BF321CC00424769 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17551BF321CC00424769 /* main.m */; };
+		805A17591BF321CC00424769 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17581BF321CC00424769 /* AppDelegate.m */; };
+		805A175C1BF321CC00424769 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A175B1BF321CC00424769 /* ViewController.m */; };
+		805A175F1BF321CC00424769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805A175D1BF321CC00424769 /* Main.storyboard */; };
+		805A17611BF321CC00424769 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 805A17601BF321CC00424769 /* Images.xcassets */; };
+		805A17641BF321CC00424769 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17621BF321CC00424769 /* LaunchScreen.xib */; };
+		805A17701BF321CC00424769 /* RadioButtonsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A176F1BF321CC00424769 /* RadioButtonsDemoTests.m */; };
+		805A17821BF3235E00424769 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A177D1BF3235E00424769 /* RadioButton.m */; };
+		805A17831BF3235E00424769 /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A177E1BF3235E00424769 /* RadioButton_DropDown.xib */; };
+		805A17841BF3235E00424769 /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17801BF3235E00424769 /* RadioButtons.m */; };
+		805A178E1BF32FAD00424769 /* RadioButtons_DropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A178D1BF32FAD00424769 /* RadioButtons_DropDown.m */; };
+		805A17911BF3378700424769 /* RadioButtons_Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17901BF3378700424769 /* RadioButtons_Slider.m */; };
+		805A179C1BF35A8C00424769 /* down_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17931BF35A8C00424769 /* down_dark.png */; };
+		805A179D1BF35A8C00424769 /* arrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17951BF35A8C00424769 /* arrowUp.png */; };
+		805A179E1BF35A8C00424769 /* arrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17961BF35A8C00424769 /* arrowUp@2x.png */; };
+		805A179F1BF35A8C00424769 /* btnTab_BG_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17971BF35A8C00424769 /* btnTab_BG_normal.png */; };
+		805A17A01BF35A8C00424769 /* btnTab_BG_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17981BF35A8C00424769 /* btnTab_BG_normal@2x.png */; };
+		805A17A11BF35A8C00424769 /* btnTab_BG_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17991BF35A8C00424769 /* btnTab_BG_selected.png */; };
+		805A17A21BF35A8C00424769 /* btnTab_BG_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A179A1BF35A8C00424769 /* btnTab_BG_selected@2x.png */; };
+		805A17A31BF35A8C00424769 /* RadioButton_Slider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A179B1BF35A8C00424769 /* RadioButton_Slider.xib */; };
+		805A17A71BF35C0300424769 /* RBDropDownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17A51BF35C0300424769 /* RBDropDownVC.m */; };
+		805A17A81BF35C0300424769 /* RBDropDownVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17A61BF35C0300424769 /* RBDropDownVC.xib */; };
+		805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17AA1BF35C1B00424769 /* RBSliderVC.m */; };
+		805A17AD1BF35C1B00424769 /* RBSliderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17AB1BF35C1B00424769 /* RBSliderVC.xib */; };
+		805A17B61BF35E7D00424769 /* RBBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17B41BF35E7D00424769 /* RBBaseVC.m */; };
+		805A17B71BF35E7D00424769 /* RBBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17B51BF35E7D00424769 /* RBBaseVC.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		805A176A1BF321CC00424769 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 805A17481BF321CC00424769 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 805A174F1BF321CC00424769;
+			remoteInfo = RadioButtonsDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		805A17501BF321CC00424769 /* RadioButtonsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioButtonsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		805A17541BF321CC00424769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		805A17551BF321CC00424769 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		805A17571BF321CC00424769 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		805A17581BF321CC00424769 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		805A175A1BF321CC00424769 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		805A175B1BF321CC00424769 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		805A175E1BF321CC00424769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		805A17601BF321CC00424769 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		805A17631BF321CC00424769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		805A17691BF321CC00424769 /* RadioButtonsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioButtonsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		805A176E1BF321CC00424769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		805A176F1BF321CC00424769 /* RadioButtonsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadioButtonsDemoTests.m; sourceTree = "<group>"; };
+		805A177C1BF3235E00424769 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
+		805A177D1BF3235E00424769 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
+		805A177E1BF3235E00424769 /* RadioButton_DropDown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_DropDown.xib; sourceTree = "<group>"; };
+		805A177F1BF3235E00424769 /* RadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons.h; sourceTree = "<group>"; };
+		805A17801BF3235E00424769 /* RadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons.m; sourceTree = "<group>"; };
+		805A178C1BF32FAD00424769 /* RadioButtons_DropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons_DropDown.h; sourceTree = "<group>"; };
+		805A178D1BF32FAD00424769 /* RadioButtons_DropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons_DropDown.m; sourceTree = "<group>"; };
+		805A178F1BF3378700424769 /* RadioButtons_Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons_Slider.h; sourceTree = "<group>"; };
+		805A17901BF3378700424769 /* RadioButtons_Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons_Slider.m; sourceTree = "<group>"; };
+		805A17931BF35A8C00424769 /* down_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_dark.png; sourceTree = "<group>"; };
+		805A17951BF35A8C00424769 /* arrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowUp.png; sourceTree = "<group>"; };
+		805A17961BF35A8C00424769 /* arrowUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowUp@2x.png"; sourceTree = "<group>"; };
+		805A17971BF35A8C00424769 /* btnTab_BG_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnTab_BG_normal.png; sourceTree = "<group>"; };
+		805A17981BF35A8C00424769 /* btnTab_BG_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnTab_BG_normal@2x.png"; sourceTree = "<group>"; };
+		805A17991BF35A8C00424769 /* btnTab_BG_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnTab_BG_selected.png; sourceTree = "<group>"; };
+		805A179A1BF35A8C00424769 /* btnTab_BG_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnTab_BG_selected@2x.png"; sourceTree = "<group>"; };
+		805A179B1BF35A8C00424769 /* RadioButton_Slider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_Slider.xib; sourceTree = "<group>"; };
+		805A17A41BF35C0300424769 /* RBDropDownVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDropDownVC.h; sourceTree = "<group>"; };
+		805A17A51BF35C0300424769 /* RBDropDownVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDropDownVC.m; sourceTree = "<group>"; };
+		805A17A61BF35C0300424769 /* RBDropDownVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBDropDownVC.xib; sourceTree = "<group>"; };
+		805A17A91BF35C1B00424769 /* RBSliderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSliderVC.h; sourceTree = "<group>"; };
+		805A17AA1BF35C1B00424769 /* RBSliderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSliderVC.m; sourceTree = "<group>"; };
+		805A17AB1BF35C1B00424769 /* RBSliderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBSliderVC.xib; sourceTree = "<group>"; };
+		805A17B31BF35E7D00424769 /* RBBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBaseVC.h; sourceTree = "<group>"; };
+		805A17B41BF35E7D00424769 /* RBBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBaseVC.m; sourceTree = "<group>"; };
+		805A17B51BF35E7D00424769 /* RBBaseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBBaseVC.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		805A174D1BF321CC00424769 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		805A17661BF321CC00424769 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		805A17471BF321CC00424769 = {
+			isa = PBXGroup;
+			children = (
+				805A17521BF321CC00424769 /* RadioButtonsDemo */,
+				805A176C1BF321CC00424769 /* RadioButtonsDemoTests */,
+				805A17511BF321CC00424769 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		805A17511BF321CC00424769 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				805A17501BF321CC00424769 /* RadioButtonsDemo.app */,
+				805A17691BF321CC00424769 /* RadioButtonsDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		805A17521BF321CC00424769 /* RadioButtonsDemo */ = {
+			isa = PBXGroup;
+			children = (
+				805A17571BF321CC00424769 /* AppDelegate.h */,
+				805A17581BF321CC00424769 /* AppDelegate.m */,
+				805A175A1BF321CC00424769 /* ViewController.h */,
+				805A175B1BF321CC00424769 /* ViewController.m */,
+				805A17851BF3236A00424769 /* Controller */,
+				805A17791BF3235D00424769 /* RadioButtons */,
+				805A175D1BF321CC00424769 /* Main.storyboard */,
+				805A17601BF321CC00424769 /* Images.xcassets */,
+				805A17621BF321CC00424769 /* LaunchScreen.xib */,
+				805A17531BF321CC00424769 /* Supporting Files */,
+			);
+			path = RadioButtonsDemo;
+			sourceTree = "<group>";
+		};
+		805A17531BF321CC00424769 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				805A17541BF321CC00424769 /* Info.plist */,
+				805A17551BF321CC00424769 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		805A176C1BF321CC00424769 /* RadioButtonsDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				805A176F1BF321CC00424769 /* RadioButtonsDemoTests.m */,
+				805A176D1BF321CC00424769 /* Supporting Files */,
+			);
+			path = RadioButtonsDemoTests;
+			sourceTree = "<group>";
+		};
+		805A176D1BF321CC00424769 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				805A176E1BF321CC00424769 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		805A17791BF3235D00424769 /* RadioButtons */ = {
+			isa = PBXGroup;
+			children = (
+				805A17921BF35A8C00424769 /* images_RadioButton_DropDown */,
+				805A17941BF35A8C00424769 /* images_RadioButton_Slider */,
+				805A177C1BF3235E00424769 /* RadioButton.h */,
+				805A177D1BF3235E00424769 /* RadioButton.m */,
+				805A177E1BF3235E00424769 /* RadioButton_DropDown.xib */,
+				805A179B1BF35A8C00424769 /* RadioButton_Slider.xib */,
+				805A177F1BF3235E00424769 /* RadioButtons.h */,
+				805A17801BF3235E00424769 /* RadioButtons.m */,
+				805A178C1BF32FAD00424769 /* RadioButtons_DropDown.h */,
+				805A178D1BF32FAD00424769 /* RadioButtons_DropDown.m */,
+				805A178F1BF3378700424769 /* RadioButtons_Slider.h */,
+				805A17901BF3378700424769 /* RadioButtons_Slider.m */,
+			);
+			name = RadioButtons;
+			path = ../../RadioButtons;
+			sourceTree = "<group>";
+		};
+		805A17851BF3236A00424769 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				805A17B31BF35E7D00424769 /* RBBaseVC.h */,
+				805A17B41BF35E7D00424769 /* RBBaseVC.m */,
+				805A17B51BF35E7D00424769 /* RBBaseVC.xib */,
+				805A17A41BF35C0300424769 /* RBDropDownVC.h */,
+				805A17A51BF35C0300424769 /* RBDropDownVC.m */,
+				805A17A61BF35C0300424769 /* RBDropDownVC.xib */,
+				805A17A91BF35C1B00424769 /* RBSliderVC.h */,
+				805A17AA1BF35C1B00424769 /* RBSliderVC.m */,
+				805A17AB1BF35C1B00424769 /* RBSliderVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		805A17921BF35A8C00424769 /* images_RadioButton_DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				805A17931BF35A8C00424769 /* down_dark.png */,
+			);
+			path = images_RadioButton_DropDown;
+			sourceTree = "<group>";
+		};
+		805A17941BF35A8C00424769 /* images_RadioButton_Slider */ = {
+			isa = PBXGroup;
+			children = (
+				805A17951BF35A8C00424769 /* arrowUp.png */,
+				805A17961BF35A8C00424769 /* arrowUp@2x.png */,
+				805A17971BF35A8C00424769 /* btnTab_BG_normal.png */,
+				805A17981BF35A8C00424769 /* btnTab_BG_normal@2x.png */,
+				805A17991BF35A8C00424769 /* btnTab_BG_selected.png */,
+				805A179A1BF35A8C00424769 /* btnTab_BG_selected@2x.png */,
+			);
+			path = images_RadioButton_Slider;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		805A174F1BF321CC00424769 /* RadioButtonsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 805A17731BF321CC00424769 /* Build configuration list for PBXNativeTarget "RadioButtonsDemo" */;
+			buildPhases = (
+				805A174C1BF321CC00424769 /* Sources */,
+				805A174D1BF321CC00424769 /* Frameworks */,
+				805A174E1BF321CC00424769 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RadioButtonsDemo;
+			productName = RadioButtonsDemo;
+			productReference = 805A17501BF321CC00424769 /* RadioButtonsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		805A17681BF321CC00424769 /* RadioButtonsDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 805A17761BF321CC00424769 /* Build configuration list for PBXNativeTarget "RadioButtonsDemoTests" */;
+			buildPhases = (
+				805A17651BF321CC00424769 /* Sources */,
+				805A17661BF321CC00424769 /* Frameworks */,
+				805A17671BF321CC00424769 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				805A176B1BF321CC00424769 /* PBXTargetDependency */,
+			);
+			name = RadioButtonsDemoTests;
+			productName = RadioButtonsDemoTests;
+			productReference = 805A17691BF321CC00424769 /* RadioButtonsDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		805A17481BF321CC00424769 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = dvlproad;
+				TargetAttributes = {
+					805A174F1BF321CC00424769 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					805A17681BF321CC00424769 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 805A174F1BF321CC00424769;
+					};
+				};
+			};
+			buildConfigurationList = 805A174B1BF321CC00424769 /* Build configuration list for PBXProject "RadioButtonsDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 805A17471BF321CC00424769;
+			productRefGroup = 805A17511BF321CC00424769 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				805A174F1BF321CC00424769 /* RadioButtonsDemo */,
+				805A17681BF321CC00424769 /* RadioButtonsDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		805A174E1BF321CC00424769 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805A175F1BF321CC00424769 /* Main.storyboard in Resources */,
+				805A17A21BF35A8C00424769 /* btnTab_BG_selected@2x.png in Resources */,
+				805A179C1BF35A8C00424769 /* down_dark.png in Resources */,
+				805A179E1BF35A8C00424769 /* arrowUp@2x.png in Resources */,
+				805A17B71BF35E7D00424769 /* RBBaseVC.xib in Resources */,
+				805A17831BF3235E00424769 /* RadioButton_DropDown.xib in Resources */,
+				805A179F1BF35A8C00424769 /* btnTab_BG_normal.png in Resources */,
+				805A17A11BF35A8C00424769 /* btnTab_BG_selected.png in Resources */,
+				805A17A81BF35C0300424769 /* RBDropDownVC.xib in Resources */,
+				805A17641BF321CC00424769 /* LaunchScreen.xib in Resources */,
+				805A179D1BF35A8C00424769 /* arrowUp.png in Resources */,
+				805A17611BF321CC00424769 /* Images.xcassets in Resources */,
+				805A17A31BF35A8C00424769 /* RadioButton_Slider.xib in Resources */,
+				805A17A01BF35A8C00424769 /* btnTab_BG_normal@2x.png in Resources */,
+				805A17AD1BF35C1B00424769 /* RBSliderVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		805A17671BF321CC00424769 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		805A174C1BF321CC00424769 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805A175C1BF321CC00424769 /* ViewController.m in Sources */,
+				805A17591BF321CC00424769 /* AppDelegate.m in Sources */,
+				805A178E1BF32FAD00424769 /* RadioButtons_DropDown.m in Sources */,
+				805A17B61BF35E7D00424769 /* RBBaseVC.m in Sources */,
+				805A17A71BF35C0300424769 /* RBDropDownVC.m in Sources */,
+				805A17911BF3378700424769 /* RadioButtons_Slider.m in Sources */,
+				805A17561BF321CC00424769 /* main.m in Sources */,
+				805A17841BF3235E00424769 /* RadioButtons.m in Sources */,
+				805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */,
+				805A17821BF3235E00424769 /* RadioButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		805A17651BF321CC00424769 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805A17701BF321CC00424769 /* RadioButtonsDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		805A176B1BF321CC00424769 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 805A174F1BF321CC00424769 /* RadioButtonsDemo */;
+			targetProxy = 805A176A1BF321CC00424769 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		805A175D1BF321CC00424769 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				805A175E1BF321CC00424769 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		805A17621BF321CC00424769 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				805A17631BF321CC00424769 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		805A17711BF321CC00424769 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		805A17721BF321CC00424769 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		805A17741BF321CC00424769 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RadioButtonsDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		805A17751BF321CC00424769 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RadioButtonsDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		805A17771BF321CC00424769 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RadioButtonsDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RadioButtonsDemo.app/RadioButtonsDemo";
+			};
+			name = Debug;
+		};
+		805A17781BF321CC00424769 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RadioButtonsDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RadioButtonsDemo.app/RadioButtonsDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		805A174B1BF321CC00424769 /* Build configuration list for PBXProject "RadioButtonsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805A17711BF321CC00424769 /* Debug */,
+				805A17721BF321CC00424769 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		805A17731BF321CC00424769 /* Build configuration list for PBXNativeTarget "RadioButtonsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805A17741BF321CC00424769 /* Debug */,
+				805A17751BF321CC00424769 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		805A17761BF321CC00424769 /* Build configuration list for PBXNativeTarget "RadioButtonsDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805A17771BF321CC00424769 /* Debug */,
+				805A17781BF321CC00424769 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 805A17481BF321CC00424769 /* Project object */;
+}
