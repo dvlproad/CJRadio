@@ -27,91 +27,27 @@
 }
 */
 
+- (BOOL)shouldUpdateRadioButtonSelected_WhenClickSameRadioButton{   //固定为NO
+    return NO;
+}
 
-- (void)doSomething_WhenClickRadioButton:(RadioButton *)radioButton{
-    radioButton.selected = !radioButton.selected;
-    
-    NSInteger index = radioButton.tag - RadioButton_TAG_BEGIN;
-    [self selectRadioButtonIndex:index];
+- (BOOL)shouldDidDelegate_WhenClickSameRadioButton{ //可根据情况为YES或NO
+    return YES;
 }
 
 - (void)doSomethingExtra_WhenClickSameRadioButton:(RadioButton *)radioButton_same{ //重写继承的方法
     //do nothing...
-    radioButton_same.selected = YES;
 }
 
-- (void)doSomethingExtra_WhenClickDifferentIndex{
+- (void)doSomethingExtra_WhenClickNewRadioButton:(RadioButton *)radioButton{
     //do nothing...
-}
-
-- (void)shouldMoveScrollViewToSelectItem:(RadioButton *)radioButton{
-    [self showSelectItem:radioButton];
-}
-
-
-
-//添加左右滑动箭头
-- (void)addArrowImage_Left:(UIImage *)imageLeft Right:(UIImage *)imageRight{
-    //创建左滑动箭头
-    btnArrowL = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnArrowL setFrame:CGRectMake(0, 0, imageLeft.size.width, imageLeft.size.height)];
-    [btnArrowL setCenter:CGPointMake(btnArrowL.frame.size.width/2,self.frame.size.height/2)];
-    [btnArrowL setBackgroundImage:imageLeft forState:UIControlStateNormal];
-    [btnArrowL addTarget:self action:@selector(btnArrowLAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:btnArrowL];
-    
-    //创建右滑动箭头
-    btnArrowR = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnArrowR setFrame:CGRectMake(0, 0, imageRight.size.width, imageRight.size.height)];
-    [btnArrowR setCenter:CGPointMake(self.frame.size.width - btnArrowR.frame.size.width/2, self.frame.size.height/2)];
-    [btnArrowR setBackgroundImage:imageRight forState:UIControlStateNormal];
-    [btnArrowR addTarget:self action:@selector(btnArrowRAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:btnArrowR];
-    
-    
-    //刚开始隐藏左箭头，显示右箭头
-    btnArrowL.hidden = YES;
-    btnArrowR.hidden = NO;
+    NSInteger index = radioButton.tag - RadioButton_TAG_BEGIN;
+    [self selectRadioButtonIndex:index];
 }
 
 
-#pragma mark - 箭头点击事件
-- (void)btnArrowLAction:(UIButton *)btn{
-    CGFloat leftX = self.sv.contentOffset.x;
-    NSInteger tempDx = self.frame.size.width;
-    RadioButton *targetItem = nil;
-    for (int i = 0; i < countTitles; i++) {
-        RadioButton *radioButton = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + i];
-        
-        NSInteger maxX = MAX(leftX, CGRectGetMaxX(radioButton.frame));
-        NSInteger minX = MIN(leftX, CGRectGetMaxX(radioButton.frame));
-        if (maxX - minX < tempDx) {
-            tempDx = maxX - minX;
-            targetItem = radioButton;
-        }
-    }
-    [self showSelectItem:targetItem];
-}
 
-- (void)btnArrowRAction:(UIButton *)btn{
-    CGFloat rightX = self.sv.contentOffset.x + self.sv.frame.size.width;
-    NSInteger tempDx = self.frame.size.width;
-    RadioButton *targetItem = nil;
-    for (int i = 0; i < countTitles; i++) {
-        RadioButton *radioButton = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + i];
-        NSInteger maxX = MAX(rightX, CGRectGetMinX(radioButton.frame));
-        NSInteger minX = MIN(rightX, CGRectGetMinX(radioButton.frame));
-        if (maxX - minX < tempDx) {
-            tempDx = maxX - minX;
-            targetItem = radioButton;
-        }
-    }
-    [self showSelectItem:targetItem];
-}
-
-
-//将隐藏Tab滑动显示
-- (void)showSelectItem:(RadioButton *)item{
+- (void)shouldMoveScrollViewToSelectItem:(RadioButton *)item{//滑动scrollView到显示出完整的radioButton
     
 #pragma mark 移动方法①
     /*
@@ -165,13 +101,76 @@
 }
 
 
+//添加左右滑动箭头
+- (void)addArrowImage_Left:(UIImage *)imageLeft Right:(UIImage *)imageRight{
+    //创建左滑动箭头
+    btnArrowL = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnArrowL setFrame:CGRectMake(0, 0, imageLeft.size.width, imageLeft.size.height)];
+    [btnArrowL setCenter:CGPointMake(btnArrowL.frame.size.width/2,self.frame.size.height/2)];
+    [btnArrowL setBackgroundImage:imageLeft forState:UIControlStateNormal];
+    [btnArrowL addTarget:self action:@selector(btnArrowLAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:btnArrowL];
+    
+    //创建右滑动箭头
+    btnArrowR = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnArrowR setFrame:CGRectMake(0, 0, imageRight.size.width, imageRight.size.height)];
+    [btnArrowR setCenter:CGPointMake(self.frame.size.width - btnArrowR.frame.size.width/2, self.frame.size.height/2)];
+    [btnArrowR setBackgroundImage:imageRight forState:UIControlStateNormal];
+    [btnArrowR addTarget:self action:@selector(btnArrowRAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:btnArrowR];
+    
+    
+    //刚开始隐藏左箭头，显示右箭头
+    btnArrowL.hidden = YES;
+    btnArrowR.hidden = NO;
+}
+
+
+#pragma mark - 箭头点击事件
+- (void)btnArrowLAction:(UIButton *)btn{
+    CGFloat leftX = self.sv.contentOffset.x;
+    NSInteger tempDx = self.frame.size.width;
+    RadioButton *targetItem = nil;
+    for (int i = 0; i < countTitles; i++) {
+        RadioButton *radioButton = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + i];
+        
+        NSInteger maxX = MAX(leftX, CGRectGetMaxX(radioButton.frame));
+        NSInteger minX = MIN(leftX, CGRectGetMaxX(radioButton.frame));
+        if (maxX - minX < tempDx) {
+            tempDx = maxX - minX;
+            targetItem = radioButton;
+        }
+    }
+    [self shouldMoveScrollViewToSelectItem:targetItem];
+}
+
+- (void)btnArrowRAction:(UIButton *)btn{
+    CGFloat rightX = self.sv.contentOffset.x + self.sv.frame.size.width;
+    NSInteger tempDx = self.frame.size.width;
+    RadioButton *targetItem = nil;
+    for (int i = 0; i < countTitles; i++) {
+        RadioButton *radioButton = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + i];
+        NSInteger maxX = MAX(rightX, CGRectGetMinX(radioButton.frame));
+        NSInteger minX = MIN(rightX, CGRectGetMinX(radioButton.frame));
+        if (maxX - minX < tempDx) {
+            tempDx = maxX - minX;
+            targetItem = radioButton;
+        }
+    }
+    [self shouldMoveScrollViewToSelectItem:targetItem];
+}
+
+
+
+
+
 - (void)selectRadioButtonIndex:(NSInteger)index{
     RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + currentExtendSection];
     radioButton_old.selected = NO;
     
     RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + index];
     radioButton_cur.selected = YES;
-    [self showSelectItem:radioButton_cur];
+    [self shouldMoveScrollViewToSelectItem:radioButton_cur];
     
     currentExtendSection = index;
 }

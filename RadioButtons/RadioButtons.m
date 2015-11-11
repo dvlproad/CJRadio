@@ -117,43 +117,105 @@
 
 //注意radioButton_cur经常有未选中的状态，即经常会有currentExtendSection == -1的情况
 - (void)radioButtonClick:(RadioButton *)radioButton_cur{
-    [self doSomething_WhenClickRadioButton:radioButton_cur];
+    
     
     NSInteger section = radioButton_cur.tag - RadioButton_TAG_BEGIN;
-    if (currentExtendSection == section) {
-        [self doSomethingExtra_WhenClickSameRadioButton:radioButton_cur];
+//    if (currentExtendSection == section) {
+//        [self doSomethingExtra_WhenClickSameRadioButton:radioButton_cur];
+//        
+//    }else{
+//        if (currentExtendSection != -1) {//currentExtendSection != -1，则表示当前有radioButton是被选中。如果有选中的话，则除了要把现有的按钮方向改变外，还需要把之前的那个按钮的方向也再改变掉。
+//            RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + currentExtendSection];
+//            radioButton_old.selected = !radioButton_old.selected;
+//            
+//            [self doSomethingExtra_WhenClickDifferentIndex];
+//        }
+//        
+//        currentExtendSection = section;
+//        
+//        if([self.delegate respondsToSelector:@selector(radioButtons:chooseIndex:)]){
+//            [self.delegate radioButtons:self chooseIndex:section];
+//        }
+//    }
+    
+    
+    BOOL isClickNewRadioButton = NO;
+    
+    BOOL shouldDidDelegate = YES;
+    BOOL shouldUpdateCurrentRadioButtonSelected = YES;
+    
+    if (currentExtendSection == -1) {//如果当前没有radioButton是被选中。
+        shouldUpdateCurrentRadioButtonSelected = YES;
+        shouldDidDelegate = YES;
         
-    }else{
-        if (currentExtendSection != -1) {//存在的话，就先消除旧的。（不存在的可能①第一次点击;②点击后又隐藏）
-            //不是之前点击的radioButton的时候,除了要把现有的按钮方向改变外，还需要把之前的那个按钮的方向也再改变掉。
+        
+//        currentExtendSection = section;
+//        if([self.delegate respondsToSelector:@selector(radioButtons:chooseIndex:)]){
+//            [self.delegate radioButtons:self chooseIndex:section];
+//        }
+        
+    }else{  //currentExtendSection != -1，即表示如果当前有radioButton是被选中。
+        if (currentExtendSection == section) {
+            shouldUpdateCurrentRadioButtonSelected = [self shouldUpdateRadioButtonSelected_WhenClickSameRadioButton];
+            shouldDidDelegate = [self shouldDidDelegate_WhenClickSameRadioButton];
+            
+        }else{
+            shouldUpdateCurrentRadioButtonSelected = YES;
+            shouldDidDelegate = YES;
+            
+            //如果有选中,且点击不同index的话，则还需要把之前的那个按钮的状态也改变掉。
             RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + currentExtendSection];
             radioButton_old.selected = !radioButton_old.selected;
             
-            [self doSomethingExtra_WhenClickDifferentIndex];
+            isClickNewRadioButton = YES;
+//            [self doSomethingExtra_WhenClickNewRadioButton:radioButton_cur];
+            
+//            currentExtendSection = section;
+//            if([self.delegate respondsToSelector:@selector(radioButtons:chooseIndex:)]){
+//                [self.delegate radioButtons:self chooseIndex:section];
+//            }
         }
-        
-        currentExtendSection = section;
-        
+    }
+    
+    
+    currentExtendSection = section;
+    
+    if (shouldUpdateCurrentRadioButtonSelected) {
+        radioButton_cur.selected = !radioButton_cur.selected;
+    }
+    
+    if (shouldDidDelegate) {
         if([self.delegate respondsToSelector:@selector(radioButtons:chooseIndex:)]){
             [self.delegate radioButtons:self chooseIndex:section];
         }
+    }else{
+        [self doSomethingExtra_WhenClickSameRadioButton:radioButton_cur];//此中又可能改变currentExtendSection为-1即为选中任何一个radioButton时候的值
     }
+    
+    if (isClickNewRadioButton) {
+        [self doSomethingExtra_WhenClickNewRadioButton:radioButton_cur];//此操作有可能会更新selected,所以不能放到shouldUpdateCurrentRadioButtonSelected之前
+    }
+    
+    
 }
 
 
-- (void)doSomething_WhenClickRadioButton:(RadioButton *)radioButton{
-    radioButton.selected = !radioButton.selected;
+
+- (BOOL)shouldUpdateRadioButtonSelected_WhenClickSameRadioButton{
+    return NO;  //设默认不可重复点击（YES:可重复点击  NO:不可重复点击）
 }
 
+- (BOOL)shouldDidDelegate_WhenClickSameRadioButton{
+    return NO;  //设默认重复点击不做任何动作
+}
 
 - (void)doSomethingExtra_WhenClickSameRadioButton:(RadioButton *)radioButton_same{
     
 }
 
-- (void)doSomethingExtra_WhenClickDifferentIndex{
+- (void)doSomethingExtra_WhenClickNewRadioButton:(RadioButton *)radioButton{
     
 }
-
 
 - (void)shouldMoveScrollViewToSelectItem:(RadioButton *)radioButton{
     

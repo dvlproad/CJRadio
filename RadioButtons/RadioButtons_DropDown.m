@@ -19,13 +19,23 @@
 */
 
 
+//注意：shouldUpdateRadioButtonSelected和shouldDidDelegate的返回值一定是相反的
+- (BOOL)shouldUpdateRadioButtonSelected_WhenClickSameRadioButton{   //可根据情况为YES或NO
+    return YES; //设默认可重复点击（YES:可重复点击  NO:不可重复点击）
+}
+
+- (BOOL)shouldDidDelegate_WhenClickSameRadioButton{
+    return ![self shouldUpdateRadioButtonSelected_WhenClickSameRadioButton];
+}
+
+
+
 - (void)doSomethingExtra_WhenClickSameRadioButton:(RadioButton *)radioButton_same{//重写继承的方法
     [self hideCurrentExtendView];
 }
 
-- (void)doSomethingExtra_WhenClickDifferentIndex{
-    [self.extendView removeFromSuperview];
-    [self.tapV removeFromSuperview];
+- (void)doSomethingExtra_WhenClickNewRadioButton:(RadioButton *)radioButton{
+    //do nothing...
 }
 
 - (void)shouldMoveScrollViewToSelectItem:(RadioButton *)radioButton{
@@ -34,29 +44,35 @@
 
 
 - (void)hideCurrentExtendView{
-    if (currentExtendSection != -1) {
-        currentExtendSection = -1;
-        CGRect rect = self.extendView.frame;
-        rect.size.height = 0;
-        [UIView animateWithDuration:0.3 animations:^{
-            self.tapV.alpha = 1.0f;
-            self.extendView.alpha = 1.0f;
-            
-            //要设置成0，不设置非零值如0.2，是为了防止在显示出来的时候，在0.3秒内很快按两次按钮，仍有view存在
-            self.tapV.alpha = 0.0f;
-            self.extendView.alpha = 0.0f;
-            
-            self.extendView.frame = rect;
-        }completion:^(BOOL finished) {
-            [self.extendView removeFromSuperview];
-            [self.tapV removeFromSuperview];
-        }];
-    }
+    currentExtendSection = -1;  //设置成-1表示当前未选中任何radioButton
+    
+    CGRect rect = self.extendView.frame;
+    rect.size.height = 0;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.tapV.alpha = 1.0f;
+        self.extendView.alpha = 1.0f;
+        
+        //要设置成0，不设置非零值如0.2，是为了防止在显示出来的时候，在0.3秒内很快按两次按钮，仍有view存在
+        self.tapV.alpha = 0.0f;
+        self.extendView.alpha = 0.0f;
+        
+        self.extendView.frame = rect;
+    }completion:^(BOOL finished) {
+        [self.extendView removeFromSuperview];
+        [self.tapV removeFromSuperview];
+    }];
 }
 
 
 
 - (void)showDropDownExtendView:(UIView *)extendView_m inView:(UIView *)superView complete:(void(^)(void))block{
+    
+    if (self.extendView) {
+        [self.extendView removeFromSuperview];
+        [self.tapV removeFromSuperview];
+    }
+    
+    
     //执行隐藏的手势视图
     self.extendView = extendView_m;
     self.m_SuperView = superView;

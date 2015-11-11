@@ -33,9 +33,12 @@
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName;
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex;
 
-- (void)doSomething_WhenClickRadioButton:(RadioButton *)radioButton;
+
+- (BOOL)shouldUpdateRadioButtonSelected_WhenClickSameRadioButton;
+- (BOOL)shouldDidDelegate_WhenClickSameRadioButton;
+
 - (void)doSomethingExtra_WhenClickSameRadioButton:(RadioButton *)radioButton_same;
-- (void)doSomethingExtra_WhenClickDifferentIndex;
+- (void)doSomethingExtra_WhenClickNewRadioButton:(RadioButton *)radioButton;
 - (void)shouldMoveScrollViewToSelectItem:(RadioButton *)radioButton;
 
 @end
