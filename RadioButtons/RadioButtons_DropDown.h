@@ -15,7 +15,7 @@
 @property (nonatomic, strong) UIView *tapV;
 @property (nonatomic, strong) UIView *extendView;
 
-- (void)showDropDownExtendView:(UIView *)extendView_m inView:(UIView *)superView complete:(void(^)(void))block;
-- (void)didSelectInExtendView:(NSString *)title;
+- (void)showDropDownView:(UIView *)dropDownView inView:(UIView *)superView complete:(void(^)(void))block;
+- (void)didSelectInDropDownView_rbDropDown:(NSString *)title;
 
 @end

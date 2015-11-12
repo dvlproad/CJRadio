@@ -20,11 +20,11 @@
     
     #pragma mark 此例中如果RBDropDownVC.xib没有去掉sizeClasses，则容易出现视图无显示问题
     CGRect rect_rbDropDwon1 = CGRectMake(0, 164, 320, 40);
-    RadioButtons_DropDown *rb_dropdown1 = [[RadioButtons_DropDown alloc]initWithFrame:rect_rbDropDwon1];
-    [rb_dropdown1 setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
-    rb_dropdown1.delegate = self;
-    rb_dropdown1.tag = 111;
-    [self.view addSubview:rb_dropdown1];
+    rb_dropdown = [[RadioButtons_DropDown alloc]initWithFrame:rect_rbDropDwon1];
+    [rb_dropdown setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
+    rb_dropdown.delegate = self;
+    rb_dropdown.tag = 111;
+    [self.view addSubview:rb_dropdown];
 }
 
 //点击时候会调用如下委托：
@@ -33,7 +33,18 @@
     
     UIView *customView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 100)];
     customView.backgroundColor = [UIColor greenColor];
-    [radioButtons showDropDownExtendView:customView inView:self.view complete:nil];//弹出下拉视图
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(20, 50, CGRectGetWidth(customView.frame)-40, 44)];
+    [btn setTitle:@"生成随机数，并设置" forState:UIControlStateNormal];
+    [btn setBackgroundColor:[UIColor redColor]];
+    [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [customView addSubview:btn];
+    [radioButtons showDropDownView:customView inView:self.view complete:nil];//弹出下拉视图
+}
+
+- (IBAction)btnAction:(id)sender{
+    NSString *title = [NSString stringWithFormat:@"%d", rand()%10];
+    [rb_dropdown didSelectInDropDownView_rbDropDown:title];
 }
 
 - (void)didReceiveMemoryWarning {
