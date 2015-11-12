@@ -19,14 +19,15 @@
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor greenColor];
     
-#pragma mark 此例中如果RBSlierVC.xib没有去掉sizeClasses，则容易出现视图无显示问题
-    rb_slider = [[RadioButtons_Slider alloc]initWithFrame:CGRectMake(0, 100, 320, 40)];
+    #pragma mark 此例中如果RBSlierVC.xib没有去掉sizeClasses，则容易出现视图无显示问题
+    RadioButtons_Slider *rb_slider = [[RadioButtons_Slider alloc]initWithFrame:CGRectMake(0, 100, 320, 40)];
     NSArray *radioButtonNames =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
     [rb_slider setTitles:radioButtonNames radioButtonNidName:@"RadioButton_Slider" andShowIndex:4];
     [rb_slider setDelegate:self];
     [self.view addSubview:rb_slider];
 }
 
+//点击时候会调用如下委托：
 - (void)radioButtons:(RadioButtons_Slider *)radioButtons chooseIndex:(NSInteger)index{
     NSLog(@"当前选择的是%d", index);
     

@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    #pragma mark 此例中如果RBDropDownVC.xib没有去掉sizeClasses，则容易出现视图无显示问题
+    CGRect rect_radioButton = CGRectMake(50, 84, 220, 40);
+    RadioButton *btn = [[RadioButton alloc]initWithNibNamed:@"RadioButton_DropDown" frame:rect_radioButton];
+    [btn setTitle:@"测试btn的setTitle,无下拉"];
+    [self.view addSubview:btn];
+    
 }
 
 - (void)didReceiveMemoryWarning {

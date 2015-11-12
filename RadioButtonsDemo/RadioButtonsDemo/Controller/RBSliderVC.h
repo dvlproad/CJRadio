@@ -10,7 +10,7 @@
 #import "RadioButtons_Slider.h"
 
 @interface RBSliderVC : UIViewController<RadioButtonsDelegate>{
-    RadioButtons_Slider *rb_slider;
+    
 }
 
 @end

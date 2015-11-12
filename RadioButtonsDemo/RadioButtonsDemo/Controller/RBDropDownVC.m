@@ -18,34 +18,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-#pragma mark 此例中如果RBDropDownVC.xib没有去掉sizeClasses，则容易出现视图无显示问题
-    CGRect rect_radioButton = CGRectMake(60, 84, 200, 40);
-    RadioButton *btn = [[RadioButton alloc]initWithNibNamed:@"RadioButton_DropDown" frame:rect_radioButton];
-    [btn setTitle:@"测试,无下拉"];
-    [self.view addSubview:btn];
-    
-    CGRect rect_radioButtons111 = CGRectMake(0, 164, 320, 40);
-    commonRadioButtons111 = [[RadioButtons_DropDown alloc]initWithFrame:rect_radioButtons111];
-    [commonRadioButtons111 setTitles:@[@"人物", @"爱好"] radioButtonNidName:@"RadioButton_DropDown"];
-    commonRadioButtons111.delegate = self;
-    commonRadioButtons111.tag = 111;
-    [self.view addSubview:commonRadioButtons111];
-    
-    CGRect rect_radioButtons222 = CGRectMake(0, 264, 320, 40);
-    commonRadioButtons222 = [[RadioButtons_DropDown alloc]initWithFrame:rect_radioButtons222];
-    [commonRadioButtons222 setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
-    commonRadioButtons222.delegate = self;
-    commonRadioButtons222.tag = 222;
-    [self.view addSubview:commonRadioButtons222];
-    
+    #pragma mark 此例中如果RBDropDownVC.xib没有去掉sizeClasses，则容易出现视图无显示问题
+    CGRect rect_rbDropDwon1 = CGRectMake(0, 164, 320, 40);
+    RadioButtons_DropDown *rb_dropdown1 = [[RadioButtons_DropDown alloc]initWithFrame:rect_rbDropDwon1];
+    [rb_dropdown1 setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
+    rb_dropdown1.delegate = self;
+    rb_dropdown1.tag = 111;
+    [self.view addSubview:rb_dropdown1];
 }
 
+//点击时候会调用如下委托：
 - (void)radioButtons:(RadioButtons_DropDown *)radioButtons chooseIndex:(NSInteger)index{
     NSLog(@"当前选择的是%d", index);
     
     UIView *customView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 100)];
     customView.backgroundColor = [UIColor greenColor];
-    [radioButtons showDropDownExtendView:customView inView:self.view complete:nil];
+    [radioButtons showDropDownExtendView:customView inView:self.view complete:nil];//弹出下拉视图
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,8 +10,7 @@
 #import "RadioButtons_DropDown.h"
 
 @interface RBDropDownVC : UIViewController<RadioButtonsDelegate>{
-    RadioButtons_DropDown *commonRadioButtons111;
-    RadioButtons_DropDown *commonRadioButtons222;
+    
 }
 
 @end
