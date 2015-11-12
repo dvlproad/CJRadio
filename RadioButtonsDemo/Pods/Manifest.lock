@@ -1,0 +1,10 @@
+PODS:
+  - CJPopupView (1.0.1)
+
+DEPENDENCIES:
+  - CJPopupView (~> 1.0.1)
+
+SPEC CHECKSUMS:
+  CJPopupView: 0f42929d5dde85b2a8f014252770fc8703cd42b7
+
+COCOAPODS: 0.39.0

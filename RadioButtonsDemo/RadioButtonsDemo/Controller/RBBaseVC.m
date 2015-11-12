@@ -2,8 +2,8 @@
 //  RBBaseVC.m
 //  RadioButtonsDemo
 //
-//  Created by lichq on 15/11/11.
-//  Copyright (c) 2015年 dvlproad. All rights reserved.
+//  Created by 李超前 on 15/11/12.
+//  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
 #import "RBBaseVC.h"
@@ -23,7 +23,6 @@
     RadioButton *btn = [[RadioButton alloc]initWithNibNamed:@"RadioButton_DropDown" frame:rect_radioButton];
     [btn setTitle:@"测试btn的setTitle,无下拉"];
     [self.view addSubview:btn];
-    
 }
 
 - (void)didReceiveMemoryWarning {
