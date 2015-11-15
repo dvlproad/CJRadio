@@ -34,9 +34,11 @@
 
 
 - (BOOL)shouldUpdateRadioButtonSelected_WhenClickSameRadioButton;
-
 - (void)shouldMoveScrollViewToSelectItem:(RadioButton *)radioButton;
 
-- (RadioButton *)curRadioButton;
+
+- (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title;
+- (void)changeCurrentRadioButtonState;
+- (void)setSelectedNone; //设置为未选择任何radioButton
 
 @end

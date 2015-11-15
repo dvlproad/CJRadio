@@ -35,7 +35,6 @@
         {
             if (index_cur == index_old) {
                 [popupView1 dismissPopupView_popupInView];
-                radioButtons.index_cur = -1;  //设置成-1表示当前未选中任何radioButton
                 return;
                 
             }else if (index_old == 1) {
@@ -70,9 +69,8 @@
             
             [popupView1 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
             [popupView1 setBlockTapBGComplete:^{
-                RadioButton *radioButton = (RadioButton *)[radioButtons curRadioButton];
-                radioButton.selected = !radioButton.selected;
-                radioButtons.index_cur = -1;
+                [radioButtons changeCurrentRadioButtonState];
+                [radioButtons setSelectedNone];
                 
             } blockHideDropDownViewComplete:^{
                 
@@ -84,7 +82,6 @@
         {
             if (index_cur == index_old) {
                 [popupView2 dismissPopupView_popupInView];
-                radioButtons.index_cur = -1;  //设置成-1表示当前未选中任何radioButton
                 return;
                 
             }else if (index_old == 0) {
@@ -119,9 +116,8 @@
             
             [popupView2 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
             [popupView2 setBlockTapBGComplete:^{
-                RadioButton *radioButton = (RadioButton *)[radioButtons curRadioButton];
-                radioButton.selected = !radioButton.selected;
-                radioButtons.index_cur = -1;
+                [radioButtons changeCurrentRadioButtonState];
+                [radioButtons setSelectedNone];
                 
             } blockHideDropDownViewComplete:^{
                 
@@ -132,7 +128,6 @@
         {
             if (index_cur == index_old) {
                 [popupView3 dismissPopupView_popupInView];
-                radioButtons.index_cur = -1;  //设置成-1表示当前未选中任何radioButton
                 return;
                 
             }else if (index_old == 0) {
@@ -167,9 +162,8 @@
             
             [popupView3 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
             [popupView3 setBlockTapBGComplete:^{
-                RadioButton *radioButton = (RadioButton *)[radioButtons curRadioButton];
-                radioButton.selected = !radioButton.selected;
-                radioButtons.index_cur = -1;
+                [radioButtons changeCurrentRadioButtonState];
+                [radioButtons setSelectedNone];
                 
             } blockHideDropDownViewComplete:^{
                 
@@ -180,7 +174,6 @@
         {
             if (index_cur == index_old) {
                 [popupView4 dismissPopupView_popupInView];
-                radioButtons.index_cur = -1;  //设置成-1表示当前未选中任何radioButton
                 return;
                 
             }else if (index_old == 0) {
@@ -215,9 +208,8 @@
             
             [popupView4 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
             [popupView4 setBlockTapBGComplete:^{
-                RadioButton *radioButton = (RadioButton *)[radioButtons curRadioButton];
-                radioButton.selected = !radioButton.selected;
-                radioButtons.index_cur = -1;
+                [radioButtons changeCurrentRadioButtonState];
+                [radioButtons setSelectedNone];
                 
             } blockHideDropDownViewComplete:^{
                 
@@ -230,14 +222,12 @@
 }
 
 - (IBAction)btnAction:(id)sender{
-    NSString *title = [NSString stringWithFormat:@"%d", rand()%10];
-    RadioButton *radioButton_cur = (RadioButton *)[rb_dropdown viewWithTag:RadioButton_TAG_BEGIN + rb_dropdown.index_cur];
-    radioButton_cur.selected = !radioButton_cur.selected;
-    [radioButton_cur setTitle:title];
-    
-    
     NSInteger index_old = rb_dropdown.index_cur;
-    rb_dropdown.index_cur = -1;
+    
+    NSString *title = [NSString stringWithFormat:@"%d", rand()%10];
+    [rb_dropdown changeCurrentRadioButtonStateAndTitle:title];
+    [rb_dropdown setSelectedNone];
+    
     if (index_old == 0) {
         [popupView1 dismissPopupView_popupInView];
     }else if (index_old == 1) {

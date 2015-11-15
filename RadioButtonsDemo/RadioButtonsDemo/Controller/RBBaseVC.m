@@ -35,9 +35,7 @@
 }
 
 - (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old{
-//    if (index_cur == index_old) { //如果RadioButtons默认是可重复点击的话，这里得加上这句
-//        rbs.index_cur = -1;
-//    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -122,7 +122,7 @@
     self.index_cur = radioButton_cur.tag - RadioButton_TAG_BEGIN;
     
     BOOL isSameIndex = self.index_cur == index_old ? YES : NO;
-//    NSLog(@"index_cur = %d, index_old = %d, isSameIndex= %@", self.index_cur,index_old,isSameIndex?@"YES":@"NO");
+    NSLog(@"index_cur = %d, index_old = %d, isSameIndex= %@", self.index_cur,index_old,isSameIndex?@"YES":@"NO");
     
     if (index_old == -1) {//如果当前没有radioButton是被选中。
         
@@ -137,8 +137,9 @@
         }
     }
     
+    
+    BOOL shouldUpdateCurrentRadioButtonSelected = [self shouldUpdateRadioButtonSelected_WhenClickSameRadioButton];
     if (isSameIndex) {
-        BOOL shouldUpdateCurrentRadioButtonSelected = [self shouldUpdateRadioButtonSelected_WhenClickSameRadioButton];
         if (shouldUpdateCurrentRadioButtonSelected) {
             radioButton_cur.selected = !radioButton_cur.selected;
         }
@@ -149,6 +150,10 @@
     
     if([self.delegate respondsToSelector:@selector(radioButtons:chooseIndex:oldIndex:)]){
         [self.delegate radioButtons:self chooseIndex:self.index_cur oldIndex:index_old];
+        
+        if (isSameIndex && shouldUpdateCurrentRadioButtonSelected) {
+            [self setSelectedNone];
+        }
     }
 }
 
@@ -164,9 +169,21 @@
 }
 
 
-- (RadioButton *)curRadioButton{
+
+
+- (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title{
     RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.index_cur];
-    return radioButton_cur;
+    radioButton_cur.selected = !radioButton_cur.selected;
+    [radioButton_cur setTitle:title];
+}
+
+- (void)changeCurrentRadioButtonState{
+    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.index_cur];
+    radioButton_cur.selected = !radioButton_cur.selected;
+}
+
+- (void)setSelectedNone{
+    self.index_cur = -1;
 }
 
 
