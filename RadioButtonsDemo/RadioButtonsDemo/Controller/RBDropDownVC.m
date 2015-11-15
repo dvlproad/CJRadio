@@ -7,6 +7,7 @@
 //
 
 #import "RBDropDownVC.h"
+#import <CJPopupView/CJPopupView.h>
 
 @interface RBDropDownVC ()
 
@@ -27,24 +28,225 @@
     [self.view addSubview:rb_dropdown];
 }
 
-//点击时候会调用如下委托：
-- (void)radioButtons:(RadioButtons_DropDown *)radioButtons chooseIndex:(NSInteger)index{
-    NSLog(@"当前选择的是%d", index);
+- (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old{
     
-    UIView *customView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 100)];
-    customView.backgroundColor = [UIColor greenColor];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(20, 50, CGRectGetWidth(customView.frame)-40, 44)];
-    [btn setTitle:@"生成随机数，并设置" forState:UIControlStateNormal];
-    [btn setBackgroundColor:[UIColor redColor]];
-    [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [customView addSubview:btn];
-    [radioButtons showDropDownView:customView inView:self.view complete:nil];//弹出下拉视图
+    switch (index_cur) {
+        case 0:
+        {
+            if (index_cur == index_old) {
+                [popupView1 dismissPopupView_popupInView];
+                radioButtons.index_cur = -1;  //设置成-1表示当前未选中任何radioButton
+                return;
+                
+            }else if (index_old == 1) {
+                [popupView2 dismissPopupView_popupInView];
+            }else if (index_old == 2){
+                [popupView3 dismissPopupView_popupInView];
+            }else if (index_old == 3){
+                [popupView4 dismissPopupView_popupInView];
+            }
+            
+            
+            if (popupView1 == nil) {
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                popupView.backgroundColor = [UIColor greenColor];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [btn setFrame:CGRectMake(20, 50, 280, 44)];
+                [btn setTitle:@"1.生成随机数，并设置" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor redColor]];
+                [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+                [popupView addSubview:btn];
+                
+                popupView1 = popupView;
+                popupView1.tag = 1001;
+            }
+            
+            CGFloat h_popupView = 100;
+            UIView *sender = radioButtons;
+            UIView *popupSuperview = self.view;
+            CGPoint pointBtnConvert = [sender.superview convertPoint:sender.frame.origin toView:popupSuperview];
+            CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
+            CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
+            
+            [popupView1 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
+            [popupView1 setBlockTapBGComplete:^{
+                RadioButton *radioButton = (RadioButton *)[radioButtons curRadioButton];
+                radioButton.selected = !radioButton.selected;
+                radioButtons.index_cur = -1;
+                
+            } blockHideDropDownViewComplete:^{
+                
+            }];
+            
+            break;
+        }
+        case 1:
+        {
+            if (index_cur == index_old) {
+                [popupView2 dismissPopupView_popupInView];
+                radioButtons.index_cur = -1;  //设置成-1表示当前未选中任何radioButton
+                return;
+                
+            }else if (index_old == 0) {
+                [popupView1 dismissPopupView_popupInView];
+            }else if (index_old == 2){
+                [popupView3 dismissPopupView_popupInView];
+            }else if (index_old == 3){
+                [popupView4 dismissPopupView_popupInView];
+            }
+            
+            
+            if (popupView2 == nil) {
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                popupView.backgroundColor = [UIColor greenColor];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [btn setFrame:CGRectMake(20, 50, 280, 44)];
+                [btn setTitle:@"2.生成随机数，并设置" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor redColor]];
+                [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+                [popupView addSubview:btn];
+                
+                popupView2 = popupView;
+                popupView2.tag = 1001;
+            }
+            
+            CGFloat h_popupView = 100;
+            UIView *sender = radioButtons;
+            UIView *popupSuperview = self.view;
+            CGPoint pointBtnConvert = [sender.superview convertPoint:sender.frame.origin toView:popupSuperview];
+            CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
+            CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
+            
+            [popupView2 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
+            [popupView2 setBlockTapBGComplete:^{
+                RadioButton *radioButton = (RadioButton *)[radioButtons curRadioButton];
+                radioButton.selected = !radioButton.selected;
+                radioButtons.index_cur = -1;
+                
+            } blockHideDropDownViewComplete:^{
+                
+            }];
+            break;
+        }
+        case 2:
+        {
+            if (index_cur == index_old) {
+                [popupView3 dismissPopupView_popupInView];
+                radioButtons.index_cur = -1;  //设置成-1表示当前未选中任何radioButton
+                return;
+                
+            }else if (index_old == 0) {
+                [popupView1 dismissPopupView_popupInView];
+            }else if (index_old == 1){
+                [popupView2 dismissPopupView_popupInView];
+            }else if (index_old == 3){
+                [popupView4 dismissPopupView_popupInView];
+            }
+            
+            
+            if (popupView3 == nil) {
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                popupView.backgroundColor = [UIColor greenColor];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [btn setFrame:CGRectMake(20, 50, 280, 44)];
+                [btn setTitle:@"3.生成随机数，并设置" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor redColor]];
+                [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+                [popupView addSubview:btn];
+                
+                popupView3 = popupView;
+                popupView3.tag = 1001;
+            }
+            
+            CGFloat h_popupView = 100;
+            UIView *sender = radioButtons;
+            UIView *popupSuperview = self.view;
+            CGPoint pointBtnConvert = [sender.superview convertPoint:sender.frame.origin toView:popupSuperview];
+            CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
+            CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
+            
+            [popupView3 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
+            [popupView3 setBlockTapBGComplete:^{
+                RadioButton *radioButton = (RadioButton *)[radioButtons curRadioButton];
+                radioButton.selected = !radioButton.selected;
+                radioButtons.index_cur = -1;
+                
+            } blockHideDropDownViewComplete:^{
+                
+            }];
+            break;
+        }
+        case 3:
+        {
+            if (index_cur == index_old) {
+                [popupView4 dismissPopupView_popupInView];
+                radioButtons.index_cur = -1;  //设置成-1表示当前未选中任何radioButton
+                return;
+                
+            }else if (index_old == 0) {
+                [popupView1 dismissPopupView_popupInView];
+            }else if (index_old == 1){
+                [popupView2 dismissPopupView_popupInView];
+            }else if (index_old == 2){
+                [popupView3 dismissPopupView_popupInView];
+            }
+            
+            
+            if (popupView4 == nil) {
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                popupView.backgroundColor = [UIColor greenColor];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [btn setFrame:CGRectMake(20, 50, 280, 44)];
+                [btn setTitle:@"4.生成随机数，并设置" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor redColor]];
+                [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+                [popupView addSubview:btn];
+                
+                popupView4 = popupView;
+                popupView4.tag = 1001;
+            }
+            
+            CGFloat h_popupView = 100;
+            UIView *sender = radioButtons;
+            UIView *popupSuperview = self.view;
+            CGPoint pointBtnConvert = [sender.superview convertPoint:sender.frame.origin toView:popupSuperview];
+            CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
+            CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
+            
+            [popupView4 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
+            [popupView4 setBlockTapBGComplete:^{
+                RadioButton *radioButton = (RadioButton *)[radioButtons curRadioButton];
+                radioButton.selected = !radioButton.selected;
+                radioButtons.index_cur = -1;
+                
+            } blockHideDropDownViewComplete:^{
+                
+            }];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (IBAction)btnAction:(id)sender{
     NSString *title = [NSString stringWithFormat:@"%d", rand()%10];
-    [rb_dropdown didSelectInDropDownView_rbDropDown:title];
+    RadioButton *radioButton_cur = (RadioButton *)[rb_dropdown viewWithTag:RadioButton_TAG_BEGIN + rb_dropdown.index_cur];
+    radioButton_cur.selected = !radioButton_cur.selected;
+    [radioButton_cur setTitle:title];
+    
+    
+    NSInteger index_old = rb_dropdown.index_cur;
+    rb_dropdown.index_cur = -1;
+    if (index_old == 0) {
+        [popupView1 dismissPopupView_popupInView];
+    }else if (index_old == 1) {
+        [popupView2 dismissPopupView_popupInView];
+    }else if (index_old == 2){
+        [popupView3 dismissPopupView_popupInView];
+    }else if (index_old == 3){
+        [popupView4 dismissPopupView_popupInView];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

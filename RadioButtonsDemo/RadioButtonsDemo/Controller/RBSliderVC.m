@@ -28,8 +28,10 @@
 }
 
 //点击时候会调用如下委托：
-- (void)radioButtons:(RadioButtons_Slider *)radioButtons chooseIndex:(NSInteger)index{
-    NSLog(@"当前选择的是%d", index);
+- (void)radioButtons:(RadioButtons_Slider *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old{
+    if (index_cur != index_old) {
+        [radioButtons selectRadioButtonIndex:index_cur];
+    }
     
 }
 

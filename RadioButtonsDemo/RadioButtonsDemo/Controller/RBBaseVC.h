@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "RadioButtons.h"
 
-@interface RBBaseVC : UIViewController
+@interface RBBaseVC : UIViewController<RadioButtonsDelegate>{
+    RadioButtons *rbs;
+    
+}
 
 @end

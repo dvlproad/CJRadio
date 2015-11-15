@@ -1,5 +1,5 @@
 //
-//  UIView+PopupDropDownView.h
+//  UIView+PopupInView.h
 //  CJPopupViewDemo
 //
 //  Created by lichq on 15/11/12.
@@ -8,15 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (PopupDropDownView)
+@interface UIView (PopupInView)
 
 @property (nonatomic, retain) UIView *lowestSuperviewLocation;//最底层的supverview
 @property (nonatomic, copy) void(^block_TapBGComplete)(void);
 @property (nonatomic, copy) void(^block_HideComplete)(void);
 
-- (void)popupDropDownView:(UIView *)extendView_m inLowestSuperview:(UIView *)lowestSuperview complete:(void(^)(void))block;
+
+- (void)popupInView:(UIView *)overlay atLocationPoint:(CGPoint)locationPoint withSize:(CGSize)size_self complete:(void(^)(void))block;
 - (void)setBlockTapBGComplete:(void(^)(void))block_TapBGComplete_m blockHideDropDownViewComplete:(void(^)(void))block_HideComplete_m;
 
-- (void)hideDropDownView_popupDropDownView;//隐藏DropDownView的方法
+- (void)dismissPopupView_popupInView;//隐藏DropDownView的方法
 
 @end

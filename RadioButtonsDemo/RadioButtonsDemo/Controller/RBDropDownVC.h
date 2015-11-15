@@ -11,6 +11,10 @@
 
 @interface RBDropDownVC : UIViewController<RadioButtonsDelegate>{
     RadioButtons_DropDown *rb_dropdown;
+    UIView *popupView1;
+    UIView *popupView2;
+    UIView *popupView3;
+    UIView *popupView4;
 }
 
 @end
