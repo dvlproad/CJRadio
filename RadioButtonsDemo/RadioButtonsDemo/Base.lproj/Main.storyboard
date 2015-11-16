@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9W-bF-LXP">
-                                <rect key="frame" x="31" y="230" width="273" height="30"/>
+                                <rect key="frame" x="41" y="320" width="273" height="30"/>
                                 <state key="normal" title="滚动（RBSliderVC）">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -57,6 +57,15 @@
                                 </state>
                                 <connections>
                                     <action selector="goRBBseVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fjm-Jw-5a6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLp-Ri-DQH">
+                                <rect key="frame" x="24" y="219" width="273" height="30"/>
+                                <state key="normal" title="弹出下拉（RBDropDownBestVC）">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goRBDropDownBestVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="atf-1K-Itz"/>
                                 </connections>
                             </button>
                         </subviews>

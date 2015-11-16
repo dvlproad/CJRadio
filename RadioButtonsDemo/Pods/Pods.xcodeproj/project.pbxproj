@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FCC8CDEDCA46A1A856B9F9A3AFAC502 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
-		1748EEA00ED5F3F79691F52931839BD9 /* UIView+PopupInWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = C423BA7706948CFE263FBC592604EF8C /* UIView+PopupInWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		315CE46D842B32FA469F69B349D76E96 /* UIView+PopupInView.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CCCFAEC2042A1BDFCEE3427443C83D /* UIView+PopupInView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		40B396303E9F9E47044B9B325F112E72 /* CJPopupView.h in Headers */ = {isa = PBXBuildFile; fileRef = 33A129205A9AF69B6B19C5E8EE8A1DA6 /* CJPopupView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F8626573EB691A77A3F5860BA7AEC61 /* UIView+ShowHisDropDownView.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E566437C71184D677CFBFAFAF61956 /* UIView+ShowHisDropDownView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14138B85ED554C21604F971438538F24 /* UIView+ShowHisDropDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9C6162D378754C204D5CE76072CB63 /* UIView+ShowHisDropDownView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1454067D14BE4874F9471329E6FD127B /* UIView+PopupInWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 19644F17A926154D7D146F2C66E5D4E7 /* UIView+PopupInWindow.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		42995137A71593BD9473616FECCD7C88 /* UIView+PopupInView.h in Headers */ = {isa = PBXBuildFile; fileRef = 793027ABC7D52C99517ABB2822BE3A5A /* UIView+PopupInView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B454DD8DBFCFCAF039685EB398CF51B /* CJPopupView.h in Headers */ = {isa = PBXBuildFile; fileRef = 13A6578C34465981F531EAFC2E584073 /* CJPopupView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5078E28E0976B099D67EF48C057CCADB /* UIView+ShowPopupInViewIndependentCode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4302AB2D925BB034D9B9EEC0C33544 /* UIView+ShowPopupInViewIndependentCode.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		66D5364F25CBE9D926E7FD42F529ADC3 /* UIView+ShowPopupInView.h in Headers */ = {isa = PBXBuildFile; fileRef = AD79C0AED22DEAB1514EB61E0C854290 /* UIView+ShowPopupInView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		678BDA93FE74170F2657CFC6D6C179D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		828E716D45A5B30A646D64AC3E8FA583 /* UIView+ShowPopupInView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE07E2C21FFF00A8A0FE160A25E816C /* UIView+ShowPopupInView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A6462E3CCAD54957D2A1CC8862DECDC3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
+		AAF02638B8B07ECA6582F59E2932F0E0 /* UIView+PopupInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56610C069059D4FF6A238D0C3E83E260 /* UIView+PopupInView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		B06946E731A570ABFFBF431D07540BD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		C01657AA451CBBDDA8F0923B11CFC961 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		C84F2F02EB7D305221C4ECF2F84EF6B6 /* UIView+PopupInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F3E92FBBC4979B2851D57D4C7A0F03 /* UIView+PopupInView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D85378DF5C5FE9F872B5E194F33D911C /* CJPopupView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE88B02B97D1F67A223E26FF4DF8F79 /* CJPopupView-dummy.m */; };
+		BD425397AF65375E6DFB719B822C2888 /* CJPopupView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E7339F0073FB1CF3923FAEA0551C0C /* CJPopupView-dummy.m */; };
 		D920A54395D15ACBE64556F57D957CF6 /* Pods-RadioButtonsDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7014CDB2E861AAE84E119F6922F221C /* Pods-RadioButtonsDemo-dummy.m */; };
-		E12CEC712AE738913F4914B645E918CB /* UIView+PopupInWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EF663C7EE19E6D800E4D39A9C5EE8E /* UIView+PopupInWindow.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E9A00614F0C837B299039136070F923F /* UIView+ShowPopupInViewIndependentCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 978E22D0B6D07B2D690A27DFEEE864A0 /* UIView+ShowPopupInViewIndependentCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F26E1F934D8D782F98459A9A0FFF8DA6 /* UIView+PopupInWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = ABDE6FA894786174C4F74452A5CF6C8C /* UIView+PopupInWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,49 +30,55 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BE470C55BE7251932C588BC7B5A3B27A;
+			remoteGlobalIDString = 9B3BE8147E21234400A4465702C7CCB0;
 			remoteInfo = CJPopupView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00F3E92FBBC4979B2851D57D4C7A0F03 /* UIView+PopupInView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+PopupInView.m"; path = "CJPopupView/UIView+PopupInView.m"; sourceTree = "<group>"; };
 		1166D740130EA218F7DBA158939C665A /* libPods-RadioButtonsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioButtonsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1862BD342EB337EA2A449BB7C6302690 /* CJPopupView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJPopupView-prefix.pch"; sourceTree = "<group>"; };
+		13A6578C34465981F531EAFC2E584073 /* CJPopupView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPopupView.h; path = CJPopupView/CJPopupView.h; sourceTree = "<group>"; };
+		19644F17A926154D7D146F2C66E5D4E7 /* UIView+PopupInWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+PopupInWindow.m"; path = "CJPopupView/UIView+PopupInWindow.m"; sourceTree = "<group>"; };
+		1B65A5D0CF7534B243450666E26004DE /* CJPopupView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJPopupView-prefix.pch"; sourceTree = "<group>"; };
 		1CC86F2E3344888F29CFE5B233780F34 /* libCJPopupView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJPopupView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		33A129205A9AF69B6B19C5E8EE8A1DA6 /* CJPopupView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPopupView.h; path = CJPopupView/CJPopupView.h; sourceTree = "<group>"; };
-		34C535815B8688E3776A7E99F3258CE7 /* CJPopupView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CJPopupView.xcconfig; sourceTree = "<group>"; };
 		4D5ADD5C7FDDF2F9C6B663DB30464AE7 /* Pods-RadioButtonsDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RadioButtonsDemo-resources.sh"; sourceTree = "<group>"; };
-		6BE88B02B97D1F67A223E26FF4DF8F79 /* CJPopupView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJPopupView-dummy.m"; sourceTree = "<group>"; };
+		56610C069059D4FF6A238D0C3E83E260 /* UIView+PopupInView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+PopupInView.m"; path = "CJPopupView/UIView+PopupInView.m"; sourceTree = "<group>"; };
+		5D9C6162D378754C204D5CE76072CB63 /* UIView+ShowHisDropDownView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ShowHisDropDownView.m"; path = "CJPopupView/UIView+ShowHisDropDownView.m"; sourceTree = "<group>"; };
 		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		793027ABC7D52C99517ABB2822BE3A5A /* UIView+PopupInView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+PopupInView.h"; path = "CJPopupView/UIView+PopupInView.h"; sourceTree = "<group>"; };
 		7BD340EA44E4272B75EE1C2A298CE067 /* Pods-RadioButtonsDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RadioButtonsDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		83EF663C7EE19E6D800E4D39A9C5EE8E /* UIView+PopupInWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+PopupInWindow.m"; path = "CJPopupView/UIView+PopupInWindow.m"; sourceTree = "<group>"; };
 		86FD8C2E66855B74317A4E2575AFD5D2 /* Pods-RadioButtonsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RadioButtonsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		978E22D0B6D07B2D690A27DFEEE864A0 /* UIView+ShowPopupInViewIndependentCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ShowPopupInViewIndependentCode.h"; path = "CJPopupView/UIView+ShowPopupInViewIndependentCode.h"; sourceTree = "<group>"; };
+		A8E566437C71184D677CFBFAFAF61956 /* UIView+ShowHisDropDownView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ShowHisDropDownView.h"; path = "CJPopupView/UIView+ShowHisDropDownView.h"; sourceTree = "<group>"; };
+		ABDE6FA894786174C4F74452A5CF6C8C /* UIView+PopupInWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+PopupInWindow.h"; path = "CJPopupView/UIView+PopupInWindow.h"; sourceTree = "<group>"; };
+		AD79C0AED22DEAB1514EB61E0C854290 /* UIView+ShowPopupInView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ShowPopupInView.h"; path = "CJPopupView/UIView+ShowPopupInView.h"; sourceTree = "<group>"; };
 		B37DC2DF78B097BD9F9011EFE586FB5D /* Pods-RadioButtonsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RadioButtonsDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B57927DE9CFC8FAC77CC1BCE143BA198 /* CJPopupView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CJPopupView.xcconfig; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE05AC90AD43646537890A5DCD83B5DD /* Pods-RadioButtonsDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RadioButtonsDemo-frameworks.sh"; sourceTree = "<group>"; };
+		C2E7339F0073FB1CF3923FAEA0551C0C /* CJPopupView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJPopupView-dummy.m"; sourceTree = "<group>"; };
 		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C423BA7706948CFE263FBC592604EF8C /* UIView+PopupInWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+PopupInWindow.h"; path = "CJPopupView/UIView+PopupInWindow.h"; sourceTree = "<group>"; };
 		D7014CDB2E861AAE84E119F6922F221C /* Pods-RadioButtonsDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RadioButtonsDemo-dummy.m"; sourceTree = "<group>"; };
-		E1CCCFAEC2042A1BDFCEE3427443C83D /* UIView+PopupInView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+PopupInView.h"; path = "CJPopupView/UIView+PopupInView.h"; sourceTree = "<group>"; };
+		EB4302AB2D925BB034D9B9EEC0C33544 /* UIView+ShowPopupInViewIndependentCode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ShowPopupInViewIndependentCode.m"; path = "CJPopupView/UIView+ShowPopupInViewIndependentCode.m"; sourceTree = "<group>"; };
 		ED1E09321FFFDCABC9F98927EC46734F /* Pods-RadioButtonsDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RadioButtonsDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		EFE07E2C21FFF00A8A0FE160A25E816C /* UIView+ShowPopupInView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ShowPopupInView.m"; path = "CJPopupView/UIView+ShowPopupInView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		27149C84EB73C462FAB5F0E4A74A40B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C01657AA451CBBDDA8F0923B11CFC961 /* Foundation.framework in Frameworks */,
-				0FCC8CDEDCA46A1A856B9F9A3AFAC502 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		29C0D4EC9BE9303CF0E21D27DCF4A192 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B06946E731A570ABFFBF431D07540BD1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4110B2E4C300C2C1E3797A972F2B1CBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				678BDA93FE74170F2657CFC6D6C179D4 /* Foundation.framework in Frameworks */,
+				A6462E3CCAD54957D2A1CC8862DECDC3 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,21 +126,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5E73F1592D872A45DFDF1E0E1B6979AD /* Support Files */ = {
+		633937AACEC0598511A4D6E50F440B46 /* CJPopupView */ = {
 			isa = PBXGroup;
 			children = (
-				34C535815B8688E3776A7E99F3258CE7 /* CJPopupView.xcconfig */,
-				6BE88B02B97D1F67A223E26FF4DF8F79 /* CJPopupView-dummy.m */,
-				1862BD342EB337EA2A449BB7C6302690 /* CJPopupView-prefix.pch */,
+				13A6578C34465981F531EAFC2E584073 /* CJPopupView.h */,
+				793027ABC7D52C99517ABB2822BE3A5A /* UIView+PopupInView.h */,
+				56610C069059D4FF6A238D0C3E83E260 /* UIView+PopupInView.m */,
+				ABDE6FA894786174C4F74452A5CF6C8C /* UIView+PopupInWindow.h */,
+				19644F17A926154D7D146F2C66E5D4E7 /* UIView+PopupInWindow.m */,
+				A8E566437C71184D677CFBFAFAF61956 /* UIView+ShowHisDropDownView.h */,
+				5D9C6162D378754C204D5CE76072CB63 /* UIView+ShowHisDropDownView.m */,
+				AD79C0AED22DEAB1514EB61E0C854290 /* UIView+ShowPopupInView.h */,
+				EFE07E2C21FFF00A8A0FE160A25E816C /* UIView+ShowPopupInView.m */,
+				978E22D0B6D07B2D690A27DFEEE864A0 /* UIView+ShowPopupInViewIndependentCode.h */,
+				EB4302AB2D925BB034D9B9EEC0C33544 /* UIView+ShowPopupInViewIndependentCode.m */,
+				819EE5D074567A8C9B914F205E8BE1A5 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/CJPopupView";
+			path = CJPopupView;
 			sourceTree = "<group>";
 		};
-		6466878FB641208A9A4CB445A1C3A269 /* Pods */ = {
+		6FCA69ECD8A4560538AA86FDA3478282 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AB066DBB3AE05690FE54E410C6A1BDEB /* CJPopupView */,
+				633937AACEC0598511A4D6E50F440B46 /* CJPopupView */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -138,23 +158,21 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				6466878FB641208A9A4CB445A1C3A269 /* Pods */,
+				6FCA69ECD8A4560538AA86FDA3478282 /* Pods */,
 				47EC23301D56EE6B18645496F5572F3F /* Products */,
 				BFB591A2916AD087FB84371FF9B4CC37 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		AB066DBB3AE05690FE54E410C6A1BDEB /* CJPopupView */ = {
+		819EE5D074567A8C9B914F205E8BE1A5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				33A129205A9AF69B6B19C5E8EE8A1DA6 /* CJPopupView.h */,
-				E1CCCFAEC2042A1BDFCEE3427443C83D /* UIView+PopupInView.h */,
-				00F3E92FBBC4979B2851D57D4C7A0F03 /* UIView+PopupInView.m */,
-				C423BA7706948CFE263FBC592604EF8C /* UIView+PopupInWindow.h */,
-				83EF663C7EE19E6D800E4D39A9C5EE8E /* UIView+PopupInWindow.m */,
-				5E73F1592D872A45DFDF1E0E1B6979AD /* Support Files */,
+				B57927DE9CFC8FAC77CC1BCE143BA198 /* CJPopupView.xcconfig */,
+				C2E7339F0073FB1CF3923FAEA0551C0C /* CJPopupView-dummy.m */,
+				1B65A5D0CF7534B243450666E26004DE /* CJPopupView-prefix.pch */,
 			);
-			path = CJPopupView;
+			name = "Support Files";
+			path = "../Target Support Files/CJPopupView";
 			sourceTree = "<group>";
 		};
 		BFB591A2916AD087FB84371FF9B4CC37 /* Targets Support Files */ = {
@@ -168,13 +186,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1C84CDF2C86C038AB39F9F32C486E8EB /* Headers */ = {
+		9A66AA3CFB850909DA3F149B98CF068F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40B396303E9F9E47044B9B325F112E72 /* CJPopupView.h in Headers */,
-				315CE46D842B32FA469F69B349D76E96 /* UIView+PopupInView.h in Headers */,
-				1748EEA00ED5F3F79691F52931839BD9 /* UIView+PopupInWindow.h in Headers */,
+				4B454DD8DBFCFCAF039685EB398CF51B /* CJPopupView.h in Headers */,
+				42995137A71593BD9473616FECCD7C88 /* UIView+PopupInView.h in Headers */,
+				F26E1F934D8D782F98459A9A0FFF8DA6 /* UIView+PopupInWindow.h in Headers */,
+				0F8626573EB691A77A3F5860BA7AEC61 /* UIView+ShowHisDropDownView.h in Headers */,
+				66D5364F25CBE9D926E7FD42F529ADC3 /* UIView+ShowPopupInView.h in Headers */,
+				E9A00614F0C837B299039136070F923F /* UIView+ShowPopupInViewIndependentCode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,13 +219,13 @@
 			productReference = 1166D740130EA218F7DBA158939C665A /* libPods-RadioButtonsDemo.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		BE470C55BE7251932C588BC7B5A3B27A /* CJPopupView */ = {
+		9B3BE8147E21234400A4465702C7CCB0 /* CJPopupView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B0F02D78E7834F445E8D9BE94E844B2 /* Build configuration list for PBXNativeTarget "CJPopupView" */;
+			buildConfigurationList = 5AF40D963B975B18DE59D2A9CFF720B8 /* Build configuration list for PBXNativeTarget "CJPopupView" */;
 			buildPhases = (
-				7923F98ACBCCF6F22A6B761F56EBDF0F /* Sources */,
-				27149C84EB73C462FAB5F0E4A74A40B8 /* Frameworks */,
-				1C84CDF2C86C038AB39F9F32C486E8EB /* Headers */,
+				B80E3F8F805DCDCC188F5D89B52AF8B6 /* Sources */,
+				4110B2E4C300C2C1E3797A972F2B1CBC /* Frameworks */,
+				9A66AA3CFB850909DA3F149B98CF068F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -236,7 +257,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BE470C55BE7251932C588BC7B5A3B27A /* CJPopupView */,
+				9B3BE8147E21234400A4465702C7CCB0 /* CJPopupView */,
 				6C396B0D2474176975050893FBDF6390 /* Pods-RadioButtonsDemo */,
 			);
 		};
@@ -251,13 +272,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7923F98ACBCCF6F22A6B761F56EBDF0F /* Sources */ = {
+		B80E3F8F805DCDCC188F5D89B52AF8B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D85378DF5C5FE9F872B5E194F33D911C /* CJPopupView-dummy.m in Sources */,
-				C84F2F02EB7D305221C4ECF2F84EF6B6 /* UIView+PopupInView.m in Sources */,
-				E12CEC712AE738913F4914B645E918CB /* UIView+PopupInWindow.m in Sources */,
+				BD425397AF65375E6DFB719B822C2888 /* CJPopupView-dummy.m in Sources */,
+				AAF02638B8B07ECA6582F59E2932F0E0 /* UIView+PopupInView.m in Sources */,
+				1454067D14BE4874F9471329E6FD127B /* UIView+PopupInWindow.m in Sources */,
+				14138B85ED554C21604F971438538F24 /* UIView+ShowHisDropDownView.m in Sources */,
+				828E716D45A5B30A646D64AC3E8FA583 /* UIView+ShowPopupInView.m in Sources */,
+				5078E28E0976B099D67EF48C057CCADB /* UIView+ShowPopupInViewIndependentCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +291,7 @@
 		7F4ADBFD8A69B242B43FA6F5BE54C70D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CJPopupView;
-			target = BE470C55BE7251932C588BC7B5A3B27A /* CJPopupView */;
+			target = 9B3BE8147E21234400A4465702C7CCB0 /* CJPopupView */;
 			targetProxy = 3667F3839E1619015BB5FE8A0B7CC710 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -307,24 +331,6 @@
 			};
 			name = Release;
 		};
-		0AED83A54F6BF3EC12CF0599276BF869 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34C535815B8688E3776A7E99F3258CE7 /* CJPopupView.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CJPopupView/CJPopupView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		190FC652E3D79BE15A7429DC8E3DC2F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 86FD8C2E66855B74317A4E2575AFD5D2 /* Pods-RadioButtonsDemo.release.xcconfig */;
@@ -342,24 +348,6 @@
 			};
 			name = Release;
 		};
-		1A09568A67258AE53CBCB438D6009078 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34C535815B8688E3776A7E99F3258CE7 /* CJPopupView.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CJPopupView/CJPopupView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		64A00576FE74D44D9C1B792D02CACA9F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B37DC2DF78B097BD9F9011EFE586FB5D /* Pods-RadioButtonsDemo.debug.xcconfig */;
@@ -376,6 +364,42 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
+		};
+		672571AB0A1A3A1FC8FEA94E675913BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B57927DE9CFC8FAC77CC1BCE143BA198 /* CJPopupView.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CJPopupView/CJPopupView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B062DD96D080A6F1DF7C11823C7FCA8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B57927DE9CFC8FAC77CC1BCE143BA198 /* CJPopupView.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CJPopupView/CJPopupView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -437,11 +461,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B0F02D78E7834F445E8D9BE94E844B2 /* Build configuration list for PBXNativeTarget "CJPopupView" */ = {
+		5AF40D963B975B18DE59D2A9CFF720B8 /* Build configuration list for PBXNativeTarget "CJPopupView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A09568A67258AE53CBCB438D6009078 /* Debug */,
-				0AED83A54F6BF3EC12CF0599276BF869 /* Release */,
+				672571AB0A1A3A1FC8FEA94E675913BF /* Debug */,
+				B062DD96D080A6F1DF7C11823C7FCA8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

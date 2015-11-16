@@ -26,23 +26,167 @@
     rb_dropdown.delegate = self;
     rb_dropdown.tag = 111;
     [self.view addSubview:rb_dropdown];
+    
+    
+    CGRect rect_rbDropDwon2 = CGRectMake(0, 264, 320, 40);
+    rb_dropdown2 = [[RadioButtons_DropDown alloc]initWithFrame:rect_rbDropDwon2];
+    [rb_dropdown2 setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
+    rb_dropdown2.delegate = self;
+    rb_dropdown2.tag = 222;
+    [self.view addSubview:rb_dropdown2];
 }
 
 - (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old{
     
+    //radioButtons.tag == 222，则才采用#import "UIView+ShowHisDropDownView.h"（其实际上内部引用了"UIView+ShowPopupInView.h"，刚好与"UIView+PopupInView.h"不同）
+    if (radioButtons.tag == 222) {
+        
+        UIView *sender = radioButtons;
+        if (index_old != -1) {
+            if (index_cur == index_old) {
+                [sender showHisDropDownView_dismissPopupViewAnimated:YES];
+                return;
+            }else{
+                [sender showHisDropDownView_dismissPopupViewAnimated:NO];
+            }
+        }
+        
+        switch (index_cur) {
+            case 0:
+            {
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                popupView.backgroundColor = [UIColor greenColor];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [btn setFrame:CGRectMake(20, 50, 280, 44)];
+                [btn setTitle:@"1.生成随机数，并设置" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor redColor]];
+                [btn addTarget:self action:@selector(btnAction222:) forControlEvents:UIControlEventTouchUpInside];
+                [popupView addSubview:btn];
+                
+                CGFloat h_popupView = 100;
+                UIView *popupSuperview = self.view;
+                
+                [sender showHisDropDownView:popupView inView:popupSuperview withHeight:h_popupView showComplete:^{
+                    NSLog(@"1.显示完成");
+                    
+                } tapBGComplete:^{
+                    NSLog(@"1.点击背景完成");
+                    [radioButtons changeCurrentRadioButtonState];
+                    [radioButtons setSelectedNone];
+                    
+                } hideComplete:^{
+                    NSLog(@"1.隐藏完成");
+                    
+                }];
+                
+                break;
+            }
+            case 1:
+            {
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                popupView.backgroundColor = [UIColor greenColor];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [btn setFrame:CGRectMake(20, 50, 280, 44)];
+                [btn setTitle:@"2.生成随机数，并设置" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor redColor]];
+                [btn addTarget:self action:@selector(btnAction222:) forControlEvents:UIControlEventTouchUpInside];
+                [popupView addSubview:btn];
+                
+                CGFloat h_popupView = 100;
+                UIView *popupSuperview = self.view;
+                
+                [sender showHisDropDownView:popupView inView:popupSuperview withHeight:h_popupView showComplete:^{
+                    NSLog(@"2.显示完成");
+                    
+                } tapBGComplete:^{
+                    NSLog(@"2.点击背景完成");
+                    [radioButtons changeCurrentRadioButtonState];
+                    [radioButtons setSelectedNone];
+                    
+                } hideComplete:^{
+                    NSLog(@"2.隐藏完成");
+                    
+                }];
+                break;
+            }
+            case 2:
+            {
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                popupView.backgroundColor = [UIColor greenColor];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [btn setFrame:CGRectMake(20, 50, 280, 44)];
+                [btn setTitle:@"3.生成随机数，并设置" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor redColor]];
+                [btn addTarget:self action:@selector(btnAction222:) forControlEvents:UIControlEventTouchUpInside];
+                [popupView addSubview:btn];
+                
+                CGFloat h_popupView = 100;
+                UIView *popupSuperview = self.view;
+                
+                [sender showHisDropDownView:popupView inView:popupSuperview withHeight:h_popupView showComplete:^{
+                    NSLog(@"3.显示完成");
+                    
+                } tapBGComplete:^{
+                    NSLog(@"3.点击背景完成");
+                    [radioButtons changeCurrentRadioButtonState];
+                    [radioButtons setSelectedNone];
+                    
+                } hideComplete:^{
+                    NSLog(@"3.隐藏完成");
+                    
+                }];
+                break;
+            }
+            case 3:
+            {
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                popupView.backgroundColor = [UIColor greenColor];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                [btn setFrame:CGRectMake(20, 50, 280, 44)];
+                [btn setTitle:@"4.生成随机数，并设置" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor redColor]];
+                [btn addTarget:self action:@selector(btnAction222:) forControlEvents:UIControlEventTouchUpInside];
+                [popupView addSubview:btn];
+                
+                CGFloat h_popupView = 100;
+                UIView *popupSuperview = self.view;
+                
+                [sender showHisDropDownView:popupView inView:popupSuperview withHeight:h_popupView showComplete:^{
+                    NSLog(@"4.显示完成");
+                    
+                } tapBGComplete:^{
+                    NSLog(@"4.点击背景完成");
+                    [radioButtons changeCurrentRadioButtonState];
+                    [radioButtons setSelectedNone];
+                    
+                } hideComplete:^{
+                    NSLog(@"4.隐藏完成");
+                    
+                }];
+                break;
+            }
+            default:
+                break;
+        }
+        
+        
+        return;
+    }
+    
+    //radioButtons.tag == 111，则才采用"UIView+PopupInView.h"
     switch (index_cur) {
         case 0:
         {
             if (index_cur == index_old) {
-                [popupView1 dismissPopupView_popupInView];
+                [popupView1 popupInView_dismissFromSuperViewAnimated:YES];
                 return;
                 
             }else if (index_old == 1) {
-                [popupView2 dismissPopupView_popupInView];
+                [popupView2 popupInView_dismissFromSuperViewAnimated:NO];
             }else if (index_old == 2){
-                [popupView3 dismissPopupView_popupInView];
+                [popupView3 popupInView_dismissFromSuperViewAnimated:NO];
             }else if (index_old == 3){
-                [popupView4 dismissPopupView_popupInView];
+                [popupView4 popupInView_dismissFromSuperViewAnimated:NO];
             }
             
             
@@ -67,12 +211,16 @@
             CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
             CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
             
-            [popupView1 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
-            [popupView1 setBlockTapBGComplete:^{
+            [popupView1 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView showComplete:^{
+                NSLog(@"1.显示完成");
+                
+            } tapBGComplete:^{
+                NSLog(@"1.点击背景完成");
                 [radioButtons changeCurrentRadioButtonState];
                 [radioButtons setSelectedNone];
                 
-            } blockHideDropDownViewComplete:^{
+            } hideComplete:^{
+                NSLog(@"1.隐藏完成");
                 
             }];
             
@@ -81,15 +229,15 @@
         case 1:
         {
             if (index_cur == index_old) {
-                [popupView2 dismissPopupView_popupInView];
+                [popupView2 popupInView_dismissFromSuperViewAnimated:YES];
                 return;
                 
             }else if (index_old == 0) {
-                [popupView1 dismissPopupView_popupInView];
+                [popupView1 popupInView_dismissFromSuperViewAnimated:NO];
             }else if (index_old == 2){
-                [popupView3 dismissPopupView_popupInView];
+                [popupView3 popupInView_dismissFromSuperViewAnimated:NO];
             }else if (index_old == 3){
-                [popupView4 dismissPopupView_popupInView];
+                [popupView4 popupInView_dismissFromSuperViewAnimated:NO];
             }
             
             
@@ -114,12 +262,16 @@
             CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
             CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
             
-            [popupView2 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
-            [popupView2 setBlockTapBGComplete:^{
+            [popupView2 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView showComplete:^{
+                NSLog(@"2.显示完成");
+                
+            } tapBGComplete:^{
+                NSLog(@"2.点击背景完成");
                 [radioButtons changeCurrentRadioButtonState];
                 [radioButtons setSelectedNone];
                 
-            } blockHideDropDownViewComplete:^{
+            } hideComplete:^{
+                NSLog(@"2.隐藏完成");
                 
             }];
             break;
@@ -127,15 +279,15 @@
         case 2:
         {
             if (index_cur == index_old) {
-                [popupView3 dismissPopupView_popupInView];
+                [popupView3 popupInView_dismissFromSuperViewAnimated:YES];
                 return;
                 
             }else if (index_old == 0) {
-                [popupView1 dismissPopupView_popupInView];
+                [popupView1 popupInView_dismissFromSuperViewAnimated:NO];
             }else if (index_old == 1){
-                [popupView2 dismissPopupView_popupInView];
+                [popupView2 popupInView_dismissFromSuperViewAnimated:NO];
             }else if (index_old == 3){
-                [popupView4 dismissPopupView_popupInView];
+                [popupView4 popupInView_dismissFromSuperViewAnimated:NO];
             }
             
             
@@ -160,12 +312,16 @@
             CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
             CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
             
-            [popupView3 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
-            [popupView3 setBlockTapBGComplete:^{
+            [popupView3 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView showComplete:^{
+                NSLog(@"3.显示完成");
+                
+            } tapBGComplete:^{
+                NSLog(@"3.点击背景完成");
                 [radioButtons changeCurrentRadioButtonState];
                 [radioButtons setSelectedNone];
                 
-            } blockHideDropDownViewComplete:^{
+            } hideComplete:^{
+                NSLog(@"3.隐藏完成");
                 
             }];
             break;
@@ -173,15 +329,15 @@
         case 3:
         {
             if (index_cur == index_old) {
-                [popupView4 dismissPopupView_popupInView];
+                [popupView4 popupInView_dismissFromSuperViewAnimated:YES];
                 return;
                 
             }else if (index_old == 0) {
-                [popupView1 dismissPopupView_popupInView];
+                [popupView1 popupInView_dismissFromSuperViewAnimated:NO];
             }else if (index_old == 1){
-                [popupView2 dismissPopupView_popupInView];
+                [popupView2 popupInView_dismissFromSuperViewAnimated:NO];
             }else if (index_old == 2){
-                [popupView3 dismissPopupView_popupInView];
+                [popupView3 popupInView_dismissFromSuperViewAnimated:NO];
             }
             
             
@@ -206,12 +362,16 @@
             CGPoint pointLocation = CGPointMake(pointBtnConvert.x, pointBtnConvert.y + CGRectGetHeight(sender.frame));
             CGSize size_popupView = CGSizeMake(CGRectGetWidth(sender.frame), h_popupView);
             
-            [popupView4 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView complete:nil];
-            [popupView4 setBlockTapBGComplete:^{
+            [popupView4 popupInView:popupSuperview atLocationPoint:pointLocation withSize:size_popupView showComplete:^{
+                NSLog(@"4.显示完成");
+                
+            } tapBGComplete:^{
+                NSLog(@"4.点击背景完成");
                 [radioButtons changeCurrentRadioButtonState];
                 [radioButtons setSelectedNone];
                 
-            } blockHideDropDownViewComplete:^{
+            } hideComplete:^{
+                NSLog(@"4.隐藏完成");
                 
             }];
             break;
@@ -229,15 +389,25 @@
     [rb_dropdown setSelectedNone];
     
     if (index_old == 0) {
-        [popupView1 dismissPopupView_popupInView];
+        [popupView1 popupInView_dismissFromSuperViewAnimated:YES];
     }else if (index_old == 1) {
-        [popupView2 dismissPopupView_popupInView];
+        [popupView2 popupInView_dismissFromSuperViewAnimated:YES];
     }else if (index_old == 2){
-        [popupView3 dismissPopupView_popupInView];
+        [popupView3 popupInView_dismissFromSuperViewAnimated:YES];
     }else if (index_old == 3){
-        [popupView4 dismissPopupView_popupInView];
+        [popupView4 popupInView_dismissFromSuperViewAnimated:YES];
     }
 }
+
+
+- (IBAction)btnAction222:(id)sender{
+    NSString *title = [NSString stringWithFormat:@"%d", rand()%10];
+    [rb_dropdown2 changeCurrentRadioButtonStateAndTitle:title];
+    [rb_dropdown2 setSelectedNone];
+    
+    [rb_dropdown2 showHisDropDownView_dismissPopupViewAnimated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

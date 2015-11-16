@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "RBBaseVC.h"
 #import "RBDropDownVC.h"
+#import "RBDropDownBestVC.h"
 #import "RBSliderVC.h"
 
 @interface ViewController ()
@@ -35,6 +36,11 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (IBAction)goRBDropDownBestVC:(id)sender{
+    RBDropDownBestVC *vc = [[RBDropDownBestVC alloc]initWithNibName:@"RBDropDownBestVC" bundle:nil];
+    vc.title = [sender titleForState:UIControlStateNormal];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (IBAction)goRBSliderVC:(id)sender{
     RBSliderVC *vc = [[RBSliderVC alloc]initWithNibName:@"RBSliderVC" bundle:nil];

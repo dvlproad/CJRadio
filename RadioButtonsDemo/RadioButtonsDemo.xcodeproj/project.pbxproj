@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		449F20EF6662D88C37DAFCCD /* libPods-RadioButtonsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A03DFBE8686B3C786BB746 /* libPods-RadioButtonsDemo.a */; };
-		785CEAB41BF4B80300846A15 /* RBBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 785CEAB21BF4B80300846A15 /* RBBaseVC.m */; settings = {ASSET_TAGS = (); }; };
-		785CEAB51BF4B80300846A15 /* RBBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785CEAB31BF4B80300846A15 /* RBBaseVC.xib */; settings = {ASSET_TAGS = (); }; };
+		785CEAB41BF4B80300846A15 /* RBBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 785CEAB21BF4B80300846A15 /* RBBaseVC.m */; };
+		785CEAB51BF4B80300846A15 /* RBBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785CEAB31BF4B80300846A15 /* RBBaseVC.xib */; };
 		805A17561BF321CC00424769 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17551BF321CC00424769 /* main.m */; };
 		805A17591BF321CC00424769 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17581BF321CC00424769 /* AppDelegate.m */; };
 		805A175C1BF321CC00424769 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A175B1BF321CC00424769 /* ViewController.m */; };
@@ -34,6 +34,8 @@
 		805A17A81BF35C0300424769 /* RBDropDownVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17A61BF35C0300424769 /* RBDropDownVC.xib */; };
 		805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17AA1BF35C1B00424769 /* RBSliderVC.m */; };
 		805A17AD1BF35C1B00424769 /* RBSliderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17AB1BF35C1B00424769 /* RBSliderVC.xib */; };
+		808AEA8C1BF9C64F0021968B /* RBDropDownBestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 808AEA8A1BF9C64F0021968B /* RBDropDownBestVC.m */; };
+		808AEA8D1BF9C64F0021968B /* RBDropDownBestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 808AEA8B1BF9C64F0021968B /* RBDropDownBestVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,9 @@
 		805A17A91BF35C1B00424769 /* RBSliderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSliderVC.h; sourceTree = "<group>"; };
 		805A17AA1BF35C1B00424769 /* RBSliderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSliderVC.m; sourceTree = "<group>"; };
 		805A17AB1BF35C1B00424769 /* RBSliderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBSliderVC.xib; sourceTree = "<group>"; };
+		808AEA891BF9C64F0021968B /* RBDropDownBestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDropDownBestVC.h; sourceTree = "<group>"; };
+		808AEA8A1BF9C64F0021968B /* RBDropDownBestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDropDownBestVC.m; sourceTree = "<group>"; };
+		808AEA8B1BF9C64F0021968B /* RBDropDownBestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBDropDownBestVC.xib; sourceTree = "<group>"; };
 		DB97996B670BCC3117C5226A /* Pods-RadioButtonsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioButtonsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +207,9 @@
 				805A17A41BF35C0300424769 /* RBDropDownVC.h */,
 				805A17A51BF35C0300424769 /* RBDropDownVC.m */,
 				805A17A61BF35C0300424769 /* RBDropDownVC.xib */,
+				808AEA891BF9C64F0021968B /* RBDropDownBestVC.h */,
+				808AEA8A1BF9C64F0021968B /* RBDropDownBestVC.m */,
+				808AEA8B1BF9C64F0021968B /* RBDropDownBestVC.xib */,
 				805A17A91BF35C1B00424769 /* RBSliderVC.h */,
 				805A17AA1BF35C1B00424769 /* RBSliderVC.m */,
 				805A17AB1BF35C1B00424769 /* RBSliderVC.xib */,
@@ -343,6 +351,7 @@
 				805A179D1BF35A8C00424769 /* arrowUp.png in Resources */,
 				805A17611BF321CC00424769 /* Images.xcassets in Resources */,
 				805A17A31BF35A8C00424769 /* RadioButton_Slider.xib in Resources */,
+				808AEA8D1BF9C64F0021968B /* RBDropDownBestVC.xib in Resources */,
 				805A17A01BF35A8C00424769 /* btnTab_BG_normal@2x.png in Resources */,
 				805A17AD1BF35C1B00424769 /* RBSliderVC.xib in Resources */,
 			);
@@ -420,6 +429,7 @@
 				805A17841BF3235E00424769 /* RadioButtons.m in Sources */,
 				805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */,
 				805A17821BF3235E00424769 /* RadioButton.m in Sources */,
+				808AEA8C1BF9C64F0021968B /* RBDropDownBestVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
