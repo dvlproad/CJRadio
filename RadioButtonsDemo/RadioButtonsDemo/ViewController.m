@@ -11,6 +11,8 @@
 #import "RBDropDownVC.h"
 #import "RBDropDownBestVC.h"
 #import "RBSliderVC.h"
+#import "RadioButtonsCanDropVC.h"
+
 
 @interface ViewController ()
 
@@ -22,6 +24,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = NSLocalizedString(@"RadioButtons", nil);
+}
+
+- (IBAction)goRadioButtonsCanDropVC:(id)sender{
+    RadioButtonsCanDropVC *vc = [[RadioButtonsCanDropVC alloc]initWithNibName:@"RadioButtonsCanDropVC" bundle:nil];
+    vc.title = [sender titleForState:UIControlStateNormal];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)goRBBseVC:(id)sender{
