@@ -122,7 +122,7 @@
     self.index_cur = radioButton_cur.tag - RadioButton_TAG_BEGIN;
     
     BOOL isSameIndex = self.index_cur == index_old ? YES : NO;
-    NSLog(@"index_cur = %d, index_old = %d, isSameIndex= %@", self.index_cur,index_old,isSameIndex?@"YES":@"NO");
+    NSLog(@"index_cur = %zd, index_old = %zd, isSameIndex= %@", self.index_cur,index_old,isSameIndex?@"YES":@"NO");
     
     if (index_old == -1) {//如果当前没有radioButton是被选中。
         
