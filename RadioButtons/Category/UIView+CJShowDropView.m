@@ -14,6 +14,8 @@ static NSString *cjTapViewKey = @"cjTapView";
 
 static NSString *cjTapViewTappedActionKey = @"cjTapViewTappedAction";
 
+static NSString *cjExtendViewShowingKey = @"cjExtendViewShowing";
+
 
 @implementation UIView (CJShowDropView)
 
@@ -54,9 +56,20 @@ static NSString *cjTapViewTappedActionKey = @"cjTapViewTappedAction";
     return objc_setAssociatedObject(self, &cjTapViewTappedActionKey, cjTapViewTappedAction, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
+//cjExtendViewShowing
+- (BOOL)isCJExtendViewShowing {
+    return [objc_getAssociatedObject(self, &cjExtendViewShowingKey) boolValue];
+}
+
+- (void)setCjExtendViewShowing:(BOOL)cjExtendViewShowing {
+    return objc_setAssociatedObject(self, &cjExtendViewShowingKey, @(cjExtendViewShowing), OBJC_ASSOCIATION_ASSIGN);
+}
+
 #pragma mark - <#Section#>
 /** 完整的描述请参见文件头部 */
 - (void)cj_showDropDownExtendView:(UIView *)extendView withShowInView:(UIView *)showInVIew completeBlock:(void(^)(void))completeBlock {
+    
+    self.cjExtendViewShowing = YES;
     
     if (self.cjExtendView) {
         [self.cjExtendView removeFromSuperview];
@@ -126,7 +139,7 @@ static NSString *cjTapViewTappedActionKey = @"cjTapViewTappedAction";
 
 /** 完整的描述请参见文件头部 */
 - (void)cj_hideDropDownExtendView {
-    //    currentExtendSection = -1;  //设置成-1表示当前未选中任何radioButton //TODO:
+    self.cjExtendViewShowing = NO;  //设置成NO表示当前未显示任何弹出视图
     
     CGRect rect = self.cjExtendView.frame;
     rect.size.height = 0;

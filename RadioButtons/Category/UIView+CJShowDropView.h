@@ -13,11 +13,13 @@ typedef void(^CJTapViewTappedAction)(UIView *view);
 
 @interface UIView (CJShowDropView)
 
-@property (nonatomic, strong) UIView *cjExtendView;
-@property (nonatomic, strong) UIView *cjShowInView;
-@property (nonatomic, strong) UIView *cjTapView;
+@property (nonatomic, strong) UIView *cjExtendView; /**< 弹出视图 */
+@property (nonatomic, strong) UIView *cjShowInView; /**< 弹出视图被add到的view */
+@property (nonatomic, strong) UIView *cjTapView;    /**< 空白区域 */
 
-@property (nonatomic, copy) CJTapViewTappedAction cjTapViewTappedAction;
+@property (nonatomic, copy) CJTapViewTappedAction cjTapViewTappedAction;    /**< 点击空白区域执行的操作 */
+
+@property (nonatomic, assign, getter=isCJExtendViewShowing) BOOL cjExtendViewShowing;   /**< 判断当前是否有弹出视图显示 */
 
 
 /**

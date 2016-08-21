@@ -31,7 +31,6 @@
 
     if (isSameIndex) {
         [radioButtonsCanDrop cj_hideDropDownExtendView];
-        [radioButtonsCanDrop setIndex_cur:-1];
         
     } else {
         UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 199)];
@@ -51,7 +50,6 @@
             radioButton.selected = !radioButton.selected;
         
             [weakRadioButtonsCanDrop cj_hideDropDownExtendView];
-            [weakRadioButtonsCanDrop setIndex_cur:-1];
         };
         radioButtonsCanDrop.cjTapViewTappedAction = cjTapViewTappedAction;
 
