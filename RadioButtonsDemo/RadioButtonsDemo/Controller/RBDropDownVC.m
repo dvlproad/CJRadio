@@ -39,7 +39,7 @@
 }
 
 - (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old{
-    
+    NSLog(@"index_old = %ld", index_old);
     //radioButtons.tag == 222，则才采用#import "UIView+ShowHisDropDownView.h"（其实际上内部引用了"UIView+ShowPopupInView.h"，刚好与"UIView+PopupInView.h"不同）
     if (radioButtons.tag == 222) {
         
@@ -70,6 +70,7 @@
                 
                 [sender showHisDropDownView:popupView inView:popupSuperview withHeight:h_popupView showComplete:^{
                     NSLog(@"1.显示完成");
+                    [radioButtons setCjExtendViewShowing:YES];
                     
                 } tapBGComplete:^{
                     NSLog(@"1.点击背景完成");

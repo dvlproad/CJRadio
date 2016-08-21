@@ -117,7 +117,7 @@
 //注意radioButton_cur经常有未选中的状态，即经常会有self.index_cur == -1的情况
 - (void)radioButtonClick:(RadioButton *)radioButton_cur{
     
-    NSInteger index_old = self.isCJExtendViewShowing ? self.index_cur : -1;
+    NSInteger index_old = self.index_cur;
     self.index_cur = radioButton_cur.tag - RadioButton_TAG_BEGIN;
     
     BOOL isSameIndex = self.index_cur == index_old ? YES : NO;
@@ -185,6 +185,7 @@
     
 }
 
+
 //add
 - (void)radioButtons_didSelectInExtendView:(NSString *)title {
     RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.index_cur];
@@ -192,6 +193,7 @@
     [radioButton_cur setTitle:title];
     
     [self cj_hideDropDownExtendView];
+    [self setIndex_cur:-1];
 }
 
 
