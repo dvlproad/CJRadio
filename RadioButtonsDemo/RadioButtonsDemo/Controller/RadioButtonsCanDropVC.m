@@ -21,6 +21,7 @@
     rbCanDrop = [[RadioButtons alloc]initWithFrame:rect_rbCanDrop];
     [rbCanDrop setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
     rbCanDrop.delegate = self;
+    rbCanDrop.radioButtonType = RadioButtonTypeCanDrop;
     rbCanDrop.tag = 222;
     [self.view addSubview:rbCanDrop];
 }

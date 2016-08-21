@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RadioButtons_DropDown.h"
+#import "RadioButtons.h"
 
 @interface RBDropDownVC : UIViewController<RadioButtonsDelegate>{
-    RadioButtons_DropDown *rb_dropdown;
-    RadioButtons_DropDown *rb_dropdown2;
+    RadioButtons *rb_dropdown;
+    RadioButtons *rb_dropdown2;
     UIView *popupView1;
     UIView *popupView2;
     UIView *popupView3;

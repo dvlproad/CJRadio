@@ -159,6 +159,24 @@
 
 
 - (BOOL)shouldUpdateRadioButtonSelected_WhenClickSameRadioButton{
+    switch (self.radioButtonType) {
+        case RadioButtonTypeNormal:{
+            return NO;
+            break;
+        }
+        case RadioButtonTypeCanDrop:{
+            return YES;
+            break;
+        }
+        case RadioButtonTypeCanSlider:{
+            
+            break;
+        }
+        default:{
+            return NO;
+            break;
+        }
+    }
     return NO;  //设默认不可重复点击（YES:可重复点击  NO:不可重复点击）
 }
 

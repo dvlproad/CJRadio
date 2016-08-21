@@ -15,6 +15,13 @@
 
 #define RadioButton_TAG_BEGIN   1000
 
+
+typedef NS_ENUM(NSUInteger, RadioButtonType) {
+    RadioButtonTypeNormal = 0,
+    RadioButtonTypeCanDrop,
+    RadioButtonTypeCanSlider
+};
+
 @class RadioButtons;
 @protocol RadioButtonsDelegate <NSObject>
 @required
@@ -34,6 +41,8 @@
 @property (nonatomic, strong) UIScrollView *sv;//当要显示的radiobutton太多时有用（可通过滑动查看）
 @property (nonatomic, strong) id <RadioButtonsDelegate>delegate;
 @property (nonatomic, assign) NSInteger index_cur;//当前展开的index ，默认－1时，表示都没有展开
+@property (nonatomic, assign) RadioButtonType radioButtonType;
+
 
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName;
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex;

@@ -21,9 +21,10 @@
     
     #pragma mark 此例中如果RBDropDownVC.xib没有去掉sizeClasses，则容易出现视图无显示问题
     CGRect rect_rbDropDwon1 = CGRectMake(0, 164, 320, 40);
-    rb_dropdown = [[RadioButtons_DropDown alloc]initWithFrame:rect_rbDropDwon1];
+    rb_dropdown = [[RadioButtons alloc]initWithFrame:rect_rbDropDwon1];
     [rb_dropdown setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
     rb_dropdown.delegate = self;
+    rb_dropdown.radioButtonType = RadioButtonTypeCanDrop;
     rb_dropdown.tag = 111;
     [self.view addSubview:rb_dropdown];
     
