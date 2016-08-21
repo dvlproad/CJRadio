@@ -51,7 +51,9 @@
     
     CGFloat totalHeight = CGRectGetHeight(self.frame);
     CGFloat totalWidth = CGRectGetWidth(self.frame);
-    CGFloat sectionWidth = totalWidth/kMaxShowCount;
+    
+    NSInteger showViewCount = MIN(radioButtons.count, kMaxShowCount);
+    CGFloat sectionWidth = totalWidth/showViewCount;
     
     [sv setFrame:CGRectMake(0, 0, totalWidth, totalHeight)];
     [sv setContentSize:CGSizeMake(sectionWidth * radioButtons.count, totalHeight)]; //设置sv.contentSize

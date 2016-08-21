@@ -59,14 +59,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 - (void)setSelectedNone; //设置为未选择任何radioButton
 
 
-
-
 //RadioButtonsCanDrop使用到的
-@property (nonatomic, strong) UIView *m_SuperView;
-@property (nonatomic, strong) UIView *tapV;
-@property (nonatomic, strong) UIView *extendView;
-
-- (void)radioButtonsCanDrop_showDropDownExtendView:(UIView *)extendView_m inView:(UIView *)superView complete:(void(^)(void))block;
 - (void)radioButtons_didSelectInExtendView:(NSString *)title;
 
 @end

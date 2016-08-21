@@ -17,13 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    CGRect rect_rbCanDrop = CGRectMake(0, 164, self.view.frame.size.width, 40);
-    rbCanDrop = [[RadioButtons alloc]initWithFrame:rect_rbCanDrop];
-    [rbCanDrop setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
-    rbCanDrop.delegate = self;
-    rbCanDrop.radioButtonType = RadioButtonTypeCanDrop;
-    rbCanDrop.tag = 222;
-    [self.view addSubview:rbCanDrop];
+    [self.dropdownRadioButtons setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
+    self.dropdownRadioButtons.delegate = self;
+    self.dropdownRadioButtons.radioButtonType = RadioButtonTypeCanDrop;
+    self.dropdownRadioButtons.tag = 222;
+    [self.view addSubview:self.dropdownRadioButtons];
 }
 
 - (void)radioButtons:(RadioButtons *)radioButtonsCanDrop chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
@@ -34,7 +32,10 @@
         [radioButtonsCanDrop setIndex_cur:-1];
         
     } else {
-        UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 199)];
+        CGFloat width = CGRectGetWidth(radioButtonsCanDrop.frame);
+        CGFloat height = 200;
+        
+        UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, width, height)];
         popupView.clipsToBounds = YES;
         popupView.backgroundColor = [UIColor greenColor];
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -62,7 +63,7 @@
 
 - (IBAction)btnAction:(id)sender{
     NSString *text = [NSString stringWithFormat:@"%d", rand()%10];
-    [rbCanDrop radioButtons_didSelectInExtendView:text];
+    [self.dropdownRadioButtons radioButtons_didSelectInExtendView:text];
 }
 
 
