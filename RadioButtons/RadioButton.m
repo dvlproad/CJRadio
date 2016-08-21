@@ -21,11 +21,9 @@
     [btn addTarget:self action:@selector(radioButtonClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (id)initWithNibNamed:(NSString *)nibName frame:(CGRect)frame{
+- (id)initWithNibNamed:(NSString *)nibName {
     NSArray *array = [[NSBundle mainBundle]loadNibNamed:nibName owner:nil options:nil];
     self = [array lastObject];
-    
-    [self setFrame:frame];//注意:前提必须在xib中设置autolayout，否则subview不会因设置的frame改变而改变
     
     return self;
 }

@@ -10,6 +10,9 @@
 
 #import "RadioButton.h"
 
+#import "UIView+CJShowDropView.h"
+#import "UIView+CJAddSubVIew.h"
+
 #define RadioButton_TAG_BEGIN   1000
 
 @class RadioButtons;
@@ -22,8 +25,11 @@
 
 
 //由于点击RadioButton的时候，还要涉及到其他RadioButton中图标的变化，所以RadioButtons不适合再分开。
-@interface RadioButtons : UIView<RadioButtonDelegate, UIScrollViewDelegate>{
+@interface RadioButtons : UIView <RadioButtonDelegate, UIScrollViewDelegate> {
     NSInteger countTitles;
+    
+    NSMutableArray *radioButtons;
+    NSMutableArray *lineViews;
 }
 @property (nonatomic, strong) UIScrollView *sv;//当要显示的radiobutton太多时有用（可通过滑动查看）
 @property (nonatomic, strong) id <RadioButtonsDelegate>delegate;
@@ -31,14 +37,27 @@
 
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName;
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex;
+//以上为通用的
 
 
+
+//一般单选时候使用到的
 - (BOOL)shouldUpdateRadioButtonSelected_WhenClickSameRadioButton;
 - (void)shouldMoveScrollViewToSelectItem:(RadioButton *)radioButton;
-
 
 - (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title;
 - (void)changeCurrentRadioButtonState;
 - (void)setSelectedNone; //设置为未选择任何radioButton
+
+
+
+
+//RadioButtonsCanDrop使用到的
+@property (nonatomic, strong) UIView *m_SuperView;
+@property (nonatomic, strong) UIView *tapV;
+@property (nonatomic, strong) UIView *extendView;
+
+- (void)radioButtonsCanDrop_showDropDownExtendView:(UIView *)extendView_m inView:(UIView *)superView complete:(void(^)(void))block;
+- (void)radioButtons_didSelectInExtendView:(NSString *)title;
 
 @end

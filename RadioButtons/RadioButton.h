@@ -40,6 +40,6 @@
 
 - (void)setTitle:(NSString *)title;
 
-- (id)initWithNibNamed:(NSString *)nibName frame:(CGRect)frame;
+- (id)initWithNibNamed:(NSString *)nibName;
 
 @end

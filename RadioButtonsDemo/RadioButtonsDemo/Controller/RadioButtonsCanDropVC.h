@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RadioButtonsCanDrop.h"
+#import "RadioButtons.h"
 
-@interface RadioButtonsCanDropVC : UIViewController<RadioButtonsCanDropDelegate>{
-    RadioButtonsCanDrop *rbCanDrop;
+@interface RadioButtonsCanDropVC : UIViewController<RadioButtonsDelegate>{
+    RadioButtons *rbCanDrop;
 }
 
 @end

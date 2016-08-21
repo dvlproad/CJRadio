@@ -8,6 +8,8 @@
 
 #import "RadioButtons.h"
 
+#define kMaxShowCount 5
+
 @implementation RadioButtons
 @synthesize sv;
 
@@ -34,21 +36,46 @@
 }
 
 - (void)addScrollViewForTab{
-    sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    sv = [[UIScrollView alloc]initWithFrame:CGRectZero];
     sv.showsVerticalScrollIndicator = NO;
     sv.showsHorizontalScrollIndicator = NO;
     sv.delegate = self;
     sv.bounces = NO;
     sv.backgroundColor = [UIColor orangeColor];
+    
     [self addSubview:sv];
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGFloat totalHeight = CGRectGetHeight(self.frame);
+    CGFloat totalWidth = CGRectGetWidth(self.frame);
+    CGFloat sectionWidth = totalWidth/kMaxShowCount;
+    
+    [sv setFrame:CGRectMake(0, 0, totalWidth, totalHeight)];
+    [sv setContentSize:CGSizeMake(sectionWidth * radioButtons.count, totalHeight)]; //设置sv.contentSize
+    
+    for (NSInteger i = 0; i < radioButtons.count; i++) {
+        RadioButton *radioButton = [radioButtons objectAtIndex:i];
+        
+        CGRect rect_radioButton = CGRectMake(sectionWidth*i, 0, sectionWidth, self.frame.size.height);
+        [radioButton setFrame:rect_radioButton];
+    }
+    
+    for (NSInteger i = 0; i < lineViews.count; i++) {
+        UIView *lineView = [lineViews objectAtIndex:i];
+        CGRect rect_line = CGRectMake(sectionWidth*(i+1), 5, 1, self.frame.size.height - 10);
+        [lineView setFrame:rect_line];
+    }
+}
 
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName{
     [self setTitles:titles radioButtonNidName:nibName andShowIndex:-1];
 }
 
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex{
+    NSAssert(titles.count >= 3, @"the min count of the titles is 3");
     NSAssert(nibName != nil, @"radioButton的nibName未设置，请检查");
     
     NSInteger sectionNum = [titles count];
@@ -57,27 +84,15 @@
     }
     countTitles = sectionNum;
     
-    //计算每个radioButton应该有的宽度是多少
-    NSArray *array = [[NSBundle mainBundle]loadNibNamed:nibName owner:nil options:nil];
-    RadioButton *radioButtonTemp = [array lastObject];
-    CGFloat sectionWidth = radioButtonTemp.frame.size.width;
-    if (sectionWidth * sectionNum < self.frame.size.width) {
-        NSLog(@"Warning：xib中取得的RadioButton宽度太小，重新调整。现先暂时使用平分");
-        sectionWidth = self.frame.size.width/sectionNum;
-    }
-    sv.contentSize = CGSizeMake(sectionWidth * sectionNum, self.frame.size.height);//设置sv.contentSize
-    
-    
     self.index_cur = showIndex; //如果self.index_cur = -1，则代表未有任何radioButton选中
     
-    
     //添加radioButton到sv中
+    radioButtons = [[NSMutableArray alloc] init];
+    lineViews = [[NSMutableArray alloc] init];
     for (int i = 0; i <sectionNum; i++) {
-        CGRect rect_radioButton = CGRectMake(sectionWidth*i, 0, sectionWidth, self.frame.size.height);
-        //radioButton初始化方法①
-        //RadioButton *radioButton = [[RadioButton alloc]initWithFrame:rect_radioButton];
-        //radioButton初始化方法②
-        RadioButton *radioButton = [[RadioButton alloc]initWithNibNamed:nibName frame:rect_radioButton];
+        NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:nibName owner:nil options:nil];
+        RadioButton *radioButton = [radioButtonNib lastObject];
+        
         [radioButton setTitle:titles[i]];
         radioButton.delegate = self;
         radioButton.tag = RadioButton_TAG_BEGIN + i;
@@ -88,30 +103,14 @@
             [radioButton setSelected:NO];
         }
         [self.sv addSubview:radioButton];
+        [radioButtons addObject:radioButton];
         
-        if (i<sectionNum && i != 0) {
-            CGRect rect_line = CGRectMake(sectionWidth*i, 5, 1, self.frame.size.height - 10);
-            UIView *lineView = [[UIView alloc] initWithFrame:rect_line];
+        if (i < sectionNum && i != 0) {
+            UIView *lineView = [[UIView alloc] initWithFrame:CGRectZero];
             lineView.backgroundColor = [UIColor lightGrayColor];
             [self.sv addSubview:lineView];
+            [lineViews addObject:lineView];
         }
-        
-        /*
-         if (1) {
-         NSString *title = titles[i];
-         UIFont *font = radioButton.btn.titleLabel.font;
-         CGSize constrainedToSize = CGSizeMake(radioButton.frame.size.width, radioButton.frame.size.height);
-         CGSize textSize = [title sizeWithFont:font constrainedToSize:constrainedToSize lineBreakMode:NSLineBreakByTruncatingTail];
-         
-         UIImage *shadowImage = [UIImage imageNamed:@"btn_BG_selected@2x"];
-         CGRect rect_shadowImageV = CGRectMake(0, 0, textSize.width+5, shadowImage.size.height);
-         UIImageView *shadowImageV = [[UIImageView alloc] initWithFrame:rect_shadowImageV];
-         [shadowImageV setCenter:CGPointMake(i*sectionWidth +sectionWidth/2, radioButton.frame.size.height/2)];
-         shadowImageV.image = shadowImage;
-         [radioButton addSubview:shadowImageV];
-         [radioButton bringSubviewToFront:radioButton.lab];
-         }
-         */
     }
 }
 
@@ -126,7 +125,7 @@
     
     if (index_old == -1) {//如果当前没有radioButton是被选中。
         
-    }else{  //currentExtendSection != -1，即表示如果当前有radioButton是被选中。
+    }else{  //index_old != -1，即表示如果当前有radioButton是被选中。
         if (index_old == self.index_cur) {
             isSameIndex = YES;
             
@@ -138,7 +137,7 @@
     }
     
     
-    BOOL shouldUpdateCurrentRadioButtonSelected = [self shouldUpdateRadioButtonSelected_WhenClickSameRadioButton];
+    BOOL shouldUpdateCurrentRadioButtonSelected = [self shouldUpdateRadioButtonSelected_WhenClickSameRadioButton];//设默认不可重复点击（YES:可重复点击  NO:不可重复点击）
     if (isSameIndex) {
         if (shouldUpdateCurrentRadioButtonSelected) {
             radioButton_cur.selected = !radioButton_cur.selected;
@@ -151,7 +150,7 @@
     if([self.delegate respondsToSelector:@selector(radioButtons:chooseIndex:oldIndex:)]){
         [self.delegate radioButtons:self chooseIndex:self.index_cur oldIndex:index_old];
         
-        if (isSameIndex && shouldUpdateCurrentRadioButtonSelected) {
+        if (isSameIndex && shouldUpdateCurrentRadioButtonSelected) { //此条if语句位置待确定
             [self setSelectedNone];
         }
     }
@@ -169,6 +168,15 @@
 }
 
 
+//add
+- (void)radioButtons_didSelectInExtendView:(NSString *)title {
+    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.index_cur];
+    radioButton_cur.selected = !radioButton_cur.selected;
+    [radioButton_cur setTitle:title];
+    
+    [self cj_hideDropDownExtendView];
+    [self setIndex_cur:-1];
+}
 
 
 - (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title{

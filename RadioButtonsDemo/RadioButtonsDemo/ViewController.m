@@ -13,6 +13,8 @@
 #import "RBSliderVC.h"
 #import "RadioButtonsCanDropVC.h"
 
+#import "RadioButtonsViewController.h"
+
 
 @interface ViewController ()
 
@@ -54,6 +56,12 @@
     RBSliderVC *vc = [[RBSliderVC alloc]initWithNibName:@"RBSliderVC" bundle:nil];
     vc.title = [sender titleForState:UIControlStateNormal];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)goRadioButtonsViewController:(id)sender {
+    RadioButtonsViewController *viewController = [[RadioButtonsViewController alloc]initWithNibName:@"RadioButtonsViewController" bundle:nil];
+    viewController.title = [sender titleForState:UIControlStateNormal];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 

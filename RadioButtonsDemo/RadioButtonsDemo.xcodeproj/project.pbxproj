@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		449F20EF6662D88C37DAFCCD /* libPods-RadioButtonsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A03DFBE8686B3C786BB746 /* libPods-RadioButtonsDemo.a */; };
+		781960001D65E1380042D89B /* RadioButtonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78195FFE1D65E1380042D89B /* RadioButtonsViewController.m */; };
+		781960011D65E1380042D89B /* RadioButtonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78195FFF1D65E1380042D89B /* RadioButtonsViewController.xib */; };
 		785CEAB41BF4B80300846A15 /* RBBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 785CEAB21BF4B80300846A15 /* RBBaseVC.m */; };
 		785CEAB51BF4B80300846A15 /* RBBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785CEAB31BF4B80300846A15 /* RBBaseVC.xib */; };
-		78B8DF9B1BFA18E400BAB3FE /* RadioButtonsCanDrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8DF9A1BFA18E400BAB3FE /* RadioButtonsCanDrop.m */; settings = {ASSET_TAGS = (); }; };
-		78B8DF9F1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8DF9D1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.m */; settings = {ASSET_TAGS = (); }; };
-		78B8DFA01BFA2BC300BAB3FE /* RadioButtonsCanDropVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B8DF9E1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.xib */; settings = {ASSET_TAGS = (); }; };
+		78B8DF9F1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B8DF9D1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.m */; };
+		78B8DFA01BFA2BC300BAB3FE /* RadioButtonsCanDropVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B8DF9E1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.xib */; };
+		78E413711D69B40A00934D4A /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E413701D69B40A00934D4A /* UIView+CJAddSubVIew.m */; };
+		78E413741D69D6C300934D4A /* UIView+CJShowDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E413731D69D6C300934D4A /* UIView+CJShowDropView.m */; };
 		805A17561BF321CC00424769 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17551BF321CC00424769 /* main.m */; };
 		805A17591BF321CC00424769 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17581BF321CC00424769 /* AppDelegate.m */; };
 		805A175C1BF321CC00424769 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A175B1BF321CC00424769 /* ViewController.m */; };
@@ -54,14 +57,19 @@
 /* Begin PBXFileReference section */
 		53A03DFBE8686B3C786BB746 /* libPods-RadioButtonsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioButtonsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C13D4140D7C541EB81741F /* Pods-RadioButtonsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioButtonsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		78195FFD1D65E1380042D89B /* RadioButtonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonsViewController.h; sourceTree = "<group>"; };
+		78195FFE1D65E1380042D89B /* RadioButtonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonsViewController.m; sourceTree = "<group>"; };
+		78195FFF1D65E1380042D89B /* RadioButtonsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButtonsViewController.xib; sourceTree = "<group>"; };
 		785CEAB11BF4B80300846A15 /* RBBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBaseVC.h; sourceTree = "<group>"; };
 		785CEAB21BF4B80300846A15 /* RBBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBaseVC.m; sourceTree = "<group>"; };
 		785CEAB31BF4B80300846A15 /* RBBaseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBBaseVC.xib; sourceTree = "<group>"; };
-		78B8DF991BFA18E400BAB3FE /* RadioButtonsCanDrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonsCanDrop.h; sourceTree = "<group>"; };
-		78B8DF9A1BFA18E400BAB3FE /* RadioButtonsCanDrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonsCanDrop.m; sourceTree = "<group>"; };
 		78B8DF9C1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonsCanDropVC.h; sourceTree = "<group>"; };
 		78B8DF9D1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonsCanDropVC.m; sourceTree = "<group>"; };
 		78B8DF9E1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButtonsCanDropVC.xib; sourceTree = "<group>"; };
+		78E4136F1D69B40A00934D4A /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
+		78E413701D69B40A00934D4A /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
+		78E413721D69D6C300934D4A /* UIView+CJShowDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowDropView.h"; sourceTree = "<group>"; };
+		78E413731D69D6C300934D4A /* UIView+CJShowDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShowDropView.m"; sourceTree = "<group>"; };
 		805A17501BF321CC00424769 /* RadioButtonsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioButtonsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		805A17541BF321CC00424769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		805A17551BF321CC00424769 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -123,6 +131,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78E4136E1D69B40A00934D4A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				78E4136F1D69B40A00934D4A /* UIView+CJAddSubVIew.h */,
+				78E413701D69B40A00934D4A /* UIView+CJAddSubVIew.m */,
+				78E413721D69D6C300934D4A /* UIView+CJShowDropView.h */,
+				78E413731D69D6C300934D4A /* UIView+CJShowDropView.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		805A17471BF321CC00424769 = {
 			isa = PBXGroup;
 			children = (
@@ -197,10 +216,9 @@
 				805A179B1BF35A8C00424769 /* RadioButton_Slider.xib */,
 				805A177F1BF3235E00424769 /* RadioButtons.h */,
 				805A17801BF3235E00424769 /* RadioButtons.m */,
+				78E4136E1D69B40A00934D4A /* Category */,
 				805A178C1BF32FAD00424769 /* RadioButtons_DropDown.h */,
 				805A178D1BF32FAD00424769 /* RadioButtons_DropDown.m */,
-				78B8DF991BFA18E400BAB3FE /* RadioButtonsCanDrop.h */,
-				78B8DF9A1BFA18E400BAB3FE /* RadioButtonsCanDrop.m */,
 				805A178F1BF3378700424769 /* RadioButtons_Slider.h */,
 				805A17901BF3378700424769 /* RadioButtons_Slider.m */,
 			);
@@ -226,6 +244,9 @@
 				805A17A91BF35C1B00424769 /* RBSliderVC.h */,
 				805A17AA1BF35C1B00424769 /* RBSliderVC.m */,
 				805A17AB1BF35C1B00424769 /* RBSliderVC.xib */,
+				78195FFD1D65E1380042D89B /* RadioButtonsViewController.h */,
+				78195FFE1D65E1380042D89B /* RadioButtonsViewController.m */,
+				78195FFF1D65E1380042D89B /* RadioButtonsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -361,6 +382,7 @@
 				805A17A11BF35A8C00424769 /* btnTab_BG_selected.png in Resources */,
 				805A17A81BF35C0300424769 /* RBDropDownVC.xib in Resources */,
 				805A17641BF321CC00424769 /* LaunchScreen.xib in Resources */,
+				781960011D65E1380042D89B /* RadioButtonsViewController.xib in Resources */,
 				78B8DFA01BFA2BC300BAB3FE /* RadioButtonsCanDropVC.xib in Resources */,
 				805A179D1BF35A8C00424769 /* arrowUp.png in Resources */,
 				805A17611BF321CC00424769 /* Images.xcassets in Resources */,
@@ -437,10 +459,12 @@
 				805A17591BF321CC00424769 /* AppDelegate.m in Sources */,
 				805A178E1BF32FAD00424769 /* RadioButtons_DropDown.m in Sources */,
 				785CEAB41BF4B80300846A15 /* RBBaseVC.m in Sources */,
+				78E413741D69D6C300934D4A /* UIView+CJShowDropView.m in Sources */,
 				805A17A71BF35C0300424769 /* RBDropDownVC.m in Sources */,
-				78B8DF9B1BFA18E400BAB3FE /* RadioButtonsCanDrop.m in Sources */,
+				78E413711D69B40A00934D4A /* UIView+CJAddSubVIew.m in Sources */,
 				805A17911BF3378700424769 /* RadioButtons_Slider.m in Sources */,
 				805A17561BF321CC00424769 /* main.m in Sources */,
+				781960001D65E1380042D89B /* RadioButtonsViewController.m in Sources */,
 				78B8DF9F1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.m in Sources */,
 				805A17841BF3235E00424769 /* RadioButtons.m in Sources */,
 				805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */,
