@@ -2,11 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RBSliderVC">
             <connections>
+                <outlet property="sliderRadioButtons" destination="QMG-it-oKj" id="S3w-JO-GbV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMG-it-oKj" customClass="RadioButtons_Slider">
+                    <rect key="frame" x="0.0" y="110" width="320" height="128"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="EX7-en-neq"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="QMG-it-oKj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="110" id="MIN-zJ-6ek"/>
+                <constraint firstAttribute="trailing" secondItem="QMG-it-oKj" secondAttribute="trailing" id="lJu-CY-Yy8"/>
+                <constraint firstItem="QMG-it-oKj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pvs-rF-nXC"/>
+            </constraints>
             <point key="canvasLocation" x="212" y="260"/>
         </view>
     </objects>

@@ -45,7 +45,8 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 
 
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName;
-- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex;
+- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName withMaxShowViewCount:(NSInteger)maxShowViewCount;
+- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex withMaxShowViewCount:(NSInteger)maxShowViewCount;
 //以上为通用的
 
 

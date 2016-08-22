@@ -8,7 +8,16 @@
 
 #import "RadioButtons.h"
 
-#define kMaxShowCount 5
+#define kDefaultMaxShowCount 5
+
+
+@interface RadioButtons () {
+    
+}
+@property (nonatomic, assign) NSInteger maxShowViewCount;
+
+@end
+
 
 @implementation RadioButtons
 @synthesize sv;
@@ -52,7 +61,7 @@
     CGFloat totalHeight = CGRectGetHeight(self.frame);
     CGFloat totalWidth = CGRectGetWidth(self.frame);
     
-    NSInteger showViewCount = MIN(radioButtons.count, kMaxShowCount);
+    NSInteger showViewCount = MIN(radioButtons.count, self.maxShowViewCount);
     CGFloat sectionWidth = totalWidth/showViewCount;
     
     [sv setFrame:CGRectMake(0, 0, totalWidth, totalHeight)];
@@ -72,13 +81,20 @@
     }
 }
 
-- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName{
-    [self setTitles:titles radioButtonNidName:nibName andShowIndex:-1];
+- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName {
+    [self setTitles:titles radioButtonNidName:nibName andShowIndex:-1 withMaxShowViewCount:kDefaultMaxShowCount];
 }
 
-- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex{
+- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName withMaxShowViewCount:(NSInteger)maxShowViewCount {
+    [self setTitles:titles radioButtonNidName:nibName andShowIndex:-1 withMaxShowViewCount:maxShowViewCount];
+}
+
+- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex withMaxShowViewCount:(NSInteger)maxShowViewCount {
     NSAssert(titles.count >= 3, @"the min count of the titles is 3");
     NSAssert(nibName != nil, @"radioButton的nibName未设置，请检查");
+    
+    
+    self.maxShowViewCount = maxShowViewCount;
     
     NSInteger sectionNum = [titles count];
     if (sectionNum == 0) {

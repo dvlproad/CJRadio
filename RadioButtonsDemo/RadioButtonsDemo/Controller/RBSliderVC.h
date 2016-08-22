@@ -12,5 +12,6 @@
 @interface RBSliderVC : UIViewController<RadioButtonsDelegate>{
     
 }
+@property (nonatomic, weak) IBOutlet RadioButtons_Slider *sliderRadioButtons;
 
 @end
