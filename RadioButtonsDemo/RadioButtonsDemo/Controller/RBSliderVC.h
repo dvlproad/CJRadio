@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RadioButtons_Slider.h"
+#import "RadioButtons.h"
 
 @interface RBSliderVC : UIViewController<RadioButtonsDelegate>{
     
 }
-@property (nonatomic, weak) IBOutlet RadioButtons_Slider *sliderRadioButtons;
+@property (nonatomic, weak) IBOutlet RadioButtons *sliderRadioButtons;
+@property (nonatomic, weak) IBOutlet RadioButtons *sliderRadioButtons2;
 
 @end

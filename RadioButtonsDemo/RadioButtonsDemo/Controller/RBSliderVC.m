@@ -24,16 +24,28 @@
                     radioButtonNidName:@"RadioButton_Slider"
                           andShowIndex:4
                   withMaxShowViewCount:3];
+//    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
     
     [self.sliderRadioButtons setDelegate:self];
     [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
                                rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
                            withArrowImageWidth:20];
-    [self.view addSubview:self.sliderRadioButtons];
+    
+    
+    [self.sliderRadioButtons2 setTitles:radioButtonNames
+                    radioButtonNidName:@"RadioButton_Slider"
+                          andShowIndex:4
+                  withMaxShowViewCount:3];
+    //    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
+    
+    [self.sliderRadioButtons2 setDelegate:self];
+    [self.sliderRadioButtons2 addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+                               rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+                           withArrowImageWidth:20];
 }
 
 //点击时候会调用如下委托：
-- (void)radioButtons:(RadioButtons_Slider *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old{
+- (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     if (index_cur != index_old) {
         [radioButtons selectRadioButtonIndex:index_cur];
     }

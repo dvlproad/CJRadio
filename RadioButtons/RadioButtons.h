@@ -15,11 +15,10 @@
 
 #define RadioButton_TAG_BEGIN   1000
 
-
 typedef NS_ENUM(NSUInteger, RadioButtonType) {
     RadioButtonTypeNormal = 0,
     RadioButtonTypeCanDrop,
-    RadioButtonTypeCanSlider
+    RadioButtonTypeCanSlider    //RadioButtonTypeCanSlider 等价于RadioButtonTypeNormal
 };
 
 @class RadioButtons;
@@ -43,6 +42,8 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 @property (nonatomic, assign) NSInteger index_cur;//当前展开的index ，默认－1时，表示都没有展开
 @property (nonatomic, assign) RadioButtonType radioButtonType;
 
+@property (nonatomic, assign) BOOL shouldMoveScrollViewToSelectItem;
+
 
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName;
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName withMaxShowViewCount:(NSInteger)maxShowViewCount;
@@ -62,5 +63,25 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 
 //RadioButtonsCanDrop使用到的
 - (void)radioButtons_didSelectInExtendView:(NSString *)title;
+
+
+
+/**
+ *  为view添加左侧箭头视图和右侧箭头视图
+ *
+ *  @param leftArrowImage  左侧箭头视图
+ *  @param rightArrowImage 右侧箭头视图
+ *  @param arrowImageWidth 两个箭头视图共同的宽度
+ */
+- (void)addLeftArrowImage:(UIImage *)leftArrowImage
+          rightArrowImage:(UIImage *)rightArrowImage
+      withArrowImageWidth:(CGFloat)arrowImageWidth;
+
+/**
+ *  选中第index个单选按钮
+ *
+ *  @param index 要选择的单选按钮的索引值
+ */
+- (void)selectRadioButtonIndex:(NSInteger)index;
 
 @end

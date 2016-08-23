@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RadioButtons_Slider.h"
 #import "RadioButtons.h"
 
 @interface RadioButtonsViewController : UIViewController <RadioButtonsDelegate> {
@@ -17,6 +16,6 @@
     NSString *radioButtonNidName;
     NSInteger selectIndex;
 }
-@property (nonatomic, strong) IBOutlet RadioButtons_Slider *radioButtons;
+@property (nonatomic, strong) IBOutlet RadioButtons *radioButtons;
 
 @end

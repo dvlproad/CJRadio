@@ -26,7 +26,6 @@
 		805A17821BF3235E00424769 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A177D1BF3235E00424769 /* RadioButton.m */; };
 		805A17831BF3235E00424769 /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A177E1BF3235E00424769 /* RadioButton_DropDown.xib */; };
 		805A17841BF3235E00424769 /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17801BF3235E00424769 /* RadioButtons.m */; };
-		805A17911BF3378700424769 /* RadioButtons_Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17901BF3378700424769 /* RadioButtons_Slider.m */; };
 		805A179C1BF35A8C00424769 /* down_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17931BF35A8C00424769 /* down_dark.png */; };
 		805A179D1BF35A8C00424769 /* arrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17951BF35A8C00424769 /* arrowUp.png */; };
 		805A179E1BF35A8C00424769 /* arrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17961BF35A8C00424769 /* arrowUp@2x.png */; };
@@ -87,8 +86,6 @@
 		805A177E1BF3235E00424769 /* RadioButton_DropDown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_DropDown.xib; sourceTree = "<group>"; };
 		805A177F1BF3235E00424769 /* RadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons.h; sourceTree = "<group>"; };
 		805A17801BF3235E00424769 /* RadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons.m; sourceTree = "<group>"; };
-		805A178F1BF3378700424769 /* RadioButtons_Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons_Slider.h; sourceTree = "<group>"; };
-		805A17901BF3378700424769 /* RadioButtons_Slider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons_Slider.m; sourceTree = "<group>"; };
 		805A17931BF35A8C00424769 /* down_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_dark.png; sourceTree = "<group>"; };
 		805A17951BF35A8C00424769 /* arrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowUp.png; sourceTree = "<group>"; };
 		805A17961BF35A8C00424769 /* arrowUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowUp@2x.png"; sourceTree = "<group>"; };
@@ -214,8 +211,6 @@
 				805A177F1BF3235E00424769 /* RadioButtons.h */,
 				805A17801BF3235E00424769 /* RadioButtons.m */,
 				78E4136E1D69B40A00934D4A /* Category */,
-				805A178F1BF3378700424769 /* RadioButtons_Slider.h */,
-				805A17901BF3378700424769 /* RadioButtons_Slider.m */,
 			);
 			name = RadioButtons;
 			path = ../../RadioButtons;
@@ -456,7 +451,6 @@
 				78E413741D69D6C300934D4A /* UIView+CJShowDropView.m in Sources */,
 				805A17A71BF35C0300424769 /* RBDropDownVC.m in Sources */,
 				78E413711D69B40A00934D4A /* UIView+CJAddSubVIew.m in Sources */,
-				805A17911BF3378700424769 /* RadioButtons_Slider.m in Sources */,
 				805A17561BF321CC00424769 /* main.m in Sources */,
 				781960001D65E1380042D89B /* RadioButtonsViewController.m in Sources */,
 				78B8DF9F1BFA2BC300BAB3FE /* RadioButtonsCanDropVC.m in Sources */,
