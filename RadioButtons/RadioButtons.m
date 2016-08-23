@@ -111,6 +111,7 @@
         NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:nibName owner:nil options:nil];
         RadioButton *radioButton = [radioButtonNib lastObject];
         
+        radioButton.index = i;
         [radioButton setTitle:titles[i]];
         radioButton.delegate = self;
         radioButton.tag = RadioButton_TAG_BEGIN + i;

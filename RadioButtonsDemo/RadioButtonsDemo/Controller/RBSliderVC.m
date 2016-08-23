@@ -19,10 +19,16 @@
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor greenColor];
     
-    NSArray *radioButtonNames =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
-    [self.sliderRadioButtons setTitles:radioButtonNames radioButtonNidName:@"RadioButton_Slider" andShowIndex:4 withMaxShowViewCount:3];
+    NSArray *radioButtonNames =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
+    [self.sliderRadioButtons setTitles:radioButtonNames
+                    radioButtonNidName:@"RadioButton_Slider"
+                          andShowIndex:4
+                  withMaxShowViewCount:3];
+    
     [self.sliderRadioButtons setDelegate:self];
-    [self.sliderRadioButtons addArrowImage_Left:[UIImage imageNamed:@"btnTab_BG_selected"] Right:[UIImage imageNamed:@"btnTab_BG_selected"]];
+    [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+                               rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+                           withArrowImageWidth:20];
     [self.view addSubview:self.sliderRadioButtons];
 }
 

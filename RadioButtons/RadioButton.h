@@ -28,6 +28,7 @@
 @interface RadioButton : UIView{
     
 }
+@property (nonatomic, assign) NSInteger index;  /**< 单选按钮的索引，在RadioButtons里有用 */
 @property(nonatomic, strong) IBOutlet UIButton *btn;
 @property(nonatomic, strong) IBOutlet UILabel *lab; //当title字数多或者需多行时有用
 @property(nonatomic, strong) IBOutlet UIImageView *imageV;
