@@ -385,7 +385,7 @@
 }
 
 - (IBAction)btnAction:(id)sender{
-    NSInteger index_old = rb_dropdown.index_cur;
+    NSInteger index_old = rb_dropdown.currentSelectedIndex;
     
     NSString *title = [NSString stringWithFormat:@"%d", rand()%10];
     [rb_dropdown changeCurrentRadioButtonStateAndTitle:title];

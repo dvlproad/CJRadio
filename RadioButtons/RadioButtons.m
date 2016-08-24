@@ -13,29 +13,30 @@
 
 
 @interface RadioButtons () {
-    BOOL _haveArrowButton;
+    NSMutableArray *radioButtons;   /**< 所有的单选按钮数组 */
+    NSMutableArray *lineViews;
+    
+    BOOL _haveArrowButton;      /**< 是否有左右箭头 */
     UIButton *_leftArrowButton; /**< 左侧箭头 */
     UIButton *_rightArrowButton;/**< 右侧箭头 */
     CGFloat _arrowImageWidth;   /**< 箭头宽度 */
 }
+@property (nonatomic, strong) UIScrollView *scrollView; //滚动视图（用于radiobutton过多时的滑动）
 
 @end
 
 
 @implementation RadioButtons
-@synthesize sv;
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
         [self commonInit];
     }
     return self;
 }
 
-- (void)awakeFromNib{
+- (void)awakeFromNib {
     [self commonInit];
 }
 
@@ -44,18 +45,14 @@
     UILabel *lab = [[UILabel alloc]initWithFrame:CGRectZero];
     [self addSubview:lab];
     
-    [self addScrollViewForTab];
-}
-
-- (void)addScrollViewForTab{
-    sv = [[UIScrollView alloc]initWithFrame:CGRectZero];
-    sv.showsVerticalScrollIndicator = NO;
-    sv.showsHorizontalScrollIndicator = NO;
-    sv.delegate = self;
-    sv.bounces = NO;
-    sv.backgroundColor = [UIColor orangeColor];
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectZero];
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.delegate = self;
+    self.scrollView.bounces = NO;
+    self.scrollView.backgroundColor = [UIColor orangeColor];
     
-    [self addSubview:sv];
+    [self addSubview:self.scrollView];
 }
 
 - (void)layoutSubviews {
@@ -68,8 +65,8 @@
     CGFloat sectionWidth = totalWidth/showViewCount;
     sectionWidth = ceilf(sectionWidth); //重点注意：这里为了避免计算出来的值受除后，余数太多(eg:102.66666666666667)，而造成的之后在通过左右箭头点击来寻找”要找的按钮“的时候，计算出现问题（”要找的按钮“需与“左右侧箭头的最左最右侧值”进行精确的比较），所以这里我们需要一个整数值，故我们这边选择向上取整。
     
-    [sv setFrame:CGRectMake(0, 0, totalWidth, totalHeight)];
-    [sv setContentSize:CGSizeMake(sectionWidth * radioButtons.count, totalHeight)]; //设置sv.contentSize
+    [self.scrollView setFrame:CGRectMake(0, 0, totalWidth, totalHeight)];
+    [self.scrollView setContentSize:CGSizeMake(sectionWidth * radioButtons.count, totalHeight)]; //设置self.scrollView.contentSize
     
     for (NSInteger i = 0; i < radioButtons.count; i++) {
         RadioButton *radioButton = [radioButtons objectAtIndex:i];
@@ -77,7 +74,7 @@
         CGRect rect_radioButton = CGRectMake(sectionWidth*i, 0, sectionWidth, self.frame.size.height);
         [radioButton setFrame:rect_radioButton];
         
-        if (i == self.index_cur && self.shouldMoveScrollViewToSelectItem) {
+        if (i == self.currentSelectedIndex && self.shouldMoveScrollViewToSelectItem) {
             [self shouldMoveScrollViewToSelectItem:radioButton];//改名addAnimation
         }
     }
@@ -117,7 +114,7 @@
  *  @param defaultSelectedIndex 初始默认选中的单选按钮的索引
  */
 - (void)setDefaultSelectedIndex:(NSInteger)defaultSelectedIndex {
-    self.index_cur = defaultSelectedIndex;
+    self.currentSelectedIndex = defaultSelectedIndex;
     
     for (NSInteger i = 0; i < radioButtons.count; i++) {
         RadioButton *radioButton = [radioButtons objectAtIndex:i];
@@ -129,18 +126,18 @@
     }
 }
 
+/** 完整的描述请参见文件头部 */
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName {
     NSAssert(titles.count >= 3, @"the min count of the titles is 3");
     NSAssert(nibName != nil, @"radioButton的nibName未设置，请检查");
     
     self.maxShowViewCount = kDefaultMaxShowCount;
-    self.index_cur = kDefaultSelectedIndex;
+    self.currentSelectedIndex = kDefaultSelectedIndex;
     
     NSInteger sectionNum = [titles count];
     if (sectionNum == 0) {
         NSLog(@"error: [titles count] == 0");
     }
-    countTitles = sectionNum;
     
     //添加radioButton到sv中
     radioButtons = [[NSMutableArray alloc] init];
@@ -153,31 +150,31 @@
         [radioButton setTitle:titles[i]];
         radioButton.delegate = self;
         radioButton.tag = RadioButton_TAG_BEGIN + i;
-        [self.sv addSubview:radioButton];
+        [self.scrollView addSubview:radioButton];
         [radioButtons addObject:radioButton];
         
         if (i < sectionNum && i != 0) {
             UIView *lineView = [[UIView alloc] initWithFrame:CGRectZero];
             lineView.backgroundColor = [UIColor lightGrayColor];
-            [self.sv addSubview:lineView];
+            [self.scrollView addSubview:lineView];
             [lineViews addObject:lineView];
         }
     }
 }
 
-//注意radioButton_cur经常有未选中的状态，即经常会有self.index_cur == -1的情况
+//注意radioButton_cur经常有未选中的状态，即经常会有self.currentSelectedIndex == -1的情况
 - (void)radioButtonClick:(RadioButton *)radioButton_cur{
     
-    NSInteger index_old = self.index_cur;
-    self.index_cur = radioButton_cur.tag - RadioButton_TAG_BEGIN;
+    NSInteger index_old = self.currentSelectedIndex;
+    self.currentSelectedIndex = radioButton_cur.tag - RadioButton_TAG_BEGIN;
     
-    BOOL isSameIndex = self.index_cur == index_old ? YES : NO;
-    //NSLog(@"index_cur = %zd, index_old = %zd, isSameIndex= %@", self.index_cur,index_old,isSameIndex?@"YES":@"NO");
+    BOOL isSameIndex = self.currentSelectedIndex == index_old ? YES : NO;
+    //NSLog(@"currentSelectedIndex = %zd, index_old = %zd, isSameIndex= %@", self.currentSelectedIndex,index_old,isSameIndex?@"YES":@"NO");
     
     if (index_old == -1) {//如果当前没有radioButton是被选中。
         
     }else{  //index_old != -1，即表示如果当前有radioButton是被选中。
-        if (index_old == self.index_cur) {
+        if (index_old == self.currentSelectedIndex) {
             isSameIndex = YES;
             
         }else{
@@ -199,7 +196,7 @@
     }
     
     if([self.delegate respondsToSelector:@selector(radioButtons:chooseIndex:oldIndex:)]){
-        [self.delegate radioButtons:self chooseIndex:self.index_cur oldIndex:index_old];
+        [self.delegate radioButtons:self chooseIndex:self.currentSelectedIndex oldIndex:index_old];
         
         if (isSameIndex && shouldUpdateCurrentRadioButtonSelected) { //此条if语句位置待确定
             [self setSelectedNone];
@@ -234,28 +231,29 @@
 
 //add
 - (void)radioButtons_didSelectInExtendView:(NSString *)title {
-    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.index_cur];
+    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;
     [radioButton_cur setTitle:title];
     
     [self cj_hideDropDownExtendView];
-    [self setIndex_cur:-1];
+    [self setCurrentSelectedIndex:-1];
 }
 
 
 - (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title{
-    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.index_cur];
+    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;
     [radioButton_cur setTitle:title];
 }
 
 - (void)changeCurrentRadioButtonState{
-    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.index_cur];
+    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;
 }
 
-- (void)setSelectedNone{
-    self.index_cur = -1;
+/** 完整的描述请参见文件头部 */
+- (void)setSelectedNone {
+    self.currentSelectedIndex = -1;
 }
 
 #pragma mark - 有左右箭头时候常会用到的方法
@@ -273,22 +271,22 @@
         CGFloat moveOffset = self.frame.size.width/2 + 40;
         CGFloat rightX_new;
         
-        if (rightX + moveOffset >= self.sv.contentSize.width) {//如果向左移动moveOffset后，会超出边界，则移动到末尾
+        if (rightX + moveOffset >= self.scrollView.contentSize.width) {//如果向左移动moveOffset后，会超出边界，则移动到末尾
             moveOffset = self.frame.size.width;
-            rightX_new = self.sv.contentSize.width - moveOffset;
+            rightX_new = self.scrollView.contentSize.width - moveOffset;
             
-            [self.sv setContentOffset:CGPointMake(rightX_new, self.sv.contentOffset.y) animated:YES];
+            [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:YES];
         }else{
             
             rightX_new = rightX - moveOffset;
             
             if (rightX_new > 0) {
-                [self.sv setContentOffset:CGPointMake(rightX_new, self.sv.contentOffset.y) animated:YES];
+                [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:YES];
             }
         }
         
     }else{
-        [self.sv setContentOffset:CGPointMake(0, self.sv.contentOffset.y) animated:YES];
+        [self.scrollView setContentOffset:CGPointMake(0, self.scrollView.contentOffset.y) animated:YES];
     }
 }
 
@@ -322,10 +320,10 @@
 
 //左箭头点击
 - (void)leftArrowButtonAction:(UIButton *)sender {
-    CGFloat contentOffsetX = self.sv.contentOffset.x;
+    CGFloat contentOffsetX = self.scrollView.contentOffset.x;
     
     RadioButton *targetRadioButton = nil;
-    for (NSInteger i = 0; i < countTitles; i++) { //从第一个开始找，找到的第一个即是所求
+    for (NSInteger i = 0; i < radioButtons.count; i++) { //从第一个开始找，找到的第一个即是所求
         RadioButton *radioButton = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + i];
         
         /* 确保”要找的按钮“的左侧至少在显示的“左侧箭头的最右侧值”之左 */
@@ -352,15 +350,15 @@
         newContentOffsetX = CGRectGetMinX(targetRadioButton.frame);
     }
     
-    [self.sv setContentOffset:CGPointMake(newContentOffsetX, self.sv.contentOffset.y) animated:YES];
+    [self.scrollView setContentOffset:CGPointMake(newContentOffsetX, self.scrollView.contentOffset.y) animated:YES];
 }
 
 //右箭头点击
 - (void)rightArrowButtonAction:(UIButton *)sender {
-    CGFloat contentOffsetX = self.sv.contentOffset.x;
+    CGFloat contentOffsetX = self.scrollView.contentOffset.x;
     
     RadioButton *targetRadioButton = nil;
-    for (NSInteger i = 0; i < countTitles; i++) {   //从最后一个开始找，找到的第一个即是所求
+    for (NSInteger i = 0; i < radioButtons.count; i++) {   //从最后一个开始找，找到的第一个即是所求
         RadioButton *radioButton = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + i];
         
         /* 确保”要找的按钮“的左侧至少在显示的“右侧箭头的最左侧值”  显示的屏幕的最左侧之右 */
@@ -384,26 +382,26 @@
     
     /* 移动操作 */
     CGFloat rightAddMoveOffset;
-    BOOL isLastRadioButton = (targetRadioButton.index == countTitles - 1) ? YES : NO;
+    BOOL isLastRadioButton = (targetRadioButton.index == radioButtons.count - 1) ? YES : NO;
     if (!isLastRadioButton) {
         rightAddMoveOffset = CGRectGetMaxX(targetRadioButton.frame) - (contentOffsetX + CGRectGetMinX(_rightArrowButton.frame));
     } else {
-        rightAddMoveOffset = CGRectGetMaxX(targetRadioButton.frame) - (contentOffsetX + CGRectGetWidth(self.sv.frame));
+        rightAddMoveOffset = CGRectGetMaxX(targetRadioButton.frame) - (contentOffsetX + CGRectGetWidth(self.scrollView.frame));
     }
-    CGFloat newContentOffsetX = self.sv.contentOffset.x + rightAddMoveOffset;
-    [self.sv setContentOffset:CGPointMake(newContentOffsetX, self.sv.contentOffset.y) animated:YES];
+    CGFloat newContentOffsetX = self.scrollView.contentOffset.x + rightAddMoveOffset;
+    [self.scrollView setContentOffset:CGPointMake(newContentOffsetX, self.scrollView.contentOffset.y) animated:YES];
 }
 
 /** 完整的描述请参见文件头部 */
 - (void)selectRadioButtonIndex:(NSInteger)index{
-    RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.index_cur];
+    RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_old.selected = NO;
     
     RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + index];
     radioButton_cur.selected = YES;
     [self shouldMoveScrollViewToSelectItem:radioButton_cur];
     
-    self.index_cur = index;
+    self.currentSelectedIndex = index;
 }
 
 #pragma mark - UIScrollViewDelegate

@@ -29,7 +29,7 @@
 
     if (isSameIndex) {
         [radioButtonsCanDrop cj_hideDropDownExtendView];
-        [radioButtonsCanDrop setIndex_cur:-1];
+        [radioButtonsCanDrop setCurrentSelectedIndex:-1];
         
     } else {
         CGFloat width = CGRectGetWidth(radioButtonsCanDrop.frame);
@@ -48,11 +48,11 @@
         
         __weak typeof(RadioButtons *)weakRadioButtonsCanDrop = radioButtonsCanDrop;
         CJTapViewTappedAction cjTapViewTappedAction = ^(UIView *view) {
-            RadioButton *radioButton = (RadioButton *)[weakRadioButtonsCanDrop viewWithTag:RadioButton_TAG_BEGIN + radioButtonsCanDrop.index_cur];
+            RadioButton *radioButton = (RadioButton *)[weakRadioButtonsCanDrop viewWithTag:RadioButton_TAG_BEGIN + radioButtonsCanDrop.currentSelectedIndex];
             radioButton.selected = !radioButton.selected;
         
             [weakRadioButtonsCanDrop cj_hideDropDownExtendView];
-            [weakRadioButtonsCanDrop setIndex_cur:-1];
+            [weakRadioButtonsCanDrop setCurrentSelectedIndex:-1];
         };
         radioButtonsCanDrop.cjTapViewTappedAction = cjTapViewTappedAction;
 
