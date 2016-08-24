@@ -361,10 +361,7 @@
     for (NSInteger i = 0; i < radioButtons.count; i++) {   //从最后一个开始找，找到的第一个即是所求
         RadioButton *radioButton = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + i];
         
-        /* 确保”要找的按钮“的左侧至少在显示的“右侧箭头的最左侧值”  显示的屏幕的最左侧之右 */
-        if (i == 3) {
-            NSLog(@"i = %ld, %.1f, %.1f", i, CGRectGetMinX(radioButton.frame), contentOffsetX);
-        }
+        /* 确保”要找的按钮“的左侧至少在显示的屏幕的最左侧之右 */
         if (CGRectGetMinX(radioButton.frame) - contentOffsetX < 0) {
             continue;
         }
