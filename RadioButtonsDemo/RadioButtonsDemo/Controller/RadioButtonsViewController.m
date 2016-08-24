@@ -40,7 +40,9 @@
     radioButtonNames = @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
     radioButtonNidName = @"RadioButton_Slider";
     selectIndex = 0;
-    [self.radioButtons setTitles:radioButtonNames radioButtonNidName:radioButtonNidName andShowIndex:selectIndex withMaxShowViewCount:3];
+    [self.radioButtons setTitles:radioButtonNames radioButtonNidName:radioButtonNidName];
+    self.radioButtons.defaultSelectedIndex = selectIndex;
+    self.radioButtons.maxShowViewCount = 3;
 }
 
 

@@ -41,20 +41,15 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 @property (nonatomic, strong) id <RadioButtonsDelegate>delegate;
 @property (nonatomic, assign) NSInteger index_cur;//当前展开的index ，默认－1时，表示都没有展开
 @property (nonatomic, assign) RadioButtonType radioButtonType;
+@property (nonatomic, assign) NSInteger maxShowViewCount;       /**< 设置最大的显示数(默认3) */
+@property (nonatomic, assign) NSInteger defaultSelectedIndex;   /**< 设置初始默认显示第几个(默认-1,即无任何选择) */
 
 @property (nonatomic, assign) BOOL shouldMoveScrollViewToSelectItem;
 
 
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName;
-- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName withMaxShowViewCount:(NSInteger)maxShowViewCount;
-- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex withMaxShowViewCount:(NSInteger)maxShowViewCount;
 //以上为通用的
 
-
-
-//一般单选时候使用到的
-- (BOOL)shouldUpdateRadioButtonSelected_WhenClickSameRadioButton;
-- (void)shouldMoveScrollViewToSelectItem:(RadioButton *)radioButton;
 
 - (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title;
 - (void)changeCurrentRadioButtonState;
@@ -65,7 +60,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 - (void)radioButtons_didSelectInExtendView:(NSString *)title;
 
 
-
+#pragma mark - 有左右箭头的时候
 /**
  *  为view添加左侧箭头视图和右侧箭头视图
  *

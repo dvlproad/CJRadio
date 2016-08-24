@@ -8,7 +8,8 @@
 
 #import "RadioButtons.h"
 
-#define kDefaultMaxShowCount 5
+#define kDefaultMaxShowCount    3
+#define kDefaultSelectedIndex   -1
 
 
 @interface RadioButtons () {
@@ -17,30 +18,28 @@
     UIButton *_rightArrowButton;/**< 右侧箭头 */
     CGFloat _arrowImageWidth;   /**< 箭头宽度 */
 }
-@property (nonatomic, assign) NSInteger maxShowViewCount;
 
 @end
 
 
 @implementation RadioButtons
 @synthesize sv;
-//@synthesize arrowImageWidth;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        [self initizalScrollView];
+        [self commonInit];
     }
     return self;
 }
 
 - (void)awakeFromNib{
-    [self initizalScrollView];
+    [self commonInit];
 }
 
-- (void)initizalScrollView{
+- (void)commonInit {
 #pragma mark - 当scrollView位于第一个子视图时，其会对内容自动调整。如果你不想让scrollView的内容自动调整，可采取如下两种方法中的任一一种(这里采用第一种)。方法一：取消添加lab，以使得scrollView不是第一个子视图，从而达到取消scrollView的自动调整效果方法二：automaticallyAdjustsScrollViewInsets：如果你不想让scrollView的内容自动调整，将这个属性设为NO（默认值YES）。详细情况可参考evernote笔记中的UIStatusBar笔记内容
     UILabel *lab = [[UILabel alloc]initWithFrame:CGRectZero];
     [self addSubview:lab];
@@ -112,28 +111,36 @@
     }
 }
 
+/**
+ *  设置初始默认选中第几个单选按钮
+ *
+ *  @param defaultSelectedIndex 初始默认选中的单选按钮的索引
+ */
+- (void)setDefaultSelectedIndex:(NSInteger)defaultSelectedIndex {
+    self.index_cur = defaultSelectedIndex;
+    
+    for (NSInteger i = 0; i < radioButtons.count; i++) {
+        RadioButton *radioButton = [radioButtons objectAtIndex:i];
+        if (i == defaultSelectedIndex) {
+            [radioButton setSelected:YES];
+        }else{
+            [radioButton setSelected:NO];
+        }
+    }
+}
+
 - (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName {
-    [self setTitles:titles radioButtonNidName:nibName andShowIndex:-1 withMaxShowViewCount:kDefaultMaxShowCount];
-}
-
-- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName withMaxShowViewCount:(NSInteger)maxShowViewCount {
-    [self setTitles:titles radioButtonNidName:nibName andShowIndex:-1 withMaxShowViewCount:maxShowViewCount];
-}
-
-- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName andShowIndex:(NSInteger)showIndex withMaxShowViewCount:(NSInteger)maxShowViewCount {
     NSAssert(titles.count >= 3, @"the min count of the titles is 3");
     NSAssert(nibName != nil, @"radioButton的nibName未设置，请检查");
     
-    
-    self.maxShowViewCount = maxShowViewCount;
+    self.maxShowViewCount = kDefaultMaxShowCount;
+    self.index_cur = kDefaultSelectedIndex;
     
     NSInteger sectionNum = [titles count];
     if (sectionNum == 0) {
         NSLog(@"error: [titles count] == 0");
     }
     countTitles = sectionNum;
-    
-    self.index_cur = showIndex; //如果self.index_cur = -1，则代表未有任何radioButton选中
     
     //添加radioButton到sv中
     radioButtons = [[NSMutableArray alloc] init];
@@ -146,11 +153,6 @@
         [radioButton setTitle:titles[i]];
         radioButton.delegate = self;
         radioButton.tag = RadioButton_TAG_BEGIN + i;
-        if (i == showIndex) {
-            [radioButton setSelected:YES];
-        }else{
-            [radioButton setSelected:NO];
-        }
         [self.sv addSubview:radioButton];
         [radioButtons addObject:radioButton];
         

@@ -20,10 +20,9 @@
     self.view.backgroundColor = [UIColor greenColor];
     
     NSArray *radioButtonNames =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
-    [self.sliderRadioButtons setTitles:radioButtonNames
-                    radioButtonNidName:@"RadioButton_Slider"
-                          andShowIndex:4
-                  withMaxShowViewCount:3];
+    [self.sliderRadioButtons setTitles:radioButtonNames radioButtonNidName:@"RadioButton_Slider"];
+    self.sliderRadioButtons.defaultSelectedIndex = 4;
+    self.sliderRadioButtons.maxShowViewCount = 3;
 //    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
     
     [self.sliderRadioButtons setDelegate:self];
@@ -32,10 +31,9 @@
                            withArrowImageWidth:20];
     
     
-    [self.sliderRadioButtons2 setTitles:radioButtonNames
-                    radioButtonNidName:@"RadioButton_Slider"
-                          andShowIndex:4
-                  withMaxShowViewCount:3];
+    [self.sliderRadioButtons2 setTitles:radioButtonNames radioButtonNidName:@"RadioButton_Slider"];
+    self.sliderRadioButtons2.defaultSelectedIndex = 4;
+    self.sliderRadioButtons2.maxShowViewCount = 3;
     //    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
     
     [self.sliderRadioButtons2 setDelegate:self];

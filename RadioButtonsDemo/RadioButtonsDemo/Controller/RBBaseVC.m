@@ -31,7 +31,9 @@
     #pragma mark 此例中如果RBBaseVC.xib没有去掉sizeClasses，则容易出现视图无显示问题
     CGRect rect_radioButtons = CGRectMake(0, 164, 320, 40);
     rbs = [[RadioButtons alloc]initWithFrame:rect_radioButtons];
-    [rbs setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_Slider" andShowIndex:1 withMaxShowViewCount:3];
+    [rbs setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_Slider"];
+    rbs.defaultSelectedIndex = 1;
+    rbs.maxShowViewCount = 3;
     rbs.delegate = self;
     rbs.tag = 111;
     [self.view addSubview:rbs];
