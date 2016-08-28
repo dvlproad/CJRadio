@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7846335A1D728C4B0082401F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633591D728C4B0082401F /* main.m */; };
+		7846335D1D728C4B0082401F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846335C1D728C4B0082401F /* AppDelegate.m */; };
+		784633601D728C4B0082401F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846335F1D728C4B0082401F /* ViewController.m */; };
+		784633631D728C4B0082401F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784633611D728C4B0082401F /* Main.storyboard */; };
+		784633651D728C4B0082401F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 784633641D728C4B0082401F /* Assets.xcassets */; };
+		784633681D728C4B0082401F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784633661D728C4B0082401F /* LaunchScreen.storyboard */; };
+		784633731D728C4B0082401F /* CJSliderViewControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633721D728C4B0082401F /* CJSliderViewControllerDemoTests.m */; };
+		7846337E1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846337D1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m */; };
+		784633901D728CA60082401F /* CJSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846338E1D728CA60082401F /* CJSliderViewController.m */; };
+		784633911D728CA60082401F /* CJSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7846338F1D728CA60082401F /* CJSliderViewController.xib */; };
+		784633AE1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633951D728E790082401F /* UIView+CJAddSubVIew.m */; };
+		784633AF1D728E790082401F /* UIView+CJShowDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633971D728E790082401F /* UIView+CJShowDropView.m */; };
+		784633B01D728E790082401F /* down_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 784633991D728E790082401F /* down_dark.png */; };
+		784633B11D728E790082401F /* arrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339B1D728E790082401F /* arrowUp.png */; };
+		784633B21D728E790082401F /* arrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339C1D728E790082401F /* arrowUp@2x.png */; };
+		784633B31D728E790082401F /* btnTab_BG_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339D1D728E790082401F /* btnTab_BG_normal.png */; };
+		784633B41D728E790082401F /* btnTab_BG_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339E1D728E790082401F /* btnTab_BG_normal@2x.png */; };
+		784633B51D728E790082401F /* btnTab_BG_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339F1D728E790082401F /* btnTab_BG_selected.png */; };
+		784633B61D728E790082401F /* btnTab_BG_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 784633A01D728E790082401F /* btnTab_BG_selected@2x.png */; };
+		784633B71D728E790082401F /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633A21D728E790082401F /* RadioButton.m */; };
+		784633B81D728E790082401F /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784633A31D728E790082401F /* RadioButton_DropDown.xib */; };
+		784633B91D728E790082401F /* RadioButton_Slider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784633A41D728E790082401F /* RadioButton_Slider.xib */; };
+		784633BA1D728E790082401F /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633A61D728E790082401F /* RadioButtons.m */; };
+		784633BB1D728E790082401F /* RadioControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633A91D728E790082401F /* RadioControllers.m */; };
+		784633BC1D728E790082401F /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633AB1D728E790082401F /* UIScrollView+CJAddContentView.m */; };
+		784633BD1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633AD1D728E790082401F /* UIView+CJAddSubVIew.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7846336F1D728C4B0082401F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7846334D1D728C4B0082401F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 784633541D728C4B0082401F;
+			remoteInfo = CJSliderViewControllerDemo;
+		};
+		7846337A1D728C4B0082401F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7846334D1D728C4B0082401F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 784633541D728C4B0082401F;
+			remoteInfo = CJSliderViewControllerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		784633551D728C4B0082401F /* CJSliderViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJSliderViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		784633591D728C4B0082401F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7846335B1D728C4B0082401F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7846335C1D728C4B0082401F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7846335E1D728C4B0082401F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7846335F1D728C4B0082401F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		784633621D728C4B0082401F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		784633641D728C4B0082401F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		784633671D728C4B0082401F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		784633691D728C4B0082401F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7846336E1D728C4B0082401F /* CJSliderViewControllerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJSliderViewControllerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		784633721D728C4B0082401F /* CJSliderViewControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSliderViewControllerDemoTests.m; sourceTree = "<group>"; };
+		784633741D728C4B0082401F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		784633791D728C4B0082401F /* CJSliderViewControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJSliderViewControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7846337D1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSliderViewControllerDemoUITests.m; sourceTree = "<group>"; };
+		7846337F1D728C4B0082401F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7846338D1D728CA60082401F /* CJSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderViewController.h; sourceTree = "<group>"; };
+		7846338E1D728CA60082401F /* CJSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderViewController.m; sourceTree = "<group>"; };
+		7846338F1D728CA60082401F /* CJSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJSliderViewController.xib; sourceTree = "<group>"; };
+		784633941D728E790082401F /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
+		784633951D728E790082401F /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
+		784633961D728E790082401F /* UIView+CJShowDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowDropView.h"; sourceTree = "<group>"; };
+		784633971D728E790082401F /* UIView+CJShowDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShowDropView.m"; sourceTree = "<group>"; };
+		784633991D728E790082401F /* down_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_dark.png; sourceTree = "<group>"; };
+		7846339B1D728E790082401F /* arrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowUp.png; sourceTree = "<group>"; };
+		7846339C1D728E790082401F /* arrowUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowUp@2x.png"; sourceTree = "<group>"; };
+		7846339D1D728E790082401F /* btnTab_BG_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnTab_BG_normal.png; sourceTree = "<group>"; };
+		7846339E1D728E790082401F /* btnTab_BG_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnTab_BG_normal@2x.png"; sourceTree = "<group>"; };
+		7846339F1D728E790082401F /* btnTab_BG_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnTab_BG_selected.png; sourceTree = "<group>"; };
+		784633A01D728E790082401F /* btnTab_BG_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnTab_BG_selected@2x.png"; sourceTree = "<group>"; };
+		784633A11D728E790082401F /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
+		784633A21D728E790082401F /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
+		784633A31D728E790082401F /* RadioButton_DropDown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_DropDown.xib; sourceTree = "<group>"; };
+		784633A41D728E790082401F /* RadioButton_Slider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_Slider.xib; sourceTree = "<group>"; };
+		784633A51D728E790082401F /* RadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons.h; sourceTree = "<group>"; };
+		784633A61D728E790082401F /* RadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons.m; sourceTree = "<group>"; };
+		784633A81D728E790082401F /* RadioControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioControllers.h; sourceTree = "<group>"; };
+		784633A91D728E790082401F /* RadioControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioControllers.m; sourceTree = "<group>"; };
+		784633AA1D728E790082401F /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
+		784633AB1D728E790082401F /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
+		784633AC1D728E790082401F /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
+		784633AD1D728E790082401F /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		784633521D728C4B0082401F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7846336B1D728C4B0082401F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		784633761D728C4B0082401F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7846334C1D728C4B0082401F = {
+			isa = PBXGroup;
+			children = (
+				784633571D728C4B0082401F /* CJSliderViewControllerDemo */,
+				784633711D728C4B0082401F /* CJSliderViewControllerDemoTests */,
+				7846337C1D728C4B0082401F /* CJSliderViewControllerDemoUITests */,
+				784633561D728C4B0082401F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		784633561D728C4B0082401F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				784633551D728C4B0082401F /* CJSliderViewControllerDemo.app */,
+				7846336E1D728C4B0082401F /* CJSliderViewControllerDemoTests.xctest */,
+				784633791D728C4B0082401F /* CJSliderViewControllerDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		784633571D728C4B0082401F /* CJSliderViewControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7846335B1D728C4B0082401F /* AppDelegate.h */,
+				7846335C1D728C4B0082401F /* AppDelegate.m */,
+				7846335E1D728C4B0082401F /* ViewController.h */,
+				7846335F1D728C4B0082401F /* ViewController.m */,
+				784633921D728E790082401F /* RadioButtons */,
+				784633A71D728E790082401F /* RadioControllers */,
+				7846338B1D728C740082401F /* Controllers */,
+				7846338C1D728C740082401F /* Views */,
+				784633611D728C4B0082401F /* Main.storyboard */,
+				784633641D728C4B0082401F /* Assets.xcassets */,
+				784633661D728C4B0082401F /* LaunchScreen.storyboard */,
+				784633691D728C4B0082401F /* Info.plist */,
+				784633581D728C4B0082401F /* Supporting Files */,
+			);
+			path = CJSliderViewControllerDemo;
+			sourceTree = "<group>";
+		};
+		784633581D728C4B0082401F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				784633591D728C4B0082401F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		784633711D728C4B0082401F /* CJSliderViewControllerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				784633721D728C4B0082401F /* CJSliderViewControllerDemoTests.m */,
+				784633741D728C4B0082401F /* Info.plist */,
+			);
+			path = CJSliderViewControllerDemoTests;
+			sourceTree = "<group>";
+		};
+		7846337C1D728C4B0082401F /* CJSliderViewControllerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7846337D1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m */,
+				7846337F1D728C4B0082401F /* Info.plist */,
+			);
+			path = CJSliderViewControllerDemoUITests;
+			sourceTree = "<group>";
+		};
+		7846338B1D728C740082401F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7846338D1D728CA60082401F /* CJSliderViewController.h */,
+				7846338E1D728CA60082401F /* CJSliderViewController.m */,
+				7846338F1D728CA60082401F /* CJSliderViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7846338C1D728C740082401F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		784633921D728E790082401F /* RadioButtons */ = {
+			isa = PBXGroup;
+			children = (
+				784633931D728E790082401F /* Category */,
+				784633981D728E790082401F /* images_RadioButton_DropDown */,
+				7846339A1D728E790082401F /* images_RadioButton_Slider */,
+				784633A11D728E790082401F /* RadioButton.h */,
+				784633A21D728E790082401F /* RadioButton.m */,
+				784633A31D728E790082401F /* RadioButton_DropDown.xib */,
+				784633A41D728E790082401F /* RadioButton_Slider.xib */,
+				784633A51D728E790082401F /* RadioButtons.h */,
+				784633A61D728E790082401F /* RadioButtons.m */,
+			);
+			name = RadioButtons;
+			path = ../../RadioButtons;
+			sourceTree = "<group>";
+		};
+		784633931D728E790082401F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				784633941D728E790082401F /* UIView+CJAddSubVIew.h */,
+				784633951D728E790082401F /* UIView+CJAddSubVIew.m */,
+				784633961D728E790082401F /* UIView+CJShowDropView.h */,
+				784633971D728E790082401F /* UIView+CJShowDropView.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		784633981D728E790082401F /* images_RadioButton_DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				784633991D728E790082401F /* down_dark.png */,
+			);
+			path = images_RadioButton_DropDown;
+			sourceTree = "<group>";
+		};
+		7846339A1D728E790082401F /* images_RadioButton_Slider */ = {
+			isa = PBXGroup;
+			children = (
+				7846339B1D728E790082401F /* arrowUp.png */,
+				7846339C1D728E790082401F /* arrowUp@2x.png */,
+				7846339D1D728E790082401F /* btnTab_BG_normal.png */,
+				7846339E1D728E790082401F /* btnTab_BG_normal@2x.png */,
+				7846339F1D728E790082401F /* btnTab_BG_selected.png */,
+				784633A01D728E790082401F /* btnTab_BG_selected@2x.png */,
+			);
+			path = images_RadioButton_Slider;
+			sourceTree = "<group>";
+		};
+		784633A71D728E790082401F /* RadioControllers */ = {
+			isa = PBXGroup;
+			children = (
+				784633A81D728E790082401F /* RadioControllers.h */,
+				784633A91D728E790082401F /* RadioControllers.m */,
+				784633AA1D728E790082401F /* UIScrollView+CJAddContentView.h */,
+				784633AB1D728E790082401F /* UIScrollView+CJAddContentView.m */,
+				784633AC1D728E790082401F /* UIView+CJAddSubVIew.h */,
+				784633AD1D728E790082401F /* UIView+CJAddSubVIew.m */,
+			);
+			name = RadioControllers;
+			path = ../../RadioControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		784633541D728C4B0082401F /* CJSliderViewControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 784633821D728C4B0082401F /* Build configuration list for PBXNativeTarget "CJSliderViewControllerDemo" */;
+			buildPhases = (
+				784633511D728C4B0082401F /* Sources */,
+				784633521D728C4B0082401F /* Frameworks */,
+				784633531D728C4B0082401F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CJSliderViewControllerDemo;
+			productName = CJSliderViewControllerDemo;
+			productReference = 784633551D728C4B0082401F /* CJSliderViewControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7846336D1D728C4B0082401F /* CJSliderViewControllerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 784633851D728C4B0082401F /* Build configuration list for PBXNativeTarget "CJSliderViewControllerDemoTests" */;
+			buildPhases = (
+				7846336A1D728C4B0082401F /* Sources */,
+				7846336B1D728C4B0082401F /* Frameworks */,
+				7846336C1D728C4B0082401F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				784633701D728C4B0082401F /* PBXTargetDependency */,
+			);
+			name = CJSliderViewControllerDemoTests;
+			productName = CJSliderViewControllerDemoTests;
+			productReference = 7846336E1D728C4B0082401F /* CJSliderViewControllerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		784633781D728C4B0082401F /* CJSliderViewControllerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 784633881D728C4B0082401F /* Build configuration list for PBXNativeTarget "CJSliderViewControllerDemoUITests" */;
+			buildPhases = (
+				784633751D728C4B0082401F /* Sources */,
+				784633761D728C4B0082401F /* Frameworks */,
+				784633771D728C4B0082401F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7846337B1D728C4B0082401F /* PBXTargetDependency */,
+			);
+			name = CJSliderViewControllerDemoUITests;
+			productName = CJSliderViewControllerDemoUITests;
+			productReference = 784633791D728C4B0082401F /* CJSliderViewControllerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7846334D1D728C4B0082401F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = dvlproad;
+				TargetAttributes = {
+					784633541D728C4B0082401F = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					7846336D1D728C4B0082401F = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 784633541D728C4B0082401F;
+					};
+					784633781D728C4B0082401F = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 784633541D728C4B0082401F;
+					};
+				};
+			};
+			buildConfigurationList = 784633501D728C4B0082401F /* Build configuration list for PBXProject "CJSliderViewControllerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7846334C1D728C4B0082401F;
+			productRefGroup = 784633561D728C4B0082401F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				784633541D728C4B0082401F /* CJSliderViewControllerDemo */,
+				7846336D1D728C4B0082401F /* CJSliderViewControllerDemoTests */,
+				784633781D728C4B0082401F /* CJSliderViewControllerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		784633531D728C4B0082401F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784633B41D728E790082401F /* btnTab_BG_normal@2x.png in Resources */,
+				784633B21D728E790082401F /* arrowUp@2x.png in Resources */,
+				784633B61D728E790082401F /* btnTab_BG_selected@2x.png in Resources */,
+				784633B01D728E790082401F /* down_dark.png in Resources */,
+				784633B31D728E790082401F /* btnTab_BG_normal.png in Resources */,
+				784633B51D728E790082401F /* btnTab_BG_selected.png in Resources */,
+				784633681D728C4B0082401F /* LaunchScreen.storyboard in Resources */,
+				784633B11D728E790082401F /* arrowUp.png in Resources */,
+				784633B81D728E790082401F /* RadioButton_DropDown.xib in Resources */,
+				784633651D728C4B0082401F /* Assets.xcassets in Resources */,
+				784633911D728CA60082401F /* CJSliderViewController.xib in Resources */,
+				784633B91D728E790082401F /* RadioButton_Slider.xib in Resources */,
+				784633631D728C4B0082401F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7846336C1D728C4B0082401F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		784633771D728C4B0082401F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		784633511D728C4B0082401F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784633AF1D728E790082401F /* UIView+CJShowDropView.m in Sources */,
+				784633AE1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */,
+				784633601D728C4B0082401F /* ViewController.m in Sources */,
+				7846335D1D728C4B0082401F /* AppDelegate.m in Sources */,
+				784633901D728CA60082401F /* CJSliderViewController.m in Sources */,
+				784633BC1D728E790082401F /* UIScrollView+CJAddContentView.m in Sources */,
+				7846335A1D728C4B0082401F /* main.m in Sources */,
+				784633B71D728E790082401F /* RadioButton.m in Sources */,
+				784633BA1D728E790082401F /* RadioButtons.m in Sources */,
+				784633BD1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */,
+				784633BB1D728E790082401F /* RadioControllers.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7846336A1D728C4B0082401F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784633731D728C4B0082401F /* CJSliderViewControllerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		784633751D728C4B0082401F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7846337E1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		784633701D728C4B0082401F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 784633541D728C4B0082401F /* CJSliderViewControllerDemo */;
+			targetProxy = 7846336F1D728C4B0082401F /* PBXContainerItemProxy */;
+		};
+		7846337B1D728C4B0082401F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 784633541D728C4B0082401F /* CJSliderViewControllerDemo */;
+			targetProxy = 7846337A1D728C4B0082401F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		784633611D728C4B0082401F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				784633621D728C4B0082401F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		784633661D728C4B0082401F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				784633671D728C4B0082401F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		784633801D728C4B0082401F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		784633811D728C4B0082401F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		784633831D728C4B0082401F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CJSliderViewControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJSliderViewControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		784633841D728C4B0082401F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CJSliderViewControllerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJSliderViewControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		784633861D728C4B0082401F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CJSliderViewControllerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJSliderViewControllerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CJSliderViewControllerDemo.app/CJSliderViewControllerDemo";
+			};
+			name = Debug;
+		};
+		784633871D728C4B0082401F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CJSliderViewControllerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJSliderViewControllerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CJSliderViewControllerDemo.app/CJSliderViewControllerDemo";
+			};
+			name = Release;
+		};
+		784633891D728C4B0082401F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CJSliderViewControllerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJSliderViewControllerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CJSliderViewControllerDemo;
+			};
+			name = Debug;
+		};
+		7846338A1D728C4B0082401F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CJSliderViewControllerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJSliderViewControllerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CJSliderViewControllerDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		784633501D728C4B0082401F /* Build configuration list for PBXProject "CJSliderViewControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784633801D728C4B0082401F /* Debug */,
+				784633811D728C4B0082401F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		784633821D728C4B0082401F /* Build configuration list for PBXNativeTarget "CJSliderViewControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784633831D728C4B0082401F /* Debug */,
+				784633841D728C4B0082401F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		784633851D728C4B0082401F /* Build configuration list for PBXNativeTarget "CJSliderViewControllerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784633861D728C4B0082401F /* Debug */,
+				784633871D728C4B0082401F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		784633881D728C4B0082401F /* Build configuration list for PBXNativeTarget "CJSliderViewControllerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784633891D728C4B0082401F /* Debug */,
+				7846338A1D728C4B0082401F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7846334D1D728C4B0082401F /* Project object */;
+}

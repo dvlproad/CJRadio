@@ -114,6 +114,7 @@
  *  @param defaultSelectedIndex 初始默认选中的单选按钮的索引
  */
 - (void)setDefaultSelectedIndex:(NSInteger)defaultSelectedIndex {
+    _defaultSelectedIndex = defaultSelectedIndex;
     self.currentSelectedIndex = defaultSelectedIndex;
     
     for (NSInteger i = 0; i < radioButtons.count; i++) {

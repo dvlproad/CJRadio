@@ -19,11 +19,18 @@
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor greenColor];
     
+    [self initizileDataForRadioButtons];
+}
+
+/**
+ *  初始化数据（单选按钮）
+ */
+- (void)initizileDataForRadioButtons {
     NSArray *radioButtonNames =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
     [self.sliderRadioButtons setTitles:radioButtonNames radioButtonNidName:@"RadioButton_Slider"];
     self.sliderRadioButtons.defaultSelectedIndex = 4;
     self.sliderRadioButtons.maxShowViewCount = 3;
-//    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
+    //    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
     
     [self.sliderRadioButtons setDelegate:self];
     [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
@@ -38,8 +45,8 @@
     
     [self.sliderRadioButtons2 setDelegate:self];
     [self.sliderRadioButtons2 addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
-                               rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
-                           withArrowImageWidth:20];
+                                rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+                            withArrowImageWidth:20];
 }
 
 //点击时候会调用如下委托：
