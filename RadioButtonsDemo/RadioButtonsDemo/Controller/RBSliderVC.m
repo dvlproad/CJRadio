@@ -8,7 +8,9 @@
 
 #import "RBSliderVC.h"
 
-@interface RBSliderVC ()
+@interface RBSliderVC () <RadioButtonsDataSource, RadioButtonsDelegate> {
+    NSArray *titles;
+}
 
 @end
 
@@ -27,34 +29,61 @@
  */
 - (void)initizileDataForRadioButtons {
     NSArray *radioButtonNames =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
-    [self.sliderRadioButtons setTitles:radioButtonNames radioButtonNidName:@"RadioButton_Slider"];
-    self.sliderRadioButtons.defaultSelectedIndex = 4;
-    self.sliderRadioButtons.maxShowViewCount = 3;
-    //    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
+    titles = radioButtonNames;
     
+
+    
+    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
     [self.sliderRadioButtons setDelegate:self];
     [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
                                rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
                            withArrowImageWidth:20];
     
+    self.sliderRadioButtons.dataSource = self;
+    self.sliderRadioButtons.maxShowViewCount = 5;
     
-    [self.sliderRadioButtons2 setTitles:radioButtonNames radioButtonNidName:@"RadioButton_Slider"];
-    self.sliderRadioButtons2.defaultSelectedIndex = 4;
-    self.sliderRadioButtons2.maxShowViewCount = 3;
-    //    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
     
-    [self.sliderRadioButtons2 setDelegate:self];
-    [self.sliderRadioButtons2 addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
-                                rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
-                            withArrowImageWidth:20];
+//    [self.sliderRadioButtons2 setTitles:radioButtonNames radioButtonNidName:@"RadioButton_Slider"];
+//    self.sliderRadioButtons2.defaultSelectedIndex = 4;
+//    self.sliderRadioButtons2.maxShowViewCount = 3;
+//    //    self.sliderRadioButtons.shouldMoveScrollViewToSelectItem = YES;
+//    
+//    [self.sliderRadioButtons2 setDelegate:self];
+//    [self.sliderRadioButtons2 addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+//                                rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+//                            withArrowImageWidth:20];
 }
 
-//点击时候会调用如下委托：
+
+#pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
+- (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
+    return 4;
+}
+
+- (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons {
+    return titles.count;
+}
+
+- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
+    NSInteger showViewCount = MIN(titles.count, self.sliderRadioButtons.maxShowViewCount);
+    CGFloat sectionWidth = CGRectGetWidth(self.sliderRadioButtons.frame)/showViewCount;
+    sectionWidth = ceilf(sectionWidth); //重点注意：当使用除法计算width时候，为了避免计算出来的值受除后，余数太多，除不尽(eg:102.66666666666667)，而造成的之后在通过左右箭头点击来寻找”要找的按钮“的时候，计算出现问题（”要找的按钮“需与“左右侧箭头的最左最右侧值”进行精确的比较），所以这里我们需要一个整数值，故我们这边选择向上取整。
+    
+    return sectionWidth;
+}
+
+- (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
+    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_Slider" owner:nil options:nil];
+    RadioButton *radioButton = [radioButtonNib lastObject];
+    [radioButton setTitle:titles[index]];
+    
+    return radioButton;
+}
+
 - (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     if (index_cur != index_old) {
         [radioButtons selectRadioButtonIndex:index_cur];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -19,7 +19,7 @@
  *
  *  @return view数组
  */
-- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView;
+- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView:(RadioComposeView *)radioComposeView;
 
 
 @optional
@@ -28,7 +28,7 @@
  *
  *  @return 默认显示的view的index
  */
-- (NSInteger)cj_defaultShowIndexInRadioComposeView;
+- (NSInteger)cj_defaultShowIndexInRadioComposeView:(RadioComposeView *)radioComposeView; // Default is 0 if not implemented
 
 @end
 

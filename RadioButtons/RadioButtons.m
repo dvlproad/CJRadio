@@ -60,30 +60,42 @@
     
     CGFloat totalHeight = CGRectGetHeight(self.frame);
     CGFloat totalWidth = CGRectGetWidth(self.frame);
-    
-    NSInteger showViewCount = MIN(radioButtons.count, self.maxShowViewCount);
-    CGFloat sectionWidth = totalWidth/showViewCount;
-    sectionWidth = ceilf(sectionWidth); //重点注意：这里为了避免计算出来的值受除后，余数太多(eg:102.66666666666667)，而造成的之后在通过左右箭头点击来寻找”要找的按钮“的时候，计算出现问题（”要找的按钮“需与“左右侧箭头的最左最右侧值”进行精确的比较），所以这里我们需要一个整数值，故我们这边选择向上取整。
-    
     [self.scrollView setFrame:CGRectMake(0, 0, totalWidth, totalHeight)];
-    [self.scrollView setContentSize:CGSizeMake(sectionWidth * radioButtons.count, totalHeight)]; //设置self.scrollView.contentSize
-    
-    for (NSInteger i = 0; i < radioButtons.count; i++) {
-        RadioButton *radioButton = [radioButtons objectAtIndex:i];
+
+//    NSInteger componentCount = [self.dataSource cj_numberOfComponentsInRadioButtons:self];
+    NSInteger componentCount = radioButtons.count;
+    CGFloat radioButtonX = 0;
+    for (NSInteger index = 0; index < componentCount; index++) {
+        CGFloat currentComponentWidth;
+        if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_radioButtons:widthForComponentAtIndex:)]) {
+            currentComponentWidth = [self.dataSource cj_radioButtons:self widthForComponentAtIndex:index];
+        }
         
-        CGRect rect_radioButton = CGRectMake(sectionWidth*i, 0, sectionWidth, self.frame.size.height);
+        RadioButton *radioButton = [radioButtons objectAtIndex:index];
+//        RadioButton *radioButton = [self.dataSource cj_radioButtons:self cellForComponentAtIndex:index];
+        CGRect rect_radioButton = CGRectMake(radioButtonX, 0, currentComponentWidth, CGRectGetHeight(self.frame));
         [radioButton setFrame:rect_radioButton];
         
-        if (i == self.currentSelectedIndex && self.shouldMoveScrollViewToSelectItem) {
-            [self shouldMoveScrollViewToSelectItem:radioButton];//改名addAnimation
+        if (index < componentCount -1) {
+            UIView *lineView = [lineViews objectAtIndex:index];
+            CGRect rect_line = CGRectMake(radioButtonX + currentComponentWidth, 5, 1, self.frame.size.height - 10);
+            [lineView setFrame:rect_line];
         }
+        
+        if (index == componentCount-1) {
+            CGFloat contentSizeWidth = radioButtonX + currentComponentWidth;
+            CGFloat contentSizeHeight = totalHeight;
+            [self.scrollView setContentSize:CGSizeMake(contentSizeWidth, contentSizeHeight)]; //设置self.scrollView.contentSize
+        }
+        
+        
+        if (index == self.currentSelectedIndex && self.shouldMoveScrollViewToSelectItem) {
+            [self shouldMoveScrollViewToSelectItem:radioButton];//TODO: 这个无效
+        }
+        
+        radioButtonX += currentComponentWidth;
     }
     
-    for (NSInteger i = 0; i < lineViews.count; i++) {
-        UIView *lineView = [lineViews objectAtIndex:i];
-        CGRect rect_line = CGRectMake(sectionWidth*(i+1), 5, 1, self.frame.size.height - 10);
-        [lineView setFrame:rect_line];
-    }
     
     /* 如果有左右箭头 */
     if (_haveArrowButton) {
@@ -108,53 +120,44 @@
     }
 }
 
-/**
- *  设置初始默认选中第几个单选按钮
- *
- *  @param defaultSelectedIndex 初始默认选中的单选按钮的索引
- */
-- (void)setDefaultSelectedIndex:(NSInteger)defaultSelectedIndex {
-    _defaultSelectedIndex = defaultSelectedIndex;
-    self.currentSelectedIndex = defaultSelectedIndex;
+- (void)setDataSource:(id<RadioButtonsDataSource>)dataSource {
+    _dataSource = dataSource;
     
-    for (NSInteger i = 0; i < radioButtons.count; i++) {
-        RadioButton *radioButton = [radioButtons objectAtIndex:i];
-        if (i == defaultSelectedIndex) {
-            [radioButton setSelected:YES];
-        }else{
-            [radioButton setSelected:NO];
-        }
-    }
+    [self reloadViews];
 }
 
 /** 完整的描述请参见文件头部 */
-- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName {
-    NSAssert(titles.count >= 3, @"the min count of the titles is 3");
-    NSAssert(nibName != nil, @"radioButton的nibName未设置，请检查");
-    
+- (void)reloadViews {
     self.maxShowViewCount = kDefaultMaxShowCount;
     self.currentSelectedIndex = kDefaultSelectedIndex;
     
-    NSInteger sectionNum = [titles count];
-    if (sectionNum == 0) {
-        NSLog(@"error: [titles count] == 0");
+    NSInteger componentCount = [self.dataSource cj_numberOfComponentsInRadioButtons:self];
+    NSInteger defaultSelectedIndex = -1;
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInRadioButtons:)]) {
+        defaultSelectedIndex = [self.dataSource cj_defaultShowIndexInRadioButtons:self];
     }
+    self.currentSelectedIndex = defaultSelectedIndex;
+    
+    NSAssert(componentCount >= 3, @"the min count of the titles is 3");
     
     //添加radioButton到sv中
     radioButtons = [[NSMutableArray alloc] init];
     lineViews = [[NSMutableArray alloc] init];
-    for (int i = 0; i <sectionNum; i++) {
-        NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:nibName owner:nil options:nil];
-        RadioButton *radioButton = [radioButtonNib lastObject];
-        
-        radioButton.index = i;
-        [radioButton setTitle:titles[i]];
+    for (NSInteger index = 0; index < componentCount; index++) {
+        RadioButton *radioButton = [self.dataSource cj_radioButtons:self cellForComponentAtIndex:index];
+        radioButton.index = index;
         radioButton.delegate = self;
-        radioButton.tag = RadioButton_TAG_BEGIN + i;
+        radioButton.tag = RadioButton_TAG_BEGIN + index;
+        if (index == defaultSelectedIndex) {
+            [radioButton setSelected:YES];
+        }else{
+            [radioButton setSelected:NO];
+        }
+        
         [self.scrollView addSubview:radioButton];
         [radioButtons addObject:radioButton];
         
-        if (i < sectionNum && i != 0) {
+        if (index < componentCount && index != 0) {
             UIView *lineView = [[UIView alloc] initWithFrame:CGRectZero];
             lineView.backgroundColor = [UIColor lightGrayColor];
             [self.scrollView addSubview:lineView];

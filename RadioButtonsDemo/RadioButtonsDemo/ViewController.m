@@ -7,13 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "RBBaseVC.h"
-#import "RBDropDownVC.h"
-#import "RBDropDownBestVC.h"
+//#import "RBBaseVC.h"
+//#import "RBDropDownVC.h"
+//#import "RBDropDownBestVC.h"
 #import "RBSliderVC.h"
-#import "RadioButtonsCanDropVC.h"
+//#import "RadioButtonsCanDropVC.h"
 
-#import "RadioButtonsViewController.h"
+//#import "RadioButtonsViewController.h"
 
 
 @interface ViewController ()
@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.title = NSLocalizedString(@"RadioButtons", nil);
 }
-
+/*
 - (IBAction)goRadioButtonsCanDropVC:(id)sender{
     RadioButtonsCanDropVC *vc = [[RadioButtonsCanDropVC alloc]initWithNibName:@"RadioButtonsCanDropVC" bundle:nil];
     vc.title = [sender titleForState:UIControlStateNormal];
@@ -51,18 +51,18 @@
     vc.title = [sender titleForState:UIControlStateNormal];
     [self.navigationController pushViewController:vc animated:YES];
 }
-
+*/
 - (IBAction)goRBSliderVC:(id)sender{
     RBSliderVC *vc = [[RBSliderVC alloc]initWithNibName:@"RBSliderVC" bundle:nil];
     vc.title = [sender titleForState:UIControlStateNormal];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)goRadioButtonsViewController:(id)sender {
-    RadioButtonsViewController *viewController = [[RadioButtonsViewController alloc]initWithNibName:@"RadioButtonsViewController" bundle:nil];
-    viewController.title = [sender titleForState:UIControlStateNormal];
-    [self.navigationController pushViewController:viewController animated:YES];
-}
+//- (IBAction)goRadioButtonsViewController:(id)sender {
+//    RadioButtonsViewController *viewController = [[RadioButtonsViewController alloc]initWithNibName:@"RadioButtonsViewController" bundle:nil];
+//    viewController.title = [sender titleForState:UIControlStateNormal];
+//    [self.navigationController pushViewController:viewController animated:YES];
+//}
 
 
 - (void)didReceiveMemoryWarning {

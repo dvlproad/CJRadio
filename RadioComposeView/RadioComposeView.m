@@ -72,8 +72,8 @@
 /** 完整的描述请参见文件头部 */
 - (void)reloadViews {
     //self.views
-    if (self.dataSource && [self.dataSource cj_radioViewsInRadioComposeView]) {
-        self.views = [self.dataSource cj_radioViewsInRadioComposeView];
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_radioViewsInRadioComposeView:)]) {
+        self.views = [self.dataSource cj_radioViewsInRadioComposeView:self];
     }
     NSAssert(self.views.count >= 3, @"the min count of the views is 3");
     
@@ -81,8 +81,8 @@
     
     //defaultShowIndex
     NSInteger defaultShowIndex = 0;
-    if (self.dataSource && [self.dataSource cj_defaultShowIndexInRadioComposeView]) {
-        defaultShowIndex = [self.dataSource cj_defaultShowIndexInRadioComposeView];
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInRadioComposeView:)]) {
+        defaultShowIndex = [self.dataSource cj_defaultShowIndexInRadioComposeView:self];
     }
     
     [self resetViewToLeftCenterRightWithShowViewIndex:defaultShowIndex];

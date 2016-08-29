@@ -73,11 +73,11 @@
 
 
 #pragma mark - RadioComposeViewDataSource
-- (NSInteger)cj_defaultShowIndexInRadioComposeView {
+- (NSInteger)cj_defaultShowIndexInRadioComposeView:(RadioComposeView *)radioComposeView {
     return 2;
 }
 
-- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView {
+- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView:(RadioComposeView *)radioComposeView {
     NSArray *radioViewControllers = [self getRadioControllers];
     
     NSMutableArray *views = [[NSMutableArray alloc] init];
