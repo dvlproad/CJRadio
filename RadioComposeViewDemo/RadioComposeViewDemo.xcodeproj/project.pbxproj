@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		789B20111D73F70600F01BA3 /* RadioComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B200C1D73F70600F01BA3 /* RadioComposeView.m */; };
+		789B20121D73F70600F01BA3 /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B200E1D73F70600F01BA3 /* UIScrollView+CJAddContentView.m */; };
+		789B20131D73F70600F01BA3 /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B20101D73F70600F01BA3 /* UIView+CJAddSubVIew.m */; };
 		78FA92EC1D7009650023252A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA92EB1D7009650023252A /* main.m */; };
 		78FA92EF1D7009650023252A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA92EE1D7009650023252A /* AppDelegate.m */; };
 		78FA92F21D7009650023252A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA92F11D7009650023252A /* ViewController.m */; };
@@ -17,9 +20,6 @@
 		78FA93101D7009650023252A /* RadioControllersDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA930F1D7009650023252A /* RadioControllersDemoUITests.m */; };
 		78FA93221D700A610023252A /* RadioControllersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA93201D700A610023252A /* RadioControllersViewController.m */; };
 		78FA93231D700A610023252A /* RadioControllersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FA93211D700A610023252A /* RadioControllersViewController.xib */; };
-		78FA932B1D700B250023252A /* RadioControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA93261D700B240023252A /* RadioControllers.m */; };
-		78FA932C1D700B250023252A /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA93281D700B240023252A /* UIScrollView+CJAddContentView.m */; };
-		78FA932D1D700B250023252A /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA932A1D700B240023252A /* UIView+CJAddSubVIew.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		78FA92E71D7009650023252A /* RadioControllersDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioControllersDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		789B200B1D73F70600F01BA3 /* RadioComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioComposeView.h; sourceTree = "<group>"; };
+		789B200C1D73F70600F01BA3 /* RadioComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioComposeView.m; sourceTree = "<group>"; };
+		789B200D1D73F70600F01BA3 /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
+		789B200E1D73F70600F01BA3 /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
+		789B200F1D73F70600F01BA3 /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
+		789B20101D73F70600F01BA3 /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
+		78FA92E71D7009650023252A /* RadioComposeViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioComposeViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FA92EB1D7009650023252A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78FA92ED1D7009650023252A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		78FA92EE1D7009650023252A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,21 +56,15 @@
 		78FA92F61D7009650023252A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78FA92F91D7009650023252A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78FA92FB1D7009650023252A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78FA93001D7009650023252A /* RadioControllersDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioControllersDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78FA93001D7009650023252A /* RadioComposeViewDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioComposeViewDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FA93041D7009650023252A /* RadioControllersDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadioControllersDemoTests.m; sourceTree = "<group>"; };
 		78FA93061D7009650023252A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78FA930B1D7009650023252A /* RadioControllersDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioControllersDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78FA930B1D7009650023252A /* RadioComposeViewDemo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioComposeViewDemo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FA930F1D7009650023252A /* RadioControllersDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadioControllersDemoUITests.m; sourceTree = "<group>"; };
 		78FA93111D7009650023252A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78FA931F1D700A610023252A /* RadioControllersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioControllersViewController.h; sourceTree = "<group>"; };
 		78FA93201D700A610023252A /* RadioControllersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioControllersViewController.m; sourceTree = "<group>"; };
 		78FA93211D700A610023252A /* RadioControllersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioControllersViewController.xib; sourceTree = "<group>"; };
-		78FA93251D700B240023252A /* RadioControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioControllers.h; sourceTree = "<group>"; };
-		78FA93261D700B240023252A /* RadioControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioControllers.m; sourceTree = "<group>"; };
-		78FA93271D700B240023252A /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
-		78FA93281D700B240023252A /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
-		78FA93291D700B240023252A /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
-		78FA932A1D700B240023252A /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +92,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		789B200A1D73F70600F01BA3 /* RadioComposeView */ = {
+			isa = PBXGroup;
+			children = (
+				789B200B1D73F70600F01BA3 /* RadioComposeView.h */,
+				789B200C1D73F70600F01BA3 /* RadioComposeView.m */,
+				789B200D1D73F70600F01BA3 /* UIScrollView+CJAddContentView.h */,
+				789B200E1D73F70600F01BA3 /* UIScrollView+CJAddContentView.m */,
+				789B200F1D73F70600F01BA3 /* UIView+CJAddSubVIew.h */,
+				789B20101D73F70600F01BA3 /* UIView+CJAddSubVIew.m */,
+			);
+			name = RadioComposeView;
+			path = ../../RadioComposeView;
+			sourceTree = "<group>";
+		};
 		78FA92DE1D7009650023252A = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +119,9 @@
 		78FA92E81D7009650023252A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				78FA92E71D7009650023252A /* RadioControllersDemo.app */,
-				78FA93001D7009650023252A /* RadioControllersDemoTests.xctest */,
-				78FA930B1D7009650023252A /* RadioControllersDemoUITests.xctest */,
+				78FA92E71D7009650023252A /* RadioComposeViewDemo.app */,
+				78FA93001D7009650023252A /* RadioComposeViewDemo.xctest */,
+				78FA930B1D7009650023252A /* RadioComposeViewDemo.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,7 +129,7 @@
 		78FA92E91D7009650023252A /* RadioControllersDemo */ = {
 			isa = PBXGroup;
 			children = (
-				78FA93241D700B240023252A /* RadioControllers */,
+				789B200A1D73F70600F01BA3 /* RadioComposeView */,
 				78FA92ED1D7009650023252A /* AppDelegate.h */,
 				78FA92EE1D7009650023252A /* AppDelegate.m */,
 				78FA92F01D7009650023252A /* ViewController.h */,
@@ -174,26 +188,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		78FA93241D700B240023252A /* RadioControllers */ = {
-			isa = PBXGroup;
-			children = (
-				78FA93251D700B240023252A /* RadioControllers.h */,
-				78FA93261D700B240023252A /* RadioControllers.m */,
-				78FA93271D700B240023252A /* UIScrollView+CJAddContentView.h */,
-				78FA93281D700B240023252A /* UIScrollView+CJAddContentView.m */,
-				78FA93291D700B240023252A /* UIView+CJAddSubVIew.h */,
-				78FA932A1D700B240023252A /* UIView+CJAddSubVIew.m */,
-			);
-			name = RadioControllers;
-			path = ../../RadioControllers;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		78FA92E61D7009650023252A /* RadioControllersDemo */ = {
+		78FA92E61D7009650023252A /* RadioComposeViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78FA93141D7009650023252A /* Build configuration list for PBXNativeTarget "RadioControllersDemo" */;
+			buildConfigurationList = 78FA93141D7009650023252A /* Build configuration list for PBXNativeTarget "RadioComposeViewDemo" */;
 			buildPhases = (
 				78FA92E31D7009650023252A /* Sources */,
 				78FA92E41D7009650023252A /* Frameworks */,
@@ -203,14 +203,14 @@
 			);
 			dependencies = (
 			);
-			name = RadioControllersDemo;
+			name = RadioComposeViewDemo;
 			productName = RadioControllersDemo;
-			productReference = 78FA92E71D7009650023252A /* RadioControllersDemo.app */;
+			productReference = 78FA92E71D7009650023252A /* RadioComposeViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		78FA92FF1D7009650023252A /* RadioControllersDemoTests */ = {
+		78FA92FF1D7009650023252A /* RadioComposeViewDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78FA93171D7009650023252A /* Build configuration list for PBXNativeTarget "RadioControllersDemoTests" */;
+			buildConfigurationList = 78FA93171D7009650023252A /* Build configuration list for PBXNativeTarget "RadioComposeViewDemoTests" */;
 			buildPhases = (
 				78FA92FC1D7009650023252A /* Sources */,
 				78FA92FD1D7009650023252A /* Frameworks */,
@@ -221,14 +221,14 @@
 			dependencies = (
 				78FA93021D7009650023252A /* PBXTargetDependency */,
 			);
-			name = RadioControllersDemoTests;
+			name = RadioComposeViewDemoTests;
 			productName = RadioControllersDemoTests;
-			productReference = 78FA93001D7009650023252A /* RadioControllersDemoTests.xctest */;
+			productReference = 78FA93001D7009650023252A /* RadioComposeViewDemo.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		78FA930A1D7009650023252A /* RadioControllersDemoUITests */ = {
+		78FA930A1D7009650023252A /* RadioComposeViewDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78FA931A1D7009650023252A /* Build configuration list for PBXNativeTarget "RadioControllersDemoUITests" */;
+			buildConfigurationList = 78FA931A1D7009650023252A /* Build configuration list for PBXNativeTarget "RadioComposeViewDemoUITests" */;
 			buildPhases = (
 				78FA93071D7009650023252A /* Sources */,
 				78FA93081D7009650023252A /* Frameworks */,
@@ -239,9 +239,9 @@
 			dependencies = (
 				78FA930D1D7009650023252A /* PBXTargetDependency */,
 			);
-			name = RadioControllersDemoUITests;
+			name = RadioComposeViewDemoUITests;
 			productName = RadioControllersDemoUITests;
-			productReference = 78FA930B1D7009650023252A /* RadioControllersDemoUITests.xctest */;
+			productReference = 78FA930B1D7009650023252A /* RadioComposeViewDemo.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -266,7 +266,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 78FA92E21D7009650023252A /* Build configuration list for PBXProject "RadioControllersDemo" */;
+			buildConfigurationList = 78FA92E21D7009650023252A /* Build configuration list for PBXProject "RadioComposeViewDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -279,9 +279,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				78FA92E61D7009650023252A /* RadioControllersDemo */,
-				78FA92FF1D7009650023252A /* RadioControllersDemoTests */,
-				78FA930A1D7009650023252A /* RadioControllersDemoUITests */,
+				78FA92E61D7009650023252A /* RadioComposeViewDemo */,
+				78FA92FF1D7009650023252A /* RadioComposeViewDemoTests */,
+				78FA930A1D7009650023252A /* RadioComposeViewDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,11 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78FA932B1D700B250023252A /* RadioControllers.m in Sources */,
-				78FA932C1D700B250023252A /* UIScrollView+CJAddContentView.m in Sources */,
-				78FA932D1D700B250023252A /* UIView+CJAddSubVIew.m in Sources */,
 				78FA93221D700A610023252A /* RadioControllersViewController.m in Sources */,
+				789B20121D73F70600F01BA3 /* UIScrollView+CJAddContentView.m in Sources */,
+				789B20131D73F70600F01BA3 /* UIView+CJAddSubVIew.m in Sources */,
 				78FA92F21D7009650023252A /* ViewController.m in Sources */,
+				789B20111D73F70600F01BA3 /* RadioComposeView.m in Sources */,
 				78FA92EF1D7009650023252A /* AppDelegate.m in Sources */,
 				78FA92EC1D7009650023252A /* main.m in Sources */,
 			);
@@ -350,12 +350,12 @@
 /* Begin PBXTargetDependency section */
 		78FA93021D7009650023252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 78FA92E61D7009650023252A /* RadioControllersDemo */;
+			target = 78FA92E61D7009650023252A /* RadioComposeViewDemo */;
 			targetProxy = 78FA93011D7009650023252A /* PBXContainerItemProxy */;
 		};
 		78FA930D1D7009650023252A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 78FA92E61D7009650023252A /* RadioControllersDemo */;
+			target = 78FA92E61D7009650023252A /* RadioComposeViewDemo */;
 			targetProxy = 78FA930C1D7009650023252A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -471,7 +471,7 @@
 				INFOPLIST_FILE = RadioControllersDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.RadioControllersDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RadioComposeViewDemo;
 			};
 			name = Debug;
 		};
@@ -482,7 +482,7 @@
 				INFOPLIST_FILE = RadioControllersDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.RadioControllersDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RadioComposeViewDemo;
 			};
 			name = Release;
 		};
@@ -493,8 +493,8 @@
 				INFOPLIST_FILE = RadioControllersDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.RadioControllersDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RadioControllersDemo.app/RadioControllersDemo";
+				PRODUCT_NAME = RadioComposeViewDemo;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RadioComposeViewDemo.app/RadioComposeViewDemo";
 			};
 			name = Debug;
 		};
@@ -505,8 +505,8 @@
 				INFOPLIST_FILE = RadioControllersDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.RadioControllersDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RadioControllersDemo.app/RadioControllersDemo";
+				PRODUCT_NAME = RadioComposeViewDemo;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RadioComposeViewDemo.app/RadioComposeViewDemo";
 			};
 			name = Release;
 		};
@@ -516,7 +516,7 @@
 				INFOPLIST_FILE = RadioControllersDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.RadioControllersDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RadioComposeViewDemo;
 				TEST_TARGET_NAME = RadioControllersDemo;
 			};
 			name = Debug;
@@ -527,7 +527,7 @@
 				INFOPLIST_FILE = RadioControllersDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.RadioControllersDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RadioComposeViewDemo;
 				TEST_TARGET_NAME = RadioControllersDemo;
 			};
 			name = Release;
@@ -535,7 +535,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		78FA92E21D7009650023252A /* Build configuration list for PBXProject "RadioControllersDemo" */ = {
+		78FA92E21D7009650023252A /* Build configuration list for PBXProject "RadioComposeViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78FA93121D7009650023252A /* Debug */,
@@ -544,29 +544,32 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78FA93141D7009650023252A /* Build configuration list for PBXNativeTarget "RadioControllersDemo" */ = {
+		78FA93141D7009650023252A /* Build configuration list for PBXNativeTarget "RadioComposeViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78FA93151D7009650023252A /* Debug */,
 				78FA93161D7009650023252A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		78FA93171D7009650023252A /* Build configuration list for PBXNativeTarget "RadioControllersDemoTests" */ = {
+		78FA93171D7009650023252A /* Build configuration list for PBXNativeTarget "RadioComposeViewDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78FA93181D7009650023252A /* Debug */,
 				78FA93191D7009650023252A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		78FA931A1D7009650023252A /* Build configuration list for PBXNativeTarget "RadioControllersDemoUITests" */ = {
+		78FA931A1D7009650023252A /* Build configuration list for PBXNativeTarget "RadioComposeViewDemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78FA931B1D7009650023252A /* Debug */,
 				78FA931C1D7009650023252A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

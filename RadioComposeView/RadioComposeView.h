@@ -1,6 +1,6 @@
 //
-//  RadioControllers.h
-//  CJSliderViewControllerDemo
+//  RadioComposeView.h
+//  RadioComposeViewDemo
 //
 //  Created by lichq on 14-11-12.
 //  Copyright (c) 2014年 lichq. All rights reserved.
@@ -9,23 +9,23 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol RadioControllersDelegate <NSObject>
+@protocol RadioComposeViewDelegate <NSObject>
 
 /**
- *  在radioControllersView上改变选中的index
+ *  radioComposeView上选中的index改变时触发
  *
  *  @param index
  */
-- (void)radioControllersDidChangeToIndex:(NSInteger)index;
+- (void)cj_radioComposeViewDidChangeToIndex:(NSInteger)index;
 
 @end
 
 
 
-
-@interface RadioControllers : UIView<UIScrollViewDelegate>{
-    
-    
+/**
+ *  单选View的组合类
+ */
+@interface RadioComposeView : UIView <UIScrollViewDelegate> {
     NSInteger currentShowViewIndex; /**< 当前显示的视图(即中视图)上的视图内容在所有view中的位置 */
     NSInteger selIndex;
     
@@ -35,8 +35,8 @@
 }
 
 
-@property (assign,nonatomic) id<RadioControllersDelegate> delegate;
-@property (strong,nonatomic) NSMutableArray *views;
+@property (assign, nonatomic) id<RadioComposeViewDelegate> delegate;
+@property (strong, nonatomic) NSMutableArray *views;
 
 /**
  *  设置滚动视图的UIViewController的View,必须设置3个以上的视图。

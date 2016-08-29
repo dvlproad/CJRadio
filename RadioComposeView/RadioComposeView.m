@@ -1,23 +1,23 @@
 //
-//  RadioControllers.m
-//  CJSliderViewControllerDemo
+//  RadioComposeView.m
+//  RadioComposeViewDemo
 //
 //  Created by lichq on 14-11-12.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
-#import "RadioControllers.h"
+#import "RadioComposeView.h"
 #import "UIScrollView+CJAddContentView.h"
 #import "UIView+CJAddSubVIew.h"
 
-@interface RadioControllers () {
+@interface RadioComposeView () {
     UIScrollView *_scrollView;
     UIView *contentView;
 }
 
 @end
 
-@implementation RadioControllers
+@implementation RadioComposeView
 
 
 
@@ -268,8 +268,8 @@
     //滑动到显示的视图(即中视图)
     //[self scrollToCenterView];  //原本使用frame的时候写在这里有效，现在由于使用约束，而导致第一次初始化的时候无效，所以讲第一次以及其他次分开成写在layoutSubviews和scrollViewDidEndDecelerating了。
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(radioControllersDidChangeToIndex:)]) {
-        [self.delegate radioControllersDidChangeToIndex:showViewIndex];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cj_radioComposeViewDidChangeToIndex:)]) {
+        [self.delegate cj_radioComposeViewDidChangeToIndex:showViewIndex];
     }
 }
 

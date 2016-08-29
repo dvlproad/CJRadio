@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RadioControllersViewController">
             <connections>
-                <outlet property="radioControllersView" destination="SSy-h3-ti6" id="vh9-HF-w1i"/>
+                <outlet property="radioComposeView" destination="SSy-h3-ti6" id="5BT-1R-vfk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSy-h3-ti6" customClass="RadioControllers">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSy-h3-ti6" customClass="RadioComposeView">
                     <rect key="frame" x="10" y="93" width="300" height="465"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>

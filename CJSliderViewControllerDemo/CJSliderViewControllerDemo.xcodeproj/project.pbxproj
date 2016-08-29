@@ -30,9 +30,9 @@
 		784633B81D728E790082401F /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784633A31D728E790082401F /* RadioButton_DropDown.xib */; };
 		784633B91D728E790082401F /* RadioButton_Slider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784633A41D728E790082401F /* RadioButton_Slider.xib */; };
 		784633BA1D728E790082401F /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633A61D728E790082401F /* RadioButtons.m */; };
-		784633BB1D728E790082401F /* RadioControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633A91D728E790082401F /* RadioControllers.m */; };
-		784633BC1D728E790082401F /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633AB1D728E790082401F /* UIScrollView+CJAddContentView.m */; };
-		784633BD1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633AD1D728E790082401F /* UIView+CJAddSubVIew.m */; };
+		789B201B1D73F93E00F01BA3 /* RadioComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B20161D73F93E00F01BA3 /* RadioComposeView.m */; };
+		789B201C1D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B20181D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m */; };
+		789B201D1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B201A1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,12 +89,12 @@
 		784633A41D728E790082401F /* RadioButton_Slider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_Slider.xib; sourceTree = "<group>"; };
 		784633A51D728E790082401F /* RadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons.h; sourceTree = "<group>"; };
 		784633A61D728E790082401F /* RadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons.m; sourceTree = "<group>"; };
-		784633A81D728E790082401F /* RadioControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioControllers.h; sourceTree = "<group>"; };
-		784633A91D728E790082401F /* RadioControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioControllers.m; sourceTree = "<group>"; };
-		784633AA1D728E790082401F /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
-		784633AB1D728E790082401F /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
-		784633AC1D728E790082401F /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
-		784633AD1D728E790082401F /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
+		789B20151D73F93E00F01BA3 /* RadioComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioComposeView.h; sourceTree = "<group>"; };
+		789B20161D73F93E00F01BA3 /* RadioComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioComposeView.m; sourceTree = "<group>"; };
+		789B20171D73F93E00F01BA3 /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
+		789B20181D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
+		789B20191D73F93E00F01BA3 /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
+		789B201A1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +149,8 @@
 				7846335C1D728C4B0082401F /* AppDelegate.m */,
 				7846335E1D728C4B0082401F /* ViewController.h */,
 				7846335F1D728C4B0082401F /* ViewController.m */,
+				789B20141D73F93E00F01BA3 /* RadioComposeView */,
 				784633921D728E790082401F /* RadioButtons */,
-				784633A71D728E790082401F /* RadioControllers */,
 				7846338B1D728C740082401F /* Controllers */,
 				7846338C1D728C740082401F /* Views */,
 				784633611D728C4B0082401F /* Main.storyboard */,
@@ -254,18 +254,18 @@
 			path = images_RadioButton_Slider;
 			sourceTree = "<group>";
 		};
-		784633A71D728E790082401F /* RadioControllers */ = {
+		789B20141D73F93E00F01BA3 /* RadioComposeView */ = {
 			isa = PBXGroup;
 			children = (
-				784633A81D728E790082401F /* RadioControllers.h */,
-				784633A91D728E790082401F /* RadioControllers.m */,
-				784633AA1D728E790082401F /* UIScrollView+CJAddContentView.h */,
-				784633AB1D728E790082401F /* UIScrollView+CJAddContentView.m */,
-				784633AC1D728E790082401F /* UIView+CJAddSubVIew.h */,
-				784633AD1D728E790082401F /* UIView+CJAddSubVIew.m */,
+				789B20151D73F93E00F01BA3 /* RadioComposeView.h */,
+				789B20161D73F93E00F01BA3 /* RadioComposeView.m */,
+				789B20171D73F93E00F01BA3 /* UIScrollView+CJAddContentView.h */,
+				789B20181D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m */,
+				789B20191D73F93E00F01BA3 /* UIView+CJAddSubVIew.h */,
+				789B201A1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m */,
 			);
-			name = RadioControllers;
-			path = ../../RadioControllers;
+			name = RadioComposeView;
+			path = ../../RadioComposeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,17 +408,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				789B201B1D73F93E00F01BA3 /* RadioComposeView.m in Sources */,
 				784633AF1D728E790082401F /* UIView+CJShowDropView.m in Sources */,
 				784633AE1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */,
 				784633601D728C4B0082401F /* ViewController.m in Sources */,
 				7846335D1D728C4B0082401F /* AppDelegate.m in Sources */,
+				789B201C1D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m in Sources */,
 				784633901D728CA60082401F /* CJSliderViewController.m in Sources */,
-				784633BC1D728E790082401F /* UIScrollView+CJAddContentView.m in Sources */,
 				7846335A1D728C4B0082401F /* main.m in Sources */,
 				784633B71D728E790082401F /* RadioButton.m in Sources */,
+				789B201D1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m in Sources */,
 				784633BA1D728E790082401F /* RadioButtons.m in Sources */,
-				784633BD1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */,
-				784633BB1D728E790082401F /* RadioControllers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +644,7 @@
 				784633841D728C4B0082401F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		784633851D728C4B0082401F /* Build configuration list for PBXNativeTarget "CJSliderViewControllerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -652,6 +653,7 @@
 				784633871D728C4B0082401F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		784633881D728C4B0082401F /* Build configuration list for PBXNativeTarget "CJSliderViewControllerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -660,6 +662,7 @@
 				7846338A1D728C4B0082401F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

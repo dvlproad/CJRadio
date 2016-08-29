@@ -8,7 +8,7 @@
 
 #import "RadioControllersViewController.h"
 
-@interface RadioControllersViewController () <RadioControllersDelegate> {
+@interface RadioControllersViewController () <RadioComposeViewDelegate> {
     
 }
 
@@ -78,20 +78,20 @@
 *  初始化数据（按钮和控制器）
 */
 - (void)initizileRadioControllersViewWithRadioControllers:(NSArray<UIViewController *> *)radioControllers {
-    if (self.radioControllersView.views.count == 0) {
+    if (self.radioComposeView.views.count == 0) {
         NSMutableArray *views = [[NSMutableArray alloc] init];
         for (UIViewController *vc in radioControllers) {
             [views addObject:vc.view];
             [self addChildViewController:vc];//记得添加进去
         }
         //[self.radioControllersView setScrollViews:views];
-        [self.radioControllersView setScrollViews:views andShowIndex:self.defaultSelectedIndex];
-        [self.radioControllersView setDelegate:self];
+        [self.radioComposeView setScrollViews:views andShowIndex:self.defaultSelectedIndex];
+        [self.radioComposeView setDelegate:self];
     }
 }
 
 
-- (void)radioControllersDidChangeToIndex:(NSInteger)index {
+- (void)cj_radioComposeViewDidChangeToIndex:(NSInteger)index {
     NSLog(@"点击了%ld", index);
 }
 

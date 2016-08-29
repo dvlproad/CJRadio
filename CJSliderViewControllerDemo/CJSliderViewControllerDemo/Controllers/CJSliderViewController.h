@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "RadioButtons.h"
-#import "RadioControllers.h"
+#import "RadioComposeView.h"
 
 @interface CJSliderViewController : UIViewController {
     
 }
 @property (nonatomic, strong) IBOutlet RadioButtons *radioButtons;
-@property (nonatomic, strong) IBOutlet RadioControllers *radioControllersView;
+@property (nonatomic, strong) IBOutlet RadioComposeView *radioComposeView;
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;
 @property (nonatomic, assign) NSInteger maxRadioButtonsShowViewCount;
 

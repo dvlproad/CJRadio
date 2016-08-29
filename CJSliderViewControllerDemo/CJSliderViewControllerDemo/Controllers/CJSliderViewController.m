@@ -11,7 +11,7 @@
 static NSInteger kMaxRadioButtonsShowViewCountDefault = 3;
 static NSInteger kSelectedIndexDefault = 2;
 
-@interface CJSliderViewController () <RadioButtonsDelegate, RadioControllersDelegate> {
+@interface CJSliderViewController () <RadioButtonsDelegate, RadioComposeViewDelegate> {
     
 }
 
@@ -118,15 +118,15 @@ static NSInteger kSelectedIndexDefault = 2;
  *  初始化数据（按钮和控制器）
  */
 - (void)initizileRadioControllersViewWithRadioControllers:(NSArray<UIViewController *> *)radioControllers {
-    if (self.radioControllersView.views.count == 0) {
+    if (self.radioComposeView.views.count == 0) {
         NSMutableArray *views = [[NSMutableArray alloc] init];
         for (UIViewController *vc in radioControllers) {
             [views addObject:vc.view];
             [self addChildViewController:vc];//记得添加进去
         }
         //[self.radioControllersView setScrollViews:views];
-        [self.radioControllersView setScrollViews:views andShowIndex:self.defaultSelectedIndex];
-        [self.radioControllersView setDelegate:self];
+        [self.radioComposeView setScrollViews:views andShowIndex:self.defaultSelectedIndex];
+        [self.radioComposeView setDelegate:self];
     }
 }
 
@@ -135,13 +135,13 @@ static NSInteger kSelectedIndexDefault = 2;
 
 #pragma mark - RadioButtonsDelegate & RadioControllersDelegate
 - (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
-    [self.radioControllersView showViewWithIndex:index_cur];
+    [self.radioComposeView showViewWithIndex:index_cur];
     self.currentSelectedIndex = index_cur;
     
     [self doSomethingToCon_whereIndex:index_cur];
 }
 
-- (void)radioControllersDidChangeToIndex:(NSInteger)index {
+- (void)cj_radioComposeViewDidChangeToIndex:(NSInteger)index {
     [self.radioButtons selectRadioButtonIndex:index];
     self.currentSelectedIndex  = index;
     

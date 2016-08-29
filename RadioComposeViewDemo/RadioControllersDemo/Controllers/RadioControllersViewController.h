@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RadioControllers.h"
+#import "RadioComposeView.h"
 
 @interface RadioControllersViewController : UIViewController {
     
 }
 
-@property (nonatomic, weak) IBOutlet RadioControllers *radioControllersView;
+@property (nonatomic, weak) IBOutlet RadioComposeView *radioComposeView;
 
 //@property (nonatomic, strong) NSMutableArray *radioControllers;
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;

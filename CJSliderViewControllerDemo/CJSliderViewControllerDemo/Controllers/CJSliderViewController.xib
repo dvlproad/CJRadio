@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CJSliderViewController">
             <connections>
                 <outlet property="radioButtons" destination="0VJ-Mp-FLD" id="nhv-7z-CLc"/>
-                <outlet property="radioControllersView" destination="JSV-iu-pr3" id="weY-Cw-lqN"/>
+                <outlet property="radioComposeView" destination="JSV-iu-pr3" id="slK-QZ-Egu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +24,7 @@
                         <constraint firstAttribute="height" constant="84" id="EHC-7I-jFO"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-iu-pr3" customClass="RadioControllers">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-iu-pr3" customClass="RadioComposeView">
                     <rect key="frame" x="0.0" y="124" width="320" height="380"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>

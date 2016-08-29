@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78FA92E61D7009650023252A"
-               BuildableName = "RadioControllersDemo.app"
-               BlueprintName = "RadioControllersDemo"
-               ReferencedContainer = "container:RadioControllersDemo.xcodeproj">
+               BuildableName = "RadioComposeViewDemo.app"
+               BlueprintName = "RadioComposeViewDemo"
+               ReferencedContainer = "container:RadioComposeViewDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78FA92FF1D7009650023252A"
-               BuildableName = "RadioControllersDemoTests.xctest"
-               BlueprintName = "RadioControllersDemoTests"
-               ReferencedContainer = "container:RadioControllersDemo.xcodeproj">
+               BuildableName = "RadioComposeViewDemo.xctest"
+               BlueprintName = "RadioComposeViewDemoTests"
+               ReferencedContainer = "container:RadioComposeViewDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "78FA930A1D7009650023252A"
-               BuildableName = "RadioControllersDemoUITests.xctest"
-               BlueprintName = "RadioControllersDemoUITests"
-               ReferencedContainer = "container:RadioControllersDemo.xcodeproj">
+               BuildableName = "RadioComposeViewDemo.xctest"
+               BlueprintName = "RadioComposeViewDemoUITests"
+               ReferencedContainer = "container:RadioComposeViewDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78FA92E61D7009650023252A"
-            BuildableName = "RadioControllersDemo.app"
-            BlueprintName = "RadioControllersDemo"
-            ReferencedContainer = "container:RadioControllersDemo.xcodeproj">
+            BuildableName = "RadioComposeViewDemo.app"
+            BlueprintName = "RadioComposeViewDemo"
+            ReferencedContainer = "container:RadioComposeViewDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78FA92E61D7009650023252A"
-            BuildableName = "RadioControllersDemo.app"
-            BlueprintName = "RadioControllersDemo"
-            ReferencedContainer = "container:RadioControllersDemo.xcodeproj">
+            BuildableName = "RadioComposeViewDemo.app"
+            BlueprintName = "RadioComposeViewDemo"
+            ReferencedContainer = "container:RadioComposeViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78FA92E61D7009650023252A"
-            BuildableName = "RadioControllersDemo.app"
-            BlueprintName = "RadioControllersDemo"
-            ReferencedContainer = "container:RadioControllersDemo.xcodeproj">
+            BuildableName = "RadioComposeViewDemo.app"
+            BlueprintName = "RadioComposeViewDemo"
+            ReferencedContainer = "container:RadioComposeViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
