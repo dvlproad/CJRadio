@@ -11,7 +11,7 @@
 static NSInteger kMaxRadioButtonsShowViewCountDefault = 3;
 static NSInteger kSelectedIndexDefault = 2;
 
-@interface CJSliderViewController () <RadioButtonsDelegate, RadioComposeViewDelegate> {
+@interface CJSliderViewController () <RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
     
 }
 
@@ -28,19 +28,56 @@ static NSInteger kSelectedIndexDefault = 2;
     NSArray *radioButtonTitles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
     NSString *radioButtonNibName = @"RadioButton_Slider";
     
-    NSArray *radioViewControllers = [self getRadioControllers];
-    
     self.defaultSelectedIndex = kSelectedIndexDefault;
     self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
-    [self setupViewWithRadioButtonTitles:radioButtonTitles
-                      radioButtonNibName:radioButtonNibName
-                    radioViewControllers:radioViewControllers];
+    
+    //RadioButtons
+    [self initizileRadioButtonsWithRadioButtonTitles:radioButtonTitles radioButtonNibName:radioButtonNibName];
+    
+    //RadioControllers
+    self.radioComposeView.dataSource = self;
+    self.radioComposeView.delegate = self;
 }
 
 - (BOOL)automaticallyAdjustsScrollViewInsets {
     return NO;
 }
 
+
+/**
+ *  初始化数据（单选按钮）
+ */
+- (void)initizileRadioButtonsWithRadioButtonTitles:(NSArray<NSString *> *)radioButtonTitles
+                                radioButtonNibName:(NSString *)radioButtonNidName {
+    [self.radioButtons setTitles:radioButtonTitles radioButtonNidName:radioButtonNidName];
+    self.radioButtons.defaultSelectedIndex = self.defaultSelectedIndex;
+    self.radioButtons.maxShowViewCount = self.maxRadioButtonsShowViewCount;
+    self.radioButtons.shouldMoveScrollViewToSelectItem = YES;
+    [self.radioButtons setDelegate:self];
+    [self.radioButtons addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+                         rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+                     withArrowImageWidth:20];
+}
+
+
+
+
+#pragma mark - RadioComposeViewDataSource & RadioComposeViewDelegate
+- (NSInteger)cj_defaultShowIndexInRadioComposeView {
+    return self.defaultSelectedIndex;
+}
+
+- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView {
+    NSArray *radioViewControllers = [self getRadioControllers];
+    
+    NSMutableArray *views = [[NSMutableArray alloc] init];
+    for (UIViewController *vc in radioViewControllers) {
+        [views addObject:vc.view];
+        [self addChildViewController:vc];//记得添加进去
+    }
+    
+    return views;
+}
 
 - (NSArray<UIViewController *> *)getRadioControllers {
     /* 设置radioControllers（黄橙相间） */
@@ -83,71 +120,22 @@ static NSInteger kSelectedIndexDefault = 2;
     return radioControllers;
 }
 
-- (void)setupViewWithRadioButtonTitles:(NSArray<NSString *> *)radioButtonTitles radioButtonNibName:(NSString *)radioButtonNidName radioViewControllers:(NSArray<UIViewController *> *)radioControllers {
-    
-    //RadioButtons
-    [self initizileRadioButtonsWithRadioButtonTitles:radioButtonTitles radioButtonNibName:radioButtonNidName];
-    
-    //RadioControllers
-    [self initizileRadioControllersViewWithRadioControllers:radioControllers];
-    
-}
-
-
-
-
-/**
- *  初始化数据（单选按钮）
- */
-- (void)initizileRadioButtonsWithRadioButtonTitles:(NSArray<NSString *> *)radioButtonTitles
-                                radioButtonNibName:(NSString *)radioButtonNidName {
-    [self.radioButtons setTitles:radioButtonTitles radioButtonNidName:radioButtonNidName];
-    self.radioButtons.defaultSelectedIndex = self.defaultSelectedIndex;
-    self.radioButtons.maxShowViewCount = self.maxRadioButtonsShowViewCount;
-    self.radioButtons.shouldMoveScrollViewToSelectItem = YES;
-    [self.radioButtons setDelegate:self];
-    [self.radioButtons addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
-                         rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
-                     withArrowImageWidth:20];
-}
-
-
-
-
-/**
- *  初始化数据（按钮和控制器）
- */
-- (void)initizileRadioControllersViewWithRadioControllers:(NSArray<UIViewController *> *)radioControllers {
-    if (self.radioComposeView.views.count == 0) {
-        NSMutableArray *views = [[NSMutableArray alloc] init];
-        for (UIViewController *vc in radioControllers) {
-            [views addObject:vc.view];
-            [self addChildViewController:vc];//记得添加进去
-        }
-        //[self.radioControllersView setScrollViews:views];
-        [self.radioComposeView setScrollViews:views andShowIndex:self.defaultSelectedIndex];
-        [self.radioComposeView setDelegate:self];
-    }
-}
-
-
-
-
-#pragma mark - RadioButtonsDelegate & RadioControllersDelegate
-- (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
-    [self.radioComposeView showViewWithIndex:index_cur];
-    self.currentSelectedIndex = index_cur;
-    
-    [self doSomethingToCon_whereIndex:index_cur];
-}
-
-- (void)cj_radioComposeViewDidChangeToIndex:(NSInteger)index {
+- (void)cj_radioComposeView:(RadioComposeView *)radioComposeView didChangeToIndex:(NSInteger)index {
     [self.radioButtons selectRadioButtonIndex:index];
     self.currentSelectedIndex  = index;
     
     [self doSomethingToCon_whereIndex:index];
 }
 
+
+
+#pragma mark - RadioButtonsDelegate
+- (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+    [self.radioComposeView showViewWithIndex:index_cur];
+    self.currentSelectedIndex = index_cur;
+    
+    [self doSomethingToCon_whereIndex:index_cur];
+}
 
 
 #pragma mark - 子类可选的继承方法

@@ -8,7 +8,7 @@
 
 #import "RadioControllersViewController.h"
 
-@interface RadioControllersViewController () <RadioComposeViewDelegate> {
+@interface RadioControllersViewController () <RadioComposeViewDataSource, RadioComposeViewDelegate> {
     
 }
 
@@ -20,10 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
-    NSArray *radioViewControllers = [self getRadioControllers];
-    self.defaultSelectedIndex = 2;
-    [self initizileRadioControllersViewWithRadioControllers:radioViewControllers];
+    self.radioComposeView.dataSource = self;
+    self.radioComposeView.delegate = self;
 }
 
 - (BOOL)automaticallyAdjustsScrollViewInsets {
@@ -74,24 +72,26 @@
 }
 
 
-/*
-*  初始化数据（按钮和控制器）
-*/
-- (void)initizileRadioControllersViewWithRadioControllers:(NSArray<UIViewController *> *)radioControllers {
-    if (self.radioComposeView.views.count == 0) {
-        NSMutableArray *views = [[NSMutableArray alloc] init];
-        for (UIViewController *vc in radioControllers) {
-            [views addObject:vc.view];
-            [self addChildViewController:vc];//记得添加进去
-        }
-        //[self.radioControllersView setScrollViews:views];
-        [self.radioComposeView setScrollViews:views andShowIndex:self.defaultSelectedIndex];
-        [self.radioComposeView setDelegate:self];
+#pragma mark - RadioComposeViewDataSource
+- (NSInteger)cj_defaultShowIndexInRadioComposeView {
+    return 2;
+}
+
+- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView {
+    NSArray *radioViewControllers = [self getRadioControllers];
+    
+    NSMutableArray *views = [[NSMutableArray alloc] init];
+    for (UIViewController *vc in radioViewControllers) {
+        [views addObject:vc.view];
+        [self addChildViewController:vc];//记得添加进去
     }
+    
+    return views;
 }
 
 
-- (void)cj_radioComposeViewDidChangeToIndex:(NSInteger)index {
+#pragma mark - RadioComposeViewDelegate
+- (void)cj_radioComposeView:(RadioComposeView *)radioComposeView didChangeToIndex:(NSInteger)index {
     NSLog(@"点击了%ld", index);
 }
 

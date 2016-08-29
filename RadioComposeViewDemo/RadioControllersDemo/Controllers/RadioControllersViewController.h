@@ -14,8 +14,6 @@
 }
 
 @property (nonatomic, weak) IBOutlet RadioComposeView *radioComposeView;
-
-//@property (nonatomic, strong) NSMutableArray *radioControllers;
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;
 
 @end

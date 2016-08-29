@@ -10,16 +10,22 @@
 #import "UIScrollView+CJAddContentView.h"
 #import "UIView+CJAddSubVIew.h"
 
-@interface RadioComposeView () {
+@interface RadioComposeView () <UIScrollViewDelegate> {
     UIScrollView *_scrollView;
     UIView *contentView;
+    
+    UIView *_viewL;
+    UIView *_viewC;
+    UIView *_viewR;
+    
+    NSInteger currentShowViewIndex; /**< 当前显示的视图(即中视图)上的视图内容在所有view中的位置 */
+    NSInteger selIndex;
 }
+@property (nonatomic, strong) NSArray *views;
 
 @end
 
 @implementation RadioComposeView
-
-
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -31,13 +37,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self commonInit];
     }
     return self;
 }
 
 
 - (void)awakeFromNib{
+    [super awakeFromNib];
+    
+    [self commonInit];
+}
+
+- (void)commonInit {
     self.backgroundColor = [UIColor blackColor];
     self.clipsToBounds = YES;
     
@@ -50,6 +62,88 @@
     [self addRightViewToScrollView];
 }
 
+- (void)setDataSource:(id<RadioComposeViewDataSource>)dataSource {
+    _dataSource = dataSource;
+    
+    //loadViews
+    [self reloadViews];
+}
+
+/** 完整的描述请参见文件头部 */
+- (void)reloadViews {
+    //self.views
+    if (self.dataSource && [self.dataSource cj_radioViewsInRadioComposeView]) {
+        self.views = [self.dataSource cj_radioViewsInRadioComposeView];
+    }
+    NSAssert(self.views.count >= 3, @"the min count of the views is 3");
+    
+    currentShowViewIndex = -1;
+    
+    //defaultShowIndex
+    NSInteger defaultShowIndex = 0;
+    if (self.dataSource && [self.dataSource cj_defaultShowIndexInRadioComposeView]) {
+        defaultShowIndex = [self.dataSource cj_defaultShowIndexInRadioComposeView];
+    }
+    
+    [self resetViewToLeftCenterRightWithShowViewIndex:defaultShowIndex];
+}
+
+/**
+ *  为 左·中·右视图 重新附上新的视图，且页面上显示的中视图的的视图在所有视图中所在的位置为index
+ *
+ *  @param showViewIndex 中视图的的视图在所有视图中的位置index
+ */
+- (void)resetViewToLeftCenterRightWithShowViewIndex:(NSInteger)centerViewIndex {
+    if (currentShowViewIndex == centerViewIndex) {
+        NSLog(@"resetViewToLeftCenterRight failure");
+        return;
+    }
+    currentShowViewIndex = centerViewIndex;
+    
+    
+    /* 取得 左·中·右视图，分别是所有view中的哪几个 */
+    NSInteger indexForLeftView = (centerViewIndex == 0) ? self.views.count-1 : centerViewIndex-1;
+    NSInteger indexForCenterView = centerViewIndex;
+    NSInteger indexForRightView = (centerViewIndex == self.views.count-1) ? 0 : centerViewIndex+1;
+    
+    /* 为 左·中·右视图 重新附上新的视图：先remove，在add，这样就不会导致重复add多余的视图了 */
+    //    for (NSInteger i = 0; i < self.views.count; i++) {
+    //        if (i != indexL && i != indexC && i != indexR) {
+    //            UIView *view = self.views[i];
+    //            [view removeFromSuperview];
+    //        }
+    //    }
+    for (UIView *view in _viewL.subviews) {
+        [view removeFromSuperview];
+    }
+    for (UIView *view in _viewC.subviews) {
+        [view removeFromSuperview];
+    }
+    for (UIView *view in _viewR.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    
+    //注：从保持的self.views中，拿出的 左·中·右视图 都已经把该view下的所有样式都完整的包含进去了，所以取出来的也是放好的
+    UIView *newLeftView = [self.views objectAtIndex:indexForLeftView];
+    UIView *newCenterView = [self.views objectAtIndex:indexForCenterView];
+    UIView *newRightView = [self.views objectAtIndex:indexForRightView];
+    
+    [_viewL cj_addSubView:newLeftView withEdgeInsets:UIEdgeInsetsZero];//添加新view,要像这样有约束
+    [_viewC cj_addSubView:newCenterView withEdgeInsets:UIEdgeInsetsZero];
+    [_viewR cj_addSubView:newRightView withEdgeInsets:UIEdgeInsetsZero];
+    
+    //滑动到显示的视图(即中视图)
+    //[self scrollToCenterView];  //原本使用frame的时候写在这里有效，现在由于使用约束，而导致第一次初始化的时候无效，所以讲第一次以及其他次分开成写在layoutSubviews和scrollViewDidEndDecelerating了。
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cj_radioComposeView:didChangeToIndex:)]) {
+        [self.delegate cj_radioComposeView:self didChangeToIndex:centerViewIndex];
+    }
+}
+
+
+
+#pragma mark - ScrolView、ContentView、LeftView、CenterView、RightView的加载
 - (void)addScrollViewToSelf {
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectZero];
     _scrollView.backgroundColor = [UIColor cyanColor];
@@ -204,73 +298,6 @@
     
     //
     _viewR = view;
-}
-
-
-- (void)setScrollViews:(NSMutableArray *)views{
-    [self setScrollViews:views andShowIndex:0];
-}
-
-- (void)setScrollViews:(NSMutableArray *)views andShowIndex:(NSInteger)showIndex{
-    NSAssert(views.count >= 3, @"the min count of the views is 3");
-    self.views = views;
-    
-    currentShowViewIndex = -1;
-    [self resetViewToLeftCenterRightWithShowViewIndex:showIndex];
-}
-
-
-/**
- *  为 左·中·右视图 重新附上新的视图，且页面上显示的中视图的的视图在所有视图中所在的位置为index
- *
- *  @param showViewIndex 中视图的的视图在所有视图中的位置index
- */
-- (void)resetViewToLeftCenterRightWithShowViewIndex:(NSInteger)showViewIndex {
-    if (currentShowViewIndex == showViewIndex) {
-        NSLog(@"resetViewToLeftCenterRight failure");
-        return;
-    }
-    currentShowViewIndex = showViewIndex;
-    
-    
-    /* 取得 左·中·右视图，分别是所有view中的哪几个 */
-    NSInteger indexForLeftView = (showViewIndex == 0) ? self.views.count-1 : showViewIndex-1;
-    NSInteger indexForCenterView = showViewIndex;
-    NSInteger indexForRightView = (showViewIndex == self.views.count-1) ? 0 : showViewIndex+1;
-    
-    /* 为 左·中·右视图 重新附上新的视图：先remove，在add，这样就不会导致重复add多余的视图了 */
-//    for (NSInteger i = 0; i < self.views.count; i++) {
-//        if (i != indexL && i != indexC && i != indexR) {
-//            UIView *view = self.views[i];
-//            [view removeFromSuperview];
-//        }
-//    }
-    for (UIView *view in _viewL.subviews) {
-        [view removeFromSuperview];
-    }
-    for (UIView *view in _viewC.subviews) {
-        [view removeFromSuperview];
-    }
-    for (UIView *view in _viewR.subviews) {
-        [view removeFromSuperview];
-    }
-
-    
-    //注：从保持的self.views中，拿出的 左·中·右视图 都已经把该view下的所有样式都完整的包含进去了，所以取出来的也是放好的
-    UIView *newLeftView = [self.views objectAtIndex:indexForLeftView];
-    UIView *newCenterView = [self.views objectAtIndex:indexForCenterView];
-    UIView *newRightView = [self.views objectAtIndex:indexForRightView];
-    
-    [_viewL cj_addSubView:newLeftView withEdgeInsets:UIEdgeInsetsZero];//添加新view,要像这样有约束
-    [_viewC cj_addSubView:newCenterView withEdgeInsets:UIEdgeInsetsZero];
-    [_viewR cj_addSubView:newRightView withEdgeInsets:UIEdgeInsetsZero];
-    
-    //滑动到显示的视图(即中视图)
-    //[self scrollToCenterView];  //原本使用frame的时候写在这里有效，现在由于使用约束，而导致第一次初始化的时候无效，所以讲第一次以及其他次分开成写在layoutSubviews和scrollViewDidEndDecelerating了。
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(cj_radioComposeViewDidChangeToIndex:)]) {
-        [self.delegate cj_radioComposeViewDidChangeToIndex:showViewIndex];
-    }
 }
 
 

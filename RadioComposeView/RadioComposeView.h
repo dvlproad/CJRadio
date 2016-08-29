@@ -8,44 +8,60 @@
 
 #import <UIKit/UIKit.h>
 
+@class RadioComposeView;
+
+
+@protocol RadioComposeViewDataSource <NSObject>
+
+@required
+/**
+ *  view数组
+ *
+ *  @return view数组
+ */
+- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView;
+
+
+@optional
+/**
+ *  默认显示第几个view
+ *
+ *  @return 默认显示的view的index
+ */
+- (NSInteger)cj_defaultShowIndexInRadioComposeView;
+
+@end
+
+
 
 @protocol RadioComposeViewDelegate <NSObject>
 
 /**
  *  radioComposeView上选中的index改变时触发
  *
- *  @param index
+ *  @param radioComposeView radioComposeView
+ *  @param index            index
  */
-- (void)cj_radioComposeViewDidChangeToIndex:(NSInteger)index;
+- (void)cj_radioComposeView:(RadioComposeView *)radioComposeView didChangeToIndex:(NSInteger)index;
 
 @end
+
 
 
 
 /**
  *  单选View的组合类
  */
-@interface RadioComposeView : UIView <UIScrollViewDelegate> {
-    NSInteger currentShowViewIndex; /**< 当前显示的视图(即中视图)上的视图内容在所有view中的位置 */
-    NSInteger selIndex;
+@interface RadioComposeView : UIView {
     
-    UIView *_viewL;
-    UIView *_viewC;
-    UIView *_viewR;
 }
-
-
-@property (assign, nonatomic) id<RadioComposeViewDelegate> delegate;
-@property (strong, nonatomic) NSMutableArray *views;
+@property (nonatomic, weak) id <RadioComposeViewDataSource> dataSource;
+@property (nonatomic, weak) id <RadioComposeViewDelegate> delegate;
 
 /**
- *  设置滚动视图的UIViewController的View,必须设置3个以上的视图。
- *
- *  @param views
+ *  重新加载View视图
  */
-- (void)setScrollViews:(NSMutableArray *)views;
-- (void)setScrollViews:(NSMutableArray *)views andShowIndex:(NSInteger)showIndex;
-
+- (void)reloadViews;
 
 /**
  *  显示第几个View（即将第viewIndex位置的View显示到centerView中）
