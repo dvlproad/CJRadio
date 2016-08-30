@@ -65,10 +65,7 @@
     NSInteger componentCount = radioButtons.count;
     CGFloat radioButtonX = 0;
     for (NSInteger index = 0; index < componentCount; index++) {
-        CGFloat currentComponentWidth;
-        if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_radioButtons:widthForComponentAtIndex:)]) {
-            currentComponentWidth = [self.dataSource cj_radioButtons:self widthForComponentAtIndex:index];
-        }
+        CGFloat currentComponentWidth = [self.dataSource cj_radioButtons:self widthForComponentAtIndex:index];
         
         RadioButton *radioButton = [radioButtons objectAtIndex:index];
 //        RadioButton *radioButton = [self.dataSource cj_radioButtons:self cellForComponentAtIndex:index];
