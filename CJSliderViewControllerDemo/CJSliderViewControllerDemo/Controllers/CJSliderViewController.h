@@ -13,7 +13,7 @@
 @interface CJSliderViewController : UIViewController {
     
 }
-@property (nonatomic, strong) IBOutlet RadioButtons *radioButtons;
+@property (nonatomic, strong) IBOutlet RadioButtons *sliderRadioButtons;
 @property (nonatomic, strong) IBOutlet RadioComposeView *radioComposeView;
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;
 @property (nonatomic, assign) NSInteger maxRadioButtonsShowViewCount;

@@ -9,7 +9,11 @@
 #import "RBDropDownVC.h"
 #import <CJPopupView/CJPopupView.h>
 
-@interface RBDropDownVC ()
+#define kDefaultMaxShowCount    5
+
+@interface RBDropDownVC () <RadioButtonsDataSource, RadioButtonsDelegate> {
+    NSArray *titles;
+}
 
 @end
 
@@ -19,27 +23,55 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    #pragma mark 此例中如果RBDropDownVC.xib没有去掉sizeClasses，则容易出现视图无显示问题
-    CGRect rect_rbDropDwon1 = CGRectMake(0, 164, 320, 40);
-    rb_dropdown = [[RadioButtons alloc]initWithFrame:rect_rbDropDwon1];
-    [rb_dropdown setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
-    rb_dropdown.delegate = self;
-    rb_dropdown.radioButtonType = RadioButtonTypeCanDrop;
-    rb_dropdown.tag = 111;
-    [self.view addSubview:rb_dropdown];
     
+    titles =  @[@"人物", @"爱好", @"其他", @"地区"];
+    self.dropdownRadioButtons.radioButtonType = RadioButtonTypeCanDrop;
+    self.dropdownRadioButtons.dataSource = self;
+    self.dropdownRadioButtons.delegate = self;
+    self.dropdownRadioButtons.tag = 111;
     
-    CGRect rect_rbDropDwon2 = CGRectMake(0, 264, 320, 40);
-    rb_dropdown2 = [[RadioButtons alloc]initWithFrame:rect_rbDropDwon2];
-    [rb_dropdown2 setTitles:@[@"人物", @"爱好", @"其他", @"地区"] radioButtonNidName:@"RadioButton_DropDown"];
-    rb_dropdown2.delegate = self;
-    rb_dropdown2.radioButtonType = RadioButtonTypeCanDrop;
-    rb_dropdown2.tag = 222;
-    [self.view addSubview:rb_dropdown2];
+    self.dropdownRadioButtons2.radioButtonType = RadioButtonTypeCanDrop;
+    self.dropdownRadioButtons2.dataSource = self;
+    self.dropdownRadioButtons2.delegate = self;
+    self.dropdownRadioButtons2.tag = 222;
 }
 
-- (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old{
-    NSLog(@"index_old = %ld", index_old);
+#pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
+- (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
+    return -1;
+}
+
+- (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons {
+    return titles.count;
+}
+
+- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
+    NSInteger showViewCount = MIN(titles.count, kDefaultMaxShowCount);
+    CGFloat sectionWidth = CGRectGetWidth(radioButtons.frame)/showViewCount;
+    //    sectionWidth = ceilf(sectionWidth); //重点注意：当使用除法计算width时候，为了避免计算出来的值受除后，余数太多，除不尽(eg:102.66666666666667)，而造成的之后在通过左右箭头点击来寻找”要找的按钮“的时候，计算出现问题（”要找的按钮“需与“左右侧箭头的最左最右侧值”进行精确的比较），所以这里我们需要一个整数值，故我们这边选择向上取整。
+    
+    return sectionWidth;
+}
+
+- (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
+    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_DropDown" owner:nil options:nil];
+    RadioButton *radioButton = [radioButtonNib lastObject];
+    [radioButton setTitle:titles[index]];
+    radioButton.textNormalColor = [UIColor whiteColor];
+    radioButton.textSelectedColor = [UIColor greenColor];
+    
+    radioButton.stateChangeCompleteBlock = ^(RadioButton *radioButton) {
+        [UIView animateWithDuration:0.3 animations:^{
+            radioButton.imageView.transform = CGAffineTransformRotate(radioButton.imageView.transform, DEGREES_TO_RADIANS(180));
+        }];
+    };
+    
+    return radioButton;
+}
+
+- (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+    NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
+    
     //radioButtons.tag == 222，则才采用#import "UIView+ShowHisDropDownView.h"（其实际上内部引用了"UIView+ShowPopupInView.h"，刚好与"UIView+PopupInView.h"不同）
     if (radioButtons.tag == 222) {
         
@@ -385,11 +417,11 @@
 }
 
 - (IBAction)btnAction:(id)sender{
-    NSInteger index_old = rb_dropdown.currentSelectedIndex;
+    NSInteger index_old = self.dropdownRadioButtons.currentSelectedIndex;
     
     NSString *title = [NSString stringWithFormat:@"%d", rand()%10];
-    [rb_dropdown changeCurrentRadioButtonStateAndTitle:title];
-    [rb_dropdown setSelectedNone];
+    [self.dropdownRadioButtons changeCurrentRadioButtonStateAndTitle:title];
+    [self.dropdownRadioButtons setSelectedNone];
     
     if (index_old == 0) {
         [popupView1 popupInView_dismissFromSuperViewAnimated:YES];
@@ -405,10 +437,10 @@
 
 - (IBAction)btnAction222:(id)sender{
     NSString *title = [NSString stringWithFormat:@"%d", rand()%10];
-    [rb_dropdown2 changeCurrentRadioButtonStateAndTitle:title];
-    [rb_dropdown2 setSelectedNone];
+    [self.dropdownRadioButtons2 changeCurrentRadioButtonStateAndTitle:title];
+    [self.dropdownRadioButtons2 setSelectedNone];
     
-    [rb_dropdown2 showHisDropDownView_dismissPopupViewAnimated:YES];
+    [self.dropdownRadioButtons2 showHisDropDownView_dismissPopupViewAnimated:YES];
 }
 
 

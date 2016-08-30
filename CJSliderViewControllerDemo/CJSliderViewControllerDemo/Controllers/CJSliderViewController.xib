@@ -7,8 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CJSliderViewController">
             <connections>
-                <outlet property="radioButtons" destination="0VJ-Mp-FLD" id="nhv-7z-CLc"/>
                 <outlet property="radioComposeView" destination="JSV-iu-pr3" id="slK-QZ-Egu"/>
+                <outlet property="sliderRadioButtons" destination="0VJ-Mp-FLD" id="WFY-JA-0df"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,14 +18,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VJ-Mp-FLD" customClass="RadioButtons">
-                    <rect key="frame" x="0.0" y="40" width="320" height="84"/>
+                    <rect key="frame" x="0.0" y="74" width="320" height="84"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="84" id="EHC-7I-jFO"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSV-iu-pr3" customClass="RadioComposeView">
-                    <rect key="frame" x="0.0" y="124" width="320" height="380"/>
+                    <rect key="frame" x="0.0" y="158" width="320" height="346"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -33,10 +33,10 @@
             <constraints>
                 <constraint firstItem="JSV-iu-pr3" firstAttribute="top" secondItem="0VJ-Mp-FLD" secondAttribute="bottom" id="5Xg-Gf-xS9"/>
                 <constraint firstAttribute="trailing" secondItem="JSV-iu-pr3" secondAttribute="trailing" id="AO0-Th-TVC"/>
-                <constraint firstItem="0VJ-Mp-FLD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="KYt-Kp-8qk"/>
                 <constraint firstItem="JSV-iu-pr3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bq3-Ni-vhN"/>
                 <constraint firstItem="0VJ-Mp-FLD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ogV-Nv-UPD"/>
                 <constraint firstItem="JSV-iu-pr3" firstAttribute="top" secondItem="0VJ-Mp-FLD" secondAttribute="bottom" id="qPU-2C-ycp"/>
+                <constraint firstItem="0VJ-Mp-FLD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="ttS-Pj-TWF"/>
                 <constraint firstItem="JSV-iu-pr3" firstAttribute="top" secondItem="0VJ-Mp-FLD" secondAttribute="bottom" id="x2j-hh-jAP"/>
                 <constraint firstAttribute="trailing" secondItem="0VJ-Mp-FLD" secondAttribute="trailing" id="xef-ZR-Fiy"/>
                 <constraint firstAttribute="bottom" secondItem="JSV-iu-pr3" secondAttribute="bottom" id="zAn-Q7-Vf0"/>

@@ -10,9 +10,9 @@
 #import "RadioButtons.h"
 
 //notice：此例也有问题，还是得在存在popupView的时候，先隐藏再弹出
-
-@interface RBDropDownBestVC : UIViewController<RadioButtonsDelegate>{
-    RadioButtons *rb_dropdown;
+@interface RBDropDownBestVC : UIViewController {
+    
 }
+@property (nonatomic, weak) IBOutlet RadioButtons *dropdownRadioButtons;
 
 @end

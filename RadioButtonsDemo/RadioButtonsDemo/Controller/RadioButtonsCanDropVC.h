@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RadioButtons.h"
 
-@interface RadioButtonsCanDropVC : UIViewController<RadioButtonsDelegate>{
+@interface RadioButtonsCanDropVC : UIViewController {
     
 }
 @property (nonatomic, weak) IBOutlet RadioButtons *dropdownRadioButtons;

@@ -51,8 +51,8 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="btn" destination="IoP-Eo-CHs" id="ZDm-0r-siF"/>
-                <outlet property="lab" destination="rZF-Si-Xwp" id="PYW-wM-615"/>
+                <outlet property="button" destination="IoP-Eo-CHs" id="9iu-TF-1nE"/>
+                <outlet property="label" destination="rZF-Si-Xwp" id="z2W-Gp-9NN"/>
             </connections>
         </view>
     </objects>

@@ -29,6 +29,8 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 
 - (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index;
 
+- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index;
+
 @optional
 /**
  *  设置初始默认选中第几个(默认-1,即无任何选择)
@@ -39,15 +41,13 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
  */
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons; // Default is -1 if not implemented
 
-- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index;
-
 @end
 
 
 
 @protocol RadioButtonsDelegate <NSObject>
 @required
-- (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old;
+- (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old;
 
 @end
 
@@ -57,38 +57,28 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 
 
 //由于点击RadioButton的时候，还要涉及到其他RadioButton中图标的变化，所以RadioButtons不适合再分开。
-@interface RadioButtons : UIView <RadioButtonDelegate, UIScrollViewDelegate> {
+@interface RadioButtons : UIView {
     
 }
 @property (nonatomic, weak) id <RadioButtonsDataSource> dataSource;
 @property (nonatomic, weak) id <RadioButtonsDelegate> delegate;
 @property (nonatomic, assign) RadioButtonType radioButtonType;
-@property (nonatomic, assign) NSInteger maxShowViewCount;       /**< 设置最大的显示数(默认3) */
-@property (nonatomic, assign) BOOL shouldMoveScrollViewToSelectItem;/**< 选中的时候是否滚动到该按钮 */
 @property (nonatomic, assign) NSInteger currentSelectedIndex;   /**< 当前选中的按钮的index值（当该值为默认的－1时，表示都没有选中） */
 
 
-///**
-// *  设置单选按钮组合的标题数组，以及单选按钮单元是用什么单选按钮组合起来的
-// *
-// *  @param titles  单选按钮组合的标题数组
-// *  @param nibName 创建单选按钮单元的xib文件
-// */
-//- (void)setTitles:(NSArray *)titles radioButtonNidName:(NSString *)nibName;
+/**
+ *  reloadViews
+ */
 - (void)reloadViews;
 
 
-- (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title;
-- (void)changeCurrentRadioButtonState;
-
 /**
- *  设置为未选择任何radioButton
+ *  选中第index个单选按钮
+ *
+ *  @param index    要选择的单选按钮的索引值
+ *  @param animated 是否动画
  */
-- (void)setSelectedNone;
-
-
-//RadioButtonsCanDrop使用到的
-- (void)radioButtons_didSelectInExtendView:(NSString *)title;
+- (void)cj_selectComponentAtIndex:(NSInteger)index animated:(BOOL)animated;
 
 
 #pragma mark - 有左右箭头的时候
@@ -103,11 +93,17 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
           rightArrowImage:(UIImage *)rightArrowImage
       withArrowImageWidth:(CGFloat)arrowImageWidth;
 
+- (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title;
+- (void)changeCurrentRadioButtonState;
+
 /**
- *  选中第index个单选按钮
- *
- *  @param index 要选择的单选按钮的索引值
+ *  设置为未选择任何radioButton
  */
-- (void)selectRadioButtonIndex:(NSInteger)index;
+- (void)setSelectedNone;
+
+
+//RadioButtonsCanDrop使用到的
+- (void)cj_radioButtonsDidSelectInExtendView:(NSString *)title;
+
 
 @end

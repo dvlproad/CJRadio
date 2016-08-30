@@ -8,11 +8,11 @@
 
 #import "CJSliderViewController.h"
 
-static NSInteger kMaxRadioButtonsShowViewCountDefault = 3;
+static NSInteger kMaxRadioButtonsShowViewCountDefault = 4;
 static NSInteger kSelectedIndexDefault = 2;
 
-@interface CJSliderViewController () <RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
-    
+@interface CJSliderViewController () <RadioButtonsDataSource, RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
+    NSArray *titles;
 }
 
 @end
@@ -24,19 +24,21 @@ static NSInteger kSelectedIndexDefault = 2;
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"我的首页", nil);
 
-    
-    NSArray *radioButtonTitles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
-    NSString *radioButtonNibName = @"RadioButton_Slider";
-    
-    self.defaultSelectedIndex = kSelectedIndexDefault;
-    self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
-    
     //RadioButtons
-    [self initizileRadioButtonsWithRadioButtonTitles:radioButtonTitles radioButtonNibName:radioButtonNibName];
+    titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
+    [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+                               rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+                           withArrowImageWidth:20];
+    self.sliderRadioButtons.dataSource = self;
+    self.sliderRadioButtons.delegate = self;
     
     //RadioControllers
     self.radioComposeView.dataSource = self;
     self.radioComposeView.delegate = self;
+    
+    //Self
+    self.defaultSelectedIndex = kSelectedIndexDefault;
+    self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
 }
 
 - (BOOL)automaticallyAdjustsScrollViewInsets {
@@ -44,30 +46,40 @@ static NSInteger kSelectedIndexDefault = 2;
 }
 
 
-/**
- *  初始化数据（单选按钮）
- */
-- (void)initizileRadioButtonsWithRadioButtonTitles:(NSArray<NSString *> *)radioButtonTitles
-                                radioButtonNibName:(NSString *)radioButtonNidName {
-    [self.radioButtons setTitles:radioButtonTitles radioButtonNidName:radioButtonNidName];
-    self.radioButtons.defaultSelectedIndex = self.defaultSelectedIndex;
-    self.radioButtons.maxShowViewCount = self.maxRadioButtonsShowViewCount;
-    self.radioButtons.shouldMoveScrollViewToSelectItem = YES;
-    [self.radioButtons setDelegate:self];
-    [self.radioButtons addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
-                         rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
-                     withArrowImageWidth:20];
-}
-
-
-
-
-#pragma mark - RadioComposeViewDataSource & RadioComposeViewDelegate
-- (NSInteger)cj_defaultShowIndexInRadioComposeView {
+#pragma mark - RadioButtonsDataSource
+- (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
     return self.defaultSelectedIndex;
 }
 
-- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView {
+- (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons {
+    return titles.count;
+}
+
+- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
+    NSInteger showViewCount = MIN(titles.count, kMaxRadioButtonsShowViewCountDefault);
+    CGFloat sectionWidth = CGRectGetWidth(radioButtons.frame)/showViewCount;
+    sectionWidth = ceilf(sectionWidth); //重点注意：当使用除法计算width时候，为了避免计算出来的值受除后，余数太多，除不尽(eg:102.66666666666667)，而造成的之后在通过左右箭头点击来寻找”要找的按钮“的时候，计算出现问题（”要找的按钮“需与“左右侧箭头的最左最右侧值”进行精确的比较），所以这里我们需要一个整数值，故我们这边选择向上取整。
+    
+    return sectionWidth;
+}
+
+- (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
+    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_Slider" owner:nil options:nil];
+    RadioButton *radioButton = [radioButtonNib lastObject];
+    [radioButton setTitle:titles[index]];
+    radioButton.textNormalColor = [UIColor blackColor];
+    radioButton.textSelectedColor = [UIColor greenColor];
+    
+    return radioButton;
+}
+
+
+#pragma mark - RadioComposeViewDataSource
+- (NSInteger)cj_defaultShowIndexInRadioComposeView:(RadioComposeView *)radioComposeView {
+    return self.defaultSelectedIndex;
+}
+
+- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView:(RadioComposeView *)radioComposeView {
     NSArray *radioViewControllers = [self getRadioControllers];
     
     NSMutableArray *views = [[NSMutableArray alloc] init];
@@ -120,21 +132,20 @@ static NSInteger kSelectedIndexDefault = 2;
     return radioControllers;
 }
 
-- (void)cj_radioComposeView:(RadioComposeView *)radioComposeView didChangeToIndex:(NSInteger)index {
-    [self.radioButtons selectRadioButtonIndex:index];
-    self.currentSelectedIndex  = index;
-    
-    [self doSomethingToCon_whereIndex:index];
-}
-
-
-
-#pragma mark - RadioButtonsDelegate
-- (void)radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+#pragma mark - RadioButtonsDelegate & RadioComposeViewDelegate
+- (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+    //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
     [self.radioComposeView showViewWithIndex:index_cur];
     self.currentSelectedIndex = index_cur;
     
     [self doSomethingToCon_whereIndex:index_cur];
+}
+
+- (void)cj_radioComposeView:(RadioComposeView *)radioComposeView didChangeToIndex:(NSInteger)index {
+    [self.sliderRadioButtons cj_selectComponentAtIndex:index animated:YES];
+    self.currentSelectedIndex  = index;
+    
+    [self doSomethingToCon_whereIndex:index];
 }
 
 

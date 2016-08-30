@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLP-Se-bfu">
-                                <rect key="frame" x="24" y="175" width="273" height="30"/>
+                                <rect key="frame" x="24" y="269" width="273" height="30"/>
                                 <state key="normal" title="弹出下拉（RBDropDownVC）">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -42,26 +42,8 @@
                                     <action selector="goRBDropDownVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hHp-Sm-NKR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9W-bF-LXP">
-                                <rect key="frame" x="41" y="320" width="273" height="30"/>
-                                <state key="normal" title="滚动（RBSliderVC）">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goRBSliderVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vi7-CG-BAF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iw0-bS-ec3">
-                                <rect key="frame" x="24" y="119" width="273" height="30"/>
-                                <state key="normal" title="基类（RadioButtonsVC）">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goRBBseVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fjm-Jw-5a6"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLp-Ri-DQH">
-                                <rect key="frame" x="24" y="219" width="273" height="30"/>
+                                <rect key="frame" x="24" y="316" width="273" height="30"/>
                                 <state key="normal" title="弹出下拉（RBDropDownBestVC）">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -70,7 +52,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvA-2u-huH">
-                                <rect key="frame" x="41" y="364" width="273" height="30"/>
+                                <rect key="frame" x="24" y="364" width="273" height="30"/>
                                 <state key="normal" title="弹出下拉（RadioButtonsCanDropVC）">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -78,11 +60,13 @@
                                     <action selector="goRadioButtonsCanDropVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="n6r-cA-I1Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qF4-c7-yNh">
-                                <rect key="frame" x="39" y="432" width="243" height="30"/>
-                                <state key="normal" title="RadioButtonsViewController"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9W-bF-LXP">
+                                <rect key="frame" x="24" y="132" width="273" height="30"/>
+                                <state key="normal" title="滚动（RBSliderVC）">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="goRadioButtonsViewController:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fyu-D8-Odf"/>
+                                    <action selector="goRBSliderVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vi7-CG-BAF"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -371,7 +371,7 @@
 */
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    NSLog(@"执行scrollRectToVisible的时候，会有滚动动画，该滚动动画结束的时候会调用此方法");
+    //NSLog(@"执行scrollRectToVisible的时候，会有滚动动画，该滚动动画结束的时候会调用此方法");
     
     [self resetViewToLeftCenterRightWithShowViewIndex:selIndex];
     [self scrollToCenterViewWithAnimate:NO];

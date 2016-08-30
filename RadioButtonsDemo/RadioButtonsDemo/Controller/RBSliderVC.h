@@ -13,6 +13,5 @@
     
 }
 @property (nonatomic, weak) IBOutlet RadioButtons *sliderRadioButtons;
-@property (nonatomic, weak) IBOutlet RadioButtons *sliderRadioButtons2;
 
 @end

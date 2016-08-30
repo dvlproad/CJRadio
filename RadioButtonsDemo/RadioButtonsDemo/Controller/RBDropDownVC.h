@@ -11,12 +11,12 @@
 #import "UIView+CJShowDropView.h"
 
 @interface RBDropDownVC : UIViewController<RadioButtonsDelegate>{
-    RadioButtons *rb_dropdown;
-    RadioButtons *rb_dropdown2;
     UIView *popupView1;
     UIView *popupView2;
     UIView *popupView3;
     UIView *popupView4;
 }
+@property (nonatomic, weak) IBOutlet RadioButtons *dropdownRadioButtons;
+@property (nonatomic, weak) IBOutlet RadioButtons *dropdownRadioButtons2;
 
 @end

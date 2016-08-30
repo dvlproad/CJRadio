@@ -8,11 +8,9 @@
 
 #import "RadioButtons.h"
 
-#define kDefaultMaxShowCount    3
 #define kDefaultSelectedIndex   -1
 
-
-@interface RadioButtons () {
+@interface RadioButtons () <RadioButtonDelegate, UIScrollViewDelegate> {
     NSMutableArray *radioButtons;   /**< 所有的单选按钮数组 */
     NSMutableArray *lineViews;
     
@@ -22,6 +20,7 @@
     CGFloat _arrowImageWidth;   /**< 箭头宽度 */
 }
 @property (nonatomic, strong) UIScrollView *scrollView; //滚动视图（用于radiobutton过多时的滑动）
+@property (nonatomic, assign) NSInteger oldSelectedIndex;   /**< 之前选中的按钮的index值（当该值为默认的－1时，表示都没有选中） */
 
 @end
 
@@ -88,14 +87,14 @@
             [self.scrollView setContentSize:CGSizeMake(contentSizeWidth, contentSizeHeight)]; //设置self.scrollView.contentSize
         }
         
-        
-        if (index == self.currentSelectedIndex && self.shouldMoveScrollViewToSelectItem) {
-            [self shouldMoveScrollViewToSelectItem:radioButton];//TODO: 这个无效
-        }
-        
         radioButtonX += currentComponentWidth;
     }
     
+    
+    if (self.currentSelectedIndex != -1) {
+        RadioButton *radioButton = [radioButtons objectAtIndex:self.currentSelectedIndex];
+        [self moveScrollViewToSelectItem:radioButton animated:NO];
+    }
     
     /* 如果有左右箭头 */
     if (_haveArrowButton) {
@@ -128,16 +127,13 @@
 
 /** 完整的描述请参见文件头部 */
 - (void)reloadViews {
-    self.maxShowViewCount = kDefaultMaxShowCount;
-    self.currentSelectedIndex = kDefaultSelectedIndex;
-    
-    NSInteger componentCount = [self.dataSource cj_numberOfComponentsInRadioButtons:self];
-    NSInteger defaultSelectedIndex = -1;
+    NSInteger defaultSelectedIndex = kDefaultSelectedIndex;
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInRadioButtons:)]) {
         defaultSelectedIndex = [self.dataSource cj_defaultShowIndexInRadioButtons:self];
     }
     self.currentSelectedIndex = defaultSelectedIndex;
     
+    NSInteger componentCount = [self.dataSource cj_numberOfComponentsInRadioButtons:self];
     NSAssert(componentCount >= 3, @"the min count of the titles is 3");
     
     //添加radioButton到sv中
@@ -150,6 +146,7 @@
         radioButton.tag = RadioButton_TAG_BEGIN + index;
         if (index == defaultSelectedIndex) {
             [radioButton setSelected:YES];
+            
         }else{
             [radioButton setSelected:NO];
         }
@@ -167,44 +164,41 @@
 }
 
 //注意radioButton_cur经常有未选中的状态，即经常会有self.currentSelectedIndex == -1的情况
-- (void)radioButtonClick:(RadioButton *)radioButton_cur{
+- (void)radioButtonClick:(RadioButton *)radioButton_cur {
     
     NSInteger index_old = self.currentSelectedIndex;
-    self.currentSelectedIndex = radioButton_cur.tag - RadioButton_TAG_BEGIN;
+    NSInteger index_cur = radioButton_cur.tag - RadioButton_TAG_BEGIN;
     
-    BOOL isSameIndex = self.currentSelectedIndex == index_old ? YES : NO;
-    //NSLog(@"currentSelectedIndex = %zd, index_old = %zd, isSameIndex= %@", self.currentSelectedIndex,index_old,isSameIndex?@"YES":@"NO");
+    BOOL shouldUpdateCurrentRadioButtonSelected = [self shouldUpdateRadioButtonSelected_WhenClickSameRadioButton];
     
-    if (index_old == -1) {//如果当前没有radioButton是被选中。
+    if (index_old == -1) {  //①、如果当前没有radioButton是被选中。
+        radioButton_cur.selected = !radioButton_cur.selected;
+        [self cj_selectComponentAtIndex:index_cur animated:YES];
         
-    }else{  //index_old != -1，即表示如果当前有radioButton是被选中。
-        if (index_old == self.currentSelectedIndex) {
-            isSameIndex = YES;
+    }else{                  //②、index_old != -1，即表示如果当前有radioButton是被选中。
+        if (index_old == index_cur) {
+            if (shouldUpdateCurrentRadioButtonSelected) {
+                radioButton_cur.selected = !radioButton_cur.selected;
+            }
             
-        }else{
-            //如果有选中,且点击不同index的话，则还需要把之前的那个按钮的状态也改变掉。
+        }else{              //③、如果有选中,且点击不同index的话，则还需要把之前的那个按钮的状态也改变掉。
             RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + index_old];
             radioButton_old.selected = !radioButton_old.selected;
-        }
-    }
-    
-    
-    BOOL shouldUpdateCurrentRadioButtonSelected = [self shouldUpdateRadioButtonSelected_WhenClickSameRadioButton];//设默认不可重复点击（YES:可重复点击  NO:不可重复点击）
-    if (isSameIndex) {
-        if (shouldUpdateCurrentRadioButtonSelected) {
+            
             radioButton_cur.selected = !radioButton_cur.selected;
+            [self cj_selectComponentAtIndex:index_cur animated:YES];
         }
-        
-    }else{
-        radioButton_cur.selected = !radioButton_cur.selected;
     }
     
-    if([self.delegate respondsToSelector:@selector(radioButtons:chooseIndex:oldIndex:)]){
-        [self.delegate radioButtons:self chooseIndex:self.currentSelectedIndex oldIndex:index_old];
-        
-        if (isSameIndex && shouldUpdateCurrentRadioButtonSelected) { //此条if语句位置待确定
-            [self setSelectedNone];
-        }
+    
+    if([self.delegate respondsToSelector:@selector(cj_radioButtons:chooseIndex:oldIndex:)]){
+        [self.delegate cj_radioButtons:self chooseIndex:index_cur oldIndex:index_old];
+    }
+    
+    BOOL isSameIndex = index_cur == index_old ? YES : NO;
+    //NSLog(@"index_old = %zd, index_cur = %zd, isSameIndex= %@", index_old, index_cur, isSameIndex?@"YES":@"NO");
+    if (isSameIndex && shouldUpdateCurrentRadioButtonSelected) { //此条if语句位置待确定
+        [self setSelectedNone];
     }
 }
 
@@ -232,9 +226,8 @@
     return NO;  //设默认不可重复点击（YES:可重复点击  NO:不可重复点击）
 }
 
-
-//add
-- (void)radioButtons_didSelectInExtendView:(NSString *)title {
+/** 完整的描述请参见文件头部 */
+- (void)cj_radioButtonsDidSelectInExtendView:(NSString *)title {
     RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;
     [radioButton_cur setTitle:title];
@@ -244,13 +237,13 @@
 }
 
 
-- (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title{
+- (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title {
     RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;
     [radioButton_cur setTitle:title];
 }
 
-- (void)changeCurrentRadioButtonState{
+- (void)changeCurrentRadioButtonState {
     RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;
 }
@@ -265,8 +258,9 @@
  *  滚动到指定的单选按钮 targetRadioButton 上 （当按钮太多显示不全时常需要设置这个为YES）
  *
  *  @param targetRadioButton 要滚动到的指定按钮
+ *  @param animated          是否动画
  */
-- (void)shouldMoveScrollViewToSelectItem:(RadioButton *)targetRadioButton {//滑动scrollView到显示出完整的targetRadioButton
+- (void)moveScrollViewToSelectItem:(RadioButton *)targetRadioButton animated:(BOOL)animated {//滑动scrollView到显示出完整的targetRadioButton
     //该item的距离计算。
     //CGFloat leftX = CGRectGetMinX(targetRadioButton.frame);
     CGFloat rightX = CGRectGetMaxX(targetRadioButton.frame);
@@ -279,18 +273,18 @@
             moveOffset = self.frame.size.width;
             rightX_new = self.scrollView.contentSize.width - moveOffset;
             
-            [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:YES];
+            [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:animated];
         }else{
             
             rightX_new = rightX - moveOffset;
             
             if (rightX_new > 0) {
-                [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:YES];
+                [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:animated];
             }
         }
         
     }else{
-        [self.scrollView setContentOffset:CGPointMake(0, self.scrollView.contentOffset.y) animated:YES];
+        [self.scrollView setContentOffset:CGPointMake(0, self.scrollView.contentOffset.y) animated:animated];
     }
 }
 
@@ -341,7 +335,7 @@
         }
         
         targetRadioButton = radioButton;
-        NSLog(@"left: targetRadioButtonText = %@", targetRadioButton.lab.text);
+        NSLog(@"left: targetRadioButtonText = %@", targetRadioButton.label.text);
         break;
     }
     
@@ -376,7 +370,7 @@
             continue;
         }
         targetRadioButton = radioButton;
-        NSLog(@"right: targetRadioButtonText = %@", targetRadioButton.lab.text);
+        NSLog(@"right: targetRadioButtonText = %@", targetRadioButton.label.text);
         
         break;
     }
@@ -394,15 +388,18 @@
 }
 
 /** 完整的描述请参见文件头部 */
-- (void)selectRadioButtonIndex:(NSInteger)index{
-    RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
+- (void)cj_selectComponentAtIndex:(NSInteger)index animated:(BOOL)animated {
+    self.oldSelectedIndex = self.currentSelectedIndex;
+    self.currentSelectedIndex = index;
+    
+    RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.oldSelectedIndex];
     radioButton_old.selected = NO;
     
-    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + index];
+    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_cur.selected = YES;
-    [self shouldMoveScrollViewToSelectItem:radioButton_cur];
+    [self moveScrollViewToSelectItem:radioButton_cur animated:animated];
     
-    self.currentSelectedIndex = index;
+    
 }
 
 #pragma mark - UIScrollViewDelegate

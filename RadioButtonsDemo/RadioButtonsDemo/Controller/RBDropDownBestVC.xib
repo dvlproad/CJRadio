@@ -2,11 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RBDropDownVC">
             <connections>
+                <outlet property="dropdownRadioButtons" destination="o8H-Pv-Zt9" id="ZFo-Dg-UCR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8H-Pv-Zt9" customClass="RadioButtons">
+                    <rect key="frame" x="0.0" y="162" width="320" height="94"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="94" id="Y94-Ne-cpK"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="o8H-Pv-Zt9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="162" id="Lnn-Tc-nSN"/>
+                <constraint firstItem="o8H-Pv-Zt9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Rjp-lR-GyQ"/>
+                <constraint firstAttribute="trailing" secondItem="o8H-Pv-Zt9" secondAttribute="trailing" id="eYR-Gz-sIM"/>
+            </constraints>
             <point key="canvasLocation" x="212" y="260"/>
         </view>
     </objects>
