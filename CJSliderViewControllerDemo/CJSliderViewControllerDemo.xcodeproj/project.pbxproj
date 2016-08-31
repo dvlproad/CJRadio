@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		783079D01D767F60009689F3 /* arrowLeft_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CC1D767F60009689F3 /* arrowLeft_gray@2x.png */; };
-		783079D11D767F60009689F3 /* arrowLeft_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CD1D767F60009689F3 /* arrowLeft_red@2x.png */; };
-		783079D21D767F60009689F3 /* arrowRight_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CE1D767F60009689F3 /* arrowRight_gray@2x.png */; };
-		783079D31D767F60009689F3 /* arrowRight_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CF1D767F60009689F3 /* arrowRight_red@2x.png */; };
 		783079D71D769295009689F3 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079D51D769295009689F3 /* SliderViewController.m */; };
 		783079D81D769295009689F3 /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783079D61D769295009689F3 /* SliderViewController.xib */; };
 		783079DC1D769580009689F3 /* SliderViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079DA1D769580009689F3 /* SliderViewController2.m */; };
@@ -24,22 +20,19 @@
 		784633681D728C4B0082401F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784633661D728C4B0082401F /* LaunchScreen.storyboard */; };
 		784633731D728C4B0082401F /* CJSliderViewControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633721D728C4B0082401F /* CJSliderViewControllerDemoTests.m */; };
 		7846337E1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846337D1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m */; };
-		784633AE1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633951D728E790082401F /* UIView+CJAddSubVIew.m */; };
-		784633AF1D728E790082401F /* UIView+CJShowDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633971D728E790082401F /* UIView+CJShowDropView.m */; };
-		784633B01D728E790082401F /* down_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 784633991D728E790082401F /* down_dark.png */; };
-		784633B11D728E790082401F /* arrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339B1D728E790082401F /* arrowUp.png */; };
-		784633B21D728E790082401F /* arrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339C1D728E790082401F /* arrowUp@2x.png */; };
-		784633B31D728E790082401F /* btnTab_BG_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339D1D728E790082401F /* btnTab_BG_normal.png */; };
-		784633B41D728E790082401F /* btnTab_BG_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339E1D728E790082401F /* btnTab_BG_normal@2x.png */; };
-		784633B51D728E790082401F /* btnTab_BG_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7846339F1D728E790082401F /* btnTab_BG_selected.png */; };
-		784633B61D728E790082401F /* btnTab_BG_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 784633A01D728E790082401F /* btnTab_BG_selected@2x.png */; };
-		784633B71D728E790082401F /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633A21D728E790082401F /* RadioButton.m */; };
-		784633B81D728E790082401F /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784633A31D728E790082401F /* RadioButton_DropDown.xib */; };
-		784633B91D728E790082401F /* RadioButton_Slider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784633A41D728E790082401F /* RadioButton_Slider.xib */; };
-		784633BA1D728E790082401F /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633A61D728E790082401F /* RadioButtons.m */; };
 		789B201B1D73F93E00F01BA3 /* RadioComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B20161D73F93E00F01BA3 /* RadioComposeView.m */; };
 		789B201C1D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B20181D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m */; };
 		789B201D1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B201A1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m */; };
+		78C7DC6C1D772C9C005F86D2 /* arrowDown_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC621D772C9C005F86D2 /* arrowDown_dark.png */; };
+		78C7DC6D1D772C9C005F86D2 /* arrowLeft_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC631D772C9C005F86D2 /* arrowLeft_gray@2x.png */; };
+		78C7DC6E1D772C9C005F86D2 /* arrowLeft_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC641D772C9C005F86D2 /* arrowLeft_red@2x.png */; };
+		78C7DC6F1D772C9C005F86D2 /* arrowRight_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC651D772C9C005F86D2 /* arrowRight_gray@2x.png */; };
+		78C7DC701D772C9C005F86D2 /* arrowRight_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC661D772C9C005F86D2 /* arrowRight_red@2x.png */; };
+		78C7DC711D772C9C005F86D2 /* arrowUp_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC671D772C9C005F86D2 /* arrowUp_white@2x.png */; };
+		78C7DC721D772C9C005F86D2 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C7DC691D772C9C005F86D2 /* RadioButton.m */; };
+		78C7DC731D772C9C005F86D2 /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C7DC6B1D772C9C005F86D2 /* RadioButtons.m */; };
+		78C7DC761D772CEA005F86D2 /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC741D772CEA005F86D2 /* RadioButton_DropDown.xib */; };
+		78C7DC771D772CEA005F86D2 /* RadioButton_Slider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC751D772CEA005F86D2 /* RadioButton_Slider.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		783079CC1D767F60009689F3 /* arrowLeft_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_gray@2x.png"; sourceTree = "<group>"; };
-		783079CD1D767F60009689F3 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_red@2x.png"; sourceTree = "<group>"; };
-		783079CE1D767F60009689F3 /* arrowRight_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_gray@2x.png"; sourceTree = "<group>"; };
-		783079CF1D767F60009689F3 /* arrowRight_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_red@2x.png"; sourceTree = "<group>"; };
 		783079D41D769295009689F3 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		783079D51D769295009689F3 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		783079D61D769295009689F3 /* SliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
@@ -88,29 +77,24 @@
 		784633791D728C4B0082401F /* CJSliderViewControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJSliderViewControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7846337D1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSliderViewControllerDemoUITests.m; sourceTree = "<group>"; };
 		7846337F1D728C4B0082401F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		784633941D728E790082401F /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
-		784633951D728E790082401F /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
-		784633961D728E790082401F /* UIView+CJShowDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowDropView.h"; sourceTree = "<group>"; };
-		784633971D728E790082401F /* UIView+CJShowDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShowDropView.m"; sourceTree = "<group>"; };
-		784633991D728E790082401F /* down_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_dark.png; sourceTree = "<group>"; };
-		7846339B1D728E790082401F /* arrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowUp.png; sourceTree = "<group>"; };
-		7846339C1D728E790082401F /* arrowUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowUp@2x.png"; sourceTree = "<group>"; };
-		7846339D1D728E790082401F /* btnTab_BG_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnTab_BG_normal.png; sourceTree = "<group>"; };
-		7846339E1D728E790082401F /* btnTab_BG_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnTab_BG_normal@2x.png"; sourceTree = "<group>"; };
-		7846339F1D728E790082401F /* btnTab_BG_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnTab_BG_selected.png; sourceTree = "<group>"; };
-		784633A01D728E790082401F /* btnTab_BG_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnTab_BG_selected@2x.png"; sourceTree = "<group>"; };
-		784633A11D728E790082401F /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
-		784633A21D728E790082401F /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
-		784633A31D728E790082401F /* RadioButton_DropDown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_DropDown.xib; sourceTree = "<group>"; };
-		784633A41D728E790082401F /* RadioButton_Slider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_Slider.xib; sourceTree = "<group>"; };
-		784633A51D728E790082401F /* RadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons.h; sourceTree = "<group>"; };
-		784633A61D728E790082401F /* RadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons.m; sourceTree = "<group>"; };
 		789B20151D73F93E00F01BA3 /* RadioComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioComposeView.h; sourceTree = "<group>"; };
 		789B20161D73F93E00F01BA3 /* RadioComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioComposeView.m; sourceTree = "<group>"; };
 		789B20171D73F93E00F01BA3 /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
 		789B20181D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
 		789B20191D73F93E00F01BA3 /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
 		789B201A1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
+		78C7DC621D772C9C005F86D2 /* arrowDown_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowDown_dark.png; sourceTree = "<group>"; };
+		78C7DC631D772C9C005F86D2 /* arrowLeft_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_gray@2x.png"; sourceTree = "<group>"; };
+		78C7DC641D772C9C005F86D2 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_red@2x.png"; sourceTree = "<group>"; };
+		78C7DC651D772C9C005F86D2 /* arrowRight_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_gray@2x.png"; sourceTree = "<group>"; };
+		78C7DC661D772C9C005F86D2 /* arrowRight_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_red@2x.png"; sourceTree = "<group>"; };
+		78C7DC671D772C9C005F86D2 /* arrowUp_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowUp_white@2x.png"; sourceTree = "<group>"; };
+		78C7DC681D772C9C005F86D2 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
+		78C7DC691D772C9C005F86D2 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
+		78C7DC6A1D772C9C005F86D2 /* RadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons.h; sourceTree = "<group>"; };
+		78C7DC6B1D772C9C005F86D2 /* RadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons.m; sourceTree = "<group>"; };
+		78C7DC741D772CEA005F86D2 /* RadioButton_DropDown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadioButton_DropDown.xib; path = ../../../RadioButtonsDemo/RadioButtonsDemo/Views/RadioButton_DropDown.xib; sourceTree = "<group>"; };
+		78C7DC751D772CEA005F86D2 /* RadioButton_Slider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadioButton_Slider.xib; path = ../../../RadioButtonsDemo/RadioButtonsDemo/Views/RadioButton_Slider.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,8 +160,8 @@
 				7846335E1D728C4B0082401F /* ViewController.h */,
 				7846335F1D728C4B0082401F /* ViewController.m */,
 				783079E11D76CEFD009689F3 /* CJButtonControllerView */,
+				78C7DC601D772C9C005F86D2 /* RadioButtons */,
 				789B20141D73F93E00F01BA3 /* RadioComposeView */,
-				784633921D728E790082401F /* RadioButtons */,
 				7846338B1D728C740082401F /* Controllers */,
 				7846338C1D728C740082401F /* Views */,
 				784633611D728C4B0082401F /* Main.storyboard */,
@@ -231,61 +215,10 @@
 		7846338C1D728C740082401F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78C7DC741D772CEA005F86D2 /* RadioButton_DropDown.xib */,
+				78C7DC751D772CEA005F86D2 /* RadioButton_Slider.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		784633921D728E790082401F /* RadioButtons */ = {
-			isa = PBXGroup;
-			children = (
-				784633931D728E790082401F /* Category */,
-				784633981D728E790082401F /* images_RadioButton_DropDown */,
-				7846339A1D728E790082401F /* images_RadioButton_Slider */,
-				784633A11D728E790082401F /* RadioButton.h */,
-				784633A21D728E790082401F /* RadioButton.m */,
-				784633A31D728E790082401F /* RadioButton_DropDown.xib */,
-				784633A41D728E790082401F /* RadioButton_Slider.xib */,
-				784633A51D728E790082401F /* RadioButtons.h */,
-				784633A61D728E790082401F /* RadioButtons.m */,
-			);
-			name = RadioButtons;
-			path = ../../RadioButtons;
-			sourceTree = "<group>";
-		};
-		784633931D728E790082401F /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				784633941D728E790082401F /* UIView+CJAddSubVIew.h */,
-				784633951D728E790082401F /* UIView+CJAddSubVIew.m */,
-				784633961D728E790082401F /* UIView+CJShowDropView.h */,
-				784633971D728E790082401F /* UIView+CJShowDropView.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		784633981D728E790082401F /* images_RadioButton_DropDown */ = {
-			isa = PBXGroup;
-			children = (
-				784633991D728E790082401F /* down_dark.png */,
-			);
-			path = images_RadioButton_DropDown;
-			sourceTree = "<group>";
-		};
-		7846339A1D728E790082401F /* images_RadioButton_Slider */ = {
-			isa = PBXGroup;
-			children = (
-				783079CC1D767F60009689F3 /* arrowLeft_gray@2x.png */,
-				783079CD1D767F60009689F3 /* arrowLeft_red@2x.png */,
-				783079CE1D767F60009689F3 /* arrowRight_gray@2x.png */,
-				783079CF1D767F60009689F3 /* arrowRight_red@2x.png */,
-				7846339B1D728E790082401F /* arrowUp.png */,
-				7846339C1D728E790082401F /* arrowUp@2x.png */,
-				7846339D1D728E790082401F /* btnTab_BG_normal.png */,
-				7846339E1D728E790082401F /* btnTab_BG_normal@2x.png */,
-				7846339F1D728E790082401F /* btnTab_BG_selected.png */,
-				784633A01D728E790082401F /* btnTab_BG_selected@2x.png */,
-			);
-			path = images_RadioButton_Slider;
 			sourceTree = "<group>";
 		};
 		789B20141D73F93E00F01BA3 /* RadioComposeView */ = {
@@ -300,6 +233,32 @@
 			);
 			name = RadioComposeView;
 			path = ../../RadioComposeView;
+			sourceTree = "<group>";
+		};
+		78C7DC601D772C9C005F86D2 /* RadioButtons */ = {
+			isa = PBXGroup;
+			children = (
+				78C7DC611D772C9C005F86D2 /* images_arrow */,
+				78C7DC681D772C9C005F86D2 /* RadioButton.h */,
+				78C7DC691D772C9C005F86D2 /* RadioButton.m */,
+				78C7DC6A1D772C9C005F86D2 /* RadioButtons.h */,
+				78C7DC6B1D772C9C005F86D2 /* RadioButtons.m */,
+			);
+			name = RadioButtons;
+			path = ../../RadioButtons;
+			sourceTree = "<group>";
+		};
+		78C7DC611D772C9C005F86D2 /* images_arrow */ = {
+			isa = PBXGroup;
+			children = (
+				78C7DC621D772C9C005F86D2 /* arrowDown_dark.png */,
+				78C7DC631D772C9C005F86D2 /* arrowLeft_gray@2x.png */,
+				78C7DC641D772C9C005F86D2 /* arrowLeft_red@2x.png */,
+				78C7DC651D772C9C005F86D2 /* arrowRight_gray@2x.png */,
+				78C7DC661D772C9C005F86D2 /* arrowRight_red@2x.png */,
+				78C7DC671D772C9C005F86D2 /* arrowUp_white@2x.png */,
+			);
+			path = images_arrow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,24 +364,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				784633B41D728E790082401F /* btnTab_BG_normal@2x.png in Resources */,
-				784633B21D728E790082401F /* arrowUp@2x.png in Resources */,
-				783079D11D767F60009689F3 /* arrowLeft_red@2x.png in Resources */,
-				784633B61D728E790082401F /* btnTab_BG_selected@2x.png in Resources */,
+				78C7DC6F1D772C9C005F86D2 /* arrowRight_gray@2x.png in Resources */,
+				78C7DC711D772C9C005F86D2 /* arrowUp_white@2x.png in Resources */,
 				783079DD1D769580009689F3 /* SliderViewController2.xib in Resources */,
-				784633B01D728E790082401F /* down_dark.png in Resources */,
-				784633B31D728E790082401F /* btnTab_BG_normal.png in Resources */,
-				784633B51D728E790082401F /* btnTab_BG_selected.png in Resources */,
-				783079D01D767F60009689F3 /* arrowLeft_gray@2x.png in Resources */,
+				78C7DC6E1D772C9C005F86D2 /* arrowLeft_red@2x.png in Resources */,
+				78C7DC701D772C9C005F86D2 /* arrowRight_red@2x.png in Resources */,
 				784633681D728C4B0082401F /* LaunchScreen.storyboard in Resources */,
-				784633B11D728E790082401F /* arrowUp.png in Resources */,
-				784633B81D728E790082401F /* RadioButton_DropDown.xib in Resources */,
 				783079D81D769295009689F3 /* SliderViewController.xib in Resources */,
 				784633651D728C4B0082401F /* Assets.xcassets in Resources */,
-				783079D31D767F60009689F3 /* arrowRight_red@2x.png in Resources */,
-				784633B91D728E790082401F /* RadioButton_Slider.xib in Resources */,
-				783079D21D767F60009689F3 /* arrowRight_gray@2x.png in Resources */,
+				78C7DC761D772CEA005F86D2 /* RadioButton_DropDown.xib in Resources */,
 				784633631D728C4B0082401F /* Main.storyboard in Resources */,
+				78C7DC6C1D772C9C005F86D2 /* arrowDown_dark.png in Resources */,
+				78C7DC771D772CEA005F86D2 /* RadioButton_Slider.xib in Resources */,
+				78C7DC6D1D772C9C005F86D2 /* arrowLeft_gray@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,17 +402,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				789B201B1D73F93E00F01BA3 /* RadioComposeView.m in Sources */,
-				784633AF1D728E790082401F /* UIView+CJShowDropView.m in Sources */,
 				783079DC1D769580009689F3 /* SliderViewController2.m in Sources */,
-				784633AE1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */,
 				784633601D728C4B0082401F /* ViewController.m in Sources */,
+				78C7DC731D772C9C005F86D2 /* RadioButtons.m in Sources */,
 				7846335D1D728C4B0082401F /* AppDelegate.m in Sources */,
 				789B201C1D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m in Sources */,
+				78C7DC721D772C9C005F86D2 /* RadioButton.m in Sources */,
 				783079D71D769295009689F3 /* SliderViewController.m in Sources */,
 				7846335A1D728C4B0082401F /* main.m in Sources */,
-				784633B71D728E790082401F /* RadioButton.m in Sources */,
 				789B201D1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m in Sources */,
-				784633BA1D728E790082401F /* RadioButtons.m in Sources */,
 				783079E41D76CEFD009689F3 /* CJButtonControllerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0AA967965A30370ECF18448D'
-               BlueprintName = 'CJPopupView'
+               BlueprintIdentifier = '63D402C3B27D36442E5E91394804F452'
+               BlueprintName = 'Pods-RadioButtonsDemoTests'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libCJPopupView.a'>
+               BuildableName = 'libPods-RadioButtonsDemoTests.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

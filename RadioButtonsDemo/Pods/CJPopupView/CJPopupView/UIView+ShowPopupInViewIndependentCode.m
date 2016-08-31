@@ -57,10 +57,9 @@
     self.showPopupInViewIndependentCode_blockTapBGComplete = block_TapBG;
     self.showPopupInViewIndependentCode_blockHideComplete = block_Hide;
     
-    UIView *popupView_m = [self.showPopupInViewIndependentCode_lowestSuperviewLocation viewWithTag:kTagPopupView_ShowPopupInView];
     UIView *tapV = [self.showPopupInViewIndependentCode_lowestSuperviewLocation viewWithTag:kTagTapV_ShowPopupInView];
     if (tapV) { //tapV是指radioButtons组合下的点击区域（不包括radioButtons区域），用来点击之后隐藏列表
-        [popupView_m removeFromSuperview];
+        [popupView removeFromSuperview];
         [tapV removeFromSuperview];
     }else{
         popupView.tag = kTagPopupView_ShowPopupInView;

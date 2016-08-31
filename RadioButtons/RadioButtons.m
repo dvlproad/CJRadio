@@ -246,22 +246,13 @@
 }
 
 /** 完整的描述请参见文件头部 */
-- (void)cj_radioButtonsDidSelectInExtendView:(NSString *)title {
-    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
-    radioButton_cur.selected = !radioButton_cur.selected;
-    [radioButton_cur setTitle:title];
-    
-    [self cj_hideDropDownExtendView];
-    [self setCurrentSelectedIndex:-1];
-}
-
-
 - (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title {
     RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;
     [radioButton_cur setTitle:title];
 }
 
+/** 完整的描述请参见文件头部 */
 - (void)changeCurrentRadioButtonState {
     RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;

@@ -7,6 +7,7 @@
 //
 
 #import "RadioButtonsCanDropVC.h"
+#import <CJPopupView/UIView+CJShowDropView.h>
 
 #define kDefaultMaxShowCount    5
 
@@ -102,7 +103,10 @@
 
 - (IBAction)btnAction:(id)sender{
     NSString *text = [NSString stringWithFormat:@"%d", rand()%10];
-    [self.dropdownRadioButtons cj_radioButtonsDidSelectInExtendView:text];
+    [self.dropdownRadioButtons changeCurrentRadioButtonStateAndTitle:text];
+    
+    [self.dropdownRadioButtons cj_hideDropDownExtendView];
+    [self.dropdownRadioButtons setCurrentSelectedIndex:-1];
 }
 
 

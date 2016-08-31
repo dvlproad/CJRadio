@@ -10,9 +10,6 @@
 
 #import "RadioButton.h"
 
-#import "UIView+CJShowDropView.h"
-#import "UIView+CJAddSubVIew.h"
-
 #define RadioButton_TAG_BEGIN   1000
 
 typedef NS_ENUM(NSUInteger, RadioButtonType) {
@@ -96,17 +93,21 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
           rightArrowImage:(UIImage *)rightArrowImage
       withArrowImageWidth:(CGFloat)arrowImageWidth;
 
+/**
+ *  改变当前选中的单选按钮的状态和文字
+ *
+ *  @param title 当前选中的按钮文字设置为title
+ */
 - (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title;
+
+/**
+ *  改变当前选中的单选按钮的状态
+ */
 - (void)changeCurrentRadioButtonState;
 
 /**
  *  设置为未选择任何radioButton
  */
 - (void)setSelectedNone;
-
-
-//RadioButtonsCanDrop使用到的
-- (void)cj_radioButtonsDidSelectInExtendView:(NSString *)title;
-
 
 @end

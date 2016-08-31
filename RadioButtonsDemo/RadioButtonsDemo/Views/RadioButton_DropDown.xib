@@ -19,7 +19,7 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down_dark.png" translatesAutoresizingMaskIntoConstraints="NO" id="RVL-rl-VeM">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowDown_dark.png" translatesAutoresizingMaskIntoConstraints="NO" id="RVL-rl-VeM">
                     <rect key="frame" x="66" y="16" width="12" height="12"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="12" id="elv-PA-nZc"/>
@@ -57,6 +57,6 @@
         </view>
     </objects>
     <resources>
-        <image name="down_dark.png" width="30" height="30"/>
+        <image name="arrowDown_dark.png" width="30" height="30"/>
     </resources>
 </document>

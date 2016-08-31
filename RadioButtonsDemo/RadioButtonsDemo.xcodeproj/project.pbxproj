@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		449F20EF6662D88C37DAFCCD /* libPods-RadioButtonsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A03DFBE8686B3C786BB746 /* libPods-RadioButtonsDemo.a */; };
+		4EE0F2074557441CE6AE8C1C /* libPods-RadioButtonsDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 273BC7A9C56234F26DE12CA6 /* libPods-RadioButtonsDemoTests.a */; };
 		783079B61D7524BD009689F3 /* RadioButtonsCanDropVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079B41D7524BD009689F3 /* RadioButtonsCanDropVC.m */; };
 		783079B71D7524BD009689F3 /* RadioButtonsCanDropVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783079B51D7524BD009689F3 /* RadioButtonsCanDropVC.xib */; };
 		783079BB1D7558C6009689F3 /* RBDropDownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079B91D7558C6009689F3 /* RBDropDownVC.m */; };
 		783079BC1D7558C6009689F3 /* RBDropDownVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783079BA1D7558C6009689F3 /* RBDropDownVC.xib */; };
 		783079C01D755B95009689F3 /* RBDropDownBestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079BE1D755B95009689F3 /* RBDropDownBestVC.m */; };
 		783079C11D755B95009689F3 /* RBDropDownBestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783079BF1D755B95009689F3 /* RBDropDownBestVC.xib */; };
-		783079C81D767D14009689F3 /* arrowLeft_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079C41D767D14009689F3 /* arrowLeft_gray@2x.png */; };
-		783079C91D767D14009689F3 /* arrowLeft_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079C51D767D14009689F3 /* arrowLeft_red@2x.png */; };
-		783079CA1D767D14009689F3 /* arrowRight_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079C61D767D14009689F3 /* arrowRight_gray@2x.png */; };
-		783079CB1D767D14009689F3 /* arrowRight_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079C71D767D14009689F3 /* arrowRight_red@2x.png */; };
-		78E413711D69B40A00934D4A /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E413701D69B40A00934D4A /* UIView+CJAddSubVIew.m */; };
-		78E413741D69D6C300934D4A /* UIView+CJShowDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E413731D69D6C300934D4A /* UIView+CJShowDropView.m */; };
+		78C7DC511D772A61005F86D2 /* arrowDown_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4B1D772A61005F86D2 /* arrowDown_dark.png */; };
+		78C7DC521D772A61005F86D2 /* arrowLeft_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4C1D772A61005F86D2 /* arrowLeft_gray@2x.png */; };
+		78C7DC531D772A61005F86D2 /* arrowLeft_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4D1D772A61005F86D2 /* arrowLeft_red@2x.png */; };
+		78C7DC541D772A61005F86D2 /* arrowRight_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4E1D772A61005F86D2 /* arrowRight_gray@2x.png */; };
+		78C7DC551D772A61005F86D2 /* arrowRight_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4F1D772A61005F86D2 /* arrowRight_red@2x.png */; };
+		78C7DC561D772A61005F86D2 /* arrowUp_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC501D772A61005F86D2 /* arrowUp_white@2x.png */; };
+		78C7DC5E1D772B98005F86D2 /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC5C1D772B98005F86D2 /* RadioButton_DropDown.xib */; };
+		78C7DC5F1D772B98005F86D2 /* RadioButton_Slider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC5D1D772B98005F86D2 /* RadioButton_Slider.xib */; };
 		805A17561BF321CC00424769 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17551BF321CC00424769 /* main.m */; };
 		805A17591BF321CC00424769 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17581BF321CC00424769 /* AppDelegate.m */; };
 		805A175C1BF321CC00424769 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A175B1BF321CC00424769 /* ViewController.m */; };
@@ -28,18 +30,10 @@
 		805A17641BF321CC00424769 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17621BF321CC00424769 /* LaunchScreen.xib */; };
 		805A17701BF321CC00424769 /* RadioButtonsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A176F1BF321CC00424769 /* RadioButtonsDemoTests.m */; };
 		805A17821BF3235E00424769 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A177D1BF3235E00424769 /* RadioButton.m */; };
-		805A17831BF3235E00424769 /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A177E1BF3235E00424769 /* RadioButton_DropDown.xib */; };
 		805A17841BF3235E00424769 /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17801BF3235E00424769 /* RadioButtons.m */; };
-		805A179C1BF35A8C00424769 /* down_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17931BF35A8C00424769 /* down_dark.png */; };
-		805A179D1BF35A8C00424769 /* arrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17951BF35A8C00424769 /* arrowUp.png */; };
-		805A179E1BF35A8C00424769 /* arrowUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17961BF35A8C00424769 /* arrowUp@2x.png */; };
-		805A179F1BF35A8C00424769 /* btnTab_BG_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17971BF35A8C00424769 /* btnTab_BG_normal.png */; };
-		805A17A01BF35A8C00424769 /* btnTab_BG_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17981BF35A8C00424769 /* btnTab_BG_normal@2x.png */; };
-		805A17A11BF35A8C00424769 /* btnTab_BG_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A17991BF35A8C00424769 /* btnTab_BG_selected.png */; };
-		805A17A21BF35A8C00424769 /* btnTab_BG_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 805A179A1BF35A8C00424769 /* btnTab_BG_selected@2x.png */; };
-		805A17A31BF35A8C00424769 /* RadioButton_Slider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A179B1BF35A8C00424769 /* RadioButton_Slider.xib */; };
 		805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17AA1BF35C1B00424769 /* RBSliderVC.m */; };
 		805A17AD1BF35C1B00424769 /* RBSliderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17AB1BF35C1B00424769 /* RBSliderVC.xib */; };
+		F26CB6BDCD4A998A74046801 /* libPods-RadioButtonsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 765A83FFF10D0B5B7067767F /* libPods-RadioButtonsDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		53A03DFBE8686B3C786BB746 /* libPods-RadioButtonsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioButtonsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		62C13D4140D7C541EB81741F /* Pods-RadioButtonsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioButtonsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		273BC7A9C56234F26DE12CA6 /* libPods-RadioButtonsDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioButtonsDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E851E813249FD05D5E9E9E4 /* Pods-RadioButtonsDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioButtonsDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RadioButtonsDemoTests/Pods-RadioButtonsDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		765A83FFF10D0B5B7067767F /* libPods-RadioButtonsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioButtonsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		783079B31D7524BD009689F3 /* RadioButtonsCanDropVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonsCanDropVC.h; sourceTree = "<group>"; };
 		783079B41D7524BD009689F3 /* RadioButtonsCanDropVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonsCanDropVC.m; sourceTree = "<group>"; };
 		783079B51D7524BD009689F3 /* RadioButtonsCanDropVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButtonsCanDropVC.xib; sourceTree = "<group>"; };
@@ -64,14 +59,14 @@
 		783079BD1D755B95009689F3 /* RBDropDownBestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDropDownBestVC.h; sourceTree = "<group>"; };
 		783079BE1D755B95009689F3 /* RBDropDownBestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDropDownBestVC.m; sourceTree = "<group>"; };
 		783079BF1D755B95009689F3 /* RBDropDownBestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBDropDownBestVC.xib; sourceTree = "<group>"; };
-		783079C41D767D14009689F3 /* arrowLeft_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_gray@2x.png"; sourceTree = "<group>"; };
-		783079C51D767D14009689F3 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_red@2x.png"; sourceTree = "<group>"; };
-		783079C61D767D14009689F3 /* arrowRight_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_gray@2x.png"; sourceTree = "<group>"; };
-		783079C71D767D14009689F3 /* arrowRight_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_red@2x.png"; sourceTree = "<group>"; };
-		78E4136F1D69B40A00934D4A /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
-		78E413701D69B40A00934D4A /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
-		78E413721D69D6C300934D4A /* UIView+CJShowDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowDropView.h"; sourceTree = "<group>"; };
-		78E413731D69D6C300934D4A /* UIView+CJShowDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJShowDropView.m"; sourceTree = "<group>"; };
+		78C7DC4B1D772A61005F86D2 /* arrowDown_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowDown_dark.png; sourceTree = "<group>"; };
+		78C7DC4C1D772A61005F86D2 /* arrowLeft_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_gray@2x.png"; sourceTree = "<group>"; };
+		78C7DC4D1D772A61005F86D2 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_red@2x.png"; sourceTree = "<group>"; };
+		78C7DC4E1D772A61005F86D2 /* arrowRight_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_gray@2x.png"; sourceTree = "<group>"; };
+		78C7DC4F1D772A61005F86D2 /* arrowRight_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_red@2x.png"; sourceTree = "<group>"; };
+		78C7DC501D772A61005F86D2 /* arrowUp_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowUp_white@2x.png"; sourceTree = "<group>"; };
+		78C7DC5C1D772B98005F86D2 /* RadioButton_DropDown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_DropDown.xib; sourceTree = "<group>"; };
+		78C7DC5D1D772B98005F86D2 /* RadioButton_Slider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_Slider.xib; sourceTree = "<group>"; };
 		805A17501BF321CC00424769 /* RadioButtonsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioButtonsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		805A17541BF321CC00424769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		805A17551BF321CC00424769 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,21 +82,14 @@
 		805A176F1BF321CC00424769 /* RadioButtonsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadioButtonsDemoTests.m; sourceTree = "<group>"; };
 		805A177C1BF3235E00424769 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
 		805A177D1BF3235E00424769 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
-		805A177E1BF3235E00424769 /* RadioButton_DropDown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_DropDown.xib; sourceTree = "<group>"; };
 		805A177F1BF3235E00424769 /* RadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons.h; sourceTree = "<group>"; };
 		805A17801BF3235E00424769 /* RadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons.m; sourceTree = "<group>"; };
-		805A17931BF35A8C00424769 /* down_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_dark.png; sourceTree = "<group>"; };
-		805A17951BF35A8C00424769 /* arrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowUp.png; sourceTree = "<group>"; };
-		805A17961BF35A8C00424769 /* arrowUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowUp@2x.png"; sourceTree = "<group>"; };
-		805A17971BF35A8C00424769 /* btnTab_BG_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnTab_BG_normal.png; sourceTree = "<group>"; };
-		805A17981BF35A8C00424769 /* btnTab_BG_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnTab_BG_normal@2x.png"; sourceTree = "<group>"; };
-		805A17991BF35A8C00424769 /* btnTab_BG_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnTab_BG_selected.png; sourceTree = "<group>"; };
-		805A179A1BF35A8C00424769 /* btnTab_BG_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnTab_BG_selected@2x.png"; sourceTree = "<group>"; };
-		805A179B1BF35A8C00424769 /* RadioButton_Slider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_Slider.xib; sourceTree = "<group>"; };
 		805A17A91BF35C1B00424769 /* RBSliderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSliderVC.h; sourceTree = "<group>"; };
 		805A17AA1BF35C1B00424769 /* RBSliderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSliderVC.m; sourceTree = "<group>"; };
 		805A17AB1BF35C1B00424769 /* RBSliderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBSliderVC.xib; sourceTree = "<group>"; };
-		DB97996B670BCC3117C5226A /* Pods-RadioButtonsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioButtonsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C1E1C1C4CCF444182EFE6CDD /* Pods-RadioButtonsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioButtonsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CBF3C6EED84D253D3A043477 /* Pods-RadioButtonsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioButtonsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RadioButtonsDemoTests/Pods-RadioButtonsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FC63400F1DE83F569B2B8248 /* Pods-RadioButtonsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioButtonsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449F20EF6662D88C37DAFCCD /* libPods-RadioButtonsDemo.a in Frameworks */,
+				F26CB6BDCD4A998A74046801 /* libPods-RadioButtonsDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,28 +105,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EE0F2074557441CE6AE8C1C /* libPods-RadioButtonsDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66EA9D0FB502E56FF418F39E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				765A83FFF10D0B5B7067767F /* libPods-RadioButtonsDemo.a */,
+				273BC7A9C56234F26DE12CA6 /* libPods-RadioButtonsDemoTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		783079B21D75247C009689F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				78C7DC5C1D772B98005F86D2 /* RadioButton_DropDown.xib */,
+				78C7DC5D1D772B98005F86D2 /* RadioButton_Slider.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		78E4136E1D69B40A00934D4A /* Category */ = {
+		78C7DC4A1D772A61005F86D2 /* images_arrow */ = {
 			isa = PBXGroup;
 			children = (
-				78E4136F1D69B40A00934D4A /* UIView+CJAddSubVIew.h */,
-				78E413701D69B40A00934D4A /* UIView+CJAddSubVIew.m */,
-				78E413721D69D6C300934D4A /* UIView+CJShowDropView.h */,
-				78E413731D69D6C300934D4A /* UIView+CJShowDropView.m */,
+				78C7DC4B1D772A61005F86D2 /* arrowDown_dark.png */,
+				78C7DC4C1D772A61005F86D2 /* arrowLeft_gray@2x.png */,
+				78C7DC4D1D772A61005F86D2 /* arrowLeft_red@2x.png */,
+				78C7DC4E1D772A61005F86D2 /* arrowRight_gray@2x.png */,
+				78C7DC4F1D772A61005F86D2 /* arrowRight_red@2x.png */,
+				78C7DC501D772A61005F86D2 /* arrowUp_white@2x.png */,
 			);
-			path = Category;
+			path = images_arrow;
 			sourceTree = "<group>";
 		};
 		805A17471BF321CC00424769 = {
@@ -147,8 +149,8 @@
 				805A17521BF321CC00424769 /* RadioButtonsDemo */,
 				805A176C1BF321CC00424769 /* RadioButtonsDemoTests */,
 				805A17511BF321CC00424769 /* Products */,
-				CBB6893E4C1DC12527161B05 /* Pods */,
-				89C1864F65AA34A2A51B91AF /* Frameworks */,
+				90F94DE87F9C13571563ECEA /* Pods */,
+				66EA9D0FB502E56FF418F39E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,15 +210,11 @@
 		805A17791BF3235D00424769 /* RadioButtons */ = {
 			isa = PBXGroup;
 			children = (
-				805A17921BF35A8C00424769 /* images_RadioButton_DropDown */,
-				805A17941BF35A8C00424769 /* images_RadioButton_Slider */,
+				78C7DC4A1D772A61005F86D2 /* images_arrow */,
 				805A177C1BF3235E00424769 /* RadioButton.h */,
 				805A177D1BF3235E00424769 /* RadioButton.m */,
-				805A177E1BF3235E00424769 /* RadioButton_DropDown.xib */,
-				805A179B1BF35A8C00424769 /* RadioButton_Slider.xib */,
 				805A177F1BF3235E00424769 /* RadioButtons.h */,
 				805A17801BF3235E00424769 /* RadioButtons.m */,
-				78E4136E1D69B40A00934D4A /* Category */,
 			);
 			name = RadioButtons;
 			path = ../../RadioButtons;
@@ -241,44 +239,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		805A17921BF35A8C00424769 /* images_RadioButton_DropDown */ = {
+		90F94DE87F9C13571563ECEA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				805A17931BF35A8C00424769 /* down_dark.png */,
-			);
-			path = images_RadioButton_DropDown;
-			sourceTree = "<group>";
-		};
-		805A17941BF35A8C00424769 /* images_RadioButton_Slider */ = {
-			isa = PBXGroup;
-			children = (
-				783079C41D767D14009689F3 /* arrowLeft_gray@2x.png */,
-				783079C51D767D14009689F3 /* arrowLeft_red@2x.png */,
-				783079C61D767D14009689F3 /* arrowRight_gray@2x.png */,
-				783079C71D767D14009689F3 /* arrowRight_red@2x.png */,
-				805A17951BF35A8C00424769 /* arrowUp.png */,
-				805A17961BF35A8C00424769 /* arrowUp@2x.png */,
-				805A17971BF35A8C00424769 /* btnTab_BG_normal.png */,
-				805A17981BF35A8C00424769 /* btnTab_BG_normal@2x.png */,
-				805A17991BF35A8C00424769 /* btnTab_BG_selected.png */,
-				805A179A1BF35A8C00424769 /* btnTab_BG_selected@2x.png */,
-			);
-			path = images_RadioButton_Slider;
-			sourceTree = "<group>";
-		};
-		89C1864F65AA34A2A51B91AF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				53A03DFBE8686B3C786BB746 /* libPods-RadioButtonsDemo.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CBB6893E4C1DC12527161B05 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				62C13D4140D7C541EB81741F /* Pods-RadioButtonsDemo.debug.xcconfig */,
-				DB97996B670BCC3117C5226A /* Pods-RadioButtonsDemo.release.xcconfig */,
+				FC63400F1DE83F569B2B8248 /* Pods-RadioButtonsDemo.debug.xcconfig */,
+				C1E1C1C4CCF444182EFE6CDD /* Pods-RadioButtonsDemo.release.xcconfig */,
+				CBF3C6EED84D253D3A043477 /* Pods-RadioButtonsDemoTests.debug.xcconfig */,
+				4E851E813249FD05D5E9E9E4 /* Pods-RadioButtonsDemoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -290,12 +257,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 805A17731BF321CC00424769 /* Build configuration list for PBXNativeTarget "RadioButtonsDemo" */;
 			buildPhases = (
-				F14C1FE7096384B1F5DBEF9F /* Check Pods Manifest.lock */,
+				5F87E002B9263E713416BE38 /* 📦 Check Pods Manifest.lock */,
 				805A174C1BF321CC00424769 /* Sources */,
 				805A174D1BF321CC00424769 /* Frameworks */,
 				805A174E1BF321CC00424769 /* Resources */,
-				A221BD060DA058C9843C5FC1 /* Embed Pods Frameworks */,
-				B9CF467DAB53A528BBFEEBD9 /* Copy Pods Resources */,
+				B3442125A8447CA228E22B60 /* 📦 Embed Pods Frameworks */,
+				04CAE4592BC558F2721579DF /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,9 +277,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 805A17761BF321CC00424769 /* Build configuration list for PBXNativeTarget "RadioButtonsDemoTests" */;
 			buildPhases = (
+				5FA7D2CA29CC84531A3BBE42 /* 📦 Check Pods Manifest.lock */,
 				805A17651BF321CC00424769 /* Sources */,
 				805A17661BF321CC00424769 /* Frameworks */,
 				805A17671BF321CC00424769 /* Resources */,
+				C2396590880489DC291B6C67 /* 📦 Embed Pods Frameworks */,
+				F7A6D29061AD132C2AE0847E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,25 +336,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C7DC5F1D772B98005F86D2 /* RadioButton_Slider.xib in Resources */,
 				805A175F1BF321CC00424769 /* Main.storyboard in Resources */,
-				805A17A21BF35A8C00424769 /* btnTab_BG_selected@2x.png in Resources */,
 				783079B71D7524BD009689F3 /* RadioButtonsCanDropVC.xib in Resources */,
-				805A179C1BF35A8C00424769 /* down_dark.png in Resources */,
-				805A179E1BF35A8C00424769 /* arrowUp@2x.png in Resources */,
-				783079C91D767D14009689F3 /* arrowLeft_red@2x.png in Resources */,
-				805A17831BF3235E00424769 /* RadioButton_DropDown.xib in Resources */,
-				805A179F1BF35A8C00424769 /* btnTab_BG_normal.png in Resources */,
+				78C7DC5E1D772B98005F86D2 /* RadioButton_DropDown.xib in Resources */,
+				78C7DC551D772A61005F86D2 /* arrowRight_red@2x.png in Resources */,
+				78C7DC541D772A61005F86D2 /* arrowRight_gray@2x.png in Resources */,
+				78C7DC511D772A61005F86D2 /* arrowDown_dark.png in Resources */,
 				783079BC1D7558C6009689F3 /* RBDropDownVC.xib in Resources */,
-				805A17A11BF35A8C00424769 /* btnTab_BG_selected.png in Resources */,
+				78C7DC531D772A61005F86D2 /* arrowLeft_red@2x.png in Resources */,
+				78C7DC561D772A61005F86D2 /* arrowUp_white@2x.png in Resources */,
 				805A17641BF321CC00424769 /* LaunchScreen.xib in Resources */,
-				805A179D1BF35A8C00424769 /* arrowUp.png in Resources */,
 				805A17611BF321CC00424769 /* Images.xcassets in Resources */,
-				783079CB1D767D14009689F3 /* arrowRight_red@2x.png in Resources */,
-				805A17A31BF35A8C00424769 /* RadioButton_Slider.xib in Resources */,
-				783079C81D767D14009689F3 /* arrowLeft_gray@2x.png in Resources */,
+				78C7DC521D772A61005F86D2 /* arrowLeft_gray@2x.png in Resources */,
 				783079C11D755B95009689F3 /* RBDropDownBestVC.xib in Resources */,
-				783079CA1D767D14009689F3 /* arrowRight_gray@2x.png in Resources */,
-				805A17A01BF35A8C00424769 /* btnTab_BG_normal@2x.png in Resources */,
 				805A17AD1BF35C1B00424769 /* RBSliderVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,29 +364,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A221BD060DA058C9843C5FC1 /* Embed Pods Frameworks */ = {
+		04CAE4592BC558F2721579DF /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9CF467DAB53A528BBFEEBD9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,19 +379,79 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F14C1FE7096384B1F5DBEF9F /* Check Pods Manifest.lock */ = {
+		5F87E002B9263E713416BE38 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5FA7D2CA29CC84531A3BBE42 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B3442125A8447CA228E22B60 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2396590880489DC291B6C67 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioButtonsDemoTests/Pods-RadioButtonsDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7A6D29061AD132C2AE0847E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioButtonsDemoTests/Pods-RadioButtonsDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -454,8 +464,6 @@
 				805A175C1BF321CC00424769 /* ViewController.m in Sources */,
 				783079BB1D7558C6009689F3 /* RBDropDownVC.m in Sources */,
 				805A17591BF321CC00424769 /* AppDelegate.m in Sources */,
-				78E413741D69D6C300934D4A /* UIView+CJShowDropView.m in Sources */,
-				78E413711D69B40A00934D4A /* UIView+CJAddSubVIew.m in Sources */,
 				805A17561BF321CC00424769 /* main.m in Sources */,
 				805A17841BF3235E00424769 /* RadioButtons.m in Sources */,
 				805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */,
@@ -582,7 +590,7 @@
 		};
 		805A17741BF321CC00424769 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62C13D4140D7C541EB81741F /* Pods-RadioButtonsDemo.debug.xcconfig */;
+			baseConfigurationReference = FC63400F1DE83F569B2B8248 /* Pods-RadioButtonsDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RadioButtonsDemo/Info.plist;
@@ -594,7 +602,7 @@
 		};
 		805A17751BF321CC00424769 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB97996B670BCC3117C5226A /* Pods-RadioButtonsDemo.release.xcconfig */;
+			baseConfigurationReference = C1E1C1C4CCF444182EFE6CDD /* Pods-RadioButtonsDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RadioButtonsDemo/Info.plist;
@@ -606,6 +614,7 @@
 		};
 		805A17771BF321CC00424769 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBF3C6EED84D253D3A043477 /* Pods-RadioButtonsDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -626,6 +635,7 @@
 		};
 		805A17781BF321CC00424769 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E851E813249FD05D5E9E9E4 /* Pods-RadioButtonsDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

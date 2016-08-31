@@ -14,20 +14,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RadioButtonsDemoTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>63D402C3B27D36442E5E91394804F452</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6C396B0D2474176975050893FBDF6390</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B3BE8147E21234400A4465702C7CCB0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE470C55BE7251932C588BC7B5A3B27A</key>
+		<key>C872FEE8918278AB4F082C471752BFA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
