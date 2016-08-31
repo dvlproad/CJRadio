@@ -1,0 +1,759 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11F21106C22D7A0FFDA6316DA12DF853 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECCC9CBD95705F6C8A84E2759DE7AE5 /* RadioButton.m */; };
+		1A095D969273DB2DF3EA65DE86D2810A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		24DDAEBFEAC79B9CDA86CDA4649EB87E /* RadioComposeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C46FD9BD36A518A114DF51BEC187414 /* RadioComposeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		252E873F0C8C66ABF62F30C7DFF057E7 /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 669D4CAE844F1E27993F1B815FD6D879 /* UIView+CJAddSubVIew.m */; };
+		4FFFB62DDBE93F8A93FD3DBCAE211CBD /* UIScrollView+CJAddContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B359A334C738941672A28C36CC4395F /* UIScrollView+CJAddContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		57B879760487A4893602501B4212F7C2 /* UIView+CJAddSubVIew.h in Headers */ = {isa = PBXBuildFile; fileRef = C8F7BEA25D8E78B8818B2D87DFF22132 /* UIView+CJAddSubVIew.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60F85B623A14E14010796653855410EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		6934C585F5C2B8AA9469A11CE7A5EC2D /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE1C1163600EB68AD3AFBB83BC6C1DC /* UIScrollView+CJAddContentView.m */; };
+		6C185B93B06E617955D0DDF315BE027C /* Pods-CJSliderViewControllerDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 045F1423ECD862E515D284A925281AFD /* Pods-CJSliderViewControllerDemo-dummy.m */; };
+		7C02A8BA3EB5BF512A9B057D3B6DBFAE /* RadioComposeView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C13426071B82F218703F4FACBAF5747 /* RadioComposeView-dummy.m */; };
+		81B90B8EC034D5E67E1E840C3614B1A7 /* RadioButtons.h in Headers */ = {isa = PBXBuildFile; fileRef = 56F786167362B1E0C7244A182AD013F2 /* RadioButtons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97D2095A18732F01E89681ADB1BCD62B /* Pods-CJSliderViewControllerDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B15BED6626708B290F7AA0D332C47D /* Pods-CJSliderViewControllerDemoTests-dummy.m */; };
+		B415AE9E1CF7415E5B28491EF17860A2 /* RadioButtons-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA57D794420C5C4ED919F41DA92CF7AF /* RadioButtons-dummy.m */; };
+		C5A2A37DC210EE3B32B0F56727E5968A /* RadioButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DBA4FA963BA4A5E32F7C59610F15CE53 /* RadioButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEEF1C76E2ABAEEF68E96D69853B8C23 /* RadioComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0DF96BFD4C33D4E7097E76B1433FAF /* RadioComposeView.m */; };
+		D2209E7F5B0B142FBE8AE4DC0589C1BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		D7281F2D51083B82F2445CDA47A6CDD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		E137AD76BABFB964FA37C0485344E116 /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 2619CA2DE8E63B7B56F74F44E52E7BA0 /* RadioButtons.m */; };
+		F392A137E16132F8F056E6E0273EAE46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		F4EF5307A977ED70E854744BC1A29DDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B15B530B88138CB6FF63BB229B2594DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D926BA3AC78A78768B67D0D3247304C1;
+			remoteInfo = RadioComposeView;
+		};
+		DEC2F1FBADBA5AE62869B9B9F902E052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2544DD145AD621B49CD25D2620372A0;
+			remoteInfo = RadioButtons;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		045F1423ECD862E515D284A925281AFD /* Pods-CJSliderViewControllerDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CJSliderViewControllerDemo-dummy.m"; sourceTree = "<group>"; };
+		0C13426071B82F218703F4FACBAF5747 /* RadioComposeView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RadioComposeView-dummy.m"; sourceTree = "<group>"; };
+		1084F128CE7A9A29123FAD7DD5296040 /* arrowRight_red@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrowRight_red@2x.png"; path = "RadioButtons/images_arrow/arrowRight_red@2x.png"; sourceTree = "<group>"; };
+		1153B67C132D7C353D387277CB51062E /* Pods-CJSliderViewControllerDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CJSliderViewControllerDemo-resources.sh"; sourceTree = "<group>"; };
+		2619CA2DE8E63B7B56F74F44E52E7BA0 /* RadioButtons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RadioButtons.m; path = RadioButtons/RadioButtons.m; sourceTree = "<group>"; };
+		2944BCF19494F202D087E6C4E50899C7 /* arrowUp_white@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrowUp_white@2x.png"; path = "RadioButtons/images_arrow/arrowUp_white@2x.png"; sourceTree = "<group>"; };
+		29C3567B9418ED3C4C58F4E6C60FB6FC /* libPods-CJSliderViewControllerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJSliderViewControllerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AF8A1419C0A1F5C75FCC2D7FF7CF8A5 /* Pods-CJSliderViewControllerDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CJSliderViewControllerDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		32EB25D548D289A6A48DBFFE7634629C /* Pods-CJSliderViewControllerDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CJSliderViewControllerDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C46FD9BD36A518A114DF51BEC187414 /* RadioComposeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RadioComposeView.h; path = RadioComposeView/RadioComposeView.h; sourceTree = "<group>"; };
+		437FC2E381EBA2B15BFAD30478FC5A78 /* libPods-CJSliderViewControllerDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJSliderViewControllerDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49234AA9DED40A9AFF9941D3325E9255 /* RadioComposeView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RadioComposeView-prefix.pch"; sourceTree = "<group>"; };
+		4EC36CA7CB3DB96F65461FD12F7715D7 /* libRadioButtons.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRadioButtons.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F786167362B1E0C7244A182AD013F2 /* RadioButtons.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RadioButtons.h; path = RadioButtons/RadioButtons.h; sourceTree = "<group>"; };
+		5B359A334C738941672A28C36CC4395F /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+CJAddContentView.h"; path = "RadioComposeView/UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
+		63C39197CA5D0D878732DE4B2BE3CAC2 /* libRadioComposeView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRadioComposeView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		669D4CAE844F1E27993F1B815FD6D879 /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJAddSubVIew.m"; path = "RadioComposeView/UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
+		7AE1C1163600EB68AD3AFBB83BC6C1DC /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+CJAddContentView.m"; path = "RadioComposeView/UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
+		80D876D8F8565F425ECDBCF0D9411EED /* arrowRight_gray@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrowRight_gray@2x.png"; path = "RadioButtons/images_arrow/arrowRight_gray@2x.png"; sourceTree = "<group>"; };
+		82B15BED6626708B290F7AA0D332C47D /* Pods-CJSliderViewControllerDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CJSliderViewControllerDemoTests-dummy.m"; sourceTree = "<group>"; };
+		8351EE5F3DC84DE09DCFCFAA11BF4F71 /* Pods-CJSliderViewControllerDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CJSliderViewControllerDemo-frameworks.sh"; sourceTree = "<group>"; };
+		87508289B04CF966B52CD707532E9490 /* Pods-CJSliderViewControllerDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CJSliderViewControllerDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		880E17DF6B3853B13D60B97C217CA251 /* Pods-CJSliderViewControllerDemoTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CJSliderViewControllerDemoTests-resources.sh"; sourceTree = "<group>"; };
+		88CF63F6D523F7F1416D5EB2B3195289 /* arrowDown_dark.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = arrowDown_dark.png; path = RadioButtons/images_arrow/arrowDown_dark.png; sourceTree = "<group>"; };
+		8974ADEC19DC0575E9DEB6BC17AE91C7 /* Pods-CJSliderViewControllerDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CJSliderViewControllerDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		8ECCC9CBD95705F6C8A84E2759DE7AE5 /* RadioButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RadioButton.m; path = RadioButtons/RadioButton.m; sourceTree = "<group>"; };
+		907EB8EC2D2C60DAEB8CD629F75A0641 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrowLeft_red@2x.png"; path = "RadioButtons/images_arrow/arrowLeft_red@2x.png"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93AB77E3178732EE9BACC2F1518FBB02 /* Pods-CJSliderViewControllerDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CJSliderViewControllerDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9B703A5D889B3AF88A034672E0F5DAED /* RadioButtons.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RadioButtons.xcconfig; sourceTree = "<group>"; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A557152467EC05E8DD95E11FFDDA2F0C /* RadioButtons-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RadioButtons-prefix.pch"; sourceTree = "<group>"; };
+		AA0DF96BFD4C33D4E7097E76B1433FAF /* RadioComposeView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RadioComposeView.m; path = RadioComposeView/RadioComposeView.m; sourceTree = "<group>"; };
+		B175B6A23F81837475B5E7424779CBF2 /* Pods-CJSliderViewControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CJSliderViewControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B9CB1BF0441929153E374238F9B8539F /* RadioComposeView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RadioComposeView.xcconfig; sourceTree = "<group>"; };
+		BA57D794420C5C4ED919F41DA92CF7AF /* RadioButtons-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RadioButtons-dummy.m"; sourceTree = "<group>"; };
+		BCF582A55A2B41ACC273B21D2A98E694 /* Pods-CJSliderViewControllerDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CJSliderViewControllerDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE1DCCA0899D075E8F59C786E3E87279 /* Pods-CJSliderViewControllerDemoTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CJSliderViewControllerDemoTests-frameworks.sh"; sourceTree = "<group>"; };
+		C8F7BEA25D8E78B8818B2D87DFF22132 /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJAddSubVIew.h"; path = "RadioComposeView/UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
+		D6E10173486C6651D2F7808B4E8E8747 /* Pods-CJSliderViewControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CJSliderViewControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		DBA4FA963BA4A5E32F7C59610F15CE53 /* RadioButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RadioButton.h; path = RadioButtons/RadioButton.h; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		F7E52BB7D30D03C1781E67B22A9281B0 /* arrowLeft_gray@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "arrowLeft_gray@2x.png"; path = "RadioButtons/images_arrow/arrowLeft_gray@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31340BB9AA8E72194C9438E5C6AE406A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7281F2D51083B82F2445CDA47A6CDD9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		721532389C8CB388246BEDED0C10DDEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A095D969273DB2DF3EA65DE86D2810A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A101C9D4166F948377CE547922A86059 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4EF5307A977ED70E854744BC1A29DDF /* Foundation.framework in Frameworks */,
+				F392A137E16132F8F056E6E0273EAE46 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B15BBBE587071B1395A069F988CF7624 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60F85B623A14E14010796653855410EC /* Foundation.framework in Frameworks */,
+				D2209E7F5B0B142FBE8AE4DC0589C1BB /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D2742FEA999AA815CFABA5CA75E9F75 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B703A5D889B3AF88A034672E0F5DAED /* RadioButtons.xcconfig */,
+				BA57D794420C5C4ED919F41DA92CF7AF /* RadioButtons-dummy.m */,
+				A557152467EC05E8DD95E11FFDDA2F0C /* RadioButtons-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RadioButtons";
+			sourceTree = "<group>";
+		};
+		21955F31C0841A3ABD518CADC22B53D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A652B9D19B720CDC7F8F625B7D655EF /* RadioButtons */,
+				477673E6CF6DBC785AF8965E450C486D /* RadioComposeView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		477673E6CF6DBC785AF8965E450C486D /* RadioComposeView */ = {
+			isa = PBXGroup;
+			children = (
+				3C46FD9BD36A518A114DF51BEC187414 /* RadioComposeView.h */,
+				AA0DF96BFD4C33D4E7097E76B1433FAF /* RadioComposeView.m */,
+				5B359A334C738941672A28C36CC4395F /* UIScrollView+CJAddContentView.h */,
+				7AE1C1163600EB68AD3AFBB83BC6C1DC /* UIScrollView+CJAddContentView.m */,
+				C8F7BEA25D8E78B8818B2D87DFF22132 /* UIView+CJAddSubVIew.h */,
+				669D4CAE844F1E27993F1B815FD6D879 /* UIView+CJAddSubVIew.m */,
+				C142A2801CAF7D3461AD276E31FAFBA8 /* Support Files */,
+			);
+			path = RadioComposeView;
+			sourceTree = "<group>";
+		};
+		4F3823B5D9912BD47004CCA3406B9622 /* Pods-CJSliderViewControllerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				93AB77E3178732EE9BACC2F1518FBB02 /* Pods-CJSliderViewControllerDemoTests-acknowledgements.markdown */,
+				87508289B04CF966B52CD707532E9490 /* Pods-CJSliderViewControllerDemoTests-acknowledgements.plist */,
+				82B15BED6626708B290F7AA0D332C47D /* Pods-CJSliderViewControllerDemoTests-dummy.m */,
+				BE1DCCA0899D075E8F59C786E3E87279 /* Pods-CJSliderViewControllerDemoTests-frameworks.sh */,
+				880E17DF6B3853B13D60B97C217CA251 /* Pods-CJSliderViewControllerDemoTests-resources.sh */,
+				BCF582A55A2B41ACC273B21D2A98E694 /* Pods-CJSliderViewControllerDemoTests.debug.xcconfig */,
+				32EB25D548D289A6A48DBFFE7634629C /* Pods-CJSliderViewControllerDemoTests.release.xcconfig */,
+			);
+			name = "Pods-CJSliderViewControllerDemoTests";
+			path = "Target Support Files/Pods-CJSliderViewControllerDemoTests";
+			sourceTree = "<group>";
+		};
+		6A652B9D19B720CDC7F8F625B7D655EF /* RadioButtons */ = {
+			isa = PBXGroup;
+			children = (
+				DBA4FA963BA4A5E32F7C59610F15CE53 /* RadioButton.h */,
+				8ECCC9CBD95705F6C8A84E2759DE7AE5 /* RadioButton.m */,
+				56F786167362B1E0C7244A182AD013F2 /* RadioButtons.h */,
+				2619CA2DE8E63B7B56F74F44E52E7BA0 /* RadioButtons.m */,
+				D7B2D02F54F7A43EF0F6A08631FF81FE /* Resources */,
+				1D2742FEA999AA815CFABA5CA75E9F75 /* Support Files */,
+			);
+			path = RadioButtons;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				21955F31C0841A3ABD518CADC22B53D6 /* Pods */,
+				AB9B08922D246D49360619642B861325 /* Products */,
+				F5349F67CE4321066AF2DB1CCAD67CDE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		AB9B08922D246D49360619642B861325 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29C3567B9418ED3C4C58F4E6C60FB6FC /* libPods-CJSliderViewControllerDemo.a */,
+				437FC2E381EBA2B15BFAD30478FC5A78 /* libPods-CJSliderViewControllerDemoTests.a */,
+				4EC36CA7CB3DB96F65461FD12F7715D7 /* libRadioButtons.a */,
+				63C39197CA5D0D878732DE4B2BE3CAC2 /* libRadioComposeView.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C142A2801CAF7D3461AD276E31FAFBA8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9CB1BF0441929153E374238F9B8539F /* RadioComposeView.xcconfig */,
+				0C13426071B82F218703F4FACBAF5747 /* RadioComposeView-dummy.m */,
+				49234AA9DED40A9AFF9941D3325E9255 /* RadioComposeView-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/RadioComposeView";
+			sourceTree = "<group>";
+		};
+		D225133FC0436DF20AAB5731C2D35274 /* Pods-CJSliderViewControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2AF8A1419C0A1F5C75FCC2D7FF7CF8A5 /* Pods-CJSliderViewControllerDemo-acknowledgements.markdown */,
+				8974ADEC19DC0575E9DEB6BC17AE91C7 /* Pods-CJSliderViewControllerDemo-acknowledgements.plist */,
+				045F1423ECD862E515D284A925281AFD /* Pods-CJSliderViewControllerDemo-dummy.m */,
+				8351EE5F3DC84DE09DCFCFAA11BF4F71 /* Pods-CJSliderViewControllerDemo-frameworks.sh */,
+				1153B67C132D7C353D387277CB51062E /* Pods-CJSliderViewControllerDemo-resources.sh */,
+				B175B6A23F81837475B5E7424779CBF2 /* Pods-CJSliderViewControllerDemo.debug.xcconfig */,
+				D6E10173486C6651D2F7808B4E8E8747 /* Pods-CJSliderViewControllerDemo.release.xcconfig */,
+			);
+			name = "Pods-CJSliderViewControllerDemo";
+			path = "Target Support Files/Pods-CJSliderViewControllerDemo";
+			sourceTree = "<group>";
+		};
+		D7B2D02F54F7A43EF0F6A08631FF81FE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88CF63F6D523F7F1416D5EB2B3195289 /* arrowDown_dark.png */,
+				F7E52BB7D30D03C1781E67B22A9281B0 /* arrowLeft_gray@2x.png */,
+				907EB8EC2D2C60DAEB8CD629F75A0641 /* arrowLeft_red@2x.png */,
+				80D876D8F8565F425ECDBCF0D9411EED /* arrowRight_gray@2x.png */,
+				1084F128CE7A9A29123FAD7DD5296040 /* arrowRight_red@2x.png */,
+				2944BCF19494F202D087E6C4E50899C7 /* arrowUp_white@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F5349F67CE4321066AF2DB1CCAD67CDE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D225133FC0436DF20AAB5731C2D35274 /* Pods-CJSliderViewControllerDemo */,
+				4F3823B5D9912BD47004CCA3406B9622 /* Pods-CJSliderViewControllerDemoTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		488F58085AA390546C3CAA2CB69F15D8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DDAEBFEAC79B9CDA86CDA4649EB87E /* RadioComposeView.h in Headers */,
+				4FFFB62DDBE93F8A93FD3DBCAE211CBD /* UIScrollView+CJAddContentView.h in Headers */,
+				57B879760487A4893602501B4212F7C2 /* UIView+CJAddSubVIew.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58E396E80A4523F6CC7FA2C3747A29DC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5A2A37DC210EE3B32B0F56727E5968A /* RadioButton.h in Headers */,
+				81B90B8EC034D5E67E1E840C3614B1A7 /* RadioButtons.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		222AEF8C727125FBE850177BA1398599 /* Pods-CJSliderViewControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41278F740C2903ECCA01D89F18516C61 /* Build configuration list for PBXNativeTarget "Pods-CJSliderViewControllerDemo" */;
+			buildPhases = (
+				0F2402BFA7A11FC1541B2D8ECB247815 /* Sources */,
+				31340BB9AA8E72194C9438E5C6AE406A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B09616F4F5126219561C1E4B52B78543 /* PBXTargetDependency */,
+				7AE635B0DFC3BC4533B695E961183CDE /* PBXTargetDependency */,
+			);
+			name = "Pods-CJSliderViewControllerDemo";
+			productName = "Pods-CJSliderViewControllerDemo";
+			productReference = 29C3567B9418ED3C4C58F4E6C60FB6FC /* libPods-CJSliderViewControllerDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D926BA3AC78A78768B67D0D3247304C1 /* RadioComposeView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63A7DD97824074D342CF07089589DEA2 /* Build configuration list for PBXNativeTarget "RadioComposeView" */;
+			buildPhases = (
+				ADCD86D35A66BA334D284D713A3BAC81 /* Sources */,
+				B15BBBE587071B1395A069F988CF7624 /* Frameworks */,
+				488F58085AA390546C3CAA2CB69F15D8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RadioComposeView;
+			productName = RadioComposeView;
+			productReference = 63C39197CA5D0D878732DE4B2BE3CAC2 /* libRadioComposeView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E2544DD145AD621B49CD25D2620372A0 /* RadioButtons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3E359130A454927C1DB1CD33BA6595B2 /* Build configuration list for PBXNativeTarget "RadioButtons" */;
+			buildPhases = (
+				8F35D88EA12910A95963511521F82586 /* Sources */,
+				A101C9D4166F948377CE547922A86059 /* Frameworks */,
+				58E396E80A4523F6CC7FA2C3747A29DC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RadioButtons;
+			productName = RadioButtons;
+			productReference = 4EC36CA7CB3DB96F65461FD12F7715D7 /* libRadioButtons.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FD0A7497E92911587AF68A5DFECCB750 /* Pods-CJSliderViewControllerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3D2063E6C9BE48CB397BA700F9BF380 /* Build configuration list for PBXNativeTarget "Pods-CJSliderViewControllerDemoTests" */;
+			buildPhases = (
+				7793A96F22602AAD6CAEFC63FD1B2F99 /* Sources */,
+				721532389C8CB388246BEDED0C10DDEB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CJSliderViewControllerDemoTests";
+			productName = "Pods-CJSliderViewControllerDemoTests";
+			productReference = 437FC2E381EBA2B15BFAD30478FC5A78 /* libPods-CJSliderViewControllerDemoTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = AB9B08922D246D49360619642B861325 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				222AEF8C727125FBE850177BA1398599 /* Pods-CJSliderViewControllerDemo */,
+				FD0A7497E92911587AF68A5DFECCB750 /* Pods-CJSliderViewControllerDemoTests */,
+				E2544DD145AD621B49CD25D2620372A0 /* RadioButtons */,
+				D926BA3AC78A78768B67D0D3247304C1 /* RadioComposeView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F2402BFA7A11FC1541B2D8ECB247815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C185B93B06E617955D0DDF315BE027C /* Pods-CJSliderViewControllerDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7793A96F22602AAD6CAEFC63FD1B2F99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97D2095A18732F01E89681ADB1BCD62B /* Pods-CJSliderViewControllerDemoTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F35D88EA12910A95963511521F82586 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11F21106C22D7A0FFDA6316DA12DF853 /* RadioButton.m in Sources */,
+				B415AE9E1CF7415E5B28491EF17860A2 /* RadioButtons-dummy.m in Sources */,
+				E137AD76BABFB964FA37C0485344E116 /* RadioButtons.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADCD86D35A66BA334D284D713A3BAC81 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C02A8BA3EB5BF512A9B057D3B6DBFAE /* RadioComposeView-dummy.m in Sources */,
+				CEEF1C76E2ABAEEF68E96D69853B8C23 /* RadioComposeView.m in Sources */,
+				6934C585F5C2B8AA9469A11CE7A5EC2D /* UIScrollView+CJAddContentView.m in Sources */,
+				252E873F0C8C66ABF62F30C7DFF057E7 /* UIView+CJAddSubVIew.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AE635B0DFC3BC4533B695E961183CDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RadioComposeView;
+			target = D926BA3AC78A78768B67D0D3247304C1 /* RadioComposeView */;
+			targetProxy = B15B530B88138CB6FF63BB229B2594DE /* PBXContainerItemProxy */;
+		};
+		B09616F4F5126219561C1E4B52B78543 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RadioButtons;
+			target = E2544DD145AD621B49CD25D2620372A0 /* RadioButtons */;
+			targetProxy = DEC2F1FBADBA5AE62869B9B9F902E052 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0DC40370BEE7D6DA76F4C92F4B7C617C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B703A5D889B3AF88A034672E0F5DAED /* RadioButtons.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RadioButtons/RadioButtons-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3FA2475660FFC880302AD18E29B2E5FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		420631C979493B269A9A5D44B3CE22A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9CB1BF0441929153E374238F9B8539F /* RadioComposeView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RadioComposeView/RadioComposeView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		618B5BC3B9B74A5AE6E2A8BE5D48E3B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9CB1BF0441929153E374238F9B8539F /* RadioComposeView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RadioComposeView/RadioComposeView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6A91715FD0324AAB867A922F12EE81FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCF582A55A2B41ACC273B21D2A98E694 /* Pods-CJSliderViewControllerDemoTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8B96DE812E6ABEED85676DD253F22ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6E10173486C6651D2F7808B4E8E8747 /* Pods-CJSliderViewControllerDemo.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B2F1EB1639363C71223BC52F77AC3215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B175B6A23F81837475B5E7424779CBF2 /* Pods-CJSliderViewControllerDemo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E9777651DF6FE2001A43C6206F59D2CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B703A5D889B3AF88A034672E0F5DAED /* RadioButtons.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RadioButtons/RadioButtons-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F325026B55060D3B22BEC0BAB5FA7344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F92448CEB772D1597547347F95E2805E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32EB25D548D289A6A48DBFFE7634629C /* Pods-CJSliderViewControllerDemoTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA2475660FFC880302AD18E29B2E5FC /* Debug */,
+				F325026B55060D3B22BEC0BAB5FA7344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3E359130A454927C1DB1CD33BA6595B2 /* Build configuration list for PBXNativeTarget "RadioButtons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9777651DF6FE2001A43C6206F59D2CE /* Debug */,
+				0DC40370BEE7D6DA76F4C92F4B7C617C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41278F740C2903ECCA01D89F18516C61 /* Build configuration list for PBXNativeTarget "Pods-CJSliderViewControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F1EB1639363C71223BC52F77AC3215 /* Debug */,
+				8B96DE812E6ABEED85676DD253F22ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63A7DD97824074D342CF07089589DEA2 /* Build configuration list for PBXNativeTarget "RadioComposeView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				618B5BC3B9B74A5AE6E2A8BE5D48E3B7 /* Debug */,
+				420631C979493B269A9A5D44B3CE22A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3D2063E6C9BE48CB397BA700F9BF380 /* Build configuration list for PBXNativeTarget "Pods-CJSliderViewControllerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A91715FD0324AAB867A922F12EE81FA /* Debug */,
+				F92448CEB772D1597547347F95E2805E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
