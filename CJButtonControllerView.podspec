@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name         = "RadioButtons"
+  s.name         = "CJButtonControllerView"
   s.version      = "2.1.1"
-  s.summary      = "单选按钮的组合RadioButtons"
+  s.summary      = "由RadioButtons和RadioComposeView再组合使用的CJButtonControllerView"
   s.homepage     = "https://github.com/dvlproad/RadioButtons"
   s.license      = "MIT"
   s.author             = "dvlproad"
@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
 
   s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "2.1.1" }
-  s.source_files  = "RadioButtons/**/*.{h,m}"
-  s.resources = "RadioButtons/**/*.{png,xib}"
+  s.source_files  = "CJButtonControllerView/**/*.{h,m}"
+  # s.resources = "CJButtonControllerView/**/*.{png,xib}"
   s.frameworks = 'UIKit'
 
   # s.library   = "iconv"
@@ -20,6 +20,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
-
+  s.dependency "RadioButtons", "~> 2.1.1"
+  s.dependency "RadioComposeView", "~> 2.1.1"
+  
 end

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name         = "RadioButtons"
+  s.name         = "RadioComposeView"
   s.version      = "2.1.1"
-  s.summary      = "单选按钮的组合RadioButtons"
+  s.summary      = "RadioComposeView"
   s.homepage     = "https://github.com/dvlproad/RadioButtons"
   s.license      = "MIT"
   s.author             = "dvlproad"
@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "7.0"
 
   s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "2.1.1" }
-  s.source_files  = "RadioButtons/**/*.{h,m}"
-  s.resources = "RadioButtons/**/*.{png,xib}"
+  s.source_files  = "RadioComposeView/**/*.{h,m}"
+  # s.resources = "RadioComposeView/**/*.{png,xib}"
   s.frameworks = 'UIKit'
 
   # s.library   = "iconv"
