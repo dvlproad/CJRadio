@@ -11,6 +11,11 @@
 		783079D11D767F60009689F3 /* arrowLeft_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CD1D767F60009689F3 /* arrowLeft_red@2x.png */; };
 		783079D21D767F60009689F3 /* arrowRight_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CE1D767F60009689F3 /* arrowRight_gray@2x.png */; };
 		783079D31D767F60009689F3 /* arrowRight_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CF1D767F60009689F3 /* arrowRight_red@2x.png */; };
+		783079D71D769295009689F3 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079D51D769295009689F3 /* SliderViewController.m */; };
+		783079D81D769295009689F3 /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783079D61D769295009689F3 /* SliderViewController.xib */; };
+		783079DC1D769580009689F3 /* SliderViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079DA1D769580009689F3 /* SliderViewController2.m */; };
+		783079DD1D769580009689F3 /* SliderViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783079DB1D769580009689F3 /* SliderViewController2.xib */; };
+		783079E41D76CEFD009689F3 /* CJButtonControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079E31D76CEFD009689F3 /* CJButtonControllerView.m */; };
 		7846335A1D728C4B0082401F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633591D728C4B0082401F /* main.m */; };
 		7846335D1D728C4B0082401F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846335C1D728C4B0082401F /* AppDelegate.m */; };
 		784633601D728C4B0082401F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846335F1D728C4B0082401F /* ViewController.m */; };
@@ -19,8 +24,6 @@
 		784633681D728C4B0082401F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784633661D728C4B0082401F /* LaunchScreen.storyboard */; };
 		784633731D728C4B0082401F /* CJSliderViewControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633721D728C4B0082401F /* CJSliderViewControllerDemoTests.m */; };
 		7846337E1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846337D1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m */; };
-		784633901D728CA60082401F /* CJSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846338E1D728CA60082401F /* CJSliderViewController.m */; };
-		784633911D728CA60082401F /* CJSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7846338F1D728CA60082401F /* CJSliderViewController.xib */; };
 		784633AE1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633951D728E790082401F /* UIView+CJAddSubVIew.m */; };
 		784633AF1D728E790082401F /* UIView+CJShowDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633971D728E790082401F /* UIView+CJShowDropView.m */; };
 		784633B01D728E790082401F /* down_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 784633991D728E790082401F /* down_dark.png */; };
@@ -61,6 +64,14 @@
 		783079CD1D767F60009689F3 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_red@2x.png"; sourceTree = "<group>"; };
 		783079CE1D767F60009689F3 /* arrowRight_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_gray@2x.png"; sourceTree = "<group>"; };
 		783079CF1D767F60009689F3 /* arrowRight_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_red@2x.png"; sourceTree = "<group>"; };
+		783079D41D769295009689F3 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
+		783079D51D769295009689F3 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
+		783079D61D769295009689F3 /* SliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
+		783079D91D769580009689F3 /* SliderViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController2.h; sourceTree = "<group>"; };
+		783079DA1D769580009689F3 /* SliderViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController2.m; sourceTree = "<group>"; };
+		783079DB1D769580009689F3 /* SliderViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderViewController2.xib; sourceTree = "<group>"; };
+		783079E21D76CEFD009689F3 /* CJButtonControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJButtonControllerView.h; sourceTree = "<group>"; };
+		783079E31D76CEFD009689F3 /* CJButtonControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJButtonControllerView.m; sourceTree = "<group>"; };
 		784633551D728C4B0082401F /* CJSliderViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJSliderViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784633591D728C4B0082401F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7846335B1D728C4B0082401F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -77,9 +88,6 @@
 		784633791D728C4B0082401F /* CJSliderViewControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJSliderViewControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7846337D1D728C4B0082401F /* CJSliderViewControllerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSliderViewControllerDemoUITests.m; sourceTree = "<group>"; };
 		7846337F1D728C4B0082401F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7846338D1D728CA60082401F /* CJSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSliderViewController.h; sourceTree = "<group>"; };
-		7846338E1D728CA60082401F /* CJSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSliderViewController.m; sourceTree = "<group>"; };
-		7846338F1D728CA60082401F /* CJSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJSliderViewController.xib; sourceTree = "<group>"; };
 		784633941D728E790082401F /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
 		784633951D728E790082401F /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
 		784633961D728E790082401F /* UIView+CJShowDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJShowDropView.h"; sourceTree = "<group>"; };
@@ -130,6 +138,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		783079E11D76CEFD009689F3 /* CJButtonControllerView */ = {
+			isa = PBXGroup;
+			children = (
+				783079E21D76CEFD009689F3 /* CJButtonControllerView.h */,
+				783079E31D76CEFD009689F3 /* CJButtonControllerView.m */,
+			);
+			name = CJButtonControllerView;
+			path = ../../CJButtonControllerView;
+			sourceTree = "<group>";
+		};
 		7846334C1D728C4B0082401F = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +175,7 @@
 				7846335C1D728C4B0082401F /* AppDelegate.m */,
 				7846335E1D728C4B0082401F /* ViewController.h */,
 				7846335F1D728C4B0082401F /* ViewController.m */,
+				783079E11D76CEFD009689F3 /* CJButtonControllerView */,
 				789B20141D73F93E00F01BA3 /* RadioComposeView */,
 				784633921D728E790082401F /* RadioButtons */,
 				7846338B1D728C740082401F /* Controllers */,
@@ -199,9 +218,12 @@
 		7846338B1D728C740082401F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7846338D1D728CA60082401F /* CJSliderViewController.h */,
-				7846338E1D728CA60082401F /* CJSliderViewController.m */,
-				7846338F1D728CA60082401F /* CJSliderViewController.xib */,
+				783079D41D769295009689F3 /* SliderViewController.h */,
+				783079D51D769295009689F3 /* SliderViewController.m */,
+				783079D61D769295009689F3 /* SliderViewController.xib */,
+				783079D91D769580009689F3 /* SliderViewController2.h */,
+				783079DA1D769580009689F3 /* SliderViewController2.m */,
+				783079DB1D769580009689F3 /* SliderViewController2.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -387,6 +409,7 @@
 				784633B21D728E790082401F /* arrowUp@2x.png in Resources */,
 				783079D11D767F60009689F3 /* arrowLeft_red@2x.png in Resources */,
 				784633B61D728E790082401F /* btnTab_BG_selected@2x.png in Resources */,
+				783079DD1D769580009689F3 /* SliderViewController2.xib in Resources */,
 				784633B01D728E790082401F /* down_dark.png in Resources */,
 				784633B31D728E790082401F /* btnTab_BG_normal.png in Resources */,
 				784633B51D728E790082401F /* btnTab_BG_selected.png in Resources */,
@@ -394,9 +417,9 @@
 				784633681D728C4B0082401F /* LaunchScreen.storyboard in Resources */,
 				784633B11D728E790082401F /* arrowUp.png in Resources */,
 				784633B81D728E790082401F /* RadioButton_DropDown.xib in Resources */,
+				783079D81D769295009689F3 /* SliderViewController.xib in Resources */,
 				784633651D728C4B0082401F /* Assets.xcassets in Resources */,
 				783079D31D767F60009689F3 /* arrowRight_red@2x.png in Resources */,
-				784633911D728CA60082401F /* CJSliderViewController.xib in Resources */,
 				784633B91D728E790082401F /* RadioButton_Slider.xib in Resources */,
 				783079D21D767F60009689F3 /* arrowRight_gray@2x.png in Resources */,
 				784633631D728C4B0082401F /* Main.storyboard in Resources */,
@@ -426,15 +449,17 @@
 			files = (
 				789B201B1D73F93E00F01BA3 /* RadioComposeView.m in Sources */,
 				784633AF1D728E790082401F /* UIView+CJShowDropView.m in Sources */,
+				783079DC1D769580009689F3 /* SliderViewController2.m in Sources */,
 				784633AE1D728E790082401F /* UIView+CJAddSubVIew.m in Sources */,
 				784633601D728C4B0082401F /* ViewController.m in Sources */,
 				7846335D1D728C4B0082401F /* AppDelegate.m in Sources */,
 				789B201C1D73F93E00F01BA3 /* UIScrollView+CJAddContentView.m in Sources */,
-				784633901D728CA60082401F /* CJSliderViewController.m in Sources */,
+				783079D71D769295009689F3 /* SliderViewController.m in Sources */,
 				7846335A1D728C4B0082401F /* main.m in Sources */,
 				784633B71D728E790082401F /* RadioButton.m in Sources */,
 				789B201D1D73F93E00F01BA3 /* UIView+CJAddSubVIew.m in Sources */,
 				784633BA1D728E790082401F /* RadioButtons.m in Sources */,
+				783079E41D76CEFD009689F3 /* CJButtonControllerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

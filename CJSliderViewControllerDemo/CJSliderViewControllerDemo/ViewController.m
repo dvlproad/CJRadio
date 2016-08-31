@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "CJSliderViewController.h"
 
 @interface ViewController ()
 
@@ -18,11 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = NSLocalizedString(@"首页", nil);
-}
-- (IBAction)goCJSliderViewController:(id)sender {
-    CJSliderViewController *viewCotroller = [[CJSliderViewController alloc] initWithNibName:@"CJSliderViewController" bundle:nil];
-    [self.navigationController pushViewController:viewCotroller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

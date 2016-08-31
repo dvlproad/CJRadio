@@ -1,5 +1,5 @@
 //
-//  CJSliderViewController.h
+//  SliderViewController.h
 //  CJSliderViewControllerDemo
 //
 //  Created by lichq on 14-11-5.
@@ -10,7 +10,7 @@
 #import "RadioButtons.h"
 #import "RadioComposeView.h"
 
-@interface CJSliderViewController : UIViewController {
+@interface SliderViewController : UIViewController {
     
 }
 @property (nonatomic, strong) IBOutlet RadioButtons *sliderRadioButtons;

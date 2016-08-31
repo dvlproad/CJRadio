@@ -75,7 +75,10 @@
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_radioViewsInRadioComposeView:)]) {
         self.views = [self.dataSource cj_radioViewsInRadioComposeView:self];
     }
-    NSAssert(self.views.count >= 3, @"the min count of the views is 3");
+    if (self.views.count < 3) {
+        NSLog(@"warning: self.views.count < 3, wouldn't be reloadVies");
+        return;
+    }
     
     currentShowViewIndex = -1;
     

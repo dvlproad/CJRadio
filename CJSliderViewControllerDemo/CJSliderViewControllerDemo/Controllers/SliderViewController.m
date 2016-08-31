@@ -1,23 +1,23 @@
 //
-//  CJSliderViewController.m
+//  SliderViewController.m
 //  CJSliderViewControllerDemo
 //
 //  Created by lichq on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
-#import "CJSliderViewController.h"
+#import "SliderViewController.h"
 
 static NSInteger kMaxRadioButtonsShowViewCountDefault = 4;
 static NSInteger kSelectedIndexDefault = 2;
 
-@interface CJSliderViewController () <RadioButtonsDataSource, RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
+@interface SliderViewController () <RadioButtonsDataSource, RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
     NSArray *titles;
 }
 
 @end
 
-@implementation CJSliderViewController
+@implementation SliderViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,9 +44,9 @@ static NSInteger kSelectedIndexDefault = 2;
     self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
 }
 
-- (BOOL)automaticallyAdjustsScrollViewInsets {
-    return NO;
-}
+//- (BOOL)automaticallyAdjustsScrollViewInsets {
+//    return NO;
+//}
 
 
 #pragma mark - RadioButtonsDataSource

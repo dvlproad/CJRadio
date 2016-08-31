@@ -147,7 +147,10 @@
     self.currentSelectedIndex = defaultSelectedIndex;
     
     NSInteger componentCount = [self.dataSource cj_numberOfComponentsInRadioButtons:self];
-    NSAssert(componentCount >= 3, @"the min count of the titles is 3");
+    if (componentCount < 3) {
+        NSLog(@"warning: componentCount < 3, wouldn't be reloadVies");
+        return;
+    }
     
     //添加radioButton到sv中
     radioButtons = [[NSMutableArray alloc] init];
@@ -337,9 +340,11 @@
     [self addSubview:_rightArrowButton];
     
     
-    //刚开始隐藏左箭头，显示右箭头
+    //隐藏左、右箭头
     _leftArrowButton.hidden = YES;
-    _rightArrowButton.hidden = NO;
+    _rightArrowButton.hidden = YES;
+    
+    [self judgeAndSetArrowButtonState];
 }
 
 //左箭头点击
@@ -431,19 +436,32 @@
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (_haveArrowButton) {
-        if (scrollView.contentOffset.x == 0) {
-            _leftArrowButton.hidden = YES;
-            _rightArrowButton.hidden = NO;
-        }else if (scrollView.contentOffset.x+scrollView.frame.size.width == scrollView.contentSize.width) {
-            _leftArrowButton.hidden = NO;
-            _rightArrowButton.hidden = YES;
-        }else {
-            _leftArrowButton.hidden = NO;
-            _rightArrowButton.hidden = NO;
-        }
+        [self judgeAndSetArrowButtonState];
     }
 }
 
+/** 判断设设置箭头状态(显示或隐藏) */
+- (void)judgeAndSetArrowButtonState {
+    CGFloat scrollViewWidth = CGRectGetWidth(self.scrollView.frame);
+    CGFloat scrollViewContentSizeWidth = self.scrollView.contentSize.width;
+    if (scrollViewContentSizeWidth == scrollViewWidth) {
+        _leftArrowButton.hidden = YES;
+        _rightArrowButton.hidden = YES;
+        return;
+    }
+    
+    CGFloat contentOffsetX = self.scrollView.contentOffset.x;
+    if (contentOffsetX == 0) {
+        _leftArrowButton.hidden = YES;
+        _rightArrowButton.hidden = NO;
+    }else if ( contentOffsetX + scrollViewWidth == scrollViewContentSizeWidth) {
+        _leftArrowButton.hidden = NO;
+        _rightArrowButton.hidden = YES;
+    }else {
+        _leftArrowButton.hidden = NO;
+        _rightArrowButton.hidden = NO;
+    }
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "CJSliderViewController.h"
+#import "SliderViewController.h"
+#import "SliderViewController2.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    CJSliderViewController *viewController = [[CJSliderViewController alloc]initWithNibName:@"CJSliderViewController" bundle:nil];
+//    SliderViewController *viewController = [[SliderViewController alloc] initWithNibName:@"SliderViewController" bundle:nil];
+    SliderViewController2 *viewController = [[SliderViewController2 alloc]initWithNibName:@"SliderViewController2" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     self.window.rootViewController = navigationController;
     
