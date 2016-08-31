@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		783079D01D767F60009689F3 /* arrowLeft_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CC1D767F60009689F3 /* arrowLeft_gray@2x.png */; };
+		783079D11D767F60009689F3 /* arrowLeft_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CD1D767F60009689F3 /* arrowLeft_red@2x.png */; };
+		783079D21D767F60009689F3 /* arrowRight_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CE1D767F60009689F3 /* arrowRight_gray@2x.png */; };
+		783079D31D767F60009689F3 /* arrowRight_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 783079CF1D767F60009689F3 /* arrowRight_red@2x.png */; };
 		7846335A1D728C4B0082401F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633591D728C4B0082401F /* main.m */; };
 		7846335D1D728C4B0082401F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846335C1D728C4B0082401F /* AppDelegate.m */; };
 		784633601D728C4B0082401F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846335F1D728C4B0082401F /* ViewController.m */; };
@@ -53,6 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		783079CC1D767F60009689F3 /* arrowLeft_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_gray@2x.png"; sourceTree = "<group>"; };
+		783079CD1D767F60009689F3 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_red@2x.png"; sourceTree = "<group>"; };
+		783079CE1D767F60009689F3 /* arrowRight_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_gray@2x.png"; sourceTree = "<group>"; };
+		783079CF1D767F60009689F3 /* arrowRight_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_red@2x.png"; sourceTree = "<group>"; };
 		784633551D728C4B0082401F /* CJSliderViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJSliderViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784633591D728C4B0082401F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7846335B1D728C4B0082401F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -244,6 +252,10 @@
 		7846339A1D728E790082401F /* images_RadioButton_Slider */ = {
 			isa = PBXGroup;
 			children = (
+				783079CC1D767F60009689F3 /* arrowLeft_gray@2x.png */,
+				783079CD1D767F60009689F3 /* arrowLeft_red@2x.png */,
+				783079CE1D767F60009689F3 /* arrowRight_gray@2x.png */,
+				783079CF1D767F60009689F3 /* arrowRight_red@2x.png */,
 				7846339B1D728E790082401F /* arrowUp.png */,
 				7846339C1D728E790082401F /* arrowUp@2x.png */,
 				7846339D1D728E790082401F /* btnTab_BG_normal.png */,
@@ -373,16 +385,20 @@
 			files = (
 				784633B41D728E790082401F /* btnTab_BG_normal@2x.png in Resources */,
 				784633B21D728E790082401F /* arrowUp@2x.png in Resources */,
+				783079D11D767F60009689F3 /* arrowLeft_red@2x.png in Resources */,
 				784633B61D728E790082401F /* btnTab_BG_selected@2x.png in Resources */,
 				784633B01D728E790082401F /* down_dark.png in Resources */,
 				784633B31D728E790082401F /* btnTab_BG_normal.png in Resources */,
 				784633B51D728E790082401F /* btnTab_BG_selected.png in Resources */,
+				783079D01D767F60009689F3 /* arrowLeft_gray@2x.png in Resources */,
 				784633681D728C4B0082401F /* LaunchScreen.storyboard in Resources */,
 				784633B11D728E790082401F /* arrowUp.png in Resources */,
 				784633B81D728E790082401F /* RadioButton_DropDown.xib in Resources */,
 				784633651D728C4B0082401F /* Assets.xcassets in Resources */,
+				783079D31D767F60009689F3 /* arrowRight_red@2x.png in Resources */,
 				784633911D728CA60082401F /* CJSliderViewController.xib in Resources */,
 				784633B91D728E790082401F /* RadioButton_Slider.xib in Resources */,
+				783079D21D767F60009689F3 /* arrowRight_gray@2x.png in Resources */,
 				784633631D728C4B0082401F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

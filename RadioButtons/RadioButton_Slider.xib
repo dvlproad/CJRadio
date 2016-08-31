@@ -13,21 +13,15 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IoP-Eo-CHs">
                     <rect key="frame" x="0.0" y="0.0" width="74" height="49"/>
+                    <color key="backgroundColor" red="0.41176471110000001" green="0.75686275960000005" blue="0.9529411793" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" backgroundImage="btnTab_BG_normal.png">
+                    <state key="normal">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <state key="selected" backgroundImage="btnTab_BG_selected.png">
+                    <state key="selected">
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowUp.png" translatesAutoresizingMaskIntoConstraints="NO" id="yYG-Xa-oYz">
-                    <rect key="frame" x="33" y="37" width="9" height="5"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="5" id="7Zv-cM-rM4"/>
-                        <constraint firstAttribute="width" constant="9" id="J2f-Hu-Pim"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" preferredMaxLayoutWidth="1000" translatesAutoresizingMaskIntoConstraints="NO" id="rZF-Si-Xwp">
                     <rect key="frame" x="0.0" y="0.0" width="74" height="49"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -38,7 +32,6 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="IoP-Eo-CHs" firstAttribute="top" secondItem="aMf-Ea-n7d" secondAttribute="top" id="EWg-zF-e9K"/>
-                <constraint firstAttribute="centerX" secondItem="yYG-Xa-oYz" secondAttribute="centerX" id="Fpf-1Q-cUS"/>
                 <constraint firstAttribute="trailing" secondItem="IoP-Eo-CHs" secondAttribute="trailing" id="Ltr-r0-adz"/>
                 <constraint firstItem="rZF-Si-Xwp" firstAttribute="leading" secondItem="aMf-Ea-n7d" secondAttribute="leading" id="ONW-H7-kC1"/>
                 <constraint firstItem="rZF-Si-Xwp" firstAttribute="top" secondItem="aMf-Ea-n7d" secondAttribute="top" id="WRK-LF-Ny3"/>
@@ -46,7 +39,6 @@
                 <constraint firstAttribute="trailing" secondItem="rZF-Si-Xwp" secondAttribute="trailing" id="dyA-CX-FOw"/>
                 <constraint firstAttribute="bottom" secondItem="IoP-Eo-CHs" secondAttribute="bottom" id="e8g-w2-z2c"/>
                 <constraint firstItem="IoP-Eo-CHs" firstAttribute="leading" secondItem="aMf-Ea-n7d" secondAttribute="leading" id="vDx-kC-mHj"/>
-                <constraint firstAttribute="bottom" secondItem="yYG-Xa-oYz" secondAttribute="bottom" constant="7" id="vdY-5q-mTM"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -56,9 +48,4 @@
             </connections>
         </view>
     </objects>
-    <resources>
-        <image name="arrowUp.png" width="9" height="5"/>
-        <image name="btnTab_BG_normal.png" width="74" height="45"/>
-        <image name="btnTab_BG_selected.png" width="74" height="45"/>
-    </resources>
 </document>

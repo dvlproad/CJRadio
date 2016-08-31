@@ -21,6 +21,7 @@
 }
 @property (nonatomic, strong) UIScrollView *scrollView; //滚动视图（用于radiobutton过多时的滑动）
 @property (nonatomic, assign) NSInteger oldSelectedIndex;   /**< 之前选中的按钮的index值（当该值为默认的－1时，表示都没有选中） */
+@property (nonatomic, strong) UIImageView *lineImageView;
 
 @end
 
@@ -50,7 +51,6 @@
     self.scrollView.delegate = self;
     self.scrollView.bounces = NO;
     self.scrollView.backgroundColor = [UIColor orangeColor];
-    
     [self addSubview:self.scrollView];
 }
 
@@ -84,13 +84,29 @@
             [self.scrollView setContentSize:CGSizeMake(contentSizeWidth, contentSizeHeight)]; //设置self.scrollView.contentSize
         }
         
+        if (index == self.currentSelectedIndex) {
+            
+
+        }
+        
         radioButtonX += currentComponentWidth;
     }
     
     
+    /* 如果初始有默认选择哪个按钮，则滑动到该按钮位置 */
     if (self.currentSelectedIndex != -1) {
-        RadioButton *radioButton = [radioButtons objectAtIndex:self.currentSelectedIndex];
-        [self moveScrollViewToSelectItem:radioButton animated:NO];
+        RadioButton *targetRadioButton = [radioButtons objectAtIndex:self.currentSelectedIndex];
+        
+        if (self.showLineImageView) {
+            CGFloat lineImageViewX = CGRectGetMinX(targetRadioButton.frame);
+            CGFloat lineImageViewWidth = CGRectGetWidth(targetRadioButton.frame);
+            CGFloat lineImageViewHeight = self.lineImageViewHeight == 0 ? 1 : self.lineImageViewHeight;
+            CGFloat lineImageViewY = CGRectGetHeight(self.frame) - lineImageViewHeight;
+            self.lineImageView.frame = CGRectMake(lineImageViewX, lineImageViewY, lineImageViewWidth, lineImageViewHeight);
+            self.lineImageView.image = self.lineImage;
+        }
+        
+        [self moveScrollViewToSelectItem:targetRadioButton animated:NO];
     }
     
     /* 如果有左右箭头 */
@@ -158,6 +174,9 @@
             [lineViews addObject:lineView];
         }
     }
+    
+    self.lineImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [self.scrollView addSubview:self.lineImageView];
 }
 
 //注意radioButton_cur经常有未选中的状态，即经常会有self.currentSelectedIndex == -1的情况
@@ -257,8 +276,18 @@
  *  @param targetRadioButton 要滚动到的指定按钮
  *  @param animated          是否动画
  */
-- (void)moveScrollViewToSelectItem:(RadioButton *)targetRadioButton animated:(BOOL)animated {//滑动scrollView到显示出完整的targetRadioButton
-    //该item的距离计算。
+- (void)moveScrollViewToSelectItem:(RadioButton *)targetRadioButton animated:(BOOL)animated {
+    if (self.showLineImageView) {
+        CGFloat lineImageViewX = CGRectGetMinX(targetRadioButton.frame);
+        CGFloat lineImageViewWidth = CGRectGetWidth(targetRadioButton.frame);
+        CGFloat lineImageViewHeight = CGRectGetHeight(self.lineImageView.frame);
+        CGFloat lineImageViewY = CGRectGetHeight(self.frame) - lineImageViewHeight;
+        [UIView animateWithDuration:0.3 animations:^{
+            self.lineImageView.frame = CGRectMake(lineImageViewX, lineImageViewY, lineImageViewWidth, lineImageViewHeight);
+        }];
+    }
+     
+    //该item的距离计算。(滑动scrollView到显示出完整的targetRadioButton)
     //CGFloat leftX = CGRectGetMinX(targetRadioButton.frame);
     CGFloat rightX = CGRectGetMaxX(targetRadioButton.frame);
     

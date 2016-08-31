@@ -64,6 +64,9 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 @property (nonatomic, weak) id <RadioButtonsDelegate> delegate;
 @property (nonatomic, assign) RadioButtonType radioButtonType;
 @property (nonatomic, assign) NSInteger currentSelectedIndex;   /**< 当前选中的按钮的index值（当该值为默认的－1时，表示都没有选中） */
+@property (nonatomic, assign) BOOL showLineImageView;   /**< 是否显示底部线 */
+@property (nonatomic, strong) UIImage *lineImage;       /**< 底部线的图片 */
+@property (nonatomic, assign) CGFloat lineImageViewHeight;  /**< 底部线的图片的高度（默认1） */
 
 
 /**

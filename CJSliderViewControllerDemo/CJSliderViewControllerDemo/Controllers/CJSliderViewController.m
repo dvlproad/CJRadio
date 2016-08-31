@@ -26,8 +26,11 @@ static NSInteger kSelectedIndexDefault = 2;
 
     //RadioButtons
     titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
-    [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
-                               rightArrowImage:[UIImage imageNamed:@"btnTab_BG_selected"]
+    self.sliderRadioButtons.showLineImageView = YES;
+    self.sliderRadioButtons.lineImage = [UIImage imageNamed:@"arrowUp"];
+    self.sliderRadioButtons.lineImageViewHeight = 6;
+    [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
+                               rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
                            withArrowImageWidth:20];
     self.sliderRadioButtons.dataSource = self;
     self.sliderRadioButtons.delegate = self;
