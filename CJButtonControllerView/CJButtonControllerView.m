@@ -13,10 +13,12 @@ static NSInteger kSelectedIndexDefault = 0;
 
 @interface CJButtonControllerView () <RadioButtonsDataSource, RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
     
+    
 }
 @property (nonatomic, strong) IBOutlet RadioButtons *sliderRadioButtons;
 @property (nonatomic, strong) IBOutlet RadioComposeView *radioComposeView;
 @property (nonatomic, assign) NSInteger currentSelectedIndex;
+@property (nonatomic, strong) NSLayoutConstraint *sliderRadioButtonsHeightlayoutConstraint;
 
 @end
 
@@ -54,6 +56,7 @@ static NSInteger kSelectedIndexDefault = 0;
 
 
 - (void)reloadData {
+    self.sliderRadioButtonsHeightlayoutConstraint.constant = self.radioButtonsHeight;
     self.sliderRadioButtons.dataSource = self;
     self.radioComposeView.dataSource = self;
 }
@@ -93,13 +96,15 @@ static NSInteger kSelectedIndexDefault = 0;
                                                     multiplier:1
                                                       constant:0]];
     //height
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
-                                                     attribute:NSLayoutAttributeHeight
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:nil
-                                                     attribute:NSLayoutAttributeNotAnAttribute
-                                                    multiplier:1
-                                                      constant:100]];
+    self.sliderRadioButtonsHeightlayoutConstraint =
+            [NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
+                                         attribute:NSLayoutAttributeHeight
+                                         relatedBy:NSLayoutRelationEqual
+                                            toItem:nil
+                                         attribute:NSLayoutAttributeNotAnAttribute
+                                        multiplier:1
+                                          constant:self.radioButtonsHeight];
+    [self addConstraint:self.sliderRadioButtonsHeightlayoutConstraint];
     
     //RadioControllers
     self.radioComposeView = [[RadioComposeView alloc] initWithFrame:CGRectZero];

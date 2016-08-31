@@ -18,6 +18,7 @@
 @property (nonatomic, assign) BOOL showLineImageView;   /**< 是否显示底部线 */
 @property (nonatomic, strong) UIImage *lineImage;       /**< 底部线的图片 */
 @property (nonatomic, assign) CGFloat lineImageViewHeight;  /**< 底部线的图片的高度（默认1） */
+@property (nonatomic, assign) CGFloat radioButtonsHeight;   /**< 控件radioButtons的高度 */
 
 
 //设置RadioComposeView需要的数据

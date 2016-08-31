@@ -31,6 +31,7 @@
     
     self.buttonControllerView.defaultSelectedIndex = 1;
     self.buttonControllerView.maxRadioButtonsShowViewCount = 4;
+    self.buttonControllerView.radioButtonsHeight = 50;
     
     [self.buttonControllerView reloadData];
 }
