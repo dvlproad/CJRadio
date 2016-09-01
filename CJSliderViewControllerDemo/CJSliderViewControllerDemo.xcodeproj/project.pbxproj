@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		561CDB18BAD79417E7464D84 /* libPods-CJSliderViewControllerDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE91107218914DFA7D75744B /* libPods-CJSliderViewControllerDemoTests.a */; };
+		7809DDEF1D78031900CAD231 /* addChannel_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7809DDED1D78031900CAD231 /* addChannel_normal@2x.png */; };
+		7809DDF01D78031900CAD231 /* addChannel_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7809DDEE1D78031900CAD231 /* addChannel_selected@2x.png */; };
 		783079D71D769295009689F3 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079D51D769295009689F3 /* SliderViewController.m */; };
 		783079D81D769295009689F3 /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783079D61D769295009689F3 /* SliderViewController.xib */; };
 		783079DC1D769580009689F3 /* SliderViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079DA1D769580009689F3 /* SliderViewController2.m */; };
@@ -47,6 +49,8 @@
 		14C82FF300F450F62CB59D81 /* libPods-CJSliderViewControllerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJSliderViewControllerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9F16A8BD6BFD90ED37EE6B /* Pods-CJSliderViewControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJSliderViewControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJSliderViewControllerDemo/Pods-CJSliderViewControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6B1AC48BEB321ED1949C07C6 /* Pods-CJSliderViewControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJSliderViewControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJSliderViewControllerDemo/Pods-CJSliderViewControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7809DDED1D78031900CAD231 /* addChannel_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addChannel_normal@2x.png"; sourceTree = "<group>"; };
+		7809DDEE1D78031900CAD231 /* addChannel_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addChannel_selected@2x.png"; sourceTree = "<group>"; };
 		783079D41D769295009689F3 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		783079D51D769295009689F3 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		783079D61D769295009689F3 /* SliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
@@ -125,6 +129,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7809DDEB1D78031900CAD231 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7809DDEC1D78031900CAD231 /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7809DDEC1D78031900CAD231 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7809DDED1D78031900CAD231 /* addChannel_normal@2x.png */,
+				7809DDEE1D78031900CAD231 /* addChannel_selected@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		783079E11D76CEFD009689F3 /* CJButtonControllerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +185,7 @@
 				7846335C1D728C4B0082401F /* AppDelegate.m */,
 				7846335E1D728C4B0082401F /* ViewController.h */,
 				7846335F1D728C4B0082401F /* ViewController.m */,
+				7809DDEB1D78031900CAD231 /* Resources */,
 				783079E11D76CEFD009689F3 /* CJButtonControllerView */,
 				7846338B1D728C740082401F /* Controllers */,
 				7846338C1D728C740082401F /* Views */,
@@ -337,9 +359,11 @@
 				784633681D728C4B0082401F /* LaunchScreen.storyboard in Resources */,
 				783079D81D769295009689F3 /* SliderViewController.xib in Resources */,
 				784633651D728C4B0082401F /* Assets.xcassets in Resources */,
+				7809DDF01D78031900CAD231 /* addChannel_selected@2x.png in Resources */,
 				78C7DC761D772CEA005F86D2 /* RadioButton_DropDown.xib in Resources */,
 				784633631D728C4B0082401F /* Main.storyboard in Resources */,
 				78C7DC771D772CEA005F86D2 /* RadioButton_Slider.xib in Resources */,
+				7809DDEF1D78031900CAD231 /* addChannel_normal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,7 +39,8 @@
 @property (nonatomic, strong) UIImage *lineImage;       /**< 底部线的图片 */
 @property (nonatomic, assign) CGFloat lineImageViewHeight;  /**< 底部线的图片的高度（默认1） */
 @property (nonatomic, assign) CGFloat radioButtonsHeight;   /**< 控件radioButtons的高度 */
-
+//@property (nonatomic, assign) CGFloat radioButtonsLeftViewWdith;    /**< 控件radioButtons左侧视图的宽度 */
+//@property (nonatomic, assign) CGFloat radioButtonsRightViewWdith;    /**< 控件radioButtons右侧视图的宽度 */
 
 //设置RadioComposeView需要的数据
 @property (nonatomic, strong) NSArray<UIViewController *> *componentViewControllers;
@@ -62,5 +63,21 @@
 - (void)addLeftArrowImage:(UIImage *)leftArrowImage
           rightArrowImage:(UIImage *)rightArrowImage
       withArrowImageWidth:(CGFloat)arrowImageWidth;
+
+/**
+ *  在radioButtons左侧添加视图
+ *
+ *  @param radioButtonsLeftView      radioButtons的左侧视图
+ *  @param radioButtonsLeftViewWidth radioButtons左侧视图的宽度
+ */
+- (void)addRadioButtonsLeftView:(UIView *)radioButtonsLeftView withWidth:(CGFloat)radioButtonsLeftViewWidth;
+
+/**
+ *  在radioButtons右侧添加视图（可用来设置一些比如栏目添加的按钮视图）
+ *
+ *  @param radioButtonsRightView      radioButtons的右侧视图
+ *  @param radioButtonsRightViewWidth radioButtons右侧视图的宽度
+ */
+- (void)addRadioButtonsRightView:(UIView *)radioButtonsRightView withWidth:(CGFloat)radioButtonsRightViewWidth;
 
 @end

@@ -35,6 +35,17 @@
     
     self.buttonControllerView.dataSource = self;
     self.buttonControllerView.delegate = self;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[UIImage imageNamed:@"addChannel_normal"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"addChannel_selected"] forState:UIControlStateSelected];
+    [self.buttonControllerView addRadioButtonsLeftView:button withWidth:60];
+    
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightButton setImage:[UIImage imageNamed:@"addChannel_normal"] forState:UIControlStateNormal];
+    [rightButton setImage:[UIImage imageNamed:@"addChannel_selected"] forState:UIControlStateSelected];
+    [self.buttonControllerView addRadioButtonsRightView:rightButton withWidth:40];
+    
     [self.buttonControllerView reloadData];
 }
 
