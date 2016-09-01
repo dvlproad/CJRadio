@@ -176,11 +176,8 @@ static NSInteger kSelectedIndexDefault = 0;
 }
 
 - (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
-    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_Slider" owner:nil options:nil];
-    RadioButton *radioButton = [radioButtonNib lastObject];
+    RadioButton *radioButton = [self.dataSource cj_buttonControllerView:self cellForComponentAtIndex:index];
     [radioButton setTitle:self.titles[index]];
-    radioButton.textNormalColor = [UIColor blackColor];
-    radioButton.textSelectedColor = [UIColor greenColor];
     
     return radioButton;
 }

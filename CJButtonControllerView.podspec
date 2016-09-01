@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJButtonControllerView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "由RadioButtons和RadioComposeView再组合使用的CJButtonControllerView"
   s.homepage     = "https://github.com/dvlproad/RadioButtons"
   s.license      = "MIT"
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "bc_1.0.0" }
+  s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "bc_1.0.1" }
   s.source_files  = "CJButtonControllerView/**/*.{h,m}"
   # s.resources = "CJButtonControllerView/**/*.{png,xib}"
   s.frameworks = 'UIKit'

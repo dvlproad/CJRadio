@@ -8,7 +8,7 @@
 
 #import "SliderViewController2.h"
 
-@interface SliderViewController2 ()
+@interface SliderViewController2 () <CJButtonControllerViewDataSource>
 
 @end
 
@@ -33,9 +33,9 @@
     self.buttonControllerView.maxRadioButtonsShowViewCount = 4;
     self.buttonControllerView.radioButtonsHeight = 50;
     
+    self.buttonControllerView.dataSource = self;
     [self.buttonControllerView reloadData];
 }
-
 
 - (NSArray<UIViewController *> *)getRadioControllers {
     /* 设置radioControllers（黄橙相间） */
@@ -76,6 +76,17 @@
         [viewController.view addSubview:label];
     }
     return radioControllers;
+}
+
+#pragma mark - CJButtonControllerViewDataSource
+- (RadioButton *)cj_buttonControllerView:(CJButtonControllerView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index {
+    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_Slider" owner:nil options:nil];
+    RadioButton *radioButton = [radioButtonNib lastObject];
+    
+    radioButton.textNormalColor = [UIColor blackColor];
+    radioButton.textSelectedColor = [UIColor whiteColor];
+    
+    return radioButton;
 }
 
 - (void)didReceiveMemoryWarning {

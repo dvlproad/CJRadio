@@ -10,9 +10,20 @@
 #import <RadioButtons/RadioButtons.h>
 #import <RadioComposeView/RadioComposeView.h>
 
+@class CJButtonControllerView;
+@protocol CJButtonControllerViewDataSource <NSObject>
+
+@required
+/** 获取数据源 */
+- (RadioButton *)cj_buttonControllerView:(CJButtonControllerView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index;
+
+@end
+
 @interface CJButtonControllerView : UIView {
     
 }
+@property (nonatomic, weak) id <CJButtonControllerViewDataSource> dataSource;
+
 //设置RadioButtons需要的数据
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, assign) BOOL showLineImageView;   /**< 是否显示底部线 */
