@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RadioControllersViewController">
@@ -17,14 +17,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSy-h3-ti6" customClass="RadioComposeView">
-                    <rect key="frame" x="10" y="93" width="300" height="465"/>
+                    <rect key="frame" x="10" y="105" width="300" height="453"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USg-zD-3RH">
+                    <rect key="frame" x="40" y="65" width="240" height="30"/>
+                    <color key="backgroundColor" red="0.41176471110000001" green="0.75686275960000005" blue="0.9529411793" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="kNK-Tb-jfZ"/>
+                    </constraints>
+                    <state key="normal" title="changeShowViewIndex">
+                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="changeShowViewIndex:" destination="-1" eventType="touchUpInside" id="nlF-jw-9eL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="USg-zD-3RH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="8W3-BG-4sG"/>
+                <constraint firstAttribute="trailing" secondItem="USg-zD-3RH" secondAttribute="trailing" constant="40" id="GId-m3-GfV"/>
+                <constraint firstItem="USg-zD-3RH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="H32-xI-mcg"/>
                 <constraint firstAttribute="bottom" secondItem="SSy-h3-ti6" secondAttribute="bottom" constant="10" id="IZZ-Jp-ujF"/>
-                <constraint firstItem="SSy-h3-ti6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="93" id="Qpe-gV-eC8"/>
+                <constraint firstItem="SSy-h3-ti6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="105" id="Qpe-gV-eC8"/>
                 <constraint firstAttribute="trailing" secondItem="SSy-h3-ti6" secondAttribute="trailing" constant="10" id="gOX-B1-qNJ"/>
                 <constraint firstItem="SSy-h3-ti6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zvO-7Y-OBa"/>
             </constraints>

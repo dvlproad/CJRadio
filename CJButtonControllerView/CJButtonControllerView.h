@@ -19,10 +19,19 @@
 
 @end
 
+
+@protocol CJButtonControllerViewDelegate <NSObject>
+
+- (void)cj_buttonControllerView:(CJButtonControllerView *)buttonControllerView didChangeToIndex:(NSInteger)index;
+
+@end
+
+
 @interface CJButtonControllerView : UIView {
     
 }
 @property (nonatomic, weak) id <CJButtonControllerViewDataSource> dataSource;
+@property (nonatomic, weak) id <CJButtonControllerViewDelegate> delegate;
 
 //设置RadioButtons需要的数据
 @property (nonatomic, strong) NSArray *titles;

@@ -8,7 +8,7 @@
 
 #import "SliderViewController2.h"
 
-@interface SliderViewController2 () <CJButtonControllerViewDataSource>
+@interface SliderViewController2 () <CJButtonControllerViewDataSource, CJButtonControllerViewDelegate>
 
 @end
 
@@ -34,6 +34,7 @@
     self.buttonControllerView.radioButtonsHeight = 50;
     
     self.buttonControllerView.dataSource = self;
+    self.buttonControllerView.delegate = self;
     [self.buttonControllerView reloadData];
 }
 
@@ -78,7 +79,7 @@
     return radioControllers;
 }
 
-#pragma mark - CJButtonControllerViewDataSource
+#pragma mark - CJButtonControllerViewDataSource && CJButtonControllerViewDelegate
 - (RadioButton *)cj_buttonControllerView:(CJButtonControllerView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index {
     NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_Slider" owner:nil options:nil];
     RadioButton *radioButton = [radioButtonNib lastObject];
@@ -87,6 +88,10 @@
     radioButton.textSelectedColor = [UIColor whiteColor];
     
     return radioButton;
+}
+
+- (void)cj_buttonControllerView:(CJButtonControllerView *)buttonControllerView didChangeToIndex:(NSInteger)index {
+    NSLog(@"didChangeToIndex = %ld", index);
 }
 
 - (void)didReceiveMemoryWarning {

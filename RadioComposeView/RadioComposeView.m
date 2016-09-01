@@ -373,8 +373,8 @@
 }
 */
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    //NSLog(@"执行scrollRectToVisible的时候，会有滚动动画，该滚动动画结束的时候会调用此方法");
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    //NSLog(@"执行有滚动动画的代码操作时，比如scrollRectToVisible或setContentOffset:的animated为YES的时候，都会该滚动动画结束的时候调用此方法");
     
     [self resetViewToLeftCenterRightWithShowViewIndex:selIndex];
     [self scrollToCenterViewWithAnimate:NO];

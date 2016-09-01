@@ -12,7 +12,7 @@ static NSInteger kMaxRadioButtonsShowViewCountDefault = 3;
 static NSInteger kSelectedIndexDefault = 0;
 
 @interface CJButtonControllerView () <RadioButtonsDataSource, RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
-    
+    BOOL isDelegateDoneInRadioButton; //避免点击单选按钮的时候，delegate执行两次
     
 }
 @property (nonatomic, strong) IBOutlet RadioButtons *sliderRadioButtons;
@@ -201,24 +201,29 @@ static NSInteger kSelectedIndexDefault = 0;
 
 #pragma mark - RadioButtonsDelegate & RadioComposeViewDelegate
 - (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+    isDelegateDoneInRadioButton = YES;
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
     [self.radioComposeView showViewWithIndex:index_cur];
     self.currentSelectedIndex = index_cur;
     
-    [self doSomethingToCon_whereIndex:index_cur];
+    [self didChangeToIndex:index_cur];
 }
 
 - (void)cj_radioComposeView:(RadioComposeView *)radioComposeView didChangeToIndex:(NSInteger)index {
-    [self.sliderRadioButtons cj_selectComponentAtIndex:index animated:YES];
-    self.currentSelectedIndex  = index;
-    
-    [self doSomethingToCon_whereIndex:index];
+    if (isDelegateDoneInRadioButton == NO) {
+        [self.sliderRadioButtons cj_selectComponentAtIndex:index animated:YES];
+        self.currentSelectedIndex  = index;
+        
+        [self didChangeToIndex:index];
+    }
+    isDelegateDoneInRadioButton = NO;
 }
 
 
-#pragma mark - 子类可选的继承方法
-- (void)doSomethingToCon_whereIndex:(NSInteger)index {//若有类继承自此类，子类做一些额外的操作，比如“强制刷新”的操作
-    
+- (void)didChangeToIndex:(NSInteger)index { //变化之后，常用来做一些比如“强制刷新”的操作
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cj_buttonControllerView:didChangeToIndex:)]) {
+        [self.delegate cj_buttonControllerView:self didChangeToIndex:index];
+    }
 }
 
 

@@ -29,6 +29,11 @@
 }
 
 
+- (IBAction)changeShowViewIndex:(id)sender {
+    NSInteger viewControllerCount = [[self getRadioControllers] count];
+    [self.radioComposeView showViewWithIndex:random()%viewControllerCount];
+}
+
 - (NSArray<UIViewController *> *)getRadioControllers {
     /* 设置radioControllers（黄橙相间） */
     NSMutableArray *radioControllers = [[NSMutableArray alloc] init];
