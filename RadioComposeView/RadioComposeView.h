@@ -70,4 +70,11 @@
  */
 - (void)showViewWithIndex:(NSInteger)showViewIndex;
 
+/**
+ *  滑动到显示的视图(即中视图)
+ *
+ *  @param isAnimate 滚动过程中是否要有动画
+ */
+- (void)scrollToCenterViewWithAnimate:(BOOL)isAnimate;
+
 @end

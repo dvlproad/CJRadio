@@ -22,6 +22,9 @@
     
     self.radioComposeView.dataSource = self;
     self.radioComposeView.delegate = self;
+    
+//    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
+//    [self.radioComposeView showViewWithIndex:2];
 }
 
 - (BOOL)automaticallyAdjustsScrollViewInsets {

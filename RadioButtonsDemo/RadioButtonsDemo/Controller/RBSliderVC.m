@@ -21,18 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor greenColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     
-    [self initizileDataForRadioButtons];
-}
-
-/**
- *  初始化数据（单选按钮）
- */
-- (void)initizileDataForRadioButtons {
     titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
     self.sliderRadioButtons.showLineImageView = YES;
-    self.sliderRadioButtons.lineImage = [UIImage imageNamed:@"arrowUp"];
+    self.sliderRadioButtons.lineImage = [UIImage imageNamed:@"arrowUp_white"];
     self.sliderRadioButtons.lineImageViewHeight = 6;
     [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
                                rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
@@ -41,10 +34,9 @@
     self.sliderRadioButtons.delegate = self;
 }
 
-
 #pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
-    return 2;
+    return 12;
 }
 
 - (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons {

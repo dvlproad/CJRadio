@@ -27,12 +27,6 @@
 
 @implementation RadioComposeView
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    [self scrollToCenterViewWithAnimate:NO];  //滑动到显示的视图(即中视图)
-}
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -42,12 +36,14 @@
     return self;
 }
 
-
-- (void)awakeFromNib{
-    [super awakeFromNib];
-    
-    [self commonInit];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
 }
+
 
 - (void)commonInit {
     self.backgroundColor = [UIColor blackColor];
@@ -56,7 +52,7 @@
     [self addScrollViewToSelf];
     [self addContentViewToScrollView];
     
-    //Left、Center、Right按RGB红绿蓝排序
+    //Left、Center、Right
     [self addLeftViewToScrollView];
     [self addCenterViewToScrollView];
     [self addRightViewToScrollView];
@@ -137,7 +133,7 @@
     [_viewR cj_addSubView:newRightView withEdgeInsets:UIEdgeInsetsZero];
     
     //滑动到显示的视图(即中视图)
-    //[self scrollToCenterView];  //原本使用frame的时候写在这里有效，现在由于使用约束，而导致第一次初始化的时候无效，所以讲第一次以及其他次分开成写在layoutSubviews和scrollViewDidEndDecelerating了。
+    //[self scrollToCenterViewWithAnimate:NO];  //TODO: //原本使用frame的时候写在这里有效，现在由于使用约束，而导致第一次初始化的时候无效，所以将第一次以及其他次分开成写在layoutSubviews和scrollViewDidEndDecelerating了。
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(cj_radioComposeView:didChangeToIndex:)]) {
         [self.delegate cj_radioComposeView:self didChangeToIndex:centerViewIndex];
@@ -149,7 +145,7 @@
 #pragma mark - ScrolView、ContentView、LeftView、CenterView、RightView的加载
 - (void)addScrollViewToSelf {
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectZero];
-    _scrollView.backgroundColor = [UIColor cyanColor];
+    _scrollView.backgroundColor = [UIColor clearColor];
     _scrollView.pagingEnabled = YES;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.showsHorizontalScrollIndicator = NO;
@@ -161,15 +157,12 @@
 
 
 - (void)addContentViewToScrollView {
-    [_scrollView addSubview:contentView];
-    
     //scrollView采用三页显示（只将前一页，现在页，下一页的页面加载进来，其他的不加载)，以此来节省内存开销。
     contentView = [_scrollView cj_addContentViewWithWidthMultiplier:3 heightMultiplier:1];
 }
 
 - (void)addLeftViewToScrollView {
     UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor redColor];
     [contentView addSubview:view];
     
     view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -214,7 +207,6 @@
 
 - (void)addCenterViewToScrollView {
     UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor greenColor];
     [contentView addSubview:view];
     
     view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -260,7 +252,6 @@
 
 - (void)addRightViewToScrollView {
     UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor blueColor];
     [contentView addSubview:view];
     
     view.translatesAutoresizingMaskIntoConstraints = NO;

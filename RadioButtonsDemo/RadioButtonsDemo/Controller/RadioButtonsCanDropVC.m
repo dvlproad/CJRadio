@@ -85,7 +85,7 @@
         [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
         [popupView addSubview:btn];
         
-        
+        //TODO: 崩溃
         __weak typeof(RadioButtons *)weakRadioButtonsCanDrop = radioButtonsCanDrop;
         CJTapViewTappedAction cjTapViewTappedAction = ^(UIView *view) {
             RadioButton *radioButton = (RadioButton *)[weakRadioButtonsCanDrop viewWithTag:RadioButton_TAG_BEGIN + radioButtonsCanDrop.currentSelectedIndex];
