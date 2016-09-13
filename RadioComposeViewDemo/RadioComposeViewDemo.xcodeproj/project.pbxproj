@@ -20,6 +20,8 @@
 		78FA93101D7009650023252A /* RadioControllersDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA930F1D7009650023252A /* RadioControllersDemoUITests.m */; };
 		78FA93221D700A610023252A /* RadioControllersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA93201D700A610023252A /* RadioControllersViewController.m */; };
 		78FA93231D700A610023252A /* RadioControllersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FA93211D700A610023252A /* RadioControllersViewController.xib */; };
+		78FAB57C1D884EC8005C3627 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FAB57A1D884EC8005C3627 /* Home1.m */; };
+		78FAB57D1D884EC8005C3627 /* Home1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FAB57B1D884EC8005C3627 /* Home1.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,9 @@
 		78FA931F1D700A610023252A /* RadioControllersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioControllersViewController.h; sourceTree = "<group>"; };
 		78FA93201D700A610023252A /* RadioControllersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioControllersViewController.m; sourceTree = "<group>"; };
 		78FA93211D700A610023252A /* RadioControllersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioControllersViewController.xib; sourceTree = "<group>"; };
+		78FAB5791D884EC8005C3627 /* Home1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home1.h; sourceTree = "<group>"; };
+		78FAB57A1D884EC8005C3627 /* Home1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home1.m; sourceTree = "<group>"; };
+		78FAB57B1D884EC8005C3627 /* Home1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home1.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +182,9 @@
 				78FA931F1D700A610023252A /* RadioControllersViewController.h */,
 				78FA93201D700A610023252A /* RadioControllersViewController.m */,
 				78FA93211D700A610023252A /* RadioControllersViewController.xib */,
+				78FAB5791D884EC8005C3627 /* Home1.h */,
+				78FAB57A1D884EC8005C3627 /* Home1.m */,
+				78FAB57B1D884EC8005C3627 /* Home1.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +303,7 @@
 				78FA92FA1D7009650023252A /* LaunchScreen.storyboard in Resources */,
 				78FA92F71D7009650023252A /* Assets.xcassets in Resources */,
 				78FA92F51D7009650023252A /* Main.storyboard in Resources */,
+				78FAB57D1D884EC8005C3627 /* Home1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +332,7 @@
 				789B20121D73F70600F01BA3 /* UIScrollView+CJAddContentView.m in Sources */,
 				789B20131D73F70600F01BA3 /* UIView+CJAddSubVIew.m in Sources */,
 				78FA92F21D7009650023252A /* ViewController.m in Sources */,
+				78FAB57C1D884EC8005C3627 /* Home1.m in Sources */,
 				789B20111D73F70600F01BA3 /* RadioComposeView.m in Sources */,
 				78FA92EF1D7009650023252A /* AppDelegate.m in Sources */,
 				78FA92EC1D7009650023252A /* main.m in Sources */,

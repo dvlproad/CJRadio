@@ -27,6 +27,14 @@
 
 @implementation RadioComposeView
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -36,12 +44,10 @@
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self commonInit];
 }
 
 
@@ -64,6 +70,8 @@
     //loadViews
     [self reloadViews];
 }
+
+
 
 /** 完整的描述请参见文件头部 */
 - (void)reloadViews {
@@ -350,14 +358,66 @@
 
 
 #pragma mark - UIScrollViewDelegate
-/*
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     //由于我们这里使用的是只加载当前页及当前页的前后两页来显示的方式，以减少内存方式，所以当我们拖动到不是所加载的这几页时，比如拖动到当前页的前两页时，就会由于之前没有加载，而显示空内容(即尤其是当我们拖动的距离超过一页的时候)。但是由于我们这里scrollView只设置了三页，也就是说scrollView的contentSize只有三页大小，意味着当scrollView处于中视图时候(实际上显示的时候一直是处于中视图的)，其根本不可能滑动操作一页。所以，我们这里也就没必要在拖动过程中随时检查是否超过一页，来为了避免出现拖动过程中出现空内容的view的情况。
-    NSLog(@"scrollView.contentOffset.x  = %.1f", scrollView.contentOffset.x );
+    if (scrollView != _scrollView) {
+        return;
+    }
+    
+    CGFloat contentOffsetX = scrollView.contentOffset.x;
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    switch (self.scrollType) {
+        case RadioComposeViewScrollTypeNormal:
+        {
+            
+            break;
+        }
+        case RadioComposeViewScrollTypeBanScrollHorizontal:
+        {
+            CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
+            if (contentOffsetX < scrollViewWidth || contentOffsetX > scrollViewWidth) {
+                contentOffsetX = scrollViewWidth;
+                scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
+            }
+            
+            break;
+        }
+//        case RadioComposeViewScrollTypeBanScrollVertical:
+//        {
+//            CGFloat scrollViewHeight = CGRectGetHeight(scrollView.frame);
+//            if (contentOffsetY < scrollViewHeight || contentOffsetY > scrollViewHeight) {
+//                contentOffsetY = scrollViewHeight;
+//                scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
+//            }
+//            break;
+//        }
+        case RadioComposeViewScrollTypeBanScrollCycle:
+        {
+            if (currentShowViewIndex == 0) {
+                CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
+                if (contentOffsetX < scrollViewWidth) {
+                    contentOffsetX = scrollViewWidth;
+                    scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
+                }
+            }
+            if (currentShowViewIndex == self.views.count-1) {
+                CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
+                if (contentOffsetX > scrollViewWidth) {
+                    contentOffsetX = scrollViewWidth;
+                    scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
+                }
+            }
+            
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 
-
+/*
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     NSLog(@"scrollViewDidEndDragging: %@", decelerate ? @"YES" : @"NO");
     NSLog(@"因为这里scrollView.pagingEnabled = YES;所以，我们视图的拖动结束和滚动结束都统一到scrollViewDidEndDecelerating中去处理。");

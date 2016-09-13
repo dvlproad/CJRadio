@@ -7,6 +7,7 @@
 //
 
 #import "RadioControllersViewController.h"
+#import "Home1.h"
 
 @interface RadioControllersViewController () <RadioComposeViewDataSource, RadioComposeViewDelegate> {
     
@@ -22,9 +23,15 @@
     
     self.radioComposeView.dataSource = self;
     self.radioComposeView.delegate = self;
-    
+    self.radioComposeView.scrollType = RadioComposeViewScrollTypeBanScrollHorizontal;
 //    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
 //    [self.radioComposeView showViewWithIndex:2];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
 }
 
 - (BOOL)automaticallyAdjustsScrollViewInsets {
@@ -49,7 +56,8 @@
     home2.view.backgroundColor = [UIColor orangeColor];
     [radioControllers addObject:home2];
     
-    UIViewController *home3 = [[UIViewController alloc]init];
+//    UIViewController *home3 = [[UIViewController alloc]init];
+    Home1 *home3 = [[Home1 alloc] initWithNibName:@"Home1" bundle:nil];
     home3.view.backgroundColor = [UIColor yellowColor];
     [radioControllers addObject:home3];
     

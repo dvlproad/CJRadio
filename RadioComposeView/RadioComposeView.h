@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, RadioComposeViewScrollType) {
+    RadioComposeViewScrollTypeNormal,
+    RadioComposeViewScrollTypeBanScrollHorizontal,      /**< 禁用水平方向滑动 */
+//    RadioComposeViewScrollTypeBanScrollVertical,      /**< 禁用竖直方向滑动 */ (暂时只有左中右即暂时顶多只能水平滑动)
+    RadioComposeViewScrollTypeBanScrollCycle,           /**< 禁止循环滚动 */
+};
+
 @class RadioComposeView;
 
 
@@ -57,6 +64,7 @@
 }
 @property (nonatomic, weak) id <RadioComposeViewDataSource> dataSource;
 @property (nonatomic, weak) id <RadioComposeViewDelegate> delegate;
+@property (nonatomic, assign) RadioComposeViewScrollType scrollType;
 
 /**
  *  重新加载View视图
