@@ -12,6 +12,7 @@
 @interface RadioControllersViewController () <RadioComposeViewDataSource, RadioComposeViewDelegate> {
     
 }
+@property (nonatomic, strong) NSArray <UIViewController *> *componentViewControllers;
 
 @end
 
@@ -20,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.componentViewControllers = [self getComponentViewControllers];
     
     self.radioComposeView.dataSource = self;
     self.radioComposeView.delegate = self;
@@ -40,11 +43,11 @@
 
 
 - (IBAction)changeShowViewIndex:(id)sender {
-    NSInteger viewControllerCount = [[self getRadioControllers] count];
+    NSInteger viewControllerCount = [self.componentViewControllers count];
     [self.radioComposeView showViewWithIndex:random()%viewControllerCount];
 }
 
-- (NSArray<UIViewController *> *)getRadioControllers {
+- (NSArray<UIViewController *> *)getComponentViewControllers {
     /* 设置radioControllers（黄橙相间） */
     NSMutableArray *radioControllers = [[NSMutableArray alloc] init];
     
@@ -94,10 +97,10 @@
 }
 
 - (NSArray<UIView *> *)cj_radioViewsInRadioComposeView:(RadioComposeView *)radioComposeView {
-    NSArray *radioViewControllers = [self getRadioControllers];
+    NSArray *componentViewControllers = self.componentViewControllers;
     
     NSMutableArray *views = [[NSMutableArray alloc] init];
-    for (UIViewController *vc in radioViewControllers) {
+    for (UIViewController *vc in componentViewControllers) {
         [views addObject:vc.view];
         [self addChildViewController:vc];//记得添加进去
     }

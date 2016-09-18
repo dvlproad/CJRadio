@@ -26,7 +26,7 @@
                                  rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
                              withArrowImageWidth:20];
     
-    self.buttonControllerView.componentViewControllers = [self getRadioControllers];
+    self.buttonControllerView.componentViewControllers = [self getComponentViewControllers];
     self.buttonControllerView.componentViewParentViewController = self;
     
     self.buttonControllerView.defaultSelectedIndex = 1;
@@ -49,7 +49,7 @@
     [self.buttonControllerView reloadData];
 }
 
-- (NSArray<UIViewController *> *)getRadioControllers {
+- (NSArray<UIViewController *> *)getComponentViewControllers {
     /* 设置radioControllers（黄橙相间） */
     NSMutableArray *radioControllers = [[NSMutableArray alloc] init];
     
