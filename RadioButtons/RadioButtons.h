@@ -59,17 +59,27 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 }
 @property (nonatomic, weak) id <RadioButtonsDataSource> dataSource;
 @property (nonatomic, weak) id <RadioButtonsDelegate> delegate;
-@property (nonatomic, assign) RadioButtonType radioButtonType;
-@property (nonatomic, assign) NSInteger currentSelectedIndex;   /**< 当前选中的按钮的index值（当该值为默认的－1时，表示都没有选中） */
-@property (nonatomic, assign) BOOL showLineImageView;   /**< 是否显示底部线 */
-@property (nonatomic, strong) UIImage *lineImage;       /**< 底部线的图片 */
-@property (nonatomic, assign) CGFloat lineImageViewHeight;  /**< 底部线的图片的高度（默认1） */
 
+@property (nonatomic, assign) RadioButtonType radioButtonType;
+@property (nonatomic, assign) BOOL hideSeparateLine;    /**< 是否隐藏分割线(默认NO) */
+@property (nonatomic, assign) BOOL showBottomLineView;  /**< 是否显示底部线 */
+@property (nonatomic, strong) UIImage *bottomLineImage; /**< 底部线的图片 */
+@property (nonatomic, strong) UIColor *bottomLineColor; /**< 底部线的图片 */
+@property (nonatomic, assign) CGFloat bottomLineViewHeight;  /**< 底部线的图片的高度（默认1） */
+
+@property (nonatomic, assign) NSInteger currentSelectedIndex;   /**< 当前选中的按钮的index值（当该值为默认的－1时，表示都没有选中） */
 
 /**
  *  reloadViews
  */
 - (void)reloadViews;
+
+/**
+ *  滚动到当前选中的视图
+ *
+ *  @param animated 是否有滚动动画
+ */
+- (void)scollToCurrentSelectedViewWithAnimated:(BOOL)animated;
 
 
 /**

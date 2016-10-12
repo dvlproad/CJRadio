@@ -36,6 +36,13 @@
     self.dropdownRadioButtons2.tag = 222;
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    [self.dropdownRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
+    [self.dropdownRadioButtons2 scollToCurrentSelectedViewWithAnimated:NO];
+}
+
 #pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
     return -1;

@@ -57,44 +57,26 @@
     self.scrollView.delegate = self;
     self.scrollView.bounces = NO;
     self.scrollView.backgroundColor = [UIColor orangeColor];
-    [self cj_addSubView:_scrollView toSuperView:self withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self cj_makeView:self addSubView:_scrollView withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    /* 如果初始有默认选择哪个按钮，则滑动到该按钮位置 */
-    if (self.currentSelectedIndex != -1) {
-        RadioButton *targetRadioButton = [radioButtons objectAtIndex:self.currentSelectedIndex];
-        
-        if (self.showLineImageView) {
-            self.lineImageView.image = self.lineImage;
-        }
-        
-        [self moveScrollViewToSelectItem:targetRadioButton animated:NO]; //TODO: 无效待解决
-    }
-    
-    /* 如果有左右箭头 */
-    if (_haveArrowButton) {
-        [self judgeAndSetArrowButtonState];
-    }
-    
-    [self reloadViews];//TODO: 这句应该放哪
+    [self reloadViews];
 }
 
 - (void)setDataSource:(id<RadioButtonsDataSource>)dataSource {
     _dataSource = dataSource;
     
-//    [self reloadViews];
+    [self reloadViews];
 }
 
 /** 完整的描述请参见文件头部 */
 - (void)reloadViews {
-//    for (UIView *subView in self.scrollView.subviews) {
-//        //if ([subView isKindOfClass:[RadioButtons class]]) {
-//        [subView removeFromSuperview];
-//        //}
-//    }
+    for (UIView *subView in self.scrollView.subviews) {
+        [subView removeFromSuperview];
+    }
     
     NSInteger componentCount = [self.dataSource cj_numberOfComponentsInRadioButtons:self];
     if (componentCount < 3) {
@@ -146,29 +128,48 @@
     }
     
     
-    for (NSInteger index = 0; index < componentCount-1; index++) {
-        RadioButton *radioButton = [radioButtons objectAtIndex:index];
-        
-        UIView *lineView = [[UIView alloc] initWithFrame:CGRectZero];
-        lineView.backgroundColor = [UIColor lightGrayColor];
-        
-        [self cj_addSubView:lineView toSuperView:self.scrollView afterCurrentView:radioButton withWidth:1];
+    if (self.hideSeparateLine == NO) {
+        for (NSInteger index = 0; index < componentCount-1; index++) {
+            UIView *separateLineView = [[UIView alloc] initWithFrame:CGRectZero];
+            separateLineView.backgroundColor = [UIColor lightGrayColor];
+            
+            RadioButton *radioButton = [radioButtons objectAtIndex:index];
+            [self cj_addSubView:separateLineView toSuperView:self.scrollView afterCurrentView:radioButton withWidth:1];
+        }
     }
     
+    if (self.showBottomLineView) {
+        [self addBottomViewToScrollView];
+    }
     
-    
-    /* 添加 lineImageView */
+    /* 如果有左右箭头 */
+    if (_haveArrowButton) {
+        [self judgeAndSetArrowButtonState];
+    }
+}
+
+/** 添加底部视图(常为线条或图片) */
+- (void)addBottomViewToScrollView {
     self.lineImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    if (self.bottomLineImage) {
+        self.lineImageView.image = self.bottomLineImage;
+    }
+    if (self.bottomLineColor) {
+        self.lineImageView.backgroundColor = self.bottomLineColor;
+    }
     [self.scrollView addSubview:self.lineImageView];
+    
+    
     self.lineImageView.translatesAutoresizingMaskIntoConstraints = NO;
     //bottom
-    [self.scrollView addConstraint:[NSLayoutConstraint constraintWithItem:self.lineImageView
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.scrollView
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1
-                                                           constant:0]];
+    [self.scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.lineImageView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self.scrollView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:0]];
     //height
     self.lineImageViewHeightLayoutConstraint =
             [NSLayoutConstraint constraintWithItem:self.lineImageView
@@ -177,7 +178,7 @@
                                             toItem:nil
                                          attribute:NSLayoutAttributeNotAnAttribute
                                         multiplier:1
-                                          constant:1];
+                                          constant:self.bottomLineViewHeight];
     [self.scrollView addConstraint:self.lineImageViewHeightLayoutConstraint];
     //left
     self.lineImageViewLeftLayoutConstraint =
@@ -283,52 +284,6 @@
     self.currentSelectedIndex = -1;
 }
 
-#pragma mark - 有左右箭头时候常会用到的方法
-/**
- *  滚动到指定的单选按钮 targetRadioButton 上 （当按钮太多显示不全时常需要设置这个为YES）
- *
- *  @param targetRadioButton 要滚动到的指定按钮
- *  @param animated          是否动画
- */
-- (void)moveScrollViewToSelectItem:(RadioButton *)targetRadioButton animated:(BOOL)animated {
-    if (self.showLineImageView) {
-        CGFloat lineImageViewX = CGRectGetMinX(targetRadioButton.frame);
-        CGFloat lineImageViewWidth = CGRectGetWidth(targetRadioButton.frame);
-        CGFloat lineImageViewHeight = self.lineImageViewHeight == 0 ? 1 : self.lineImageViewHeight;
-        
-        [UIView animateWithDuration:0.3 animations:^{
-            self.lineImageViewLeftLayoutConstraint.constant = lineImageViewX;
-            self.lineImageViewWidthLayoutConstraint.constant = lineImageViewWidth;
-            self.lineImageViewHeightLayoutConstraint.constant = lineImageViewHeight;
-        }];
-    }
-     
-    //该item的距离计算。(滑动scrollView到显示出完整的targetRadioButton)
-    //CGFloat leftX = CGRectGetMinX(targetRadioButton.frame);
-    CGFloat rightX = CGRectGetMaxX(targetRadioButton.frame);
-    
-    if (rightX >= self.frame.size.width - 60) { //如果rightX离self.frame边缘太近(小于40)就要移动,设移动距离为moveOffset
-        CGFloat moveOffset = self.frame.size.width/2 + 40;
-        CGFloat rightX_new;
-        
-        if (rightX + moveOffset >= self.scrollView.contentSize.width) {//如果向左移动moveOffset后，会超出边界，则移动到末尾
-            moveOffset = self.frame.size.width;
-            rightX_new = self.scrollView.contentSize.width - moveOffset;
-            
-            [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:animated];
-        }else{
-            
-            rightX_new = rightX - moveOffset;
-            
-            if (rightX_new > 0) {
-                [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:animated];
-            }
-        }
-        
-    }else{
-        [self.scrollView setContentOffset:CGPointMake(0, self.scrollView.contentOffset.y) animated:animated];
-    }
-}
 
 /** 完整的描述请参见文件头部 */
 - (void)addLeftArrowImage:(UIImage *)leftArrowImage
@@ -345,38 +300,42 @@
     [self addSubview:_leftArrowButton];
     _leftArrowButton.translatesAutoresizingMaskIntoConstraints = NO;
     //width
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftArrowButton
-                                                     attribute:NSLayoutAttributeWidth
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:nil
-                                                     attribute:NSLayoutAttributeNotAnAttribute
-                                                    multiplier:1
-                                                      constant:arrowImageWidth]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_leftArrowButton
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:arrowImageWidth]];
     //height
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftArrowButton
-                                                     attribute:NSLayoutAttributeHeight
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeHeight
-                                                    multiplier:1
-                                                      constant:0]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_leftArrowButton
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeHeight
+                                 multiplier:1
+                                   constant:0]];
     //top
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftArrowButton
-                                                     attribute:NSLayoutAttributeTop
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeTop
-                                                    multiplier:1
-                                                      constant:0]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_leftArrowButton
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:0]];
     //left
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftArrowButton
-                                                     attribute:NSLayoutAttributeLeft
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeLeft
-                                                    multiplier:1
-                                                      constant:0]];
-
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_leftArrowButton
+                                  attribute:NSLayoutAttributeLeft
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:0]];
+    
     
     
     //创建右滑动箭头
@@ -387,37 +346,41 @@
     [self addSubview:_rightArrowButton];
     _rightArrowButton.translatesAutoresizingMaskIntoConstraints = NO;
     //width
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightArrowButton
-                                                     attribute:NSLayoutAttributeWidth
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:nil
-                                                     attribute:NSLayoutAttributeNotAnAttribute
-                                                    multiplier:1
-                                                      constant:arrowImageWidth]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_rightArrowButton
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:arrowImageWidth]];
     //height
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightArrowButton
-                                                     attribute:NSLayoutAttributeHeight
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeHeight
-                                                    multiplier:1
-                                                      constant:0]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_rightArrowButton
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeHeight
+                                 multiplier:1
+                                   constant:0]];
     //top
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightArrowButton
-                                                     attribute:NSLayoutAttributeTop
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeTop
-                                                    multiplier:1
-                                                      constant:0]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_rightArrowButton
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:0]];
     //right
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightArrowButton
-                                                     attribute:NSLayoutAttributeRight
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeRight
-                                                    multiplier:1
-                                                      constant:0]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_rightArrowButton
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:0]];
     
     
     //隐藏左、右箭头
@@ -544,41 +507,46 @@
 
 
 #pragma mark - addSubView
-- (void)cj_addSubView:(UIView *)subView toSuperView:(UIView *)superView withEdgeInsets:(UIEdgeInsets)edgeInsets {
+- (void)cj_makeView:(UIView *)superView addSubView:(UIView *)subView withEdgeInsets:(UIEdgeInsets)edgeInsets {
+//- (void)cj_addSubView:(UIView *)subView toSuperView:(UIView *)superView withEdgeInsets:(UIEdgeInsets)edgeInsets {
     [superView addSubview:subView];
     subView.translatesAutoresizingMaskIntoConstraints = NO;
     //left
-    [superView addConstraint:[NSLayoutConstraint constraintWithItem:subView
-                                                          attribute:NSLayoutAttributeLeft
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:superView
-                                                          attribute:NSLayoutAttributeLeft
-                                                         multiplier:1
-                                                           constant:edgeInsets.left]];
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeLeft
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:edgeInsets.left]];
     //right
-    [superView addConstraint:[NSLayoutConstraint constraintWithItem:subView
-                                                          attribute:NSLayoutAttributeRight
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:superView
-                                                          attribute:NSLayoutAttributeRight
-                                                         multiplier:1
-                                                           constant:edgeInsets.right]];
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:edgeInsets.right]];
     //top
-    [superView addConstraint:[NSLayoutConstraint constraintWithItem:subView
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:superView
-                                                          attribute:NSLayoutAttributeTop
-                                                         multiplier:1
-                                                           constant:edgeInsets.top]];
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:edgeInsets.top]];
     //bottom
-    [superView addConstraint:[NSLayoutConstraint constraintWithItem:subView
-                                                          attribute:NSLayoutAttributeBottom
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:superView
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1
-                                                           constant:edgeInsets.bottom]];
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:edgeInsets.bottom]];
 }
 
 
@@ -590,56 +558,62 @@
     [scrollView addSubview:contentView];
     contentView.translatesAutoresizingMaskIntoConstraints = NO;
     //left
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeLeft
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeLeft
-                                                          multiplier:1
-                                                            constant:0]];
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeLeft
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:0]];
     //right
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeRight
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeRight
-                                                          multiplier:1
-                                                            constant:0]]; //right = 0;
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:0]]; //right = 0;
     //top
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeTop
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeTop
-                                                          multiplier:1
-                                                            constant:0]];
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:0]];
     
     //bottom(实际上这条是反向设置了scrollView的高)
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeBottom
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeBottom
-                                                          multiplier:1
-                                                            constant:0]]; //bottom = 0
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:0]]; //bottom = 0
     
     
     //设置container的width（这里我们暂时设置contentView为3被scrollView的宽）
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeWidth
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeWidth
-                                                          multiplier:widthMultiplier
-                                                            constant:0]];
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeWidth
+                                 multiplier:widthMultiplier
+                                   constant:0]];
     //设置container的height
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeHeight
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeHeight
-                                                          multiplier:heightMultiplier
-                                                            constant:0]];
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeHeight
+                                 multiplier:heightMultiplier
+                                   constant:0]];
     
     return contentView;
 }
@@ -652,21 +626,23 @@
     [scrollView addSubview:contentView];
     contentView.translatesAutoresizingMaskIntoConstraints = NO;
     //left
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeLeft
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeLeft
-                                                          multiplier:1
-                                                            constant:0]];
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeLeft
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:0]];
     //right
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeRight
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeRight
-                                                          multiplier:1
-                                                            constant:0]]; //right = 0;
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:0]]; //right = 0;
     //top
     [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
                                                            attribute:NSLayoutAttributeTop
@@ -677,31 +653,34 @@
                                                             constant:0]];
     
     //bottom(实际上这条是反向设置了scrollView的高)
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeBottom
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeBottom
-                                                          multiplier:1
-                                                            constant:0]]; //bottom = 0
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:0]]; //bottom = 0
     
     
     //设置container的width
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeWidth
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:nil
-                                                           attribute:NSLayoutAttributeNotAnAttribute
-                                                          multiplier:1
-                                                            constant:contentSizeWidth]];
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:contentSizeWidth]];
     //设置container的height
-    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
-                                                           attribute:NSLayoutAttributeHeight
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:scrollView
-                                                           attribute:NSLayoutAttributeHeight
-                                                          multiplier:1
-                                                            constant:0]];
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeHeight
+                                 multiplier:1
+                                   constant:0]];
     
     return contentView;
 }
@@ -764,12 +743,81 @@
 }
 
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+/** 完整的描述请参见文件头部 */
+- (void)scollToCurrentSelectedViewWithAnimated:(BOOL)animated {
+    /* 如果初始有默认选择哪个按钮，则滑动到该按钮位置 */
+    if (self.currentSelectedIndex != -1) {
+        RadioButton *targetRadioButton = [radioButtons objectAtIndex:self.currentSelectedIndex];
+        
+        [self moveScrollViewToSelectItem:targetRadioButton animated:animated];
+    }
 }
-*/
+
+/**
+ *  滚动到指定的单选按钮 targetRadioButton 上 （当按钮太多显示不全时常需要设置这个为YES）
+ *
+ *  @param targetRadioButton 要滚动到的指定按钮
+ *  @param animated          是否动画
+ */
+- (void)moveScrollViewToSelectItem:(RadioButton *)targetRadioButton animated:(BOOL)animated {
+    if (self.showBottomLineView) {
+        CGFloat lineImageViewX = CGRectGetMinX(targetRadioButton.frame);
+        CGFloat lineImageViewWidth = CGRectGetWidth(targetRadioButton.frame);
+        CGFloat lineImageViewHeight = self.bottomLineViewHeight == 0 ? 1 : self.bottomLineViewHeight;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            self.lineImageViewLeftLayoutConstraint.constant = lineImageViewX;
+            self.lineImageViewWidthLayoutConstraint.constant = lineImageViewWidth;
+            self.lineImageViewHeightLayoutConstraint.constant = lineImageViewHeight;
+        }];
+    }
+    
+    //该item的距离计算。(滑动scrollView到显示出完整的targetRadioButton)
+    //CGFloat leftX = CGRectGetMinX(targetRadioButton.frame);
+    CGFloat rightX = CGRectGetMaxX(targetRadioButton.frame);
+    
+    if (rightX >= self.frame.size.width - 60) { //如果rightX离self.frame边缘太近(小于40)就要移动,设移动距离为moveOffset
+        CGFloat moveOffset = self.frame.size.width/2 + 40;
+        CGFloat rightX_new;
+        
+        if (rightX + moveOffset >= self.scrollView.contentSize.width) {//如果向左移动moveOffset后，会超出边界，则移动到末尾
+            moveOffset = self.frame.size.width;
+            rightX_new = self.scrollView.contentSize.width - moveOffset;
+            
+            [self scrollToContentOffsetX:rightX_new withAnimate:animated];
+        }else{
+            
+            rightX_new = rightX - moveOffset;
+            
+            if (rightX_new > 0) {
+                [self scrollToContentOffsetX:rightX_new withAnimate:animated];
+            }
+        }
+        
+    }else{
+        [self scrollToContentOffsetX:0 withAnimate:animated];
+    }
+}
+
+/**
+ *  滑动ScrollView到指定的contentOffsetX
+ *
+ *  @param contentOffsetX 指定的contentOffsetX
+ *  @param animated       滚动过程中是否要有动画
+ */
+- (void)scrollToContentOffsetX:(CGFloat)contentOffsetX withAnimate:(BOOL)animated {
+    
+    [self.scrollView setContentOffset:CGPointMake(contentOffsetX, self.scrollView.contentOffset.y) animated:animated];
+    
+//    if (animated) {
+//        CGFloat width = CGRectGetWidth(_scrollView.frame);
+//        CGFloat height = CGRectGetHeight(_scrollView.frame);
+//        [_scrollView scrollRectToVisible:CGRectMake(contentOffsetX, 0, width, height) animated:YES];
+//        //注：scrollRectToVisible:有时候会无效(eg:在layoutSubviews里不起作用)，所以当在layoutSubviews里执行的时候请一定选择使用通过设置contentOffset的方式来设置滚动
+//        
+//    } else {
+//        _scrollView.contentOffset = CGPointMake(contentOffsetX, 0);
+//    }
+}
 
 @end

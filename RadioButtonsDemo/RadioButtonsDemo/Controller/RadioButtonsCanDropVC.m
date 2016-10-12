@@ -30,6 +30,12 @@
     self.dropdownRadioButtons.delegate = self;
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    [self.dropdownRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
+}
+
 #pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
     return -1;
@@ -97,8 +103,7 @@
         radioButtonsCanDrop.cjTapViewTappedAction = cjTapViewTappedAction;
 
         [radioButtonsCanDrop cj_showDropDownExtendView:popupView withShowInView:self.view completeBlock:nil];
-};
-    
+    };
 }
 
 - (IBAction)btnAction:(id)sender{

@@ -25,9 +25,11 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     
     self.titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
-    self.sliderRadioButtons.showLineImageView = YES;
-    self.sliderRadioButtons.lineImage = [UIImage imageNamed:@"arrowUp_white"];
-    self.sliderRadioButtons.lineImageViewHeight = 6;
+    self.sliderRadioButtons.hideSeparateLine = NO;
+    self.sliderRadioButtons.showBottomLineView = YES;
+    self.sliderRadioButtons.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
+    self.sliderRadioButtons.bottomLineColor = [UIColor redColor];
+    self.sliderRadioButtons.bottomLineViewHeight = 16;
     [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
                                rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
                            withArrowImageWidth:20];
@@ -35,9 +37,15 @@
     self.sliderRadioButtons.delegate = self;
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    [self.sliderRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
+}
+
 #pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
-    return 12;
+    return 10;
 }
 
 - (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons {
