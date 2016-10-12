@@ -61,8 +61,10 @@
 }
 
 - (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
-    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_Slider" owner:nil options:nil];
-    RadioButton *radioButton = [radioButtonNib lastObject];
+//    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_Slider" owner:nil options:nil];
+//    RadioButton *radioButton = [radioButtonNib lastObject];
+    RadioButton *radioButton = [[RadioButton alloc] init];
+    radioButton.backgroundColor = [UIColor purpleColor];
     [radioButton setTitle:self.titles[index]];
     radioButton.textNormalColor = [UIColor blackColor];
     radioButton.textSelectedColor = [UIColor greenColor];

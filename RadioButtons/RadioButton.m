@@ -10,8 +10,27 @@
 
 @implementation RadioButton
 
-- (void)awakeFromNib{
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)awakeFromNib {
     [self.button addTarget:self action:@selector(radioButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)commonInit {
+    self.label = [[UILabel alloc] init];
+    self.label.textAlignment = NSTextAlignmentCenter;
+    self.label.numberOfLines = 0;
+    [self cj_makeView:self addSubView:self.label withEdgeInsets:UIEdgeInsetsZero];
+    
+    self.button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.button addTarget:self action:@selector(radioButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self cj_makeView:self addSubView:self.button withEdgeInsets:UIEdgeInsetsZero];
 }
 
 - (void)layoutSubviews {
@@ -46,5 +65,49 @@
         [self.delegate radioButtonClick:self];
     }
 }
+
+#pragma mark - addSubView
+- (void)cj_makeView:(UIView *)superView addSubView:(UIView *)subView withEdgeInsets:(UIEdgeInsets)edgeInsets {
+//- (void)cj_addSubView:(UIView *)subView toSuperView:(UIView *)superView withEdgeInsets:(UIEdgeInsets)edgeInsets {
+    [superView addSubview:subView];
+    subView.translatesAutoresizingMaskIntoConstraints = NO;
+    //left
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeLeft
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:edgeInsets.left]];
+    //right
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:edgeInsets.right]];
+    //top
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:edgeInsets.top]];
+    //bottom
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:edgeInsets.bottom]];
+}
+
 
 @end
