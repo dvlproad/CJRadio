@@ -35,6 +35,16 @@
                            withArrowImageWidth:20];
     self.sliderRadioButtons.dataSource = self;
     self.sliderRadioButtons.delegate = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //耗时的操作
+        sleep(2);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //更新界面
+            [self.sliderRadioButtons cj_selectComponentAtIndex:0 animated:YES];
+        });
+    });
 }
 
 - (void)viewWillLayoutSubviews {

@@ -213,7 +213,7 @@
     
     if (index_old == -1) {  //①、如果当前没有radioButton是被选中。
         radioButton_cur.selected = !radioButton_cur.selected;
-        [self cj_selectComponentAtIndex:index_cur animated:YES];
+        
         
     }else{                  //②、index_old != -1，即表示如果当前有radioButton是被选中。
         if (index_old == index_cur) {
@@ -226,14 +226,9 @@
             radioButton_old.selected = !radioButton_old.selected;
             
             radioButton_cur.selected = !radioButton_cur.selected;
-            [self cj_selectComponentAtIndex:index_cur animated:YES];
         }
     }
-    
-    
-    if([self.delegate respondsToSelector:@selector(cj_radioButtons:chooseIndex:oldIndex:)]){
-        [self.delegate cj_radioButtons:self chooseIndex:index_cur oldIndex:index_old];
-    }
+    [self cj_selectComponentAtIndex:index_cur fromIndex:index_old animated:YES];
     
     BOOL isSameIndex = index_cur == index_old ? YES : NO;
     //NSLog(@"index_old = %zd, index_cur = %zd, isSameIndex= %@", index_old, index_cur, isSameIndex?@"YES":@"NO");
@@ -460,19 +455,28 @@
 }
 
 /** 完整的描述请参见文件头部 */
-- (void)cj_selectComponentAtIndex:(NSInteger)index animated:(BOOL)animated {
-    self.oldSelectedIndex = self.currentSelectedIndex;
-    self.currentSelectedIndex = index;
+- (void)cj_selectComponentAtIndex:(NSInteger)index_cur animated:(BOOL)animated {
+    [self cj_selectComponentAtIndex:index_cur fromIndex:self.currentSelectedIndex animated:animated];
+}
+
+- (void)cj_selectComponentAtIndex:(NSInteger)index_cur fromIndex:(NSInteger)index_old animated:(BOOL)animated {
     
-    RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.oldSelectedIndex];
-    radioButton_old.selected = NO;
+    if (index_cur != index_old) {
+        self.oldSelectedIndex = self.currentSelectedIndex;
+        self.currentSelectedIndex = index_cur;
+        
+        RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.oldSelectedIndex];
+        radioButton_old.selected = NO;
+        
+        RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
+        radioButton_cur.selected = YES;
+        
+        [self moveScrollViewToSelectItem:radioButton_cur animated:animated];
+    }
     
-    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
-    radioButton_cur.selected = YES;
-    
-    [self moveScrollViewToSelectItem:radioButton_cur animated:animated];
-    
-    
+    if([self.delegate respondsToSelector:@selector(cj_radioButtons:chooseIndex:oldIndex:)]){
+        [self.delegate cj_radioButtons:self chooseIndex:index_cur oldIndex:index_old];
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
