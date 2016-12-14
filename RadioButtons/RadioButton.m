@@ -19,6 +19,8 @@
 }
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
+    
     [self.button addTarget:self action:@selector(radioButtonClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 

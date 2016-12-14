@@ -1,7 +1,12 @@
 #目录
 1、RadioButtons
+单选按钮的组合
+
 2、RadioComposeView
+单选视图
+
 3、CJButtonControllerView
+类似网易新闻左右滑动的控制器的“父类”（为1和2的结合使用）
 
 
 ## 一、RadioButtons
