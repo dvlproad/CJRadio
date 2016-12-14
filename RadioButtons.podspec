@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "RadioButtons_2.1.3" }
+  s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "RadioButtons_2.1.31" }
   s.source_files  = "RadioButtons/**/*.{h,m}"
   s.resources = "RadioButtons/**/*.{png,xib}"
   s.frameworks = 'UIKit'
