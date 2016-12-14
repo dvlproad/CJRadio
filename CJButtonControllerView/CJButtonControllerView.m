@@ -53,6 +53,11 @@ static NSInteger kSelectedIndexDefault = 0;
     return self;
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self commonInit];
+}
 
 
 - (void)reloadData {
@@ -66,10 +71,11 @@ static NSInteger kSelectedIndexDefault = 0;
     
     /* 添加 RadioButtons */
     self.sliderRadioButtons = [[RadioButtons alloc] initWithFrame:CGRectZero];
-    self.sliderRadioButtons.showLineImageView = self.showLineImageView;
-    self.sliderRadioButtons.lineImage = self.lineImage;
-    self.sliderRadioButtons.lineImageViewHeight = self.lineImageViewHeight;
-//    self.sliderRadioButtons.dataSource = self;
+    self.sliderRadioButtons.showBottomLineView = self.showBottomLineView;
+    self.sliderRadioButtons.bottomLineImage = self.bottomLineImage;
+    self.sliderRadioButtons.bottomLineColor = self.bottomLineColor;
+    self.sliderRadioButtons.bottomLineViewHeight = self.bottomLineViewHeight;
+//    self.sliderRadioButtons.dataSource = self; //放在reloadData中了
     self.sliderRadioButtons.delegate = self;
     [self addSubview:self.sliderRadioButtons];
     self.sliderRadioButtons.translatesAutoresizingMaskIntoConstraints = NO;

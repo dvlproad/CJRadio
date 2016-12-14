@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RadioComposeView"
-  s.version      = "2.1.1"
+  s.version      = "2.1.2"
   s.summary      = "RadioComposeView"
   s.homepage     = "https://github.com/dvlproad/RadioButtons"
   s.license      = "MIT"
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "2.1.1" }
+  s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "RadioComposeView_2.1.2" }
   s.source_files  = "RadioComposeView/**/*.{h,m}"
   # s.resources = "RadioComposeView/**/*.{png,xib}"
   s.frameworks = 'UIKit'

@@ -22,8 +22,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-//    SliderViewController *viewController = [[SliderViewController alloc] initWithNibName:@"SliderViewController" bundle:nil];
-    SliderViewController2 *viewController = [[SliderViewController2 alloc]initWithNibName:@"SliderViewController2" bundle:nil];
+    SliderViewController *viewController = [[SliderViewController alloc] initWithNibName:@"SliderViewController" bundle:nil];
+//    SliderViewController2 *viewController = [[SliderViewController2 alloc]initWithNibName:@"SliderViewController2" bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     self.window.rootViewController = navigationController;
     

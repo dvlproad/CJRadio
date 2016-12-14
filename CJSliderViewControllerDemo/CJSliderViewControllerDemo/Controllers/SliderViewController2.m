@@ -19,9 +19,9 @@
     // Do any additional setup after loading the view from its nib.
     
     self.buttonControllerView.titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
-    self.buttonControllerView.showLineImageView = YES;
-    self.buttonControllerView.lineImage = [UIImage imageNamed:@"arrowUp"];
-    self.buttonControllerView.lineImageViewHeight = 6;
+    self.buttonControllerView.showBottomLineView = YES;
+    self.buttonControllerView.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
+    self.buttonControllerView.bottomLineViewHeight = 6;
     [self.buttonControllerView addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
                                  rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
                              withArrowImageWidth:20];

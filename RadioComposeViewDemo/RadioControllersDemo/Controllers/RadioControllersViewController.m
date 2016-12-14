@@ -31,6 +31,7 @@
 //    [self.radioComposeView showViewWithIndex:2];
 }
 
+//一定不要漏了这个滚动操作
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     

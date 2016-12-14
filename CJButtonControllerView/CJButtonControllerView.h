@@ -35,9 +35,11 @@
 
 //设置RadioButtons需要的数据
 @property (nonatomic, strong) NSArray *titles;
-@property (nonatomic, assign) BOOL showLineImageView;   /**< 是否显示底部线 */
-@property (nonatomic, strong) UIImage *lineImage;       /**< 底部线的图片 */
-@property (nonatomic, assign) CGFloat lineImageViewHeight;  /**< 底部线的图片的高度（默认1） */
+@property (nonatomic, assign) BOOL showBottomLineView;  /**< 是否显示底部线 */
+@property (nonatomic, strong) UIImage *bottomLineImage; /**< 底部线的图片 */
+@property (nonatomic, strong) UIColor *bottomLineColor; /**< 底部线的图片 */
+@property (nonatomic, assign) CGFloat bottomLineViewHeight;  /**< 底部线的图片的高度（默认1） */
+
 @property (nonatomic, assign) CGFloat radioButtonsHeight;   /**< 控件radioButtons的高度 */
 //@property (nonatomic, assign) CGFloat radioButtonsLeftViewWdith;    /**< 控件radioButtons左侧视图的宽度 */
 //@property (nonatomic, assign) CGFloat radioButtonsRightViewWdith;    /**< 控件radioButtons右侧视图的宽度 */

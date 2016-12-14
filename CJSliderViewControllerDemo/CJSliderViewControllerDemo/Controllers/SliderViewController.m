@@ -26,9 +26,11 @@ static NSInteger kSelectedIndexDefault = 2;
 
     //RadioButtons
     titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
-    self.sliderRadioButtons.showLineImageView = YES;
-    self.sliderRadioButtons.lineImage = [UIImage imageNamed:@"arrowUp"];
-    self.sliderRadioButtons.lineImageViewHeight = 6;
+    //self.sliderRadioButtons.hideSeparateLine = NO;
+    self.sliderRadioButtons.showBottomLineView = YES;
+    self.sliderRadioButtons.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
+    self.sliderRadioButtons.bottomLineColor = [UIColor redColor];
+    self.sliderRadioButtons.bottomLineViewHeight = 6;
     [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
                                rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
                            withArrowImageWidth:20];
@@ -48,6 +50,13 @@ static NSInteger kSelectedIndexDefault = 2;
 //    return NO;
 //}
 
+//一定不要漏了这个滚动操作
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    [self.sliderRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
+//    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
+}
 
 #pragma mark - RadioButtonsDataSource
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
