@@ -1,9 +1,9 @@
 //
 //  UIView+CJAddSubVIew.m
-//  CJSliderViewControllerDemo
+//  RadioComposeViewDemo
 //
-//  Created by 李超前 on 16/8/20.
-//  Copyright © 2016年 李超前. All rights reserved.
+//  Created by lichq on 14-11-12.
+//  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
 #import "UIView+CJAddSubVIew.h"

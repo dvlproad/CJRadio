@@ -69,6 +69,10 @@ static NSInteger kSelectedIndexDefault = 0;
 - (void)commonInit {
     self.radioButtonsHeight = 0;
     
+    /* Self的一些其他设置 */
+    self.defaultSelectedIndex = kSelectedIndexDefault;
+    self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
+    
     /* 添加 RadioButtons */
     self.sliderRadioButtons = [[RadioButtons alloc] initWithFrame:CGRectZero];
     self.sliderRadioButtons.showBottomLineView = self.showBottomLineView;
@@ -78,90 +82,21 @@ static NSInteger kSelectedIndexDefault = 0;
 //    self.sliderRadioButtons.dataSource = self; //放在reloadData中了
     self.sliderRadioButtons.delegate = self;
     [self addSubview:self.sliderRadioButtons];
-    self.sliderRadioButtons.translatesAutoresizingMaskIntoConstraints = NO;
-    //left
-    self.radioButtonsLeftLayoutConstraint =
-            [NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
-                                         attribute:NSLayoutAttributeLeft
-                                         relatedBy:NSLayoutRelationEqual
-                                            toItem:self
-                                         attribute:NSLayoutAttributeLeft
-                                        multiplier:1
-                                          constant:0];
-    [self addConstraint:self.radioButtonsLeftLayoutConstraint];
-    //right
-    self.radioButtonsRightLayoutConstraint =
-            [NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
-                                         attribute:NSLayoutAttributeRight
-                                         relatedBy:NSLayoutRelationEqual
-                                            toItem:self
-                                         attribute:NSLayoutAttributeRight
-                                        multiplier:1
-                                          constant:0];
-    [self addConstraint:self.radioButtonsRightLayoutConstraint];
-    //top
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
-                                                     attribute:NSLayoutAttributeTop
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeTop
-                                                    multiplier:1
-                                                      constant:0]];
-    //height
-    self.radioButtonsHeightLayoutConstraint =
-            [NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
-                                         attribute:NSLayoutAttributeHeight
-                                         relatedBy:NSLayoutRelationEqual
-                                            toItem:nil
-                                         attribute:NSLayoutAttributeNotAnAttribute
-                                        multiplier:1
-                                          constant:self.radioButtonsHeight];
-    [self addConstraint:self.radioButtonsHeightLayoutConstraint];
-    
-    
     
     /* 添加 RadioControllers */
     self.radioComposeView = [[RadioComposeView alloc] initWithFrame:CGRectZero];
-//    self.radioComposeView.dataSource = self;
+//    self.radioComposeView.dataSource = self;  //放在reloadData中了
     self.radioComposeView.delegate = self;
     [self addSubview:self.radioComposeView];
-    self.radioComposeView.translatesAutoresizingMaskIntoConstraints = NO;
-    //left
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
-                                                     attribute:NSLayoutAttributeLeft
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeLeft
-                                                    multiplier:1
-                                                      constant:0]];
-    //right
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
-                                                     attribute:NSLayoutAttributeRight
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeRight
-                                                    multiplier:1
-                                                      constant:0]];
-    //top
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
-                                                     attribute:NSLayoutAttributeTop
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self.sliderRadioButtons
-                                                     attribute:NSLayoutAttributeBottom
-                                                    multiplier:1
-                                                      constant:0]];
-    //bottom
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
-                                                     attribute:NSLayoutAttributeBottom
-                                                     relatedBy:NSLayoutRelationEqual
-                                                        toItem:self
-                                                     attribute:NSLayoutAttributeBottom
-                                                    multiplier:1
-                                                      constant:0]];
     
-    /* Self的一些其他设置 */
-    self.defaultSelectedIndex = kSelectedIndexDefault;
-    self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
+    //设置约束
+    [self setupConstraints];
+}
+
+/** 完整的描述请参见文件头部 */
+- (void)scollToCurrentSelectedViewWithAnimated:(BOOL)animated {
+    [self.sliderRadioButtons scollToCurrentSelectedViewWithAnimated:animated];
+    [self.radioComposeView scrollToCenterViewWithAnimate:animated];
 }
 
 
@@ -322,6 +257,91 @@ static NSInteger kSelectedIndexDefault = 0;
     if (self.delegate && [self.delegate respondsToSelector:@selector(cj_buttonControllerView:didChangeToIndex:)]) {
         [self.delegate cj_buttonControllerView:self didChangeToIndex:index];
     }
+}
+
+
+#pragma mark - setupConstraints
+- (void)setupConstraints {
+    [self setupConstraintsForRadioButtons];
+    [self setupConstraintsForRadioComposeView];
+}
+
+- (void)setupConstraintsForRadioButtons {
+    self.sliderRadioButtons.translatesAutoresizingMaskIntoConstraints = NO;
+    //left
+    self.radioButtonsLeftLayoutConstraint =
+    [NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
+                                 attribute:NSLayoutAttributeLeft
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self
+                                 attribute:NSLayoutAttributeLeft
+                                multiplier:1
+                                  constant:0];
+    [self addConstraint:self.radioButtonsLeftLayoutConstraint];
+    //right
+    self.radioButtonsRightLayoutConstraint =
+    [NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
+                                 attribute:NSLayoutAttributeRight
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self
+                                 attribute:NSLayoutAttributeRight
+                                multiplier:1
+                                  constant:0];
+    [self addConstraint:self.radioButtonsRightLayoutConstraint];
+    //top
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
+                                                     attribute:NSLayoutAttributeTop
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeTop
+                                                    multiplier:1
+                                                      constant:0]];
+    //height
+    self.radioButtonsHeightLayoutConstraint =
+    [NSLayoutConstraint constraintWithItem:self.sliderRadioButtons
+                                 attribute:NSLayoutAttributeHeight
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:nil
+                                 attribute:NSLayoutAttributeNotAnAttribute
+                                multiplier:1
+                                  constant:self.radioButtonsHeight];
+    [self addConstraint:self.radioButtonsHeightLayoutConstraint];
+}
+
+- (void)setupConstraintsForRadioComposeView {
+    self.radioComposeView.translatesAutoresizingMaskIntoConstraints = NO;
+    //left
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
+                                                     attribute:NSLayoutAttributeLeft
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeLeft
+                                                    multiplier:1
+                                                      constant:0]];
+    //right
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
+                                                     attribute:NSLayoutAttributeRight
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeRight
+                                                    multiplier:1
+                                                      constant:0]];
+    //top
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
+                                                     attribute:NSLayoutAttributeTop
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self.sliderRadioButtons
+                                                     attribute:NSLayoutAttributeBottom
+                                                    multiplier:1
+                                                      constant:0]];
+    //bottom
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
+                                                     attribute:NSLayoutAttributeBottom
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeBottom
+                                                    multiplier:1
+                                                      constant:0]];
 }
 
 

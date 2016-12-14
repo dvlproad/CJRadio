@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = NSLocalizedString(@"首页", nil);
     
     self.buttonControllerView.titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
     self.buttonControllerView.showBottomLineView = YES;
@@ -47,6 +48,13 @@
     [self.buttonControllerView addRadioButtonsRightView:rightButton withWidth:40];
     
     [self.buttonControllerView reloadData];
+}
+
+//一定不要漏了这个滚动操作
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self.buttonControllerView scollToCurrentSelectedViewWithAnimated:NO];
 }
 
 - (NSArray<UIViewController *> *)getComponentViewControllers {

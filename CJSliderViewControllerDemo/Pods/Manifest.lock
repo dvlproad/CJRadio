@@ -1,15 +1,15 @@
 PODS:
   - RadioButtons (2.1.3)
-  - RadioComposeView (2.1.1)
+  - RadioComposeView (2.1.2)
 
 DEPENDENCIES:
   - RadioButtons (~> 2.1.3)
-  - RadioComposeView (~> 2.1.1)
+  - RadioComposeView (~> 2.1.2)
 
 SPEC CHECKSUMS:
   RadioButtons: 332eec5202a70b1d970b05c3cf615ec4c1064217
-  RadioComposeView: d566bd9c3acaf0566ef05df2f098bea52dd6c1e0
+  RadioComposeView: cb8a688f030139567c6e22bc8aa52e882d0d5fd4
 
-PODFILE CHECKSUM: f21dd6dd5f9005ec7e2fade17cf18f36f4679b85
+PODFILE CHECKSUM: 2ab7fca94be63acd2c79f739ce530a3e79d4e4df
 
 COCOAPODS: 1.1.0.rc.2

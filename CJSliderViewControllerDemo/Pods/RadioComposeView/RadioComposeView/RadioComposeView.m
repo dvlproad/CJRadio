@@ -27,10 +27,12 @@
 
 @implementation RadioComposeView
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    [self scrollToCenterViewWithAnimate:NO];  //滑动到显示的视图(即中视图)
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -42,12 +44,12 @@
     return self;
 }
 
-
-- (void)awakeFromNib{
+- (void)awakeFromNib {
     [super awakeFromNib];
     
     [self commonInit];
 }
+
 
 - (void)commonInit {
     self.backgroundColor = [UIColor blackColor];
@@ -56,7 +58,7 @@
     [self addScrollViewToSelf];
     [self addContentViewToScrollView];
     
-    //Left、Center、Right按RGB红绿蓝排序
+    //Left、Center、Right
     [self addLeftViewToScrollView];
     [self addCenterViewToScrollView];
     [self addRightViewToScrollView];
@@ -68,6 +70,8 @@
     //loadViews
     [self reloadViews];
 }
+
+
 
 /** 完整的描述请参见文件头部 */
 - (void)reloadViews {
@@ -137,7 +141,7 @@
     [_viewR cj_addSubView:newRightView withEdgeInsets:UIEdgeInsetsZero];
     
     //滑动到显示的视图(即中视图)
-    //[self scrollToCenterView];  //原本使用frame的时候写在这里有效，现在由于使用约束，而导致第一次初始化的时候无效，所以讲第一次以及其他次分开成写在layoutSubviews和scrollViewDidEndDecelerating了。
+    //[self scrollToCenterViewWithAnimate:NO];  //TODO: //原本使用frame的时候写在这里有效，现在由于使用约束，而导致第一次初始化的时候无效，所以将第一次以及其他次分开成写在layoutSubviews和scrollViewDidEndDecelerating了。
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(cj_radioComposeView:didChangeToIndex:)]) {
         [self.delegate cj_radioComposeView:self didChangeToIndex:centerViewIndex];
@@ -149,7 +153,7 @@
 #pragma mark - ScrolView、ContentView、LeftView、CenterView、RightView的加载
 - (void)addScrollViewToSelf {
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectZero];
-    _scrollView.backgroundColor = [UIColor cyanColor];
+    _scrollView.backgroundColor = [UIColor clearColor];
     _scrollView.pagingEnabled = YES;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.showsHorizontalScrollIndicator = NO;
@@ -161,15 +165,12 @@
 
 
 - (void)addContentViewToScrollView {
-    [_scrollView addSubview:contentView];
-    
     //scrollView采用三页显示（只将前一页，现在页，下一页的页面加载进来，其他的不加载)，以此来节省内存开销。
     contentView = [_scrollView cj_addContentViewWithWidthMultiplier:3 heightMultiplier:1];
 }
 
 - (void)addLeftViewToScrollView {
     UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor redColor];
     [contentView addSubview:view];
     
     view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -214,7 +215,6 @@
 
 - (void)addCenterViewToScrollView {
     UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor greenColor];
     [contentView addSubview:view];
     
     view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -260,7 +260,6 @@
 
 - (void)addRightViewToScrollView {
     UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor blueColor];
     [contentView addSubview:view];
     
     view.translatesAutoresizingMaskIntoConstraints = NO;
@@ -359,22 +358,74 @@
 
 
 #pragma mark - UIScrollViewDelegate
-/*
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     //由于我们这里使用的是只加载当前页及当前页的前后两页来显示的方式，以减少内存方式，所以当我们拖动到不是所加载的这几页时，比如拖动到当前页的前两页时，就会由于之前没有加载，而显示空内容(即尤其是当我们拖动的距离超过一页的时候)。但是由于我们这里scrollView只设置了三页，也就是说scrollView的contentSize只有三页大小，意味着当scrollView处于中视图时候(实际上显示的时候一直是处于中视图的)，其根本不可能滑动操作一页。所以，我们这里也就没必要在拖动过程中随时检查是否超过一页，来为了避免出现拖动过程中出现空内容的view的情况。
-    NSLog(@"scrollView.contentOffset.x  = %.1f", scrollView.contentOffset.x );
+    if (scrollView != _scrollView) {
+        return;
+    }
+    
+    CGFloat contentOffsetX = scrollView.contentOffset.x;
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    switch (self.scrollType) {
+        case RadioComposeViewScrollTypeNormal:
+        {
+            
+            break;
+        }
+        case RadioComposeViewScrollTypeBanScrollHorizontal:
+        {
+            CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
+            if (contentOffsetX < scrollViewWidth || contentOffsetX > scrollViewWidth) {
+                contentOffsetX = scrollViewWidth;
+                scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
+            }
+            
+            break;
+        }
+//        case RadioComposeViewScrollTypeBanScrollVertical:
+//        {
+//            CGFloat scrollViewHeight = CGRectGetHeight(scrollView.frame);
+//            if (contentOffsetY < scrollViewHeight || contentOffsetY > scrollViewHeight) {
+//                contentOffsetY = scrollViewHeight;
+//                scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
+//            }
+//            break;
+//        }
+        case RadioComposeViewScrollTypeBanScrollCycle:
+        {
+            if (currentShowViewIndex == 0) {
+                CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
+                if (contentOffsetX < scrollViewWidth) {
+                    contentOffsetX = scrollViewWidth;
+                    scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
+                }
+            }
+            if (currentShowViewIndex == self.views.count-1) {
+                CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
+                if (contentOffsetX > scrollViewWidth) {
+                    contentOffsetX = scrollViewWidth;
+                    scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
+                }
+            }
+            
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 
-
+/*
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     NSLog(@"scrollViewDidEndDragging: %@", decelerate ? @"YES" : @"NO");
     NSLog(@"因为这里scrollView.pagingEnabled = YES;所以，我们视图的拖动结束和滚动结束都统一到scrollViewDidEndDecelerating中去处理。");
 }
 */
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    //NSLog(@"执行scrollRectToVisible的时候，会有滚动动画，该滚动动画结束的时候会调用此方法");
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    //NSLog(@"执行有滚动动画的代码操作时，比如scrollRectToVisible或setContentOffset:的animated为YES的时候，都会该滚动动画结束的时候调用此方法");
     
     [self resetViewToLeftCenterRightWithShowViewIndex:selIndex];
     [self scrollToCenterViewWithAnimate:NO];

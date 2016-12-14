@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, RadioComposeViewScrollType) {
+    RadioComposeViewScrollTypeNormal,
+    RadioComposeViewScrollTypeBanScrollHorizontal,      /**< 禁用水平方向滑动 */
+//    RadioComposeViewScrollTypeBanScrollVertical,      /**< 禁用竖直方向滑动 */ (暂时只有左中右即暂时顶多只能水平滑动)
+    RadioComposeViewScrollTypeBanScrollCycle,           /**< 禁止循环滚动 */
+};
+
 @class RadioComposeView;
 
 
@@ -57,6 +64,7 @@
 }
 @property (nonatomic, weak) id <RadioComposeViewDataSource> dataSource;
 @property (nonatomic, weak) id <RadioComposeViewDelegate> delegate;
+@property (nonatomic, assign) RadioComposeViewScrollType scrollType;
 
 /**
  *  重新加载View视图
@@ -69,5 +77,12 @@
  *  @param showViewIndex 要显示的view的索引
  */
 - (void)showViewWithIndex:(NSInteger)showViewIndex;
+
+/**
+ *  滑动到显示的视图(即中视图)
+ *
+ *  @param isAnimate 滚动过程中是否要有动画
+ */
+- (void)scrollToCenterViewWithAnimate:(BOOL)isAnimate;
 
 @end

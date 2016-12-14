@@ -24,6 +24,10 @@ static NSInteger kSelectedIndexDefault = 2;
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"我的首页", nil);
 
+    //Self
+    self.defaultSelectedIndex = kSelectedIndexDefault;
+    self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
+    
     //RadioButtons
     titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
     //self.sliderRadioButtons.hideSeparateLine = NO;
@@ -40,10 +44,7 @@ static NSInteger kSelectedIndexDefault = 2;
     //RadioControllers
     self.radioComposeView.dataSource = self;
     self.radioComposeView.delegate = self;
-    
-    //Self
-    self.defaultSelectedIndex = kSelectedIndexDefault;
-    self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
+    //self.radioComposeView.scrollType = RadioComposeViewScrollTypeNormal;
 }
 
 //- (BOOL)automaticallyAdjustsScrollViewInsets {
@@ -55,7 +56,7 @@ static NSInteger kSelectedIndexDefault = 2;
     [super viewWillLayoutSubviews];
     
     [self.sliderRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
-//    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
+    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
 }
 
 #pragma mark - RadioButtonsDataSource

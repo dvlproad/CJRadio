@@ -52,6 +52,12 @@
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;           /**< 默认选择第几个0 */
 @property (nonatomic, assign) NSInteger maxRadioButtonsShowViewCount;   /**< 最大展示个数，默认3 */
 
+/**
+ *  滚动到当前选中的视图
+ *
+ *  @param animated 是否有滚动动画
+ */
+- (void)scollToCurrentSelectedViewWithAnimated:(BOOL)animated;
 
 - (void)reloadData;   //TODO: 用于类似栏目变更操作
 
