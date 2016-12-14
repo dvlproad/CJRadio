@@ -12,16 +12,18 @@
 
 @interface RadioButtons () <RadioButtonDelegate, UIScrollViewDelegate> {
     NSMutableArray *radioButtons;   /**< 所有的单选按钮数组 */
-    NSMutableArray *lineViews;
     
     BOOL _haveArrowButton;      /**< 是否有左右箭头 */
     UIButton *_leftArrowButton; /**< 左侧箭头 */
     UIButton *_rightArrowButton;/**< 右侧箭头 */
-    CGFloat _arrowImageWidth;   /**< 箭头宽度 */
 }
 @property (nonatomic, strong) UIScrollView *scrollView; //滚动视图（用于radiobutton过多时的滑动）
+@property (nonatomic, strong) UIView *contentView;      //scrollView上的contentView
 @property (nonatomic, assign) NSInteger oldSelectedIndex;   /**< 之前选中的按钮的index值（当该值为默认的－1时，表示都没有选中） */
 @property (nonatomic, strong) UIImageView *lineImageView;
+@property (nonatomic, strong) NSLayoutConstraint *lineImageViewHeightLayoutConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *lineImageViewWidthLayoutConstraint;
+@property (nonatomic, strong) NSLayoutConstraint *lineImageViewLeftLayoutConstraint;
 
 @end
 
@@ -36,8 +38,12 @@
     return self;
 }
 
-- (void)awakeFromNib {
-    [self commonInit];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
 }
 
 - (void)commonInit {
@@ -45,91 +51,19 @@
     UILabel *lab = [[UILabel alloc]initWithFrame:CGRectZero];
     [self addSubview:lab];
     
-    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectZero];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.delegate = self;
     self.scrollView.bounces = NO;
     self.scrollView.backgroundColor = [UIColor orangeColor];
-    [self addSubview:self.scrollView];
+    [self cj_makeView:self addSubView:_scrollView withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    CGFloat totalHeight = CGRectGetHeight(self.frame);
-    CGFloat totalWidth = CGRectGetWidth(self.frame);
-    [self.scrollView setFrame:CGRectMake(0, 0, totalWidth, totalHeight)];
-
-//    NSInteger componentCount = [self.dataSource cj_numberOfComponentsInRadioButtons:self];
-    NSInteger componentCount = radioButtons.count;
-    CGFloat radioButtonX = 0;
-    for (NSInteger index = 0; index < componentCount; index++) {
-        CGFloat currentComponentWidth = [self.dataSource cj_radioButtons:self widthForComponentAtIndex:index];
-        
-        RadioButton *radioButton = [radioButtons objectAtIndex:index];
-//        RadioButton *radioButton = [self.dataSource cj_radioButtons:self cellForComponentAtIndex:index];
-        CGRect rect_radioButton = CGRectMake(radioButtonX, 0, currentComponentWidth, CGRectGetHeight(self.frame));
-        [radioButton setFrame:rect_radioButton];
-        
-        if (index < componentCount -1) {
-            UIView *lineView = [lineViews objectAtIndex:index];
-            CGRect rect_line = CGRectMake(radioButtonX + currentComponentWidth, 5, 1, self.frame.size.height - 10);
-            [lineView setFrame:rect_line];
-        }
-        
-        if (index == componentCount-1) {
-            CGFloat contentSizeWidth = radioButtonX + currentComponentWidth;
-            CGFloat contentSizeHeight = totalHeight;
-            [self.scrollView setContentSize:CGSizeMake(contentSizeWidth, contentSizeHeight)]; //设置self.scrollView.contentSize
-        }
-        
-        if (index == self.currentSelectedIndex) {
-            
-
-        }
-        
-        radioButtonX += currentComponentWidth;
-    }
-    
-    
-    /* 如果初始有默认选择哪个按钮，则滑动到该按钮位置 */
-    if (self.currentSelectedIndex != -1) {
-        RadioButton *targetRadioButton = [radioButtons objectAtIndex:self.currentSelectedIndex];
-        
-        if (self.showLineImageView) {
-            CGFloat lineImageViewX = CGRectGetMinX(targetRadioButton.frame);
-            CGFloat lineImageViewWidth = CGRectGetWidth(targetRadioButton.frame);
-            CGFloat lineImageViewHeight = self.lineImageViewHeight == 0 ? 1 : self.lineImageViewHeight;
-            CGFloat lineImageViewY = CGRectGetHeight(self.frame) - lineImageViewHeight;
-            self.lineImageView.frame = CGRectMake(lineImageViewX, lineImageViewY, lineImageViewWidth, lineImageViewHeight);
-            self.lineImageView.image = self.lineImage;
-        }
-        
-        [self moveScrollViewToSelectItem:targetRadioButton animated:NO];
-    }
-    
-    /* 如果有左右箭头 */
-    if (_haveArrowButton) {
-        CGFloat leftArrowButtonHeight = totalHeight;
-        CGFloat leftArrowButtonY = 0;
-        CGFloat leftArrowButtonWidth = _arrowImageWidth;
-        CGFloat leftArrowButtonX = 0;
-        [_leftArrowButton setFrame:CGRectMake(leftArrowButtonX,
-                                             leftArrowButtonY,
-                                             leftArrowButtonWidth,
-                                             leftArrowButtonHeight)];
-        
-        
-        CGFloat rightArrowButtonHeight = totalHeight;
-        CGFloat rightArrowButtonY = 0;
-        CGFloat rightArrowButtonWidth = _arrowImageWidth;
-        CGFloat rightArrowButtonX = totalWidth - rightArrowButtonWidth;
-        [_rightArrowButton setFrame:CGRectMake(rightArrowButtonX,
-                                              rightArrowButtonY,
-                                              rightArrowButtonWidth,
-                                              rightArrowButtonHeight)];
-    }
+    [self reloadViews];
 }
 
 - (void)setDataSource:(id<RadioButtonsDataSource>)dataSource {
@@ -140,11 +74,9 @@
 
 /** 完整的描述请参见文件头部 */
 - (void)reloadViews {
-    NSInteger defaultSelectedIndex = kDefaultSelectedIndex;
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInRadioButtons:)]) {
-        defaultSelectedIndex = [self.dataSource cj_defaultShowIndexInRadioButtons:self];
+    for (UIView *subView in self.scrollView.subviews) {
+        [subView removeFromSuperview];
     }
-    self.currentSelectedIndex = defaultSelectedIndex;
     
     NSInteger componentCount = [self.dataSource cj_numberOfComponentsInRadioButtons:self];
     if (componentCount < 3) {
@@ -152,9 +84,31 @@
         return;
     }
     
-    //添加radioButton到sv中
+    /* 计算scrollView的contentSizeWidth */
+    CGFloat totalComponentWidth = 0;
+    for (NSInteger index = 0; index < componentCount; index++) {
+        CGFloat currentComponentWidth = [self.dataSource cj_radioButtons:self widthForComponentAtIndex:index];
+        
+        totalComponentWidth += currentComponentWidth;
+        if (index == componentCount-1) {
+            self.contentView = [self cj_addContentViewToScrollView:self.scrollView withContentSizeWidth:totalComponentWidth];
+        }
+    }
+    //NSLog(@" --- totalComponentWidth = %f", totalComponentWidth);
+    
+    
+    
+    NSInteger defaultSelectedIndex = kDefaultSelectedIndex;
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInRadioButtons:)]) {
+        defaultSelectedIndex = [self.dataSource cj_defaultShowIndexInRadioButtons:self];
+    }
+    self.currentSelectedIndex = defaultSelectedIndex;
+    
+    
+    
+    /* 添加radioButton到scrollView中 */
     radioButtons = [[NSMutableArray alloc] init];
-    lineViews = [[NSMutableArray alloc] init];
+    UIView *lastView = nil;
     for (NSInteger index = 0; index < componentCount; index++) {
         RadioButton *radioButton = [self.dataSource cj_radioButtons:self cellForComponentAtIndex:index];
         radioButton.index = index;
@@ -162,25 +116,92 @@
         radioButton.tag = RadioButton_TAG_BEGIN + index;
         if (index == defaultSelectedIndex) {
             [radioButton setSelected:YES];
-            
-        }else{
+        } else {
             [radioButton setSelected:NO];
         }
         
-        [self.scrollView addSubview:radioButton];
+        CGFloat currentComponentWidth = [self.dataSource cj_radioButtons:self widthForComponentAtIndex:index];
+        [self cj_addSubView:radioButton toSuperView:self.scrollView afterCurrentView:lastView withWidth:currentComponentWidth];
         [radioButtons addObject:radioButton];
         
-        if (index < componentCount && index != 0) {
-            UIView *lineView = [[UIView alloc] initWithFrame:CGRectZero];
-            lineView.backgroundColor = [UIColor lightGrayColor];
-            [self.scrollView addSubview:lineView];
-            [lineViews addObject:lineView];
+        lastView = radioButton;
+    }
+    
+    
+    if (self.hideSeparateLine == NO) {
+        for (NSInteger index = 0; index < componentCount-1; index++) {
+            UIView *separateLineView = [[UIView alloc] initWithFrame:CGRectZero];
+            separateLineView.backgroundColor = [UIColor lightGrayColor];
+            
+            RadioButton *radioButton = [radioButtons objectAtIndex:index];
+            [self cj_addSubView:separateLineView toSuperView:self.scrollView afterCurrentView:radioButton withWidth:1];
         }
     }
     
-    self.lineImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [self.scrollView addSubview:self.lineImageView];
+    if (self.showBottomLineView) {
+        [self addBottomViewToScrollView];
+    }
+    
+    /* 如果有左右箭头 */
+    if (_haveArrowButton) {
+        [self judgeAndSetArrowButtonState];
+    }
 }
+
+/** 添加底部视图(常为线条或图片) */
+- (void)addBottomViewToScrollView {
+    self.lineImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    if (self.bottomLineImage) {
+        self.lineImageView.image = self.bottomLineImage;
+    }
+    if (self.bottomLineColor) {
+        self.lineImageView.backgroundColor = self.bottomLineColor;
+    }
+    [self.scrollView addSubview:self.lineImageView];
+    
+    
+    self.lineImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    //bottom
+    [self.scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.lineImageView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self.scrollView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:0]];
+    //height
+    self.lineImageViewHeightLayoutConstraint =
+            [NSLayoutConstraint constraintWithItem:self.lineImageView
+                                         attribute:NSLayoutAttributeHeight
+                                         relatedBy:NSLayoutRelationEqual
+                                            toItem:nil
+                                         attribute:NSLayoutAttributeNotAnAttribute
+                                        multiplier:1
+                                          constant:self.bottomLineViewHeight];
+    [self.scrollView addConstraint:self.lineImageViewHeightLayoutConstraint];
+    //left
+    self.lineImageViewLeftLayoutConstraint =
+            [NSLayoutConstraint constraintWithItem:self.lineImageView
+                                         attribute:NSLayoutAttributeLeft
+                                         relatedBy:NSLayoutRelationEqual
+                                            toItem:self.scrollView
+                                         attribute:NSLayoutAttributeLeft
+                                        multiplier:1
+                                          constant:0];
+    [self.scrollView addConstraint:self.lineImageViewLeftLayoutConstraint];
+    //width
+    self.lineImageViewWidthLayoutConstraint =
+                [NSLayoutConstraint constraintWithItem:self.lineImageView
+                                             attribute:NSLayoutAttributeWidth
+                                             relatedBy:NSLayoutRelationEqual
+                                                toItem:nil
+                                             attribute:NSLayoutAttributeNotAnAttribute
+                                            multiplier:1
+                                              constant:110];
+    [self.scrollView addConstraint:self.lineImageViewWidthLayoutConstraint];
+}
+
 
 //注意radioButton_cur经常有未选中的状态，即经常会有self.currentSelectedIndex == -1的情况
 - (void)radioButtonClick:(RadioButton *)radioButton_cur {
@@ -192,7 +213,7 @@
     
     if (index_old == -1) {  //①、如果当前没有radioButton是被选中。
         radioButton_cur.selected = !radioButton_cur.selected;
-        [self cj_selectComponentAtIndex:index_cur animated:YES];
+        
         
     }else{                  //②、index_old != -1，即表示如果当前有radioButton是被选中。
         if (index_old == index_cur) {
@@ -205,14 +226,9 @@
             radioButton_old.selected = !radioButton_old.selected;
             
             radioButton_cur.selected = !radioButton_cur.selected;
-            [self cj_selectComponentAtIndex:index_cur animated:YES];
         }
     }
-    
-    
-    if([self.delegate respondsToSelector:@selector(cj_radioButtons:chooseIndex:oldIndex:)]){
-        [self.delegate cj_radioButtons:self chooseIndex:index_cur oldIndex:index_old];
-    }
+    [self cj_selectComponentAtIndex:index_cur fromIndex:index_old animated:YES];
     
     BOOL isSameIndex = index_cur == index_old ? YES : NO;
     //NSLog(@"index_old = %zd, index_cur = %zd, isSameIndex= %@", index_old, index_cur, isSameIndex?@"YES":@"NO");
@@ -263,50 +279,6 @@
     self.currentSelectedIndex = -1;
 }
 
-#pragma mark - 有左右箭头时候常会用到的方法
-/**
- *  滚动到指定的单选按钮 targetRadioButton 上 （当按钮太多显示不全时常需要设置这个为YES）
- *
- *  @param targetRadioButton 要滚动到的指定按钮
- *  @param animated          是否动画
- */
-- (void)moveScrollViewToSelectItem:(RadioButton *)targetRadioButton animated:(BOOL)animated {
-    if (self.showLineImageView) {
-        CGFloat lineImageViewX = CGRectGetMinX(targetRadioButton.frame);
-        CGFloat lineImageViewWidth = CGRectGetWidth(targetRadioButton.frame);
-        CGFloat lineImageViewHeight = CGRectGetHeight(self.lineImageView.frame);
-        CGFloat lineImageViewY = CGRectGetHeight(self.frame) - lineImageViewHeight;
-        [UIView animateWithDuration:0.3 animations:^{
-            self.lineImageView.frame = CGRectMake(lineImageViewX, lineImageViewY, lineImageViewWidth, lineImageViewHeight);
-        }];
-    }
-     
-    //该item的距离计算。(滑动scrollView到显示出完整的targetRadioButton)
-    //CGFloat leftX = CGRectGetMinX(targetRadioButton.frame);
-    CGFloat rightX = CGRectGetMaxX(targetRadioButton.frame);
-    
-    if (rightX >= self.frame.size.width - 60) { //如果rightX离self.frame边缘太近(小于40)就要移动,设移动距离为moveOffset
-        CGFloat moveOffset = self.frame.size.width/2 + 40;
-        CGFloat rightX_new;
-        
-        if (rightX + moveOffset >= self.scrollView.contentSize.width) {//如果向左移动moveOffset后，会超出边界，则移动到末尾
-            moveOffset = self.frame.size.width;
-            rightX_new = self.scrollView.contentSize.width - moveOffset;
-            
-            [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:animated];
-        }else{
-            
-            rightX_new = rightX - moveOffset;
-            
-            if (rightX_new > 0) {
-                [self.scrollView setContentOffset:CGPointMake(rightX_new, self.scrollView.contentOffset.y) animated:animated];
-            }
-        }
-        
-    }else{
-        [self.scrollView setContentOffset:CGPointMake(0, self.scrollView.contentOffset.y) animated:animated];
-    }
-}
 
 /** 完整的描述请参见文件头部 */
 - (void)addLeftArrowImage:(UIImage *)leftArrowImage
@@ -314,7 +286,6 @@
       withArrowImageWidth:(CGFloat)arrowImageWidth {
     
     _haveArrowButton = YES;
-    _arrowImageWidth = arrowImageWidth;
     
     //创建左滑动箭头
     _leftArrowButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -322,6 +293,45 @@
     [_leftArrowButton setBackgroundImage:leftArrowImage forState:UIControlStateNormal];
     [_leftArrowButton addTarget:self action:@selector(leftArrowButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_leftArrowButton];
+    _leftArrowButton.translatesAutoresizingMaskIntoConstraints = NO;
+    //width
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_leftArrowButton
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:arrowImageWidth]];
+    //height
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_leftArrowButton
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeHeight
+                                 multiplier:1
+                                   constant:0]];
+    //top
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_leftArrowButton
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:0]];
+    //left
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_leftArrowButton
+                                  attribute:NSLayoutAttributeLeft
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:0]];
+    
+    
     
     //创建右滑动箭头
     _rightArrowButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -329,13 +339,48 @@
     [_rightArrowButton setBackgroundImage:rightArrowImage forState:UIControlStateNormal];
     [_rightArrowButton addTarget:self action:@selector(rightArrowButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_rightArrowButton];
+    _rightArrowButton.translatesAutoresizingMaskIntoConstraints = NO;
+    //width
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_rightArrowButton
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:arrowImageWidth]];
+    //height
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_rightArrowButton
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeHeight
+                                 multiplier:1
+                                   constant:0]];
+    //top
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_rightArrowButton
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:0]];
+    //right
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:_rightArrowButton
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:0]];
     
     
     //隐藏左、右箭头
     _leftArrowButton.hidden = YES;
     _rightArrowButton.hidden = YES;
-    
-    [self judgeAndSetArrowButtonState];
 }
 
 //左箭头点击
@@ -410,18 +455,28 @@
 }
 
 /** 完整的描述请参见文件头部 */
-- (void)cj_selectComponentAtIndex:(NSInteger)index animated:(BOOL)animated {
-    self.oldSelectedIndex = self.currentSelectedIndex;
-    self.currentSelectedIndex = index;
+- (void)cj_selectComponentAtIndex:(NSInteger)index_cur animated:(BOOL)animated {
+    [self cj_selectComponentAtIndex:index_cur fromIndex:self.currentSelectedIndex animated:animated];
+}
+
+- (void)cj_selectComponentAtIndex:(NSInteger)index_cur fromIndex:(NSInteger)index_old animated:(BOOL)animated {
     
-    RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.oldSelectedIndex];
-    radioButton_old.selected = NO;
+    if (index_cur != index_old) {
+        self.oldSelectedIndex = self.currentSelectedIndex;
+        self.currentSelectedIndex = index_cur;
+        
+        RadioButton *radioButton_old = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.oldSelectedIndex];
+        radioButton_old.selected = NO;
+        
+        RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
+        radioButton_cur.selected = YES;
+        
+        [self moveScrollViewToSelectItem:radioButton_cur animated:animated];
+    }
     
-    RadioButton *radioButton_cur = (RadioButton *)[self viewWithTag:RadioButton_TAG_BEGIN + self.currentSelectedIndex];
-    radioButton_cur.selected = YES;
-    [self moveScrollViewToSelectItem:radioButton_cur animated:animated];
-    
-    
+    if([self.delegate respondsToSelector:@selector(cj_radioButtons:chooseIndex:oldIndex:)]){
+        [self.delegate cj_radioButtons:self chooseIndex:index_cur oldIndex:index_old];
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -454,12 +509,319 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+#pragma mark - addSubView
+- (void)cj_makeView:(UIView *)superView addSubView:(UIView *)subView withEdgeInsets:(UIEdgeInsets)edgeInsets {
+//- (void)cj_addSubView:(UIView *)subView toSuperView:(UIView *)superView withEdgeInsets:(UIEdgeInsets)edgeInsets {
+    [superView addSubview:subView];
+    subView.translatesAutoresizingMaskIntoConstraints = NO;
+    //left
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeLeft
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:edgeInsets.left]];
+    //right
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:edgeInsets.right]];
+    //top
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:edgeInsets.top]];
+    //bottom
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:edgeInsets.bottom]];
 }
-*/
+
+
+- (UIView *)cj_addContentViewToScrollView:(UIView *)scrollView withWidthMultiplier:(CGFloat)widthMultiplier heightMultiplier:(CGFloat)heightMultiplier {
+    
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectZero];
+    contentView.backgroundColor = [UIColor lightGrayColor];
+    
+    [scrollView addSubview:contentView];
+    contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    //left
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeLeft
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:0]];
+    //right
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:0]]; //right = 0;
+    //top
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeTop
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:0]];
+    
+    //bottom(实际上这条是反向设置了scrollView的高)
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:0]]; //bottom = 0
+    
+    
+    //设置container的width（这里我们暂时设置contentView为3被scrollView的宽）
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeWidth
+                                 multiplier:widthMultiplier
+                                   constant:0]];
+    //设置container的height
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeHeight
+                                 multiplier:heightMultiplier
+                                   constant:0]];
+    
+    return contentView;
+}
+
+- (UIView *)cj_addContentViewToScrollView:(UIView *)scrollView withContentSizeWidth:(CGFloat)contentSizeWidth {
+    
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectZero];
+    contentView.backgroundColor = [UIColor lightGrayColor];
+    
+    [scrollView addSubview:contentView];
+    contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    //left
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeLeft
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:0]];
+    //right
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeRight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:0]]; //right = 0;
+    //top
+    [scrollView addConstraint:[NSLayoutConstraint constraintWithItem:contentView
+                                                           attribute:NSLayoutAttributeTop
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:scrollView
+                                                           attribute:NSLayoutAttributeTop
+                                                          multiplier:1
+                                                            constant:0]];
+    
+    //bottom(实际上这条是反向设置了scrollView的高)
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:0]]; //bottom = 0
+    
+    
+    //设置container的width
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeWidth
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:contentSizeWidth]];
+    //设置container的height
+    [scrollView addConstraint:
+     [NSLayoutConstraint constraintWithItem:contentView
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:scrollView
+                                  attribute:NSLayoutAttributeHeight
+                                 multiplier:1
+                                   constant:0]];
+    
+    return contentView;
+}
+
+
+- (NSLayoutConstraint *)cj_addSubView:(UIView *)subView toSuperView:(UIView *)superView afterCurrentView:(UIView *)currentView withWidth:(CGFloat)width {
+    [superView addSubview:subView];
+    
+    subView.translatesAutoresizingMaskIntoConstraints = NO;
+    /* width、height、top是不变的所以这里可以先写 */
+    
+    //width
+    NSLayoutConstraint *subViewWidthLayoutConstraint =
+            [NSLayoutConstraint constraintWithItem:subView
+                                         attribute:NSLayoutAttributeWidth
+                                         relatedBy:NSLayoutRelationEqual
+                                            toItem:nil
+                                         attribute:NSLayoutAttributeNotAnAttribute
+                                        multiplier:1
+                                          constant:width];
+    [superView addConstraint:subViewWidthLayoutConstraint];
+    
+    //height
+    [superView addConstraint:[NSLayoutConstraint constraintWithItem:subView
+                                                          attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:superView
+                                                          attribute:NSLayoutAttributeHeight
+                                                         multiplier:1
+                                                           constant:0]];
+    //top
+    [superView addConstraint:[NSLayoutConstraint constraintWithItem:subView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:superView
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1
+                                                           constant:0]];
+    /* 计算left要多少 */
+    //left
+    if (currentView == nil) {
+        [superView addConstraint:[NSLayoutConstraint constraintWithItem:subView
+                                                              attribute:NSLayoutAttributeLeft
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:superView
+                                                              attribute:NSLayoutAttributeLeft
+                                                             multiplier:1
+                                                               constant:0]];
+    } else {
+        [superView addConstraint:[NSLayoutConstraint constraintWithItem:subView
+                                                              attribute:NSLayoutAttributeLeft
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:currentView
+                                                              attribute:NSLayoutAttributeRight
+                                                             multiplier:1
+                                                               constant:0]];
+    }
+    
+    return subViewWidthLayoutConstraint;
+}
+
+
+/** 完整的描述请参见文件头部 */
+- (void)scollToCurrentSelectedViewWithAnimated:(BOOL)animated {
+    /* 如果初始有默认选择哪个按钮，则滑动到该按钮位置 */
+    if (self.currentSelectedIndex != -1) {
+        RadioButton *targetRadioButton = [radioButtons objectAtIndex:self.currentSelectedIndex];
+        
+        [self moveScrollViewToSelectItem:targetRadioButton animated:animated];
+    }
+}
+
+/**
+ *  滚动到指定的单选按钮 targetRadioButton 上 （当按钮太多显示不全时常需要设置这个为YES）
+ *
+ *  @param targetRadioButton 要滚动到的指定按钮
+ *  @param animated          是否动画
+ */
+- (void)moveScrollViewToSelectItem:(RadioButton *)targetRadioButton animated:(BOOL)animated {
+    if (self.showBottomLineView) {
+        CGFloat lineImageViewX = CGRectGetMinX(targetRadioButton.frame);
+        CGFloat lineImageViewWidth = CGRectGetWidth(targetRadioButton.frame);
+        CGFloat lineImageViewHeight = self.bottomLineViewHeight == 0 ? 1 : self.bottomLineViewHeight;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            self.lineImageViewLeftLayoutConstraint.constant = lineImageViewX;
+            self.lineImageViewWidthLayoutConstraint.constant = lineImageViewWidth;
+            self.lineImageViewHeightLayoutConstraint.constant = lineImageViewHeight;
+        }];
+    }
+    
+    //该item的距离计算。(滑动scrollView到显示出完整的targetRadioButton)
+    //CGFloat leftX = CGRectGetMinX(targetRadioButton.frame);
+    CGFloat rightX = CGRectGetMaxX(targetRadioButton.frame);
+    
+    if (rightX >= self.frame.size.width - 60) { //如果rightX离self.frame边缘太近(小于40)就要移动,设移动距离为moveOffset
+        CGFloat moveOffset = self.frame.size.width/2 + 40;
+        CGFloat rightX_new;
+        
+        if (rightX + moveOffset >= self.scrollView.contentSize.width) {//如果向左移动moveOffset后，会超出边界，则移动到末尾
+            moveOffset = self.frame.size.width;
+            rightX_new = self.scrollView.contentSize.width - moveOffset;
+            
+            [self scrollToContentOffsetX:rightX_new withAnimate:animated];
+        }else{
+            
+            rightX_new = rightX - moveOffset;
+            
+            if (rightX_new > 0) {
+                [self scrollToContentOffsetX:rightX_new withAnimate:animated];
+            }
+        }
+        
+    }else{
+        [self scrollToContentOffsetX:0 withAnimate:animated];
+    }
+}
+
+/**
+ *  滑动ScrollView到指定的contentOffsetX
+ *
+ *  @param contentOffsetX 指定的contentOffsetX
+ *  @param animated       滚动过程中是否要有动画
+ */
+- (void)scrollToContentOffsetX:(CGFloat)contentOffsetX withAnimate:(BOOL)animated {
+    
+    [self.scrollView setContentOffset:CGPointMake(contentOffsetX, self.scrollView.contentOffset.y) animated:animated];
+    
+//    if (animated) {
+//        CGFloat width = CGRectGetWidth(_scrollView.frame);
+//        CGFloat height = CGRectGetHeight(_scrollView.frame);
+//        [_scrollView scrollRectToVisible:CGRectMake(contentOffsetX, 0, width, height) animated:YES];
+//        //注：scrollRectToVisible:有时候会无效(eg:在layoutSubviews里不起作用)，所以当在layoutSubviews里执行的时候请一定选择使用通过设置contentOffset的方式来设置滚动
+//        
+//    } else {
+//        _scrollView.contentOffset = CGPointMake(contentOffsetX, 0);
+//    }
+}
 
 @end
