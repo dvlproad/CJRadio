@@ -26,7 +26,7 @@
     
     self.radioComposeView.dataSource = self;
     self.radioComposeView.delegate = self;
-    self.radioComposeView.scrollType = RadioComposeViewScrollTypeBanScrollHorizontal;
+//    self.radioComposeView.scrollType = RadioComposeViewScrollTypeBanScrollHorizontal;
 //    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
 //    [self.radioComposeView showViewWithIndex:2];
 }
@@ -45,7 +45,7 @@
 
 - (IBAction)changeShowViewIndex:(id)sender {
     NSInteger viewControllerCount = [self.componentViewControllers count];
-    [self.radioComposeView showViewWithIndex:random()%viewControllerCount];
+    [self.radioComposeView showViewWithIndex:random()%viewControllerCount animated:NO];
 }
 
 - (NSArray<UIViewController *> *)getComponentViewControllers {
@@ -64,7 +64,7 @@
     Home1 *home3 = [[Home1 alloc] initWithNibName:@"Home1" bundle:nil];
     home3.view.backgroundColor = [UIColor yellowColor];
     [radioControllers addObject:home3];
-    
+    /*
     UIViewController *home4 = [[UIViewController alloc]init];
     home4.view.backgroundColor = [UIColor orangeColor];
     [radioControllers addObject:home4];
@@ -76,7 +76,7 @@
     UIViewController *home6 = [[UIViewController alloc]init];
     home6.view.backgroundColor = [UIColor orangeColor];
     [radioControllers addObject:home6];
-    
+    */
     for (NSInteger i = 0; i < radioControllers.count; i++) {
         UIViewController *viewController = [radioControllers objectAtIndex:i];
         

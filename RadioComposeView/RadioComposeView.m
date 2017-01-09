@@ -18,10 +18,10 @@
     UIView *_viewC;
     UIView *_viewR;
     
-    NSInteger currentShowViewIndex; /**< 当前显示的视图(即中视图)上的视图内容在所有view中的位置 */
-    NSInteger selIndex;
+    NSInteger changeToShowViewIndex;    /**< 选择切换到哪个 */
 }
 @property (nonatomic, strong) NSArray *views;
+@property (nonatomic, assign) BOOL isDragByMyself;
 
 @end
 
@@ -54,6 +54,7 @@
 - (void)commonInit {
     self.backgroundColor = [UIColor blackColor];
     self.clipsToBounds = YES;
+    self.isDragByMyself = YES;
     
     [self addScrollViewToSelf];
     [self addContentViewToScrollView];
@@ -80,18 +81,17 @@
         self.views = [self.dataSource cj_radioViewsInRadioComposeView:self];
     }
     if (self.views.count < 3) {
-        NSLog(@"warning: self.views.count < 3, wouldn't be reloadVies");
+        NSAssert(NO, @"error: self.views.count < 3, wouldn't be reloadVies");
         return;
     }
     
-    currentShowViewIndex = -1;
+    _currentShowViewIndex = -1;
     
     //defaultShowIndex
     NSInteger defaultShowIndex = 0;
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInRadioComposeView:)]) {
         defaultShowIndex = [self.dataSource cj_defaultShowIndexInRadioComposeView:self];
     }
-    
     [self resetViewToLeftCenterRightWithShowViewIndex:defaultShowIndex];
 }
 
@@ -101,53 +101,85 @@
  *  @param showViewIndex 中视图的的视图在所有视图中的位置index
  */
 - (void)resetViewToLeftCenterRightWithShowViewIndex:(NSInteger)centerViewIndex {
-    if (currentShowViewIndex == centerViewIndex) {
+    if (_currentShowViewIndex == centerViewIndex) {
         NSLog(@"resetViewToLeftCenterRight failure");
         return;
     }
-    currentShowViewIndex = centerViewIndex;
-    
     
     /* 取得 左·中·右视图，分别是所有view中的哪几个 */
     NSInteger indexForLeftView = (centerViewIndex == 0) ? self.views.count-1 : centerViewIndex-1;
     NSInteger indexForCenterView = centerViewIndex;
     NSInteger indexForRightView = (centerViewIndex == self.views.count-1) ? 0 : centerViewIndex+1;
     
-    /* 为 左·中·右视图 重新附上新的视图：先remove，在add，这样就不会导致重复add多余的视图了 */
-    //    for (NSInteger i = 0; i < self.views.count; i++) {
-    //        if (i != indexL && i != indexC && i != indexR) {
-    //            UIView *view = self.views[i];
-    //            [view removeFromSuperview];
-    //        }
-    //    }
-    for (UIView *view in _viewL.subviews) {
-        [view removeFromSuperview];
-    }
-    for (UIView *view in _viewC.subviews) {
-        [view removeFromSuperview];
-    }
-    for (UIView *view in _viewR.subviews) {
-        [view removeFromSuperview];
-    }
-    
-    
-    //注：从保持的self.views中，拿出的 左·中·右视图 都已经把该view下的所有样式都完整的包含进去了，所以取出来的也是放好的
-    UIView *newLeftView = [self.views objectAtIndex:indexForLeftView];
-    UIView *newCenterView = [self.views objectAtIndex:indexForCenterView];
-    UIView *newRightView = [self.views objectAtIndex:indexForRightView];
-    
-    [_viewL cj_addSubView:newLeftView withEdgeInsets:UIEdgeInsetsZero];//添加新view,要像这样有约束
-    [_viewC cj_addSubView:newCenterView withEdgeInsets:UIEdgeInsetsZero];
-    [_viewR cj_addSubView:newRightView withEdgeInsets:UIEdgeInsetsZero];
+    [self resetScrollViewWithLeft:indexForLeftView center:indexForCenterView right:indexForRightView];
+    _currentShowViewIndex = centerViewIndex;
     
     //滑动到显示的视图(即中视图)
-    //[self scrollToCenterViewWithAnimate:NO];  //TODO: //原本使用frame的时候写在这里有效，现在由于使用约束，而导致第一次初始化的时候无效，所以将第一次以及其他次分开成写在layoutSubviews和scrollViewDidEndDecelerating了。
-    
     if (self.delegate && [self.delegate respondsToSelector:@selector(cj_radioComposeView:didChangeToIndex:)]) {
         [self.delegate cj_radioComposeView:self didChangeToIndex:centerViewIndex];
     }
 }
 
+
+/**
+ *  为 左·中·右视图 重新附上新的视图，且页面上显示的中视图的的视图在所有视图中所在的位置为index
+ *
+ *  @param leftViewIndex    左视图的的视图在所有视图中的位置index
+ *  @param centerViewIndex  中视图的的视图在所有视图中的位置index
+ *  @param rightViewIndex   右视图的的视图在所有视图中的位置index
+ */
+- (void)resetScrollViewWithLeft:(NSInteger)leftViewIndex
+                         center:(NSInteger)centerViewIndex
+                          right:(NSInteger)rightViewIndex
+{
+    [self replaceScrollLeftView:leftViewIndex];
+    [self replaceScrollCenterView:centerViewIndex];
+    [self replaceScrollRightView:rightViewIndex];
+}
+
+
+/**
+ *  替换 左视图 上的视图
+ *
+ *  @param leftViewIndex    左视图的的视图在所有视图中的位置index
+ */
+- (void)replaceScrollLeftView:(NSInteger)leftViewIndex {
+    for (UIView *view in _viewL.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    //注：从保持的self.views中，拿出的 左·中·右视图 都已经把该view下的所有样式都完整的包含进去了，所以取出来的也是放好的
+    UIView *newLeftView = [self.views objectAtIndex:leftViewIndex];
+    [_viewL cj_addSubView:newLeftView withEdgeInsets:UIEdgeInsetsZero];
+}
+
+/**
+ *  替换 右视图 上的视图
+ *
+ *  @param rightViewIndex   右视图的的视图在所有视图中的位置index
+ */
+- (void)replaceScrollRightView:(NSInteger)rightViewIndex {
+    for (UIView *view in _viewR.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    UIView *newRightView = [self.views objectAtIndex:rightViewIndex];
+    [_viewR cj_addSubView:newRightView withEdgeInsets:UIEdgeInsetsZero];
+}
+
+/**
+ *  替换 中视图 上的视图
+ *
+ *  @param centerViewIndex  中视图的的视图在所有视图中的位置index
+ */
+- (void)replaceScrollCenterView:(NSInteger)centerViewIndex {
+    for (UIView *view in _viewC.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    UIView *newCenterView = [self.views objectAtIndex:centerViewIndex];
+    [_viewC cj_addSubView:newCenterView withEdgeInsets:UIEdgeInsetsZero];
+}
 
 
 #pragma mark - ScrolView、ContentView、LeftView、CenterView、RightView的加载
@@ -306,59 +338,50 @@
 
 #pragma mark - 手动选择显示哪个viewController.view
 /** 完整的描述请参见文件头部 */
-- (void)showViewWithIndex:(NSInteger)showViewIndex {
-    if (currentShowViewIndex == showViewIndex) {
+- (void)showViewWithIndex:(NSInteger)showViewIndex animated:(BOOL)animated {
+    self.isDragByMyself = NO;
+    
+    if (_currentShowViewIndex == showViewIndex) {
+        NSLog(@"选择的index未变化，仍是%zd", showViewIndex);
         return;
     }
     
-    NSInteger oldShowViewIndex = currentShowViewIndex;
-    selIndex = showViewIndex;
+    NSInteger oldShowViewIndex = _currentShowViewIndex;
+    NSLog(@"由%zd到%zd", oldShowViewIndex, showViewIndex);
     
     
-    //方法①：选择后无滑动动画（因为我们这边要让选择后无滑动动画，所以不使用方法①)
-    /*
-    [self resetViewToLeftCenterRightWithShowViewIndex:showViewIndex];
-    [self scrollToCenterViewWithAnimate:NO];
-    return;
-    */
-    
-    
-    //方法②：选择后有滑动动画
+    BOOL isShowViewIndexLeftThanCurrent = showViewIndex < oldShowViewIndex || (oldShowViewIndex==0 && showViewIndex == self.views.count-1); //目标视图位于左侧的情况
+    //BOOL isShowViewIndexRightThanCurrent = showViewIndex > oldShowViewIndex || (oldShowViewIndex==self.views.count-1 && showViewIndex==0);  //目标视图位于右侧的情况
     /* 判断要显示的新视图位于当前视图的左边还是右边 */
-    BOOL isShowViewIndexLeftThanCurrent = selIndex < oldShowViewIndex || (oldShowViewIndex==0 && selIndex == self.views.count-1);   //目标视图位于左侧的情况
-    BOOL isShowViewIndexRightThanCurrent = selIndex > oldShowViewIndex || (oldShowViewIndex==self.views.count-1 && selIndex==0);    //目标视图位于右侧的情况
-    
-    CGFloat x = CGRectGetMinX(_viewC.frame);
-    CGFloat width = CGRectGetWidth(_scrollView.frame);
-    CGFloat height = CGRectGetHeight(_scrollView.frame);
-    
-    if (isShowViewIndexLeftThanCurrent) {
-        for (UIView *view in _viewL.subviews) {
-            [view removeFromSuperview];
+    if (ABS(showViewIndex - oldShowViewIndex) < 2) {
+        //NSLog(@"要切换到的位置就在隔壁，故无需事先替换隔壁视图");
+        
+    } else {
+        if (isShowViewIndexLeftThanCurrent) {
+            [self replaceScrollLeftView:showViewIndex];
+        } else {
+            [self replaceScrollRightView:showViewIndex];
         }
-        
-        UIView *newLeftView = [self.views objectAtIndex:showViewIndex];
-        [_viewL cj_addSubView:newLeftView withEdgeInsets:UIEdgeInsetsZero];
-        
-        x = x - width;
-    } else if (isShowViewIndexRightThanCurrent) {
-        for (UIView *view in _viewR.subviews) {
-            [view removeFromSuperview];
-        }
-        
-        UIView *newRightView = [self.views objectAtIndex:showViewIndex];
-        [_viewR cj_addSubView:newRightView withEdgeInsets:UIEdgeInsetsZero];
-        
-        x = x + width;
     }
     
     
-    [_scrollView scrollRectToVisible:CGRectMake(x, 0, width, height) animated:YES];//注：这里不能马上执行resetViewToLeftCenterRightWithShowViewIndex:因为滚动还没结束。所以应该将resetViewToLeftCenterRightWithShowViewIndex:放在滚动动画结束时候会调用的scrollViewDidEndScrollingAnimation方法里执行resetViewToLeftCenterRightWithShowViewIndex:。
+    CGFloat width = CGRectGetWidth(_scrollView.frame);
+    if (isShowViewIndexLeftThanCurrent) {
+        [_scrollView setContentOffset:CGPointMake(0*width, 0) animated:animated];
+    } else {
+        [_scrollView setContentOffset:CGPointMake(2*width, 0) animated:animated];
+    }
+    
+    if (animated == NO) {
+        [self resetViewToLeftCenterRightWithShowViewIndex:showViewIndex];
+    } else {
+        changeToShowViewIndex = showViewIndex;
+        //NSLog(@"有动画的时候，我们需要将resetViewToLeftCenterRightWithShowViewIndex放在scrollView的委托方法scrollViewDidEndDecelerating里");
+    }
 }
 
 
 #pragma mark - UIScrollViewDelegate
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     //由于我们这里使用的是只加载当前页及当前页的前后两页来显示的方式，以减少内存方式，所以当我们拖动到不是所加载的这几页时，比如拖动到当前页的前两页时，就会由于之前没有加载，而显示空内容(即尤其是当我们拖动的距离超过一页的时候)。但是由于我们这里scrollView只设置了三页，也就是说scrollView的contentSize只有三页大小，意味着当scrollView处于中视图时候(实际上显示的时候一直是处于中视图的)，其根本不可能滑动操作一页。所以，我们这里也就没必要在拖动过程中随时检查是否超过一页，来为了避免出现拖动过程中出现空内容的view的情况。
     if (scrollView != _scrollView) {
@@ -394,14 +417,14 @@
 //        }
         case RadioComposeViewScrollTypeBanScrollCycle:
         {
-            if (currentShowViewIndex == 0) {
+            if (_currentShowViewIndex == 0) {
                 CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
                 if (contentOffsetX < scrollViewWidth) {
                     contentOffsetX = scrollViewWidth;
                     scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
                 }
             }
-            if (currentShowViewIndex == self.views.count-1) {
+            if (_currentShowViewIndex == self.views.count-1) {
                 CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
                 if (contentOffsetX > scrollViewWidth) {
                     contentOffsetX = scrollViewWidth;
@@ -427,22 +450,31 @@
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     //NSLog(@"执行有滚动动画的代码操作时，比如scrollRectToVisible或setContentOffset:的animated为YES的时候，都会该滚动动画结束的时候调用此方法");
     
-    [self resetViewToLeftCenterRightWithShowViewIndex:selIndex];
-    [self scrollToCenterViewWithAnimate:NO];
+    [self resetViewToLeftCenterRightWithShowViewIndex:changeToShowViewIndex];
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    //拖动drag的时候才会执行
+    CGFloat contentOffsetX = scrollView.contentOffset.x;
+    CGFloat width = CGRectGetWidth(scrollView.frame);
+    NSInteger maxIndex = self.views.count-1;
     
-    if (scrollView.contentOffset.x <= 0) {                                 //滚动到前一页
-        NSInteger nextIndex = (currentShowViewIndex==0) ? self.views.count-1 : currentShowViewIndex-1;
-        [self resetViewToLeftCenterRightWithShowViewIndex:nextIndex];
+    if (contentOffsetX >= width && contentOffsetX < 2*width) {
+        changeToShowViewIndex = _currentShowViewIndex;
         
-    }else if(scrollView.contentOffset.x >= scrollView.frame.size.width*2) {//滚动到后一页
-        NSInteger nextIndex = (currentShowViewIndex==self.views.count-1) ? 0 : currentShowViewIndex+1;
-        [self resetViewToLeftCenterRightWithShowViewIndex:nextIndex];
+    } else if (contentOffsetX < width) {
+        changeToShowViewIndex = _currentShowViewIndex-1;
+        if (changeToShowViewIndex < 0) {
+            changeToShowViewIndex = maxIndex;
+        }
+    } else if (contentOffsetX >= 2*width) {
+        changeToShowViewIndex = _currentShowViewIndex+1;
+        if (changeToShowViewIndex > maxIndex) {
+            changeToShowViewIndex = 0;
+        }
     }
     
-    [self scrollToCenterViewWithAnimate:NO];  //滑动到显示的视图(即中视图)
+    [self resetViewToLeftCenterRightWithShowViewIndex:changeToShowViewIndex];
 }
 
 /**
