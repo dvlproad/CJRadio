@@ -13,8 +13,8 @@
 @interface SliderViewController : UIViewController {
     
 }
-@property (nonatomic, strong) IBOutlet RadioButtons *sliderRadioButtons;
-@property (nonatomic, strong) IBOutlet RadioComposeView *radioComposeView;
+@property (nonatomic, strong) RadioButtons *sliderRadioButtons;
+@property (nonatomic, strong) RadioComposeView *radioComposeView;
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;
 @property (nonatomic, assign) NSInteger maxRadioButtonsShowViewCount;
 

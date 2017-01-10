@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "SliderViewController.h"
-#import "SliderViewController2.h"
 
 @interface AppDelegate ()
 
@@ -20,14 +18,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
 //    SliderViewController *viewController = [[SliderViewController alloc] initWithNibName:@"SliderViewController" bundle:nil];
-    SliderViewController2 *viewController = [[SliderViewController2 alloc]initWithNibName:@"SliderViewController2" bundle:nil];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    self.window.rootViewController = navigationController;
-    
-    [self.window makeKeyAndVisible];
+//    SliderViewController2 *viewController = [[SliderViewController2 alloc]initWithNibName:@"SliderViewController2" bundle:nil];
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    self.window.rootViewController = navigationController;
+//    
+//    [self.window makeKeyAndVisible];
     
     return YES;
 }

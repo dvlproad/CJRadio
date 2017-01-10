@@ -15,6 +15,13 @@
 		783079DC1D769580009689F3 /* SliderViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079DA1D769580009689F3 /* SliderViewController2.m */; };
 		783079DD1D769580009689F3 /* SliderViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783079DB1D769580009689F3 /* SliderViewController2.xib */; };
 		783079E41D76CEFD009689F3 /* CJButtonControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 783079E31D76CEFD009689F3 /* CJButtonControllerView.m */; };
+		78310C7A1E24C995008EDE35 /* SystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C781E24C995008EDE35 /* SystemComposeViewController.m */; };
+		78310C7B1E24C995008EDE35 /* SystemComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78310C791E24C995008EDE35 /* SystemComposeViewController.xib */; };
+		78310C7F1E24C9C8008EDE35 /* CJSystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C7E1E24C9C8008EDE35 /* CJSystemComposeViewController.m */; };
+		78310C831E24CA2D008EDE35 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C821E24CA2D008EDE35 /* TestDataUtil.m */; };
+		78310C871E24CA7E008EDE35 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C851E24CA7E008EDE35 /* Home1.m */; };
+		78310C881E24CA7E008EDE35 /* Home1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78310C861E24CA7E008EDE35 /* Home1.xib */; };
+		78310C951E24D186008EDE35 /* TempRadioButtonsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C941E24D186008EDE35 /* TempRadioButtonsDataSource.m */; };
 		7846335A1D728C4B0082401F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 784633591D728C4B0082401F /* main.m */; };
 		7846335D1D728C4B0082401F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846335C1D728C4B0082401F /* AppDelegate.m */; };
 		784633601D728C4B0082401F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7846335F1D728C4B0082401F /* ViewController.m */; };
@@ -59,6 +66,18 @@
 		783079DB1D769580009689F3 /* SliderViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderViewController2.xib; sourceTree = "<group>"; };
 		783079E21D76CEFD009689F3 /* CJButtonControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJButtonControllerView.h; sourceTree = "<group>"; };
 		783079E31D76CEFD009689F3 /* CJButtonControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJButtonControllerView.m; sourceTree = "<group>"; };
+		78310C771E24C995008EDE35 /* SystemComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemComposeViewController.h; sourceTree = "<group>"; };
+		78310C781E24C995008EDE35 /* SystemComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemComposeViewController.m; sourceTree = "<group>"; };
+		78310C791E24C995008EDE35 /* SystemComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SystemComposeViewController.xib; sourceTree = "<group>"; };
+		78310C7D1E24C9C8008EDE35 /* CJSystemComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSystemComposeViewController.h; sourceTree = "<group>"; };
+		78310C7E1E24C9C8008EDE35 /* CJSystemComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSystemComposeViewController.m; sourceTree = "<group>"; };
+		78310C811E24CA2D008EDE35 /* TestDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataUtil.h; sourceTree = "<group>"; };
+		78310C821E24CA2D008EDE35 /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
+		78310C841E24CA7E008EDE35 /* Home1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home1.h; sourceTree = "<group>"; };
+		78310C851E24CA7E008EDE35 /* Home1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home1.m; sourceTree = "<group>"; };
+		78310C861E24CA7E008EDE35 /* Home1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home1.xib; sourceTree = "<group>"; };
+		78310C931E24D186008EDE35 /* TempRadioButtonsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempRadioButtonsDataSource.h; sourceTree = "<group>"; };
+		78310C941E24D186008EDE35 /* TempRadioButtonsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempRadioButtonsDataSource.m; sourceTree = "<group>"; };
 		784633551D728C4B0082401F /* CJSliderViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJSliderViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784633591D728C4B0082401F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7846335B1D728C4B0082401F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +175,38 @@
 			path = ../../CJButtonControllerView;
 			sourceTree = "<group>";
 		};
+		78310C7C1E24C9C8008EDE35 /* CJSystemComposeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				78310C7D1E24C9C8008EDE35 /* CJSystemComposeViewController.h */,
+				78310C7E1E24C9C8008EDE35 /* CJSystemComposeViewController.m */,
+			);
+			name = CJSystemComposeViewController;
+			path = ../../CJSystemComposeViewController;
+			sourceTree = "<group>";
+		};
+		78310C801E24CA2D008EDE35 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				78310C811E24CA2D008EDE35 /* TestDataUtil.h */,
+				78310C821E24CA2D008EDE35 /* TestDataUtil.m */,
+				78310C841E24CA7E008EDE35 /* Home1.h */,
+				78310C851E24CA7E008EDE35 /* Home1.m */,
+				78310C861E24CA7E008EDE35 /* Home1.xib */,
+			);
+			name = TestData;
+			path = ../../TestData;
+			sourceTree = "<group>";
+		};
+		78310C921E24D161008EDE35 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				78310C931E24D186008EDE35 /* TempRadioButtonsDataSource.h */,
+				78310C941E24D186008EDE35 /* TempRadioButtonsDataSource.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		7846334C1D728C4B0082401F = {
 			isa = PBXGroup;
 			children = (
@@ -185,11 +236,14 @@
 				7846335C1D728C4B0082401F /* AppDelegate.m */,
 				7846335E1D728C4B0082401F /* ViewController.h */,
 				7846335F1D728C4B0082401F /* ViewController.m */,
-				7809DDEB1D78031900CAD231 /* Resources */,
+				78310C7C1E24C9C8008EDE35 /* CJSystemComposeViewController */,
 				783079E11D76CEFD009689F3 /* CJButtonControllerView */,
 				7846338B1D728C740082401F /* Controllers */,
 				7846338C1D728C740082401F /* Views */,
+				7809DDEB1D78031900CAD231 /* Resources */,
 				784633611D728C4B0082401F /* Main.storyboard */,
+				78310C921E24D161008EDE35 /* DataSource */,
+				78310C801E24CA2D008EDE35 /* TestData */,
 				784633641D728C4B0082401F /* Assets.xcassets */,
 				784633661D728C4B0082401F /* LaunchScreen.storyboard */,
 				784633691D728C4B0082401F /* Info.plist */,
@@ -233,6 +287,9 @@
 				783079D91D769580009689F3 /* SliderViewController2.h */,
 				783079DA1D769580009689F3 /* SliderViewController2.m */,
 				783079DB1D769580009689F3 /* SliderViewController2.xib */,
+				78310C771E24C995008EDE35 /* SystemComposeViewController.h */,
+				78310C781E24C995008EDE35 /* SystemComposeViewController.m */,
+				78310C791E24C995008EDE35 /* SystemComposeViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -361,6 +418,8 @@
 				784633651D728C4B0082401F /* Assets.xcassets in Resources */,
 				7809DDF01D78031900CAD231 /* addChannel_selected@2x.png in Resources */,
 				78C7DC761D772CEA005F86D2 /* RadioButton_DropDown.xib in Resources */,
+				78310C881E24CA7E008EDE35 /* Home1.xib in Resources */,
+				78310C7B1E24C995008EDE35 /* SystemComposeViewController.xib in Resources */,
 				784633631D728C4B0082401F /* Main.storyboard in Resources */,
 				78C7DC771D772CEA005F86D2 /* RadioButton_Slider.xib in Resources */,
 				7809DDEF1D78031900CAD231 /* addChannel_normal@2x.png in Resources */,
@@ -481,9 +540,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78310C7A1E24C995008EDE35 /* SystemComposeViewController.m in Sources */,
+				78310C7F1E24C9C8008EDE35 /* CJSystemComposeViewController.m in Sources */,
 				783079DC1D769580009689F3 /* SliderViewController2.m in Sources */,
 				784633601D728C4B0082401F /* ViewController.m in Sources */,
 				7846335D1D728C4B0082401F /* AppDelegate.m in Sources */,
+				78310C951E24D186008EDE35 /* TempRadioButtonsDataSource.m in Sources */,
+				78310C831E24CA2D008EDE35 /* TestDataUtil.m in Sources */,
+				78310C871E24CA7E008EDE35 /* Home1.m in Sources */,
 				783079D71D769295009689F3 /* SliderViewController.m in Sources */,
 				7846335A1D728C4B0082401F /* main.m in Sources */,
 				783079E41D76CEFD009689F3 /* CJButtonControllerView.m in Sources */,

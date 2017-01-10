@@ -7,13 +7,15 @@
 //
 
 #import "RBSliderVC.h"
+#import "CJRadioButtonsHelper.h"
+#import "TestDataUtil.h"
 
-#define kDefaultMaxShowCount    5
+#define kDefaultMaxShowCount   4
 
-@interface RBSliderVC () <RadioButtonsDataSource, RadioButtonsDelegate> {
+@interface RBSliderVC () <RadioButtonsDelegate> {
     
 }
-@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) CJCommonRadioButtonsDataSource *commonRadioButtonsDataSource;
 
 @end
 
@@ -22,18 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    self.titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
-    self.sliderRadioButtons.hideSeparateLine = NO;
-    self.sliderRadioButtons.showBottomLineView = YES;
-    self.sliderRadioButtons.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
-    self.sliderRadioButtons.bottomLineColor = [UIColor redColor];
-    self.sliderRadioButtons.bottomLineViewHeight = 16;
-    [self.sliderRadioButtons addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
-                               rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
-                           withArrowImageWidth:20];
-    self.sliderRadioButtons.dataSource = self;
+    //NSArray *titles = [TestDataUtil getViewControllerTitles];
+    NSArray *titles = @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
+    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.sliderRadioButtons commonRadioButtonType:CJCommonRadioButtonTypeSlider];
+    
+    self.commonRadioButtonsDataSource =
+    [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles
+                                          defaultShowIndex:10
+                                        maxButtonShowCount:kDefaultMaxShowCount
+                                     commonRadioButtonType:CJCommonRadioButtonTypeSlider];
+    self.sliderRadioButtons.dataSource = self.commonRadioButtonsDataSource;
     self.sliderRadioButtons.delegate = self;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -54,35 +56,7 @@
     [self.sliderRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
 }
 
-#pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
-- (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
-    return 10;
-}
-
-- (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons {
-    return self.titles.count;
-}
-
-- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
-    NSInteger showViewCount = MIN(self.titles.count, kDefaultMaxShowCount);
-    CGFloat sectionWidth = CGRectGetWidth(radioButtons.frame)/showViewCount;
-    sectionWidth = ceilf(sectionWidth); 
-    
-    return sectionWidth;
-}
-
-- (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
-//    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_Slider" owner:nil options:nil];
-//    RadioButton *radioButton = [radioButtonNib lastObject];
-    RadioButton *radioButton = [[RadioButton alloc] init];
-    radioButton.backgroundColor = [UIColor purpleColor];
-    [radioButton setTitle:self.titles[index]];
-    radioButton.textNormalColor = [UIColor blackColor];
-    radioButton.textSelectedColor = [UIColor greenColor];
-    
-    return radioButton;
-}
-
+#pragma mark -  RadioButtonsDelegate
 - (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
 }

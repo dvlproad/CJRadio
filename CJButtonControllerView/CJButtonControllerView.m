@@ -210,7 +210,9 @@ static NSInteger kSelectedIndexDefault = 0;
 
 - (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
     RadioButton *radioButton = [self.dataSource cj_buttonControllerView:self cellForComponentAtIndex:index];
-    [radioButton setTitle:self.titles[index]];
+    
+    NSString *title = [self.titles objectAtIndex:index];
+    [radioButton setTitle:title];
     
     return radioButton;
 }
@@ -236,7 +238,7 @@ static NSInteger kSelectedIndexDefault = 0;
 - (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     isDelegateDoneInRadioButton = YES;
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
-    [self.radioComposeView showViewWithIndex:index_cur];
+    [self.radioComposeView showViewWithIndex:index_cur animated:YES];
     self.currentSelectedIndex = index_cur;
     
     [self didChangeToIndex:index_cur];

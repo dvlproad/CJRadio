@@ -25,14 +25,52 @@
 }
 
 - (void)commonInit {
-    self.label = [[UILabel alloc] init];
+    self.backgroundColor = [UIColor whiteColor];
+    
+    self.label = [[UILabel alloc] initWithFrame:CGRectZero];
     self.label.textAlignment = NSTextAlignmentCenter;
     self.label.numberOfLines = 0;
-    [self cj_makeView:self addSubView:self.label withEdgeInsets:UIEdgeInsetsZero];
+    [self cj_makeView:self addSubView:self.label withEdgeInsets:UIEdgeInsetsMake(0, 10, 0, -10)];
     
     self.button = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.button addTarget:self action:@selector(radioButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self cj_makeView:self addSubView:self.button withEdgeInsets:UIEdgeInsetsZero];
+    
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [self addSubview:self.imageView];
+    self.imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.imageView
+                                  attribute:NSLayoutAttributeCenterY    //centerY
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeCenterY
+                                 multiplier:1
+                                   constant:0]];
+    [self addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.imageView
+                                  attribute:NSLayoutAttributeRight      //right
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:-10]];
+    [self.imageView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.imageView
+                                  attribute:NSLayoutAttributeWidth    //width
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:12]];
+    [self.imageView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.imageView
+                                  attribute:NSLayoutAttributeHeight //height
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:12]];
 }
 
 - (void)layoutSubviews {

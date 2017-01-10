@@ -2,18 +2,21 @@
 //  RadioButtonsCanDropVC.m
 //  RadioButtonsDemo
 //
-//  Created by 李超前 on 15/11/16.
+//  Created by dvlproad on 15/11/16.
 //  Copyright © 2015年 dvlproad. All rights reserved.
 //
 
 #import "RadioButtonsCanDropVC.h"
 #import <CJPopupView/UIView+CJShowDropView.h>
+#import "CJRadioButtonsHelper.h"
+#import "TestDataUtil.h"
 
 #define kDefaultMaxShowCount    5
 
-@interface RadioButtonsCanDropVC () <RadioButtonsDataSource, RadioButtonsDelegate> {
-    NSArray *titles;
+@interface RadioButtonsCanDropVC () <RadioButtonsDelegate> {
+    
 }
+@property (nonatomic, strong) CJCommonRadioButtonsDataSource *commonRadioButtonsDataSource;
 
 @end
 
@@ -24,10 +27,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    titles =  @[@"人物", @"爱好", @"其他", @"地区"];
     self.dropdownRadioButtons.radioButtonType = RadioButtonTypeCanDrop;
-    self.dropdownRadioButtons.dataSource = self;
     self.dropdownRadioButtons.delegate = self;
+    
+    
+    NSArray *titles = @[@"人物", @"爱好", @"其他", @"地区"];;
+    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.dropdownRadioButtons commonRadioButtonType:CJCommonRadioButtonTypeDropDown];
+    
+    self.commonRadioButtonsDataSource =
+    [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles
+                                          defaultShowIndex:-1
+                                        maxButtonShowCount:kDefaultMaxShowCount
+                                     commonRadioButtonType:CJCommonRadioButtonTypeDropDown];
+    self.dropdownRadioButtons.dataSource = self.commonRadioButtonsDataSource;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -36,39 +48,7 @@
     [self.dropdownRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
 }
 
-#pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
-- (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
-    return -1;
-}
-
-- (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons {
-    return titles.count;
-}
-
-- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
-    NSInteger showViewCount = MIN(titles.count, kDefaultMaxShowCount);
-    CGFloat sectionWidth = CGRectGetWidth(radioButtons.frame)/showViewCount;
-//    sectionWidth = ceilf(sectionWidth); //重点注意：当使用除法计算width时候，为了避免计算出来的值受除后，余数太多，除不尽(eg:102.66666666666667)，而造成的之后在通过左右箭头点击来寻找”要找的按钮“的时候，计算出现问题（”要找的按钮“需与“左右侧箭头的最左最右侧值”进行精确的比较），所以这里我们需要一个整数值，故我们这边选择向上取整。
-    
-    return sectionWidth;
-}
-
-- (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
-    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_DropDown" owner:nil options:nil];
-    RadioButton *radioButton = [radioButtonNib lastObject];
-    [radioButton setTitle:titles[index]];
-    radioButton.textNormalColor = [UIColor whiteColor];
-    radioButton.textSelectedColor = [UIColor greenColor];
-    
-    radioButton.stateChangeCompleteBlock = ^(RadioButton *radioButton) {
-        [UIView animateWithDuration:0.3 animations:^{
-                    radioButton.imageView.transform = CGAffineTransformRotate(radioButton.imageView.transform, DEGREES_TO_RADIANS(180));
-                }];
-    };
-    
-    return radioButton;
-}
-
+#pragma mark -  RadioButtonsDelegate
 - (void)cj_radioButtons:(RadioButtons *)radioButtonsCanDrop chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
     BOOL isSameIndex = index_cur == index_old ? YES : NO;

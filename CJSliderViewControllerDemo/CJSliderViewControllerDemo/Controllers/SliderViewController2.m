@@ -7,6 +7,7 @@
 //
 
 #import "SliderViewController2.h"
+#import "TestDataUtil.h"
 
 @interface SliderViewController2 () <CJButtonControllerViewDataSource, CJButtonControllerViewDelegate>
 
@@ -17,10 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = NSLocalizedString(@"首页", nil);
+    self.navigationItem.title = NSLocalizedString(@"SliderViewController首页", nil);
     
-    self.buttonControllerView.titles =  @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
+    self.buttonControllerView.titles =  [TestDataUtil getViewControllerTitles];
     self.buttonControllerView.showBottomLineView = YES;
+//    self.sliderRadioButtons.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
+//    self.sliderRadioButtons.bottomLineColor = [UIColor redColor];
     self.buttonControllerView.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
     self.buttonControllerView.bottomLineViewHeight = 6;
     [self.buttonControllerView addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]

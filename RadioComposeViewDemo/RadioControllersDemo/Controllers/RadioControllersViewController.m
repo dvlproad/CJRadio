@@ -7,7 +7,7 @@
 //
 
 #import "RadioControllersViewController.h"
-#import "Home1.h"
+#import "TestDataUtil.h"
 
 @interface RadioControllersViewController () <RadioComposeViewDataSource, RadioComposeViewDelegate> {
     
@@ -21,8 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = NSLocalizedString(@"RadioControllersViewController", nil);
     
-    self.componentViewControllers = [self getComponentViewControllers];
+    self.componentViewControllers = [TestDataUtil getComponentViewControllers];
     
     self.radioComposeView.dataSource = self;
     self.radioComposeView.delegate = self;
@@ -45,52 +46,8 @@
 
 - (IBAction)changeShowViewIndex:(id)sender {
     NSInteger viewControllerCount = [self.componentViewControllers count];
-    [self.radioComposeView showViewWithIndex:random()%viewControllerCount animated:NO];
+    [self.radioComposeView cj_selectComponentAtIndex:random()%viewControllerCount animated:YES];
 }
-
-- (NSArray<UIViewController *> *)getComponentViewControllers {
-    /* 设置radioControllers（黄橙相间） */
-    NSMutableArray *radioControllers = [[NSMutableArray alloc] init];
-    
-    UIViewController *home1 = [[UIViewController alloc]init];
-    home1.view.backgroundColor = [UIColor yellowColor];
-    [radioControllers addObject:home1];
-    
-    UIViewController *home2 = [[UIViewController alloc]init];
-    home2.view.backgroundColor = [UIColor orangeColor];
-    [radioControllers addObject:home2];
-    
-//    UIViewController *home3 = [[UIViewController alloc]init];
-    Home1 *home3 = [[Home1 alloc] initWithNibName:@"Home1" bundle:nil];
-    home3.view.backgroundColor = [UIColor yellowColor];
-//    [radioControllers addObject:home3];
-    /*
-    UIViewController *home4 = [[UIViewController alloc]init];
-    home4.view.backgroundColor = [UIColor orangeColor];
-    [radioControllers addObject:home4];
-    
-    UIViewController *home5 = [[UIViewController alloc]init];
-    home5.view.backgroundColor = [UIColor yellowColor];
-    [radioControllers addObject:home5];
-    
-    UIViewController *home6 = [[UIViewController alloc]init];
-    home6.view.backgroundColor = [UIColor orangeColor];
-    [radioControllers addObject:home6];
-    */
-    for (NSInteger i = 0; i < radioControllers.count; i++) {
-        UIViewController *viewController = [radioControllers objectAtIndex:i];
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 300)];
-        label.backgroundColor = [UIColor cyanColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:40];
-        label.text = [NSString stringWithFormat:@"This is home%zd", i+1];
-        [viewController.view addSubview:label];
-    }
-    
-    return radioControllers;
-}
-
 
 #pragma mark - RadioComposeViewDataSource
 - (NSInteger)cj_defaultShowIndexInRadioComposeView:(RadioComposeView *)radioComposeView {

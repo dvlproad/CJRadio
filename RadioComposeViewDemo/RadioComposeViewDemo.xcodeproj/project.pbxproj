@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D80BF6C1A0207AA01EC8ACC /* libPods-RadioComposeViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0026D33375C3DEC9A38FF00A /* libPods-RadioComposeViewDemo.a */; };
+		370FE39B4E70FF2113AAA8F5 /* libPods-RadioComposeViewDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 732D0E5D3CBC550DDD63F69A /* libPods-RadioComposeViewDemoTests.a */; };
+		78310C5C1E247F74008EDE35 /* CJSystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C5B1E247F74008EDE35 /* CJSystemComposeViewController.m */; };
+		78310C8F1E24CAC1008EDE35 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C8B1E24CAC1008EDE35 /* Home1.m */; };
+		78310C901E24CAC1008EDE35 /* Home1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78310C8C1E24CAC1008EDE35 /* Home1.xib */; };
+		78310C911E24CAC1008EDE35 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C8E1E24CAC1008EDE35 /* TestDataUtil.m */; };
 		789B20111D73F70600F01BA3 /* RadioComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B200C1D73F70600F01BA3 /* RadioComposeView.m */; };
 		789B20121D73F70600F01BA3 /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B200E1D73F70600F01BA3 /* UIScrollView+CJAddContentView.m */; };
 		789B20131D73F70600F01BA3 /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B20101D73F70600F01BA3 /* UIView+CJAddSubVIew.m */; };
@@ -20,8 +26,6 @@
 		78FA93101D7009650023252A /* RadioControllersDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA930F1D7009650023252A /* RadioControllersDemoUITests.m */; };
 		78FA93221D700A610023252A /* RadioControllersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA93201D700A610023252A /* RadioControllersViewController.m */; };
 		78FA93231D700A610023252A /* RadioControllersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FA93211D700A610023252A /* RadioControllersViewController.xib */; };
-		78FAB57C1D884EC8005C3627 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FAB57A1D884EC8005C3627 /* Home1.m */; };
-		78FAB57D1D884EC8005C3627 /* Home1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FAB57B1D884EC8005C3627 /* Home1.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0026D33375C3DEC9A38FF00A /* libPods-RadioComposeViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioComposeViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		076D9A272B7B80CB697B9C8E /* Pods-RadioComposeViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioComposeViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RadioComposeViewDemo/Pods-RadioComposeViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		3C526EB0682F2A8C049D1B54 /* Pods-RadioComposeViewDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioComposeViewDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RadioComposeViewDemoTests/Pods-RadioComposeViewDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		732D0E5D3CBC550DDD63F69A /* libPods-RadioComposeViewDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioComposeViewDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78310C5A1E247F74008EDE35 /* CJSystemComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSystemComposeViewController.h; sourceTree = "<group>"; };
+		78310C5B1E247F74008EDE35 /* CJSystemComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSystemComposeViewController.m; sourceTree = "<group>"; };
+		78310C8A1E24CAC1008EDE35 /* Home1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home1.h; sourceTree = "<group>"; };
+		78310C8B1E24CAC1008EDE35 /* Home1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home1.m; sourceTree = "<group>"; };
+		78310C8C1E24CAC1008EDE35 /* Home1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home1.xib; sourceTree = "<group>"; };
+		78310C8D1E24CAC1008EDE35 /* TestDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataUtil.h; sourceTree = "<group>"; };
+		78310C8E1E24CAC1008EDE35 /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
 		789B200B1D73F70600F01BA3 /* RadioComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioComposeView.h; sourceTree = "<group>"; };
 		789B200C1D73F70600F01BA3 /* RadioComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioComposeView.m; sourceTree = "<group>"; };
 		789B200D1D73F70600F01BA3 /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
@@ -67,9 +82,8 @@
 		78FA931F1D700A610023252A /* RadioControllersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioControllersViewController.h; sourceTree = "<group>"; };
 		78FA93201D700A610023252A /* RadioControllersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioControllersViewController.m; sourceTree = "<group>"; };
 		78FA93211D700A610023252A /* RadioControllersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioControllersViewController.xib; sourceTree = "<group>"; };
-		78FAB5791D884EC8005C3627 /* Home1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home1.h; sourceTree = "<group>"; };
-		78FAB57A1D884EC8005C3627 /* Home1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Home1.m; sourceTree = "<group>"; };
-		78FAB57B1D884EC8005C3627 /* Home1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home1.xib; sourceTree = "<group>"; };
+		C37D6A10EA376B62D880A61D /* Pods-RadioComposeViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioComposeViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RadioComposeViewDemo/Pods-RadioComposeViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C7675ABE6EFBEDC2A3E10F0E /* Pods-RadioComposeViewDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioComposeViewDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RadioComposeViewDemoTests/Pods-RadioComposeViewDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D80BF6C1A0207AA01EC8ACC /* libPods-RadioComposeViewDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370FE39B4E70FF2113AAA8F5 /* libPods-RadioComposeViewDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +113,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78310C541E247F3B008EDE35 /* CJSystemComposeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				78310C5A1E247F74008EDE35 /* CJSystemComposeViewController.h */,
+				78310C5B1E247F74008EDE35 /* CJSystemComposeViewController.m */,
+			);
+			name = CJSystemComposeViewController;
+			path = ../../CJSystemComposeViewController;
+			sourceTree = "<group>";
+		};
+		78310C891E24CAC1008EDE35 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				78310C8A1E24CAC1008EDE35 /* Home1.h */,
+				78310C8B1E24CAC1008EDE35 /* Home1.m */,
+				78310C8C1E24CAC1008EDE35 /* Home1.xib */,
+				78310C8D1E24CAC1008EDE35 /* TestDataUtil.h */,
+				78310C8E1E24CAC1008EDE35 /* TestDataUtil.m */,
+			);
+			name = TestData;
+			path = ../../TestData;
+			sourceTree = "<group>";
+		};
 		789B200A1D73F70600F01BA3 /* RadioComposeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +157,8 @@
 				78FA93031D7009650023252A /* RadioControllersDemoTests */,
 				78FA930E1D7009650023252A /* RadioControllersDemoUITests */,
 				78FA92E81D7009650023252A /* Products */,
+				916EA1BE80E42690A2039EB7 /* Pods */,
+				F72A2605EFC815273D53B3C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +175,7 @@
 		78FA92E91D7009650023252A /* RadioControllersDemo */ = {
 			isa = PBXGroup;
 			children = (
+				78310C541E247F3B008EDE35 /* CJSystemComposeViewController */,
 				789B200A1D73F70600F01BA3 /* RadioComposeView */,
 				78FA92ED1D7009650023252A /* AppDelegate.h */,
 				78FA92EE1D7009650023252A /* AppDelegate.m */,
@@ -142,6 +184,7 @@
 				78FA931D1D700A190023252A /* Controllers */,
 				78FA931E1D700A190023252A /* Views */,
 				78FA92F31D7009650023252A /* Main.storyboard */,
+				78310C891E24CAC1008EDE35 /* TestData */,
 				78FA92F61D7009650023252A /* Assets.xcassets */,
 				78FA92F81D7009650023252A /* LaunchScreen.storyboard */,
 				78FA92FB1D7009650023252A /* Info.plist */,
@@ -182,9 +225,6 @@
 				78FA931F1D700A610023252A /* RadioControllersViewController.h */,
 				78FA93201D700A610023252A /* RadioControllersViewController.m */,
 				78FA93211D700A610023252A /* RadioControllersViewController.xib */,
-				78FAB5791D884EC8005C3627 /* Home1.h */,
-				78FAB57A1D884EC8005C3627 /* Home1.m */,
-				78FAB57B1D884EC8005C3627 /* Home1.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +236,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		916EA1BE80E42690A2039EB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				076D9A272B7B80CB697B9C8E /* Pods-RadioComposeViewDemo.debug.xcconfig */,
+				C37D6A10EA376B62D880A61D /* Pods-RadioComposeViewDemo.release.xcconfig */,
+				C7675ABE6EFBEDC2A3E10F0E /* Pods-RadioComposeViewDemoTests.debug.xcconfig */,
+				3C526EB0682F2A8C049D1B54 /* Pods-RadioComposeViewDemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F72A2605EFC815273D53B3C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0026D33375C3DEC9A38FF00A /* libPods-RadioComposeViewDemo.a */,
+				732D0E5D3CBC550DDD63F69A /* libPods-RadioComposeViewDemoTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78FA93141D7009650023252A /* Build configuration list for PBXNativeTarget "RadioComposeViewDemo" */;
 			buildPhases = (
+				BD339F2ED35BF7ED92A97E41 /* [CP] Check Pods Manifest.lock */,
 				78FA92E31D7009650023252A /* Sources */,
 				78FA92E41D7009650023252A /* Frameworks */,
 				78FA92E51D7009650023252A /* Resources */,
+				3DC4EB6B6D98D7A22D082156 /* [CP] Embed Pods Frameworks */,
+				671F15FF0368A12B9945F121 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,9 +283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78FA93171D7009650023252A /* Build configuration list for PBXNativeTarget "RadioComposeViewDemoTests" */;
 			buildPhases = (
+				2E32B1C85BAA12466E7721B5 /* [CP] Check Pods Manifest.lock */,
 				78FA92FC1D7009650023252A /* Sources */,
 				78FA92FD1D7009650023252A /* Frameworks */,
 				78FA92FE1D7009650023252A /* Resources */,
+				6C9CBC91523F3DAE9099176B /* [CP] Embed Pods Frameworks */,
+				B01C15E79966EDEA4BD99692 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,9 +367,9 @@
 			files = (
 				78FA93231D700A610023252A /* RadioControllersViewController.xib in Resources */,
 				78FA92FA1D7009650023252A /* LaunchScreen.storyboard in Resources */,
+				78310C901E24CAC1008EDE35 /* Home1.xib in Resources */,
 				78FA92F71D7009650023252A /* Assets.xcassets in Resources */,
 				78FA92F51D7009650023252A /* Main.storyboard in Resources */,
-				78FAB57D1D884EC8005C3627 /* Home1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +389,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E32B1C85BAA12466E7721B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3DC4EB6B6D98D7A22D082156 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioComposeViewDemo/Pods-RadioComposeViewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		671F15FF0368A12B9945F121 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioComposeViewDemo/Pods-RadioComposeViewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C9CBC91523F3DAE9099176B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioComposeViewDemoTests/Pods-RadioComposeViewDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B01C15E79966EDEA4BD99692 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioComposeViewDemoTests/Pods-RadioComposeViewDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD339F2ED35BF7ED92A97E41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		78FA92E31D7009650023252A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -332,7 +491,9 @@
 				789B20121D73F70600F01BA3 /* UIScrollView+CJAddContentView.m in Sources */,
 				789B20131D73F70600F01BA3 /* UIView+CJAddSubVIew.m in Sources */,
 				78FA92F21D7009650023252A /* ViewController.m in Sources */,
-				78FAB57C1D884EC8005C3627 /* Home1.m in Sources */,
+				78310C911E24CAC1008EDE35 /* TestDataUtil.m in Sources */,
+				78310C5C1E247F74008EDE35 /* CJSystemComposeViewController.m in Sources */,
+				78310C8F1E24CAC1008EDE35 /* Home1.m in Sources */,
 				789B20111D73F70600F01BA3 /* RadioComposeView.m in Sources */,
 				78FA92EF1D7009650023252A /* AppDelegate.m in Sources */,
 				78FA92EC1D7009650023252A /* main.m in Sources */,
@@ -476,6 +637,7 @@
 		};
 		78FA93151D7009650023252A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 076D9A272B7B80CB697B9C8E /* Pods-RadioComposeViewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RadioControllersDemo/Info.plist;
@@ -487,6 +649,7 @@
 		};
 		78FA93161D7009650023252A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C37D6A10EA376B62D880A61D /* Pods-RadioComposeViewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RadioControllersDemo/Info.plist;
@@ -498,6 +661,7 @@
 		};
 		78FA93181D7009650023252A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7675ABE6EFBEDC2A3E10F0E /* Pods-RadioComposeViewDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RadioControllersDemoTests/Info.plist;
@@ -510,6 +674,7 @@
 		};
 		78FA93191D7009650023252A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C526EB0682F2A8C049D1B54 /* Pods-RadioComposeViewDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RadioControllersDemoTests/Info.plist;

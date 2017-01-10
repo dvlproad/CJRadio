@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D926BA3AC78A78768B67D0D3247304C1'
+               BlueprintIdentifier = 'B2642666D7E23560178A9B227BF8523F'
                BlueprintName = 'RadioComposeView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libRadioComposeView.a'>

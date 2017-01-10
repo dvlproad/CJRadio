@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RadioButtons.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>222AEF8C727125FBE850177BA1398599</key>
+		<key>17640337B0A09D6AAA7038DA055BAEB4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D926BA3AC78A78768B67D0D3247304C1</key>
+		<key>894D27E4E27CBCBDF496852770D4E7F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2544DD145AD621B49CD25D2620372A0</key>
+		<key>B2642666D7E23560178A9B227BF8523F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9AF8B9554FB9BD75947DF67FA720BCC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

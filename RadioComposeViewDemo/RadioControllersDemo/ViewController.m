@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.navigationItem.title = NSLocalizedString(@"首页", nil);
 }
 
 - (IBAction)goRadioControllersViewController:(id)sender {

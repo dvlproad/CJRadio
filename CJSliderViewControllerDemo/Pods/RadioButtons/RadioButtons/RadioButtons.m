@@ -79,10 +79,6 @@
     }
     
     NSInteger componentCount = [self.dataSource cj_numberOfComponentsInRadioButtons:self];
-    if (componentCount < 3) {
-        NSLog(@"warning: componentCount < 3, wouldn't be reloadVies");
-        return;
-    }
     
     /* 计算scrollView的contentSizeWidth */
     CGFloat totalComponentWidth = 0;

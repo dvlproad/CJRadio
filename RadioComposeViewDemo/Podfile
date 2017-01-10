@@ -1,0 +1,10 @@
+platform :ios, '7.0'
+#use_frameworks!
+
+target 'RadioComposeViewDemo' do
+    pod 'PureLayout', '~> 3.0.2'
+end
+
+target 'RadioComposeViewDemoTests' do
+    
+end

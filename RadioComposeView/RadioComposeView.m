@@ -342,7 +342,7 @@
 
 #pragma mark - 手动选择显示哪个viewController.view
 /** 完整的描述请参见文件头部 */
-- (void)showViewWithIndex:(NSInteger)showViewIndex animated:(BOOL)animated {
+- (void)cj_selectComponentAtIndex:(NSInteger)showViewIndex animated:(BOOL)animated {
     self.isDragByMyself = NO;
     
     if (_currentShowViewIndex == showViewIndex) {
