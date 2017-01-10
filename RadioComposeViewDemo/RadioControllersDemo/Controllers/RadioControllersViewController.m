@@ -63,7 +63,7 @@
 //    UIViewController *home3 = [[UIViewController alloc]init];
     Home1 *home3 = [[Home1 alloc] initWithNibName:@"Home1" bundle:nil];
     home3.view.backgroundColor = [UIColor yellowColor];
-    [radioControllers addObject:home3];
+//    [radioControllers addObject:home3];
     /*
     UIViewController *home4 = [[UIViewController alloc]init];
     home4.view.backgroundColor = [UIColor orangeColor];
@@ -94,7 +94,7 @@
 
 #pragma mark - RadioComposeViewDataSource
 - (NSInteger)cj_defaultShowIndexInRadioComposeView:(RadioComposeView *)radioComposeView {
-    return 2;
+    return 1;
 }
 
 - (NSArray<UIView *> *)cj_radioViewsInRadioComposeView:(RadioComposeView *)radioComposeView {

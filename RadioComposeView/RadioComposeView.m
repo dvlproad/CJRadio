@@ -91,6 +91,10 @@
     NSInteger defaultShowIndex = 0;
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInRadioComposeView:)]) {
         defaultShowIndex = [self.dataSource cj_defaultShowIndexInRadioComposeView:self];
+        
+        if (defaultShowIndex >= self.views.count) {
+            NSAssert(NO, @"指定默认显示的index，大于最大index");
+        }
     }
     [self resetViewToLeftCenterRightWithShowViewIndex:defaultShowIndex];
 }
