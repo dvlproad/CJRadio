@@ -97,7 +97,7 @@ static NSInteger kSelectedIndexDefault = 2;
 #pragma mark - RadioButtonsDelegate & RadioComposeViewDelegate
 - (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
-    [self.radioComposeView showViewWithIndex:index_cur animated:YES];
+    [self.radioComposeView cj_selectComponentAtIndex:index_cur animated:YES];
     self.currentSelectedIndex = index_cur;
     
     [self doSomethingToCon_whereIndex:index_cur];

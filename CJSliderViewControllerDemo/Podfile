@@ -3,7 +3,7 @@ platform :ios, '7.0'
 
 target 'CJSliderViewControllerDemo' do
     pod "RadioButtons", "~> 2.2.0"
-    pod "RadioComposeView", "~> 2.1.3"
+    pod "RadioComposeView", "~> 2.2.0"
     pod 'PureLayout', '~> 3.0.2'
 end
 

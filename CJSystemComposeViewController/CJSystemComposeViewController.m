@@ -38,7 +38,7 @@
 
 - (void)cj_chooseViewControllerIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old completeBlock:(void(^)(NSInteger index_cur))completeBlock {
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
-    //[self.radioComposeView showViewWithIndex:index_cur];
+    //[self.radioComposeView cj_selectComponentAtIndex:index_cur animated:YES];
     if (index_cur == index_old) {
         return;
     }

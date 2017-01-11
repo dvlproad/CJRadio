@@ -78,7 +78,7 @@ typedef NS_ENUM(NSUInteger, RadioComposeViewScrollType) {
  *  @param showViewIndex    要显示的view的索引
  *  @param animated         是否切换动画
  */
-- (void)showViewWithIndex:(NSInteger)showViewIndex animated:(BOOL)animated;
+- (void)cj_selectComponentAtIndex:(NSInteger)showViewIndex animated:(BOOL)animated;
 
 /**
  *  滑动到显示的视图(即中视图)
