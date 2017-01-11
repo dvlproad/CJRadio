@@ -484,25 +484,14 @@
 
 /** 判断设设置箭头状态(显示或隐藏) */
 - (void)judgeAndSetArrowButtonState {
+    CGFloat contentOffsetX = self.scrollView.contentOffset.x;
     CGFloat scrollViewWidth = CGRectGetWidth(self.scrollView.frame);
     CGFloat scrollViewContentSizeWidth = self.scrollView.contentSize.width;
-    if (scrollViewContentSizeWidth == scrollViewWidth) {
-        _leftArrowButton.hidden = YES;
-        _rightArrowButton.hidden = YES;
-        return;
-    }
     
-    CGFloat contentOffsetX = self.scrollView.contentOffset.x;
-    if (contentOffsetX == 0) {
-        _leftArrowButton.hidden = YES;
-        _rightArrowButton.hidden = NO;
-    }else if ( contentOffsetX + scrollViewWidth == scrollViewContentSizeWidth) {
-        _leftArrowButton.hidden = NO;
-        _rightArrowButton.hidden = YES;
-    }else {
-        _leftArrowButton.hidden = NO;
-        _rightArrowButton.hidden = NO;
-    }
+    BOOL startIsShowing = (contentOffsetX == 0);  //头有显示
+    BOOL endIsShowing = (contentOffsetX + scrollViewWidth == scrollViewContentSizeWidth);//尾有显示
+    _leftArrowButton.hidden = startIsShowing;
+    _rightArrowButton.hidden = endIsShowing;
 }
 
 

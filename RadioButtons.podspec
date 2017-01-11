@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "RadioButtons"
-  s.version      = "2.1.6"
+  s.version      = "2.2.0"
   s.summary      = "单选按钮的组合RadioButtons"
   s.homepage     = "https://github.com/dvlproad/RadioButtons"
   s.license      = "MIT"
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "RadioButtons_2.1.6" }
+  s.source       = { :git => "https://github.com/dvlproad/RadioButtons.git", :tag => "RadioButtons_2.2.0" }
   s.source_files  = "RadioButtons/**/*.{h,m}"
   s.resources = "RadioButtons/**/*.{png,xib}"
   s.frameworks = 'UIKit'

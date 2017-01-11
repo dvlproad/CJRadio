@@ -29,6 +29,7 @@
     //NSArray *titles = [TestDataUtil getViewControllerTitles];
     NSArray *titles = @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
     [self.sliderRadioButtons commonSetupWithType:CJCommonRadioButtonTypeSlider];
+    self.sliderRadioButtons.hideSeparateLine = NO;
     
     self.commonRadioButtonsDataSource =
     [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles

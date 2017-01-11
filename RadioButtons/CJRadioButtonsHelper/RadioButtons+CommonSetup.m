@@ -19,7 +19,7 @@
             self.showBottomLineView = YES;
             self.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
             self.bottomLineColor = [UIColor clearColor];
-            self.bottomLineViewHeight = 3;
+            self.bottomLineViewHeight = 4;
             [self addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
                     rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
                 withArrowImageWidth:20];
