@@ -54,7 +54,7 @@
     return radioControllers;
 }
 
-+ (NSArray<NSString *> *)getViewControllerTitles {
++ (NSArray<NSString *> *)getComponentTitles {
     NSArray *titles = @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
     
     return titles;

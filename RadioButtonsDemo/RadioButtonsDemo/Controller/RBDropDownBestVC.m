@@ -29,7 +29,7 @@
     self.dropdownRadioButtons.radioButtonType = RadioButtonTypeCanDrop;
     
     NSArray *titles = @[@"人物", @"爱好", @"其他", @"地区"];;
-    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.dropdownRadioButtons commonRadioButtonType:CJCommonRadioButtonTypeDropDown];
+    [self.dropdownRadioButtons commonSetupWithType:CJCommonRadioButtonTypeDropDown];
     
     self.commonRadioButtonsDataSource =
     [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles

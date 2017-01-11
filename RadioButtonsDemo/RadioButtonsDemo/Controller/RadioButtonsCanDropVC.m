@@ -31,8 +31,8 @@
     self.dropdownRadioButtons.delegate = self;
     
     
-    NSArray *titles = @[@"人物", @"爱好", @"其他", @"地区"];;
-    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.dropdownRadioButtons commonRadioButtonType:CJCommonRadioButtonTypeDropDown];
+    NSArray *titles = @[@"人物", @"爱好", @"其他", @"地区"];
+    [self.dropdownRadioButtons commonSetupWithType:CJCommonRadioButtonTypeDropDown];
     
     self.commonRadioButtonsDataSource =
     [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles

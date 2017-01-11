@@ -24,15 +24,14 @@
 }
 
 - (IBAction)goSliderViewController:(id)sender {
-    SliderViewController *viewController = [[SliderViewController alloc]initWithNibName:@"SliderViewController" bundle:nil];
+    SliderViewController *viewController = [[SliderViewController alloc] initWithNibName:@"SliderViewController" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (IBAction)goSliderViewController2:(id)sender {
-    SliderViewController2 *viewController = [[SliderViewController2 alloc]initWithNibName:@"SliderViewController2" bundle:nil];
+    SliderViewController2 *viewController = [[SliderViewController2 alloc] initWithNibName:@"SliderViewController2" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
 
 - (IBAction)goSystemComposeViewController:(id)sender {
     SystemComposeViewController *viewController = [[SystemComposeViewController alloc] initWithNibName:@"SystemComposeViewController" bundle:nil];

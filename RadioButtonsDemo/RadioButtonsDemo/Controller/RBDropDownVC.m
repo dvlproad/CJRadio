@@ -30,7 +30,7 @@
     NSArray *titles = @[@"人物", @"爱好", @"其他", @"地区"];
     self.dropdownRadioButtons.radioButtonType = RadioButtonTypeCanDrop;
 //    self.dropdownRadioButtons.dataSource = self;
-    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.dropdownRadioButtons commonRadioButtonType:CJCommonRadioButtonTypeDropDown];
+    [self.dropdownRadioButtons commonSetupWithType:CJCommonRadioButtonTypeDropDown];
     
     self.commonRadioButtonsDataSource =
     [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles
@@ -43,7 +43,7 @@
     
     self.dropdownRadioButtons2.radioButtonType = RadioButtonTypeCanDrop;
 //    self.dropdownRadioButtons2.dataSource = self;
-    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.dropdownRadioButtons2 commonRadioButtonType:CJCommonRadioButtonTypeDropDown];
+    [self.dropdownRadioButtons2 commonSetupWithType:CJCommonRadioButtonTypeDropDown];
     
 //    self.commonRadioButtonsDataSource =
 //    [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles

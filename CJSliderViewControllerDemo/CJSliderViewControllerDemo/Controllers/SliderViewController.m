@@ -8,7 +8,6 @@
 
 #import "SliderViewController.h"
 #import "TestDataUtil.h"
-#import "TempRadioButtonsDataSource.h"
 #import <PureLayout/PureLayout.h>
 
 static NSInteger kMaxRadioButtonsShowViewCountDefault = 4;
@@ -17,7 +16,7 @@ static NSInteger kSelectedIndexDefault = 2;
 @interface SliderViewController () <RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
     
 }
-@property (nonatomic, strong) TempRadioButtonsDataSource *radioButtonsDataSource;
+@property (nonatomic, strong) CJCommonRadioButtonsDataSource *radioButtonsDataSource;
 
 @end
 
@@ -28,13 +27,21 @@ static NSInteger kSelectedIndexDefault = 2;
     // Do any additional setup after loading the view from its nib.
     self.title = NSLocalizedString(@"SliderViewController首页", nil);
 
+    NSArray *titles = [TestDataUtil getComponentTitles];
+    
     //Self
     self.defaultSelectedIndex = kSelectedIndexDefault;
     self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
     
     //RadioButtons
-    self.sliderRadioButtons = [TempRadioButtonsDataSource getTempRadioButtons];
-    self.radioButtonsDataSource = [[TempRadioButtonsDataSource alloc] initWithTitles:[TestDataUtil getViewControllerTitles] defaultShowIndex:kSelectedIndexDefault maxButtonShowCount:kMaxRadioButtonsShowViewCountDefault];
+    self.sliderRadioButtons = [[RadioButtons alloc] init];
+    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.sliderRadioButtons commonRadioButtonType:CJCommonRadioButtonTypeSlider];
+    
+    self.radioButtonsDataSource =
+    [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles
+                                          defaultShowIndex:0
+                                        maxButtonShowCount:titles.count
+                                     commonRadioButtonType:CJCommonRadioButtonTypeSlider];
     self.sliderRadioButtons.dataSource = self.radioButtonsDataSource;
     self.sliderRadioButtons.delegate = self;
     

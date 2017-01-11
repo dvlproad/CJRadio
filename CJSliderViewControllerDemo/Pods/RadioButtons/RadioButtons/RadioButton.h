@@ -38,6 +38,6 @@ typedef void(^RadioButtonStateChangeCompleteBlock)(RadioButton *radioButton);
 @property (nonatomic, strong) UIColor *textSelectedColor; /**< 单选按钮选中时的文字颜色 */
 @property (nonatomic, copy) RadioButtonStateChangeCompleteBlock stateChangeCompleteBlock; /**< 单选按钮(选中)状态改变后的block(可用来做一些图片的transform旋转等) */
 
-- (void)setTitle:(NSString *)title;
+@property (nonatomic, copy) NSString *title;    /**< 按钮上的文字 */
 
 @end

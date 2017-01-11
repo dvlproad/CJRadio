@@ -7,15 +7,13 @@
 //
 
 #import "SystemComposeViewController.h"
-#import "TempRadioButtonsDataSource.h"
 #import "TestDataUtil.h"
 #import <PureLayout/PureLayout.h>
 
 @interface SystemComposeViewController () <RadioButtonsDelegate> {
     
 }
-@property (nonatomic, strong) NSArray *titles;
-@property (nonatomic, strong) TempRadioButtonsDataSource *radioButtonsDataSource;
+@property (nonatomic, strong) CJCommonRadioButtonsDataSource *radioButtonsDataSource;
 
 @end
 
@@ -26,14 +24,18 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"SystemComposeViewController首页", nil);
     
-    self.titles = [TestDataUtil getViewControllerTitles];
+    NSArray *titles = [TestDataUtil getComponentTitles];
     
-    self.sliderRadioButtons = [TempRadioButtonsDataSource getTempRadioButtons];
-    self.radioButtonsDataSource = [[TempRadioButtonsDataSource alloc] initWithTitles:[TestDataUtil getViewControllerTitles] defaultShowIndex:0 maxButtonShowCount:self.titles.count];
+    self.sliderRadioButtons = [[RadioButtons alloc] init];
+    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.sliderRadioButtons commonRadioButtonType:CJCommonRadioButtonTypeSlider];
+    
+    self.radioButtonsDataSource =
+    [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles
+                                          defaultShowIndex:0
+                                        maxButtonShowCount:titles.count
+                                     commonRadioButtonType:CJCommonRadioButtonTypeSlider];
     self.sliderRadioButtons.dataSource = self.radioButtonsDataSource;
     self.sliderRadioButtons.delegate = self;
-    
-    
     
     
     

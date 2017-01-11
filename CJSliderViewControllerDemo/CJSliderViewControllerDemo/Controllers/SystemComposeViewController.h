@@ -7,7 +7,8 @@
 //
 
 #import "CJSystemComposeViewController.h"
-#import "RadioButtons.h"
+#import <RadioButtons/RadioButtons.h>
+#import <RadioButtons/CJRadioButtonsHelper.h>
 
 @interface SystemComposeViewController : CJSystemComposeViewController {
     

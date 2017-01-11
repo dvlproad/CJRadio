@@ -13,6 +13,6 @@
 
 + (NSArray<UIViewController *> *)getComponentViewControllers;
 
-+ (NSArray<NSString *> *)getViewControllerTitles;
++ (NSArray<NSString *> *)getComponentTitles;
 
 @end

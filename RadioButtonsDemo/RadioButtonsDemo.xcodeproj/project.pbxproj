@@ -18,7 +18,7 @@
 		78310CA61E24EF63008EDE35 /* Home1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78310CA21E24EF63008EDE35 /* Home1.xib */; };
 		78310CA71E24EF63008EDE35 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310CA41E24EF63008EDE35 /* TestDataUtil.m */; };
 		78310CB81E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310CB31E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m */; };
-		78310CB91E25021E008EDE35 /* CJCommonRadioButtonsUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310CB51E25021E008EDE35 /* CJCommonRadioButtonsUtil.m */; };
+		78310CBC1E25445A008EDE35 /* RadioButtons+CommonSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310CBB1E25445A008EDE35 /* RadioButtons+CommonSetup.m */; };
 		78C7DC511D772A61005F86D2 /* arrowDown_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4B1D772A61005F86D2 /* arrowDown_dark.png */; };
 		78C7DC521D772A61005F86D2 /* arrowLeft_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4C1D772A61005F86D2 /* arrowLeft_gray@2x.png */; };
 		78C7DC531D772A61005F86D2 /* arrowLeft_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4D1D772A61005F86D2 /* arrowLeft_red@2x.png */; };
@@ -71,10 +71,10 @@
 		78310CA41E24EF63008EDE35 /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
 		78310CB21E25021E008EDE35 /* CJCommonRadioButtonsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCommonRadioButtonsDataSource.h; sourceTree = "<group>"; };
 		78310CB31E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCommonRadioButtonsDataSource.m; sourceTree = "<group>"; };
-		78310CB41E25021E008EDE35 /* CJCommonRadioButtonsUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCommonRadioButtonsUtil.h; sourceTree = "<group>"; };
-		78310CB51E25021E008EDE35 /* CJCommonRadioButtonsUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCommonRadioButtonsUtil.m; sourceTree = "<group>"; };
 		78310CB61E25021E008EDE35 /* CJRadioButtonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonDefine.h; sourceTree = "<group>"; };
 		78310CB71E25021E008EDE35 /* CJRadioButtonsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonsHelper.h; sourceTree = "<group>"; };
+		78310CBA1E25445A008EDE35 /* RadioButtons+CommonSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RadioButtons+CommonSetup.h"; sourceTree = "<group>"; };
+		78310CBB1E25445A008EDE35 /* RadioButtons+CommonSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RadioButtons+CommonSetup.m"; sourceTree = "<group>"; };
 		78C7DC4B1D772A61005F86D2 /* arrowDown_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowDown_dark.png; sourceTree = "<group>"; };
 		78C7DC4C1D772A61005F86D2 /* arrowLeft_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_gray@2x.png"; sourceTree = "<group>"; };
 		78C7DC4D1D772A61005F86D2 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_red@2x.png"; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 			children = (
 				78310CB21E25021E008EDE35 /* CJCommonRadioButtonsDataSource.h */,
 				78310CB31E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m */,
-				78310CB41E25021E008EDE35 /* CJCommonRadioButtonsUtil.h */,
-				78310CB51E25021E008EDE35 /* CJCommonRadioButtonsUtil.m */,
+				78310CBA1E25445A008EDE35 /* RadioButtons+CommonSetup.h */,
+				78310CBB1E25445A008EDE35 /* RadioButtons+CommonSetup.m */,
 				78310CB61E25021E008EDE35 /* CJRadioButtonDefine.h */,
 				78310CB71E25021E008EDE35 /* CJRadioButtonsHelper.h */,
 			);
@@ -508,7 +508,6 @@
 			files = (
 				805A175C1BF321CC00424769 /* ViewController.m in Sources */,
 				78310CB81E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m in Sources */,
-				78310CB91E25021E008EDE35 /* CJCommonRadioButtonsUtil.m in Sources */,
 				783079BB1D7558C6009689F3 /* RBDropDownVC.m in Sources */,
 				805A17591BF321CC00424769 /* AppDelegate.m in Sources */,
 				805A17561BF321CC00424769 /* main.m in Sources */,
@@ -516,6 +515,7 @@
 				805A17841BF3235E00424769 /* RadioButtons.m in Sources */,
 				78310CA51E24EF63008EDE35 /* Home1.m in Sources */,
 				805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */,
+				78310CBC1E25445A008EDE35 /* RadioButtons+CommonSetup.m in Sources */,
 				783079B61D7524BD009689F3 /* RadioButtonsCanDropVC.m in Sources */,
 				805A17821BF3235E00424769 /* RadioButton.m in Sources */,
 				783079C01D755B95009689F3 /* RBDropDownBestVC.m in Sources */,
