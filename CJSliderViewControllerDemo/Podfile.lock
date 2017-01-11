@@ -1,18 +1,18 @@
 PODS:
   - PureLayout (3.0.2)
-  - RadioButtons (2.1.5)
+  - RadioButtons (2.2.0)
   - RadioComposeView (2.1.3)
 
 DEPENDENCIES:
   - PureLayout (~> 3.0.2)
-  - RadioButtons (~> 2.1.5)
+  - RadioButtons (~> 2.2.0)
   - RadioComposeView (~> 2.1.3)
 
 SPEC CHECKSUMS:
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
-  RadioButtons: 880a4f6df7998dc0159d8bdc7464ebddab40c726
+  RadioButtons: 36efab1dd6815bfcee34c557c97b6cd7da770a82
   RadioComposeView: 3b46081a28471abb3757f490a07f2df618e7555a
 
-PODFILE CHECKSUM: 031c38b839dd714caac8a6e2c18ee509f0d19732
+PODFILE CHECKSUM: 0b80245069d45d82a12743011b8efe54f8573496
 
 COCOAPODS: 1.1.0.rc.2

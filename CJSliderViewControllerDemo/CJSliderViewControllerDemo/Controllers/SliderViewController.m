@@ -35,7 +35,7 @@ static NSInteger kSelectedIndexDefault = 2;
     
     //RadioButtons
     self.sliderRadioButtons = [[RadioButtons alloc] init];
-    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.sliderRadioButtons commonRadioButtonType:CJCommonRadioButtonTypeSlider];
+    [self.sliderRadioButtons commonSetupWithType:CJCommonRadioButtonTypeSlider];
     
     self.radioButtonsDataSource =
     [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles

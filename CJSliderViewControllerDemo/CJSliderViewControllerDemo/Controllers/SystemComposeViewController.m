@@ -27,7 +27,7 @@
     NSArray *titles = [TestDataUtil getComponentTitles];
     
     self.sliderRadioButtons = [[RadioButtons alloc] init];
-    [CJCommonRadioButtonsUtil commonSetupRadioButtons:self.sliderRadioButtons commonRadioButtonType:CJCommonRadioButtonTypeSlider];
+    [self.sliderRadioButtons commonSetupWithType:CJCommonRadioButtonTypeSlider];
     
     self.radioButtonsDataSource =
     [[CJCommonRadioButtonsDataSource alloc] initWithTitles:titles

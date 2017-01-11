@@ -10,7 +10,7 @@
 #define CJRadioButtonsHelper_h
 
 #import "CJCommonRadioButtonsDataSource.h"
-#import "CJCommonRadioButtonsUtil.h"
+#import "RadioButtons+CommonSetup.h"
 #import "CJRadioButtonDefine.h"
 
 #endif /* CJRadioButtonsHelper_h */
