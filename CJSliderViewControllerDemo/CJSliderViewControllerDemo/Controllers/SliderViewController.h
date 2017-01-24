@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RadioButtons/RadioButtons.h>
-#import <RadioButtons/CJRadioButtonsHelper.h>
+#import "RadioButtons.h"
 #import "RadioComposeView.h"
+
+#import "CJRadioButtonsHelper.h"
 
 @interface SliderViewController : UIViewController {
     

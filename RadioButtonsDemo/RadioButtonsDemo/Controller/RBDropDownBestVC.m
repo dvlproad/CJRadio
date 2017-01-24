@@ -7,7 +7,7 @@
 //
 
 #import "RBDropDownBestVC.h"
-#import <CJPopupView/UIView+ShowPopupInViewIndependentCode.h>
+#import <CJPopupAction/UIView+CJShowExtendView.h>
 #import "CJRadioButtonsHelper.h"
 #import "TestDataUtil.h"
 
@@ -53,6 +53,7 @@
 - (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
     
+    /*
     //radioButtons.tag == 222，则才采用#import "UIView+ShowHisDropDownView.h"（其实际上内部引用了"UIView+ShowPopupInView.h"，刚好与"UIView+PopupInView.h"不同）
     UIView *sender = radioButtons;
     if (index_old != -1) {//notice：此例也有问题，还是得在存在popupView的时候，先隐藏再弹出
@@ -198,7 +199,7 @@
         default:
             break;
     }
-
+    */
 }
 
 - (IBAction)btnAction:(id)sender{
@@ -206,7 +207,7 @@
     [self.dropdownRadioButtons changeCurrentRadioButtonStateAndTitle:title];
     [self.dropdownRadioButtons setSelectedNone];
     
-    [self.dropdownRadioButtons showPopupInViewIndependentCode_dismissPopupViewAnimated:YES];
+//    [self.dropdownRadioButtons showPopupInViewIndependentCode_dismissPopupViewAnimated:YES];
 }
 
 

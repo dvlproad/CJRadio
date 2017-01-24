@@ -7,7 +7,7 @@
 //
 
 #import "RBDropDownVC.h"
-#import <CJPopupView/CJPopupView.h>
+#import <CJPopupAction/UIView+CJShowExtendView.h>
 #import "CJRadioButtonsHelper.h"
 #import "TestDataUtil.h"
 
@@ -75,17 +75,17 @@
         UIView *sender = radioButtons;
         if (index_old != -1) {
             if (index_cur == index_old) {
-                [sender showHisDropDownView_dismissPopupViewAnimated:YES];
+                [sender cj_hideExtendViewAnimated:YES];
                 return;
             }else{
-                [sender showHisDropDownView_dismissPopupViewAnimated:NO];
+                [sender cj_hideExtendViewAnimated:NO];
             }
         }
         
         switch (index_cur) {
             case 0:
             {
-                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 10, 200)];
                 popupView.backgroundColor = [UIColor greenColor];
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
                 [btn setFrame:CGRectMake(20, 50, 280, 44)];
@@ -97,11 +97,11 @@
                 CGFloat h_popupView = 100;
                 UIView *popupSuperview = self.view;
                 
-                [sender showHisDropDownView:popupView inView:popupSuperview withHeight:h_popupView showComplete:^{
+                [sender cj_showDropDownView:popupView inView:popupSuperview showComplete:^{
                     NSLog(@"1.显示完成");
-                    [radioButtons setCjExtendViewShowing:YES];
+                    [radioButtons setCjPopupViewShowing:YES];
                     
-                } tapBGComplete:^{
+                } tapBlankComplete:^{
                     NSLog(@"1.点击背景完成");
                     [radioButtons changeCurrentRadioButtonState];
                     [radioButtons setSelectedNone];
@@ -115,7 +115,7 @@
             }
             case 1:
             {
-                UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
+                UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 10, 200)];
                 popupView.backgroundColor = [UIColor greenColor];
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
                 [btn setFrame:CGRectMake(20, 50, 280, 44)];
@@ -124,13 +124,12 @@
                 [btn addTarget:self action:@selector(btnAction222:) forControlEvents:UIControlEventTouchUpInside];
                 [popupView addSubview:btn];
                 
-                CGFloat h_popupView = 100;
                 UIView *popupSuperview = self.view;
                 
-                [sender showHisDropDownView:popupView inView:popupSuperview withHeight:h_popupView showComplete:^{
+                [sender cj_showDropDownView:popupView inView:popupSuperview showComplete:^{
                     NSLog(@"2.显示完成");
                     
-                } tapBGComplete:^{
+                } tapBlankComplete:^{
                     NSLog(@"2.点击背景完成");
                     [radioButtons changeCurrentRadioButtonState];
                     [radioButtons setSelectedNone];
@@ -146,7 +145,7 @@
                 UIView *popupView = [[UIView alloc]initWithFrame:CGRectZero];
                 popupView.backgroundColor = [UIColor greenColor];
                 UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-                [btn setFrame:CGRectMake(20, 50, 280, 44)];
+                [btn setFrame:CGRectMake(20, 50, 280, 144)];
                 [btn setTitle:@"3.生成随机数，并设置" forState:UIControlStateNormal];
                 [btn setBackgroundColor:[UIColor redColor]];
                 [btn addTarget:self action:@selector(btnAction222:) forControlEvents:UIControlEventTouchUpInside];
@@ -155,10 +154,10 @@
                 CGFloat h_popupView = 100;
                 UIView *popupSuperview = self.view;
                 
-                [sender showHisDropDownView:popupView inView:popupSuperview withHeight:h_popupView showComplete:^{
+                [sender cj_showDropDownView:popupView inView:popupSuperview showComplete:^{
                     NSLog(@"3.显示完成");
                     
-                } tapBGComplete:^{
+                } tapBlankComplete:^{
                     NSLog(@"3.点击背景完成");
                     [radioButtons changeCurrentRadioButtonState];
                     [radioButtons setSelectedNone];
@@ -183,10 +182,10 @@
                 CGFloat h_popupView = 100;
                 UIView *popupSuperview = self.view;
                 
-                [sender showHisDropDownView:popupView inView:popupSuperview withHeight:h_popupView showComplete:^{
+                [sender cj_showDropDownView:popupView inView:popupSuperview showComplete:^{
                     NSLog(@"4.显示完成");
                     
-                } tapBGComplete:^{
+                } tapBlankComplete:^{
                     NSLog(@"4.点击背景完成");
                     [radioButtons changeCurrentRadioButtonState];
                     [radioButtons setSelectedNone];
@@ -205,6 +204,7 @@
         return;
     }
     
+    /*
     //radioButtons.tag == 111，则才采用"UIView+PopupInView.h"
     switch (index_cur) {
         case 0:
@@ -411,6 +411,7 @@
         default:
             break;
     }
+     */
 }
 
 - (IBAction)btnAction:(id)sender{
@@ -421,13 +422,13 @@
     [self.dropdownRadioButtons setSelectedNone];
     
     if (index_old == 0) {
-        [popupView1 popupInView_dismissFromSuperViewAnimated:YES];
+        [popupView1 cj_hidePopupView];
     }else if (index_old == 1) {
-        [popupView2 popupInView_dismissFromSuperViewAnimated:YES];
+        [popupView2 cj_hidePopupView];
     }else if (index_old == 2){
-        [popupView3 popupInView_dismissFromSuperViewAnimated:YES];
+        [popupView3 cj_hidePopupView];
     }else if (index_old == 3){
-        [popupView4 popupInView_dismissFromSuperViewAnimated:YES];
+        [popupView4 cj_hidePopupView];
     }
 }
 
@@ -437,7 +438,7 @@
     [self.dropdownRadioButtons2 changeCurrentRadioButtonStateAndTitle:title];
     [self.dropdownRadioButtons2 setSelectedNone];
     
-    [self.dropdownRadioButtons2 showHisDropDownView_dismissPopupViewAnimated:YES];
+    [self.dropdownRadioButtons2 cj_hideExtendViewAnimated:YES];
 }
 
 

@@ -79,22 +79,6 @@ EOM
       ;;
   esac
 }
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowDown_dark.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowLeft_gray@2x.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowLeft_red@2x.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowRight_gray@2x.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowRight_red@2x.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowUp_white@2x.png"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowDown_dark.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowLeft_gray@2x.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowLeft_red@2x.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowRight_gray@2x.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowRight_red@2x.png"
-  install_resource "RadioButtons/RadioButtons/images_arrow/arrowUp_white@2x.png"
-fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

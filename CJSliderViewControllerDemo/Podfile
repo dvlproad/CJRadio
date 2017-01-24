@@ -2,8 +2,6 @@ platform :ios, '7.0'
 #use_frameworks!
 
 target 'CJSliderViewControllerDemo' do
-    pod "RadioButtons", "~> 2.2.0"
-    pod "RadioComposeView", "~> 2.2.0"
     pod 'PureLayout', '~> 3.0.2'
 end
 

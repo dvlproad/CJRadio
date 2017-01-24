@@ -1,12 +1,12 @@
 PODS:
-  - CJPopupView (1.1.2)
+  - CJPopupAction (1.3.1)
 
 DEPENDENCIES:
-  - CJPopupView (~> 1.1.2)
+  - CJPopupAction (~> 1.3.1)
 
 SPEC CHECKSUMS:
-  CJPopupView: a989e14e6c10ca481084b18a7bbf43fefb994e74
+  CJPopupAction: 2cee8f6bdddf3c6f9732a7ffd28abf502c81e57a
 
-PODFILE CHECKSUM: d9727d76a0804d21c175bd246593271246aeac33
+PODFILE CHECKSUM: f202b218d2c94bdb12740eebb9bff71c843b898c
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.0.rc.2

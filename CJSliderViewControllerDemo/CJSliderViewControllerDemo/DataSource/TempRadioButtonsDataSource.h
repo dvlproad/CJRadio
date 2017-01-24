@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <RadioButtons/RadioButtons.h>
+#import "RadioButtons.h"
 
 @interface TempRadioButtonsDataSource : NSObject <RadioButtonsDataSource> {
     

@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CJPopupView.xcscheme</key>
+		<key>CJPopupAction.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>43F1E1B9272D0E6C4F999358003F6B43</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>63D402C3B27D36442E5E91394804F452</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C396B0D2474176975050893FBDF6390</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C872FEE8918278AB4F082C471752BFA4</key>
+		<key>B41ABE5262EA9B35EF91884E28E9B5CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

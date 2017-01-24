@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RadioButtons.h"
-#import "UIView+CJShowDropView.h"
+#import <CJPopupAction/UIView+CJShowExtendView.h>
 
 @interface RBDropDownVC : UIViewController<RadioButtonsDelegate>{
     UIView *popupView1;

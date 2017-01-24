@@ -7,73 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A68DBA1F3D46B54E3369F0C3B468B64 /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0A907C755768715DA7F954CDC61B9E /* PureLayout-dummy.m */; };
-		13B2D5A664BECC8AA909B97199F407C8 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = ACF183D164AEA03A4AA2A2F5185EFE7D /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		047A75D9E0DE61A5C549D5337A41B9F3 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = ED957C5BA5C007DA5568C54A18C93721 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A8D6FA66A7FA3D1C509FEE5F94346A9 /* UIView+CJPopupInView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916F299F1C5F33739EDABA07C8AC6871 /* UIView+CJPopupInView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0CC6AA9E2987F4F63C05381BE2D7B653 /* UIView+CJShowExtendView.m in Sources */ = {isa = PBXBuildFile; fileRef = B677ACF7E9DB518EFF5008430BE0C1F2 /* UIView+CJShowExtendView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		2A73036F5FA3550540EBE405DD324948 /* Pods-RadioComposeViewDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E12FA821766B470460847D5D51694 /* Pods-RadioComposeViewDemoTests-dummy.m */; };
-		40B1519E3B7D4BED22E9FFDFD14EF223 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 57E956DAAFFAB936CB60D9273E05D498 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6D252256854FD785E57B3553609268D6 /* Pods-RadioComposeViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7615A610E41D4C3A1FB976CBE4C24739 /* Pods-RadioComposeViewDemo-dummy.m */; };
-		76EBF8BA55E98950313A747313F67C43 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 873FC3649F700A415796A33CE2641055 /* NSArray+PureLayout.m */; };
-		9012E103C94E54801A65AED2949E811B /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = E41D14862AA071D9F8A5E652619270AF /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A013F8CB51877BBD6612B77EFCD567AB /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 45945D8F3DAD605A883B94C9128AB860 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2721BBAD984AAE9AAC960A391AD6680 /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D7DC82AF6F6260F768473B043656411 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0AE78CD235206C9151AD91358796857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		CDC51D5842F3B68B029668436D4EECF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		EAA49CECD37B86ADE8CF18519C60B6E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		EF0A04663588DC2F05574AA398DDA554 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = D10E06F10AB8CECE8141D32B75CCA4FE /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA2C4D5AFE192D31AEF1D870E86CA6C2 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F48602517ECB353DCB8C98633FCAB09 /* ALView+PureLayout.m */; };
-		FAF086D10608BBAAC439D15C774DE8CC /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F545BE94C48C8AFEED462FE6F8D3597A /* NSLayoutConstraint+PureLayout.m */; };
+		2CAA3C31320766C09294AC3ADACE3808 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D284F154F25DDD9DC1706DC56E2E50D5 /* ALView+PureLayout.m */; };
+		2FF9E2B322F56A26EF51FBF90CC62F73 /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C625BE004DEBE5BE41E4C1EA522747 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		428425171FFBE300CB3907B32F735857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		4C08B013DBA177D8CD6166F7435795E9 /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57989E39133D35E2D47CBE0719B468DB /* PureLayout-dummy.m */; };
+		5175C2576DB27E8E4BBFBF373E5DFD0C /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC81D7B99A72C6B131BD9217037558B6 /* NSArray+PureLayout.m */; };
+		5217A86445EC8982BA9232E75326943D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		7B63F895854B96A3CAF637DEC91ED73F /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA7F28A5C41B96F2DA1CA67B7500CD /* NSLayoutConstraint+PureLayout.m */; };
+		85E34767D4BFDA88902A94DD060C6ACC /* CJPopupAction-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B6CD40FBC2AE87D19E02262AB5CA49 /* CJPopupAction-dummy.m */; };
+		A7EFDEF972EE55871F3E2C4FEB26D9D3 /* Pods-RadioComposeViewDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7615A610E41D4C3A1FB976CBE4C24739 /* Pods-RadioComposeViewDemo-dummy.m */; };
+		B0AE78CD235206C9151AD91358796857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		BE6427935D332C300C0A21F4C215A3E0 /* UIView+CJPopupInView.h in Headers */ = {isa = PBXBuildFile; fileRef = 97AD8A1736744B02457224D36270CDB3 /* UIView+CJPopupInView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C198A2EC9F2D54B2537F1632A80C1E4D /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9786DBA88BBAC2EB80E78E404B9B2BB3 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9012B0F07AED82E8628A8B69C801080 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		CDCE32ECE84374E7956D4E0E58B39AA1 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = B53D9F53E721E71CF6B73A5B4649DE66 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0A48C5088C776621777854E53B5BD64 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4511E3BF51D5609A924DA849EAF968 /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1E0B2A89226EDC918665C4A379EC953 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B11699FC8D5FC4096BBFFAE6FEF064B /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E867ECA4749C636F873644C124B3D88F /* CJPopupViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFBE127CAD4643259740F97B05F63C8 /* CJPopupViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEFBE64BFF5975112902CED9282E8647 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		F6CB4F6CC704254E54C74BA05F6EC025 /* UIView+CJShowExtendView.h in Headers */ = {isa = PBXBuildFile; fileRef = C04F1B56608E1A91932EED9AC78B4792 /* UIView+CJShowExtendView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EF631BB836058115FF29BDF33F96BD72 /* PBXContainerItemProxy */ = {
+		467C35B6B13C2060B3A35ED064780CAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E21394004822165C08EB727B163DA78;
+			remoteGlobalIDString = 5879048362D25584C84C004A9434E4FD;
 			remoteInfo = PureLayout;
+		};
+		B85A94D193C63990B1C8BB87C5551823 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43F1E1B9272D0E6C4F999358003F6B43;
+			remoteInfo = CJPopupAction;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		053E12FA821766B470460847D5D51694 /* Pods-RadioComposeViewDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RadioComposeViewDemoTests-dummy.m"; sourceTree = "<group>"; };
-		129832CAED57495522F06699874AB5E0 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
 		12A86D74FA84179331B942DFB46FA052 /* Pods-RadioComposeViewDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RadioComposeViewDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1951A12F7C46D8BBF64BC9D3F882A2EA /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
-		45945D8F3DAD605A883B94C9128AB860 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
-		57E956DAAFFAB936CB60D9273E05D498 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		23F478DCC4B4928D8F634E4AFC1F6AF7 /* CJPopupAction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CJPopupAction.xcconfig; sourceTree = "<group>"; };
+		4CBA7F28A5C41B96F2DA1CA67B7500CD /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		52F98B21C891EFE37F543AF0D87A5E99 /* libPods-RadioComposeViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioComposeViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5401B7CCBCE29CCB0766BE47F9C66887 /* libPods-RadioComposeViewDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioComposeViewDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B6CD40FBC2AE87D19E02262AB5CA49 /* CJPopupAction-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CJPopupAction-dummy.m"; sourceTree = "<group>"; };
+		57989E39133D35E2D47CBE0719B468DB /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
 		58CFCD6626D834830AA7E9AECCD17472 /* Pods-RadioComposeViewDemoTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RadioComposeViewDemoTests-resources.sh"; sourceTree = "<group>"; };
-		5F48602517ECB353DCB8C98633FCAB09 /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
-		6429AD9138757505ADAAD7A0D88BC76D /* libPods-RadioComposeViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioComposeViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B11699FC8D5FC4096BBFFAE6FEF064B /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
+		5B65551C92187B2B8E6E4953B26289D2 /* libCJPopupAction.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCJPopupAction.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C625BE004DEBE5BE41E4C1EA522747 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
 		7615A610E41D4C3A1FB976CBE4C24739 /* Pods-RadioComposeViewDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RadioComposeViewDemo-dummy.m"; sourceTree = "<group>"; };
-		7D7DC82AF6F6260F768473B043656411 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		776B6869BB8630A21661E5CC77905039 /* libPureLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPureLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		825333828E974AA16A784B1CDC7BC4CF /* Pods-RadioComposeViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RadioComposeViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		828E9325E821E22CE556D2F7B7BFFF03 /* Pods-RadioComposeViewDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RadioComposeViewDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		873FC3649F700A415796A33CE2641055 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		8BACF64A01C553BBF48EF5DA9A346A82 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
+		916F299F1C5F33739EDABA07C8AC6871 /* UIView+CJPopupInView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJPopupInView.m"; path = "CJPopupAction/UIView+CJPopupInView.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9786DBA88BBAC2EB80E78E404B9B2BB3 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		97AD8A1736744B02457224D36270CDB3 /* UIView+CJPopupInView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJPopupInView.h"; path = "CJPopupAction/UIView+CJPopupInView.h"; sourceTree = "<group>"; };
+		9CFBE127CAD4643259740F97B05F63C8 /* CJPopupViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CJPopupViewDelegate.h; path = CJPopupAction/CJPopupViewDelegate.h; sourceTree = "<group>"; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A45730A8DF2E4C8DF4C8F3E52DE707A0 /* Pods-RadioComposeViewDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RadioComposeViewDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A6B2FA843D75EE14E358A904BC87EECA /* Pods-RadioComposeViewDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RadioComposeViewDemo-frameworks.sh"; sourceTree = "<group>"; };
+		AC81D7B99A72C6B131BD9217037558B6 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
 		ACB0127A91D74FB19369E9D968C7F00A /* Pods-RadioComposeViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RadioComposeViewDemo.release.xcconfig"; sourceTree = "<group>"; };
-		ACF183D164AEA03A4AA2A2F5185EFE7D /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
 		B2CBC47290A8C179F3A7F7376925927B /* Pods-RadioComposeViewDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RadioComposeViewDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		B2E4082C7AD6477C24470358616868B3 /* Pods-RadioComposeViewDemoTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RadioComposeViewDemoTests-frameworks.sh"; sourceTree = "<group>"; };
-		B56B107C27430665873FD7960D73842C /* libPods-RadioComposeViewDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioComposeViewDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0A907C755768715DA7F954CDC61B9E /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D10E06F10AB8CECE8141D32B75CCA4FE /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
-		D88F2380C7BAE09CD8C3E91C25A22AB2 /* libPureLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPureLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B53D9F53E721E71CF6B73A5B4649DE66 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		B677ACF7E9DB518EFF5008430BE0C1F2 /* UIView+CJShowExtendView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CJShowExtendView.m"; path = "CJPopupAction/UIView+CJShowExtendView.m"; sourceTree = "<group>"; };
+		C04F1B56608E1A91932EED9AC78B4792 /* UIView+CJShowExtendView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CJShowExtendView.h"; path = "CJPopupAction/UIView+CJShowExtendView.h"; sourceTree = "<group>"; };
+		D284F154F25DDD9DC1706DC56E2E50D5 /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		D81E68D83D36BDC4CBEC8F5058205569 /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
 		DE7FA8ACD3C27142E83466549241A6C2 /* Pods-RadioComposeViewDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RadioComposeViewDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		E41D14862AA071D9F8A5E652619270AF /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EA4511E3BF51D5609A924DA849EAF968 /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
+		ED957C5BA5C007DA5568C54A18C93721 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
 		F35C6658A014A9517DB400EB8D36A344 /* Pods-RadioComposeViewDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RadioComposeViewDemo-resources.sh"; sourceTree = "<group>"; };
-		F545BE94C48C8AFEED462FE6F8D3597A /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		F554846DDCF2887572DD9260CF6F6636 /* CJPopupAction-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CJPopupAction-prefix.pch"; sourceTree = "<group>"; };
 		FB8C8FE5FA51871C8553E527452230CB /* Pods-RadioComposeViewDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RadioComposeViewDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		132E617DDB0070D6FB61726DF6294DEA /* Frameworks */ = {
+		1CF83D19379D843D5FF85B0543D62CBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDC51D5842F3B68B029668436D4EECF4 /* Foundation.framework in Frameworks */,
+				5217A86445EC8982BA9232E75326943D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,23 +110,67 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A14C01931DFA361F91D85C379B274C73 /* Frameworks */ = {
+		61CDFEAFC25FE4AEAFCB82BA41DA9EE8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAA49CECD37B86ADE8CF18519C60B6E2 /* Foundation.framework in Frameworks */,
+				EEFBE64BFF5975112902CED9282E8647 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D5C261F36768B25810561271EC9CE26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9012B0F07AED82E8628A8B69C801080 /* Foundation.framework in Frameworks */,
+				428425171FFBE300CB3907B32F735857 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+		260C02554E26DEE3A13B5011EF96733F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+				23F478DCC4B4928D8F634E4AFC1F6AF7 /* CJPopupAction.xcconfig */,
+				55B6CD40FBC2AE87D19E02262AB5CA49 /* CJPopupAction-dummy.m */,
+				F554846DDCF2887572DD9260CF6F6636 /* CJPopupAction-prefix.pch */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/CJPopupAction";
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A3B93B6F4C880973A4276A245ECD2E3 /* CJPopupAction */ = {
+			isa = PBXGroup;
+			children = (
+				9CFBE127CAD4643259740F97B05F63C8 /* CJPopupViewDelegate.h */,
+				97AD8A1736744B02457224D36270CDB3 /* UIView+CJPopupInView.h */,
+				916F299F1C5F33739EDABA07C8AC6871 /* UIView+CJPopupInView.m */,
+				C04F1B56608E1A91932EED9AC78B4792 /* UIView+CJShowExtendView.h */,
+				B677ACF7E9DB518EFF5008430BE0C1F2 /* UIView+CJShowExtendView.m */,
+				260C02554E26DEE3A13B5011EF96733F /* Support Files */,
+			);
+			path = CJPopupAction;
+			sourceTree = "<group>";
+		};
+		6865763C462CAA55B2CA41FFE0224DA4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D81E68D83D36BDC4CBEC8F5058205569 /* PureLayout.xcconfig */,
+				57989E39133D35E2D47CBE0719B468DB /* PureLayout-dummy.m */,
+				8BACF64A01C553BBF48EF5DA9A346A82 /* PureLayout-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PureLayout";
 			sourceTree = "<group>";
 		};
 		7B486212B32AD1B99CE9652C4DB47508 /* Pods-RadioComposeViewDemoTests */ = {
@@ -123,22 +192,22 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				A2FDD832DA64F35B104DD4C55A31BF8E /* Pods */,
-				CF3DE383A583543EC67132B77A5DE5AE /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				B2F538B68626DD65E33B02DF011D54FE /* Pods */,
+				7F6141C69CF872DBDF76F3B4E8687FF5 /* Products */,
 				A04E1194B76DA3C859D2E58EB9041C5B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		83F65399C3808A743CC1392CF12DD692 /* Support Files */ = {
+		7F6141C69CF872DBDF76F3B4E8687FF5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1951A12F7C46D8BBF64BC9D3F882A2EA /* PureLayout.xcconfig */,
-				CE0A907C755768715DA7F954CDC61B9E /* PureLayout-dummy.m */,
-				129832CAED57495522F06699874AB5E0 /* PureLayout-prefix.pch */,
+				5B65551C92187B2B8E6E4953B26289D2 /* libCJPopupAction.a */,
+				52F98B21C891EFE37F543AF0D87A5E99 /* libPods-RadioComposeViewDemo.a */,
+				5401B7CCBCE29CCB0766BE47F9C66887 /* libPods-RadioComposeViewDemoTests.a */,
+				776B6869BB8630A21661E5CC77905039 /* libPureLayout.a */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/PureLayout";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A04E1194B76DA3C859D2E58EB9041C5B /* Targets Support Files */ = {
@@ -148,14 +217,6 @@
 				7B486212B32AD1B99CE9652C4DB47508 /* Pods-RadioComposeViewDemoTests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		A2FDD832DA64F35B104DD4C55A31BF8E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AB198DB8875A98298498BA74D26897FE /* PureLayout */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		A68EC9C55C5E047A3C210C331C8A2CF9 /* Pods-RadioComposeViewDemo */ = {
@@ -173,67 +234,112 @@
 			path = "Target Support Files/Pods-RadioComposeViewDemo";
 			sourceTree = "<group>";
 		};
-		AB198DB8875A98298498BA74D26897FE /* PureLayout */ = {
+		B2F538B68626DD65E33B02DF011D54FE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				45945D8F3DAD605A883B94C9128AB860 /* ALView+PureLayout.h */,
-				5F48602517ECB353DCB8C98633FCAB09 /* ALView+PureLayout.m */,
-				7D7DC82AF6F6260F768473B043656411 /* NSArray+PureLayout.h */,
-				873FC3649F700A415796A33CE2641055 /* NSArray+PureLayout.m */,
-				E41D14862AA071D9F8A5E652619270AF /* NSLayoutConstraint+PureLayout.h */,
-				F545BE94C48C8AFEED462FE6F8D3597A /* NSLayoutConstraint+PureLayout.m */,
-				57E956DAAFFAB936CB60D9273E05D498 /* PureLayout.h */,
-				D10E06F10AB8CECE8141D32B75CCA4FE /* PureLayout+Internal.h */,
-				ACF183D164AEA03A4AA2A2F5185EFE7D /* PureLayoutDefines.h */,
-				83F65399C3808A743CC1392CF12DD692 /* Support Files */,
+				4A3B93B6F4C880973A4276A245ECD2E3 /* CJPopupAction */,
+				CB15891EA370584381F044C751E09CEB /* PureLayout */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB15891EA370584381F044C751E09CEB /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				B53D9F53E721E71CF6B73A5B4649DE66 /* ALView+PureLayout.h */,
+				D284F154F25DDD9DC1706DC56E2E50D5 /* ALView+PureLayout.m */,
+				65C625BE004DEBE5BE41E4C1EA522747 /* NSArray+PureLayout.h */,
+				AC81D7B99A72C6B131BD9217037558B6 /* NSArray+PureLayout.m */,
+				ED957C5BA5C007DA5568C54A18C93721 /* NSLayoutConstraint+PureLayout.h */,
+				4CBA7F28A5C41B96F2DA1CA67B7500CD /* NSLayoutConstraint+PureLayout.m */,
+				9786DBA88BBAC2EB80E78E404B9B2BB3 /* PureLayout.h */,
+				5B11699FC8D5FC4096BBFFAE6FEF064B /* PureLayout+Internal.h */,
+				EA4511E3BF51D5609A924DA849EAF968 /* PureLayoutDefines.h */,
+				6865763C462CAA55B2CA41FFE0224DA4 /* Support Files */,
 			);
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CF3DE383A583543EC67132B77A5DE5AE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6429AD9138757505ADAAD7A0D88BC76D /* libPods-RadioComposeViewDemo.a */,
-				B56B107C27430665873FD7960D73842C /* libPods-RadioComposeViewDemoTests.a */,
-				D88F2380C7BAE09CD8C3E91C25A22AB2 /* libPureLayout.a */,
-			);
-			name = Products;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5D8B49456BBAFE09877A0F8324B71021 /* Headers */ = {
+		02FBFDEA0DFB7217E222E0BC0BC7DCFD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A013F8CB51877BBD6612B77EFCD567AB /* ALView+PureLayout.h in Headers */,
-				A2721BBAD984AAE9AAC960A391AD6680 /* NSArray+PureLayout.h in Headers */,
-				9012E103C94E54801A65AED2949E811B /* NSLayoutConstraint+PureLayout.h in Headers */,
-				EF0A04663588DC2F05574AA398DDA554 /* PureLayout+Internal.h in Headers */,
-				40B1519E3B7D4BED22E9FFDFD14EF223 /* PureLayout.h in Headers */,
-				13B2D5A664BECC8AA909B97199F407C8 /* PureLayoutDefines.h in Headers */,
+				E867ECA4749C636F873644C124B3D88F /* CJPopupViewDelegate.h in Headers */,
+				BE6427935D332C300C0A21F4C215A3E0 /* UIView+CJPopupInView.h in Headers */,
+				F6CB4F6CC704254E54C74BA05F6EC025 /* UIView+CJShowExtendView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7245CDE19AF4364B416F3755CAD47993 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDCE32ECE84374E7956D4E0E58B39AA1 /* ALView+PureLayout.h in Headers */,
+				2FF9E2B322F56A26EF51FBF90CC62F73 /* NSArray+PureLayout.h in Headers */,
+				047A75D9E0DE61A5C549D5337A41B9F3 /* NSLayoutConstraint+PureLayout.h in Headers */,
+				E1E0B2A89226EDC918665C4A379EC953 /* PureLayout+Internal.h in Headers */,
+				C198A2EC9F2D54B2537F1632A80C1E4D /* PureLayout.h in Headers */,
+				D0A48C5088C776621777854E53B5BD64 /* PureLayoutDefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1E21394004822165C08EB727B163DA78 /* PureLayout */ = {
+		43F1E1B9272D0E6C4F999358003F6B43 /* CJPopupAction */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7A979B196AE36DC4661599D03BE90E4 /* Build configuration list for PBXNativeTarget "PureLayout" */;
+			buildConfigurationList = 94380F69B3B4F75810667252944D0E3C /* Build configuration list for PBXNativeTarget "CJPopupAction" */;
 			buildPhases = (
-				C13943AC5A35CB59FA146A3AF2596A15 /* Sources */,
-				A14C01931DFA361F91D85C379B274C73 /* Frameworks */,
-				5D8B49456BBAFE09877A0F8324B71021 /* Headers */,
+				48840C5A6153000B3E8EA415A5E0541A /* Sources */,
+				6D5C261F36768B25810561271EC9CE26 /* Frameworks */,
+				02FBFDEA0DFB7217E222E0BC0BC7DCFD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CJPopupAction;
+			productName = CJPopupAction;
+			productReference = 5B65551C92187B2B8E6E4953B26289D2 /* libCJPopupAction.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		542FFC15F9650F73F2B3699E9872BA22 /* Pods-RadioComposeViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08D47B229C6EFC0F797A287F7B300D70 /* Build configuration list for PBXNativeTarget "Pods-RadioComposeViewDemo" */;
+			buildPhases = (
+				E47D1AD33A4BBF1C3C6DE8216BDA4B27 /* Sources */,
+				61CDFEAFC25FE4AEAFCB82BA41DA9EE8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C96A097B7487135BAEA23F88B4D952A /* PBXTargetDependency */,
+				5A8E0AB6B8CF686D4AD676D18488426D /* PBXTargetDependency */,
+			);
+			name = "Pods-RadioComposeViewDemo";
+			productName = "Pods-RadioComposeViewDemo";
+			productReference = 52F98B21C891EFE37F543AF0D87A5E99 /* libPods-RadioComposeViewDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		5879048362D25584C84C004A9434E4FD /* PureLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B69383753D90E259163B2C24F809676 /* Build configuration list for PBXNativeTarget "PureLayout" */;
+			buildPhases = (
+				1733F5328F314FB516979DCF66C404FB /* Sources */,
+				1CF83D19379D843D5FF85B0543D62CBB /* Frameworks */,
+				7245CDE19AF4364B416F3755CAD47993 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -241,7 +347,7 @@
 			);
 			name = PureLayout;
 			productName = PureLayout;
-			productReference = D88F2380C7BAE09CD8C3E91C25A22AB2 /* libPureLayout.a */;
+			productReference = 776B6869BB8630A21661E5CC77905039 /* libPureLayout.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		8E11CDD070B3A10B2CA76251BA0D28BA /* Pods-RadioComposeViewDemoTests */ = {
@@ -257,24 +363,7 @@
 			);
 			name = "Pods-RadioComposeViewDemoTests";
 			productName = "Pods-RadioComposeViewDemoTests";
-			productReference = B56B107C27430665873FD7960D73842C /* libPods-RadioComposeViewDemoTests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E3D2490CEFB5F5E761575400CE84F89F /* Pods-RadioComposeViewDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B54C6B36380335511417FE5116398E33 /* Build configuration list for PBXNativeTarget "Pods-RadioComposeViewDemo" */;
-			buildPhases = (
-				F628200D74C5FEFE65AD86E6BBF933C8 /* Sources */,
-				132E617DDB0070D6FB61726DF6294DEA /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F0D3FED1B62C4AF1C82A9216F2CCA05B /* PBXTargetDependency */,
-			);
-			name = "Pods-RadioComposeViewDemo";
-			productName = "Pods-RadioComposeViewDemo";
-			productReference = 6429AD9138757505ADAAD7A0D88BC76D /* libPods-RadioComposeViewDemo.a */;
+			productReference = 5401B7CCBCE29CCB0766BE47F9C66887 /* libPods-RadioComposeViewDemoTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -294,18 +383,30 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CF3DE383A583543EC67132B77A5DE5AE /* Products */;
+			productRefGroup = 7F6141C69CF872DBDF76F3B4E8687FF5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E3D2490CEFB5F5E761575400CE84F89F /* Pods-RadioComposeViewDemo */,
+				43F1E1B9272D0E6C4F999358003F6B43 /* CJPopupAction */,
+				542FFC15F9650F73F2B3699E9872BA22 /* Pods-RadioComposeViewDemo */,
 				8E11CDD070B3A10B2CA76251BA0D28BA /* Pods-RadioComposeViewDemoTests */,
-				1E21394004822165C08EB727B163DA78 /* PureLayout */,
+				5879048362D25584C84C004A9434E4FD /* PureLayout */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1733F5328F314FB516979DCF66C404FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CAA3C31320766C09294AC3ADACE3808 /* ALView+PureLayout.m in Sources */,
+				5175C2576DB27E8E4BBFBF373E5DFD0C /* NSArray+PureLayout.m in Sources */,
+				7B63F895854B96A3CAF637DEC91ED73F /* NSLayoutConstraint+PureLayout.m in Sources */,
+				4C08B013DBA177D8CD6166F7435795E9 /* PureLayout-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		425B7016086190217C6B07B406B99F13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,33 +415,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C13943AC5A35CB59FA146A3AF2596A15 /* Sources */ = {
+		48840C5A6153000B3E8EA415A5E0541A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2C4D5AFE192D31AEF1D870E86CA6C2 /* ALView+PureLayout.m in Sources */,
-				76EBF8BA55E98950313A747313F67C43 /* NSArray+PureLayout.m in Sources */,
-				FAF086D10608BBAAC439D15C774DE8CC /* NSLayoutConstraint+PureLayout.m in Sources */,
-				0A68DBA1F3D46B54E3369F0C3B468B64 /* PureLayout-dummy.m in Sources */,
+				85E34767D4BFDA88902A94DD060C6ACC /* CJPopupAction-dummy.m in Sources */,
+				0A8D6FA66A7FA3D1C509FEE5F94346A9 /* UIView+CJPopupInView.m in Sources */,
+				0CC6AA9E2987F4F63C05381BE2D7B653 /* UIView+CJShowExtendView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F628200D74C5FEFE65AD86E6BBF933C8 /* Sources */ = {
+		E47D1AD33A4BBF1C3C6DE8216BDA4B27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D252256854FD785E57B3553609268D6 /* Pods-RadioComposeViewDemo-dummy.m in Sources */,
+				A7EFDEF972EE55871F3E2C4FEB26D9D3 /* Pods-RadioComposeViewDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F0D3FED1B62C4AF1C82A9216F2CCA05B /* PBXTargetDependency */ = {
+		1C96A097B7487135BAEA23F88B4D952A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CJPopupAction;
+			target = 43F1E1B9272D0E6C4F999358003F6B43 /* CJPopupAction */;
+			targetProxy = B85A94D193C63990B1C8BB87C5551823 /* PBXContainerItemProxy */;
+		};
+		5A8E0AB6B8CF686D4AD676D18488426D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PureLayout;
-			target = 1E21394004822165C08EB727B163DA78 /* PureLayout */;
-			targetProxy = EF631BB836058115FF29BDF33F96BD72 /* PBXContainerItemProxy */;
+			target = 5879048362D25584C84C004A9434E4FD /* PureLayout */;
+			targetProxy = 467C35B6B13C2060B3A35ED064780CAE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -368,9 +474,32 @@
 			};
 			name = Release;
 		};
-		3C198DB3F4109B5B777E2B4AF76E8850 /* Debug */ = {
+		491283BA7DB606EA730F6C794BEA0B04 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1951A12F7C46D8BBF64BC9D3F882A2EA /* PureLayout.xcconfig */;
+			baseConfigurationReference = 23F478DCC4B4928D8F634E4AFC1F6AF7 /* CJPopupAction.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CJPopupAction/CJPopupAction-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4CDD7C48ACA13211B282C3E8E31E1716 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D81E68D83D36BDC4CBEC8F5058205569 /* PureLayout.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -431,7 +560,30 @@
 			};
 			name = Release;
 		};
-		9FDF3C0163950004F9AABE02472BDC02 /* Debug */ = {
+		A10F5586B2A6FDCB5DD1865455009465 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23F478DCC4B4928D8F634E4AFC1F6AF7 /* CJPopupAction.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CJPopupAction/CJPopupAction-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CAF1F93F7246ED1A55A4E91063091262 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 825333828E974AA16A784B1CDC7BC4CF /* Pods-RadioComposeViewDemo.debug.xcconfig */;
 			buildSettings = {
@@ -498,7 +650,30 @@
 			};
 			name = Debug;
 		};
-		E5BEE33EEE7E22044B5E5A56F63AD855 /* Release */ = {
+		E238E9C65FB77D251F98FFAA16F7745C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D81E68D83D36BDC4CBEC8F5058205569 /* PureLayout.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F319849A1354C22A73A60851CD16A4B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ACB0127A91D74FB19369E9D968C7F00A /* Pods-RadioComposeViewDemo.release.xcconfig */;
 			buildSettings = {
@@ -516,29 +691,6 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F356858855783D87ED7A55D0EF549F44 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1951A12F7C46D8BBF64BC9D3F882A2EA /* PureLayout.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -570,11 +722,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		08D47B229C6EFC0F797A287F7B300D70 /* Build configuration list for PBXNativeTarget "Pods-RadioComposeViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAF1F93F7246ED1A55A4E91063091262 /* Debug */,
+				F319849A1354C22A73A60851CD16A4B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF7953F66E785E8876EB4D370D777D50 /* Debug */,
 				79B0C2E66EFA9917ED6EDDB8FC6A7684 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B69383753D90E259163B2C24F809676 /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CDD7C48ACA13211B282C3E8E31E1716 /* Debug */,
+				E238E9C65FB77D251F98FFAA16F7745C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -588,20 +758,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B54C6B36380335511417FE5116398E33 /* Build configuration list for PBXNativeTarget "Pods-RadioComposeViewDemo" */ = {
+		94380F69B3B4F75810667252944D0E3C /* Build configuration list for PBXNativeTarget "CJPopupAction" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9FDF3C0163950004F9AABE02472BDC02 /* Debug */,
-				E5BEE33EEE7E22044B5E5A56F63AD855 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D7A979B196AE36DC4661599D03BE90E4 /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3C198DB3F4109B5B777E2B4AF76E8850 /* Debug */,
-				F356858855783D87ED7A55D0EF549F44 /* Release */,
+				491283BA7DB606EA730F6C794BEA0B04 /* Debug */,
+				A10F5586B2A6FDCB5DD1865455009465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

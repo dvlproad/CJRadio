@@ -7,7 +7,7 @@
 //
 
 #import "RadioButtonsCanDropVC.h"
-#import <CJPopupView/UIView+CJShowDropView.h>
+#import <CJPopupAction/UIView+CJShowExtendView.h>
 #import "CJRadioButtonsHelper.h"
 #import "TestDataUtil.h"
 
@@ -53,6 +53,7 @@
     NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
     BOOL isSameIndex = index_cur == index_old ? YES : NO;
 
+    /*
     if (isSameIndex) {
         [radioButtonsCanDrop cj_hideDropDownExtendView];
         [radioButtonsCanDrop setCurrentSelectedIndex:-1];
@@ -84,14 +85,15 @@
 
         [radioButtonsCanDrop cj_showDropDownExtendView:popupView withShowInView:self.view completeBlock:nil];
     };
+    */
 }
 
 - (IBAction)btnAction:(id)sender{
     NSString *text = [NSString stringWithFormat:@"%d", rand()%10];
     [self.dropdownRadioButtons changeCurrentRadioButtonStateAndTitle:text];
     
-    [self.dropdownRadioButtons cj_hideDropDownExtendView];
-    [self.dropdownRadioButtons setCurrentSelectedIndex:-1];
+//    [self.dropdownRadioButtons cj_hideDropDownExtendView];
+//    [self.dropdownRadioButtons setCurrentSelectedIndex:-1];
 }
 
 

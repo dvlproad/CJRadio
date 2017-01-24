@@ -17,14 +17,16 @@
 		78310CA51E24EF63008EDE35 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310CA11E24EF63008EDE35 /* Home1.m */; };
 		78310CA61E24EF63008EDE35 /* Home1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78310CA21E24EF63008EDE35 /* Home1.xib */; };
 		78310CA71E24EF63008EDE35 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310CA41E24EF63008EDE35 /* TestDataUtil.m */; };
-		78310CB81E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310CB31E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m */; };
-		78310CBC1E25445A008EDE35 /* RadioButtons+CommonSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310CBB1E25445A008EDE35 /* RadioButtons+CommonSetup.m */; };
-		78C7DC511D772A61005F86D2 /* arrowDown_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4B1D772A61005F86D2 /* arrowDown_dark.png */; };
-		78C7DC521D772A61005F86D2 /* arrowLeft_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4C1D772A61005F86D2 /* arrowLeft_gray@2x.png */; };
-		78C7DC531D772A61005F86D2 /* arrowLeft_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4D1D772A61005F86D2 /* arrowLeft_red@2x.png */; };
-		78C7DC541D772A61005F86D2 /* arrowRight_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4E1D772A61005F86D2 /* arrowRight_gray@2x.png */; };
-		78C7DC551D772A61005F86D2 /* arrowRight_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC4F1D772A61005F86D2 /* arrowRight_red@2x.png */; };
-		78C7DC561D772A61005F86D2 /* arrowUp_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC501D772A61005F86D2 /* arrowUp_white@2x.png */; };
+		7887D9011E372545009C78D6 /* CJCommonRadioButtonsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7887D8F11E372544009C78D6 /* CJCommonRadioButtonsDataSource.m */; };
+		7887D9021E372545009C78D6 /* RadioButtons+CommonSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7887D8F51E372544009C78D6 /* RadioButtons+CommonSetup.m */; };
+		7887D9031E372545009C78D6 /* arrowDown_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 7887D8F71E372544009C78D6 /* arrowDown_dark.png */; };
+		7887D9041E372545009C78D6 /* arrowLeft_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7887D8F81E372544009C78D6 /* arrowLeft_gray@2x.png */; };
+		7887D9051E372545009C78D6 /* arrowLeft_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7887D8F91E372544009C78D6 /* arrowLeft_red@2x.png */; };
+		7887D9061E372545009C78D6 /* arrowRight_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7887D8FA1E372544009C78D6 /* arrowRight_gray@2x.png */; };
+		7887D9071E372545009C78D6 /* arrowRight_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7887D8FB1E372544009C78D6 /* arrowRight_red@2x.png */; };
+		7887D9081E372545009C78D6 /* arrowUp_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7887D8FC1E372544009C78D6 /* arrowUp_white@2x.png */; };
+		7887D9091E372545009C78D6 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7887D8FE1E372544009C78D6 /* RadioButton.m */; };
+		7887D90A1E372545009C78D6 /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 7887D9001E372544009C78D6 /* RadioButtons.m */; };
 		78C7DC5E1D772B98005F86D2 /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC5C1D772B98005F86D2 /* RadioButton_DropDown.xib */; };
 		78C7DC5F1D772B98005F86D2 /* RadioButton_Slider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C7DC5D1D772B98005F86D2 /* RadioButton_Slider.xib */; };
 		805A17561BF321CC00424769 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17551BF321CC00424769 /* main.m */; };
@@ -34,8 +36,6 @@
 		805A17611BF321CC00424769 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 805A17601BF321CC00424769 /* Images.xcassets */; };
 		805A17641BF321CC00424769 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17621BF321CC00424769 /* LaunchScreen.xib */; };
 		805A17701BF321CC00424769 /* RadioButtonsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A176F1BF321CC00424769 /* RadioButtonsDemoTests.m */; };
-		805A17821BF3235E00424769 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A177D1BF3235E00424769 /* RadioButton.m */; };
-		805A17841BF3235E00424769 /* RadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17801BF3235E00424769 /* RadioButtons.m */; };
 		805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A17AA1BF35C1B00424769 /* RBSliderVC.m */; };
 		805A17AD1BF35C1B00424769 /* RBSliderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 805A17AB1BF35C1B00424769 /* RBSliderVC.xib */; };
 		F26CB6BDCD4A998A74046801 /* libPods-RadioButtonsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 765A83FFF10D0B5B7067767F /* libPods-RadioButtonsDemo.a */; };
@@ -69,18 +69,22 @@
 		78310CA21E24EF63008EDE35 /* Home1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home1.xib; sourceTree = "<group>"; };
 		78310CA31E24EF63008EDE35 /* TestDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataUtil.h; sourceTree = "<group>"; };
 		78310CA41E24EF63008EDE35 /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
-		78310CB21E25021E008EDE35 /* CJCommonRadioButtonsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCommonRadioButtonsDataSource.h; sourceTree = "<group>"; };
-		78310CB31E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCommonRadioButtonsDataSource.m; sourceTree = "<group>"; };
-		78310CB61E25021E008EDE35 /* CJRadioButtonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonDefine.h; sourceTree = "<group>"; };
-		78310CB71E25021E008EDE35 /* CJRadioButtonsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonsHelper.h; sourceTree = "<group>"; };
-		78310CBA1E25445A008EDE35 /* RadioButtons+CommonSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RadioButtons+CommonSetup.h"; sourceTree = "<group>"; };
-		78310CBB1E25445A008EDE35 /* RadioButtons+CommonSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RadioButtons+CommonSetup.m"; sourceTree = "<group>"; };
-		78C7DC4B1D772A61005F86D2 /* arrowDown_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowDown_dark.png; sourceTree = "<group>"; };
-		78C7DC4C1D772A61005F86D2 /* arrowLeft_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_gray@2x.png"; sourceTree = "<group>"; };
-		78C7DC4D1D772A61005F86D2 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_red@2x.png"; sourceTree = "<group>"; };
-		78C7DC4E1D772A61005F86D2 /* arrowRight_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_gray@2x.png"; sourceTree = "<group>"; };
-		78C7DC4F1D772A61005F86D2 /* arrowRight_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_red@2x.png"; sourceTree = "<group>"; };
-		78C7DC501D772A61005F86D2 /* arrowUp_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowUp_white@2x.png"; sourceTree = "<group>"; };
+		7887D8F01E372544009C78D6 /* CJCommonRadioButtonsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCommonRadioButtonsDataSource.h; sourceTree = "<group>"; };
+		7887D8F11E372544009C78D6 /* CJCommonRadioButtonsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCommonRadioButtonsDataSource.m; sourceTree = "<group>"; };
+		7887D8F21E372544009C78D6 /* CJRadioButtonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonDefine.h; sourceTree = "<group>"; };
+		7887D8F31E372544009C78D6 /* CJRadioButtonsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonsHelper.h; sourceTree = "<group>"; };
+		7887D8F41E372544009C78D6 /* RadioButtons+CommonSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RadioButtons+CommonSetup.h"; sourceTree = "<group>"; };
+		7887D8F51E372544009C78D6 /* RadioButtons+CommonSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RadioButtons+CommonSetup.m"; sourceTree = "<group>"; };
+		7887D8F71E372544009C78D6 /* arrowDown_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowDown_dark.png; sourceTree = "<group>"; };
+		7887D8F81E372544009C78D6 /* arrowLeft_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_gray@2x.png"; sourceTree = "<group>"; };
+		7887D8F91E372544009C78D6 /* arrowLeft_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowLeft_red@2x.png"; sourceTree = "<group>"; };
+		7887D8FA1E372544009C78D6 /* arrowRight_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_gray@2x.png"; sourceTree = "<group>"; };
+		7887D8FB1E372544009C78D6 /* arrowRight_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRight_red@2x.png"; sourceTree = "<group>"; };
+		7887D8FC1E372544009C78D6 /* arrowUp_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowUp_white@2x.png"; sourceTree = "<group>"; };
+		7887D8FD1E372544009C78D6 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
+		7887D8FE1E372544009C78D6 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
+		7887D8FF1E372544009C78D6 /* RadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons.h; sourceTree = "<group>"; };
+		7887D9001E372544009C78D6 /* RadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons.m; sourceTree = "<group>"; };
 		78C7DC5C1D772B98005F86D2 /* RadioButton_DropDown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_DropDown.xib; sourceTree = "<group>"; };
 		78C7DC5D1D772B98005F86D2 /* RadioButton_Slider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_Slider.xib; sourceTree = "<group>"; };
 		805A17501BF321CC00424769 /* RadioButtonsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioButtonsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,10 +100,6 @@
 		805A17691BF321CC00424769 /* RadioButtonsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioButtonsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		805A176E1BF321CC00424769 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		805A176F1BF321CC00424769 /* RadioButtonsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RadioButtonsDemoTests.m; sourceTree = "<group>"; };
-		805A177C1BF3235E00424769 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
-		805A177D1BF3235E00424769 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
-		805A177F1BF3235E00424769 /* RadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtons.h; sourceTree = "<group>"; };
-		805A17801BF3235E00424769 /* RadioButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtons.m; sourceTree = "<group>"; };
 		805A17A91BF35C1B00424769 /* RBSliderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSliderVC.h; sourceTree = "<group>"; };
 		805A17AA1BF35C1B00424769 /* RBSliderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSliderVC.m; sourceTree = "<group>"; };
 		805A17AB1BF35C1B00424769 /* RBSliderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBSliderVC.xib; sourceTree = "<group>"; };
@@ -159,28 +159,42 @@
 			path = ../../TestData;
 			sourceTree = "<group>";
 		};
-		78310CB11E25021E008EDE35 /* CJRadioButtonsHelper */ = {
+		7887D8EE1E372544009C78D6 /* CJRadioButtons */ = {
 			isa = PBXGroup;
 			children = (
-				78310CB21E25021E008EDE35 /* CJCommonRadioButtonsDataSource.h */,
-				78310CB31E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m */,
-				78310CBA1E25445A008EDE35 /* RadioButtons+CommonSetup.h */,
-				78310CBB1E25445A008EDE35 /* RadioButtons+CommonSetup.m */,
-				78310CB61E25021E008EDE35 /* CJRadioButtonDefine.h */,
-				78310CB71E25021E008EDE35 /* CJRadioButtonsHelper.h */,
+				7887D8EF1E372544009C78D6 /* CJRadioButtonsHelper */,
+				7887D8F61E372544009C78D6 /* images_arrow */,
+				7887D8FD1E372544009C78D6 /* RadioButton.h */,
+				7887D8FE1E372544009C78D6 /* RadioButton.m */,
+				7887D8FF1E372544009C78D6 /* RadioButtons.h */,
+				7887D9001E372544009C78D6 /* RadioButtons.m */,
+			);
+			name = CJRadioButtons;
+			path = ../../CJRadio/CJRadioButtons;
+			sourceTree = "<group>";
+		};
+		7887D8EF1E372544009C78D6 /* CJRadioButtonsHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7887D8F01E372544009C78D6 /* CJCommonRadioButtonsDataSource.h */,
+				7887D8F11E372544009C78D6 /* CJCommonRadioButtonsDataSource.m */,
+				7887D8F21E372544009C78D6 /* CJRadioButtonDefine.h */,
+				7887D8F31E372544009C78D6 /* CJRadioButtonsHelper.h */,
+				7887D8F41E372544009C78D6 /* RadioButtons+CommonSetup.h */,
+				7887D8F51E372544009C78D6 /* RadioButtons+CommonSetup.m */,
 			);
 			path = CJRadioButtonsHelper;
 			sourceTree = "<group>";
 		};
-		78C7DC4A1D772A61005F86D2 /* images_arrow */ = {
+		7887D8F61E372544009C78D6 /* images_arrow */ = {
 			isa = PBXGroup;
 			children = (
-				78C7DC4B1D772A61005F86D2 /* arrowDown_dark.png */,
-				78C7DC4C1D772A61005F86D2 /* arrowLeft_gray@2x.png */,
-				78C7DC4D1D772A61005F86D2 /* arrowLeft_red@2x.png */,
-				78C7DC4E1D772A61005F86D2 /* arrowRight_gray@2x.png */,
-				78C7DC4F1D772A61005F86D2 /* arrowRight_red@2x.png */,
-				78C7DC501D772A61005F86D2 /* arrowUp_white@2x.png */,
+				7887D8F71E372544009C78D6 /* arrowDown_dark.png */,
+				7887D8F81E372544009C78D6 /* arrowLeft_gray@2x.png */,
+				7887D8F91E372544009C78D6 /* arrowLeft_red@2x.png */,
+				7887D8FA1E372544009C78D6 /* arrowRight_gray@2x.png */,
+				7887D8FB1E372544009C78D6 /* arrowRight_red@2x.png */,
+				7887D8FC1E372544009C78D6 /* arrowUp_white@2x.png */,
 			);
 			path = images_arrow;
 			sourceTree = "<group>";
@@ -212,10 +226,10 @@
 				805A17581BF321CC00424769 /* AppDelegate.m */,
 				805A175A1BF321CC00424769 /* ViewController.h */,
 				805A175B1BF321CC00424769 /* ViewController.m */,
+				7887D8EE1E372544009C78D6 /* CJRadioButtons */,
 				78310C9F1E24EF62008EDE35 /* TestData */,
 				783079B21D75247C009689F3 /* Views */,
 				805A17851BF3236A00424769 /* Controller */,
-				805A17791BF3235D00424769 /* RadioButtons */,
 				805A175D1BF321CC00424769 /* Main.storyboard */,
 				805A17601BF321CC00424769 /* Images.xcassets */,
 				805A17621BF321CC00424769 /* LaunchScreen.xib */,
@@ -248,20 +262,6 @@
 				805A176E1BF321CC00424769 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		805A17791BF3235D00424769 /* RadioButtons */ = {
-			isa = PBXGroup;
-			children = (
-				78310CB11E25021E008EDE35 /* CJRadioButtonsHelper */,
-				78C7DC4A1D772A61005F86D2 /* images_arrow */,
-				805A177C1BF3235E00424769 /* RadioButton.h */,
-				805A177D1BF3235E00424769 /* RadioButton.m */,
-				805A177F1BF3235E00424769 /* RadioButtons.h */,
-				805A17801BF3235E00424769 /* RadioButtons.m */,
-			);
-			name = RadioButtons;
-			path = ../../RadioButtons;
 			sourceTree = "<group>";
 		};
 		805A17851BF3236A00424769 /* Controller */ = {
@@ -301,12 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 805A17731BF321CC00424769 /* Build configuration list for PBXNativeTarget "RadioButtonsDemo" */;
 			buildPhases = (
-				5F87E002B9263E713416BE38 /* 📦 Check Pods Manifest.lock */,
+				5F87E002B9263E713416BE38 /* [CP] Check Pods Manifest.lock */,
 				805A174C1BF321CC00424769 /* Sources */,
 				805A174D1BF321CC00424769 /* Frameworks */,
 				805A174E1BF321CC00424769 /* Resources */,
-				B3442125A8447CA228E22B60 /* 📦 Embed Pods Frameworks */,
-				04CAE4592BC558F2721579DF /* 📦 Copy Pods Resources */,
+				B3442125A8447CA228E22B60 /* [CP] Embed Pods Frameworks */,
+				04CAE4592BC558F2721579DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,12 +321,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 805A17761BF321CC00424769 /* Build configuration list for PBXNativeTarget "RadioButtonsDemoTests" */;
 			buildPhases = (
-				5FA7D2CA29CC84531A3BBE42 /* 📦 Check Pods Manifest.lock */,
+				5FA7D2CA29CC84531A3BBE42 /* [CP] Check Pods Manifest.lock */,
 				805A17651BF321CC00424769 /* Sources */,
 				805A17661BF321CC00424769 /* Frameworks */,
 				805A17671BF321CC00424769 /* Resources */,
-				C2396590880489DC291B6C67 /* 📦 Embed Pods Frameworks */,
-				F7A6D29061AD132C2AE0847E /* 📦 Copy Pods Resources */,
+				C2396590880489DC291B6C67 /* [CP] Embed Pods Frameworks */,
+				F7A6D29061AD132C2AE0847E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -381,20 +381,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C7DC5F1D772B98005F86D2 /* RadioButton_Slider.xib in Resources */,
+				7887D9081E372545009C78D6 /* arrowUp_white@2x.png in Resources */,
 				805A175F1BF321CC00424769 /* Main.storyboard in Resources */,
 				783079B71D7524BD009689F3 /* RadioButtonsCanDropVC.xib in Resources */,
+				7887D9071E372545009C78D6 /* arrowRight_red@2x.png in Resources */,
 				78C7DC5E1D772B98005F86D2 /* RadioButton_DropDown.xib in Resources */,
-				78C7DC551D772A61005F86D2 /* arrowRight_red@2x.png in Resources */,
-				78C7DC541D772A61005F86D2 /* arrowRight_gray@2x.png in Resources */,
-				78C7DC511D772A61005F86D2 /* arrowDown_dark.png in Resources */,
 				783079BC1D7558C6009689F3 /* RBDropDownVC.xib in Resources */,
 				78310CA61E24EF63008EDE35 /* Home1.xib in Resources */,
-				78C7DC531D772A61005F86D2 /* arrowLeft_red@2x.png in Resources */,
-				78C7DC561D772A61005F86D2 /* arrowUp_white@2x.png in Resources */,
 				805A17641BF321CC00424769 /* LaunchScreen.xib in Resources */,
 				805A17611BF321CC00424769 /* Images.xcassets in Resources */,
-				78C7DC521D772A61005F86D2 /* arrowLeft_gray@2x.png in Resources */,
 				783079C11D755B95009689F3 /* RBDropDownBestVC.xib in Resources */,
+				7887D9031E372545009C78D6 /* arrowDown_dark.png in Resources */,
+				7887D9041E372545009C78D6 /* arrowLeft_gray@2x.png in Resources */,
+				7887D9051E372545009C78D6 /* arrowLeft_red@2x.png in Resources */,
+				7887D9061E372545009C78D6 /* arrowRight_gray@2x.png in Resources */,
 				805A17AD1BF35C1B00424769 /* RBSliderVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,14 +409,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04CAE4592BC558F2721579DF /* 📦 Copy Pods Resources */ = {
+		04CAE4592BC558F2721579DF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,44 +424,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5F87E002B9263E713416BE38 /* 📦 Check Pods Manifest.lock */ = {
+		5F87E002B9263E713416BE38 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5FA7D2CA29CC84531A3BBE42 /* 📦 Check Pods Manifest.lock */ = {
+		5FA7D2CA29CC84531A3BBE42 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B3442125A8447CA228E22B60 /* 📦 Embed Pods Frameworks */ = {
+		B3442125A8447CA228E22B60 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,14 +469,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioButtonsDemo/Pods-RadioButtonsDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C2396590880489DC291B6C67 /* 📦 Embed Pods Frameworks */ = {
+		C2396590880489DC291B6C67 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,14 +484,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioButtonsDemoTests/Pods-RadioButtonsDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F7A6D29061AD132C2AE0847E /* 📦 Copy Pods Resources */ = {
+		F7A6D29061AD132C2AE0847E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,18 +507,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				805A175C1BF321CC00424769 /* ViewController.m in Sources */,
-				78310CB81E25021E008EDE35 /* CJCommonRadioButtonsDataSource.m in Sources */,
 				783079BB1D7558C6009689F3 /* RBDropDownVC.m in Sources */,
+				7887D9011E372545009C78D6 /* CJCommonRadioButtonsDataSource.m in Sources */,
 				805A17591BF321CC00424769 /* AppDelegate.m in Sources */,
 				805A17561BF321CC00424769 /* main.m in Sources */,
 				78310CA71E24EF63008EDE35 /* TestDataUtil.m in Sources */,
-				805A17841BF3235E00424769 /* RadioButtons.m in Sources */,
+				7887D90A1E372545009C78D6 /* RadioButtons.m in Sources */,
 				78310CA51E24EF63008EDE35 /* Home1.m in Sources */,
 				805A17AC1BF35C1B00424769 /* RBSliderVC.m in Sources */,
-				78310CBC1E25445A008EDE35 /* RadioButtons+CommonSetup.m in Sources */,
+				7887D9021E372545009C78D6 /* RadioButtons+CommonSetup.m in Sources */,
 				783079B61D7524BD009689F3 /* RadioButtonsCanDropVC.m in Sources */,
-				805A17821BF3235E00424769 /* RadioButton.m in Sources */,
 				783079C01D755B95009689F3 /* RBDropDownBestVC.m in Sources */,
+				7887D9091E372545009C78D6 /* RadioButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
