@@ -13,9 +13,9 @@
 		78310C8F1E24CAC1008EDE35 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C8B1E24CAC1008EDE35 /* Home1.m */; };
 		78310C901E24CAC1008EDE35 /* Home1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78310C8C1E24CAC1008EDE35 /* Home1.xib */; };
 		78310C911E24CAC1008EDE35 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 78310C8E1E24CAC1008EDE35 /* TestDataUtil.m */; };
-		789B20111D73F70600F01BA3 /* RadioComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B200C1D73F70600F01BA3 /* RadioComposeView.m */; };
-		789B20121D73F70600F01BA3 /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B200E1D73F70600F01BA3 /* UIScrollView+CJAddContentView.m */; };
-		789B20131D73F70600F01BA3 /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 789B20101D73F70600F01BA3 /* UIView+CJAddSubVIew.m */; };
+		7887D9481E3728B7009C78D6 /* RadioComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7887D9431E3728B7009C78D6 /* RadioComposeView.m */; };
+		7887D9491E3728B7009C78D6 /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7887D9451E3728B7009C78D6 /* UIScrollView+CJAddContentView.m */; };
+		7887D94A1E3728B7009C78D6 /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 7887D9471E3728B7009C78D6 /* UIView+CJAddSubVIew.m */; };
 		78FA92EC1D7009650023252A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA92EB1D7009650023252A /* main.m */; };
 		78FA92EF1D7009650023252A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA92EE1D7009650023252A /* AppDelegate.m */; };
 		78FA92F21D7009650023252A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78FA92F11D7009650023252A /* ViewController.m */; };
@@ -57,12 +57,12 @@
 		78310C8C1E24CAC1008EDE35 /* Home1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Home1.xib; sourceTree = "<group>"; };
 		78310C8D1E24CAC1008EDE35 /* TestDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDataUtil.h; sourceTree = "<group>"; };
 		78310C8E1E24CAC1008EDE35 /* TestDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDataUtil.m; sourceTree = "<group>"; };
-		789B200B1D73F70600F01BA3 /* RadioComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioComposeView.h; sourceTree = "<group>"; };
-		789B200C1D73F70600F01BA3 /* RadioComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioComposeView.m; sourceTree = "<group>"; };
-		789B200D1D73F70600F01BA3 /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
-		789B200E1D73F70600F01BA3 /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
-		789B200F1D73F70600F01BA3 /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
-		789B20101D73F70600F01BA3 /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
+		7887D9421E3728B7009C78D6 /* RadioComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioComposeView.h; sourceTree = "<group>"; };
+		7887D9431E3728B7009C78D6 /* RadioComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioComposeView.m; sourceTree = "<group>"; };
+		7887D9441E3728B7009C78D6 /* UIScrollView+CJAddContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+CJAddContentView.h"; sourceTree = "<group>"; };
+		7887D9451E3728B7009C78D6 /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
+		7887D9461E3728B7009C78D6 /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
+		7887D9471E3728B7009C78D6 /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
 		78FA92E71D7009650023252A /* RadioComposeViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioComposeViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FA92EB1D7009650023252A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78FA92ED1D7009650023252A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,18 +136,18 @@
 			path = ../../TestData;
 			sourceTree = "<group>";
 		};
-		789B200A1D73F70600F01BA3 /* RadioComposeView */ = {
+		7887D9411E3728B7009C78D6 /* CJRadioComposeView */ = {
 			isa = PBXGroup;
 			children = (
-				789B200B1D73F70600F01BA3 /* RadioComposeView.h */,
-				789B200C1D73F70600F01BA3 /* RadioComposeView.m */,
-				789B200D1D73F70600F01BA3 /* UIScrollView+CJAddContentView.h */,
-				789B200E1D73F70600F01BA3 /* UIScrollView+CJAddContentView.m */,
-				789B200F1D73F70600F01BA3 /* UIView+CJAddSubVIew.h */,
-				789B20101D73F70600F01BA3 /* UIView+CJAddSubVIew.m */,
+				7887D9421E3728B7009C78D6 /* RadioComposeView.h */,
+				7887D9431E3728B7009C78D6 /* RadioComposeView.m */,
+				7887D9441E3728B7009C78D6 /* UIScrollView+CJAddContentView.h */,
+				7887D9451E3728B7009C78D6 /* UIScrollView+CJAddContentView.m */,
+				7887D9461E3728B7009C78D6 /* UIView+CJAddSubVIew.h */,
+				7887D9471E3728B7009C78D6 /* UIView+CJAddSubVIew.m */,
 			);
-			name = RadioComposeView;
-			path = ../../RadioComposeView;
+			name = CJRadioComposeView;
+			path = ../../CJRadio/CJRadioComposeView;
 			sourceTree = "<group>";
 		};
 		78FA92DE1D7009650023252A = {
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				78310C541E247F3B008EDE35 /* CJSystemComposeViewController */,
-				789B200A1D73F70600F01BA3 /* RadioComposeView */,
+				7887D9411E3728B7009C78D6 /* CJRadioComposeView */,
 				78FA92ED1D7009650023252A /* AppDelegate.h */,
 				78FA92EE1D7009650023252A /* AppDelegate.m */,
 				78FA92F01D7009650023252A /* ViewController.h */,
@@ -488,13 +488,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FA93221D700A610023252A /* RadioControllersViewController.m in Sources */,
-				789B20121D73F70600F01BA3 /* UIScrollView+CJAddContentView.m in Sources */,
-				789B20131D73F70600F01BA3 /* UIView+CJAddSubVIew.m in Sources */,
 				78FA92F21D7009650023252A /* ViewController.m in Sources */,
 				78310C911E24CAC1008EDE35 /* TestDataUtil.m in Sources */,
 				78310C5C1E247F74008EDE35 /* CJSystemComposeViewController.m in Sources */,
+				7887D9491E3728B7009C78D6 /* UIScrollView+CJAddContentView.m in Sources */,
+				7887D94A1E3728B7009C78D6 /* UIView+CJAddSubVIew.m in Sources */,
 				78310C8F1E24CAC1008EDE35 /* Home1.m in Sources */,
-				789B20111D73F70600F01BA3 /* RadioComposeView.m in Sources */,
+				7887D9481E3728B7009C78D6 /* RadioComposeView.m in Sources */,
 				78FA92EF1D7009650023252A /* AppDelegate.m in Sources */,
 				78FA92EC1D7009650023252A /* main.m in Sources */,
 			);
