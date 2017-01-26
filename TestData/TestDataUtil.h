@@ -1,6 +1,6 @@
 //
 //  TestDataUtil.h
-//  RadioComposeViewDemo
+//  CJRadioDemo
 //
 //  Created by dvlproad on 2017/1/10.
 //  Copyright © 2017年 dvlproad. All rights reserved.

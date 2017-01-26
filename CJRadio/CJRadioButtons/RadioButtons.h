@@ -1,6 +1,6 @@
 //
 //  RadioButtons.h
-//  RadioButtonsDemo
+//  CJRadioDemo
 //
 //  Created by lichq on 7/8/15.
 //  Copyright (c) 2015 ciyouzen. All rights reserved.

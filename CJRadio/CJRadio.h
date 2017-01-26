@@ -1,9 +1,9 @@
 //
 //  CJRadio.h
-//  CJSliderViewControllerDemo
+//  CJRadioDemo
 //
-//  Created by 李超前 on 2017/1/24.
-//  Copyright © 2017年 dvlproad. All rights reserved.
+//  Created by lichq on 14-11-5.
+//  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
 #ifndef CJRadio_h

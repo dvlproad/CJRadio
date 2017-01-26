@@ -1,6 +1,6 @@
 //
 //  RadioButtons.m
-//  RadioButtonsDemo
+//  CJRadioDemo
 //
 //  Created by lichq on 7/8/15.
 //  Copyright (c) 2015 ciyouzen. All rights reserved.
@@ -34,10 +34,18 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 
 @implementation RadioButtons
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self cjRadioButtons_commonInit];
+    }
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self commonInit];
+        [self cjRadioButtons_commonInit];
     }
     return self;
 }
@@ -45,12 +53,12 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self commonInit];
+        [self cjRadioButtons_commonInit];
     }
     return self;
 }
 
-- (void)commonInit {
+- (void)cjRadioButtons_commonInit {
 #pragma mark - 当scrollView位于第一个子视图时，其会对内容自动调整。如果你不想让scrollView的内容自动调整，可采取如下两种方法中的任一一种(这里采用第一种)。方法一：取消添加lab，以使得scrollView不是第一个子视图，从而达到取消scrollView的自动调整效果方法二：automaticallyAdjustsScrollViewInsets：如果你不想让scrollView的内容自动调整，将这个属性设为NO（默认值YES）。详细情况可参考evernote笔记中的UIStatusBar笔记内容
     UILabel *lab = [[UILabel alloc]initWithFrame:CGRectZero];
     [self addSubview:lab];
@@ -68,12 +76,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
     [super layoutSubviews];
     
     [self reloadViews];
-}
-
-- (void)setDataSource:(id<RadioButtonsDataSource>)dataSource {
-    _dataSource = dataSource;
-    
-    [self reloadViews];
+    [self layoutIfNeeded]; //不要漏
 }
 
 /** 完整的描述请参见文件头部 */
@@ -197,7 +200,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
                                                 toItem:nil
                                              attribute:NSLayoutAttributeNotAnAttribute
                                             multiplier:1
-                                              constant:110];
+                                              constant:0];
     [self.scrollView addConstraint:self.lineImageViewWidthLayoutConstraint];
 }
 

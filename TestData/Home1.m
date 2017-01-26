@@ -1,6 +1,6 @@
 //
 //  Home1.m
-//  RadioComposeViewDemo
+//  CJRadioDemo
 //
 //  Created by dvlproad on 16/9/13.
 //  Copyright © 2016年 dvlproad. All rights reserved.

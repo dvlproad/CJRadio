@@ -1,6 +1,6 @@
 //
 //  CJButtonControllerView.m
-//  CJSliderViewControllerDemo
+//  CJRadioDemo
 //
 //  Created by lichq on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
@@ -8,15 +8,12 @@
 
 #import "CJButtonControllerView.h"
 
-static NSInteger kMaxRadioButtonsShowViewCountDefault = 3;
-static NSInteger kSelectedIndexDefault = 0;
-
 @interface CJButtonControllerView () <RadioButtonsDataSource, RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
     BOOL isDelegateDoneInRadioButton; //避免点击单选按钮的时候，delegate执行两次
     
 }
-@property (nonatomic, strong) IBOutlet RadioButtons *sliderRadioButtons;
-@property (nonatomic, strong) IBOutlet RadioComposeView *radioComposeView;
+@property (nonatomic, strong) RadioButtons *sliderRadioButtons;
+@property (nonatomic, strong) RadioComposeView *radioComposeView;
 @property (nonatomic, assign) NSInteger currentSelectedIndex;
 @property (nonatomic, strong) NSLayoutConstraint *radioButtonsHeightLayoutConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *radioButtonsLeftLayoutConstraint;
@@ -59,26 +56,15 @@ static NSInteger kSelectedIndexDefault = 0;
     [self commonInit];
 }
 
-
-- (void)reloadData {
-    self.radioButtonsHeightLayoutConstraint.constant = self.radioButtonsHeight;
-    self.sliderRadioButtons.dataSource = self;
-    self.radioComposeView.dataSource = self;
-}
-
 - (void)commonInit {
     self.radioButtonsHeight = 0;
     
     /* Self的一些其他设置 */
-    self.defaultSelectedIndex = kSelectedIndexDefault;
-    self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
+    self.defaultSelectedIndex = 0;
+    self.maxRadioButtonsShowViewCount = 3;
     
     /* 添加 RadioButtons */
     self.sliderRadioButtons = [[RadioButtons alloc] initWithFrame:CGRectZero];
-    self.sliderRadioButtons.showBottomLineView = self.showBottomLineView;
-    self.sliderRadioButtons.bottomLineImage = self.bottomLineImage;
-    self.sliderRadioButtons.bottomLineColor = self.bottomLineColor;
-    self.sliderRadioButtons.bottomLineViewHeight = self.bottomLineViewHeight;
 //    self.sliderRadioButtons.dataSource = self; //放在reloadData中了
     self.sliderRadioButtons.delegate = self;
     [self addSubview:self.sliderRadioButtons];
@@ -92,6 +78,39 @@ static NSInteger kSelectedIndexDefault = 0;
     //设置约束
     [self setupConstraints];
 }
+
+#pragma mark - 设置RadioButtons的附加设置
+- (void)setShowBottomLineView:(BOOL)showBottomLineView {
+    _showBottomLineView = showBottomLineView;
+    
+    self.sliderRadioButtons.showBottomLineView = showBottomLineView;
+}
+
+- (void)setBottomLineImage:(UIImage *)bottomLineImage {
+    _bottomLineImage = bottomLineImage;
+    
+    self.sliderRadioButtons.bottomLineImage = bottomLineImage;
+}
+
+- (void)setBottomLineColor:(UIColor *)bottomLineColor {
+    _bottomLineColor = bottomLineColor;
+    
+    self.sliderRadioButtons.bottomLineColor = bottomLineColor;
+}
+
+- (void)setBottomLineViewHeight:(CGFloat)bottomLineViewHeight {
+    _bottomLineViewHeight = bottomLineViewHeight;
+    
+    self.sliderRadioButtons.bottomLineViewHeight = bottomLineViewHeight;
+}
+
+#pragma mark - reloadData
+- (void)reloadData {
+    self.radioButtonsHeightLayoutConstraint.constant = self.radioButtonsHeight;
+    self.sliderRadioButtons.dataSource = self;
+    self.radioComposeView.dataSource = self;
+}
+
 
 /** 完整的描述请参见文件头部 */
 - (void)scollToCurrentSelectedViewWithAnimated:(BOOL)animated {

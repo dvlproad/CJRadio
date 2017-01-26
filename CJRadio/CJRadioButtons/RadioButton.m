@@ -1,6 +1,6 @@
 //
 //  RadioButton.m
-//  RadioButtonsDemo
+//  CJRadioDemo
 //
 //  Created by lichq on 9/9/15.
 //  Copyright (c) 2015 ciyouzen. All rights reserved.
@@ -10,18 +10,26 @@
 
 @implementation RadioButton
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self.button addTarget:self action:@selector(radioButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (instancetype)init {
+    self = [super init];
     if (self) {
         [self commonInit];
     }
     return self;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    
-    [self.button addTarget:self action:@selector(radioButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
 }
 
 - (void)commonInit {
@@ -47,6 +55,15 @@
                                   attribute:NSLayoutAttributeCenterY
                                  multiplier:1
                                    constant:0]];
+    
+    [self.imageView addConstraint:
+     [NSLayoutConstraint constraintWithItem:self.imageView
+                                  attribute:NSLayoutAttributeHeight //height
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                 multiplier:1
+                                   constant:12]];
     [self addConstraint:
      [NSLayoutConstraint constraintWithItem:self.imageView
                                   attribute:NSLayoutAttributeRight      //right
@@ -58,14 +75,6 @@
     [self.imageView addConstraint:
      [NSLayoutConstraint constraintWithItem:self.imageView
                                   attribute:NSLayoutAttributeWidth    //width
-                                  relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                  attribute:NSLayoutAttributeNotAnAttribute
-                                 multiplier:1
-                                   constant:12]];
-    [self.imageView addConstraint:
-     [NSLayoutConstraint constraintWithItem:self.imageView
-                                  attribute:NSLayoutAttributeHeight //height
                                   relatedBy:NSLayoutRelationEqual
                                      toItem:nil
                                   attribute:NSLayoutAttributeNotAnAttribute

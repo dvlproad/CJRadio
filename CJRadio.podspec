@@ -29,6 +29,8 @@ Pod::Spec.new do |s|
   s.subspec 'CJRadioButtons' do |ss|
     ss.source_files = "CJRadio/CJRadioButtons/**/*.{h,m}"
     ss.resources = "CJRadio/CJRadioButtons/**/*.{png,xib}"
+
+    ss.dependency 'CJPopupAction', '~> 1.4.0'
   end
 
   s.subspec 'CJRadioComposeView' do |ss|

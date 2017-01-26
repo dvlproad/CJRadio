@@ -1,6 +1,6 @@
 //
 //  UIScrollView+CJAddContentView.h
-//  RadioComposeViewDemo
+//  CJRadioDemo
 //
 //  Created by lichq on 14-11-12.
 //  Copyright (c) 2014年 lichq. All rights reserved.
