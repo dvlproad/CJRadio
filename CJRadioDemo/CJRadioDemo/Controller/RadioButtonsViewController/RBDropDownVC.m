@@ -28,7 +28,10 @@
     NSArray *titles = @[@"人物", @"爱好", @"其他", @"地区"];
     CJRadioButtonsDropDownSample *radioButtonsDropDownSample = [[CJRadioButtonsDropDownSample alloc] init];
     [radioButtonsDropDownSample setFrame:CGRectMake(20, 300, 380, 40)];
-    [radioButtonsDropDownSample setupWithTitles:titles arrowImage:[UIImage imageNamed:@"arrowDown_dark"] popupSuperview:self.view];
+    [radioButtonsDropDownSample setupWithTitles:titles
+                                  dropDownImage:[UIImage imageNamed:@"arrowDown_dark"]
+                                 popupSuperview:self.view
+                              dropDownUnderType:CJRadioButtonsDropDownTypeUnderCurrent];
     radioButtonsDropDownSample.radioButtonsPopupSampleDataSource = self;
     [self.view addSubview:radioButtonsDropDownSample];
     self.radioButtonsDropDownSample = radioButtonsDropDownSample;
@@ -41,7 +44,7 @@
 }
 
 - (UIView *)cj_RadioButtonsPopupSample:(CJRadioButtonsDropDownSample *)radioButtonsPopupSample viewForButtonIndex:(NSInteger)index {
-    UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 10, 200)];
+    UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 200)];
     popupView.backgroundColor = [UIColor greenColor];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(20, 50, 280, 44)];
@@ -50,6 +53,8 @@
     [btn setBackgroundColor:[UIColor redColor]];
     [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [popupView addSubview:btn];
+    
+//    popupView.clipsToBounds = YES;
     
     return popupView;
 }

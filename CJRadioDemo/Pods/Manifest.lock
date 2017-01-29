@@ -1,15 +1,15 @@
 PODS:
-  - CJPopupAction (1.4.0)
+  - CJPopupAction (1.4.1)
   - PureLayout (3.0.2)
 
 DEPENDENCIES:
-  - CJPopupAction (~> 1.4.0)
+  - CJPopupAction (~> 1.4.1)
   - PureLayout (~> 3.0.2)
 
 SPEC CHECKSUMS:
-  CJPopupAction: 96309682bf4dcd53aea9147a4ae1a67b69efb979
+  CJPopupAction: 3bdd2858890fb72b7409e22cdf929b0fec62c550
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
 
-PODFILE CHECKSUM: 53452cefbe237122e4be77d6590ac27056fdfb95
+PODFILE CHECKSUM: 57fce40bddc0b2ceaf4219c875977ddc60bf0fe8
 
 COCOAPODS: 1.1.0.rc.2

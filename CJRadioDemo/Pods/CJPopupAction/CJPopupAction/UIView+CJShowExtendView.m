@@ -65,7 +65,7 @@ static NSString *cjExtendViewKey = @"cjExtendView";
     CGPoint popupViewLocation = CGPointZero;
     CGSize popupViewSize = CGSizeZero;
     if (popupViewPosition == CJPopupViewPositionUnder) {
-        CGFloat popupViewX = CGRectGetMinX(accordingView.frame);
+        CGFloat popupViewX = CGRectGetMinX(accordingViewFrameInHisSuperView);
         CGFloat popupViewY = CGRectGetMinY(accordingViewFrameInHisSuperView) + CGRectGetHeight(accordingView.frame);
         popupViewLocation = CGPointMake(popupViewX, popupViewY);
         

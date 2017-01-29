@@ -8,6 +8,11 @@
 
 #import "RadioButtons.h"
 
+typedef NS_ENUM(NSUInteger, CJRadioButtonsDropDownType) {
+    CJRadioButtonsDropDownTypeUnderAll,
+    CJRadioButtonsDropDownTypeUnderCurrent,
+};
+
 @class CJRadioButtonsDropDownSample;
 @protocol CJRadioButtonsDropDownSampleDataSource <NSObject>
 
@@ -24,12 +29,13 @@
 /**
  *  初始设置包含弹出视图的按钮组合成品
  *
- *  @param titles           按钮标题组合
- *  @param arrowImage       箭头
- *  @param popupSuperview   弹出视图到哪里
+ *  @param titles               按钮标题组合
+ *  @param dropDownImage        箭头
+ *  @param popupSuperview       弹出视图到哪里
+ *  @param dropDownUnderType    弹出视图的位置
  */
 - (void)setupWithTitles:(NSArray *)titles
-             arrowImage:(UIImage *)arrowImage
-         popupSuperview:(UIView *)popupSuperview;
-
+          dropDownImage:(UIImage *)dropDownImage
+         popupSuperview:(UIView *)popupSuperview
+      dropDownUnderType:(CJRadioButtonsDropDownType)dropDownUnderType;
 @end

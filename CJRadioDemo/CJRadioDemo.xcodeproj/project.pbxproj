@@ -30,7 +30,6 @@
 		785B22881E3A222800D0A085 /* RadioComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22761E3A222800D0A085 /* RadioComposeView.m */; };
 		785B22891E3A222800D0A085 /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22781E3A222800D0A085 /* UIScrollView+CJAddContentView.m */; };
 		785B228A1E3A222800D0A085 /* UIView+CJAddSubVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B227A1E3A222800D0A085 /* UIView+CJAddSubVIew.m */; };
-		785B228B1E3A222800D0A085 /* CJRadioPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B227C1E3A222800D0A085 /* CJRadioPickerView.m */; };
 		785B229A1E3A22E700D0A085 /* RadioButton_DropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22941E3A22E700D0A085 /* RadioButton_DropDown.xib */; };
 		785B229B1E3A22E700D0A085 /* RadioButton_Slider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22951E3A22E700D0A085 /* RadioButton_Slider.xib */; };
 		785B22A21E3A293C00D0A085 /* Home1.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B229E1E3A293C00D0A085 /* Home1.m */; };
@@ -113,8 +112,6 @@
 		785B22781E3A222800D0A085 /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
 		785B22791E3A222800D0A085 /* UIView+CJAddSubVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CJAddSubVIew.h"; sourceTree = "<group>"; };
 		785B227A1E3A222800D0A085 /* UIView+CJAddSubVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CJAddSubVIew.m"; sourceTree = "<group>"; };
-		785B227B1E3A222800D0A085 /* CJRadioPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioPickerView.h; sourceTree = "<group>"; };
-		785B227C1E3A222800D0A085 /* CJRadioPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRadioPickerView.m; sourceTree = "<group>"; };
 		785B22941E3A22E700D0A085 /* RadioButton_DropDown.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_DropDown.xib; sourceTree = "<group>"; };
 		785B22951E3A22E700D0A085 /* RadioButton_Slider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButton_Slider.xib; sourceTree = "<group>"; };
 		785B229D1E3A293C00D0A085 /* Home1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Home1.h; sourceTree = "<group>"; };
@@ -204,15 +201,15 @@
 			children = (
 				785B225F1E3A222800D0A085 /* CJRadio */,
 				785B229C1E3A293C00D0A085 /* TestData */,
-				785B222F1E3A21D800D0A085 /* AppDelegate.h */,
 				785B22BE1E3A45A700D0A085 /* CJSystemComposeViewController */,
+				785B222F1E3A21D800D0A085 /* AppDelegate.h */,
 				785B22301E3A21D800D0A085 /* AppDelegate.m */,
 				785B22321E3A21D800D0A085 /* ViewController.h */,
 				785B22331E3A21D800D0A085 /* ViewController.m */,
 				785B228C1E3A22E700D0A085 /* Controller */,
 				785B22931E3A22E700D0A085 /* Views */,
-				785B22351E3A21D800D0A085 /* Main.storyboard */,
 				785B22B81E3A455D00D0A085 /* Resources */,
+				785B22351E3A21D800D0A085 /* Main.storyboard */,
 				785B22381E3A21D800D0A085 /* Assets.xcassets */,
 				785B223A1E3A21D800D0A085 /* LaunchScreen.storyboard */,
 				785B223D1E3A21D800D0A085 /* Info.plist */,
@@ -253,8 +250,6 @@
 				785B22621E3A222800D0A085 /* CJRadio.h */,
 				785B22631E3A222800D0A085 /* CJRadioButtons */,
 				785B22741E3A222800D0A085 /* CJRadioComposeView */,
-				785B227B1E3A222800D0A085 /* CJRadioPickerView.h */,
-				785B227C1E3A222800D0A085 /* CJRadioPickerView.m */,
 				785B22601E3A222800D0A085 /* CJButtonControllerView.h */,
 				785B22611E3A222800D0A085 /* CJButtonControllerView.m */,
 			);
@@ -675,7 +670,6 @@
 				785B22A41E3A293C00D0A085 /* TestDataUtil.m in Sources */,
 				785B22341E3A21D800D0A085 /* ViewController.m in Sources */,
 				785B227F1E3A222800D0A085 /* CJRadioButtonsSliderSample.m in Sources */,
-				785B228B1E3A222800D0A085 /* CJRadioPickerView.m in Sources */,
 				785B227E1E3A222800D0A085 /* CJRadioButtonsDropDownSample.m in Sources */,
 				785B22B21E3A454600D0A085 /* SliderViewController.m in Sources */,
 				785B22D11E3A570F00D0A085 /* RadioControllersViewController.m in Sources */,

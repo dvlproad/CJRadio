@@ -11,8 +11,9 @@
 
 @interface CJRadioButtonsDropDownSample () <RadioButtonsDataSource, RadioButtonsDelegate>
 
-@property (nonatomic, strong, readonly) UIImage *arrowImage;    /**< 箭头图片 */
+@property (nonatomic, strong, readonly) UIImage *dropDownImage;    /**< 箭头图片 */
 @property (nonatomic, strong, readonly) UIView *popupSuperview; /**< 弹出到哪个视图里 */
+@property (nonatomic, assign, readonly) CJRadioButtonsDropDownType dropDownUnderType;
 
 @end
 
@@ -47,12 +48,14 @@
 
 /** 完整的描述请参见文件头部 */
 - (void)setupWithTitles:(NSArray *)titles
-            arrowImage:(UIImage *)arrowImage
-        popupSuperview:(UIView *)popupSuperview
+          dropDownImage:(UIImage *)dropDownImage
+         popupSuperview:(UIView *)popupSuperview
+      dropDownUnderType:(CJRadioButtonsDropDownType)dropDownUnderType
 {
     _titles = titles;
-    _arrowImage = arrowImage;
+    _dropDownImage = dropDownImage;
     _popupSuperview = popupSuperview;
+    _dropDownUnderType = dropDownUnderType;
     self.dataSource = self;
     self.delegate = self;
 }
@@ -86,7 +89,7 @@
 - (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
     RadioButton *radioButton = [[RadioButton alloc] init];
     
-    radioButton.imageView.image = self.arrowImage;
+    radioButton.imageView.image = self.dropDownImage;
     radioButton.stateChangeCompleteBlock = ^(RadioButton *radioButton) {
         [UIView animateWithDuration:0.3 animations:^{
             radioButton.imageView.transform = CGAffineTransformRotate(radioButton.imageView.transform, DEGREES_TO_RADIANS(180));
@@ -125,6 +128,13 @@
         UIView *popupView = [self.radioButtonsPopupSampleDataSource cj_RadioButtonsPopupSample:self viewForButtonIndex:index_cur];
         UIView *popupSuperview = self.popupSuperview;
         
+        UIView *accordingView = nil;
+        if (self.dropDownUnderType == CJRadioButtonsDropDownTypeUnderCurrent) {
+            accordingView = [radioButtons.radioButtons objectAtIndex:index_cur];
+        } else {
+            accordingView = radioButtons;
+        }
+        
         
         void(^showComplete)(NSInteger index_cur) = ^(NSInteger index_cur) {
             //NSLog(@"%ld.显示完成", index_cur);
@@ -138,7 +148,7 @@
         };
         
         
-        [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:popupSuperview relativePosition:CJPopupViewPositionUnder showComplete:^{
+        [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:accordingView relativePosition:CJPopupViewPositionUnder showComplete:^{
             showComplete(index_cur);
             
         } tapBlankComplete:^{
