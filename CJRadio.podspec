@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJRadio"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "单选按钮的组合CJRadioButtons、CJRadioComposeView、由RadioButtons和RadioComposeView再组合使用的CJButtonControllerView"
   s.homepage     = "https://github.com/dvlproad/CJRadio"
   s.license      = "MIT"
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJRadio.git", :tag => "CJRadio_1.0.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJRadio.git", :tag => "CJRadio_1.0.3" }
   s.source_files  = "CJRadio/*.{h,m}"
   # s.resources = "CJRadio/*.{png,xib}"
   s.frameworks = 'UIKit'
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
     ss.source_files = "CJRadio/CJRadioButtons/**/*.{h,m}"
     ss.resources = "CJRadio/CJRadioButtons/**/*.{png,xib}"
 
-    ss.dependency 'CJPopupAction', '~> 1.4.0'
+    ss.dependency 'CJPopupAction', '~> 1.4.2'
   end
 
   s.subspec 'CJRadioComposeView' do |ss|

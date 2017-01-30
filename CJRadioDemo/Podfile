@@ -2,7 +2,7 @@ platform :ios, '7.0'
 #use_frameworks!
 
 target 'CJRadioDemo' do
-    pod 'CJPopupAction', '~> 1.4.1'
+    pod 'CJPopupAction', '~> 1.4.2'
 	pod 'PureLayout', '~> 3.0.2'
 end
 

@@ -17,7 +17,7 @@
 		785B22471E3A21D800D0A085 /* CJRadioDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22461E3A21D800D0A085 /* CJRadioDemoTests.m */; };
 		785B22521E3A21D800D0A085 /* CJRadioDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22511E3A21D800D0A085 /* CJRadioDemoUITests.m */; };
 		785B227D1E3A222800D0A085 /* CJButtonControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22611E3A222800D0A085 /* CJButtonControllerView.m */; };
-		785B227E1E3A222800D0A085 /* CJRadioButtonsDropDownSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22661E3A222800D0A085 /* CJRadioButtonsDropDownSample.m */; };
+		785B227E1E3A222800D0A085 /* CJRadioButtonsPopupSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22661E3A222800D0A085 /* CJRadioButtonsPopupSample.m */; };
 		785B227F1E3A222800D0A085 /* CJRadioButtonsSliderSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22681E3A222800D0A085 /* CJRadioButtonsSliderSample.m */; };
 		785B22801E3A222800D0A085 /* arrowDown_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 785B226A1E3A222800D0A085 /* arrowDown_dark.png */; };
 		785B22811E3A222800D0A085 /* arrowLeft_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 785B226B1E3A222800D0A085 /* arrowLeft_gray@2x.png */; };
@@ -92,8 +92,8 @@
 		785B22601E3A222800D0A085 /* CJButtonControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJButtonControllerView.h; sourceTree = "<group>"; };
 		785B22611E3A222800D0A085 /* CJButtonControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJButtonControllerView.m; sourceTree = "<group>"; };
 		785B22621E3A222800D0A085 /* CJRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadio.h; sourceTree = "<group>"; };
-		785B22651E3A222800D0A085 /* CJRadioButtonsDropDownSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonsDropDownSample.h; sourceTree = "<group>"; };
-		785B22661E3A222800D0A085 /* CJRadioButtonsDropDownSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRadioButtonsDropDownSample.m; sourceTree = "<group>"; };
+		785B22651E3A222800D0A085 /* CJRadioButtonsPopupSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonsPopupSample.h; sourceTree = "<group>"; };
+		785B22661E3A222800D0A085 /* CJRadioButtonsPopupSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRadioButtonsPopupSample.m; sourceTree = "<group>"; };
 		785B22671E3A222800D0A085 /* CJRadioButtonsSliderSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonsSliderSample.h; sourceTree = "<group>"; };
 		785B22681E3A222800D0A085 /* CJRadioButtonsSliderSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRadioButtonsSliderSample.m; sourceTree = "<group>"; };
 		785B226A1E3A222800D0A085 /* arrowDown_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowDown_dark.png; sourceTree = "<group>"; };
@@ -273,8 +273,8 @@
 		785B22641E3A222800D0A085 /* CJRadioButtonsSample */ = {
 			isa = PBXGroup;
 			children = (
-				785B22651E3A222800D0A085 /* CJRadioButtonsDropDownSample.h */,
-				785B22661E3A222800D0A085 /* CJRadioButtonsDropDownSample.m */,
+				785B22651E3A222800D0A085 /* CJRadioButtonsPopupSample.h */,
+				785B22661E3A222800D0A085 /* CJRadioButtonsPopupSample.m */,
 				785B22671E3A222800D0A085 /* CJRadioButtonsSliderSample.h */,
 				785B22681E3A222800D0A085 /* CJRadioButtonsSliderSample.m */,
 			);
@@ -670,7 +670,7 @@
 				785B22A41E3A293C00D0A085 /* TestDataUtil.m in Sources */,
 				785B22341E3A21D800D0A085 /* ViewController.m in Sources */,
 				785B227F1E3A222800D0A085 /* CJRadioButtonsSliderSample.m in Sources */,
-				785B227E1E3A222800D0A085 /* CJRadioButtonsDropDownSample.m in Sources */,
+				785B227E1E3A222800D0A085 /* CJRadioButtonsPopupSample.m in Sources */,
 				785B22B21E3A454600D0A085 /* SliderViewController.m in Sources */,
 				785B22D11E3A570F00D0A085 /* RadioControllersViewController.m in Sources */,
 				785B22311E3A21D800D0A085 /* AppDelegate.m in Sources */,

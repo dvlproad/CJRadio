@@ -7,13 +7,11 @@
 //
 
 #import "RBDropDownVC.h"
-#import "CJRadioButtonsSliderSample.h"
-#import "CJRadioButtonsDropDownSample.h"
-#import <CJPopupAction/UIView+CJShowExtendView.h>
+#import "CJRadioButtonsPopupSample.h"
 #import "TestDataUtil.h"
 
 
-@interface RBDropDownVC () <CJRadioButtonsDropDownSampleDataSource> {
+@interface RBDropDownVC () <CJRadioButtonsPopupSampleDataSource> {
     
 }
 
@@ -26,12 +24,12 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSArray *titles = @[@"人物", @"爱好", @"其他", @"地区"];
-    CJRadioButtonsDropDownSample *radioButtonsDropDownSample = [[CJRadioButtonsDropDownSample alloc] init];
+    CJRadioButtonsPopupSample *radioButtonsDropDownSample = [[CJRadioButtonsPopupSample alloc] init];
     [radioButtonsDropDownSample setFrame:CGRectMake(20, 300, 380, 40)];
     [radioButtonsDropDownSample setupWithTitles:titles
                                   dropDownImage:[UIImage imageNamed:@"arrowDown_dark"]
                                  popupSuperview:self.view
-                              dropDownUnderType:CJRadioButtonsDropDownTypeUnderCurrent];
+                              popupType:CJRadioButtonsPopupTypeUnderAll];
     radioButtonsDropDownSample.radioButtonsPopupSampleDataSource = self;
     [self.view addSubview:radioButtonsDropDownSample];
     self.radioButtonsDropDownSample = radioButtonsDropDownSample;
@@ -43,8 +41,8 @@
     [self.radioButtonsDropDownSample scollToCurrentSelectedViewWithAnimated:NO];
 }
 
-- (UIView *)cj_RadioButtonsPopupSample:(CJRadioButtonsDropDownSample *)radioButtonsPopupSample viewForButtonIndex:(NSInteger)index {
-    UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 200)];
+- (UIView *)cj_RadioButtonsPopupSample:(CJRadioButtonsPopupSample *)radioButtonsPopupSample viewForButtonIndex:(NSInteger)index {
+    UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
     popupView.backgroundColor = [UIColor greenColor];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(20, 50, 280, 44)];
@@ -54,15 +52,15 @@
     [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     [popupView addSubview:btn];
     
-//    popupView.clipsToBounds = YES;
-    
     return popupView;
 }
 
-- (IBAction)btnAction:(id)sender {
+- (IBAction)btnAction:(UIButton *)sender {
     NSString *title = [NSString stringWithFormat:@"%d", rand()%10];
     
-    [self.radioButtonsDropDownSample cj_hideExtendViewAnimated:YES];
+//    [self.radioButtonsDropDownSample cj_hideExtendViewAnimated:YES];
+    [sender.superview cj_hidePopupView];
+    
     [self.radioButtonsDropDownSample changeCurrentRadioButtonStateAndTitle:title];
     [self.radioButtonsDropDownSample setSelectedNone];
 }
