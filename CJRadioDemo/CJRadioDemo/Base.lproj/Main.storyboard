@@ -70,9 +70,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06h-dm-5A3">
-                                <rect key="frame" x="80" y="462" width="259" height="30"/>
+                                <rect key="frame" x="66" y="462" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SliderViewController2"/>
+                                <state key="normal" title="RadioButtonCycleComposeViewController"/>
                                 <connections>
                                     <action selector="goSliderViewController2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T88-V1-ZK2"/>
                                 </connections>

@@ -15,7 +15,7 @@
 #import "Home1.h"
 
 #import "SliderViewController.h"
-#import "SliderViewController2.h"
+#import "RadioButtonCycleComposeViewController.h"
 #import "SystemComposeViewController.h"
 
 @interface ViewController ()
@@ -65,7 +65,7 @@
 }
 
 - (IBAction)goSliderViewController2:(id)sender {
-    SliderViewController2 *viewController = [[SliderViewController2 alloc] initWithNibName:@"SliderViewController2" bundle:nil];
+    RadioButtonCycleComposeViewController *viewController = [[RadioButtonCycleComposeViewController alloc] initWithNibName:@"RadioButtonCycleComposeViewController" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

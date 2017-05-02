@@ -35,8 +35,8 @@
 		785B22A41E3A293C00D0A085 /* TestDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22A11E3A293C00D0A085 /* TestDataUtil.m */; };
 		785B22B21E3A454600D0A085 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22A91E3A454500D0A085 /* SliderViewController.m */; };
 		785B22B31E3A454600D0A085 /* SliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22AA1E3A454500D0A085 /* SliderViewController.xib */; };
-		785B22B41E3A454600D0A085 /* SliderViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22AC1E3A454500D0A085 /* SliderViewController2.m */; };
-		785B22B51E3A454600D0A085 /* SliderViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22AD1E3A454500D0A085 /* SliderViewController2.xib */; };
+		785B22B41E3A454600D0A085 /* RadioButtonCycleComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22AC1E3A454500D0A085 /* RadioButtonCycleComposeViewController.m */; };
+		785B22B51E3A454600D0A085 /* RadioButtonCycleComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */; };
 		785B22B61E3A454600D0A085 /* SystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */; };
 		785B22B71E3A454600D0A085 /* SystemComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22B01E3A454600D0A085 /* SystemComposeViewController.xib */; };
 		785B22BC1E3A455D00D0A085 /* addChannel_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 785B22BA1E3A455D00D0A085 /* addChannel_normal@2x.png */; };
@@ -119,9 +119,9 @@
 		785B22A81E3A454500D0A085 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		785B22A91E3A454500D0A085 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		785B22AA1E3A454500D0A085 /* SliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderViewController.xib; sourceTree = "<group>"; };
-		785B22AB1E3A454500D0A085 /* SliderViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController2.h; sourceTree = "<group>"; };
-		785B22AC1E3A454500D0A085 /* SliderViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController2.m; sourceTree = "<group>"; };
-		785B22AD1E3A454500D0A085 /* SliderViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderViewController2.xib; sourceTree = "<group>"; };
+		785B22AB1E3A454500D0A085 /* RadioButtonCycleComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonCycleComposeViewController.h; sourceTree = "<group>"; };
+		785B22AC1E3A454500D0A085 /* RadioButtonCycleComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonCycleComposeViewController.m; sourceTree = "<group>"; };
+		785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButtonCycleComposeViewController.xib; sourceTree = "<group>"; };
 		785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemComposeViewController.h; sourceTree = "<group>"; };
 		785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemComposeViewController.m; sourceTree = "<group>"; };
 		785B22B01E3A454600D0A085 /* SystemComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SystemComposeViewController.xib; sourceTree = "<group>"; };
@@ -328,9 +328,9 @@
 				785B22A81E3A454500D0A085 /* SliderViewController.h */,
 				785B22A91E3A454500D0A085 /* SliderViewController.m */,
 				785B22AA1E3A454500D0A085 /* SliderViewController.xib */,
-				785B22AB1E3A454500D0A085 /* SliderViewController2.h */,
-				785B22AC1E3A454500D0A085 /* SliderViewController2.m */,
-				785B22AD1E3A454500D0A085 /* SliderViewController2.xib */,
+				785B22AB1E3A454500D0A085 /* RadioButtonCycleComposeViewController.h */,
+				785B22AC1E3A454500D0A085 /* RadioButtonCycleComposeViewController.m */,
+				785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */,
 				785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */,
 				785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */,
 				785B22B01E3A454600D0A085 /* SystemComposeViewController.xib */,
@@ -552,7 +552,7 @@
 				785B22CE1E3A570F00D0A085 /* RBDropDownVC.xib in Resources */,
 				785B22A31E3A293C00D0A085 /* Home1.xib in Resources */,
 				784B62DD1EB8323900BE5BEF /* arrowUp_white@2x.png in Resources */,
-				785B22B51E3A454600D0A085 /* SliderViewController2.xib in Resources */,
+				785B22B51E3A454600D0A085 /* RadioButtonCycleComposeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,7 +687,7 @@
 				785B22B61E3A454600D0A085 /* SystemComposeViewController.m in Sources */,
 				784B62E31EB8326100BE5BEF /* CJCycleComposeView.m in Sources */,
 				785B22CF1E3A570F00D0A085 /* RBSliderVC.m in Sources */,
-				785B22B41E3A454600D0A085 /* SliderViewController2.m in Sources */,
+				785B22B41E3A454600D0A085 /* RadioButtonCycleComposeViewController.m in Sources */,
 				785B222E1E3A21D800D0A085 /* main.m in Sources */,
 				784B62D31EB8323900BE5BEF /* CJButton.m in Sources */,
 			);

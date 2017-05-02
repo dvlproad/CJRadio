@@ -1,19 +1,19 @@
 //
-//  SliderViewController2.m
+//  RadioButtonCycleComposeViewController.m
 //  CJRadioDemo
 //
 //  Created by lichq on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
-#import "SliderViewController2.h"
+#import "RadioButtonCycleComposeViewController.h"
 #import "TestDataUtil.h"
 
-@interface SliderViewController2 () <CJButtonControllerViewDataSource, CJButtonControllerViewDelegate>
+@interface RadioButtonCycleComposeViewController () <CJButtonControllerViewDataSource, CJButtonControllerViewDelegate>
 
 @end
 
-@implementation SliderViewController2
+@implementation RadioButtonCycleComposeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,44 +21,44 @@
     self.navigationItem.title = NSLocalizedString(@"SliderViewController首页", nil);
     
     NSArray *titles = [TestDataUtil getComponentTitles];
-    self.buttonControllerView.titles =  titles;
-    self.buttonControllerView.showBottomLineView = YES;
+    self.radioButtonCycleComposeView.titles =  titles;
+    self.radioButtonCycleComposeView.showBottomLineView = YES;
 //    self.sliderRadioButtons.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
 //    self.sliderRadioButtons.bottomLineColor = [UIColor redColor];
-    self.buttonControllerView.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
-    self.buttonControllerView.bottomLineViewHeight = 6;
-    [self.buttonControllerView addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
+    self.radioButtonCycleComposeView.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
+    self.radioButtonCycleComposeView.bottomLineViewHeight = 6;
+    [self.radioButtonCycleComposeView addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
                                  rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
                              withArrowImageWidth:20];
     
-    self.buttonControllerView.componentViewControllers = [TestDataUtil getComponentViewControllers];
-    self.buttonControllerView.componentViewParentViewController = self;
+    self.radioButtonCycleComposeView.componentViewControllers = [TestDataUtil getComponentViewControllers];
+    self.radioButtonCycleComposeView.componentViewParentViewController = self;
     
-    self.buttonControllerView.defaultSelectedIndex = 1;
-    self.buttonControllerView.maxRadioButtonsShowViewCount = 4;
-    self.buttonControllerView.radioButtonsHeight = 50;
+    self.radioButtonCycleComposeView.defaultSelectedIndex = 1;
+    self.radioButtonCycleComposeView.maxRadioButtonsShowViewCount = 4;
+    self.radioButtonCycleComposeView.radioButtonsHeight = 50;
     
-    self.buttonControllerView.dataSource = self;
-    self.buttonControllerView.delegate = self;
+    self.radioButtonCycleComposeView.dataSource = self;
+    self.radioButtonCycleComposeView.delegate = self;
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:[UIImage imageNamed:@"addChannel_normal"] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:@"addChannel_selected"] forState:UIControlStateSelected];
-    [self.buttonControllerView addRadioButtonsLeftView:button withWidth:60];
+    [self.radioButtonCycleComposeView addRadioButtonsLeftView:button withWidth:60];
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightButton setImage:[UIImage imageNamed:@"addChannel_normal"] forState:UIControlStateNormal];
     [rightButton setImage:[UIImage imageNamed:@"addChannel_selected"] forState:UIControlStateSelected];
-    [self.buttonControllerView addRadioButtonsRightView:rightButton withWidth:40];
+    [self.radioButtonCycleComposeView addRadioButtonsRightView:rightButton withWidth:40];
     
-    [self.buttonControllerView reloadData];
+    [self.radioButtonCycleComposeView reloadData];
 }
 
 //一定不要漏了这个滚动操作
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    [self.buttonControllerView scollToCurrentSelectedViewWithAnimated:NO];
+    [self.radioButtonCycleComposeView scollToCurrentSelectedViewWithAnimated:NO];
 }
 
 #pragma mark - CJButtonControllerViewDataSource && CJButtonControllerViewDelegate
