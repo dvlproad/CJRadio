@@ -9,9 +9,9 @@
 #ifndef CJRadio_h
 #define CJRadio_h
 
-#import "CJButtonControllerView.h"
-#import "RadioButtons.h"
-#import "RadioComposeView.h"
+#import "CJRadioButtonCycleComposeView.h"
+#import "CJRadioButtons.h"
+#import "CJCycleComposeView.h"
 
 
 #endif /* CJRadio_h */

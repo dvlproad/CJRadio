@@ -9,7 +9,7 @@
 #import "RadioControllersViewController.h"
 #import "TestDataUtil.h"
 
-@interface RadioControllersViewController () <RadioComposeViewDataSource, RadioComposeViewDelegate> {
+@interface RadioControllersViewController () <CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
     
 }
 @property (nonatomic, strong) NSArray <UIViewController *> *componentViewControllers;
@@ -25,18 +25,18 @@
     
     self.componentViewControllers = [TestDataUtil getComponentViewControllers];
     
-    self.radioComposeView.dataSource = self;
-    self.radioComposeView.delegate = self;
-//    self.radioComposeView.scrollType = RadioComposeViewScrollTypeBanScrollHorizontal;
-//    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
-//    [self.radioComposeView showViewWithIndex:2];
+    self.cycleComposeView.dataSource = self;
+    self.cycleComposeView.delegate = self;
+//    self.CJCycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollHorizontal;
+//    [self.CJCycleComposeView scrollToCenterViewWithAnimate:NO];
+//    [self.CJCycleComposeView showViewWithIndex:2];
 }
 
 //一定不要漏了这个滚动操作
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
+    [self.cycleComposeView cj_scrollToCenterViewWithAnimated:NO];
 }
 
 - (BOOL)automaticallyAdjustsScrollViewInsets {
@@ -46,15 +46,15 @@
 
 - (IBAction)changeShowViewIndex:(id)sender {
     NSInteger viewControllerCount = [self.componentViewControllers count];
-    [self.radioComposeView cj_selectComponentAtIndex:random()%viewControllerCount animated:YES];
+    [self.cycleComposeView cj_selectComponentAtIndex:random()%viewControllerCount animated:YES];
 }
 
-#pragma mark - RadioComposeViewDataSource
-- (NSInteger)cj_defaultShowIndexInRadioComposeView:(RadioComposeView *)radioComposeView {
+#pragma mark - CJCycleComposeViewDataSource
+- (NSInteger)cj_defaultShowIndexInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
     return 1;
 }
 
-- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView:(RadioComposeView *)radioComposeView {
+- (NSArray<UIView *> *)cj_radioViewsInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
     NSArray *componentViewControllers = self.componentViewControllers;
     
     NSMutableArray *views = [[NSMutableArray alloc] init];
@@ -67,8 +67,8 @@
 }
 
 
-#pragma mark - RadioComposeViewDelegate
-- (void)cj_radioComposeView:(RadioComposeView *)radioComposeView didChangeToIndex:(NSInteger)index {
+#pragma mark - CJCycleComposeViewDelegate
+- (void)cj_CJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView didChangeToIndex:(NSInteger)index {
     NSLog(@"点击了%ld", index);
 }
 

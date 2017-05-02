@@ -62,17 +62,19 @@
 }
 
 #pragma mark - CJButtonControllerViewDataSource && CJButtonControllerViewDelegate
-- (RadioButton *)cj_buttonControllerView:(CJButtonControllerView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index {
-    NSArray *radioButtonNib = [[NSBundle mainBundle]loadNibNamed:@"RadioButton_Slider" owner:nil options:nil];
-    RadioButton *radioButton = [radioButtonNib lastObject];
+- (CJButton *)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index {
+    CJButton *radioButton = [[CJButton alloc] init];
+    radioButton.imagePosition = CJButtonImagePositionLeft;
+    radioButton.imageView.image = [UIImage imageNamed:@"checkedYES"];
     
-    radioButton.textNormalColor = [UIColor blackColor];
-    radioButton.textSelectedColor = [UIColor whiteColor];
+    radioButton.backgroundColor = [UIColor cyanColor];
+    radioButton.textNormalColor = [UIColor whiteColor];
+    radioButton.textSelectedColor = [UIColor blackColor];
     
     return radioButton;
 }
 
-- (void)cj_buttonControllerView:(CJButtonControllerView *)buttonControllerView didChangeToIndex:(NSInteger)index {
+- (void)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView didChangeToIndex:(NSInteger)index {
     NSLog(@"didChangeToIndex = %ld", index);
 }
 

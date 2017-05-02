@@ -10,16 +10,23 @@
 #import "TestDataUtil.h"
 #import <PureLayout/PureLayout.h>
 
+#import "MySliderRadioButtonsDataSource.h"
+
 static NSInteger kMaxRadioButtonsShowViewCountDefault = 4;
 static NSInteger kSelectedIndexDefault = 1;
 
-@interface SliderViewController () <RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
+@interface SliderViewController () <RadioButtonsDelegate, CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
     
 }
+@property (nonatomic, strong) MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
 
 @end
 
 @implementation SliderViewController
+
+- (CJRadioButtons *)createSliderRadioButtonsSample {
+    return nil;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,25 +39,40 @@ static NSInteger kSelectedIndexDefault = 1;
     self.defaultSelectedIndex = kSelectedIndexDefault;
     self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
     
-    //RadioButtons
-    CJRadioButtonsSliderSample *radioButtonsSliderSample = [[CJRadioButtonsSliderSample alloc] init];
-    [radioButtonsSliderSample setupWithTitles:titles defaultShowIndex:kSelectedIndexDefault maxButtonShowCount:kMaxRadioButtonsShowViewCountDefault];
-    radioButtonsSliderSample.delegate = self;
-    [self.view addSubview:radioButtonsSliderSample];
-    [radioButtonsSliderSample autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0) excludingEdge:ALEdgeBottom];
-    [radioButtonsSliderSample autoSetDimension:ALDimensionHeight toSize:44];
+    self.sliderRadioButtonsDataSource = [[MySliderRadioButtonsDataSource alloc] init];
+    self.sliderRadioButtonsDataSource.titles = titles;
+    self.sliderRadioButtonsDataSource.defaultSelectedIndex = kSelectedIndexDefault;
+    self.sliderRadioButtonsDataSource.maxButtonShowCount = kMaxRadioButtonsShowViewCountDefault;
     
-    self.sliderRadioButtons = radioButtonsSliderSample;
+    //sliderRadioButtonsSample
+    CJRadioButtons *sliderRadioButtonsSample = [[CJRadioButtons alloc] init];
+    sliderRadioButtonsSample.dataSource = self.sliderRadioButtonsDataSource;
+    sliderRadioButtonsSample.delegate = self;
+    sliderRadioButtonsSample.hideSeparateLine = YES;
+    sliderRadioButtonsSample.showBottomLineView = YES;
+    sliderRadioButtonsSample.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
+    sliderRadioButtonsSample.bottomLineColor = [UIColor clearColor];
+    sliderRadioButtonsSample.bottomLineViewHeight = 4;
+    [sliderRadioButtonsSample addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
+                                rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
+                            withArrowImageWidth:20];
+    
+    
+    [self.view addSubview:sliderRadioButtonsSample];
+    [sliderRadioButtonsSample autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0) excludingEdge:ALEdgeBottom];
+    [sliderRadioButtonsSample autoSetDimension:ALDimensionHeight toSize:44];
+    
+    self.sliderRadioButtons = sliderRadioButtonsSample;
     
     //RadioControllers
-    self.radioComposeView = [[RadioComposeView alloc] init];
-    self.radioComposeView.dataSource = self;
-    self.radioComposeView.delegate = self;
-    //self.radioComposeView.scrollType = RadioComposeViewScrollTypeNormal;
-    [self.view addSubview:self.radioComposeView];
-    self.radioComposeView.backgroundColor = [UIColor yellowColor];
-    [self.radioComposeView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.sliderRadioButtons withOffset:0];
-    [self.radioComposeView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+    self.cycleComposeView = [[CJCycleComposeView alloc] init];
+    self.cycleComposeView.dataSource = self;
+    self.cycleComposeView.delegate = self;
+    //self.cycleComposeView.scrollType = CJCycleComposeViewScrollTypeNormal;
+    [self.view addSubview:self.cycleComposeView];
+    self.cycleComposeView.backgroundColor = [UIColor yellowColor];
+    [self.cycleComposeView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.sliderRadioButtons withOffset:0];
+    [self.cycleComposeView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
 }
 
 //- (BOOL)automaticallyAdjustsScrollViewInsets {
@@ -62,17 +84,17 @@ static NSInteger kSelectedIndexDefault = 1;
     [super viewWillLayoutSubviews];
     
     [self.sliderRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
-    [self.radioComposeView scrollToCenterViewWithAnimate:NO];
+    [self.cycleComposeView cj_scrollToCenterViewWithAnimated:NO];
 }
 
 
 
-#pragma mark - RadioComposeViewDataSource
-- (NSInteger)cj_defaultShowIndexInRadioComposeView:(RadioComposeView *)radioComposeView {
+#pragma mark - CJCycleComposeViewDataSource
+- (NSInteger)cj_defaultShowIndexInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
     return self.defaultSelectedIndex;
 }
 
-- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView:(RadioComposeView *)radioComposeView {
+- (NSArray<UIView *> *)cj_radioViewsInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
     NSArray *radioViewControllers = [TestDataUtil getComponentViewControllers];
     
     NSMutableArray *views = [[NSMutableArray alloc] init];
@@ -84,16 +106,16 @@ static NSInteger kSelectedIndexDefault = 1;
     return views;
 }
 
-#pragma mark - RadioButtonsDelegate & RadioComposeViewDelegate
-- (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+#pragma mark - RadioButtonsDelegate & CJCycleComposeViewDelegate
+- (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
-    [self.radioComposeView cj_selectComponentAtIndex:index_cur animated:YES];
+    [self.cycleComposeView cj_selectComponentAtIndex:index_cur animated:YES];
     self.currentSelectedIndex = index_cur;
     
     [self doSomethingToCon_whereIndex:index_cur];
 }
 
-- (void)cj_radioComposeView:(RadioComposeView *)radioComposeView didChangeToIndex:(NSInteger)index {
+- (void)cj_CJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView didChangeToIndex:(NSInteger)index {
     [self.sliderRadioButtons cj_selectComponentAtIndex:index animated:YES];
     self.currentSelectedIndex  = index;
     

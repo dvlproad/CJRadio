@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJButtonControllerView.h"
+#import "CJRadioButtonCycleComposeView.h"
 
 @interface SliderViewController2 : UIViewController
 
-@property (nonatomic, strong) IBOutlet CJButtonControllerView *buttonControllerView;
+@property (nonatomic, strong) IBOutlet CJRadioButtonCycleComposeView *buttonControllerView;
 
 @end

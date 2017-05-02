@@ -1,14 +1,14 @@
 //
-//  CJRadioButtonsPopupSample.m
+//  MyRadioButtonsPopupSample.m
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-5.
-//  Copyright (c) 2014年 lichq. All rights reserved.
+//  Created by dvlproad on 14-11-5.
+//  Copyright (c) 2014年 ciyouzen. All rights reserved.
 //
 
-#import "CJRadioButtonsPopupSample.h"
+#import "MyRadioButtonsPopupSample.h"
 
-@interface CJRadioButtonsPopupSample () <RadioButtonsDataSource, RadioButtonsDelegate>
+@interface MyRadioButtonsPopupSample () <RadioButtonsDataSource, RadioButtonsDelegate>
 
 @property (nonatomic, strong, readonly) UIImage *dropDownImage;    /**< 箭头图片 */
 @property (nonatomic, strong, readonly) UIView *popupSuperview; /**< 弹出到哪个视图里 */
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation CJRadioButtonsPopupSample
+@implementation MyRadioButtonsPopupSample
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -61,15 +61,15 @@
 
 
 #pragma mark - RadioButtonsDataSource
-- (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
+- (NSInteger)cj_defaultShowIndexInRadioButtons:(CJRadioButtons *)radioButtons {
     return -1;
 }
 
-- (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons {
+- (NSInteger)cj_numberOfComponentsInRadioButtons:(CJRadioButtons *)radioButtons {
     return self.titles.count;
 }
 
-- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
+- (CGFloat)cj_radioButtons:(CJRadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
     CGFloat totalWidth = CGRectGetWidth(radioButtons.frame);
     NSInteger showViewCount = self.titles.count;
     CGFloat sectionWidth = totalWidth/showViewCount;
@@ -85,11 +85,12 @@
     return sectionWidth;
 }
 
-- (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
-    RadioButton *radioButton = [[RadioButton alloc] init];
+- (CJButton *)cj_radioButtons:(CJRadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
+    CJButton *radioButton = [[CJButton alloc] init];
+    radioButton.imagePosition = CJButtonImagePositionRight;
     
     radioButton.imageView.image = self.dropDownImage;
-    radioButton.stateChangeCompleteBlock = ^(RadioButton *radioButton) {
+    radioButton.stateChangeCompleteBlock = ^(CJButton *radioButton) {
         [UIView animateWithDuration:0.3 animations:^{
             radioButton.imageView.transform = CGAffineTransformRotate(radioButton.imageView.transform, DEGREES_TO_RADIANS(180));
         }];
@@ -107,7 +108,7 @@
 
 
 #pragma mark - RadioButtonsDelegate
-- (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+- (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     //NSLog(@"index_old = %zd, index_cur = %zd", index_old, index_cur);
     
     if (self.radioButtonsPopupSampleDataSource && [self.radioButtonsPopupSampleDataSource respondsToSelector:@selector(cj_RadioButtonsPopupSample:viewForButtonIndex:)]) {

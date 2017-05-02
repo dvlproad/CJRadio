@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSArray *componentViewControllers;
 @property (nonatomic, assign) NSInteger currentSelectedIndex;
 
-@property (nonatomic, strong) IBOutlet UIView *radioComposeView;
+@property (nonatomic, strong) IBOutlet UIView *CJCycleComposeView;
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;
 
 - (void)cj_chooseViewControllerIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old completeBlock:(void(^)(NSInteger index_cur))completeBlock;//用来调用的，而不是用来重写的

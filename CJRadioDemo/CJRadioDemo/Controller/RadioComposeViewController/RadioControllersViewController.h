@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RadioComposeView.h"
+#import "CJCycleComposeView.h"
 
 @interface RadioControllersViewController : UIViewController {
     
 }
 
-@property (nonatomic, weak) IBOutlet RadioComposeView *radioComposeView;
+@property (nonatomic, weak) IBOutlet CJCycleComposeView *cycleComposeView;
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;
 
 @end

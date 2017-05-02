@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJRadioButtonsPopupSample.h"
+#import "MyRadioButtonsPopupSample.h"
 
 @interface RBDropDownVC : UIViewController {
     
 }
-@property (nonatomic, weak) IBOutlet CJRadioButtonsPopupSample *radioButtonsDropDownSample;
+@property (nonatomic, weak) IBOutlet MyRadioButtonsPopupSample *radioButtonsDropDownSample;
 
 @end

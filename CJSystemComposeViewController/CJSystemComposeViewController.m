@@ -28,7 +28,7 @@
     for (NSInteger index = 0; index < count; index++) {
         UIViewController *viewController = [componentViewControllers objectAtIndex:index];
         if (index == self.currentSelectedIndex) {
-            [self cj_makeView:self.radioComposeView addSubView:viewController.view withEdgeInsets:UIEdgeInsetsZero];
+            [self cj_makeView:self.CJCycleComposeView addSubView:viewController.view withEdgeInsets:UIEdgeInsetsZero];
             
             [self addChildViewController:viewController];
         }
@@ -38,7 +38,7 @@
 
 - (void)cj_chooseViewControllerIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old completeBlock:(void(^)(NSInteger index_cur))completeBlock {
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
-    //[self.radioComposeView cj_selectComponentAtIndex:index_cur animated:YES];
+    //[self.CJCycleComposeView cj_selectComponentAtIndex:index_cur animated:YES];
     if (index_cur == index_old) {
         return;
     }
@@ -46,7 +46,7 @@
     UIViewController *newShowViewController = [self.componentViewControllers objectAtIndex:index_cur];
     UIViewController *oldShowViewController = [self.componentViewControllers objectAtIndex:index_old];
     [self addChildViewController:newShowViewController];
-    [self cj_makeView:self.radioComposeView addSubView:newShowViewController.view withEdgeInsets:UIEdgeInsetsZero];
+    [self cj_makeView:self.CJCycleComposeView addSubView:newShowViewController.view withEdgeInsets:UIEdgeInsetsZero];
     
     
     [self transitionFromViewController:oldShowViewController

@@ -1,14 +1,14 @@
 //
-//  RadioButtons.h
+//  CJRadioButtons.h
 //  CJRadioDemo
 //
-//  Created by lichq on 7/8/15.
-//  Copyright (c) 2015 ciyouzen. All rights reserved.
+//  Created by dvlproad on 14-11-5.
+//  Copyright (c) 2014年 ciyouzen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#import "RadioButton.h"
+#import "CJButton.h"
 
 typedef NS_ENUM(NSUInteger, RadioButtonType) {
     RadioButtonTypeNormal = 0,
@@ -16,15 +16,15 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
     RadioButtonTypeCanSlider    //RadioButtonTypeCanSlider 等价于RadioButtonTypeNormal
 };
 
-@class RadioButtons;
+@class CJRadioButtons;
 
 @protocol RadioButtonsDataSource <NSObject>
 @required
-- (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons;
+- (NSInteger)cj_numberOfComponentsInRadioButtons:(CJRadioButtons *)radioButtons;
 
-- (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index;
+- (CJButton *)cj_radioButtons:(CJRadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index;
 
-- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index;
+- (CGFloat)cj_radioButtons:(CJRadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index;
 
 @optional
 /**
@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
  *
  *  @return 默认显示的view的index
  */
-- (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons; // Default is -1 if not implemented
+- (NSInteger)cj_defaultShowIndexInRadioButtons:(CJRadioButtons *)radioButtons; // Default is -1 if not implemented
 
 @end
 
@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 
 @protocol RadioButtonsDelegate <NSObject>
 @required
-- (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old;
+- (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old;
 
 @end
 
@@ -51,11 +51,11 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 
 
 
-//由于点击RadioButton的时候，还要涉及到其他RadioButton中图标的变化，所以RadioButtons不适合再分开。
-@interface RadioButtons : UIView {
+//由于点击CJButton的时候，还要涉及到其他CJButton中图标的变化，所以CJRadioButtons不适合再分开。
+@interface CJRadioButtons : UIView {
     
 }
-@property (nonatomic, strong, readonly) NSArray<RadioButton *> *radioButtons;/**< 所有的单选按钮数组 */
+@property (nonatomic, strong, readonly) NSArray<CJButton *> *radioButtons;/**< 所有的单选按钮数组 */
 @property (nonatomic, assign, readonly) NSInteger currentSelectedIndex;   /**< 当前选中的按钮的index值（当该值为默认的－1时，表示都没有选中） */
 
 @property (nonatomic, weak) id <RadioButtonsDataSource> dataSource;
@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 @property (nonatomic, assign) CGFloat bottomLineViewHeight;  /**< 底部线的图片的高度（默认1） */
 
 /**
- *  reloadViews
+ *  当数据源改变时，可调用此接口更新视图
  */
 - (void)reloadViews;
 
@@ -82,7 +82,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 
 
 /**
- *  选中第index个单选按钮
+ *  选中/点亮第index个单选按钮
  *
  *  @param index    要选择的单选按钮的索引值
  *  @param animated 是否动画

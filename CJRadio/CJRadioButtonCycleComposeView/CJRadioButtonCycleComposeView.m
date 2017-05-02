@@ -1,19 +1,19 @@
 //
-//  CJButtonControllerView.m
+//  CJRadioButtonCycleComposeView.m
 //  CJRadioDemo
 //
 //  Created by lichq on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
-#import "CJButtonControllerView.h"
+#import "CJRadioButtonCycleComposeView.h"
 
-@interface CJButtonControllerView () <RadioButtonsDataSource, RadioButtonsDelegate, RadioComposeViewDataSource, RadioComposeViewDelegate> {
+@interface CJRadioButtonCycleComposeView () <RadioButtonsDataSource, RadioButtonsDelegate, CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
     BOOL isDelegateDoneInRadioButton; //避免点击单选按钮的时候，delegate执行两次
     
 }
-@property (nonatomic, strong) RadioButtons *sliderRadioButtons;
-@property (nonatomic, strong) RadioComposeView *radioComposeView;
+@property (nonatomic, strong) CJRadioButtons *sliderRadioButtons;
+@property (nonatomic, strong) CJCycleComposeView *cycleComposeView;
 @property (nonatomic, assign) NSInteger currentSelectedIndex;
 @property (nonatomic, strong) NSLayoutConstraint *radioButtonsHeightLayoutConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *radioButtonsLeftLayoutConstraint;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation CJButtonControllerView
+@implementation CJRadioButtonCycleComposeView
 
 - (instancetype)init {
     self = [super init];
@@ -63,23 +63,23 @@
     self.defaultSelectedIndex = 0;
     self.maxRadioButtonsShowViewCount = 3;
     
-    /* 添加 RadioButtons */
-    self.sliderRadioButtons = [[RadioButtons alloc] initWithFrame:CGRectZero];
+    /* 添加 CJRadioButtons */
+    self.sliderRadioButtons = [[CJRadioButtons alloc] initWithFrame:CGRectZero];
 //    self.sliderRadioButtons.dataSource = self; //放在reloadData中了
     self.sliderRadioButtons.delegate = self;
     [self addSubview:self.sliderRadioButtons];
     
     /* 添加 RadioControllers */
-    self.radioComposeView = [[RadioComposeView alloc] initWithFrame:CGRectZero];
-//    self.radioComposeView.dataSource = self;  //放在reloadData中了
-    self.radioComposeView.delegate = self;
-    [self addSubview:self.radioComposeView];
+    self.cycleComposeView = [[CJCycleComposeView alloc] initWithFrame:CGRectZero];
+//    self.CJCycleComposeView.dataSource = self;  //放在reloadData中了
+    self.cycleComposeView.delegate = self;
+    [self addSubview:self.cycleComposeView];
     
     //设置约束
     [self setupConstraints];
 }
 
-#pragma mark - 设置RadioButtons的附加设置
+#pragma mark - 设置CJRadioButtons的附加设置
 - (void)setShowBottomLineView:(BOOL)showBottomLineView {
     _showBottomLineView = showBottomLineView;
     
@@ -108,14 +108,14 @@
 - (void)reloadData {
     self.radioButtonsHeightLayoutConstraint.constant = self.radioButtonsHeight;
     self.sliderRadioButtons.dataSource = self;
-    self.radioComposeView.dataSource = self;
+    self.cycleComposeView.dataSource = self;
 }
 
 
 /** 完整的描述请参见文件头部 */
 - (void)scollToCurrentSelectedViewWithAnimated:(BOOL)animated {
     [self.sliderRadioButtons scollToCurrentSelectedViewWithAnimated:animated];
-    [self.radioComposeView scrollToCenterViewWithAnimate:animated];
+    [self.cycleComposeView cj_scrollToCenterViewWithAnimated:animated];
 }
 
 
@@ -211,15 +211,15 @@
 }
 
 #pragma mark - RadioButtonsDataSource
-- (NSInteger)cj_defaultShowIndexInRadioButtons:(RadioButtons *)radioButtons {
+- (NSInteger)cj_defaultShowIndexInRadioButtons:(CJRadioButtons *)radioButtons {
     return self.defaultSelectedIndex;
 }
 
-- (NSInteger)cj_numberOfComponentsInRadioButtons:(RadioButtons *)radioButtons {
+- (NSInteger)cj_numberOfComponentsInRadioButtons:(CJRadioButtons *)radioButtons {
     return self.titles.count;
 }
 
-- (CGFloat)cj_radioButtons:(RadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
+- (CGFloat)cj_radioButtons:(CJRadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
     CGFloat totalWidth = CGRectGetWidth(radioButtons.frame);
     NSInteger showViewCount = MIN(self.titles.count, self.maxRadioButtonsShowViewCount);
     CGFloat sectionWidth = totalWidth/showViewCount;
@@ -234,8 +234,8 @@
     return sectionWidth;
 }
 
-- (RadioButton *)cj_radioButtons:(RadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
-    RadioButton *radioButton = [self.dataSource cj_buttonControllerView:self cellForComponentAtIndex:index];
+- (CJButton *)cj_radioButtons:(CJRadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
+    CJButton *radioButton = [self.dataSource cj_buttonControllerView:self cellForComponentAtIndex:index];
     
     NSString *title = [self.titles objectAtIndex:index];
     [radioButton setTitle:title];
@@ -244,12 +244,12 @@
 }
 
 
-#pragma mark - RadioComposeViewDataSource
-- (NSInteger)cj_defaultShowIndexInRadioComposeView:(RadioComposeView *)radioComposeView {
+#pragma mark - CJCycleComposeViewDataSource
+- (NSInteger)cj_defaultShowIndexInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
     return self.defaultSelectedIndex;
 }
 
-- (NSArray<UIView *> *)cj_radioViewsInRadioComposeView:(RadioComposeView *)radioComposeView {
+- (NSArray<UIView *> *)cj_radioViewsInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
     NSMutableArray *views = [[NSMutableArray alloc] init];
     for (UIViewController *vc in self.componentViewControllers) {
         [views addObject:vc.view];
@@ -260,17 +260,17 @@
 }
 
 
-#pragma mark - RadioButtonsDelegate & RadioComposeViewDelegate
-- (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+#pragma mark - RadioButtonsDelegate & CJCycleComposeViewDelegate
+- (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     isDelegateDoneInRadioButton = YES;
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
-    [self.radioComposeView cj_selectComponentAtIndex:index_cur animated:YES];
+    [self.cycleComposeView cj_selectComponentAtIndex:index_cur animated:YES];
     self.currentSelectedIndex = index_cur;
     
     [self didChangeToIndex:index_cur];
 }
 
-- (void)cj_radioComposeView:(RadioComposeView *)radioComposeView didChangeToIndex:(NSInteger)index {
+- (void)cj_CJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView didChangeToIndex:(NSInteger)index {
     if (isDelegateDoneInRadioButton == NO) {
         [self.sliderRadioButtons cj_selectComponentAtIndex:index animated:YES];
         self.currentSelectedIndex  = index;
@@ -291,7 +291,7 @@
 #pragma mark - setupConstraints
 - (void)setupConstraints {
     [self setupConstraintsForRadioButtons];
-    [self setupConstraintsForRadioComposeView];
+    [self setupConstraintsForCJCycleComposeView];
 }
 
 - (void)setupConstraintsForRadioButtons {
@@ -336,10 +336,10 @@
     [self addConstraint:self.radioButtonsHeightLayoutConstraint];
 }
 
-- (void)setupConstraintsForRadioComposeView {
-    self.radioComposeView.translatesAutoresizingMaskIntoConstraints = NO;
+- (void)setupConstraintsForCJCycleComposeView {
+    self.cycleComposeView.translatesAutoresizingMaskIntoConstraints = NO;
     //left
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.cycleComposeView
                                                      attribute:NSLayoutAttributeLeft
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:self
@@ -347,7 +347,7 @@
                                                     multiplier:1
                                                       constant:0]];
     //right
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.cycleComposeView
                                                      attribute:NSLayoutAttributeRight
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:self
@@ -355,7 +355,7 @@
                                                     multiplier:1
                                                       constant:0]];
     //top
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.cycleComposeView
                                                      attribute:NSLayoutAttributeTop
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:self.sliderRadioButtons
@@ -363,7 +363,7 @@
                                                     multiplier:1
                                                       constant:0]];
     //bottom
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.radioComposeView
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.cycleComposeView
                                                      attribute:NSLayoutAttributeBottom
                                                      relatedBy:NSLayoutRelationEqual
                                                         toItem:self

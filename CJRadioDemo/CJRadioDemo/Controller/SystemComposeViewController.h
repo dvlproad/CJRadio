@@ -7,12 +7,12 @@
 //
 
 #import "CJSystemComposeViewController.h"
-#import "CJRadioButtonsSliderSample.h"
+#import "CJRadioButtons.h"
 
 @interface SystemComposeViewController : CJSystemComposeViewController {
     
 }
-@property (nonatomic, strong) CJRadioButtonsSliderSample *sliderRadioButtons;
+@property (nonatomic, strong) CJRadioButtons *sliderRadioButtons;
 //@property (nonatomic, assign) NSInteger defaultSelectedIndex;
 
 @end

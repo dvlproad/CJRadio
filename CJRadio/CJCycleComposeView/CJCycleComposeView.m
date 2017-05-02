@@ -1,16 +1,15 @@
 //
-//  RadioComposeView.m
+//  CJCycleComposeView.m
 //  CJRadioDemo
 //
 //  Created by lichq on 14-11-12.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
-#import "RadioComposeView.h"
+#import "CJCycleComposeView.h"
 #import "UIScrollView+CJAddContentView.h"
-#import "UIView+CJAddSubVIew.h"
 
-@interface RadioComposeView () <UIScrollViewDelegate> {
+@interface CJCycleComposeView () <UIScrollViewDelegate> {
     UIScrollView *_scrollView;
     UIView *contentView;
     
@@ -25,7 +24,7 @@
 
 @end
 
-@implementation RadioComposeView
+@implementation CJCycleComposeView
 
 - (id)init {
     self = [super init];
@@ -65,7 +64,7 @@
     [self addRightViewToScrollView];
 }
 
-- (void)setDataSource:(id<RadioComposeViewDataSource>)dataSource {
+- (void)setDataSource:(id<CJCycleComposeViewDataSource>)dataSource {
     _dataSource = dataSource;
     
     //loadViews
@@ -77,8 +76,8 @@
 /** 完整的描述请参见文件头部 */
 - (void)reloadViews {
     //self.views
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_radioViewsInRadioComposeView:)]) {
-        self.views = [self.dataSource cj_radioViewsInRadioComposeView:self];
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_radioViewsInCJCycleComposeView:)]) {
+        self.views = [self.dataSource cj_radioViewsInCJCycleComposeView:self];
     }
     if (self.views.count < 3) {
         NSAssert(NO, @"error: self.views.count < 3, wouldn't be reloadVies");
@@ -89,8 +88,8 @@
     
     //defaultShowIndex
     NSInteger defaultShowIndex = 0;
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInRadioComposeView:)]) {
-        defaultShowIndex = [self.dataSource cj_defaultShowIndexInRadioComposeView:self];
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInCJCycleComposeView:)]) {
+        defaultShowIndex = [self.dataSource cj_defaultShowIndexInCJCycleComposeView:self];
         
         if (defaultShowIndex >= self.views.count) {
             NSAssert(NO, @"指定默认显示的index，大于最大index");
@@ -102,7 +101,7 @@
 /**
  *  为 左·中·右视图 重新附上新的视图，且页面上显示的中视图的的视图在所有视图中所在的位置为index
  *
- *  @param showViewIndex 中视图的的视图在所有视图中的位置index
+ *  @param centerViewIndex 中视图的的视图在所有视图中的位置index
  */
 - (void)resetViewToLeftCenterRightWithShowViewIndex:(NSInteger)centerViewIndex {
     if (_currentShowViewIndex == centerViewIndex) {
@@ -119,8 +118,8 @@
     _currentShowViewIndex = centerViewIndex;
     
     //滑动到显示的视图(即中视图)
-    if (self.delegate && [self.delegate respondsToSelector:@selector(cj_radioComposeView:didChangeToIndex:)]) {
-        [self.delegate cj_radioComposeView:self didChangeToIndex:centerViewIndex];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cj_CJCycleComposeView:didChangeToIndex:)]) {
+        [self.delegate cj_CJCycleComposeView:self didChangeToIndex:centerViewIndex];
     }
 }
 
@@ -154,7 +153,7 @@
     
     //注：从保持的self.views中，拿出的 左·中·右视图 都已经把该view下的所有样式都完整的包含进去了，所以取出来的也是放好的
     UIView *newLeftView = [self.views objectAtIndex:leftViewIndex];
-    [_viewL cj_addSubView:newLeftView withEdgeInsets:UIEdgeInsetsZero];
+    [self cj_makeView:_viewL addSubView:newLeftView withEdgeInsets:UIEdgeInsetsZero];
 }
 
 /**
@@ -168,7 +167,7 @@
     }
     
     UIView *newRightView = [self.views objectAtIndex:rightViewIndex];
-    [_viewR cj_addSubView:newRightView withEdgeInsets:UIEdgeInsetsZero];
+    [self cj_makeView:_viewR addSubView:newRightView withEdgeInsets:UIEdgeInsetsZero];
 }
 
 /**
@@ -182,7 +181,7 @@
     }
     
     UIView *newCenterView = [self.views objectAtIndex:centerViewIndex];
-    [_viewC cj_addSubView:newCenterView withEdgeInsets:UIEdgeInsetsZero];
+    [self cj_makeView:_viewC addSubView:newCenterView withEdgeInsets:UIEdgeInsetsZero];
 }
 
 
@@ -196,7 +195,7 @@
     _scrollView.bounces = NO;
     _scrollView.delegate = self;
     
-    [self cj_addSubView:_scrollView withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [self cj_makeView:self addSubView:_scrollView withEdgeInsets:UIEdgeInsetsZero];
 }
 
 
@@ -395,12 +394,12 @@
     CGFloat contentOffsetX = scrollView.contentOffset.x;
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     switch (self.scrollType) {
-        case RadioComposeViewScrollTypeNormal:
+        case CJCycleComposeViewScrollTypeNormal:
         {
             
             break;
         }
-        case RadioComposeViewScrollTypeBanScrollHorizontal:
+        case CJCycleComposeViewScrollTypeBanScrollHorizontal:
         {
             CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
             if (contentOffsetX < scrollViewWidth || contentOffsetX > scrollViewWidth) {
@@ -410,7 +409,7 @@
             
             break;
         }
-//        case RadioComposeViewScrollTypeBanScrollVertical:
+//        case CJCycleComposeViewScrollTypeBanScrollVertical:
 //        {
 //            CGFloat scrollViewHeight = CGRectGetHeight(scrollView.frame);
 //            if (contentOffsetY < scrollViewHeight || contentOffsetY > scrollViewHeight) {
@@ -419,7 +418,7 @@
 //            }
 //            break;
 //        }
-        case RadioComposeViewScrollTypeBanScrollCycle:
+        case CJCycleComposeViewScrollTypeBanScrollCycle:
         {
             if (_currentShowViewIndex == 0) {
                 CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
@@ -481,13 +480,9 @@
     [self resetViewToLeftCenterRightWithShowViewIndex:changeToShowViewIndex];
 }
 
-/**
- *  滑动到显示的视图(即中视图)
- *
- *  @param isAnimate 滚动过程中是否要有动画
- */
-- (void)scrollToCenterViewWithAnimate:(BOOL)isAnimate {
-    if (isAnimate) {
+/** 完整的描述请参见文件头部 */
+- (void)cj_scrollToCenterViewWithAnimated:(BOOL)animated {
+    if (animated) {
         CGFloat width = CGRectGetWidth(_scrollView.frame);
         CGFloat height = CGRectGetHeight(_scrollView.frame);
         [_scrollView scrollRectToVisible:CGRectMake(width, 0, width, height) animated:YES];
@@ -500,13 +495,46 @@
 }
 
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+#pragma mark - addSubView
+- (void)cj_makeView:(UIView *)superView addSubView:(UIView *)subView withEdgeInsets:(UIEdgeInsets)edgeInsets {
+    [superView addSubview:subView];
+    subView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeLeft   //left
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeLeft
+                                 multiplier:1
+                                   constant:edgeInsets.left]];
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeRight  //right
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeRight
+                                 multiplier:1
+                                   constant:edgeInsets.right]];
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeTop    //top
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeTop
+                                 multiplier:1
+                                   constant:edgeInsets.top]];
+    
+    [superView addConstraint:
+     [NSLayoutConstraint constraintWithItem:subView
+                                  attribute:NSLayoutAttributeBottom //bottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:superView
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:edgeInsets.bottom]];
 }
-*/
 
 @end

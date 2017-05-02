@@ -7,7 +7,7 @@
 //
 
 #import "RBDropDownVC.h"
-#import "CJRadioButtonsPopupSample.h"
+#import "MyRadioButtonsPopupSample.h"
 #import "TestDataUtil.h"
 
 
@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSArray *titles = @[@"人物", @"爱好", @"其他", @"地区"];
-    CJRadioButtonsPopupSample *radioButtonsDropDownSample = [[CJRadioButtonsPopupSample alloc] init];
+    MyRadioButtonsPopupSample *radioButtonsDropDownSample = [[MyRadioButtonsPopupSample alloc] init];
     [radioButtonsDropDownSample setFrame:CGRectMake(20, 300, 380, 40)];
     [radioButtonsDropDownSample setupWithTitles:titles
                                   dropDownImage:[UIImage imageNamed:@"arrowDown_dark"]
@@ -41,7 +41,7 @@
     [self.radioButtonsDropDownSample scollToCurrentSelectedViewWithAnimated:NO];
 }
 
-- (UIView *)cj_RadioButtonsPopupSample:(CJRadioButtonsPopupSample *)radioButtonsPopupSample viewForButtonIndex:(NSInteger)index {
+- (UIView *)cj_RadioButtonsPopupSample:(MyRadioButtonsPopupSample *)radioButtonsPopupSample viewForButtonIndex:(NSInteger)index {
     UIView *popupView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
     popupView.backgroundColor = [UIColor greenColor];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];

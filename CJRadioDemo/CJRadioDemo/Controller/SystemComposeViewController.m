@@ -25,27 +25,27 @@
     
     NSArray *titles = [TestDataUtil getComponentTitles];
     
-    CJRadioButtonsSliderSample *radioButtonsSliderSample = [[CJRadioButtonsSliderSample alloc] init];
-    [radioButtonsSliderSample setupWithTitles:titles defaultShowIndex:0 maxButtonShowCount:titles.count];
-    radioButtonsSliderSample.delegate = self;
-    [self.view addSubview:radioButtonsSliderSample];
-    [radioButtonsSliderSample autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0) excludingEdge:ALEdgeBottom];
-    [radioButtonsSliderSample autoSetDimension:ALDimensionHeight toSize:44];
+    CJRadioButtons *sliderRadioButtonsSample = [[CJRadioButtons alloc] init];
+//    [sliderRadioButtonsSample setupWithTitles:titles defaultShowIndex:0 maxButtonShowCount:titles.count];
+    sliderRadioButtonsSample.delegate = self;
+    [self.view addSubview:sliderRadioButtonsSample];
+    [sliderRadioButtonsSample autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0) excludingEdge:ALEdgeBottom];
+    [sliderRadioButtonsSample autoSetDimension:ALDimensionHeight toSize:44];
     
-    self.sliderRadioButtons = radioButtonsSliderSample;
-    
-    
+    self.sliderRadioButtons = sliderRadioButtonsSample;
     
     
-    self.radioComposeView = [[UIView alloc] init];
+    
+    
+    self.CJCycleComposeView = [[UIView alloc] init];
     self.componentViewControllers = [TestDataUtil getComponentViewControllers];
-    [self.view addSubview:self.radioComposeView];
-    [self.radioComposeView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.sliderRadioButtons withOffset:0];
-    [self.radioComposeView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+    [self.view addSubview:self.CJCycleComposeView];
+    [self.CJCycleComposeView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.sliderRadioButtons withOffset:0];
+    [self.CJCycleComposeView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
 }
 
 #pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
-- (void)cj_radioButtons:(RadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+- (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     
     [self cj_chooseViewControllerIndex:index_cur oldIndex:index_old completeBlock:^(NSInteger index_cur) {
 //        [self doSomethingToCon_whereIndex:index_cur];

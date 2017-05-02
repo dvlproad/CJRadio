@@ -1,5 +1,5 @@
 //
-//  CJButtonControllerView.h
+//  CJRadioButtonCycleComposeView.h
 //  CJRadioDemo
 //
 //  Created by lichq on 14-11-5.
@@ -7,33 +7,36 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RadioButtons.h"
-#import "RadioComposeView.h"
+#import "CJRadioButtons.h"
+#import "CJCycleComposeView.h"
 
-@class CJButtonControllerView;
+/**
+ *  一个整合了单选按钮和循环视图的视图
+ */
+@class CJRadioButtonCycleComposeView;
 @protocol CJButtonControllerViewDataSource <NSObject>
 
 @required
 /** 获取数据源 */
-- (RadioButton *)cj_buttonControllerView:(CJButtonControllerView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index;
+- (CJButton *)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index;
 
 @end
 
 
 @protocol CJButtonControllerViewDelegate <NSObject>
 
-- (void)cj_buttonControllerView:(CJButtonControllerView *)buttonControllerView didChangeToIndex:(NSInteger)index;
+- (void)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView didChangeToIndex:(NSInteger)index;
 
 @end
 
 
-@interface CJButtonControllerView : UIView {
+@interface CJRadioButtonCycleComposeView : UIView {
     
 }
 @property (nonatomic, weak) id <CJButtonControllerViewDataSource> dataSource;
 @property (nonatomic, weak) id <CJButtonControllerViewDelegate> delegate;
 
-//设置RadioButtons需要的数据
+//设置CJRadioButtons需要的数据
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, assign) BOOL showBottomLineView;  /**< 是否显示底部线 */
 @property (nonatomic, strong) UIImage *bottomLineImage; /**< 底部线的图片 */
@@ -44,7 +47,7 @@
 //@property (nonatomic, assign) CGFloat radioButtonsLeftViewWdith;    /**< 控件radioButtons左侧视图的宽度 */
 //@property (nonatomic, assign) CGFloat radioButtonsRightViewWdith;    /**< 控件radioButtons右侧视图的宽度 */
 
-//设置RadioComposeView需要的数据
+//设置CJCycleComposeView需要的数据
 @property (nonatomic, strong) NSArray<UIViewController *> *componentViewControllers;
 @property (nonatomic, strong) UIViewController *componentViewParentViewController;
 

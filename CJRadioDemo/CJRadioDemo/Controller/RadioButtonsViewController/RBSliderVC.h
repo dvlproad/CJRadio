@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CJRadioButtonsSliderSample.h"
+#import "CJRadioButtons.h"
+
+#import "MyButton.h"
 
 @interface RBSliderVC : UIViewController {
     
 }
-@property (nonatomic, weak) IBOutlet CJRadioButtonsSliderSample *sliderRadioButtons;
+@property (nonatomic, weak) IBOutlet CJRadioButtons *sliderRadioButtons;
+
+@property (nonatomic, weak) IBOutlet MyButton *myImageBottomButton;
 
 @end

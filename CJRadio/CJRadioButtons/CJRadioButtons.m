@@ -1,14 +1,12 @@
 //
-//  RadioButtons.m
+//  CJRadioButtons.m
 //  CJRadioDemo
 //
-//  Created by lichq on 7/8/15.
-//  Copyright (c) 2015 ciyouzen. All rights reserved.
+//  Created by dvlproad on 14-11-5.
+//  Copyright (c) 2014年 ciyouzen. All rights reserved.
 //
 
-#import "RadioButtons.h"
-
-#define kDefaultSelectedIndex   -1
+#import "CJRadioButtons.h"
 
 typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
     RadioButtonPositionTypeMiddle,
@@ -16,7 +14,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
     RadioButtonPositionTypeEdgeEnd,
 };
 
-@interface RadioButtons () <RadioButtonDelegate, UIScrollViewDelegate> {
+@interface CJRadioButtons () <UIScrollViewDelegate> {
     BOOL _haveArrowButton;      /**< 是否有左右箭头 */
     UIButton *_leftArrowButton; /**< 左侧箭头 */
     UIButton *_rightArrowButton;/**< 右侧箭头 */
@@ -32,7 +30,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 @end
 
 
-@implementation RadioButtons
+@implementation CJRadioButtons
 
 - (instancetype)init {
     self = [super init];
@@ -68,7 +66,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.delegate = self;
     self.scrollView.bounces = NO;
-    self.scrollView.backgroundColor = [UIColor orangeColor];
+    self.scrollView.backgroundColor = [UIColor clearColor];
     [self cj_makeView:self addSubView:_scrollView withEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
 }
 
@@ -76,7 +74,6 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
     [super layoutSubviews];
     
     [self reloadViews];
-    [self layoutIfNeeded]; //不要漏
 }
 
 /** 完整的描述请参见文件头部 */
@@ -100,7 +97,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
     //NSLog(@" --- totalComponentWidth = %f", totalComponentWidth);
     self.scrollView.contentSize = CGSizeMake(totalComponentWidth, CGRectGetHeight(self.frame));
     
-    NSInteger defaultSelectedIndex = kDefaultSelectedIndex;
+    NSInteger defaultSelectedIndex = -1;
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_defaultShowIndexInRadioButtons:)]) {
         defaultSelectedIndex = [self.dataSource cj_defaultShowIndexInRadioButtons:self];
     }
@@ -112,9 +109,14 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
     NSMutableArray *radioButtons = [[NSMutableArray alloc] init];
     UIView *lastView = nil;
     for (NSInteger index = 0; index < componentCount; index++) {
-        RadioButton *radioButton = [self.dataSource cj_radioButtons:self cellForComponentAtIndex:index];
+        CJButton *radioButton = [self.dataSource cj_radioButtons:self cellForComponentAtIndex:index];
         radioButton.index = index;
-        radioButton.delegate = self;
+        
+        __weak typeof(self)weakSelf = self;
+        [radioButton setTapAction:^(CJButton *radioButton) {
+            [weakSelf clickRadioButton:radioButton];
+        }];
+        
         if (index == defaultSelectedIndex) {
             [radioButton setSelected:YES];
         } else {
@@ -135,7 +137,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
             UIView *separateLineView = [[UIView alloc] initWithFrame:CGRectZero];
             separateLineView.backgroundColor = [UIColor lightGrayColor];
             
-            RadioButton *radioButton = [radioButtons objectAtIndex:index];
+            CJButton *radioButton = [radioButtons objectAtIndex:index];
             [self cj_addSubView:separateLineView toSuperView:self.scrollView afterCurrentView:radioButton withWidth:1];
         }
     }
@@ -148,6 +150,8 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
     if (_haveArrowButton) {
         [self judgeAndSetArrowButtonState];
     }
+    
+    [self layoutIfNeeded]; //不要漏
 }
 
 /** 添加底部视图(常为线条或图片) */
@@ -206,8 +210,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 
 
 //注意radioButton_cur经常有未选中的状态，即经常会有self.currentSelectedIndex == -1的情况
-- (void)radioButtonClick:(RadioButton *)radioButton_cur {
-    
+- (void)clickRadioButton:(CJButton *)radioButton_cur {
     NSInteger index_old = self.currentSelectedIndex;
     NSInteger index_cur = radioButton_cur.index;
     
@@ -224,13 +227,16 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
             }
             
         }else{              //③、如果有选中,且点击不同index的话，则还需要把之前的那个按钮的状态也改变掉。
-            RadioButton *radioButton_old = [self.radioButtons objectAtIndex:index_old];
+            CJButton *radioButton_old = [self.radioButtons objectAtIndex:index_old];
             radioButton_old.selected = !radioButton_old.selected;
             
             radioButton_cur.selected = !radioButton_cur.selected;
         }
     }
-    [self cj_selectComponentAtIndex:index_cur fromIndex:index_old animated:YES];
+    [self cj_selectComponentAtIndex:index_cur animated:YES];
+    if([self.delegate respondsToSelector:@selector(cj_radioButtons:chooseIndex:oldIndex:)]){
+        [self.delegate cj_radioButtons:self chooseIndex:index_cur oldIndex:index_old];
+    }
     
     BOOL isSameIndex = index_cur == index_old ? YES : NO;
     //NSLog(@"index_old = %zd, index_cur = %zd, isSameIndex= %@", index_old, index_cur, isSameIndex?@"YES":@"NO");
@@ -265,14 +271,14 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 
 /** 完整的描述请参见文件头部 */
 - (void)changeCurrentRadioButtonStateAndTitle:(NSString *)title {
-    RadioButton *radioButton_cur = [self.radioButtons objectAtIndex:self.currentSelectedIndex];
+    CJButton *radioButton_cur = [self.radioButtons objectAtIndex:self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;
     [radioButton_cur setTitle:title];
 }
 
 /** 完整的描述请参见文件头部 */
 - (void)changeCurrentRadioButtonState {
-    RadioButton *radioButton_cur = [self.radioButtons objectAtIndex:self.currentSelectedIndex];
+    CJButton *radioButton_cur = [self.radioButtons objectAtIndex:self.currentSelectedIndex];
     radioButton_cur.selected = !radioButton_cur.selected;
 }
 
@@ -389,10 +395,10 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 - (void)leftArrowButtonAction:(UIButton *)sender {
     CGFloat contentOffsetX = self.scrollView.contentOffset.x;
     
-    RadioButton *targetRadioButton = nil;
+    CJButton *targetRadioButton = nil;
     NSInteger count = self.radioButtons.count;
     for (NSInteger i = 0; i < count; i++) { //从第一个开始找，找到的第一个即是所求
-        RadioButton *radioButton = [self.radioButtons objectAtIndex:i];
+        CJButton *radioButton = [self.radioButtons objectAtIndex:i];
         
         /* 确保”要找的按钮“的左侧至少在显示的“左侧箭头的最右侧值”之左 */
         CGFloat minShowX = CGRectGetMinX(radioButton.frame) - contentOffsetX;
@@ -422,10 +428,10 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 - (void)rightArrowButtonAction:(UIButton *)sender {
     CGFloat contentOffsetX = self.scrollView.contentOffset.x;
     
-    RadioButton *targetRadioButton = nil;
+    CJButton *targetRadioButton = nil;
     NSInteger count = self.radioButtons.count;
     for (NSInteger i = 0; i < count; i++) {   //从最后一个开始找，找到的第一个即是所求
-        RadioButton *radioButton = [self.radioButtons objectAtIndex:i];
+        CJButton *radioButton = [self.radioButtons objectAtIndex:i];
         
         /* 确保”要找的按钮“的左侧至少在显示的屏幕的最左侧之右 */
         CGFloat minShowX = CGRectGetMinX(radioButton.frame) - contentOffsetX;
@@ -454,31 +460,24 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 
 /** 完整的描述请参见文件头部 */
 - (void)cj_selectComponentAtIndex:(NSInteger)index_cur animated:(BOOL)animated {
-    [self cj_selectComponentAtIndex:index_cur fromIndex:self.currentSelectedIndex animated:animated];
-}
-
-- (void)cj_selectComponentAtIndex:(NSInteger)index_cur fromIndex:(NSInteger)index_old animated:(BOOL)animated {
+    NSInteger index_old = self.currentSelectedIndex;
     
     if (index_cur != index_old) {
         self.oldSelectedIndex = self.currentSelectedIndex;
         _currentSelectedIndex = index_cur;
         
         if (index_old != -1) {
-            RadioButton *radioButton_old = [self.radioButtons objectAtIndex:self.oldSelectedIndex];
+            CJButton *radioButton_old = [self.radioButtons objectAtIndex:self.oldSelectedIndex];
             radioButton_old.selected = NO;
         }
         
-        RadioButton *radioButton_cur = [self.radioButtons objectAtIndex:self.currentSelectedIndex];
+        CJButton *radioButton_cur = [self.radioButtons objectAtIndex:self.currentSelectedIndex];
         radioButton_cur.selected = YES;
         
         [self moveScrollViewToItem:radioButton_cur
            accordingToPositionType:RadioButtonPositionTypeMiddle
                      andSelectedIt:YES
                           animated:animated];
-    }
-    
-    if([self.delegate respondsToSelector:@selector(cj_radioButtons:chooseIndex:oldIndex:)]){
-        [self.delegate cj_radioButtons:self chooseIndex:index_cur oldIndex:index_old];
     }
 }
 
@@ -504,40 +503,39 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 
 #pragma mark - addSubView
 - (void)cj_makeView:(UIView *)superView addSubView:(UIView *)subView withEdgeInsets:(UIEdgeInsets)edgeInsets {
-//- (void)cj_addSubView:(UIView *)subView toSuperView:(UIView *)superView withEdgeInsets:(UIEdgeInsets)edgeInsets {
     [superView addSubview:subView];
     subView.translatesAutoresizingMaskIntoConstraints = NO;
-    //left
+    
     [superView addConstraint:
      [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeLeft
+                                  attribute:NSLayoutAttributeLeft   //left
                                   relatedBy:NSLayoutRelationEqual
                                      toItem:superView
                                   attribute:NSLayoutAttributeLeft
                                  multiplier:1
                                    constant:edgeInsets.left]];
-    //right
+    
     [superView addConstraint:
      [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeRight
+                                  attribute:NSLayoutAttributeRight  //right
                                   relatedBy:NSLayoutRelationEqual
                                      toItem:superView
                                   attribute:NSLayoutAttributeRight
                                  multiplier:1
                                    constant:edgeInsets.right]];
-    //top
+    
     [superView addConstraint:
      [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeTop
+                                  attribute:NSLayoutAttributeTop    //top
                                   relatedBy:NSLayoutRelationEqual
                                      toItem:superView
                                   attribute:NSLayoutAttributeTop
                                  multiplier:1
                                    constant:edgeInsets.top]];
-    //bottom
+    
     [superView addConstraint:
      [NSLayoutConstraint constraintWithItem:subView
-                                  attribute:NSLayoutAttributeBottom
+                                  attribute:NSLayoutAttributeBottom //bottom
                                   relatedBy:NSLayoutRelationEqual
                                      toItem:superView
                                   attribute:NSLayoutAttributeBottom
@@ -545,11 +543,10 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
                                    constant:edgeInsets.bottom]];
 }
 
-
 - (UIView *)cj_addContentViewToScrollView:(UIView *)scrollView withWidthMultiplier:(CGFloat)widthMultiplier heightMultiplier:(CGFloat)heightMultiplier {
     
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectZero];
-    contentView.backgroundColor = [UIColor lightGrayColor];
+    contentView.backgroundColor = [UIColor clearColor];
     
     [scrollView addSubview:contentView];
     contentView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -617,7 +614,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 - (UIView *)cj_addContentViewToScrollView:(UIView *)scrollView withContentSizeWidth:(CGFloat)contentSizeWidth {
     
     UIView *contentView = [[UIView alloc] initWithFrame:CGRectZero];
-    contentView.backgroundColor = [UIColor lightGrayColor];
+    contentView.backgroundColor = [UIColor clearColor];
     
     [scrollView addSubview:contentView];
     contentView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -743,7 +740,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
 - (void)scollToCurrentSelectedViewWithAnimated:(BOOL)animated {
     /* 如果初始有默认选择哪个按钮，则滑动到该按钮位置 */
     if (self.currentSelectedIndex != -1) {
-        RadioButton *targetRadioButton = [self.radioButtons objectAtIndex:self.currentSelectedIndex];
+        CJButton *targetRadioButton = [self.radioButtons objectAtIndex:self.currentSelectedIndex];
         
         [self moveScrollViewToItem:targetRadioButton
                      accordingToPositionType:RadioButtonPositionTypeMiddle
@@ -759,7 +756,7 @@ typedef NS_ENUM(NSUInteger, RadioButtonPositionType) {
  *  @param selectedIt           是否选中
  *  @param animated             是否动画
  */
-- (void)moveScrollViewToItem:(RadioButton *)targetRadioButton
+- (void)moveScrollViewToItem:(CJButton *)targetRadioButton
      accordingToPositionType:(RadioButtonPositionType)positionType
                andSelectedIt:(BOOL)selectedIt
                     animated:(BOOL)animated

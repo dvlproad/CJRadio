@@ -1,12 +1,12 @@
 //
-//  CJRadioButtonsPopupSample.h
+//  MyRadioButtonsPopupSample.h
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-5.
-//  Copyright (c) 2014年 lichq. All rights reserved.
+//  Created by dvlproad on 14-11-5.
+//  Copyright (c) 2014年 ciyouzen. All rights reserved.
 //
 
-#import "RadioButtons.h"
+#import "CJRadioButtons.h"
 #import <CJPopupAction/UIView+CJShowExtendView.h>
 
 typedef NS_ENUM(NSUInteger, CJRadioButtonsPopupType) {
@@ -15,14 +15,15 @@ typedef NS_ENUM(NSUInteger, CJRadioButtonsPopupType) {
     CJRadioButtonsPopupTypeWindowBottom,
 };
 
-@class CJRadioButtonsPopupSample;
+//未验证是否能实现刷新功能
+@class MyRadioButtonsPopupSample;
 @protocol CJRadioButtonsPopupSampleDataSource <NSObject>
 
-- (UIView *)cj_RadioButtonsPopupSample:(CJRadioButtonsPopupSample *)radioButtonsPopupSample viewForButtonIndex:(NSInteger)index;
+- (UIView *)cj_RadioButtonsPopupSample:(MyRadioButtonsPopupSample *)radioButtonsPopupSample viewForButtonIndex:(NSInteger)index;
 
 @end
 
-@interface CJRadioButtonsPopupSample : RadioButtons {
+@interface MyRadioButtonsPopupSample : CJRadioButtons {
     
 }
 @property (nonatomic, weak) id<CJRadioButtonsPopupSampleDataSource> radioButtonsPopupSampleDataSource;
