@@ -28,7 +28,7 @@
     for (NSInteger index = 0; index < count; index++) {
         UIViewController *viewController = [componentViewControllers objectAtIndex:index];
         if (index == self.currentSelectedIndex) {
-            [self cj_makeView:self.CJCycleComposeView addSubView:viewController.view withEdgeInsets:UIEdgeInsetsZero];
+            [self cj_makeView:self.composeView addSubView:viewController.view withEdgeInsets:UIEdgeInsetsZero];
             
             [self addChildViewController:viewController];
         }
@@ -46,7 +46,7 @@
     UIViewController *newShowViewController = [self.componentViewControllers objectAtIndex:index_cur];
     UIViewController *oldShowViewController = [self.componentViewControllers objectAtIndex:index_old];
     [self addChildViewController:newShowViewController];
-    [self cj_makeView:self.CJCycleComposeView addSubView:newShowViewController.view withEdgeInsets:UIEdgeInsetsZero];
+    [self cj_makeView:self.composeView addSubView:newShowViewController.view withEdgeInsets:UIEdgeInsetsZero];
     
     
     [self transitionFromViewController:oldShowViewController

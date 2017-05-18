@@ -11,7 +11,7 @@
 #import "RBSliderVC.h"
 #import "RBDropDownVC.h"
 
-#import "RadioControllersViewController.h"
+#import "CycleComposeViewController.h"
 #import "Home1.h"
 
 #import "SliderViewController.h"
@@ -46,7 +46,7 @@
 
 
 - (IBAction)goRadioControllersViewController:(id)sender {
-    RadioControllersViewController *viewController = [[RadioControllersViewController alloc] initWithNibName:@"RadioControllersViewController" bundle:nil];
+    CycleComposeViewController *viewController = [[CycleComposeViewController alloc] initWithNibName:@"CycleComposeViewController" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

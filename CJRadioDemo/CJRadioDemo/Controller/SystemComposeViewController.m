@@ -37,11 +37,11 @@
     
     
     
-    self.CJCycleComposeView = [[UIView alloc] init];
+    self.composeView = [[UIView alloc] init];
     self.componentViewControllers = [TestDataUtil getComponentViewControllers];
-    [self.view addSubview:self.CJCycleComposeView];
-    [self.CJCycleComposeView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.sliderRadioButtons withOffset:0];
-    [self.CJCycleComposeView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
+    [self.view addSubview:self.composeView];
+    [self.composeView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.sliderRadioButtons withOffset:0];
+    [self.composeView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
 }
 
 #pragma mark - RadioButtonsDataSource & RadioButtonsDelegate

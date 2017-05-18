@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, CJCycleComposeViewScrollType) {
  *
  *  @return view数组
  */
-- (NSArray<UIView *> *)cj_radioViewsInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView;
+- (NSArray<UIView *> *)cj_radioViewsInCJCycleComposeView:(CJCycleComposeView *)cycleComposeView;
 
 
 @optional
@@ -46,10 +46,10 @@ typedef NS_ENUM(NSUInteger, CJCycleComposeViewScrollType) {
 /**
  *  CJCycleComposeView上选中的index改变时触发
  *
- *  @param CJCycleComposeView CJCycleComposeView
+ *  @param cycleComposeView cycleComposeView
  *  @param index            index
  */
-- (void)cj_CJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView didChangeToIndex:(NSInteger)index;
+- (void)cj_cycleComposeView:(CJCycleComposeView *)cycleComposeView didChangeToIndex:(NSInteger)index;
 
 @end
 
@@ -57,7 +57,7 @@ typedef NS_ENUM(NSUInteger, CJCycleComposeViewScrollType) {
 
 
 /**
- *  一个可以无限循环的视图组合类
+ *  一个可以无限循环的视图组合类(只能支持>=3个视图的视图组合)
  */
 @interface CJCycleComposeView : UIView {
     
@@ -66,6 +66,9 @@ typedef NS_ENUM(NSUInteger, CJCycleComposeViewScrollType) {
 @property (nonatomic, weak) id <CJCycleComposeViewDelegate> delegate;
 @property (nonatomic, assign) CJCycleComposeViewScrollType scrollType;
 @property (nonatomic, assign, readonly) NSInteger currentShowViewIndex; /**< 当前显示的视图(即中视图)上的视图内容在所有view中的位置 */
+
+//当所添加的view不足三个的时候，需要多用到以下这一个参数
+@property (nonatomic, assign) BOOL canScrollWhenViewCountLessThree; /**< 当views的个数小于三个的时候，是否允许滚动(默认YES) */
 
 /**
  *  重新加载View视图
@@ -82,6 +85,7 @@ typedef NS_ENUM(NSUInteger, CJCycleComposeViewScrollType) {
 
 /**
  *  滑动到显示的视图(即中视图)
+ *  @attention  请在viewDidLayoutSubviews调用
  *
  *  @param animated 滚动过程中是否要有动画
  */

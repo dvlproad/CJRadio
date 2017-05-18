@@ -1,35 +1,35 @@
 //
-//  RadioControllersViewController.m
+//  CycleComposeViewController.m
 //  CJRadioDemo
 //
 //  Created by lichq on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
-#import "RadioControllersViewController.h"
+#import "CycleComposeViewController.h"
 #import "TestDataUtil.h"
 
-@interface RadioControllersViewController () <CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
+@interface CycleComposeViewController () <CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
     
 }
 @property (nonatomic, strong) NSArray <UIViewController *> *componentViewControllers;
 
 @end
 
-@implementation RadioControllersViewController
+@implementation CycleComposeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = NSLocalizedString(@"RadioControllersViewController", nil);
+    self.navigationItem.title = NSLocalizedString(@"CycleComposeViewController", nil);
     
     self.componentViewControllers = [TestDataUtil getComponentViewControllers];
     
     self.cycleComposeView.dataSource = self;
     self.cycleComposeView.delegate = self;
-//    self.CJCycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollHorizontal;
-//    [self.CJCycleComposeView scrollToCenterViewWithAnimate:NO];
-//    [self.CJCycleComposeView showViewWithIndex:2];
+    self.cycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollCycle;
+//    self.cycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollHorizontal;
+//    [self.cycleComposeView cj_selectComponentAtIndex:2 animated:YES];
 }
 
 //一定不要漏了这个滚动操作
@@ -51,7 +51,7 @@
 
 #pragma mark - CJCycleComposeViewDataSource
 - (NSInteger)cj_defaultShowIndexInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
-    return 1;
+    return 0;
 }
 
 - (NSArray<UIView *> *)cj_radioViewsInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
@@ -68,8 +68,8 @@
 
 
 #pragma mark - CJCycleComposeViewDelegate
-- (void)cj_CJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView didChangeToIndex:(NSInteger)index {
-    NSLog(@"点击了%ld", index);
+- (void)cj_cycleComposeView:(CJCycleComposeView *)cycleComposeView didChangeToIndex:(NSInteger)index {
+    NSLog(@"切换到了第%ld视图", index);
 }
 
 

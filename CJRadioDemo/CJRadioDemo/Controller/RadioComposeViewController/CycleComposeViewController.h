@@ -1,5 +1,5 @@
 //
-//  RadioControllersViewController.h
+//  CycleComposeViewController.h
 //  CJRadioDemo
 //
 //  Created by lichq on 14-11-5.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CJCycleComposeView.h"
 
-@interface RadioControllersViewController : UIViewController {
+@interface CycleComposeViewController : UIViewController {
     
 }
 

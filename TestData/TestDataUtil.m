@@ -24,22 +24,22 @@
     home2.view.backgroundColor = [UIColor orangeColor];
     [radioControllers addObject:home2];
     
-//    UIViewController *home3 = [[UIViewController alloc]init];
-    Home1 *home3 = [[Home1 alloc] initWithNibName:@"Home1" bundle:nil];
-    home3.view.backgroundColor = [UIColor yellowColor];
-    [radioControllers addObject:home3];
-    
-    UIViewController *home4 = [[UIViewController alloc]init];
-    home4.view.backgroundColor = [UIColor orangeColor];
-    [radioControllers addObject:home4];
-    
-    UIViewController *home5 = [[UIViewController alloc]init];
-    home5.view.backgroundColor = [UIColor yellowColor];
-    [radioControllers addObject:home5];
-    
-    UIViewController *home6 = [[UIViewController alloc]init];
-    home6.view.backgroundColor = [UIColor orangeColor];
-    [radioControllers addObject:home6];
+////    UIViewController *home3 = [[UIViewController alloc]init];
+//    Home1 *home3 = [[Home1 alloc] initWithNibName:@"Home1" bundle:nil];
+//    home3.view.backgroundColor = [UIColor yellowColor];
+//    [radioControllers addObject:home3];
+//    
+//    UIViewController *home4 = [[UIViewController alloc]init];
+//    home4.view.backgroundColor = [UIColor orangeColor];
+//    [radioControllers addObject:home4];
+//    
+//    UIViewController *home5 = [[UIViewController alloc]init];
+//    home5.view.backgroundColor = [UIColor yellowColor];
+//    [radioControllers addObject:home5];
+//    
+//    UIViewController *home6 = [[UIViewController alloc]init];
+//    home6.view.backgroundColor = [UIColor orangeColor];
+//    [radioControllers addObject:home6];
     
     for (NSInteger i = 0; i < radioControllers.count; i++) {
         UIViewController *viewController = [radioControllers objectAtIndex:i];

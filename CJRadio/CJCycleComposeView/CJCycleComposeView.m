@@ -22,6 +22,9 @@
 @property (nonatomic, strong) NSArray *views;
 @property (nonatomic, assign) BOOL isDragByMyself;
 
+//当所添加的view不足三个的时候，需要多用到以下这一个参数
+@property (nonatomic, assign) NSInteger viewsOriginCount;   /**< views原本的个数（不足三个时候有用） */
+
 @end
 
 @implementation CJCycleComposeView
@@ -71,17 +74,45 @@
     [self reloadViews];
 }
 
-
+- (void)setCanScrollWhenViewCountLessThree:(BOOL)canScrollWhenViewCountLessThree {
+    _canScrollWhenViewCountLessThree = canScrollWhenViewCountLessThree;
+    
+    _scrollView.scrollEnabled = canScrollWhenViewCountLessThree;
+}
 
 /** 完整的描述请参见文件头部 */
 - (void)reloadViews {
     //self.views
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(cj_radioViewsInCJCycleComposeView:)]) {
-        self.views = [self.dataSource cj_radioViewsInCJCycleComposeView:self];
-    }
-    if (self.views.count < 3) {
-        NSAssert(NO, @"error: self.views.count < 3, wouldn't be reloadVies");
-        return;
+        NSArray *views = [self.dataSource cj_radioViewsInCJCycleComposeView:self];
+        self.viewsOriginCount = views.count;
+        
+        if (views.count >= 3) {
+            self.views = views;
+        } else { //不足3个的时候，利用复制view来补足三个
+            NSMutableArray *newViews = [NSMutableArray arrayWithArray:views];
+            
+            UIView *view1 = [views objectAtIndex:0];
+            NSData *tempArchive = [NSKeyedArchiver archivedDataWithRootObject:view1];
+            UIView *duplicateView = [NSKeyedUnarchiver unarchiveObjectWithData:tempArchive];
+            [newViews addObject:duplicateView];
+            
+            if (views.count == 2) {
+                UIView *view2 = [views objectAtIndex:1];
+                NSData *tempArchive2 = [NSKeyedArchiver archivedDataWithRootObject:view2];
+                UIView *duplicateView2 = [NSKeyedUnarchiver unarchiveObjectWithData:tempArchive2];
+                [newViews addObject:duplicateView2];
+                
+            } else if (views.count == 1) {
+                UIView *view2 = [views objectAtIndex:0];
+                NSData *tempArchive2 = [NSKeyedArchiver archivedDataWithRootObject:view2];
+                UIView *duplicateView2 = [NSKeyedUnarchiver unarchiveObjectWithData:tempArchive2];
+                [newViews addObject:duplicateView2];
+            }
+            
+            self.views = newViews;
+        }
+        
     }
     
     _currentShowViewIndex = -1;
@@ -104,10 +135,10 @@
  *  @param centerViewIndex 中视图的的视图在所有视图中的位置index
  */
 - (void)resetViewToLeftCenterRightWithShowViewIndex:(NSInteger)centerViewIndex {
-    if (_currentShowViewIndex == centerViewIndex) {
-        NSLog(@"resetViewToLeftCenterRight failure");
-        return;
-    }
+//    if (_currentShowViewIndex == centerViewIndex) {
+//        NSLog(@"don't need to resetView");
+//        return;
+//    }
     
     /* 取得 左·中·右视图，分别是所有view中的哪几个 */
     NSInteger indexForLeftView = (centerViewIndex == 0) ? self.views.count-1 : centerViewIndex-1;
@@ -118,8 +149,11 @@
     _currentShowViewIndex = centerViewIndex;
     
     //滑动到显示的视图(即中视图)
-    if (self.delegate && [self.delegate respondsToSelector:@selector(cj_CJCycleComposeView:didChangeToIndex:)]) {
-        [self.delegate cj_CJCycleComposeView:self didChangeToIndex:centerViewIndex];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(cj_cycleComposeView:didChangeToIndex:)]) {
+        if (self.viewsOriginCount < 3 && centerViewIndex+1 >= 3) {
+            centerViewIndex -= self.viewsOriginCount;
+        }
+        [self.delegate cj_cycleComposeView:self didChangeToIndex:centerViewIndex];
     }
 }
 
@@ -427,7 +461,7 @@
                     scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
                 }
             }
-            if (_currentShowViewIndex == self.views.count-1) {
+            if (_currentShowViewIndex == self.viewsOriginCount-1) {
                 CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
                 if (contentOffsetX > scrollViewWidth) {
                     contentOffsetX = scrollViewWidth;
