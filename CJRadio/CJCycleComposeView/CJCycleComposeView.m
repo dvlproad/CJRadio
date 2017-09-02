@@ -2,8 +2,8 @@
 //  CJCycleComposeView.m
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-12.
-//  Copyright (c) 2014年 lichq. All rights reserved.
+//  Created by ciyouzen on 14-11-5.
+//  Copyright (c) 2014年 dvlproad. All rights reserved.
 //
 
 #import "CJCycleComposeView.h"
@@ -89,6 +89,7 @@
         
         if (views.count >= 3) {
             self.views = views;
+            
         } else { //不足3个的时候，利用复制view来补足三个
             NSMutableArray *newViews = [NSMutableArray arrayWithArray:views];
             
@@ -150,6 +151,7 @@
     
     //滑动到显示的视图(即中视图)
     if (self.delegate && [self.delegate respondsToSelector:@selector(cj_cycleComposeView:didChangeToIndex:)]) {
+        NSLog(@"centerViewIndex = %zd", centerViewIndex);
         if (self.viewsOriginCount < 3 && centerViewIndex+1 >= 3) {
             centerViewIndex -= self.viewsOriginCount;
         }
@@ -454,18 +456,20 @@
 //        }
         case CJCycleComposeViewScrollTypeBanScrollCycle:
         {
+            //禁止循环的时候不应该
+            //禁止循环滚动的时候要停留在当前视图，即center的位置，即1 * scrollViewWidth
             if (_currentShowViewIndex == 0) {
                 CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
                 if (contentOffsetX < scrollViewWidth) {
-                    contentOffsetX = scrollViewWidth;
+                    contentOffsetX = 1 * scrollViewWidth;
                     scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
                 }
             }
             if (_currentShowViewIndex == self.viewsOriginCount-1) {
                 CGFloat scrollViewWidth = CGRectGetWidth(scrollView.frame);
                 if (contentOffsetX > scrollViewWidth) {
-                    contentOffsetX = scrollViewWidth;
-                    scrollView.contentOffset = CGPointMake(contentOffsetX, contentOffsetY);
+                    contentOffsetX = 1 * scrollViewWidth;
+                    scrollView.contentOffset = CGPointMake(contentOffsetX+0, contentOffsetY);
                 }
             }
             
@@ -491,8 +495,34 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    switch (self.scrollType) {
+        case CJCycleComposeViewScrollTypeNormal:
+        {
+            
+            break;
+        }
+        case CJCycleComposeViewScrollTypeBanScrollHorizontal:
+        {
+         
+            break;
+        }
+        case CJCycleComposeViewScrollTypeBanScrollCycle:
+        {
+            if (_currentShowViewIndex == self.viewsOriginCount-1) {
+                return;
+            }
+            
+            break;
+        }
+        default:
+        {
+            
+            break;
+        }
+    }
     //拖动drag的时候才会执行
     CGFloat contentOffsetX = scrollView.contentOffset.x;
+    NSLog(@"drag结束时contentOffsetX = %.1f", contentOffsetX);
     CGFloat width = CGRectGetWidth(scrollView.frame);
     NSInteger maxIndex = self.views.count-1;
     

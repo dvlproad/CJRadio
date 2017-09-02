@@ -2,13 +2,15 @@
 //  CJRadioButtonCycleComposeView.h
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-5.
-//  Copyright (c) 2014年 lichq. All rights reserved.
+//  Created by ciyouzen on 14-11-5.
+//  Copyright (c) 2014年 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "CJRadioButtons.h"
 #import "CJCycleComposeView.h"
+
+#import "CJRadioModule.h"
 
 /**
  *  一个整合了单选按钮和循环视图的视图
@@ -30,14 +32,20 @@
 @end
 
 
+
+
+
 @interface CJRadioButtonCycleComposeView : UIView {
     
 }
 @property (nonatomic, weak) id <CJButtonControllerViewDataSource> dataSource;
 @property (nonatomic, weak) id <CJButtonControllerViewDelegate> delegate;
 
+
+@property (nonatomic, strong) NSArray<CJRadioModule *> *radioModules;
+
+
 //设置CJRadioButtons需要的数据
-@property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, assign) BOOL showBottomLineView;  /**< 是否显示底部线 */
 @property (nonatomic, strong) UIImage *bottomLineImage; /**< 底部线的图片 */
 @property (nonatomic, strong) UIColor *bottomLineColor; /**< 底部线的图片 */
@@ -48,7 +56,6 @@
 //@property (nonatomic, assign) CGFloat radioButtonsRightViewWdith;    /**< 控件radioButtons右侧视图的宽度 */
 
 //设置CJCycleComposeView需要的数据
-@property (nonatomic, strong) NSArray<UIViewController *> *componentViewControllers;
 @property (nonatomic, strong) UIViewController *componentViewParentViewController;
 
 //设置Self其他设置需要的数据

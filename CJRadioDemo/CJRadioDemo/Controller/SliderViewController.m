@@ -2,7 +2,7 @@
 //  SliderViewController.m
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-5.
+//  Created by ciyouzen on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
@@ -115,7 +115,8 @@ static NSInteger kSelectedIndexDefault = 1;
     [self doSomethingToCon_whereIndex:index_cur];
 }
 
-- (void)cj_CJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView didChangeToIndex:(NSInteger)index {
+- (void)cj_cycleComposeView:(CJCycleComposeView *)cycleComposeView didChangeToIndex:(NSInteger)index
+{
     [self.sliderRadioButtons cj_selectComponentAtIndex:index animated:YES];
     self.currentSelectedIndex  = index;
     

@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+#import "CJRadioModule.h"
+
 @interface TestDataUtil : NSObject
+
++ (NSMutableArray<CJRadioModule *> *)getRadioModules;
 
 + (NSArray<UIViewController *> *)getComponentViewControllers;
 

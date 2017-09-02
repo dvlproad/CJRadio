@@ -2,8 +2,8 @@
 //  CJCycleComposeView.h
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-12.
-//  Copyright (c) 2014年 lichq. All rights reserved.
+//  Created by ciyouzen on 14-11-5.
+//  Copyright (c) 2014年 dvlproad. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -57,7 +57,7 @@ typedef NS_ENUM(NSUInteger, CJCycleComposeViewScrollType) {
 
 
 /**
- *  一个可以无限循环的视图组合类(只能支持>=3个视图的视图组合)
+ *  一个可以无限循环的视图组合类(常用于视图组合各异的轮播图)
  */
 @interface CJCycleComposeView : UIView {
     

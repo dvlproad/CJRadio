@@ -2,7 +2,7 @@
 //  CycleComposeViewController.m
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-5.
+//  Created by ciyouzen on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
@@ -27,7 +27,7 @@
     
     self.cycleComposeView.dataSource = self;
     self.cycleComposeView.delegate = self;
-    self.cycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollCycle;
+    self.cycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollCycle;//设置禁止循环在滚动到最大的时候有bug
 //    self.cycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollHorizontal;
 //    [self.cycleComposeView cj_selectComponentAtIndex:2 animated:YES];
 }

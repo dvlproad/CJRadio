@@ -22,7 +22,6 @@
 		784B62E31EB8326100BE5BEF /* CJCycleComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62E01EB8326100BE5BEF /* CJCycleComposeView.m */; };
 		784B62E41EB8326100BE5BEF /* UIScrollView+CJAddContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62E21EB8326100BE5BEF /* UIScrollView+CJAddContentView.m */; };
 		784B62E81EB8351600BE5BEF /* CJRadioButtonCycleComposeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62E71EB8351600BE5BEF /* CJRadioButtonCycleComposeView.m */; };
-		785891381EC98948004DDA76 /* CJCycleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 785891371EC98948004DDA76 /* CJCycleCollectionView.m */; };
 		785B222E1E3A21D800D0A085 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B222D1E3A21D800D0A085 /* main.m */; };
 		785B22311E3A21D800D0A085 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22301E3A21D800D0A085 /* AppDelegate.m */; };
 		785B22341E3A21D800D0A085 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22331E3A21D800D0A085 /* ViewController.m */; };
@@ -43,13 +42,16 @@
 		785B22BC1E3A455D00D0A085 /* addChannel_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 785B22BA1E3A455D00D0A085 /* addChannel_normal@2x.png */; };
 		785B22BD1E3A455D00D0A085 /* addChannel_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 785B22BB1E3A455D00D0A085 /* addChannel_selected@2x.png */; };
 		785B22C11E3A45A700D0A085 /* CJSystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22C01E3A45A700D0A085 /* CJSystemComposeViewController.m */; };
-		785B22CD1E3A570F00D0A085 /* RBDropDownVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22C41E3A570F00D0A085 /* RBDropDownVC.m */; };
-		785B22CE1E3A570F00D0A085 /* RBDropDownVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22C51E3A570F00D0A085 /* RBDropDownVC.xib */; };
-		785B22CF1E3A570F00D0A085 /* RBSliderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22C71E3A570F00D0A085 /* RBSliderVC.m */; };
-		785B22D01E3A570F00D0A085 /* RBSliderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22C81E3A570F00D0A085 /* RBSliderVC.xib */; };
+		785B22CD1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22C41E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m */; };
+		785B22CE1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22C51E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib */; };
+		785B22CF1E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22C71E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m */; };
+		785B22D01E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22C81E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib */; };
 		785B22D11E3A570F00D0A085 /* CycleComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22CB1E3A570F00D0A085 /* CycleComposeViewController.m */; };
 		785B22D21E3A570F00D0A085 /* CycleComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22CC1E3A570F00D0A085 /* CycleComposeViewController.xib */; };
 		78C3AFDD1EA93C110085E102 /* checkedYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C3AFDC1EA93C110085E102 /* checkedYES@2x.png */; };
+		78D8BD211F5B24A600E9450C /* CJRadioModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8BD201F5B24A600E9450C /* CJRadioModule.m */; };
+		78D8BD251F5B357B00E9450C /* CustomButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8BD231F5B357B00E9450C /* CustomButtonViewController.m */; };
+		78D8BD261F5B357B00E9450C /* CustomButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D8BD241F5B357B00E9450C /* CustomButtonViewController.xib */; };
 		A02606E0F37236F70F9E2630 /* libPods-CJRadioDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 255CD2B95A231AE9BD64B42C /* libPods-CJRadioDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -95,8 +97,6 @@
 		784B62E21EB8326100BE5BEF /* UIScrollView+CJAddContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+CJAddContentView.m"; sourceTree = "<group>"; };
 		784B62E61EB8351600BE5BEF /* CJRadioButtonCycleComposeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtonCycleComposeView.h; sourceTree = "<group>"; };
 		784B62E71EB8351600BE5BEF /* CJRadioButtonCycleComposeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRadioButtonCycleComposeView.m; sourceTree = "<group>"; };
-		785891361EC98948004DDA76 /* CJCycleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCycleCollectionView.h; sourceTree = "<group>"; };
-		785891371EC98948004DDA76 /* CJCycleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCycleCollectionView.m; sourceTree = "<group>"; };
 		785B22291E3A21D800D0A085 /* CJRadioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJRadioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785B222D1E3A21D800D0A085 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		785B222F1E3A21D800D0A085 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,16 +132,21 @@
 		785B22BB1E3A455D00D0A085 /* addChannel_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addChannel_selected@2x.png"; sourceTree = "<group>"; };
 		785B22BF1E3A45A700D0A085 /* CJSystemComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSystemComposeViewController.h; sourceTree = "<group>"; };
 		785B22C01E3A45A700D0A085 /* CJSystemComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSystemComposeViewController.m; sourceTree = "<group>"; };
-		785B22C31E3A570F00D0A085 /* RBDropDownVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDropDownVC.h; sourceTree = "<group>"; };
-		785B22C41E3A570F00D0A085 /* RBDropDownVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDropDownVC.m; sourceTree = "<group>"; };
-		785B22C51E3A570F00D0A085 /* RBDropDownVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBDropDownVC.xib; sourceTree = "<group>"; };
-		785B22C61E3A570F00D0A085 /* RBSliderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSliderVC.h; sourceTree = "<group>"; };
-		785B22C71E3A570F00D0A085 /* RBSliderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSliderVC.m; sourceTree = "<group>"; };
-		785B22C81E3A570F00D0A085 /* RBSliderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RBSliderVC.xib; sourceTree = "<group>"; };
+		785B22C31E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRadioButtonsPopupSampleViewController.h; sourceTree = "<group>"; };
+		785B22C41E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRadioButtonsPopupSampleViewController.m; sourceTree = "<group>"; };
+		785B22C51E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRadioButtonsPopupSampleViewController.xib; sourceTree = "<group>"; };
+		785B22C61E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySliderRadioButtonsDataSourceViewController.h; sourceTree = "<group>"; };
+		785B22C71E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySliderRadioButtonsDataSourceViewController.m; sourceTree = "<group>"; };
+		785B22C81E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySliderRadioButtonsDataSourceViewController.xib; sourceTree = "<group>"; };
 		785B22CA1E3A570F00D0A085 /* CycleComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleComposeViewController.h; sourceTree = "<group>"; };
 		785B22CB1E3A570F00D0A085 /* CycleComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleComposeViewController.m; sourceTree = "<group>"; };
 		785B22CC1E3A570F00D0A085 /* CycleComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CycleComposeViewController.xib; sourceTree = "<group>"; };
 		78C3AFDC1EA93C110085E102 /* checkedYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkedYES@2x.png"; sourceTree = "<group>"; };
+		78D8BD1F1F5B24A600E9450C /* CJRadioModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioModule.h; sourceTree = "<group>"; };
+		78D8BD201F5B24A600E9450C /* CJRadioModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRadioModule.m; sourceTree = "<group>"; };
+		78D8BD221F5B357A00E9450C /* CustomButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButtonViewController.h; sourceTree = "<group>"; };
+		78D8BD231F5B357B00E9450C /* CustomButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButtonViewController.m; sourceTree = "<group>"; };
+		78D8BD241F5B357B00E9450C /* CustomButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonViewController.xib; sourceTree = "<group>"; };
 		CB9A64240C17C26FA856DCB1 /* Pods-CJRadioDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJRadioDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E011F1BFC43D616200892E69 /* Pods-CJRadioDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJRadioDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJRadioDemoTests/Pods-CJRadioDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		EAF8BB37787142A3942C3BEE /* libPods-CJRadioDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJRadioDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,8 +234,6 @@
 				784B62E01EB8326100BE5BEF /* CJCycleComposeView.m */,
 				784B62E11EB8326100BE5BEF /* UIScrollView+CJAddContentView.h */,
 				784B62E21EB8326100BE5BEF /* UIScrollView+CJAddContentView.m */,
-				785891361EC98948004DDA76 /* CJCycleCollectionView.h */,
-				785891371EC98948004DDA76 /* CJCycleCollectionView.m */,
 			);
 			path = CJCycleComposeView;
 			sourceTree = "<group>";
@@ -240,6 +243,8 @@
 			children = (
 				784B62E61EB8351600BE5BEF /* CJRadioButtonCycleComposeView.h */,
 				784B62E71EB8351600BE5BEF /* CJRadioButtonCycleComposeView.m */,
+				78D8BD1F1F5B24A600E9450C /* CJRadioModule.h */,
+				78D8BD201F5B24A600E9450C /* CJRadioModule.m */,
 			);
 			path = CJRadioButtonCycleComposeView;
 			sourceTree = "<group>";
@@ -339,6 +344,9 @@
 				785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */,
 				785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */,
 				785B22B01E3A454600D0A085 /* SystemComposeViewController.xib */,
+				78D8BD221F5B357A00E9450C /* CustomButtonViewController.h */,
+				78D8BD231F5B357B00E9450C /* CustomButtonViewController.m */,
+				78D8BD241F5B357B00E9450C /* CustomButtonViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -387,12 +395,12 @@
 		785B22C21E3A570F00D0A085 /* RadioButtonsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				785B22C31E3A570F00D0A085 /* RBDropDownVC.h */,
-				785B22C41E3A570F00D0A085 /* RBDropDownVC.m */,
-				785B22C51E3A570F00D0A085 /* RBDropDownVC.xib */,
-				785B22C61E3A570F00D0A085 /* RBSliderVC.h */,
-				785B22C71E3A570F00D0A085 /* RBSliderVC.m */,
-				785B22C81E3A570F00D0A085 /* RBSliderVC.xib */,
+				785B22C31E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.h */,
+				785B22C41E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m */,
+				785B22C51E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib */,
+				785B22C61E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.h */,
+				785B22C71E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m */,
+				785B22C81E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib */,
 			);
 			path = RadioButtonsViewController;
 			sourceTree = "<group>";
@@ -500,6 +508,7 @@
 				TargetAttributes = {
 					785B22281E3A21D800D0A085 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = K236FB7WP6;
 						ProvisioningStyle = Automatic;
 					};
 					785B22411E3A21D800D0A085 = {
@@ -544,17 +553,18 @@
 				784B62DA1EB8323900BE5BEF /* arrowLeft_red@2x.png in Resources */,
 				784B62DC1EB8323900BE5BEF /* arrowRight_red@2x.png in Resources */,
 				784B62D91EB8323900BE5BEF /* arrowLeft_gray@2x.png in Resources */,
+				78D8BD261F5B357B00E9450C /* CustomButtonViewController.xib in Resources */,
 				785B223C1E3A21D800D0A085 /* LaunchScreen.storyboard in Resources */,
 				785B22BC1E3A455D00D0A085 /* addChannel_normal@2x.png in Resources */,
 				785B22BD1E3A455D00D0A085 /* addChannel_selected@2x.png in Resources */,
 				785B22B31E3A454600D0A085 /* SliderViewController.xib in Resources */,
-				785B22D01E3A570F00D0A085 /* RBSliderVC.xib in Resources */,
+				785B22D01E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib in Resources */,
 				785B22B71E3A454600D0A085 /* SystemComposeViewController.xib in Resources */,
 				785B22391E3A21D800D0A085 /* Assets.xcassets in Resources */,
 				785B22371E3A21D800D0A085 /* Main.storyboard in Resources */,
 				784B62D81EB8323900BE5BEF /* arrowDown_dark.png in Resources */,
 				78C3AFDD1EA93C110085E102 /* checkedYES@2x.png in Resources */,
-				785B22CE1E3A570F00D0A085 /* RBDropDownVC.xib in Resources */,
+				785B22CE1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib in Resources */,
 				785B22A31E3A293C00D0A085 /* Home1.xib in Resources */,
 				784B62DD1EB8323900BE5BEF /* arrowUp_white@2x.png in Resources */,
 				785B22B51E3A454600D0A085 /* RadioButtonCycleComposeViewController.xib in Resources */,
@@ -683,16 +693,17 @@
 				784B62E41EB8326100BE5BEF /* UIScrollView+CJAddContentView.m in Sources */,
 				784B62D71EB8323900BE5BEF /* MySliderRadioButtonsDataSource.m in Sources */,
 				784B62D61EB8323900BE5BEF /* MyRadioButtonsPopupSample.m in Sources */,
-				785891381EC98948004DDA76 /* CJCycleCollectionView.m in Sources */,
 				785B22311E3A21D800D0A085 /* AppDelegate.m in Sources */,
+				78D8BD251F5B357B00E9450C /* CustomButtonViewController.m in Sources */,
 				785B22A21E3A293C00D0A085 /* Home1.m in Sources */,
 				784B62D51EB8323900BE5BEF /* CJRadioButtons.m in Sources */,
 				784B62E81EB8351600BE5BEF /* CJRadioButtonCycleComposeView.m in Sources */,
 				785B22C11E3A45A700D0A085 /* CJSystemComposeViewController.m in Sources */,
-				785B22CD1E3A570F00D0A085 /* RBDropDownVC.m in Sources */,
+				785B22CD1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m in Sources */,
 				785B22B61E3A454600D0A085 /* SystemComposeViewController.m in Sources */,
+				78D8BD211F5B24A600E9450C /* CJRadioModule.m in Sources */,
 				784B62E31EB8326100BE5BEF /* CJCycleComposeView.m in Sources */,
-				785B22CF1E3A570F00D0A085 /* RBSliderVC.m in Sources */,
+				785B22CF1E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m in Sources */,
 				785B22B41E3A454600D0A085 /* RadioButtonCycleComposeViewController.m in Sources */,
 				785B222E1E3A21D800D0A085 /* main.m in Sources */,
 				784B62D31EB8323900BE5BEF /* CJButton.m in Sources */,
@@ -847,6 +858,7 @@
 			baseConfigurationReference = CB9A64240C17C26FA856DCB1 /* Pods-CJRadioDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K236FB7WP6;
 				INFOPLIST_FILE = CJRadioDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJRadioDemo;
@@ -859,6 +871,7 @@
 			baseConfigurationReference = 0F770CD48874255F58B95817 /* Pods-CJRadioDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K236FB7WP6;
 				INFOPLIST_FILE = CJRadioDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvlproad.CJRadioDemo;

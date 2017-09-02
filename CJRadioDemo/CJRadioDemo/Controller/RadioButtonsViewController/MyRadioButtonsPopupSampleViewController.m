@@ -1,23 +1,22 @@
 //
-//  RBDropDownVC.m
+//  MyRadioButtonsPopupSampleViewController.m
 //  CJRadioDemo
 //
-//  Created by lichq on 15/11/11.
+//  Created by ciyouzen on 15/11/11.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
-#import "RBDropDownVC.h"
-#import "MyRadioButtonsPopupSample.h"
+#import "MyRadioButtonsPopupSampleViewController.h"
 #import "TestDataUtil.h"
 
 
-@interface RBDropDownVC () <CJRadioButtonsPopupSampleDataSource> {
+@interface MyRadioButtonsPopupSampleViewController () <CJRadioButtonsPopupSampleDataSource> {
     
 }
 
 @end
 
-@implementation RBDropDownVC
+@implementation MyRadioButtonsPopupSampleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

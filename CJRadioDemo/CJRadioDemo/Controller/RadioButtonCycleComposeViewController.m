@@ -2,7 +2,7 @@
 //  RadioButtonCycleComposeViewController.m
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-5.
+//  Created by ciyouzen on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
@@ -20,8 +20,10 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"SliderViewController首页", nil);
     
-    NSArray *titles = [TestDataUtil getComponentTitles];
-    self.radioButtonCycleComposeView.titles =  titles;
+    NSArray *radioModules = [TestDataUtil getRadioModules];
+    
+    
+    self.radioButtonCycleComposeView.radioModules =  radioModules;
     self.radioButtonCycleComposeView.showBottomLineView = YES;
 //    self.sliderRadioButtons.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
 //    self.sliderRadioButtons.bottomLineColor = [UIColor redColor];
@@ -31,7 +33,6 @@
                                  rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
                              withArrowImageWidth:20];
     
-    self.radioButtonCycleComposeView.componentViewControllers = [TestDataUtil getComponentViewControllers];
     self.radioButtonCycleComposeView.componentViewParentViewController = self;
     
     self.radioButtonCycleComposeView.defaultSelectedIndex = 1;

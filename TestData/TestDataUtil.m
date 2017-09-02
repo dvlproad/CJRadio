@@ -11,52 +11,119 @@
 
 @implementation TestDataUtil
 
-
-+ (NSArray<UIViewController *> *)getComponentViewControllers {
-    /* 设置radioControllers（黄橙相间） */
-    NSMutableArray *radioControllers = [[NSMutableArray alloc] init];
-    
-    UIViewController *home1 = [[UIViewController alloc]init];
-    home1.view.backgroundColor = [UIColor yellowColor];
-    [radioControllers addObject:home1];
-    
-    UIViewController *home2 = [[UIViewController alloc]init];
-    home2.view.backgroundColor = [UIColor orangeColor];
-    [radioControllers addObject:home2];
-    
-////    UIViewController *home3 = [[UIViewController alloc]init];
-//    Home1 *home3 = [[Home1 alloc] initWithNibName:@"Home1" bundle:nil];
-//    home3.view.backgroundColor = [UIColor yellowColor];
-//    [radioControllers addObject:home3];
-//    
-//    UIViewController *home4 = [[UIViewController alloc]init];
-//    home4.view.backgroundColor = [UIColor orangeColor];
-//    [radioControllers addObject:home4];
-//    
-//    UIViewController *home5 = [[UIViewController alloc]init];
-//    home5.view.backgroundColor = [UIColor yellowColor];
-//    [radioControllers addObject:home5];
-//    
-//    UIViewController *home6 = [[UIViewController alloc]init];
-//    home6.view.backgroundColor = [UIColor orangeColor];
-//    [radioControllers addObject:home6];
-    
-    for (NSInteger i = 0; i < radioControllers.count; i++) {
-        UIViewController *viewController = [radioControllers objectAtIndex:i];
-        
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 300)];
-        label.backgroundColor = [UIColor cyanColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:40];
-        label.text = [NSString stringWithFormat:@"This is home%zd", i+1];
-        [viewController.view addSubview:label];
-    }
-    return radioControllers;
-}
-
 + (NSArray<NSString *> *)getComponentTitles {
+    /*
     NSArray *titles = @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
+    */
+    NSArray *radioModules = [TestDataUtil getRadioModules];
+    
+    NSMutableArray *titles = [[NSMutableArray alloc] init];
+    for (CJRadioModule *radioModule in radioModules) {
+        [titles addObject:radioModule.title];
+    }
     
     return titles;
 }
+
++ (NSArray<UIViewController *> *)getComponentViewControllers {
+    NSArray *radioModules = [TestDataUtil getRadioModules];
+    
+    NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
+    for (CJRadioModule *radioModule in radioModules) {
+        [viewControllers addObject:radioModule.viewController];
+    }
+    
+    return viewControllers;
+}
+
+
++ (NSMutableArray<CJRadioModule *> *)getRadioModules {
+    NSMutableArray *radioModules = [[NSMutableArray alloc] init];
+    
+    {
+        CJRadioModule *radioModule = [[CJRadioModule alloc] init];
+        
+        UIViewController *viewController = [[UIViewController alloc]init];
+        viewController.view.backgroundColor = [UIColor yellowColor];
+        [self addSubviewToViewController:viewController withText:@"This is home1"];
+        radioModule.title = @"Home1第一页";
+        radioModule.viewController = viewController;
+        
+        [radioModules addObject:radioModule];
+    }
+    
+    {
+        CJRadioModule *radioModule = [[CJRadioModule alloc] init];
+        
+        UIViewController *viewController = [[UIViewController alloc]init];
+        viewController.view.backgroundColor = [UIColor yellowColor];
+        [self addSubviewToViewController:viewController withText:@"This is home2"];
+        radioModule.title = @"Home2";
+        radioModule.viewController = viewController;
+        
+        [radioModules addObject:radioModule];
+    }
+    
+    {
+        CJRadioModule *radioModule = [[CJRadioModule alloc] init];
+        
+        UIViewController *viewController = [[UIViewController alloc]init];
+        viewController.view.backgroundColor = [UIColor yellowColor];
+        [self addSubviewToViewController:viewController withText:@"This is home3"];
+        radioModule.title = @"Home3是佛恩";
+        radioModule.viewController = viewController;
+        
+        [radioModules addObject:radioModule];
+    }
+    
+    {
+        CJRadioModule *radioModule = [[CJRadioModule alloc] init];
+        
+        UIViewController *viewController = [[UIViewController alloc]init];
+        viewController.view.backgroundColor = [UIColor yellowColor];
+        [self addSubviewToViewController:viewController withText:@"This is home4"];
+        radioModule.title = @"Home4天赐的爱";
+        radioModule.viewController = viewController;
+        
+        [radioModules addObject:radioModule];
+    }
+    
+    {
+        CJRadioModule *radioModule = [[CJRadioModule alloc] init];
+        
+        UIViewController *viewController = [[UIViewController alloc]init];
+        viewController.view.backgroundColor = [UIColor yellowColor];
+        [self addSubviewToViewController:viewController withText:@"This is home5"];
+        radioModule.title = @"Home5你是礼物";
+        radioModule.viewController = viewController;
+        
+        [radioModules addObject:radioModule];
+    }
+    
+    {
+        CJRadioModule *radioModule = [[CJRadioModule alloc] init];
+        
+        UIViewController *viewController = [[UIViewController alloc]init];
+        viewController.view.backgroundColor = [UIColor yellowColor];
+        [self addSubviewToViewController:viewController withText:@"This is home6"];
+        radioModule.title = @"Home6";
+        radioModule.viewController = viewController;
+        
+        [radioModules addObject:radioModule];
+    }
+    
+    
+    return radioModules;
+}
+
++ (void)addSubviewToViewController:(UIViewController *)viewController withText:(NSString *)text {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, 300)];
+    label.backgroundColor = [UIColor cyanColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:40];
+    label.text = text;
+    [viewController.view addSubview:label];
+}
+
+
 @end

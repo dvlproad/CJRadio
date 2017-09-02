@@ -2,8 +2,8 @@
 //  CJRadioButtonCycleComposeView.m
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-5.
-//  Copyright (c) 2014年 lichq. All rights reserved.
+//  Created by ciyouzen on 14-11-5.
+//  Copyright (c) 2014年 dvlproad. All rights reserved.
 //
 
 #import "CJRadioButtonCycleComposeView.h"
@@ -216,17 +216,17 @@
 }
 
 - (NSInteger)cj_numberOfComponentsInRadioButtons:(CJRadioButtons *)radioButtons {
-    return self.titles.count;
+    return self.radioModules.count;
 }
 
 - (CGFloat)cj_radioButtons:(CJRadioButtons *)radioButtons widthForComponentAtIndex:(NSInteger)index  {
     CGFloat totalWidth = CGRectGetWidth(radioButtons.frame);
-    NSInteger showViewCount = MIN(self.titles.count, self.maxRadioButtonsShowViewCount);
+    NSInteger showViewCount = MIN(self.radioModules.count, self.maxRadioButtonsShowViewCount);
     CGFloat sectionWidth = totalWidth/showViewCount;
     
     sectionWidth = ceilf(sectionWidth); //重点注意：当使用除法计算width时候，为了避免计算出来的值受除后，余数太多，除不尽(eg:102.66666666666667)，而造成的之后在通过左右箭头点击来寻找”要找的按钮“的时候，计算出现问题（”要找的按钮“需与“左右侧箭头的最左最右侧值”进行精确的比较），所以这里我们需要一个整数值，故我们这边选择向上取整。
     
-    if (index == self.titles.count-1) {
+    if (index == self.radioModules.count-1) {
         CGFloat hasUseWidth = (showViewCount-1) * sectionWidth;
         sectionWidth = totalWidth - hasUseWidth; //确保加起来的width不变
     }
@@ -237,8 +237,8 @@
 - (CJButton *)cj_radioButtons:(CJRadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
     CJButton *radioButton = [self.dataSource cj_buttonControllerView:self cellForComponentAtIndex:index];
     
-    NSString *title = [self.titles objectAtIndex:index];
-    [radioButton setTitle:title];
+    CJRadioModule *radioModule = [self.radioModules objectAtIndex:index];
+    [radioButton setTitle:radioModule.title];
     
     return radioButton;
 }
@@ -251,9 +251,11 @@
 
 - (NSArray<UIView *> *)cj_radioViewsInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
     NSMutableArray *views = [[NSMutableArray alloc] init];
-    for (UIViewController *vc in self.componentViewControllers) {
-        [views addObject:vc.view];
-        [self.componentViewParentViewController addChildViewController:vc];//记得添加进去
+    for (CJRadioModule *radioModule in self.radioModules) {
+        UIViewController *viewController = radioModule.viewController;
+        
+        [views addObject:viewController.view];
+        [self.componentViewParentViewController addChildViewController:viewController];//记得添加进去
     }
     
     return views;
@@ -270,7 +272,7 @@
     [self didChangeToIndex:index_cur];
 }
 
-- (void)cj_CJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView didChangeToIndex:(NSInteger)index {
+- (void)cj_cycleComposeView:(CJCycleComposeView *)cycleComposeView didChangeToIndex:(NSInteger)index {
     if (isDelegateDoneInRadioButton == NO) {
         [self.sliderRadioButtons cj_selectComponentAtIndex:index animated:YES];
         self.currentSelectedIndex  = index;

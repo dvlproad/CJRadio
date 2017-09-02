@@ -1,39 +1,38 @@
 //
-//  RBSliderVC.m
+//  MySliderRadioButtonsDataSourceViewController.m
 //  CJRadioDemo
 //
-//  Created by lichq on 15/11/11.
+//  Created by ciyouzen on 15/11/11.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
-#import "RBSliderVC.h"
+#import "MySliderRadioButtonsDataSourceViewController.h"
 #import "TestDataUtil.h"
 #import "MySliderRadioButtonsDataSource.h"
 #import <objc/runtime.h>
 
 #define kDefaultMaxShowCount   4
 
-@interface RBSliderVC () <RadioButtonsDelegate> {
+@interface MySliderRadioButtonsDataSourceViewController () <RadioButtonsDelegate> {
     
 }
 @property (nonatomic, strong) MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
 
 @end
 
-@implementation RBSliderVC
+@implementation MySliderRadioButtonsDataSourceViewController
+
+//一定不要漏了这个滚动操作
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    [self.sliderRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    
-    UIImage *image = [UIImage imageNamed:@"arrowRight_red"];
-    self.myImageBottomButton.imagePosition = MyButtonImagePositionRight;
-    self.myImageBottomButton.backgroundColor = [UIColor lightGrayColor];
-    [self.myImageBottomButton setImage:image forState:UIControlStateNormal];
-    [self.myImageBottomButton setTitle:@"图片在下的button" forState:UIControlStateNormal];
-    
     
     
     //NSArray *titles = [TestDataUtil getViewControllerTitles];
@@ -69,6 +68,15 @@
     });
 }
 
+#pragma mark -  RadioButtonsDelegate
+- (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
+    NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
+}
+
+
+
+
+
 - (IBAction)testReloadView:(id)sender {
     NSArray *newTitles = @[@"News1第一页", @"News2", @"News3", @"News4天赐的爱", @"News5你是礼物", ];
     self.sliderRadioButtonsDataSource.titles = newTitles;
@@ -77,19 +85,6 @@
     
     self.sliderRadioButtons.hideSeparateLine = NO;
     [self.sliderRadioButtons reloadViews];
-    
-}
-
-//一定不要漏了这个滚动操作
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    
-    [self.sliderRadioButtons scollToCurrentSelectedViewWithAnimated:NO];
-}
-
-#pragma mark -  RadioButtonsDelegate
-- (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
-    NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
 }
 
 - (void)didReceiveMemoryWarning {

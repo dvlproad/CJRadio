@@ -2,17 +2,19 @@
 //  ViewController.m
 //  CJRadioDemo
 //
-//  Created by lichq on 15/11/11.
+//  Created by ciyouzen on 15/11/11.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
 #import "ViewController.h"
 
-#import "RBSliderVC.h"
-#import "RBDropDownVC.h"
+#import "Home1.h"
+#import "CustomButtonViewController.h"
+
+#import "MySliderRadioButtonsDataSourceViewController.h"
+#import "MyRadioButtonsPopupSampleViewController.h"
 
 #import "CycleComposeViewController.h"
-#import "Home1.h"
 
 #import "SliderViewController.h"
 #import "RadioButtonCycleComposeViewController.h"
@@ -30,15 +32,30 @@
     self.title = NSLocalizedString(@"CJRadioButtons", nil);
 }
 
-- (IBAction)goRBSliderVC:(id)sender {
-    RBSliderVC *vc = [[RBSliderVC alloc]initWithNibName:@"RBSliderVC" bundle:nil];
+
+- (IBAction)goHome1:(id)sender {
+    Home1 *viewController = [[Home1 alloc] initWithNibName:@"Home1" bundle:nil];
+    viewController.view.backgroundColor = [UIColor yellowColor];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (IBAction)goCustomButtonViewController:(id)sender {
+    CustomButtonViewController *viewController = [[CustomButtonViewController alloc] initWithNibName:@"CustomButtonViewController" bundle:nil];
+    viewController.view.backgroundColor = [UIColor yellowColor];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+
+
+- (IBAction)goMySliderRadioButtonsDataSourceViewController:(id)sender {
+    MySliderRadioButtonsDataSourceViewController *vc = [[MySliderRadioButtonsDataSourceViewController alloc]initWithNibName:@"MySliderRadioButtonsDataSourceViewController" bundle:nil];
     vc.title = [sender titleForState:UIControlStateNormal];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 
-- (IBAction)goRBDropDownVC:(id)sender {
-    RBDropDownVC *vc = [[RBDropDownVC alloc]initWithNibName:@"RBDropDownVC" bundle:nil];
+- (IBAction)goMyRadioButtonsPopupSampleViewController:(id)sender {
+    MyRadioButtonsPopupSampleViewController *vc = [[MyRadioButtonsPopupSampleViewController alloc]initWithNibName:@"MyRadioButtonsPopupSampleViewController" bundle:nil];
     vc.title = [sender titleForState:UIControlStateNormal];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -49,13 +66,6 @@
     CycleComposeViewController *viewController = [[CycleComposeViewController alloc] initWithNibName:@"CycleComposeViewController" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
-- (IBAction)goHome1:(id)sender {
-    Home1 *home3 = [[Home1 alloc] initWithNibName:@"Home1" bundle:nil];
-    home3.view.backgroundColor = [UIColor yellowColor];
-    [self.navigationController pushViewController:home3 animated:YES];
-}
-
 
 
 

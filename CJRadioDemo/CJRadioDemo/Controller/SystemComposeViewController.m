@@ -2,7 +2,7 @@
 //  SystemComposeViewController.m
 //  CJRadioDemo
 //
-//  Created by lichq on 14-11-5.
+//  Created by ciyouzen on 14-11-5.
 //  Copyright (c) 2014年 lichq. All rights reserved.
 //
 
@@ -10,9 +10,12 @@
 #import "TestDataUtil.h"
 #import <PureLayout/PureLayout.h>
 
+#import "MySliderRadioButtonsDataSource.h"
+
 @interface SystemComposeViewController () <RadioButtonsDelegate> {
     
 }
+@property (nonatomic, strong) MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
 
 @end
 
@@ -25,8 +28,14 @@
     
     NSArray *titles = [TestDataUtil getComponentTitles];
     
+    self.sliderRadioButtonsDataSource = [[MySliderRadioButtonsDataSource alloc] init];
+    self.sliderRadioButtonsDataSource.titles = titles;
+    self.sliderRadioButtonsDataSource.defaultSelectedIndex = 0;
+    self.sliderRadioButtonsDataSource.maxButtonShowCount = 5;
+    
+    //sliderRadioButtonsSample
     CJRadioButtons *sliderRadioButtonsSample = [[CJRadioButtons alloc] init];
-//    [sliderRadioButtonsSample setupWithTitles:titles defaultShowIndex:0 maxButtonShowCount:titles.count];
+    sliderRadioButtonsSample.dataSource = self.sliderRadioButtonsDataSource;
     sliderRadioButtonsSample.delegate = self;
     [self.view addSubview:sliderRadioButtonsSample];
     [sliderRadioButtonsSample autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0) excludingEdge:ALEdgeBottom];
