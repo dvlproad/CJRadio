@@ -48,6 +48,8 @@
 		785B22D01E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22C81E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib */; };
 		785B22D11E3A570F00D0A085 /* CycleComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22CB1E3A570F00D0A085 /* CycleComposeViewController.m */; };
 		785B22D21E3A570F00D0A085 /* CycleComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22CC1E3A570F00D0A085 /* CycleComposeViewController.xib */; };
+		785D80E71F7ABACA00B36390 /* CJEqualSizeRadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 785D80E61F7ABACA00B36390 /* CJEqualSizeRadioButtons.m */; };
+		785D80EA1F7ABB2700B36390 /* CJEqualSizeSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 785D80E91F7ABB2700B36390 /* CJEqualSizeSettingModel.m */; };
 		78C3AFDD1EA93C110085E102 /* checkedYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C3AFDC1EA93C110085E102 /* checkedYES@2x.png */; };
 		78D8BD211F5B24A600E9450C /* CJRadioModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8BD201F5B24A600E9450C /* CJRadioModule.m */; };
 		78D8BD251F5B357B00E9450C /* CustomButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8BD231F5B357B00E9450C /* CustomButtonViewController.m */; };
@@ -141,6 +143,10 @@
 		785B22CA1E3A570F00D0A085 /* CycleComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleComposeViewController.h; sourceTree = "<group>"; };
 		785B22CB1E3A570F00D0A085 /* CycleComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleComposeViewController.m; sourceTree = "<group>"; };
 		785B22CC1E3A570F00D0A085 /* CycleComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CycleComposeViewController.xib; sourceTree = "<group>"; };
+		785D80E51F7ABACA00B36390 /* CJEqualSizeRadioButtons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJEqualSizeRadioButtons.h; sourceTree = "<group>"; };
+		785D80E61F7ABACA00B36390 /* CJEqualSizeRadioButtons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJEqualSizeRadioButtons.m; sourceTree = "<group>"; };
+		785D80E81F7ABB2700B36390 /* CJEqualSizeSettingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJEqualSizeSettingModel.h; sourceTree = "<group>"; };
+		785D80E91F7ABB2700B36390 /* CJEqualSizeSettingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJEqualSizeSettingModel.m; sourceTree = "<group>"; };
 		78C3AFDC1EA93C110085E102 /* checkedYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkedYES@2x.png"; sourceTree = "<group>"; };
 		78D8BD1F1F5B24A600E9450C /* CJRadioModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioModule.h; sourceTree = "<group>"; };
 		78D8BD201F5B24A600E9450C /* CJRadioModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRadioModule.m; sourceTree = "<group>"; };
@@ -186,6 +192,10 @@
 				784B62C01EB8323900BE5BEF /* CJButton */,
 				784B62C51EB8323900BE5BEF /* CJRadioButtons.h */,
 				784B62C61EB8323900BE5BEF /* CJRadioButtons.m */,
+				785D80E51F7ABACA00B36390 /* CJEqualSizeRadioButtons.h */,
+				785D80E61F7ABACA00B36390 /* CJEqualSizeRadioButtons.m */,
+				785D80E81F7ABB2700B36390 /* CJEqualSizeSettingModel.h */,
+				785D80E91F7ABB2700B36390 /* CJEqualSizeSettingModel.m */,
 				784B62C71EB8323900BE5BEF /* CJRadioButtonsDataSource */,
 				784B62CC1EB8323900BE5BEF /* Resources */,
 			);
@@ -696,6 +706,7 @@
 				785B22311E3A21D800D0A085 /* AppDelegate.m in Sources */,
 				78D8BD251F5B357B00E9450C /* CustomButtonViewController.m in Sources */,
 				785B22A21E3A293C00D0A085 /* Home1.m in Sources */,
+				785D80EA1F7ABB2700B36390 /* CJEqualSizeSettingModel.m in Sources */,
 				784B62D51EB8323900BE5BEF /* CJRadioButtons.m in Sources */,
 				784B62E81EB8351600BE5BEF /* CJRadioButtonCycleComposeView.m in Sources */,
 				785B22C11E3A45A700D0A085 /* CJSystemComposeViewController.m in Sources */,
@@ -704,6 +715,7 @@
 				78D8BD211F5B24A600E9450C /* CJRadioModule.m in Sources */,
 				784B62E31EB8326100BE5BEF /* CJCycleComposeView.m in Sources */,
 				785B22CF1E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m in Sources */,
+				785D80E71F7ABACA00B36390 /* CJEqualSizeRadioButtons.m in Sources */,
 				785B22B41E3A454600D0A085 /* RadioButtonCycleComposeViewController.m in Sources */,
 				785B222E1E3A21D800D0A085 /* main.m in Sources */,
 				784B62D31EB8323900BE5BEF /* CJButton.m in Sources */,
