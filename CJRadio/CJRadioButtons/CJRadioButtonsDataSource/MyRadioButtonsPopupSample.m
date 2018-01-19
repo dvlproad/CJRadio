@@ -145,7 +145,7 @@
                 UIView *popupSuperview = self.popupSuperview;
                 UIView *accordingView = radioButtons;
                 
-                [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:accordingView relativePosition:CJPopupViewPositionUnder showComplete:^{
+                [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:accordingView relativePosition:CJPopupViewPositionBelow showComplete:^{
                     showComplete(index_cur);
                     
                 } tapBlankComplete:^{
@@ -158,7 +158,7 @@
                 UIView *popupSuperview = self.popupSuperview;
                 UIView *accordingView = [radioButtons.radioButtons objectAtIndex:index_cur];
                 
-                [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:accordingView relativePosition:CJPopupViewPositionUnder showComplete:^{
+                [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:accordingView relativePosition:CJPopupViewPositionBelow showComplete:^{
                     showComplete(index_cur);
                     
                 } tapBlankComplete:^{
@@ -168,7 +168,8 @@
                 break;
             }
             case CJRadioButtonsPopupTypeWindowBottom: {
-                [popupView cj_popupInWindowAtPosition:CJWindowPositionBottom animationType:CJAnimationTypeNormal showComplete:^{
+                CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
+                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight showComplete:^{
                     showComplete(index_cur);
                 } tapBlankComplete:^{
                     tapBlankComplete(index_cur);
