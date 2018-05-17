@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJRadio"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "单选按钮、单选视图"
   s.description  = <<-DESC
                   *、CJRadioButtons：单选按钮组合
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJRadio.git", :tag => "CJRadio_1.0.7" }
+  s.source       = { :git => "https://github.com/dvlproad/CJRadio.git", :tag => "CJRadio_1.0.8" }
   s.source_files  = "CJRadio/*.{h,m}"
   # s.resources = "CJRadio/*.{png,xib}"
   s.frameworks = 'UIKit'
@@ -38,8 +38,19 @@ Pod::Spec.new do |s|
   s.subspec 'CJRadioButtons' do |ss|
     ss.source_files = "CJRadio/CJRadioButtons/**/*.{h,m}"
     ss.resources = "CJRadio/CJRadioButtons/**/*.{png,xib}"
+  end
 
-    ss.dependency 'CJPopupAction'
+  s.subspec 'MySliderRadioButtons' do |ss|
+    ss.source_files = "CJRadio/MySliderRadioButtons/**/*.{h,m}"
+
+    ss.dependency 'CJRadio/CJRadioButtons'
+  end
+
+  s.subspec 'MyPopupRadioButtons' do |ss|
+    ss.source_files = "CJRadio/MyPopupRadioButtons/**/*.{h,m}"
+
+    ss.dependency 'CJRadio/CJRadioButtons'
+    ss.dependency 'CJBaseUIKit/UIView/CJPopupAction'
   end
 
   # 一个可以无限循环的视图组合类

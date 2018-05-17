@@ -24,14 +24,6 @@
     [self CJRadioButtonsPopupSample_commonInit];
 }
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self CJRadioButtonsPopupSample_commonInit];
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

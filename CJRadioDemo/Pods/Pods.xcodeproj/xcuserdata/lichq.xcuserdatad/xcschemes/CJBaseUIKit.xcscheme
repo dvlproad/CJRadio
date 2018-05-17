@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B62F20C8AEE3FEB4AAF6F4FA71C7BB0A'
-               BlueprintName = 'CJPopupAction'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libCJPopupAction.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00B1D931226561CA0EABDF68A6373CA5"
+               BlueprintName = "CJBaseUIKit"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libCJBaseUIKit.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
