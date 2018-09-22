@@ -1,5 +1,7 @@
 PODS:
   - CJBaseUIKit/UIView/CJPopupAction (0.2.0)
+  - CJBaseUtil/CJDataUtil (0.3.0)
+  - Masonry (1.1.0)
   - PureLayout (3.0.2)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
@@ -9,15 +11,28 @@ PODS:
 
 DEPENDENCIES:
   - CJBaseUIKit/UIView/CJPopupAction (~> 0.2.0)
+  - CJBaseUtil/CJDataUtil
+  - Masonry
   - PureLayout (~> 3.0.2)
   - SDCycleScrollView (~> 1.73)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CJBaseUIKit
+    - CJBaseUtil
+    - Masonry
+    - PureLayout
+    - SDCycleScrollView
+    - SDWebImage
+
 SPEC CHECKSUMS:
   CJBaseUIKit: 2a22f7892ba3881bc71399977d64a9597a95fcad
+  CJBaseUtil: 58e64a849ccda0b36799bb16e81ae7983e5ea109
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
-PODFILE CHECKSUM: 5a152443a8d8bfdf20ef4c6252ab731f60e8a649
+PODFILE CHECKSUM: 01e0604ce3a8531782771403c971f2e01df990a3
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

@@ -4,6 +4,8 @@ platform :ios, '7.0'
 target 'CJRadioDemo' do
     pod 'CJBaseUIKit/UIView/CJPopupAction', '~> 0.2.0'
 	pod 'PureLayout', '~> 3.0.2'
+    pod 'Masonry'
+    pod 'CJBaseUtil', :subspecs => ['CJDataUtil']
     
     pod 'SDCycleScrollView', '~> 1.73'
 end

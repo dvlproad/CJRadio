@@ -48,6 +48,29 @@
 		785B22D21E3A570F00D0A085 /* CycleComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22CC1E3A570F00D0A085 /* CycleComposeViewController.xib */; };
 		785D80E71F7ABACA00B36390 /* CJEqualSizeRadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 785D80E61F7ABACA00B36390 /* CJEqualSizeRadioButtons.m */; };
 		785D80EA1F7ABB2700B36390 /* CJEqualSizeSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 785D80E91F7ABB2700B36390 /* CJEqualSizeSettingModel.m */; };
+		7885FC5A21566C1700B97DAA /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */; };
+		7885FC6721566E5500B97DAA /* PopopButtonsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC5D21566E5500B97DAA /* PopopButtonsHomeViewController.m */; };
+		7885FC6821566E5500B97DAA /* RadioButtonHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC6021566E5500B97DAA /* RadioButtonHomeViewController.m */; };
+		7885FC6921566E5500B97DAA /* SliderVCsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC6221566E5500B97DAA /* SliderVCsHomeViewController.m */; };
+		7885FC6A21566E5500B97DAA /* SliderButtonsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC6521566E5500B97DAA /* SliderButtonsHomeViewController.m */; };
+		7885FC7E2156700300B97DAA /* bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC6B2156700200B97DAA /* bg@2x.jpg */; };
+		7885FC7F2156700300B97DAA /* icons8-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC6C2156700200B97DAA /* icons8-menu.png */; };
+		7885FC802156700300B97DAA /* bgSky@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC6D2156700200B97DAA /* bgSky@2x.jpg */; };
+		7885FC812156700300B97DAA /* header@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC6E2156700200B97DAA /* header@2x.jpg */; };
+		7885FC822156700300B97DAA /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC702156700200B97DAA /* arrow_up.png */; };
+		7885FC832156700300B97DAA /* arrow_balland_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC712156700200B97DAA /* arrow_balland_red@2x.png */; };
+		7885FC842156700300B97DAA /* arrow_L_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC722156700200B97DAA /* arrow_L_blue.png */; };
+		7885FC852156700300B97DAA /* arrow_R_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC732156700200B97DAA /* arrow_R_gray@2x.png */; };
+		7885FC862156700300B97DAA /* arrow_R_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC742156700200B97DAA /* arrow_R_blue.png */; };
+		7885FC872156700300B97DAA /* arrow_L_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC752156700200B97DAA /* arrow_L_white@2x.png */; };
+		7885FC882156700300B97DAA /* arrow_back_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC762156700200B97DAA /* arrow_back_red@2x.png */; };
+		7885FC892156700300B97DAA /* arrow_R_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC772156700200B97DAA /* arrow_R_white@2x.png */; };
+		7885FC8A2156700300B97DAA /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC782156700200B97DAA /* arrow_down.png */; };
+		7885FC8B2156700300B97DAA /* bgCar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC792156700200B97DAA /* bgCar@2x.jpg */; };
+		7885FC8C2156700300B97DAA /* icons8-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC7A2156700200B97DAA /* icons8-calendar.png */; };
+		7885FC8D2156700300B97DAA /* icons8-folder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC7B2156700200B97DAA /* icons8-folder.png */; };
+		7885FC8E2156700300B97DAA /* icons8-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC7C2156700300B97DAA /* icons8-home.png */; };
+		7885FC8F2156700300B97DAA /* icons8-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7885FC7D2156700300B97DAA /* icons8-settings.png */; };
 		78C3AFDD1EA93C110085E102 /* checkedYES@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C3AFDC1EA93C110085E102 /* checkedYES@2x.png */; };
 		78D8BD211F5B24A600E9450C /* CJRadioModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8BD201F5B24A600E9450C /* CJRadioModule.m */; };
 		78D8BD251F5B357B00E9450C /* CustomButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D8BD231F5B357B00E9450C /* CustomButtonViewController.m */; };
@@ -143,6 +166,34 @@
 		785D80E61F7ABACA00B36390 /* CJEqualSizeRadioButtons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJEqualSizeRadioButtons.m; sourceTree = "<group>"; };
 		785D80E81F7ABB2700B36390 /* CJEqualSizeSettingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJEqualSizeSettingModel.h; sourceTree = "<group>"; };
 		785D80E91F7ABB2700B36390 /* CJEqualSizeSettingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJEqualSizeSettingModel.m; sourceTree = "<group>"; };
+		7885FC5521566C1700B97DAA /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
+		7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
+		7885FC5C21566E5500B97DAA /* PopopButtonsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopopButtonsHomeViewController.h; sourceTree = "<group>"; };
+		7885FC5D21566E5500B97DAA /* PopopButtonsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopopButtonsHomeViewController.m; sourceTree = "<group>"; };
+		7885FC5F21566E5500B97DAA /* RadioButtonHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButtonHomeViewController.h; sourceTree = "<group>"; };
+		7885FC6021566E5500B97DAA /* RadioButtonHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButtonHomeViewController.m; sourceTree = "<group>"; };
+		7885FC6221566E5500B97DAA /* SliderVCsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderVCsHomeViewController.m; sourceTree = "<group>"; };
+		7885FC6321566E5500B97DAA /* SliderVCsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderVCsHomeViewController.h; sourceTree = "<group>"; };
+		7885FC6521566E5500B97DAA /* SliderButtonsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderButtonsHomeViewController.m; sourceTree = "<group>"; };
+		7885FC6621566E5500B97DAA /* SliderButtonsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderButtonsHomeViewController.h; sourceTree = "<group>"; };
+		7885FC6B2156700200B97DAA /* bg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg@2x.jpg"; sourceTree = "<group>"; };
+		7885FC6C2156700200B97DAA /* icons8-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-menu.png"; sourceTree = "<group>"; };
+		7885FC6D2156700200B97DAA /* bgSky@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgSky@2x.jpg"; sourceTree = "<group>"; };
+		7885FC6E2156700200B97DAA /* header@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "header@2x.jpg"; sourceTree = "<group>"; };
+		7885FC702156700200B97DAA /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
+		7885FC712156700200B97DAA /* arrow_balland_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_balland_red@2x.png"; sourceTree = "<group>"; };
+		7885FC722156700200B97DAA /* arrow_L_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_L_blue.png; sourceTree = "<group>"; };
+		7885FC732156700200B97DAA /* arrow_R_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_gray@2x.png"; sourceTree = "<group>"; };
+		7885FC742156700200B97DAA /* arrow_R_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_R_blue.png; sourceTree = "<group>"; };
+		7885FC752156700200B97DAA /* arrow_L_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_L_white@2x.png"; sourceTree = "<group>"; };
+		7885FC762156700200B97DAA /* arrow_back_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_back_red@2x.png"; sourceTree = "<group>"; };
+		7885FC772156700200B97DAA /* arrow_R_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_white@2x.png"; sourceTree = "<group>"; };
+		7885FC782156700200B97DAA /* arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
+		7885FC792156700200B97DAA /* bgCar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgCar@2x.jpg"; sourceTree = "<group>"; };
+		7885FC7A2156700200B97DAA /* icons8-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-calendar.png"; sourceTree = "<group>"; };
+		7885FC7B2156700200B97DAA /* icons8-folder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-folder.png"; sourceTree = "<group>"; };
+		7885FC7C2156700300B97DAA /* icons8-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-home.png"; sourceTree = "<group>"; };
+		7885FC7D2156700300B97DAA /* icons8-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings.png"; sourceTree = "<group>"; };
 		78C3AFDC1EA93C110085E102 /* checkedYES@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkedYES@2x.png"; sourceTree = "<group>"; };
 		78D8BD1F1F5B24A600E9450C /* CJRadioModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioModule.h; sourceTree = "<group>"; };
 		78D8BD201F5B24A600E9450C /* CJRadioModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRadioModule.m; sourceTree = "<group>"; };
@@ -277,9 +328,11 @@
 				785B22BE1E3A45A700D0A085 /* CJSystemComposeViewController */,
 				785B222F1E3A21D800D0A085 /* AppDelegate.h */,
 				785B22301E3A21D800D0A085 /* AppDelegate.m */,
+				7885FC5521566C1700B97DAA /* AppDelegate+WindowRootViewController.h */,
+				7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */,
+				7885FC4B21566C1600B97DAA /* Demos */,
 				785B22321E3A21D800D0A085 /* ViewController.h */,
 				785B22331E3A21D800D0A085 /* ViewController.m */,
-				785B228C1E3A22E700D0A085 /* Controller */,
 				785B22B81E3A455D00D0A085 /* Resources */,
 				785B22351E3A21D800D0A085 /* Main.storyboard */,
 				785B22381E3A21D800D0A085 /* Assets.xcassets */,
@@ -330,27 +383,6 @@
 			path = ../../CJRadio;
 			sourceTree = "<group>";
 		};
-		785B228C1E3A22E700D0A085 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				785B22C21E3A570F00D0A085 /* RadioButtonsViewController */,
-				785B22C91E3A570F00D0A085 /* RadioComposeViewController */,
-				785B22A81E3A454500D0A085 /* SliderViewController.h */,
-				785B22A91E3A454500D0A085 /* SliderViewController.m */,
-				785B22AA1E3A454500D0A085 /* SliderViewController.xib */,
-				785B22AB1E3A454500D0A085 /* RadioButtonCycleComposeViewController.h */,
-				785B22AC1E3A454500D0A085 /* RadioButtonCycleComposeViewController.m */,
-				785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */,
-				785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */,
-				785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */,
-				785B22B01E3A454600D0A085 /* SystemComposeViewController.xib */,
-				78D8BD221F5B357A00E9450C /* CustomButtonViewController.h */,
-				78D8BD231F5B357B00E9450C /* CustomButtonViewController.m */,
-				78D8BD241F5B357B00E9450C /* CustomButtonViewController.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		785B229C1E3A293C00D0A085 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +399,16 @@
 		785B22B81E3A455D00D0A085 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7885FC6B2156700200B97DAA /* bg@2x.jpg */,
+				7885FC792156700200B97DAA /* bgCar@2x.jpg */,
+				7885FC6D2156700200B97DAA /* bgSky@2x.jpg */,
+				7885FC6E2156700200B97DAA /* header@2x.jpg */,
+				7885FC7A2156700200B97DAA /* icons8-calendar.png */,
+				7885FC7B2156700200B97DAA /* icons8-folder.png */,
+				7885FC7C2156700300B97DAA /* icons8-home.png */,
+				7885FC6C2156700200B97DAA /* icons8-menu.png */,
+				7885FC7D2156700300B97DAA /* icons8-settings.png */,
+				7885FC6F2156700200B97DAA /* arrow */,
 				785B22B91E3A455D00D0A085 /* images */,
 			);
 			path = Resources;
@@ -392,27 +434,88 @@
 			path = ../../CJSystemComposeViewController;
 			sourceTree = "<group>";
 		};
-		785B22C21E3A570F00D0A085 /* RadioButtonsViewController */ = {
+		7885FC4B21566C1600B97DAA /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				7885FC5B21566E5500B97DAA /* DemosPopopButtons */,
+				7885FC5E21566E5500B97DAA /* DemosRadioButton */,
+				7885FC6421566E5500B97DAA /* DemosSliderButtons */,
+				7885FC6121566E5500B97DAA /* DemosSliderVCs */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		7885FC5B21566E5500B97DAA /* DemosPopopButtons */ = {
+			isa = PBXGroup;
+			children = (
+				7885FC5C21566E5500B97DAA /* PopopButtonsHomeViewController.h */,
+				7885FC5D21566E5500B97DAA /* PopopButtonsHomeViewController.m */,
 				785B22C31E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.h */,
 				785B22C41E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m */,
 				785B22C51E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib */,
-				785B22C61E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.h */,
-				785B22C71E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m */,
-				785B22C81E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib */,
 			);
-			path = RadioButtonsViewController;
+			path = DemosPopopButtons;
 			sourceTree = "<group>";
 		};
-		785B22C91E3A570F00D0A085 /* RadioComposeViewController */ = {
+		7885FC5E21566E5500B97DAA /* DemosRadioButton */ = {
 			isa = PBXGroup;
 			children = (
+				7885FC5F21566E5500B97DAA /* RadioButtonHomeViewController.h */,
+				7885FC6021566E5500B97DAA /* RadioButtonHomeViewController.m */,
+				78D8BD221F5B357A00E9450C /* CustomButtonViewController.h */,
+				78D8BD231F5B357B00E9450C /* CustomButtonViewController.m */,
+				78D8BD241F5B357B00E9450C /* CustomButtonViewController.xib */,
+			);
+			path = DemosRadioButton;
+			sourceTree = "<group>";
+		};
+		7885FC6121566E5500B97DAA /* DemosSliderVCs */ = {
+			isa = PBXGroup;
+			children = (
+				7885FC6321566E5500B97DAA /* SliderVCsHomeViewController.h */,
+				7885FC6221566E5500B97DAA /* SliderVCsHomeViewController.m */,
+				785B22AB1E3A454500D0A085 /* RadioButtonCycleComposeViewController.h */,
+				785B22AC1E3A454500D0A085 /* RadioButtonCycleComposeViewController.m */,
+				785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */,
+				785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */,
+				785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */,
+				785B22B01E3A454600D0A085 /* SystemComposeViewController.xib */,
 				785B22CA1E3A570F00D0A085 /* CycleComposeViewController.h */,
 				785B22CB1E3A570F00D0A085 /* CycleComposeViewController.m */,
 				785B22CC1E3A570F00D0A085 /* CycleComposeViewController.xib */,
 			);
-			path = RadioComposeViewController;
+			path = DemosSliderVCs;
+			sourceTree = "<group>";
+		};
+		7885FC6421566E5500B97DAA /* DemosSliderButtons */ = {
+			isa = PBXGroup;
+			children = (
+				7885FC6621566E5500B97DAA /* SliderButtonsHomeViewController.h */,
+				7885FC6521566E5500B97DAA /* SliderButtonsHomeViewController.m */,
+				785B22A81E3A454500D0A085 /* SliderViewController.h */,
+				785B22A91E3A454500D0A085 /* SliderViewController.m */,
+				785B22AA1E3A454500D0A085 /* SliderViewController.xib */,
+				785B22C61E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.h */,
+				785B22C71E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m */,
+				785B22C81E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib */,
+			);
+			path = DemosSliderButtons;
+			sourceTree = "<group>";
+		};
+		7885FC6F2156700200B97DAA /* arrow */ = {
+			isa = PBXGroup;
+			children = (
+				7885FC702156700200B97DAA /* arrow_up.png */,
+				7885FC712156700200B97DAA /* arrow_balland_red@2x.png */,
+				7885FC722156700200B97DAA /* arrow_L_blue.png */,
+				7885FC732156700200B97DAA /* arrow_R_gray@2x.png */,
+				7885FC742156700200B97DAA /* arrow_R_blue.png */,
+				7885FC752156700200B97DAA /* arrow_L_white@2x.png */,
+				7885FC762156700200B97DAA /* arrow_back_red@2x.png */,
+				7885FC772156700200B97DAA /* arrow_R_white@2x.png */,
+				7885FC782156700200B97DAA /* arrow_down.png */,
+			);
+			path = arrow;
 			sourceTree = "<group>";
 		};
 		80E7E6D620AD2261000F762D /* MySliderRadioButtons */ = {
@@ -464,8 +567,6 @@
 				785B22251E3A21D800D0A085 /* Sources */,
 				785B22261E3A21D800D0A085 /* Frameworks */,
 				785B22271E3A21D800D0A085 /* Resources */,
-				98E28CA40FCFBB7A6D06AB26 /* [CP] Embed Pods Frameworks */,
-				31F7161459A6BE9020D448B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -484,8 +585,6 @@
 				785B223E1E3A21D800D0A085 /* Sources */,
 				785B223F1E3A21D800D0A085 /* Frameworks */,
 				785B22401E3A21D800D0A085 /* Resources */,
-				7D51FA50ACB155336849A216 /* [CP] Embed Pods Frameworks */,
-				02BB81CBE44A0953DF4B82F3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -566,24 +665,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7885FC882156700300B97DAA /* arrow_back_red@2x.png in Resources */,
+				7885FC8C2156700300B97DAA /* icons8-calendar.png in Resources */,
 				784B62DB1EB8323900BE5BEF /* arrowRight_gray@2x.png in Resources */,
+				7885FC802156700300B97DAA /* bgSky@2x.jpg in Resources */,
 				785B22D21E3A570F00D0A085 /* CycleComposeViewController.xib in Resources */,
+				7885FC7F2156700300B97DAA /* icons8-menu.png in Resources */,
 				784B62DA1EB8323900BE5BEF /* arrowLeft_red@2x.png in Resources */,
+				7885FC862156700300B97DAA /* arrow_R_blue.png in Resources */,
+				7885FC7E2156700300B97DAA /* bg@2x.jpg in Resources */,
+				7885FC8D2156700300B97DAA /* icons8-folder.png in Resources */,
+				7885FC852156700300B97DAA /* arrow_R_gray@2x.png in Resources */,
 				784B62DC1EB8323900BE5BEF /* arrowRight_red@2x.png in Resources */,
+				7885FC8A2156700300B97DAA /* arrow_down.png in Resources */,
 				784B62D91EB8323900BE5BEF /* arrowLeft_gray@2x.png in Resources */,
 				78D8BD261F5B357B00E9450C /* CustomButtonViewController.xib in Resources */,
 				785B223C1E3A21D800D0A085 /* LaunchScreen.storyboard in Resources */,
+				7885FC892156700300B97DAA /* arrow_R_white@2x.png in Resources */,
 				785B22BC1E3A455D00D0A085 /* addChannel_normal@2x.png in Resources */,
+				7885FC8F2156700300B97DAA /* icons8-settings.png in Resources */,
 				785B22BD1E3A455D00D0A085 /* addChannel_selected@2x.png in Resources */,
 				785B22B31E3A454600D0A085 /* SliderViewController.xib in Resources */,
 				785B22D01E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib in Resources */,
 				785B22B71E3A454600D0A085 /* SystemComposeViewController.xib in Resources */,
+				7885FC812156700300B97DAA /* header@2x.jpg in Resources */,
 				785B22391E3A21D800D0A085 /* Assets.xcassets in Resources */,
+				7885FC8B2156700300B97DAA /* bgCar@2x.jpg in Resources */,
+				7885FC872156700300B97DAA /* arrow_L_white@2x.png in Resources */,
 				785B22371E3A21D800D0A085 /* Main.storyboard in Resources */,
 				784B62D81EB8323900BE5BEF /* arrowDown_dark.png in Resources */,
+				7885FC842156700300B97DAA /* arrow_L_blue.png in Resources */,
 				78C3AFDD1EA93C110085E102 /* checkedYES@2x.png in Resources */,
+				7885FC822156700300B97DAA /* arrow_up.png in Resources */,
 				785B22CE1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib in Resources */,
 				785B22A31E3A293C00D0A085 /* Home1.xib in Resources */,
+				7885FC832156700300B97DAA /* arrow_balland_red@2x.png in Resources */,
+				7885FC8E2156700300B97DAA /* icons8-home.png in Resources */,
 				784B62DD1EB8323900BE5BEF /* arrowUp_white@2x.png in Resources */,
 				785B22B51E3A454600D0A085 /* RadioButtonCycleComposeViewController.xib in Resources */,
 			);
@@ -606,36 +723,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02BB81CBE44A0953DF4B82F3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJRadioDemoTests/Pods-CJRadioDemoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		31F7161459A6BE9020D448B1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5693F1CDDE99A0A75F482411 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -652,36 +739,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7D51FA50ACB155336849A216 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJRadioDemoTests/Pods-CJRadioDemoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		98E28CA40FCFBB7A6D06AB26 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DECA9A7AE527279B5F81F105 /* [CP] Check Pods Manifest.lock */ = {
@@ -709,6 +766,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7885FC6A21566E5500B97DAA /* SliderButtonsHomeViewController.m in Sources */,
 				80E7E6DD20AD2262000F762D /* MyRadioButtonsPopupSample.m in Sources */,
 				784B62D41EB8323900BE5BEF /* MyButton.m in Sources */,
 				785B22A41E3A293C00D0A085 /* TestDataUtil.m in Sources */,
@@ -727,12 +785,16 @@
 				785B22CD1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m in Sources */,
 				785B22B61E3A454600D0A085 /* SystemComposeViewController.m in Sources */,
 				78D8BD211F5B24A600E9450C /* CJRadioModule.m in Sources */,
+				7885FC6721566E5500B97DAA /* PopopButtonsHomeViewController.m in Sources */,
+				7885FC5A21566C1700B97DAA /* AppDelegate+WindowRootViewController.m in Sources */,
 				784B62E31EB8326100BE5BEF /* CJCycleComposeView.m in Sources */,
 				785B22CF1E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m in Sources */,
+				7885FC6821566E5500B97DAA /* RadioButtonHomeViewController.m in Sources */,
 				785D80E71F7ABACA00B36390 /* CJEqualSizeRadioButtons.m in Sources */,
 				785B22B41E3A454600D0A085 /* RadioButtonCycleComposeViewController.m in Sources */,
 				785B222E1E3A21D800D0A085 /* main.m in Sources */,
 				784B62D31EB8323900BE5BEF /* CJButton.m in Sources */,
+				7885FC6921566E5500B97DAA /* SliderVCsHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
