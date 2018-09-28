@@ -26,6 +26,12 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"SystemComposeViewController首页", nil);
     
+    CGRect navigationBarFrame = self.navigationController.navigationBar.bounds;
+    CGFloat navigationBarHeight = CGRectGetHeight(navigationBarFrame);
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+    CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);  //20或44
+    CGFloat topHeight = navigationBarHeight + statusBarHeight;
+    
     NSArray *titles = [TestDataUtil getComponentTitles];
     
     self.sliderRadioButtonsDataSource = [[MySliderRadioButtonsDataSource alloc] init];
@@ -38,7 +44,7 @@
     sliderRadioButtonsSample.dataSource = self.sliderRadioButtonsDataSource;
     sliderRadioButtonsSample.delegate = self;
     [self.view addSubview:sliderRadioButtonsSample];
-    [sliderRadioButtonsSample autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(64, 0, 0, 0) excludingEdge:ALEdgeBottom];
+    [sliderRadioButtonsSample autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(topHeight, 0, 0, 0) excludingEdge:ALEdgeBottom];
     [sliderRadioButtonsSample autoSetDimension:ALDimensionHeight toSize:44];
     
     self.sliderRadioButtons = sliderRadioButtonsSample;

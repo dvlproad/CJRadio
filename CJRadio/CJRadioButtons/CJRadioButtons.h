@@ -65,8 +65,9 @@ typedef NS_ENUM(NSUInteger, RadioButtonType) {
 @property (nonatomic, assign) BOOL hideSeparateLine;    /**< 是否隐藏分割线(默认NO) */
 @property (nonatomic, assign) BOOL showBottomLineView;  /**< 是否显示底部线 */
 @property (nonatomic, strong) UIImage *bottomLineImage; /**< 底部线的图片 */
-@property (nonatomic, strong) UIColor *bottomLineColor; /**< 底部线的图片 */
-@property (nonatomic, assign) CGFloat bottomLineViewHeight;  /**< 底部线的图片的高度（默认1） */
+@property (nonatomic, strong) UIColor *bottomLineColor; /**< 底部线的背景色 */
+@property (nonatomic, assign) CGFloat bottomLineViewHeight; /**< 底部线的图片的高度（默认1） */
+@property (nonatomic, assign) CGFloat bottomLineViewWidth;  /**< 底部线的图片的宽度（无设置时候等于按钮宽度） */
 
 /**
  *  当数据源改变时，可调用此接口更新视图

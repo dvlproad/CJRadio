@@ -151,7 +151,7 @@
     
     //滑动到显示的视图(即中视图)
     if (self.delegate && [self.delegate respondsToSelector:@selector(cj_cycleComposeView:didChangeToIndex:)]) {
-        NSLog(@"centerViewIndex = %zd", centerViewIndex);
+        //NSLog(@"centerViewIndex = %zd", centerViewIndex);
         if (self.viewsOriginCount < 3 && centerViewIndex+1 >= 3) {
             centerViewIndex -= self.viewsOriginCount;
         }
@@ -522,7 +522,7 @@
     }
     //拖动drag的时候才会执行
     CGFloat contentOffsetX = scrollView.contentOffset.x;
-    NSLog(@"drag结束时contentOffsetX = %.1f", contentOffsetX);
+    //NSLog(@"drag结束时contentOffsetX = %.1f", contentOffsetX);
     CGFloat width = CGRectGetWidth(scrollView.frame);
     NSInteger maxIndex = self.views.count-1;
     

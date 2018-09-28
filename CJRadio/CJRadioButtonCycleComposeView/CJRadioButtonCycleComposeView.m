@@ -26,14 +26,6 @@
 
 @implementation CJRadioButtonCycleComposeView
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self commonInit];
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -86,6 +78,12 @@
     self.sliderRadioButtons.showBottomLineView = showBottomLineView;
 }
 
+- (void)setHideSeparateLine:(BOOL)hideSeparateLine {
+    _hideSeparateLine = hideSeparateLine;
+    
+    self.sliderRadioButtons.hideSeparateLine = hideSeparateLine;
+}
+
 - (void)setBottomLineImage:(UIImage *)bottomLineImage {
     _bottomLineImage = bottomLineImage;
     
@@ -103,6 +101,20 @@
     
     self.sliderRadioButtons.bottomLineViewHeight = bottomLineViewHeight;
 }
+
+- (void)setBottomLineViewWidth:(CGFloat)bottomLineViewWidth {
+    _bottomLineViewWidth = bottomLineViewWidth;
+    
+    self.sliderRadioButtons.bottomLineViewWidth = bottomLineViewWidth;
+}
+
+#pragma mark - 设置CJCycleComposeView的附加设置
+- (void)setScrollType:(CJCycleComposeViewScrollType)scrollType {
+    _scrollType = scrollType;
+    
+    self.cycleComposeView.scrollType = scrollType;
+}
+
 
 #pragma mark - reloadData
 - (void)reloadData {

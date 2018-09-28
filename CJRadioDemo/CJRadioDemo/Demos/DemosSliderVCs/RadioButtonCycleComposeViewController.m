@@ -20,19 +20,36 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = NSLocalizedString(@"SliderViewController首页", nil);
     
+    
+    CGRect navigationBarFrame = self.navigationController.navigationBar.bounds;
+    CGFloat navigationBarHeight = CGRectGetHeight(navigationBarFrame);
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+    CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);  //20或44
+    CGFloat topHeight = navigationBarHeight + statusBarHeight;
+    
     NSArray *radioModules = [TestDataUtil getRadioModules];
     
+    CJRadioButtonCycleComposeView *radioButtonCycleComposeView = [[CJRadioButtonCycleComposeView alloc] init];
+    [self.view addSubview:radioButtonCycleComposeView];
+    [radioButtonCycleComposeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view).mas_offset(topHeight);
+        make.bottom.mas_equalTo(self.view);
+    }];
+    self.radioButtonCycleComposeView = radioButtonCycleComposeView;
     
     self.radioButtonCycleComposeView.radioModules =  radioModules;
     self.radioButtonCycleComposeView.showBottomLineView = YES;
 //    self.sliderRadioButtons.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
 //    self.sliderRadioButtons.bottomLineColor = [UIColor redColor];
     self.radioButtonCycleComposeView.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
-    self.radioButtonCycleComposeView.bottomLineViewHeight = 6;
+    self.radioButtonCycleComposeView.bottomLineViewHeight = 4;
+    self.radioButtonCycleComposeView.bottomLineViewWidth = 52;
     [self.radioButtonCycleComposeView addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
                                  rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
                              withArrowImageWidth:20];
     
+    self.radioButtonCycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollHorizontal;
     self.radioButtonCycleComposeView.componentViewParentViewController = self;
     
     self.radioButtonCycleComposeView.defaultSelectedIndex = 1;

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Masonry/Masonry.h>
 #import "CJRadioButtonCycleComposeView.h"
 
 @interface RadioButtonCycleComposeViewController : UIViewController
