@@ -37,7 +37,6 @@
 		785B22B61E3A454600D0A085 /* SystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */; };
 		785B22BC1E3A455D00D0A085 /* addChannel_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 785B22BA1E3A455D00D0A085 /* addChannel_normal@2x.png */; };
 		785B22BD1E3A455D00D0A085 /* addChannel_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 785B22BB1E3A455D00D0A085 /* addChannel_selected@2x.png */; };
-		785B22C11E3A45A700D0A085 /* CJSystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22C01E3A45A700D0A085 /* CJSystemComposeViewController.m */; };
 		785B22CD1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22C41E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m */; };
 		785B22CE1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22C51E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib */; };
 		785B22CF1E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22C71E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m */; };
@@ -53,6 +52,7 @@
 		78720BD5216D9CD10020333E /* EChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BD4216D9CD10020333E /* EChildViewController.m */; };
 		78720BD8216D9CDD0020333E /* FChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BD7216D9CDD0020333E /* FChildViewController.m */; };
 		78720BDC216DC4940020333E /* CycleComposeViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BDB216DC4940020333E /* CycleComposeViewHomeViewController.m */; };
+		78720BE0216DCA550020333E /* SliderVCElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BDF216DCA550020333E /* SliderVCElementFactory.m */; };
 		7885FC5A21566C1700B97DAA /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */; };
 		7885FC6721566E5500B97DAA /* PopopButtonsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC5D21566E5500B97DAA /* PopopButtonsHomeViewController.m */; };
 		7885FC6821566E5500B97DAA /* RadioButtonHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC6021566E5500B97DAA /* RadioButtonHomeViewController.m */; };
@@ -154,8 +154,6 @@
 		785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemComposeViewController.m; sourceTree = "<group>"; };
 		785B22BA1E3A455D00D0A085 /* addChannel_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addChannel_normal@2x.png"; sourceTree = "<group>"; };
 		785B22BB1E3A455D00D0A085 /* addChannel_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addChannel_selected@2x.png"; sourceTree = "<group>"; };
-		785B22BF1E3A45A700D0A085 /* CJSystemComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSystemComposeViewController.h; sourceTree = "<group>"; };
-		785B22C01E3A45A700D0A085 /* CJSystemComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSystemComposeViewController.m; sourceTree = "<group>"; };
 		785B22C31E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRadioButtonsPopupSampleViewController.h; sourceTree = "<group>"; };
 		785B22C41E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRadioButtonsPopupSampleViewController.m; sourceTree = "<group>"; };
 		785B22C51E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyRadioButtonsPopupSampleViewController.xib; sourceTree = "<group>"; };
@@ -183,6 +181,8 @@
 		78720BD7216D9CDD0020333E /* FChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FChildViewController.m; sourceTree = "<group>"; };
 		78720BDA216DC4940020333E /* CycleComposeViewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleComposeViewHomeViewController.h; sourceTree = "<group>"; };
 		78720BDB216DC4940020333E /* CycleComposeViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleComposeViewHomeViewController.m; sourceTree = "<group>"; };
+		78720BDE216DCA550020333E /* SliderVCElementFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SliderVCElementFactory.h; sourceTree = "<group>"; };
+		78720BDF216DCA550020333E /* SliderVCElementFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SliderVCElementFactory.m; sourceTree = "<group>"; };
 		7885FC5521566C1700B97DAA /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		7885FC5C21566E5500B97DAA /* PopopButtonsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopopButtonsHomeViewController.h; sourceTree = "<group>"; };
@@ -342,7 +342,6 @@
 			children = (
 				785B225F1E3A222800D0A085 /* CJRadio */,
 				785B229C1E3A293C00D0A085 /* TestData */,
-				785B22BE1E3A45A700D0A085 /* CJSystemComposeViewController */,
 				785B222F1E3A21D800D0A085 /* AppDelegate.h */,
 				785B22301E3A21D800D0A085 /* AppDelegate.m */,
 				7885FC5521566C1700B97DAA /* AppDelegate+WindowRootViewController.h */,
@@ -439,16 +438,6 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		785B22BE1E3A45A700D0A085 /* CJSystemComposeViewController */ = {
-			isa = PBXGroup;
-			children = (
-				785B22BF1E3A45A700D0A085 /* CJSystemComposeViewController.h */,
-				785B22C01E3A45A700D0A085 /* CJSystemComposeViewController.m */,
-			);
-			name = CJSystemComposeViewController;
-			path = ../../CJSystemComposeViewController;
-			sourceTree = "<group>";
-		};
 		78720BC6216D9B7F0020333E /* ChildViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +469,15 @@
 				785B22CC1E3A570F00D0A085 /* CycleComposeViewController.xib */,
 			);
 			path = DemoCycleComposeView;
+			sourceTree = "<group>";
+		};
+		78720BDD216DCA280020333E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				78720BDE216DCA550020333E /* SliderVCElementFactory.h */,
+				78720BDF216DCA550020333E /* SliderVCElementFactory.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7885FC4B21566C1600B97DAA /* Demos */ = {
@@ -528,6 +526,7 @@
 				785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */,
 				785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */,
 				785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */,
+				78720BDD216DCA280020333E /* Views */,
 			);
 			path = DemosSliderVCs;
 			sourceTree = "<group>";
@@ -665,7 +664,7 @@
 		785B22211E3A21D800D0A085 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = dvlproad;
 				TargetAttributes = {
 					785B22281E3A21D800D0A085 = {
@@ -817,6 +816,7 @@
 				785B22A41E3A293C00D0A085 /* TestDataUtil.m in Sources */,
 				785B22341E3A21D800D0A085 /* ViewController.m in Sources */,
 				785B22B21E3A454600D0A085 /* SliderViewController.m in Sources */,
+				78720BE0216DCA550020333E /* SliderVCElementFactory.m in Sources */,
 				785B22D11E3A570F00D0A085 /* CycleComposeViewController.m in Sources */,
 				784B62E41EB8326100BE5BEF /* UIScrollView+CJAddContentView.m in Sources */,
 				785B22311E3A21D800D0A085 /* AppDelegate.m in Sources */,
@@ -828,7 +828,6 @@
 				78720BCC216D9C960020333E /* BChildViewController.m in Sources */,
 				784B62D51EB8323900BE5BEF /* CJRadioButtons.m in Sources */,
 				784B62E81EB8351600BE5BEF /* CJRadioButtonCycleComposeView.m in Sources */,
-				785B22C11E3A45A700D0A085 /* CJSystemComposeViewController.m in Sources */,
 				785B22CD1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.m in Sources */,
 				785B22B61E3A454600D0A085 /* SystemComposeViewController.m in Sources */,
 				78D8BD211F5B24A600E9450C /* CJRadioModule.m in Sources */,
@@ -908,15 +907,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -957,15 +964,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;

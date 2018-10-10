@@ -8,7 +8,7 @@
 
 #import "MyRadioButtonsPopupSample.h"
 
-@interface MyRadioButtonsPopupSample () <RadioButtonsDataSource, RadioButtonsDelegate>
+@interface MyRadioButtonsPopupSample () <CJRadioButtonsDataSource, CJRadioButtonsDelegate>
 
 @property (nonatomic, strong, readonly) UIImage *dropDownImage;    /**< 箭头图片 */
 @property (nonatomic, strong, readonly) UIView *popupSuperview; /**< 弹出到哪个视图里 */
@@ -52,7 +52,7 @@
 }
 
 
-#pragma mark - RadioButtonsDataSource
+#pragma mark - CJRadioButtonsDataSource
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(CJRadioButtons *)radioButtons {
     return -1;
 }
@@ -99,7 +99,7 @@
 }
 
 
-#pragma mark - RadioButtonsDelegate
+#pragma mark - CJRadioButtonsDelegate
 - (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     //NSLog(@"index_old = %zd, index_cur = %zd", index_old, index_cur);
     

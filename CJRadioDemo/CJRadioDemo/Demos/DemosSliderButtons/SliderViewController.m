@@ -7,15 +7,14 @@
 //
 
 #import "SliderViewController.h"
-#import "TestDataUtil.h"
 #import <PureLayout/PureLayout.h>
-
 #import "MySliderRadioButtonsDataSource.h"
+#import "SliderVCElementFactory.h"
 
 static NSInteger kMaxRadioButtonsShowViewCountDefault = 4;
 static NSInteger kSelectedIndexDefault = 1;
 
-@interface SliderViewController () <RadioButtonsDelegate, CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
+@interface SliderViewController () <CJRadioButtonsDelegate, CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
     
 }
 @property (nonatomic, strong) MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
@@ -102,7 +101,7 @@ static NSInteger kSelectedIndexDefault = 1;
 }
 
 - (NSArray<UIView *> *)cj_radioViewsInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
-    NSArray *radioViewControllers = [TestDataUtil getComponentViewControllers];
+    NSArray *radioViewControllers = [SliderVCElementFactory demoComponentViewControllers];
     
     NSMutableArray *views = [[NSMutableArray alloc] init];
     for (UIViewController *vc in radioViewControllers) {
@@ -113,7 +112,7 @@ static NSInteger kSelectedIndexDefault = 1;
     return views;
 }
 
-#pragma mark - RadioButtonsDelegate & CJCycleComposeViewDelegate
+#pragma mark - CJRadioButtonsDelegate & CJCycleComposeViewDelegate
 - (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
     [self.cycleComposeView cj_selectComponentAtIndex:index_cur animated:YES];

@@ -14,9 +14,4 @@
 @interface TestDataUtil : NSObject
 
 + (NSMutableArray<CJRadioModule *> *)getRadioModules;
-
-+ (NSArray<UIViewController *> *)getComponentViewControllers;
-
-+ (NSArray<NSString *> *)getComponentTitles;
-
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "CycleComposeViewController.h"
-#import "TestDataUtil.h"
+#import "SliderVCElementFactory.h"
 
 @interface CycleComposeViewController () <CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
     
@@ -24,7 +24,7 @@
     self.navigationItem.title = NSLocalizedString(@"CycleComposeViewController", nil);
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.componentViewControllers = [TestDataUtil getComponentViewControllers];
+    self.componentViewControllers = [SliderVCElementFactory demoComponentViewControllers];
     
     self.cycleComposeView.dataSource = self;
     self.cycleComposeView.delegate = self;

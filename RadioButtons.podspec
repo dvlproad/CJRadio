@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJRadio.git", :tag => "CJRadio_1.1.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJRadio.git", :tag => "deprecated_RadioButtons_2.3.0" }
   s.source_files  = "CJRadio/*.{h,m}"
   s.frameworks = 'UIKit'
 

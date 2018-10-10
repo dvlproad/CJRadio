@@ -13,7 +13,7 @@
 
 #define kDefaultMaxShowCount   4
 
-@interface MySliderRadioButtonsDataSourceViewController () <RadioButtonsDelegate> {
+@interface MySliderRadioButtonsDataSourceViewController () <CJRadioButtonsDelegate> {
     
 }
 @property (nonatomic, strong) MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
@@ -74,7 +74,7 @@
     });
 }
 
-#pragma mark -  RadioButtonsDelegate
+#pragma mark -  CJRadioButtonsDelegate
 - (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
 }

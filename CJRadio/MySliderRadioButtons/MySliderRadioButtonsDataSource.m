@@ -10,7 +10,7 @@
 
 @implementation MySliderRadioButtonsDataSource
 
-#pragma mark - RadioButtonsDataSource
+#pragma mark - CJRadioButtonsDataSource
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(CJRadioButtons *)radioButtons {
     return self.defaultSelectedIndex;
 }

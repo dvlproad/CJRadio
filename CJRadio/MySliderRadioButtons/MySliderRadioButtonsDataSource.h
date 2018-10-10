@@ -10,7 +10,7 @@
 #import "CJRadioButtons.h"
 
 ///等宽的单选按钮,已支持刷新功能
-@interface MySliderRadioButtonsDataSource : NSObject <RadioButtonsDataSource> {
+@interface MySliderRadioButtonsDataSource : NSObject <CJRadioButtonsDataSource> {
     
 }
 @property (nonatomic, strong) NSArray *titles;

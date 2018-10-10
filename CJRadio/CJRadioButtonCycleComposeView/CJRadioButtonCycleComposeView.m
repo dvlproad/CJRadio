@@ -8,7 +8,7 @@
 
 #import "CJRadioButtonCycleComposeView.h"
 
-@interface CJRadioButtonCycleComposeView () <RadioButtonsDataSource, RadioButtonsDelegate, CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
+@interface CJRadioButtonCycleComposeView () <CJRadioButtonsDataSource, CJRadioButtonsDelegate, CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
     BOOL isDelegateDoneInRadioButton; //避免点击单选按钮的时候，delegate执行两次
     
 }
@@ -222,7 +222,7 @@
     [self addConstraint:self.radioButtonsRightViewWidthLayoutConstraint];
 }
 
-#pragma mark - RadioButtonsDataSource
+#pragma mark - CJRadioButtonsDataSource
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(CJRadioButtons *)radioButtons {
     return self.defaultSelectedIndex;
 }
@@ -274,7 +274,7 @@
 }
 
 
-#pragma mark - RadioButtonsDelegate & CJCycleComposeViewDelegate
+#pragma mark - CJRadioButtonsDelegate & CJCycleComposeViewDelegate
 - (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     isDelegateDoneInRadioButton = YES;
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);

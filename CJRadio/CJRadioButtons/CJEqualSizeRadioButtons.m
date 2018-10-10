@@ -8,7 +8,7 @@
 
 #import "CJEqualSizeRadioButtons.h"
 
-@interface CJEqualSizeRadioButtons ()<RadioButtonsDataSource, RadioButtonsDelegate> {
+@interface CJEqualSizeRadioButtons ()<CJRadioButtonsDataSource, CJRadioButtonsDelegate> {
     
 }
 //readonly
@@ -62,7 +62,7 @@
 
 
 
-#pragma mark - RadioButtonsDataSource
+#pragma mark - CJRadioButtonsDataSource
 - (NSInteger)cj_defaultShowIndexInRadioButtons:(CJRadioButtons *)radioButtons {
     return self.equalCellSizeSetting.defaultSelectedIndex;
 }
@@ -104,7 +104,7 @@
 }
 
 
-#pragma mark - RadioButtonsDelegate
+#pragma mark - CJRadioButtonsDelegate
 - (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index_cur inSection:0];
     if (self.didTapDataItemBlock) {

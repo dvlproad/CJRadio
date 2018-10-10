@@ -17,32 +17,6 @@
 
 @implementation TestDataUtil
 
-+ (NSArray<NSString *> *)getComponentTitles {
-    /*
-    NSArray *titles = @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6"];
-    */
-    NSArray *radioModules = [TestDataUtil getRadioModules];
-    
-    NSMutableArray *titles = [[NSMutableArray alloc] init];
-    for (CJRadioModule *radioModule in radioModules) {
-        [titles addObject:radioModule.title];
-    }
-    
-    return titles;
-}
-
-+ (NSArray<UIViewController *> *)getComponentViewControllers {
-    NSArray *radioModules = [TestDataUtil getRadioModules];
-    
-    NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
-    for (CJRadioModule *radioModule in radioModules) {
-        [viewControllers addObject:radioModule.viewController];
-    }
-    
-    return viewControllers;
-}
-
-
 + (NSMutableArray<CJRadioModule *> *)getRadioModules {
     NSMutableArray *radioModules = [[NSMutableArray alloc] init];
     

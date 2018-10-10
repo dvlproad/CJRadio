@@ -7,7 +7,7 @@
 //
 
 #import "RadioButtonCycleComposeViewController.h"
-#import "TestDataUtil.h"
+#import "SliderVCElementFactory.h"
 
 @interface RadioButtonCycleComposeViewController () <CJButtonControllerViewDataSource, CJButtonControllerViewDelegate>
 
@@ -27,9 +27,11 @@
     CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);  //20或44
     CGFloat topHeight = navigationBarHeight + statusBarHeight;
     
-    NSArray *radioModules = [TestDataUtil getRadioModules];
-    
-    CJRadioButtonCycleComposeView *radioButtonCycleComposeView = [[CJRadioButtonCycleComposeView alloc] init];
+    CJRadioButtonCycleComposeView *radioButtonCycleComposeView = [SliderVCElementFactory demoRadioButtonCycleComposeView];
+    radioButtonCycleComposeView.radioModules = [SliderVCElementFactory demoRadioModules];
+    radioButtonCycleComposeView.componentViewParentViewController = self;
+    radioButtonCycleComposeView.dataSource = self;
+    radioButtonCycleComposeView.delegate = self;
     [self.view addSubview:radioButtonCycleComposeView];
     [radioButtonCycleComposeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
@@ -37,37 +39,6 @@
         make.bottom.mas_equalTo(self.view);
     }];
     self.radioButtonCycleComposeView = radioButtonCycleComposeView;
-    
-    self.radioButtonCycleComposeView.radioModules =  radioModules;
-    self.radioButtonCycleComposeView.showBottomLineView = YES;
-//    self.sliderRadioButtons.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
-//    self.sliderRadioButtons.bottomLineColor = [UIColor redColor];
-    self.radioButtonCycleComposeView.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
-    self.radioButtonCycleComposeView.bottomLineViewHeight = 4;
-    self.radioButtonCycleComposeView.bottomLineViewWidth = 52;
-    [self.radioButtonCycleComposeView addLeftArrowImage:[UIImage imageNamed:@"arrowLeft_red"]
-                                 rightArrowImage:[UIImage imageNamed:@"arrowRight_red"]
-                             withArrowImageWidth:20];
-    
-    self.radioButtonCycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollHorizontal;
-    self.radioButtonCycleComposeView.componentViewParentViewController = self;
-    
-    self.radioButtonCycleComposeView.defaultSelectedIndex = 1;
-    self.radioButtonCycleComposeView.maxRadioButtonsShowViewCount = 4;
-    self.radioButtonCycleComposeView.radioButtonsHeight = 50;
-    
-    self.radioButtonCycleComposeView.dataSource = self;
-    self.radioButtonCycleComposeView.delegate = self;
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:@"addChannel_normal"] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"addChannel_selected"] forState:UIControlStateSelected];
-    [self.radioButtonCycleComposeView addRadioButtonsLeftView:button withWidth:60];
-    
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setImage:[UIImage imageNamed:@"addChannel_normal"] forState:UIControlStateNormal];
-    [rightButton setImage:[UIImage imageNamed:@"addChannel_selected"] forState:UIControlStateSelected];
-    [self.radioButtonCycleComposeView addRadioButtonsRightView:rightButton withWidth:40];
     
     [self.radioButtonCycleComposeView reloadData];
 }
@@ -81,14 +52,7 @@
 
 #pragma mark - CJButtonControllerViewDataSource && CJButtonControllerViewDelegate
 - (CJButton *)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index {
-    CJButton *radioButton = [[CJButton alloc] init];
-    radioButton.imagePosition = CJButtonImagePositionLeft;
-    radioButton.cjImageView.image = [UIImage imageNamed:@"checkedYES"];
-    
-    [radioButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [radioButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    radioButton.cjNormalBGColor = [UIColor greenColor];
-    radioButton.cjSelectedBGColor = [UIColor redColor];
+    CJButton *radioButton = [SliderVCElementFactory demoRadioButton];
     
     return radioButton;
 }
