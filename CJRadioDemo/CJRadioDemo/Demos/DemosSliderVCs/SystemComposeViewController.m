@@ -8,7 +8,6 @@
 
 #import "SystemComposeViewController.h"
 #import "TestDataUtil.h"
-#import <PureLayout/PureLayout.h>
 
 #import "MySliderRadioButtonsDataSource.h"
 
@@ -36,8 +35,8 @@
 //    [self.selectedViewController beginAppearanceTransition: NO animated: animated];
 //}
 //
-//- (void)viewDidDisappear:(BOOL)animated {
-//    [super viewDidDisappear:animated];
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
 //    [self.selectedViewController endAppearanceTransition];
 //}
 
@@ -46,7 +45,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = NSLocalizedString(@"SystemComposeViewController首页", nil);
+    self.navigationItem.title = NSLocalizedString(@"RadioButtons + transitionFromViewController", nil);
+    self.view.backgroundColor = [UIColor whiteColor];
     
     CGRect navigationBarFrame = self.navigationController.navigationBar.bounds;
     CGFloat navigationBarHeight = CGRectGetHeight(navigationBarFrame);
@@ -56,34 +56,41 @@
     
     NSArray *titles = [TestDataUtil getComponentTitles];
     
-    self.sliderRadioButtonsDataSource = [[MySliderRadioButtonsDataSource alloc] init];
-    self.sliderRadioButtonsDataSource.titles = titles;
-    self.sliderRadioButtonsDataSource.defaultSelectedIndex = 0;
-    self.sliderRadioButtonsDataSource.maxButtonShowCount = 5;
     
     //sliderRadioButtonsSample
-    CJRadioButtons *sliderRadioButtonsSample = [[CJRadioButtons alloc] init];
-    sliderRadioButtonsSample.dataSource = self.sliderRadioButtonsDataSource;
-    sliderRadioButtonsSample.delegate = self;
-    [self.view addSubview:sliderRadioButtonsSample];
-    [sliderRadioButtonsSample autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(topHeight, 0, 0, 0) excludingEdge:ALEdgeBottom];
-    [sliderRadioButtonsSample autoSetDimension:ALDimensionHeight toSize:44];
+    CJRadioButtons *sliderRadioButtons = [[CJRadioButtons alloc] init];
+    //dataSource
+    MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource = [[MySliderRadioButtonsDataSource alloc] init];
+    sliderRadioButtonsDataSource.titles = titles;
+    sliderRadioButtonsDataSource.defaultSelectedIndex = 0;
+    sliderRadioButtonsDataSource.maxButtonShowCount = 5;
+    sliderRadioButtons.dataSource = sliderRadioButtonsDataSource;
+    //delegate
+    sliderRadioButtons.delegate = self;
+    [self.view addSubview:sliderRadioButtons];
+    [sliderRadioButtons mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).mas_offset(topHeight);
+        make.left.right.mas_equalTo(self.view);
+        make.height.mas_equalTo(44);
+    }];
+    self.sliderRadioButtons = sliderRadioButtons;
+    self.sliderRadioButtonsDataSource = sliderRadioButtonsDataSource;
     
-    self.sliderRadioButtons = sliderRadioButtonsSample;
+    UIView *composeView = [[UIView alloc] init];
+    [self.view addSubview:composeView];
+    [composeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(sliderRadioButtons.mas_bottom);
+        make.left.right.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view);
+    }];
+    self.composeView = composeView;
     
-    
-    
-    
-    self.composeView = [[UIView alloc] init];
     self.componentViewControllers = [TestDataUtil getComponentViewControllers];
-    [self.view addSubview:self.composeView];
-    [self.composeView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.sliderRadioButtons withOffset:0];
-    [self.composeView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(0, 0, 0, 0) excludingEdge:ALEdgeTop];
 }
 
 #pragma mark - RadioButtonsDataSource & RadioButtonsDelegate
 - (void)cj_radioButtons:(CJRadioButtons *)radioButtons chooseIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old {
-    
+    NSLog(@"---------------------");
     [self cj_chooseViewControllerIndex:index_cur oldIndex:index_old completeBlock:^(NSInteger index_cur) {
 //        [self doSomethingToCon_whereIndex:index_cur];
     }];

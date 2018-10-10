@@ -8,7 +8,9 @@
 
 #import "CJSystemComposeViewController.h"
 
-@interface CJSystemComposeViewController ()
+@interface CJSystemComposeViewController () {
+    
+}
 
 @end
 
@@ -26,17 +28,17 @@
     
     NSInteger count = componentViewControllers.count;
     for (NSInteger index = 0; index < count; index++) {
-        UIViewController *viewController = [componentViewControllers objectAtIndex:index];
         if (index == self.currentSelectedIndex) {
-            [self cj_makeView:self.composeView addSubView:viewController.view withEdgeInsets:UIEdgeInsetsZero];
-            
+            UIViewController *viewController = [componentViewControllers objectAtIndex:index];
             [self addChildViewController:viewController];
+            [self cj_makeView:self.composeView addSubView:viewController.view withEdgeInsets:UIEdgeInsetsZero];
         }
     }
 }
 
-
+//- (void)replaceViewController:(UIViewController *)oldShowViewController newViewController:(UIViewController *)newShowViewController {
 - (void)cj_chooseViewControllerIndex:(NSInteger)index_cur oldIndex:(NSInteger)index_old completeBlock:(void(^)(NSInteger index_cur))completeBlock {
+    //NSLog(@"---------------------");
     //NSLog(@"index_old = %ld, index_cur = %ld", index_old, index_cur);
     //[self.CJCycleComposeView cj_selectComponentAtIndex:index_cur animated:YES];
     if (index_cur == index_old) {
@@ -45,27 +47,24 @@
     
     UIViewController *newShowViewController = [self.componentViewControllers objectAtIndex:index_cur];
     UIViewController *oldShowViewController = [self.componentViewControllers objectAtIndex:index_old];
+    
     [self addChildViewController:newShowViewController];
-    [self cj_makeView:self.composeView addSubView:newShowViewController.view withEdgeInsets:UIEdgeInsetsZero];
-    
-    
-    [self transitionFromViewController:oldShowViewController
-                      toViewController:newShowViewController
-                              duration:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                                  
-                              } completion:^(BOOL finished) {
-                                  if (finished) {
-                                      [newShowViewController didMoveToParentViewController:self];
-                                      [oldShowViewController willMoveToParentViewController:nil];
-                                      [oldShowViewController.view removeFromSuperview];
-                                      [oldShowViewController removeFromParentViewController];
-                                      
-                                      self.currentSelectedIndex = index_cur;
-                                  } else {
-                                      
-                                      self.currentSelectedIndex = index_old;
-                                  }
-                              }];
+    [self transitionFromViewController:oldShowViewController toViewController:newShowViewController duration:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [newShowViewController didMoveToParentViewController:self];
+            [oldShowViewController willMoveToParentViewController:nil];
+            [oldShowViewController.view removeFromSuperview];
+            [oldShowViewController removeFromParentViewController];
+            [self cj_makeView:self.composeView addSubView:newShowViewController.view withEdgeInsets:UIEdgeInsetsZero];
+            
+            self.currentSelectedIndex = index_cur;
+        } else {
+            
+            self.currentSelectedIndex = index_old;
+        }
+    }];
     
     if (completeBlock) {
         completeBlock(index_cur);

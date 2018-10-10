@@ -1,22 +1,21 @@
 //
-//  SliderVCsHomeViewController.m
+//  CycleComposeViewHomeViewController.m
 //  CJUIKitDemo
 //
 //  Created by ciyouzen on 2017/2/25.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "SliderVCsHomeViewController.h"
-#import "SystemComposeViewController.h"
-#import "RadioButtonCycleComposeViewController.h"
+#import "CycleComposeViewHomeViewController.h"
+#import "CycleComposeViewController.h"
 
-@interface SliderVCsHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface CycleComposeViewHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
 }
 
 @end
 
-@implementation SliderVCsHomeViewController
+@implementation CycleComposeViewHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,24 +36,15 @@
     
     NSMutableArray *sectionDataModels = [[NSMutableArray alloc] init];
     
-    //SliderVCs
+    //CycleComposeView
     {
         CJSectionDataModel *sectionDataModel = [[CJSectionDataModel alloc] init];
-        sectionDataModel.theme = @"SliderVCs相关";
-        
+        sectionDataModel.theme = @"CycleComposeView相关";
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"RadioButtons + transitionFromViewController";
-            xibModule.classEntry = [SystemComposeViewController class];
+            xibModule.title = @"CycleComposeView";
+            xibModule.classEntry = [CycleComposeViewController class];
             
-            [sectionDataModel.values addObject:xibModule];
-        }
-        
-        {
-            CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"RadioButtons + CycleComposeView";
-            xibModule.classEntry = [RadioButtonCycleComposeViewController class];
-
             [sectionDataModel.values addObject:xibModule];
         }
 
@@ -113,7 +103,6 @@
     UIViewController *viewController = nil;
     
     NSArray *noxibViewControllers = @[NSStringFromClass([UIViewController class]),
-                                      NSStringFromClass([SystemComposeViewController class]),
                                     ];
     
     NSString *clsString = NSStringFromClass(moduleModel.classEntry);

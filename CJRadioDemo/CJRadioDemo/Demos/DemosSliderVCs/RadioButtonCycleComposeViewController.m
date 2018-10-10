@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = NSLocalizedString(@"SliderViewController首页", nil);
-    
+    self.navigationItem.title = NSLocalizedString(@"RadioButtons + CycleComposeView", nil);
+    self.view.backgroundColor = [UIColor whiteColor];
     
     CGRect navigationBarFrame = self.navigationController.navigationBar.bounds;
     CGFloat navigationBarHeight = CGRectGetHeight(navigationBarFrame);
@@ -94,6 +94,7 @@
 }
 
 - (void)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView didChangeToIndex:(NSInteger)index {
+    NSLog(@"---------------------");
     //NSLog(@"didChangeToIndex = %ld", index);
 }
 

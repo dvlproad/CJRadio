@@ -18,9 +18,9 @@
     NSLog(@"%@ viewWillAppear", NSStringFromClass([self class]));
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    NSLog(@"%@ viewDidDisappear", NSStringFromClass([self class]));
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"%@ viewWillDisappear", NSStringFromClass([self class]));
 }
 
 - (void)viewDidLoad {

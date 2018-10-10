@@ -11,6 +11,9 @@
 #import "RadioButtonHomeViewController.h"
 #import "SliderButtonsHomeViewController.h"
 #import "PopopButtonsHomeViewController.h"
+
+#import "CycleComposeViewHomeViewController.h"
+
 #import "SliderVCsHomeViewController.h"
 
 @implementation AppDelegate (WindowRootViewController)
@@ -50,6 +53,14 @@
     foundationHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *foundationHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:foundationHomeViewController];
     [tabBarController addChildViewController:foundationHomeNavigationController];
+    
+    CycleComposeViewHomeViewController *cycleComposeViewHomeViewController = [[CycleComposeViewHomeViewController alloc] init];
+    cycleComposeViewHomeViewController.view.backgroundColor = [UIColor whiteColor];
+    cycleComposeViewHomeViewController.navigationItem.title = NSLocalizedString(@"CycleComposeView首页", nil);
+    cycleComposeViewHomeViewController.tabBarItem.title = NSLocalizedString(@"CycleComposeView", nil);
+    cycleComposeViewHomeViewController.tabBarItem.image = [[UIImage imageNamed:@"icons8-settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UINavigationController *cycleComposeViewHomeNavigationController = [[UINavigationController alloc] initWithRootViewController:cycleComposeViewHomeViewController];
+    [tabBarController addChildViewController:cycleComposeViewHomeNavigationController];
     
     SliderVCsHomeViewController *utilHomeViewController = [[SliderVCsHomeViewController alloc] init];
     utilHomeViewController.view.backgroundColor = [UIColor whiteColor];

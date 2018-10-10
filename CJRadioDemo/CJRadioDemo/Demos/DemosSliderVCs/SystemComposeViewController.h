@@ -7,6 +7,7 @@
 //
 
 #import "CJSystemComposeViewController.h"
+#import <Masonry/Masonry.h>
 #import "CJRadioButtons.h"
 
 @interface SystemComposeViewController : CJSystemComposeViewController {

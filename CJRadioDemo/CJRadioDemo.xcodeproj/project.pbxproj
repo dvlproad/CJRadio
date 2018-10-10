@@ -35,7 +35,6 @@
 		785B22B41E3A454600D0A085 /* RadioButtonCycleComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22AC1E3A454500D0A085 /* RadioButtonCycleComposeViewController.m */; };
 		785B22B51E3A454600D0A085 /* RadioButtonCycleComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */; };
 		785B22B61E3A454600D0A085 /* SystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */; };
-		785B22B71E3A454600D0A085 /* SystemComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 785B22B01E3A454600D0A085 /* SystemComposeViewController.xib */; };
 		785B22BC1E3A455D00D0A085 /* addChannel_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 785B22BA1E3A455D00D0A085 /* addChannel_normal@2x.png */; };
 		785B22BD1E3A455D00D0A085 /* addChannel_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 785B22BB1E3A455D00D0A085 /* addChannel_selected@2x.png */; };
 		785B22C11E3A45A700D0A085 /* CJSystemComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 785B22C01E3A45A700D0A085 /* CJSystemComposeViewController.m */; };
@@ -53,6 +52,7 @@
 		78720BD2216D9CC50020333E /* DChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BD1216D9CC50020333E /* DChildViewController.m */; };
 		78720BD5216D9CD10020333E /* EChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BD4216D9CD10020333E /* EChildViewController.m */; };
 		78720BD8216D9CDD0020333E /* FChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BD7216D9CDD0020333E /* FChildViewController.m */; };
+		78720BDC216DC4940020333E /* CycleComposeViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BDB216DC4940020333E /* CycleComposeViewHomeViewController.m */; };
 		7885FC5A21566C1700B97DAA /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */; };
 		7885FC6721566E5500B97DAA /* PopopButtonsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC5D21566E5500B97DAA /* PopopButtonsHomeViewController.m */; };
 		7885FC6821566E5500B97DAA /* RadioButtonHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC6021566E5500B97DAA /* RadioButtonHomeViewController.m */; };
@@ -152,7 +152,6 @@
 		785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioButtonCycleComposeViewController.xib; sourceTree = "<group>"; };
 		785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemComposeViewController.h; sourceTree = "<group>"; };
 		785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemComposeViewController.m; sourceTree = "<group>"; };
-		785B22B01E3A454600D0A085 /* SystemComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SystemComposeViewController.xib; sourceTree = "<group>"; };
 		785B22BA1E3A455D00D0A085 /* addChannel_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addChannel_normal@2x.png"; sourceTree = "<group>"; };
 		785B22BB1E3A455D00D0A085 /* addChannel_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addChannel_selected@2x.png"; sourceTree = "<group>"; };
 		785B22BF1E3A45A700D0A085 /* CJSystemComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSystemComposeViewController.h; sourceTree = "<group>"; };
@@ -182,6 +181,8 @@
 		78720BD4216D9CD10020333E /* EChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EChildViewController.m; sourceTree = "<group>"; };
 		78720BD6216D9CDD0020333E /* FChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FChildViewController.h; sourceTree = "<group>"; };
 		78720BD7216D9CDD0020333E /* FChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FChildViewController.m; sourceTree = "<group>"; };
+		78720BDA216DC4940020333E /* CycleComposeViewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleComposeViewHomeViewController.h; sourceTree = "<group>"; };
+		78720BDB216DC4940020333E /* CycleComposeViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleComposeViewHomeViewController.m; sourceTree = "<group>"; };
 		7885FC5521566C1700B97DAA /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		7885FC5C21566E5500B97DAA /* PopopButtonsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopopButtonsHomeViewController.h; sourceTree = "<group>"; };
@@ -469,9 +470,22 @@
 			path = ChildViewController;
 			sourceTree = "<group>";
 		};
+		78720BD9216DC47A0020333E /* DemoCycleComposeView */ = {
+			isa = PBXGroup;
+			children = (
+				78720BDA216DC4940020333E /* CycleComposeViewHomeViewController.h */,
+				78720BDB216DC4940020333E /* CycleComposeViewHomeViewController.m */,
+				785B22CA1E3A570F00D0A085 /* CycleComposeViewController.h */,
+				785B22CB1E3A570F00D0A085 /* CycleComposeViewController.m */,
+				785B22CC1E3A570F00D0A085 /* CycleComposeViewController.xib */,
+			);
+			path = DemoCycleComposeView;
+			sourceTree = "<group>";
+		};
 		7885FC4B21566C1600B97DAA /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				78720BD9216DC47A0020333E /* DemoCycleComposeView */,
 				7885FC5B21566E5500B97DAA /* DemosPopopButtons */,
 				7885FC5E21566E5500B97DAA /* DemosRadioButton */,
 				7885FC6421566E5500B97DAA /* DemosSliderButtons */,
@@ -514,10 +528,6 @@
 				785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */,
 				785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */,
 				785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */,
-				785B22B01E3A454600D0A085 /* SystemComposeViewController.xib */,
-				785B22CA1E3A570F00D0A085 /* CycleComposeViewController.h */,
-				785B22CB1E3A570F00D0A085 /* CycleComposeViewController.m */,
-				785B22CC1E3A570F00D0A085 /* CycleComposeViewController.xib */,
 			);
 			path = DemosSliderVCs;
 			sourceTree = "<group>";
@@ -722,7 +732,6 @@
 				785B22BD1E3A455D00D0A085 /* addChannel_selected@2x.png in Resources */,
 				785B22B31E3A454600D0A085 /* SliderViewController.xib in Resources */,
 				785B22D01E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.xib in Resources */,
-				785B22B71E3A454600D0A085 /* SystemComposeViewController.xib in Resources */,
 				7885FC812156700300B97DAA /* header@2x.jpg in Resources */,
 				785B22391E3A21D800D0A085 /* Assets.xcassets in Resources */,
 				7885FC8B2156700300B97DAA /* bgCar@2x.jpg in Resources */,
@@ -827,6 +836,7 @@
 				7885FC5A21566C1700B97DAA /* AppDelegate+WindowRootViewController.m in Sources */,
 				78720BCF216D9CA80020333E /* CChildViewController.m in Sources */,
 				784B62E31EB8326100BE5BEF /* CJCycleComposeView.m in Sources */,
+				78720BDC216DC4940020333E /* CycleComposeViewHomeViewController.m in Sources */,
 				785B22CF1E3A570F00D0A085 /* MySliderRadioButtonsDataSourceViewController.m in Sources */,
 				78720BD5216D9CD10020333E /* EChildViewController.m in Sources */,
 				7885FC6821566E5500B97DAA /* RadioButtonHomeViewController.m in Sources */,
