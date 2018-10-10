@@ -8,7 +8,7 @@
 
 #import "SliderButtonsHomeViewController.h"
 #import "SliderViewController.h"
-#import "MySliderRadioButtonsDataSourceViewController.h"
+#import "DemoSliderRadioButtonsDataSourceViewController.h"
 
 @interface SliderButtonsHomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     
@@ -51,7 +51,7 @@
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
             xibModule.title = @"Slider";
-            xibModule.classEntry = [MySliderRadioButtonsDataSourceViewController class];
+            xibModule.classEntry = [DemoSliderRadioButtonsDataSourceViewController class];
             
             [sectionDataModel.values addObject:xibModule];
         }

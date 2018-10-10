@@ -1,14 +1,14 @@
 //
-//  MyRadioButtonsPopupSample.m
+//  DemoPopupRadioButtons.m
 //  CJRadioDemo
 //
 //  Created by ciyouzen on 14-11-5.
 //  Copyright (c) 2014年 dvlproad. All rights reserved.
 //
 
-#import "MyRadioButtonsPopupSample.h"
+#import "DemoPopupRadioButtons.h"
 
-@interface MyRadioButtonsPopupSample () <CJRadioButtonsDataSource, CJRadioButtonsDelegate>
+@interface DemoPopupRadioButtons () <CJRadioButtonsDataSource, CJRadioButtonsDelegate>
 
 @property (nonatomic, strong, readonly) UIImage *dropDownImage;    /**< 箭头图片 */
 @property (nonatomic, strong, readonly) UIView *popupSuperview; /**< 弹出到哪个视图里 */
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation MyRadioButtonsPopupSample
+@implementation DemoPopupRadioButtons
 
 - (void)awakeFromNib {
     [super awakeFromNib];

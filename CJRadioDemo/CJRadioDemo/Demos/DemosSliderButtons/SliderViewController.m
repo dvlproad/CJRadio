@@ -8,7 +8,7 @@
 
 #import "SliderViewController.h"
 #import <PureLayout/PureLayout.h>
-#import "MySliderRadioButtonsDataSource.h"
+#import "DemoSliderRadioButtonsDataSource.h"
 #import "SliderVCElementFactory.h"
 
 static NSInteger kMaxRadioButtonsShowViewCountDefault = 4;
@@ -17,7 +17,7 @@ static NSInteger kSelectedIndexDefault = 1;
 @interface SliderViewController () <CJRadioButtonsDelegate, CJCycleComposeViewDataSource, CJCycleComposeViewDelegate> {
     
 }
-@property (nonatomic, strong) MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
+@property (nonatomic, strong) DemoSliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
 
 @end
 
@@ -45,7 +45,7 @@ static NSInteger kSelectedIndexDefault = 1;
     self.defaultSelectedIndex = kSelectedIndexDefault;
     self.maxRadioButtonsShowViewCount = kMaxRadioButtonsShowViewCountDefault;
     
-    self.sliderRadioButtonsDataSource = [[MySliderRadioButtonsDataSource alloc] init];
+    self.sliderRadioButtonsDataSource = [[DemoSliderRadioButtonsDataSource alloc] init];
     self.sliderRadioButtonsDataSource.titles = titles;
     self.sliderRadioButtonsDataSource.defaultSelectedIndex = kSelectedIndexDefault;
     self.sliderRadioButtonsDataSource.maxButtonShowCount = kMaxRadioButtonsShowViewCountDefault;

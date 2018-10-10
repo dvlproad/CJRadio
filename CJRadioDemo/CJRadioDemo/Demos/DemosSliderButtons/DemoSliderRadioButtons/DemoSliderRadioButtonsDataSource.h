@@ -1,5 +1,5 @@
 //
-//  MySliderRadioButtonsDataSource.h
+//  DemoSliderRadioButtonsDataSource.h
 //  CJRadioDemo
 //
 //  Created by ciyouzen on 14-11-5.
@@ -10,7 +10,7 @@
 #import "CJRadioButtons.h"
 
 ///等宽的单选按钮,已支持刷新功能
-@interface MySliderRadioButtonsDataSource : NSObject <CJRadioButtonsDataSource> {
+@interface DemoSliderRadioButtonsDataSource : NSObject <CJRadioButtonsDataSource> {
     
 }
 @property (nonatomic, strong) NSArray *titles;

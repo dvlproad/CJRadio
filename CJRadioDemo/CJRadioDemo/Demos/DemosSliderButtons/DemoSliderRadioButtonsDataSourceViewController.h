@@ -1,5 +1,5 @@
 //
-//  MySliderRadioButtonsDataSourceViewController.h
+//  DemoSliderRadioButtonsDataSourceViewController.h
 //  CJRadioDemo
 //
 //  Created by ciyouzen on 15/11/11.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CJRadioButtons.h"
 
-@interface MySliderRadioButtonsDataSourceViewController : UIViewController {
+@interface DemoSliderRadioButtonsDataSourceViewController : UIViewController {
     
 }
 @property (nonatomic, weak) IBOutlet CJRadioButtons *sliderRadioButtons;

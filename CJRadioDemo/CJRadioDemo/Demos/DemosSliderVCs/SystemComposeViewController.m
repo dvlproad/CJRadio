@@ -33,7 +33,7 @@
     CJRadioButtons *sliderRadioButtons = [[CJRadioButtons alloc] init];
     //dataSource
     /*
-    MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource = [[MySliderRadioButtonsDataSource alloc] init];
+    DemoSliderRadioButtonsDataSource *sliderRadioButtonsDataSource = [[DemoSliderRadioButtonsDataSource alloc] init];
     sliderRadioButtonsDataSource.titles = [TestDataUtil getComponentTitles];
     sliderRadioButtonsDataSource.defaultSelectedIndex = 0;
     sliderRadioButtonsDataSource.maxButtonShowCount = 5;

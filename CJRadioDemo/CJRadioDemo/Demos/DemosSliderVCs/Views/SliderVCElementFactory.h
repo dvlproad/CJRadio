@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CJRadioButtonCycleComposeView.h"
-#import "MySliderRadioButtonsDataSource.h"
+#import "DemoSliderRadioButtonsDataSource.h"
 
 @interface SliderVCElementFactory : NSObject
 

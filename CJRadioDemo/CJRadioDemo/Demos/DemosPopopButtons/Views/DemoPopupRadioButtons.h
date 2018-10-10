@@ -1,5 +1,5 @@
 //
-//  MyRadioButtonsPopupSample.h
+//  DemoPopupRadioButtons.h
 //  CJRadioDemo
 //
 //  Created by ciyouzen on 14-11-5.
@@ -16,17 +16,17 @@ typedef NS_ENUM(NSUInteger, CJRadioButtonsPopupType) {
 };
 
 //未验证是否能实现刷新功能
-@class MyRadioButtonsPopupSample;
-@protocol CJRadioButtonsPopupSampleDataSource <NSObject>
+@class DemoPopupRadioButtons;
+@protocol DemoPopupRadioButtonsDataSource <NSObject>
 
-- (UIView *)cj_RadioButtonsPopupSample:(MyRadioButtonsPopupSample *)radioButtonsPopupSample viewForButtonIndex:(NSInteger)index;
+- (UIView *)cj_RadioButtonsPopupSample:(DemoPopupRadioButtons *)radioButtonsPopupSample viewForButtonIndex:(NSInteger)index;
 
 @end
 
-@interface MyRadioButtonsPopupSample : CJRadioButtons {
+@interface DemoPopupRadioButtons : CJRadioButtons {
     
 }
-@property (nonatomic, weak) id<CJRadioButtonsPopupSampleDataSource> radioButtonsPopupSampleDataSource;
+@property (nonatomic, weak) id<DemoPopupRadioButtonsDataSource> radioButtonsPopupSampleDataSource;
 @property (nonatomic, strong, readonly) NSArray *titles;
 
 /**

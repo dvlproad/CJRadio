@@ -1,26 +1,26 @@
 //
-//  MySliderRadioButtonsDataSourceViewController.m
+//  DemoSliderRadioButtonsDataSourceViewController.m
 //  CJRadioDemo
 //
 //  Created by ciyouzen on 15/11/11.
 //  Copyright (c) 2015年 dvlproad. All rights reserved.
 //
 
-#import "MySliderRadioButtonsDataSourceViewController.h"
+#import "DemoSliderRadioButtonsDataSourceViewController.h"
 #import "TestDataUtil.h"
-#import "MySliderRadioButtonsDataSource.h"
+#import "DemoSliderRadioButtonsDataSource.h"
 #import <objc/runtime.h>
 
 #define kDefaultMaxShowCount   4
 
-@interface MySliderRadioButtonsDataSourceViewController () <CJRadioButtonsDelegate> {
+@interface DemoSliderRadioButtonsDataSourceViewController () <CJRadioButtonsDelegate> {
     
 }
-@property (nonatomic, strong) MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
+@property (nonatomic, strong) DemoSliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
 
 @end
 
-@implementation MySliderRadioButtonsDataSourceViewController
+@implementation DemoSliderRadioButtonsDataSourceViewController
 
 //一定不要漏了这个滚动操作
 - (void)viewWillLayoutSubviews {
@@ -43,7 +43,7 @@
     
     //NSArray *titles = [TestDataUtil getViewControllerTitles];
     NSArray *titles = @[@"Home1第一页", @"Home2", @"Home3是佛恩", @"Home4天赐的爱", @"Home5你是礼物", @"Home6", @"Home7", @"Home8", @"Home9", @"Home10", @"Home11", @"Home12", @"Home13", @"Home14", @"Home15"];
-    self.sliderRadioButtonsDataSource = [[MySliderRadioButtonsDataSource alloc] init];
+    self.sliderRadioButtonsDataSource = [[DemoSliderRadioButtonsDataSource alloc] init];
     self.sliderRadioButtonsDataSource.titles = titles;
     self.sliderRadioButtonsDataSource.defaultSelectedIndex = 1;
     self.sliderRadioButtonsDataSource.maxButtonShowCount = kDefaultMaxShowCount;

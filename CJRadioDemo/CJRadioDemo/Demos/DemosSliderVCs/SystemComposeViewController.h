@@ -15,7 +15,7 @@
     
 }
 @property (nonatomic, strong) CJRadioButtons *sliderRadioButtons;
-//@property (nonatomic, strong) MySliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
+//@property (nonatomic, strong) DemoSliderRadioButtonsDataSource *sliderRadioButtonsDataSource;
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, assign) NSInteger defaultSelectedIndex;
 @property (nonatomic, assign) NSInteger maxButtonShowCount; /**< 显示区域显示的个数超过多少就开始滑动 */
