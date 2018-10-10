@@ -83,17 +83,18 @@
 - (CJButton *)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index {
     CJButton *radioButton = [[CJButton alloc] init];
     radioButton.imagePosition = CJButtonImagePositionLeft;
-    radioButton.imageView.image = [UIImage imageNamed:@"checkedYES"];
+    radioButton.cjImageView.image = [UIImage imageNamed:@"checkedYES"];
     
-    radioButton.backgroundColor = [UIColor cyanColor];
-    radioButton.textNormalColor = [UIColor whiteColor];
-    radioButton.textSelectedColor = [UIColor blackColor];
+    [radioButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [radioButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    radioButton.cjNormalBGColor = [UIColor greenColor];
+    radioButton.cjSelectedBGColor = [UIColor redColor];
     
     return radioButton;
 }
 
 - (void)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView didChangeToIndex:(NSInteger)index {
-    NSLog(@"didChangeToIndex = %ld", index);
+    //NSLog(@"didChangeToIndex = %ld", index);
 }
 
 - (void)didReceiveMemoryWarning {

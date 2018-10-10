@@ -44,21 +44,21 @@
         sectionDataModel.theme = @"SliderVCs相关";
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"SliderVCs";
+            xibModule.title = @"RadioButton + CycleComposeView";
             xibModule.classEntry = [RadioButtonCycleComposeViewController class];
 
             [sectionDataModel.values addObject:xibModule];
         }
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"SliderVCs";
+            xibModule.title = @"SystemComposeView";
             xibModule.classEntry = [SystemComposeViewController class];
             
             [sectionDataModel.values addObject:xibModule];
         }
         {
             CJModuleModel *xibModule = [[CJModuleModel alloc] init];
-            xibModule.title = @"SliderVCs";
+            xibModule.title = @"CycleComposeView";
             xibModule.classEntry = [CycleComposeViewController class];
             
             [sectionDataModel.values addObject:xibModule];

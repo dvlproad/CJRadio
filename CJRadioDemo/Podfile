@@ -3,7 +3,8 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 
 target 'CJRadioDemo' do
-    pod 'CJBaseUIKit/UIView/CJPopupAction', '~> 0.2.0'
+    pod 'CJBaseUIKit/UIView/CJPopupAction', '~> 0.2.7'
+    pod 'CJBaseUIKit/UIButton', '~> 0.2.7'
 	pod 'PureLayout', '~> 3.0.2'
     pod 'Masonry'
     pod 'CJBaseUtil', :subspecs => ['CJDataUtil']

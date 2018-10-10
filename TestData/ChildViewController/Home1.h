@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Masonry/Masonry.h>
 
 @interface Home1 : UIViewController
 
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) UITableView *tableView;
 
 @end

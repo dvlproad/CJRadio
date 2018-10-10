@@ -8,6 +8,12 @@
 
 #import "TestDataUtil.h"
 #import "Home1.h"
+#import "AChildViewController.h"
+#import "BChildViewController.h"
+#import "CChildViewController.h"
+#import "DChildViewController.h"
+#import "EChildViewController.h"
+#import "FChildViewController.h"
 
 @implementation TestDataUtil
 
@@ -42,72 +48,48 @@
     
     {
         CJRadioModule *radioModule = [[CJRadioModule alloc] init];
-        
-        UIViewController *viewController = [[UIViewController alloc]init];
-        viewController.view.backgroundColor = [UIColor yellowColor];
-        [self addSubviewToViewController:viewController withText:@"This is home1"];
         radioModule.title = @"Home1第一页";
-        radioModule.viewController = viewController;
+        radioModule.viewController = [[AChildViewController alloc] init];
         
         [radioModules addObject:radioModule];
     }
     
     {
         CJRadioModule *radioModule = [[CJRadioModule alloc] init];
-        
-        UIViewController *viewController = [[UIViewController alloc]init];
-        viewController.view.backgroundColor = [UIColor yellowColor];
-        [self addSubviewToViewController:viewController withText:@"This is home2"];
         radioModule.title = @"Home2";
-        radioModule.viewController = viewController;
+        radioModule.viewController = [[BChildViewController alloc] init];
         
         [radioModules addObject:radioModule];
     }
     
     {
         CJRadioModule *radioModule = [[CJRadioModule alloc] init];
-        
-        UIViewController *viewController = [[UIViewController alloc]init];
-        viewController.view.backgroundColor = [UIColor yellowColor];
-        [self addSubviewToViewController:viewController withText:@"This is home3"];
         radioModule.title = @"Home3是佛恩";
-        radioModule.viewController = viewController;
+        radioModule.viewController = [[CChildViewController alloc] init];
         
         [radioModules addObject:radioModule];
     }
     
     {
         CJRadioModule *radioModule = [[CJRadioModule alloc] init];
-        
-        UIViewController *viewController = [[UIViewController alloc]init];
-        viewController.view.backgroundColor = [UIColor yellowColor];
-        [self addSubviewToViewController:viewController withText:@"This is home4"];
         radioModule.title = @"Home4天赐的爱";
-        radioModule.viewController = viewController;
+        radioModule.viewController = [[DChildViewController alloc] init];
         
         [radioModules addObject:radioModule];
     }
     
     {
         CJRadioModule *radioModule = [[CJRadioModule alloc] init];
-        
-        UIViewController *viewController = [[UIViewController alloc]init];
-        viewController.view.backgroundColor = [UIColor yellowColor];
-        [self addSubviewToViewController:viewController withText:@"This is home5"];
         radioModule.title = @"Home5你是礼物";
-        radioModule.viewController = viewController;
+        radioModule.viewController = [[EChildViewController alloc] init];
         
         [radioModules addObject:radioModule];
     }
     
     {
         CJRadioModule *radioModule = [[CJRadioModule alloc] init];
-        
-        UIViewController *viewController = [[UIViewController alloc]init];
-        viewController.view.backgroundColor = [UIColor yellowColor];
-        [self addSubviewToViewController:viewController withText:@"This is home6"];
         radioModule.title = @"Home6";
-        radioModule.viewController = viewController;
+        radioModule.viewController = [[FChildViewController alloc] init];
         
         [radioModules addObject:radioModule];
     }

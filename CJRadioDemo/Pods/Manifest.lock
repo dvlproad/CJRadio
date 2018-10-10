@@ -1,5 +1,6 @@
 PODS:
-  - CJBaseUIKit/UIView/CJPopupAction (0.2.0)
+  - CJBaseUIKit/UIButton (0.2.7)
+  - CJBaseUIKit/UIView/CJPopupAction (0.2.7)
   - CJBaseUtil/CJDataUtil (0.3.0)
   - Masonry (1.1.0)
   - PureLayout (3.0.2)
@@ -10,7 +11,8 @@ PODS:
   - SDWebImage/Core (4.2.3)
 
 DEPENDENCIES:
-  - CJBaseUIKit/UIView/CJPopupAction (~> 0.2.0)
+  - CJBaseUIKit/UIButton (~> 0.2.7)
+  - CJBaseUIKit/UIView/CJPopupAction (~> 0.2.7)
   - CJBaseUtil/CJDataUtil
   - Masonry
   - PureLayout (~> 3.0.2)
@@ -26,13 +28,13 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
-  CJBaseUIKit: 2a22f7892ba3881bc71399977d64a9597a95fcad
+  CJBaseUIKit: 31235cbbfbd6608d154e0d1c63f1c6fe33054b08
   CJBaseUtil: 58e64a849ccda0b36799bb16e81ae7983e5ea109
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
-PODFILE CHECKSUM: 01e0604ce3a8531782771403c971f2e01df990a3
+PODFILE CHECKSUM: 2f49eae182d89639b35a85c0f13e8cee1ae4237b
 
 COCOAPODS: 1.5.3
