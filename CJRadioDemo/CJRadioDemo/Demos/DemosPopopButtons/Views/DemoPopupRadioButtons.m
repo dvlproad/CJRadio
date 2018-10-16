@@ -137,7 +137,8 @@
                 UIView *popupSuperview = self.popupSuperview;
                 UIView *accordingView = radioButtons;
                 
-                [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:accordingView relativePosition:CJPopupViewPositionBelow showComplete:^{
+                UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+                [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:accordingView relativePosition:CJPopupViewPositionBelow blankBGColor:blankBGColor showComplete:^{
                     showComplete(index_cur);
                     
                 } tapBlankComplete:^{
@@ -150,7 +151,8 @@
                 UIView *popupSuperview = self.popupSuperview;
                 UIView *accordingView = [radioButtons.radioButtons objectAtIndex:index_cur];
                 
-                [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:accordingView relativePosition:CJPopupViewPositionBelow showComplete:^{
+                UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+                [radioButtons cj_showExtendView:popupView inView:popupSuperview locationAccordingView:accordingView relativePosition:CJPopupViewPositionBelow blankBGColor:blankBGColor showComplete:^{
                     showComplete(index_cur);
                     
                 } tapBlankComplete:^{
@@ -161,7 +163,9 @@
             }
             case CJRadioButtonsPopupTypeWindowBottom: {
                 CGFloat popupViewHeight = CGRectGetHeight(popupView.frame);
-                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight showComplete:^{
+                
+                UIColor *blankBGColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6];
+                [popupView cj_popupInBottomWindow:CJAnimationTypeNormal withHeight:popupViewHeight blankBGColor:blankBGColor showComplete:^{
                     showComplete(index_cur);
                 } tapBlankComplete:^{
                     tapBlankComplete(index_cur);

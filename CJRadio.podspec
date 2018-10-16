@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                   *、CJCycleComposeView：一个可以无限循环的视图组合类
                   *、CJRadioButtonCycleComposeView：单选按钮+无限循环的视图
 
-                   A longer description of CJPopupAction in Markdown format.
+                   A longer description of CJRadio in Markdown format.
 
                    * Think: Why did you write this? What is the focus? What does it do?
                    * CocoaPods will be using this to generate tags, and improve search results.

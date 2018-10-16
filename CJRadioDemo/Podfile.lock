@@ -1,8 +1,8 @@
 PODS:
-  - CJBaseUIKit/UIButton (0.2.9)
-  - CJBaseUIKit/UIColor (0.2.9)
-  - CJBaseUIKit/UIView/CJPopupAction (0.2.9)
-  - CJBaseUIKit/UIViewController (0.2.9)
+  - CJBaseUIKit/UIButton (0.3.0)
+  - CJBaseUIKit/UIColor (0.3.0)
+  - CJBaseUIKit/UIView/CJPopupAction (0.3.0)
+  - CJBaseUIKit/UIViewController (0.3.0)
   - CJBaseUtil/CJDataUtil (0.4.2)
   - Masonry (1.1.0)
   - PureLayout (3.0.2)
@@ -32,7 +32,7 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
-  CJBaseUIKit: d4faa9801d7b0ec123eda70a626ad3541711ccd2
+  CJBaseUIKit: 6706574187fb6beb8adcc5c72d70f1815ec232cc
   CJBaseUtil: f4ca1c0b6074c223c689c6f156974feb13b6c3b2
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
