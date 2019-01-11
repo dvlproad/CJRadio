@@ -7,7 +7,7 @@
 //
 
 #import "SystemComposeViewController.h"
-#import "SliderVCElementFactory.h"
+#import "SystemSliderVCElementFactory.h"
 
 @interface SystemComposeViewController () <CJRadioButtonsDataSource, CJRadioButtonsDelegate> {
     
@@ -29,20 +29,9 @@
     CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);  //20或44
     CGFloat topHeight = navigationBarHeight + statusBarHeight;
     
-    //sliderRadioButtons
+    //buttons
     CJRadioButtons *sliderRadioButtons = [[CJRadioButtons alloc] init];
-    //dataSource
-    /*
-    DemoSliderRadioButtonsDataSource *sliderRadioButtonsDataSource = [[DemoSliderRadioButtonsDataSource alloc] init];
-    sliderRadioButtonsDataSource.titles = [TestDataUtil getComponentTitles];
-    sliderRadioButtonsDataSource.defaultSelectedIndex = 0;
-    sliderRadioButtonsDataSource.maxButtonShowCount = 5;
-    self.sliderRadioButtonsDataSource = sliderRadioButtonsDataSource;
-    sliderRadioButtons.dataSource = sliderRadioButtonsDataSource;
-    */
     sliderRadioButtons.dataSource = self;
-    
-    //delegate
     sliderRadioButtons.delegate = self;
     [self.view addSubview:sliderRadioButtons];
     [sliderRadioButtons mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -52,7 +41,7 @@
     }];
     self.sliderRadioButtons = sliderRadioButtons;
     
-    
+    // composeView
     UIView *composeView = [[UIView alloc] init];
     [self.view addSubview:composeView];
     [composeView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -62,8 +51,9 @@
     }];
     self.cjComposeView = composeView;
     
-    self.titles = [SliderVCElementFactory demoComponentTitles];
-    self.cjComponentViewControllers = [SliderVCElementFactory demoComponentViewControllers];
+    // titles
+    self.titles = [SystemSliderVCElementFactory systemDemoComponentTitles];
+    self.cjComponentViewControllers = [SystemSliderVCElementFactory systemDemoComponentViewControllers];
     self.defaultSelectedIndex = 0;
     self.maxButtonShowCount = 5;
 }
@@ -94,7 +84,7 @@
 }
 
 - (CJButton *)cj_radioButtons:(CJRadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
-    CJButton *radioButton = [SliderVCElementFactory demoRadioButton2];
+    CJButton *radioButton = [SystemSliderVCElementFactory systemDemoRadioButton];
     radioButton.title = [self.titles objectAtIndex:index];
     return radioButton;
 }

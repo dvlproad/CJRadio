@@ -1,44 +1,60 @@
 PODS:
+  - CJBaseUIKit/CJAlert (0.3.0):
+    - CJBaseUIKit/UIView/CJPopupAction
+    - Masonry
+  - CJBaseUIKit/CJToast (0.3.0):
+    - MBProgressHUD
   - CJBaseUIKit/UIButton (0.3.0)
   - CJBaseUIKit/UIColor (0.3.0)
+  - CJBaseUIKit/UITextField (0.3.0)
   - CJBaseUIKit/UIView/CJPopupAction (0.3.0)
   - CJBaseUIKit/UIViewController (0.3.0)
-  - CJBaseUtil/CJDataUtil (0.4.2)
+  - CJBaseUtil/CJDataUtil (0.4.5)
   - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
   - PureLayout (3.0.2)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - WMPageController (2.5.2)
 
 DEPENDENCIES:
+  - CJBaseUIKit/CJAlert
+  - CJBaseUIKit/CJToast
   - CJBaseUIKit/UIButton
   - CJBaseUIKit/UIColor
+  - CJBaseUIKit/UITextField
   - CJBaseUIKit/UIView/CJPopupAction
   - CJBaseUIKit/UIViewController
   - CJBaseUtil/CJDataUtil
   - Masonry
   - PureLayout (~> 3.0.2)
   - SDCycleScrollView (~> 1.73)
+  - WMPageController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CJBaseUIKit
     - CJBaseUtil
     - Masonry
+    - MBProgressHUD
     - PureLayout
     - SDCycleScrollView
     - SDWebImage
+    - WMPageController
 
 SPEC CHECKSUMS:
   CJBaseUIKit: 6706574187fb6beb8adcc5c72d70f1815ec232cc
-  CJBaseUtil: f4ca1c0b6074c223c689c6f156974feb13b6c3b2
+  CJBaseUtil: 91723cabc776ae2e4f1d91595775798202636d42
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
 
-PODFILE CHECKSUM: 931422180dfa3dd84b18e6d5ce507e7af1e4c72c
+PODFILE CHECKSUM: 781f17518784145ed17722b207f39f52e233b31e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2

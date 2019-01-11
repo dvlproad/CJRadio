@@ -1,8 +1,9 @@
 //
 //  CChildViewController.m
-//  
+//  CJRadioDemo
 //
-//  Created by 李超前 on 2018/10/10.
+//  Created by ciyouzen on 2018/10/10.
+//  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
 #import "CChildViewController.h"

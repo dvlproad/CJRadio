@@ -1,56 +1,16 @@
 //
-//  SliderVCElementFactory.m
+//  CustomSliderVCElementFactory.m
 //  CJRadioDemo
 //
-//  Created by 李超前 on 2018/10/10.
+//  Created by ciyouzen on 2018/10/10.
 //  Copyright © 2018年 dvlproad. All rights reserved.
 //
 
-#import "SliderVCElementFactory.h"
+#import "CustomSliderVCElementFactory.h"
 #import <CJBaseUIKit/UIColor+CJHex.h>
 #import "TestDataUtil.h"
 
-@implementation SliderVCElementFactory
-
-+ (CJRadioButtonCycleComposeView *)luckinRadioButtonCycleComposeView {
-    CJRadioButtonCycleComposeView *radioButtonCycleComposeView = [[CJRadioButtonCycleComposeView alloc] init];
-    radioButtonCycleComposeView.showBottomLineView = YES;
-    radioButtonCycleComposeView.hideSeparateLine = YES;
-    radioButtonCycleComposeView.bottomLineColor = CJColorFromHexString(@"#01adfe");
-    //radioButtonCycleComposeView.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
-    radioButtonCycleComposeView.bottomLineViewHeight = 4;
-    radioButtonCycleComposeView.bottomLineViewWidth = 52;
-    
-    radioButtonCycleComposeView.scrollType = CJCycleComposeViewScrollTypeBanScrollHorizontal;
-    
-    radioButtonCycleComposeView.defaultSelectedIndex = 0;
-    radioButtonCycleComposeView.maxRadioButtonsShowViewCount = 3;
-    radioButtonCycleComposeView.radioButtonsHeight = 50;
-    
-    return radioButtonCycleComposeView;
-}
-
-+ (CJRadioButtons *)luckinRadioButtons {
-    CJRadioButtons *sliderRadioButtons = [[CJRadioButtons alloc] init];
-    sliderRadioButtons.showBottomLineView = YES;
-    sliderRadioButtons.hideSeparateLine = YES;
-    sliderRadioButtons.bottomLineColor = CJColorFromHexString(@"#01adfe");
-    //sliderRadioButtons.bottomLineImage = [UIImage imageNamed:@"arrowUp_white"];
-    sliderRadioButtons.bottomLineViewHeight = 4;
-    sliderRadioButtons.bottomLineViewWidth = 52;
-    
-    return sliderRadioButtons;
-}
-
-+ (CJButton *)luckinRadioButton {
-    CJButton *radioButton = [[CJButton alloc] init];
-    radioButton.backgroundColor = [UIColor whiteColor];
-    radioButton.imagePosition = CJButtonImagePositionNone;
-    radioButton.textNormalColor = CJColorFromHexString(@"#999999");
-    radioButton.textSelectedColor = [UIColor blackColor];
-    
-    return radioButton;
-}
+@implementation CustomSliderVCElementFactory
 
 + (NSMutableArray<CJRadioModule *> *)demoRadioModules {
     return [TestDataUtil getRadioModules];
@@ -70,6 +30,7 @@
     return titles;
 }
 
+// viewControllers
 + (NSMutableArray<UIViewController *> *)demoComponentViewControllers {
     NSArray *radioModules = [TestDataUtil getRadioModules];
     
@@ -81,6 +42,7 @@
     return viewControllers;
 }
 
+// composeView
 + (CJRadioButtonCycleComposeView *)demoRadioButtonCycleComposeView {
     CJRadioButtonCycleComposeView *radioButtonCycleComposeView = [[CJRadioButtonCycleComposeView alloc] init];
     radioButtonCycleComposeView.showBottomLineView = YES;
@@ -112,6 +74,7 @@
     return radioButtonCycleComposeView;
 }
 
+// button
 + (CJButton *)demoRadioButton {
     CJButton *radioButton = [[CJButton alloc] init];
     radioButton.backgroundColor = [UIColor cyanColor];
@@ -120,33 +83,7 @@
     radioButton.textNormalColor = [UIColor whiteColor];
     radioButton.textSelectedColor = [UIColor blackColor];
     
-    //radioButton.cjImageView.image = [UIImage imageNamed:@"checkedYES"];
-    //[radioButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    //[radioButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    //radioButton.cjNormalBGColor = [UIColor greenColor];
-    //radioButton.cjSelectedBGColor = [UIColor redColor];
-    
     return radioButton;
-}
-
-+ (CJButton *)demoRadioButton2 {
-    CJButton *radioButton = [[CJButton alloc] init];
-    radioButton.layer.masksToBounds = YES;
-    radioButton.layer.cornerRadius = 15;
-    radioButton.clipsToBounds = YES;
-    
-    radioButton.backgroundColor = [UIColor colorWithRed:105/255.0 green:193/255.0 blue:243/255.0 alpha:1]; //#69C1F3
-    radioButton.textNormalColor = [UIColor blackColor];
-    radioButton.textSelectedColor = [UIColor whiteColor];
-    
-    return radioButton;
-}
-
-
-+ (CJRadioButtons *)demoSliderRadioButtons {
-    CJRadioButtons *sliderRadioButtons = [[CJRadioButtons alloc] init];
-    
-    return sliderRadioButtons;
 }
 
 @end

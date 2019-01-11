@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4E32B23A1DB2776F076784B9 /* libPods-CJRadioDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF8BB37787142A3942C3BEE /* libPods-CJRadioDemoTests.a */; };
+		781BCDC0218D864D009E730C /* SystemSliderVCElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 781BCDBF218D864D009E730C /* SystemSliderVCElementFactory.m */; };
+		784AB8D421E8870B00A3F51C /* CChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8D321E8870B00A3F51C /* CChildViewController.m */; };
+		784AB8E121E8885700A3F51C /* CJUIKitCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8D721E8885600A3F51C /* CJUIKitCollectionViewCell.m */; };
+		784AB8E321E8885700A3F51C /* CJUIKitBaseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8DA21E8885600A3F51C /* CJUIKitBaseHomeViewController.m */; };
+		784AB8E421E8885700A3F51C /* CJUIKitBaseScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8DB21E8885600A3F51C /* CJUIKitBaseScrollViewController.m */; };
+		784AB8E521E8885700A3F51C /* CJUIKitBaseHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784AB8DF21E8885600A3F51C /* CJUIKitBaseHomeViewController.xib */; };
+		784AB8E621E8885700A3F51C /* CJUIKitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8E021E8885600A3F51C /* CJUIKitBaseViewController.m */; };
 		784B62D31EB8323900BE5BEF /* CJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62C21EB8323900BE5BEF /* CJButton.m */; };
 		784B62D41EB8323900BE5BEF /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62C41EB8323900BE5BEF /* MyButton.m */; };
 		784B62D51EB8323900BE5BEF /* CJRadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62C61EB8323900BE5BEF /* CJRadioButtons.m */; };
@@ -47,12 +54,11 @@
 		785D80EA1F7ABB2700B36390 /* CJEqualSizeSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 785D80E91F7ABB2700B36390 /* CJEqualSizeSettingModel.m */; };
 		78720BC9216D9C820020333E /* AChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BC8216D9C820020333E /* AChildViewController.m */; };
 		78720BCC216D9C960020333E /* BChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BCB216D9C960020333E /* BChildViewController.m */; };
-		78720BCF216D9CA80020333E /* CChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BCD216D9CA70020333E /* CChildViewController.m */; };
 		78720BD2216D9CC50020333E /* DChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BD1216D9CC50020333E /* DChildViewController.m */; };
 		78720BD5216D9CD10020333E /* EChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BD4216D9CD10020333E /* EChildViewController.m */; };
 		78720BD8216D9CDD0020333E /* FChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BD7216D9CDD0020333E /* FChildViewController.m */; };
 		78720BDC216DC4940020333E /* CycleComposeViewHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BDB216DC4940020333E /* CycleComposeViewHomeViewController.m */; };
-		78720BE0216DCA550020333E /* SliderVCElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BDF216DCA550020333E /* SliderVCElementFactory.m */; };
+		78720BE0216DCA550020333E /* CustomSliderVCElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78720BDF216DCA550020333E /* CustomSliderVCElementFactory.m */; };
 		7885FC5A21566C1700B97DAA /* AppDelegate+WindowRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */; };
 		7885FC6721566E5500B97DAA /* PopopButtonsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC5D21566E5500B97DAA /* PopopButtonsHomeViewController.m */; };
 		7885FC6821566E5500B97DAA /* RadioButtonHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7885FC6021566E5500B97DAA /* RadioButtonHomeViewController.m */; };
@@ -105,6 +111,19 @@
 /* Begin PBXFileReference section */
 		0F770CD48874255F58B95817 /* Pods-CJRadioDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CJRadioDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo.release.xcconfig"; sourceTree = "<group>"; };
 		255CD2B95A231AE9BD64B42C /* libPods-CJRadioDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CJRadioDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		781BCDBE218D864D009E730C /* SystemSliderVCElementFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemSliderVCElementFactory.h; sourceTree = "<group>"; };
+		781BCDBF218D864D009E730C /* SystemSliderVCElementFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemSliderVCElementFactory.m; sourceTree = "<group>"; };
+		784AB8D221E8870B00A3F51C /* CChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CChildViewController.h; sourceTree = "<group>"; };
+		784AB8D321E8870B00A3F51C /* CChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CChildViewController.m; sourceTree = "<group>"; };
+		784AB8D621E8885600A3F51C /* CJUIKitBaseScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseScrollViewController.h; sourceTree = "<group>"; };
+		784AB8D721E8885600A3F51C /* CJUIKitCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitCollectionViewCell.m; sourceTree = "<group>"; };
+		784AB8D921E8885600A3F51C /* CJUIKitBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseViewController.h; sourceTree = "<group>"; };
+		784AB8DA21E8885600A3F51C /* CJUIKitBaseHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseHomeViewController.m; sourceTree = "<group>"; };
+		784AB8DB21E8885600A3F51C /* CJUIKitBaseScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseScrollViewController.m; sourceTree = "<group>"; };
+		784AB8DD21E8885600A3F51C /* CJUIKitCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitCollectionViewCell.h; sourceTree = "<group>"; };
+		784AB8DE21E8885600A3F51C /* CJUIKitBaseHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseHomeViewController.h; sourceTree = "<group>"; };
+		784AB8DF21E8885600A3F51C /* CJUIKitBaseHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJUIKitBaseHomeViewController.xib; sourceTree = "<group>"; };
+		784AB8E021E8885600A3F51C /* CJUIKitBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseViewController.m; sourceTree = "<group>"; };
 		784B62C11EB8323900BE5BEF /* CJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJButton.h; sourceTree = "<group>"; };
 		784B62C21EB8323900BE5BEF /* CJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJButton.m; sourceTree = "<group>"; };
 		784B62C31EB8323900BE5BEF /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
@@ -171,8 +190,6 @@
 		78720BC8216D9C820020333E /* AChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AChildViewController.m; sourceTree = "<group>"; };
 		78720BCA216D9C960020333E /* BChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BChildViewController.h; sourceTree = "<group>"; };
 		78720BCB216D9C960020333E /* BChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BChildViewController.m; sourceTree = "<group>"; };
-		78720BCD216D9CA70020333E /* CChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CChildViewController.m; path = /Users/lichaoqian/Project/Luckin/CJRadio/TestData/ChildViewController/CChildViewController.m; sourceTree = "<absolute>"; };
-		78720BCE216D9CA80020333E /* CChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CChildViewController.h; path = /Users/lichaoqian/Project/Luckin/CJRadio/TestData/ChildViewController/CChildViewController.h; sourceTree = "<absolute>"; };
 		78720BD0216D9CC50020333E /* DChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DChildViewController.h; sourceTree = "<group>"; };
 		78720BD1216D9CC50020333E /* DChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DChildViewController.m; sourceTree = "<group>"; };
 		78720BD3216D9CD10020333E /* EChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EChildViewController.h; sourceTree = "<group>"; };
@@ -181,8 +198,8 @@
 		78720BD7216D9CDD0020333E /* FChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FChildViewController.m; sourceTree = "<group>"; };
 		78720BDA216DC4940020333E /* CycleComposeViewHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleComposeViewHomeViewController.h; sourceTree = "<group>"; };
 		78720BDB216DC4940020333E /* CycleComposeViewHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleComposeViewHomeViewController.m; sourceTree = "<group>"; };
-		78720BDE216DCA550020333E /* SliderVCElementFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SliderVCElementFactory.h; sourceTree = "<group>"; };
-		78720BDF216DCA550020333E /* SliderVCElementFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SliderVCElementFactory.m; sourceTree = "<group>"; };
+		78720BDE216DCA550020333E /* CustomSliderVCElementFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomSliderVCElementFactory.h; sourceTree = "<group>"; };
+		78720BDF216DCA550020333E /* CustomSliderVCElementFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomSliderVCElementFactory.m; sourceTree = "<group>"; };
 		7885FC5521566C1700B97DAA /* AppDelegate+WindowRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+WindowRootViewController.h"; sourceTree = "<group>"; };
 		7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+WindowRootViewController.m"; sourceTree = "<group>"; };
 		7885FC5C21566E5500B97DAA /* PopopButtonsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopopButtonsHomeViewController.h; sourceTree = "<group>"; };
@@ -254,6 +271,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		784AB8D521E8885600A3F51C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				784AB8DE21E8885600A3F51C /* CJUIKitBaseHomeViewController.h */,
+				784AB8DA21E8885600A3F51C /* CJUIKitBaseHomeViewController.m */,
+				784AB8DF21E8885600A3F51C /* CJUIKitBaseHomeViewController.xib */,
+				784AB8D621E8885600A3F51C /* CJUIKitBaseScrollViewController.h */,
+				784AB8DB21E8885600A3F51C /* CJUIKitBaseScrollViewController.m */,
+				784AB8D921E8885600A3F51C /* CJUIKitBaseViewController.h */,
+				784AB8E021E8885600A3F51C /* CJUIKitBaseViewController.m */,
+				784AB8DD21E8885600A3F51C /* CJUIKitCollectionViewCell.h */,
+				784AB8D721E8885600A3F51C /* CJUIKitCollectionViewCell.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		784B62BF1EB8323900BE5BEF /* CJRadioButtons */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +379,7 @@
 				785B22301E3A21D800D0A085 /* AppDelegate.m */,
 				7885FC5521566C1700B97DAA /* AppDelegate+WindowRootViewController.h */,
 				7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */,
+				788D417D2182BDF9002BEED4 /* CommonUI */,
 				7885FC4B21566C1600B97DAA /* Demos */,
 				785B22321E3A21D800D0A085 /* ViewController.h */,
 				785B22331E3A21D800D0A085 /* ViewController.m */,
@@ -445,8 +479,8 @@
 				78720BC8216D9C820020333E /* AChildViewController.m */,
 				78720BCA216D9C960020333E /* BChildViewController.h */,
 				78720BCB216D9C960020333E /* BChildViewController.m */,
-				78720BCE216D9CA80020333E /* CChildViewController.h */,
-				78720BCD216D9CA70020333E /* CChildViewController.m */,
+				784AB8D221E8870B00A3F51C /* CChildViewController.h */,
+				784AB8D321E8870B00A3F51C /* CChildViewController.m */,
 				78720BD0216D9CC50020333E /* DChildViewController.h */,
 				78720BD1216D9CC50020333E /* DChildViewController.m */,
 				78720BD3216D9CD10020333E /* EChildViewController.h */,
@@ -472,8 +506,10 @@
 		78720BDD216DCA280020333E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				78720BDE216DCA550020333E /* SliderVCElementFactory.h */,
-				78720BDF216DCA550020333E /* SliderVCElementFactory.m */,
+				78720BDE216DCA550020333E /* CustomSliderVCElementFactory.h */,
+				78720BDF216DCA550020333E /* CustomSliderVCElementFactory.m */,
+				781BCDBE218D864D009E730C /* SystemSliderVCElementFactory.h */,
+				781BCDBF218D864D009E730C /* SystemSliderVCElementFactory.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -520,11 +556,11 @@
 			children = (
 				7885FC6321566E5500B97DAA /* SliderVCsHomeViewController.h */,
 				7885FC6221566E5500B97DAA /* SliderVCsHomeViewController.m */,
+				785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */,
+				785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */,
 				785B22AB1E3A454500D0A085 /* RadioButtonCycleComposeViewController.h */,
 				785B22AC1E3A454500D0A085 /* RadioButtonCycleComposeViewController.m */,
 				785B22AD1E3A454500D0A085 /* RadioButtonCycleComposeViewController.xib */,
-				785B22AE1E3A454600D0A085 /* SystemComposeViewController.h */,
-				785B22AF1E3A454600D0A085 /* SystemComposeViewController.m */,
 				78720BDD216DCA280020333E /* Views */,
 			);
 			path = DemosSliderVCs;
@@ -560,6 +596,14 @@
 				7885FC782156700200B97DAA /* arrow_down.png */,
 			);
 			path = arrow;
+			sourceTree = "<group>";
+		};
+		788D417D2182BDF9002BEED4 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				784AB8D521E8885600A3F51C /* Base */,
+			);
+			path = CommonUI;
 			sourceTree = "<group>";
 		};
 		80E7E6D620AD2261000F762D /* DemoSliderRadioButtons */ = {
@@ -611,6 +655,7 @@
 				785B22251E3A21D800D0A085 /* Sources */,
 				785B22261E3A21D800D0A085 /* Frameworks */,
 				785B22271E3A21D800D0A085 /* Resources */,
+				D659FB42E2047633DE06AC1F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -743,6 +788,7 @@
 				785B22CE1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib in Resources */,
 				7885FC832156700300B97DAA /* arrow_balland_red@2x.png in Resources */,
 				7885FC8E2156700300B97DAA /* icons8-home.png in Resources */,
+				784AB8E521E8885700A3F51C /* CJUIKitBaseHomeViewController.xib in Resources */,
 				784B62DD1EB8323900BE5BEF /* arrowUp_white@2x.png in Resources */,
 				785B22B51E3A454600D0A085 /* RadioButtonCycleComposeViewController.xib in Resources */,
 			);
@@ -783,6 +829,34 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D659FB42E2047633DE06AC1F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo-resources.sh",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_error.png",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_error@2x.png",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_error@3x.png",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_success.png",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_success@2x.png",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_success@3x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@3x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DECA9A7AE527279B5F81F105 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -808,22 +882,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784AB8E321E8885700A3F51C /* CJUIKitBaseHomeViewController.m in Sources */,
 				7885FC6A21566E5500B97DAA /* SliderButtonsHomeViewController.m in Sources */,
 				80E7E6DD20AD2262000F762D /* DemoPopupRadioButtons.m in Sources */,
+				784AB8E421E8885700A3F51C /* CJUIKitBaseScrollViewController.m in Sources */,
 				784B62D41EB8323900BE5BEF /* MyButton.m in Sources */,
+				784AB8D421E8870B00A3F51C /* CChildViewController.m in Sources */,
 				78720BD8216D9CDD0020333E /* FChildViewController.m in Sources */,
+				784AB8E621E8885700A3F51C /* CJUIKitBaseViewController.m in Sources */,
 				78720BD2216D9CC50020333E /* DChildViewController.m in Sources */,
 				785B22A41E3A293C00D0A085 /* TestDataUtil.m in Sources */,
 				785B22341E3A21D800D0A085 /* ViewController.m in Sources */,
 				785B22B21E3A454600D0A085 /* SliderViewController.m in Sources */,
-				78720BE0216DCA550020333E /* SliderVCElementFactory.m in Sources */,
+				78720BE0216DCA550020333E /* CustomSliderVCElementFactory.m in Sources */,
 				785B22D11E3A570F00D0A085 /* CycleComposeViewController.m in Sources */,
 				784B62E41EB8326100BE5BEF /* UIScrollView+CJAddContentView.m in Sources */,
+				784AB8E121E8885700A3F51C /* CJUIKitCollectionViewCell.m in Sources */,
 				785B22311E3A21D800D0A085 /* AppDelegate.m in Sources */,
 				78D8BD251F5B357B00E9450C /* CustomButtonViewController.m in Sources */,
 				785B22A21E3A293C00D0A085 /* Home1.m in Sources */,
 				78720BC9216D9C820020333E /* AChildViewController.m in Sources */,
 				785D80EA1F7ABB2700B36390 /* CJEqualSizeSettingModel.m in Sources */,
+				781BCDC0218D864D009E730C /* SystemSliderVCElementFactory.m in Sources */,
 				80E7E6DC20AD2262000F762D /* DemoSliderRadioButtonsDataSource.m in Sources */,
 				78720BCC216D9C960020333E /* BChildViewController.m in Sources */,
 				784B62D51EB8323900BE5BEF /* CJRadioButtons.m in Sources */,
@@ -833,7 +913,6 @@
 				78D8BD211F5B24A600E9450C /* CJRadioModule.m in Sources */,
 				7885FC6721566E5500B97DAA /* PopopButtonsHomeViewController.m in Sources */,
 				7885FC5A21566C1700B97DAA /* AppDelegate+WindowRootViewController.m in Sources */,
-				78720BCF216D9CA80020333E /* CChildViewController.m in Sources */,
 				784B62E31EB8326100BE5BEF /* CJCycleComposeView.m in Sources */,
 				78720BDC216DC4940020333E /* CycleComposeViewHomeViewController.m in Sources */,
 				785B22CF1E3A570F00D0A085 /* DemoSliderRadioButtonsDataSourceViewController.m in Sources */,

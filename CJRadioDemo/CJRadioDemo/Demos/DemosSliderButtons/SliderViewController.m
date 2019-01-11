@@ -9,7 +9,7 @@
 #import "SliderViewController.h"
 #import <PureLayout/PureLayout.h>
 #import "DemoSliderRadioButtonsDataSource.h"
-#import "SliderVCElementFactory.h"
+#import "CustomSliderVCElementFactory.h"
 
 static NSInteger kMaxRadioButtonsShowViewCountDefault = 4;
 static NSInteger kSelectedIndexDefault = 1;
@@ -101,7 +101,7 @@ static NSInteger kSelectedIndexDefault = 1;
 }
 
 - (NSArray<UIView *> *)cj_radioViewsInCJCycleComposeView:(CJCycleComposeView *)CJCycleComposeView {
-    NSArray *radioViewControllers = [SliderVCElementFactory demoComponentViewControllers];
+    NSArray *radioViewControllers = [CustomSliderVCElementFactory demoComponentViewControllers];
     
     NSMutableArray *views = [[NSMutableArray alloc] init];
     for (UIViewController *vc in radioViewControllers) {

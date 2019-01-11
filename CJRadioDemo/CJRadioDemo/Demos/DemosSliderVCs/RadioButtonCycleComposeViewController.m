@@ -7,7 +7,7 @@
 //
 
 #import "RadioButtonCycleComposeViewController.h"
-#import "SliderVCElementFactory.h"
+#import "CustomSliderVCElementFactory.h"
 
 @interface RadioButtonCycleComposeViewController () <CJButtonControllerViewDataSource, CJButtonControllerViewDelegate>
 
@@ -27,8 +27,8 @@
     CGFloat statusBarHeight = CGRectGetHeight(statusBarFrame);  //20或44
     CGFloat topHeight = navigationBarHeight + statusBarHeight;
     
-    CJRadioButtonCycleComposeView *radioButtonCycleComposeView = [SliderVCElementFactory demoRadioButtonCycleComposeView];
-    radioButtonCycleComposeView.radioModules = [SliderVCElementFactory demoRadioModules];
+    CJRadioButtonCycleComposeView *radioButtonCycleComposeView = [CustomSliderVCElementFactory demoRadioButtonCycleComposeView];
+    radioButtonCycleComposeView.radioModules = [CustomSliderVCElementFactory demoRadioModules];
     radioButtonCycleComposeView.componentViewParentViewController = self;
     radioButtonCycleComposeView.dataSource = self;
     radioButtonCycleComposeView.delegate = self;
@@ -52,7 +52,7 @@
 
 #pragma mark - CJButtonControllerViewDataSource && CJButtonControllerViewDelegate
 - (CJButton *)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index {
-    CJButton *radioButton = [SliderVCElementFactory demoRadioButton];
+    CJButton *radioButton = [CustomSliderVCElementFactory demoRadioButton];
     
     return radioButton;
 }
