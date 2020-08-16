@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   #验证方法：pod lib lint CJRadio.podspec --allow-warnings --use-libraries --verbose
   s.name         = "CJRadio"
-  s.version      = "1.3.0"
+  s.version      = "1.4.0"
   s.summary      = "单选按钮、单选视图"
   s.description  = <<-DESC
                   *、CJRadioButtons：单选按钮组合
@@ -21,9 +21,9 @@ Pod::Spec.new do |s|
   s.author             = "dvlproad"
   # s.social_media_url   = "http://twitter.com/dvlproad"
 
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJRadio.git", :tag => "CJRadio_1.3.0" }
+  s.source       = { :git => "https://github.com/dvlproad/CJRadio.git", :tag => "CJRadio_1.4.0" }
   s.source_files  = "CJRadio/*.{h,m}"
   # s.resources = "CJRadio/*.{png,xib}"
   s.frameworks = 'UIKit'

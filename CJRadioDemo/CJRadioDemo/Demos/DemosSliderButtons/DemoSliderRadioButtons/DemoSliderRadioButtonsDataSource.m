@@ -35,8 +35,8 @@
     return sectionWidth;
 }
 
-- (CJButton *)cj_radioButtons:(CJRadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
-    CJButton *radioButton = [[CJButton alloc] init];
+- (CJRadioButton *)cj_radioButtons:(CJRadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
+    CJRadioButton *radioButton = [[CJRadioButton alloc] init];
     radioButton.layer.masksToBounds = YES;
     radioButton.layer.cornerRadius = 15;
     radioButton.clipsToBounds = YES;

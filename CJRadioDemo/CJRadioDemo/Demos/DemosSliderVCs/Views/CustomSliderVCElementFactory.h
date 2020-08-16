@@ -20,6 +20,6 @@
 + (CJRadioButtonCycleComposeView *)demoRadioButtonCycleComposeView;
 
 // button
-+ (CJButton *)demoRadioButton;
++ (CJRadioButton *)demoRadioButton;
 
 @end

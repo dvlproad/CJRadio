@@ -51,8 +51,8 @@
 }
 
 #pragma mark - CJButtonControllerViewDataSource && CJButtonControllerViewDelegate
-- (CJButton *)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index {
-    CJButton *radioButton = [CustomSliderVCElementFactory demoRadioButton];
+- (CJRadioButton *)cj_buttonControllerView:(CJRadioButtonCycleComposeView *)buttonControllerView cellForComponentAtIndex:(NSInteger)index {
+    CJRadioButton *radioButton = [CustomSliderVCElementFactory demoRadioButton];
     
     return radioButton;
 }

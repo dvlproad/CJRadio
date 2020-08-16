@@ -83,8 +83,8 @@
     return sectionWidth;
 }
 
-- (CJButton *)cj_radioButtons:(CJRadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
-    CJButton *radioButton = [SystemSliderVCElementFactory systemDemoRadioButton];
+- (CJRadioButton *)cj_radioButtons:(CJRadioButtons *)radioButtons cellForComponentAtIndex:(NSInteger)index {
+    CJRadioButton *radioButton = [SystemSliderVCElementFactory systemDemoRadioButton];
     radioButton.title = [self.titles objectAtIndex:index];
     return radioButton;
 }

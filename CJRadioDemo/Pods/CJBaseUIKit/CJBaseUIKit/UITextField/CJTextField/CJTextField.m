@@ -39,7 +39,7 @@
 - (CGRect)textRectForBounds:(CGRect)bounds {
     CGRect rect = [super textRectForBounds:bounds];
     rect.origin.x += self.leftViewRightOffset;
-    rect.size.width -= self.leftViewRightOffset + self.rightViewLeftOffset;
+    rect.size.width -= self.leftViewRightOffset + self.rightViewLeftOffset + self.rightViewRightOffset;
     
     return rect;
 }
@@ -47,10 +47,17 @@
 - (CGRect)editingRectForBounds:(CGRect)bounds {
     CGRect rect = [super editingRectForBounds:bounds];
     rect.origin.x += self.leftViewRightOffset;
-    rect.size.width -= self.leftViewRightOffset + self.rightViewLeftOffset;
+    rect.size.width -= self.leftViewRightOffset + self.rightViewLeftOffset + self.rightViewRightOffset;
     
     return rect;
 }
+
+//- (CGRect)clearButtonRectForBounds:(CGRect)bounds {
+//    CGRect rect = [super clearButtonRectForBounds:bounds];
+//    rect.origin.x -= self.rightViewRightOffset;
+//    
+//    return rect;
+//}
 
 
 /* 完整的描述请参见文件头部 */
@@ -89,13 +96,27 @@
     CGContextFillRect(context, bottomLineRect);
 }
 //*/
-- (void)addUnderLineWithHeight:(CGFloat)lineHeight color:(UIColor *)lineColor {
+
+/**
+ *  在 textField 底部添加下划线
+ *
+ *  @param lineHeight   lineHeight
+ *  @param lineColor    lineColor
+ *  @param leftMargin   leftMargin
+ *  @param rightMargin  rightMargin
+ */
+- (void)addUnderLineWithHeight:(CGFloat)lineHeight
+                         color:(UIColor *)lineColor
+                    leftMargin:(CGFloat)leftMargin
+                   rightMargin:(CGFloat)rightMargin
+{
     UIView *underline = [[UIView alloc] initWithFrame:CGRectZero];
-    underline.backgroundColor = lineColor;
-    [self cj_makeView:self addBottomSubView:underline withHeight:lineHeight];
+    underline.backgroundColor = lineColor;
+    [self cj_makeView:self addBottomSubView:underline withHeight:lineHeight leftMargin:leftMargin rightMargin:rightMargin];
 }
 
-- (void)cj_makeView:(UIView *)superView addBottomSubView:(UIView *)subView withHeight:(CGFloat)height {
+- (void)cj_makeView:(UIView *)superView addBottomSubView:(UIView *)subView withHeight:(CGFloat)height leftMargin:(CGFloat)leftMargin
+        rightMargin:(CGFloat)rightMargin {
     [superView addSubview:subView];
     subView.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -106,7 +127,7 @@
                                      toItem:superView
                                   attribute:NSLayoutAttributeLeft
                                  multiplier:1
-                                   constant:0]];
+                                   constant:leftMargin]];
     
     [superView addConstraint:
      [NSLayoutConstraint constraintWithItem:subView
@@ -115,7 +136,7 @@
                                      toItem:superView
                                   attribute:NSLayoutAttributeRight
                                  multiplier:1
-                                   constant:0]];
+                                   constant:-rightMargin]];
     
     [superView addConstraint:
      [NSLayoutConstraint constraintWithItem:subView
@@ -134,6 +155,29 @@
                                   attribute:NSLayoutAttributeBottom
                                  multiplier:1
                                    constant:0]];
+}
+
+
+#pragma mark - 禁止显示复制粘贴等菜单
+//通过实现UIResponse的- (BOOL)canPerformAction: withSender:方法来去除双击时的弹出框
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    if (self.forbidMenuType == CJTextFieldForbidMenuTypeAll) {
+        if ([UIMenuController sharedMenuController]) {
+            [UIMenuController sharedMenuController].menuVisible = NO;
+        }
+        return NO;
+        
+    } else if (self.forbidMenuType == CJTextFieldForbidMenuTypeSelectPaste) {
+        if (action == @selector(select:) || action == @selector(selectAll:) ||
+            action == @selector(paste:)) // 禁止选择、全选、粘贴
+        {
+            return YES;
+        }
+        return NO;
+        
+    } else {
+        return [super canPerformAction:action withSender:sender];
+    }
 }
 
 

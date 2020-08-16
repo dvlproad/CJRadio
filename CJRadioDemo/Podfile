@@ -3,13 +3,14 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 
 target 'CJRadioDemo' do
-    pod 'CJBaseUIKit', :subspecs => ['UIColor', 'UIButton', 'UITextField', 'CJToast', 'CJAlert']
-    pod 'CJBaseUIKit', :subspecs => ['UIView/CJPopupAction', 'UIViewController']
-	pod 'PureLayout', '~> 3.0.2'
+    pod 'CQDemoKit',            '~> 0.5.2',     :subspecs => ['BaseVC', 'BaseUtil']
+    pod 'CJBaseUIKit',          :subspecs => ['UIColor', 'UIButton', 'UITextField']
+    pod 'CJBaseUIKit',          :subspecs => ['UIView/CJPopupAction', 'UIViewController']
+	pod 'PureLayout',           '~> 3.0.2'
     pod 'Masonry'
-    pod 'CJBaseUtil', :subspecs => ['CJDataUtil']
+    pod 'CJBaseUtil',           :subspecs => ['CJDataUtil']
 
-    pod 'SDCycleScrollView', '~> 1.73'
+    pod 'SDCycleScrollView'
     pod 'WMPageController'
 end
 

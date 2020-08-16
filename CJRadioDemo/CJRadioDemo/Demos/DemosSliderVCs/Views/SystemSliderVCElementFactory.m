@@ -62,8 +62,8 @@
 }
 
 // button
-+ (CJButton *)systemDemoRadioButton {
-    CJButton *radioButton = [[CJButton alloc] init];
++ (CJRadioButton *)systemDemoRadioButton {
+    CJRadioButton *radioButton = [[CJRadioButton alloc] init];
     radioButton.layer.masksToBounds = YES;
     radioButton.layer.cornerRadius = 15;
     radioButton.clipsToBounds = YES;

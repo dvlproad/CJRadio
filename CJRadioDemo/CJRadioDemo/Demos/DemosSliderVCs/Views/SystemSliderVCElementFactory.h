@@ -18,6 +18,6 @@
 + (NSMutableArray<UIViewController *> *)systemDemoComponentViewControllers;
 
 // button
-+ (CJButton *)systemDemoRadioButton;
++ (CJRadioButton *)systemDemoRadioButton;
 
 @end

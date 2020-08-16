@@ -75,8 +75,8 @@
 }
 
 // button
-+ (CJButton *)demoRadioButton {
-    CJButton *radioButton = [[CJButton alloc] init];
++ (CJRadioButton *)demoRadioButton {
+    CJRadioButton *radioButton = [[CJRadioButton alloc] init];
     radioButton.backgroundColor = [UIColor cyanColor];
     radioButton.imagePosition = CJButtonImagePositionLeft;
     radioButton.imageView.image = [UIImage imageNamed:@"checkedYES"];

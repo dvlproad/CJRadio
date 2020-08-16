@@ -12,7 +12,10 @@
 static NSString * const cjNormalBGColorKey = @"cjNormalBGColorKey";
 static NSString * const cjHighlightedBGColorKey = @"cjHighlightedBGColorKey";
 static NSString * const cjDisabledBGColorKey = @"cjDisabledBGColorKey";
+
+
 static NSString * const cjSelectedBGColorKey = @"cjSelectedBGColorKey";
+static NSString * const cjSelectedDisabledBGColorKey = @"cjSelectedDisabledBGColorKey";
 
 static NSString * const cjTouchUpInsideBlockKey = @"cjTouchUpInsideBlockKey";
 
@@ -29,14 +32,7 @@ static NSString * const cjDataModelKey = @"cjDataModelKey";
 - (void)setCjNormalBGColor:(UIColor *)cjNormalBGColor {
     objc_setAssociatedObject(self, &cjNormalBGColorKey, cjNormalBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    CGRect rect = CGRectMake(0, 0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [cjNormalBGColor CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *normalBGImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
+    UIImage *normalBGImage = cj_buttonBGImage(cjNormalBGColor);
     [self setBackgroundImage:normalBGImage forState:UIControlStateNormal];
 }
 
@@ -48,14 +44,7 @@ static NSString * const cjDataModelKey = @"cjDataModelKey";
 - (void)setCjHighlightedBGColor:(UIColor *)cjHighlightedBGColor {
     objc_setAssociatedObject(self, &cjHighlightedBGColorKey, cjHighlightedBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    CGRect rect = CGRectMake(0, 0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [cjHighlightedBGColor CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *highlightedBGImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
+    UIImage *highlightedBGImage = cj_buttonBGImage(cjHighlightedBGColor);
     [self setBackgroundImage:highlightedBGImage forState:UIControlStateHighlighted];
 }
 
@@ -67,16 +56,22 @@ static NSString * const cjDataModelKey = @"cjDataModelKey";
 - (void)setCjDisabledBGColor:(UIColor *)cjDisabledBGColor {
     objc_setAssociatedObject(self, &cjDisabledBGColorKey, cjDisabledBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    CGRect rect = CGRectMake(0, 0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [cjDisabledBGColor CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *disabledBGImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    [self setBackgroundImage:disabledBGImage forState:UIControlStateDisabled];
+    UIImage *disabledBGImage = cj_buttonBGImage(cjDisabledBGColor);
+    [self setBackgroundImage:disabledBGImage forState:UIControlStateNormal | UIControlStateDisabled];
 }
+
+//cjSelectedDisabledBGColor
+- (UIColor *)cjSelectedDisabledBGColor {
+    return objc_getAssociatedObject(self, &cjSelectedDisabledBGColorKey) ;
+}
+
+- (void)setCjSelectedDisabledBGColor:(UIColor *)cjSelectedDisabledBGColor {
+    objc_setAssociatedObject(self, &cjSelectedDisabledBGColorKey, cjSelectedDisabledBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    UIImage *disabledBGImage = cj_buttonBGImage(cjSelectedDisabledBGColor);
+    [self setBackgroundImage:disabledBGImage forState:UIControlStateSelected | UIControlStateDisabled];
+}
+
 
 //cjSelectedBGColor
 - (UIColor *)cjSelectedBGColor {
@@ -86,17 +81,22 @@ static NSString * const cjDataModelKey = @"cjDataModelKey";
 - (void)setCjSelectedBGColor:(UIColor *)cjSelectedBGColor {
     objc_setAssociatedObject(self, &cjSelectedBGColorKey, cjSelectedBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    CGRect rect = CGRectMake(0, 0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [cjSelectedBGColor CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *selectedBGImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
+    UIImage *selectedBGImage = cj_buttonBGImage(cjSelectedBGColor);
     [self setBackgroundImage:selectedBGImage forState:UIControlStateSelected];
 }
 
+/// 使用颜色构建的背景图片
+UIImage *cj_buttonBGImage(UIColor *bgColor) {
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [bgColor CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *normalBGImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return normalBGImage;
+}
 
 //cjDataModel
 - (id)cjDataModel {

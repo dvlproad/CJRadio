@@ -10,12 +10,7 @@
 		4E32B23A1DB2776F076784B9 /* libPods-CJRadioDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF8BB37787142A3942C3BEE /* libPods-CJRadioDemoTests.a */; };
 		781BCDC0218D864D009E730C /* SystemSliderVCElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 781BCDBF218D864D009E730C /* SystemSliderVCElementFactory.m */; };
 		784AB8D421E8870B00A3F51C /* CChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8D321E8870B00A3F51C /* CChildViewController.m */; };
-		784AB8E121E8885700A3F51C /* CJUIKitCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8D721E8885600A3F51C /* CJUIKitCollectionViewCell.m */; };
-		784AB8E321E8885700A3F51C /* CJUIKitBaseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8DA21E8885600A3F51C /* CJUIKitBaseHomeViewController.m */; };
-		784AB8E421E8885700A3F51C /* CJUIKitBaseScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8DB21E8885600A3F51C /* CJUIKitBaseScrollViewController.m */; };
-		784AB8E521E8885700A3F51C /* CJUIKitBaseHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784AB8DF21E8885600A3F51C /* CJUIKitBaseHomeViewController.xib */; };
-		784AB8E621E8885700A3F51C /* CJUIKitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784AB8E021E8885600A3F51C /* CJUIKitBaseViewController.m */; };
-		784B62D31EB8323900BE5BEF /* CJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62C21EB8323900BE5BEF /* CJButton.m */; };
+		784B62D31EB8323900BE5BEF /* CJRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62C21EB8323900BE5BEF /* CJRadioButton.m */; };
 		784B62D41EB8323900BE5BEF /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62C41EB8323900BE5BEF /* MyButton.m */; };
 		784B62D51EB8323900BE5BEF /* CJRadioButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 784B62C61EB8323900BE5BEF /* CJRadioButtons.m */; };
 		784B62D81EB8323900BE5BEF /* arrowDown_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 784B62CD1EB8323900BE5BEF /* arrowDown_dark.png */; };
@@ -115,17 +110,8 @@
 		781BCDBF218D864D009E730C /* SystemSliderVCElementFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemSliderVCElementFactory.m; sourceTree = "<group>"; };
 		784AB8D221E8870B00A3F51C /* CChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CChildViewController.h; sourceTree = "<group>"; };
 		784AB8D321E8870B00A3F51C /* CChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CChildViewController.m; sourceTree = "<group>"; };
-		784AB8D621E8885600A3F51C /* CJUIKitBaseScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseScrollViewController.h; sourceTree = "<group>"; };
-		784AB8D721E8885600A3F51C /* CJUIKitCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitCollectionViewCell.m; sourceTree = "<group>"; };
-		784AB8D921E8885600A3F51C /* CJUIKitBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseViewController.h; sourceTree = "<group>"; };
-		784AB8DA21E8885600A3F51C /* CJUIKitBaseHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseHomeViewController.m; sourceTree = "<group>"; };
-		784AB8DB21E8885600A3F51C /* CJUIKitBaseScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseScrollViewController.m; sourceTree = "<group>"; };
-		784AB8DD21E8885600A3F51C /* CJUIKitCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitCollectionViewCell.h; sourceTree = "<group>"; };
-		784AB8DE21E8885600A3F51C /* CJUIKitBaseHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJUIKitBaseHomeViewController.h; sourceTree = "<group>"; };
-		784AB8DF21E8885600A3F51C /* CJUIKitBaseHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CJUIKitBaseHomeViewController.xib; sourceTree = "<group>"; };
-		784AB8E021E8885600A3F51C /* CJUIKitBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJUIKitBaseViewController.m; sourceTree = "<group>"; };
-		784B62C11EB8323900BE5BEF /* CJButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJButton.h; sourceTree = "<group>"; };
-		784B62C21EB8323900BE5BEF /* CJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJButton.m; sourceTree = "<group>"; };
+		784B62C11EB8323900BE5BEF /* CJRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButton.h; sourceTree = "<group>"; };
+		784B62C21EB8323900BE5BEF /* CJRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJRadioButton.m; sourceTree = "<group>"; };
 		784B62C31EB8323900BE5BEF /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
 		784B62C41EB8323900BE5BEF /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
 		784B62C51EB8323900BE5BEF /* CJRadioButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJRadioButtons.h; sourceTree = "<group>"; };
@@ -271,22 +257,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		784AB8D521E8885600A3F51C /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				784AB8DE21E8885600A3F51C /* CJUIKitBaseHomeViewController.h */,
-				784AB8DA21E8885600A3F51C /* CJUIKitBaseHomeViewController.m */,
-				784AB8DF21E8885600A3F51C /* CJUIKitBaseHomeViewController.xib */,
-				784AB8D621E8885600A3F51C /* CJUIKitBaseScrollViewController.h */,
-				784AB8DB21E8885600A3F51C /* CJUIKitBaseScrollViewController.m */,
-				784AB8D921E8885600A3F51C /* CJUIKitBaseViewController.h */,
-				784AB8E021E8885600A3F51C /* CJUIKitBaseViewController.m */,
-				784AB8DD21E8885600A3F51C /* CJUIKitCollectionViewCell.h */,
-				784AB8D721E8885600A3F51C /* CJUIKitCollectionViewCell.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		784B62BF1EB8323900BE5BEF /* CJRadioButtons */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,8 +275,8 @@
 		784B62C01EB8323900BE5BEF /* CJButton */ = {
 			isa = PBXGroup;
 			children = (
-				784B62C11EB8323900BE5BEF /* CJButton.h */,
-				784B62C21EB8323900BE5BEF /* CJButton.m */,
+				784B62C11EB8323900BE5BEF /* CJRadioButton.h */,
+				784B62C21EB8323900BE5BEF /* CJRadioButton.m */,
 				784B62C31EB8323900BE5BEF /* MyButton.h */,
 				784B62C41EB8323900BE5BEF /* MyButton.m */,
 			);
@@ -379,7 +349,6 @@
 				785B22301E3A21D800D0A085 /* AppDelegate.m */,
 				7885FC5521566C1700B97DAA /* AppDelegate+WindowRootViewController.h */,
 				7885FC5621566C1700B97DAA /* AppDelegate+WindowRootViewController.m */,
-				788D417D2182BDF9002BEED4 /* CommonUI */,
 				7885FC4B21566C1600B97DAA /* Demos */,
 				785B22321E3A21D800D0A085 /* ViewController.h */,
 				785B22331E3A21D800D0A085 /* ViewController.m */,
@@ -598,14 +567,6 @@
 			path = arrow;
 			sourceTree = "<group>";
 		};
-		788D417D2182BDF9002BEED4 /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-				784AB8D521E8885600A3F51C /* Base */,
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
 		80E7E6D620AD2261000F762D /* DemoSliderRadioButtons */ = {
 			isa = PBXGroup;
 			children = (
@@ -655,7 +616,7 @@
 				785B22251E3A21D800D0A085 /* Sources */,
 				785B22261E3A21D800D0A085 /* Frameworks */,
 				785B22271E3A21D800D0A085 /* Resources */,
-				D659FB42E2047633DE06AC1F /* [CP] Copy Pods Resources */,
+				2DCA18920B0E5830E4F7C86C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -734,6 +695,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -788,7 +750,6 @@
 				785B22CE1E3A570F00D0A085 /* MyRadioButtonsPopupSampleViewController.xib in Resources */,
 				7885FC832156700300B97DAA /* arrow_balland_red@2x.png in Resources */,
 				7885FC8E2156700300B97DAA /* icons8-home.png in Resources */,
-				784AB8E521E8885700A3F51C /* CJUIKitBaseHomeViewController.xib in Resources */,
 				784B62DD1EB8323900BE5BEF /* arrowUp_white@2x.png in Resources */,
 				785B22B51E3A454600D0A085 /* RadioButtonCycleComposeViewController.xib in Resources */,
 			);
@@ -811,6 +772,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2DCA18920B0E5830E4F7C86C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo-resources.sh",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@2x.png",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItem@3x.png",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@2x.png",
+				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/UIViewController/Resources/cjBackBarButtonItemGray@3x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItem@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItem@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cjBackBarButtonItemGray@3x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5693F1CDDE99A0A75F482411 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -827,34 +812,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D659FB42E2047633DE06AC1F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo-resources.sh",
-				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_error.png",
-				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_error@2x.png",
-				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_error@3x.png",
-				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_success.png",
-				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_success@2x.png",
-				"${PODS_ROOT}/CJBaseUIKit/CJBaseUIKit/CJToast/Resources/CJToast_success@3x.png",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_error@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CJToast_success@3x.png",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CJRadioDemo/Pods-CJRadioDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DECA9A7AE527279B5F81F105 /* [CP] Check Pods Manifest.lock */ = {
@@ -882,14 +839,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				784AB8E321E8885700A3F51C /* CJUIKitBaseHomeViewController.m in Sources */,
 				7885FC6A21566E5500B97DAA /* SliderButtonsHomeViewController.m in Sources */,
 				80E7E6DD20AD2262000F762D /* DemoPopupRadioButtons.m in Sources */,
-				784AB8E421E8885700A3F51C /* CJUIKitBaseScrollViewController.m in Sources */,
 				784B62D41EB8323900BE5BEF /* MyButton.m in Sources */,
 				784AB8D421E8870B00A3F51C /* CChildViewController.m in Sources */,
 				78720BD8216D9CDD0020333E /* FChildViewController.m in Sources */,
-				784AB8E621E8885700A3F51C /* CJUIKitBaseViewController.m in Sources */,
 				78720BD2216D9CC50020333E /* DChildViewController.m in Sources */,
 				785B22A41E3A293C00D0A085 /* TestDataUtil.m in Sources */,
 				785B22341E3A21D800D0A085 /* ViewController.m in Sources */,
@@ -897,7 +851,6 @@
 				78720BE0216DCA550020333E /* CustomSliderVCElementFactory.m in Sources */,
 				785B22D11E3A570F00D0A085 /* CycleComposeViewController.m in Sources */,
 				784B62E41EB8326100BE5BEF /* UIScrollView+CJAddContentView.m in Sources */,
-				784AB8E121E8885700A3F51C /* CJUIKitCollectionViewCell.m in Sources */,
 				785B22311E3A21D800D0A085 /* AppDelegate.m in Sources */,
 				78D8BD251F5B357B00E9450C /* CustomButtonViewController.m in Sources */,
 				785B22A21E3A293C00D0A085 /* Home1.m in Sources */,
@@ -921,7 +874,7 @@
 				785D80E71F7ABACA00B36390 /* CJEqualSizeRadioButtons.m in Sources */,
 				785B22B41E3A454600D0A085 /* RadioButtonCycleComposeViewController.m in Sources */,
 				785B222E1E3A21D800D0A085 /* main.m in Sources */,
-				784B62D31EB8323900BE5BEF /* CJButton.m in Sources */,
+				784B62D31EB8323900BE5BEF /* CJRadioButton.m in Sources */,
 				7885FC6921566E5500B97DAA /* SliderVCsHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
